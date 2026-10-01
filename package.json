@@ -1,0 +1,23 @@
+{
+  "name": "note_renderer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/testRenderer.js",
+    "render": "node src/main.js",
+    "build": "node scripts/build-site.mjs",
+    "serve": "node scripts/serve-site.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dompurify": "^3.4.14",
+    "jsdom": "^30.0.1",
+    "katex": "^0.18.4",
+    "lucide": "^1.34.0",
+    "marked": "^18.0.11"
+  }
+}

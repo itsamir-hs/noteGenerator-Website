@@ -1,0 +1,708 @@
+```css
+/* =========================================================
+   Note Renderer — Responsive
+   ========================================================= */
+
+
+/* =========================================================
+   Tablet — 900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* -----------------------------------------------------
+       Main Layout
+       ----------------------------------------------------- */
+
+    .noteContainer {
+        width: min(
+            calc(100% - 32px),
+            var(--contentWidth)
+        );
+
+        margin-inline: auto;
+    }
+
+
+    /* -----------------------------------------------------
+       Quick Navigation
+       ----------------------------------------------------- */
+
+    .quickNavigation {
+        display: none;
+    }
+
+
+    /* -----------------------------------------------------
+       Sidebar
+       ----------------------------------------------------- */
+
+    .sidebar {
+        width: min(
+            360px,
+            85vw
+        );
+    }
+
+
+    /* -----------------------------------------------------
+       Metadata
+       ----------------------------------------------------- */
+
+    .noteMetadata {
+        gap: 8px 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       Tables
+       ----------------------------------------------------- */
+
+    .noteSection table {
+        width: 100%;
+
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+
+    .noteSection thead,
+    .noteSection tbody,
+    .noteSection tr {
+        border-spacing: 0;
+    }
+
+
+    .noteSection th,
+    .noteSection td {
+        vertical-align: middle;
+    }
+
+
+    /* -----------------------------------------------------
+       Images
+       ----------------------------------------------------- */
+
+    .mainSection img {
+        max-width: 100%;
+        height: auto;
+    }
+
+}
+
+
+/* =========================================================
+   Mobile — 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    :root {
+        --headerHeight: 58px;
+    }
+
+
+    /* -----------------------------------------------------
+       Header
+       ----------------------------------------------------- */
+
+    .appHeader {
+        width: 100%;
+
+        min-height: var(--headerHeight);
+
+        padding: 0 12px;
+
+        gap: 8px;
+    }
+
+
+    .appTitle {
+        min-width: 0;
+
+        max-width: 42%;
+
+        overflow: hidden;
+
+        white-space: nowrap;
+
+        text-overflow: ellipsis;
+
+        font-size: 1rem;
+    }
+
+
+    .headerControls {
+        gap: 4px;
+
+        margin-inline-start: auto;
+    }
+
+
+    /* -----------------------------------------------------
+       Header Buttons
+       ----------------------------------------------------- */
+
+    .sidebarToggle,
+    .aboutButton,
+    .themeToggle,
+    .fontSizeControl {
+        width: 36px;
+        height: 36px;
+
+        flex-shrink: 0;
+    }
+
+
+    .sidebarToggle svg,
+    .aboutButton svg,
+    .themeToggle svg,
+    .fontSizeControl svg {
+        width: 17px;
+        height: 17px;
+    }
+
+
+    /* -----------------------------------------------------
+       Font Size
+       ----------------------------------------------------- */
+
+    .fontSizeSwitcher {
+        gap: 2px;
+    }
+
+
+    .fontSizeValue {
+        min-width: 20px;
+
+        font-size: 14px;
+    }
+
+
+    /* -----------------------------------------------------
+       Theme Switcher
+       ----------------------------------------------------- */
+
+    .themeSwitcher {
+        position: relative;
+    }
+
+
+    .themeOptions {
+        position: fixed;
+
+        top: calc(
+            var(--headerHeight) + 8px
+        );
+
+        left: 50%;
+        right: auto;
+
+        transform: translateX(-50%);
+
+        display: none;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 8px;
+
+        width: max-content;
+        max-width: calc(100vw - 24px);
+
+        padding: 8px;
+
+        background: var(--surfaceBackground);
+
+        border: 1px solid var(--borderColor);
+
+        border-radius: var(--radiusMedium);
+
+        box-shadow: var(--shadowMedium);
+
+        z-index: 1500;
+    }
+
+
+    .themeSwitcher.isOpen .themeOptions {
+        display: flex;
+    }
+
+
+    .themeButton {
+        width: 40px;
+        height: 40px;
+
+        flex: 0 0 40px;
+    }
+
+
+    .themeButton svg {
+        width: 18px;
+        height: 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       Sidebar
+       ----------------------------------------------------- */
+
+    .sidebar {
+        width: min(
+            340px,
+            86vw
+        );
+    }
+
+
+    .sidebarHeader {
+        min-height: 58px;
+    }
+
+
+    .sidebarContent {
+        padding-bottom: 24px;
+    }
+
+
+    /* -----------------------------------------------------
+       Note Container
+       ----------------------------------------------------- */
+
+    .noteContainer {
+        width: calc(100% - 24px);
+
+        margin: 12px auto;
+
+        padding-top: calc(
+            var(--headerHeight) + 24px
+        );
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* -----------------------------------------------------
+       Metadata
+       ----------------------------------------------------- */
+
+    .noteMetadata {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 6px;
+    }
+
+
+    .metadataItem {
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       AI Warning
+       ----------------------------------------------------- */
+
+    .aiWarning {
+        padding: 14px 16px;
+
+        gap: 10px;
+    }
+
+
+    /* -----------------------------------------------------
+       Sections
+       ----------------------------------------------------- */
+
+    .introductionSection {
+        padding: 22px 18px;
+    }
+
+
+    .noteSection {
+        max-width: 100%;
+
+        overflow-x: hidden;
+    }
+
+
+    .noteSection > h2 {
+        font-size: 21px;
+    }
+
+
+    .noteSection > h3 {
+        font-size: 18px;
+    }
+
+
+    .noteSection > h4 {
+        font-size: 16px;
+    }
+
+
+    /* -----------------------------------------------------
+       Tables
+       ----------------------------------------------------- */
+
+    .noteSection table {
+        display: table;
+
+        width: 100%;
+
+        margin: 0;
+
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+
+    .noteSection thead {
+        display: table-header-group;
+    }
+
+
+    .noteSection tbody {
+        display: table-row-group;
+    }
+
+
+    .noteSection tr {
+        display: table-row;
+    }
+
+
+    .noteSection th,
+    .noteSection td {
+        display: table-cell;
+
+        padding: 10px;
+
+        vertical-align: middle;
+    }
+
+
+    /* -----------------------------------------------------
+       Code
+       ----------------------------------------------------- */
+
+    .noteSection pre {
+        max-width: 100%;
+
+        overflow-x: auto;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    .noteSection pre code {
+        white-space: pre;
+    }
+
+
+    /* -----------------------------------------------------
+       Images
+       ----------------------------------------------------- */
+
+    .mainSection img {
+        width: auto;
+
+        max-width: 100%;
+
+        max-height: none;
+    }
+
+
+    /* -----------------------------------------------------
+       About Modal
+       ----------------------------------------------------- */
+
+    .aboutModal {
+        padding: 12px;
+    }
+
+
+    .aboutModalContent {
+        width: 100%;
+
+        max-height: calc(100vh - 24px);
+
+        padding: 34px 20px 24px;
+
+        border-radius: var(--radiusMedium);
+    }
+
+
+    .aboutModalContent h2 {
+        font-size: 1.4rem;
+    }
+
+
+    .aboutIntroduction {
+        font-size: 13px;
+
+        line-height: 1.9;
+    }
+
+
+    .developerList {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    .developerCard {
+        padding: 14px 16px;
+    }
+
+
+    /* -----------------------------------------------------
+       Back To Top
+       ----------------------------------------------------- */
+
+    .backToTop {
+        right: 16px;
+        bottom: 16px;
+
+        width: 42px;
+        height: 42px;
+    }
+
+}
+
+
+/* =========================================================
+   Small Mobile — 450px
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    /* -----------------------------------------------------
+       Header
+       ----------------------------------------------------- */
+
+    .appHeader {
+        padding-inline: 8px;
+    }
+
+
+    .appTitle {
+        max-width: 34%;
+
+        font-size: 0.95rem;
+    }
+
+
+    .headerControls {
+        gap: 2px;
+    }
+
+
+    .sidebarToggle,
+    .aboutButton,
+    .themeToggle,
+    .fontSizeControl {
+        width: 34px;
+        height: 34px;
+    }
+
+
+    .sidebarToggle svg,
+    .aboutButton svg,
+    .themeToggle svg,
+    .fontSizeControl svg {
+        width: 16px;
+        height: 16px;
+    }
+
+
+    /* -----------------------------------------------------
+       Theme Menu
+       ----------------------------------------------------- */
+
+    .themeOptions {
+        max-width: calc(100vw - 16px);
+
+        gap: 6px;
+
+        padding: 7px;
+    }
+
+
+    .themeButton {
+        width: 38px;
+        height: 38px;
+
+        flex-basis: 38px;
+    }
+
+
+    /* -----------------------------------------------------
+       Note
+       ----------------------------------------------------- */
+
+    .noteContainer {
+        width: calc(100% - 16px);
+
+        margin: 8px auto;
+
+        padding: 18px;
+    }
+
+
+    .noteSection > h2 {
+        font-size: 19px;
+    }
+
+
+    .noteSection > h3 {
+        font-size: 17px;
+    }
+
+
+    .noteSection > h4 {
+        font-size: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       Introduction
+       ----------------------------------------------------- */
+
+    .introductionSection {
+        padding: 18px 14px;
+    }
+
+
+    /* -----------------------------------------------------
+       Tables
+       ----------------------------------------------------- */
+
+    .noteSection th,
+    .noteSection td {
+        padding: 8px;
+    }
+
+
+    /* -----------------------------------------------------
+       About Modal
+       ----------------------------------------------------- */
+
+    .aboutModalContent {
+        padding: 30px 16px 20px;
+    }
+
+
+    .aboutModalContent h2 {
+        font-size: 1.25rem;
+    }
+
+
+    .developerCard {
+        padding: 12px 14px;
+    }
+
+
+    .developerCard h3 {
+        font-size: 14px;
+    }
+
+
+    .developerCard p {
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       Back To Top
+       ----------------------------------------------------- */
+
+    .backToTop {
+        right: 12px;
+        bottom: 12px;
+
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   Sticky Notes
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .stickyNotesPanel {
+        width: min(
+            340px,
+            86vw
+        );
+    }
+
+
+    .stickyNotesPanelHeader {
+        min-height: 58px;
+
+        padding: 12px 14px;
+    }
+
+
+    .stickyNotesPanelHeader h2 {
+        font-size: 16px;
+    }
+
+
+    .addStickyNoteButton {
+        min-height: 34px;
+
+        padding: 6px 9px;
+
+        font-size: 12px;
+    }
+
+
+    .addStickyNoteButton span {
+        display: none;
+    }
+
+
+    .addStickyNoteButton svg {
+        width: 17px;
+        height: 17px;
+    }
+
+
+    .stickyNotesToggle {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .stickyNotesToggle svg {
+        width: 17px;
+        height: 17px;
+    }
+
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .themeOptions,
+    .sidebar,
+    .aboutModal,
+    .aboutModalContent,
+    .backToTop {
+        transition: none !important;
+    }
+
+}
+```

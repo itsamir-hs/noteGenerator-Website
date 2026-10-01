@@ -1,0 +1,32 @@
+/* Controls text direction so Persian content stays RTL while technical content remains LTR. */
+
+html {
+    direction: rtl;
+}
+
+.noteContainer {
+    text-align: right;
+}
+
+code,
+pre,
+.katex,
+.katex-display {
+    direction: ltr;
+    text-align: left;
+    unicode-bidi: isolate;
+}
+
+.katex-html,
+.katex-mathml {
+    direction: ltr;
+}
+
+table {
+    direction: rtl;
+}
+
+th,
+td {
+    text-align: right;
+}

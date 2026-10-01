@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="paperlike">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Bone Marrow-on-a-Chip — ساختار، ساخت و عملکرد</title>
+
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/rtl.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="vendor/katex/katex.min.css"
+    >
+
+    <link rel="stylesheet" href="styles/dark.css">
+    <link rel="stylesheet" href="styles/forest.css">
+    <link rel="stylesheet" href="styles/paperLike.css">
+    <link rel="stylesheet" href="styles/neon.css">
+
+    <script src="vendor/lucide.min.js"></script>
+</head>
+
+<body>
+
+    <header class="appHeader">
+
+        <button
+            class="sidebarToggle"
+            type="button"
+            aria-label="باز کردن فهرست مطالب"
+            aria-expanded="false"
+        >
+            <i data-lucide="panel-left"></i>
+        </button>
+
+
+        <div class="appTitle">
+            
+        </div>
+
+
+        <div class="headerControls">
+
+<button
+    class="searchButton"
+    type="button"
+    aria-label="جستجو در جزوه"
+    aria-expanded="false"
+>
+    <i data-lucide="search"></i>
+</button>
+
+<div class="highlightSwitcher">
+
+    <button
+        class="highlightToggle"
+        type="button"
+        aria-label="هایلایت"
+        aria-expanded="false"
+    >
+        <i data-lucide="highlighter"></i>
+    </button>
+
+
+<div
+    class="highlightOptions"
+    aria-hidden="true"
+>
+
+    <button
+        class="highlightPowerToggle"
+        type="button"
+        aria-label="روشن یا خاموش کردن هایلایت"
+        aria-pressed="true"
+    >
+        <i data-lucide="highlighter"></i>
+        <span>هایلایت روشن</span>
+    </button>
+
+        <div class="highlightColors">
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#fff176"
+                aria-label="هایلایت زرد"
+                style="--highlightColor: #fff176;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#a5d6a7"
+                aria-label="هایلایت سبز"
+                style="--highlightColor: #a5d6a7;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#90caf9"
+                aria-label="هایلایت آبی"
+                style="--highlightColor: #90caf9;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ce93d8"
+                aria-label="هایلایت بنفش"
+                style="--highlightColor: #ce93d8;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ffab91"
+                aria-label="هایلایت نارنجی"
+                style="--highlightColor: #ffab91;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ef9a9a"
+                aria-label="هایلایت قرمز"
+                style="--highlightColor: #ef9a9a;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#f48fb1"
+                aria-label="هایلایت صورتی"
+                style="--highlightColor: #f48fb1;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#80cbc4"
+                aria-label="هایلایت فیروزه‌ای"
+                style="--highlightColor: #80cbc4;"
+            ></button>
+
+        </div>
+
+
+        <div class="highlightDivider"></div>
+
+
+        <label
+            class="highlightCustomColor"
+            aria-label="انتخاب رنگ دلخواه"
+        >
+            <input
+                class="highlightColorInput"
+                type="color"
+                value="#fff176"
+            >
+
+            <i data-lucide="palette"></i>
+        </label>
+
+
+        <button
+            class="highlightEraser"
+            type="button"
+            aria-label="پاک کردن هایلایت"
+        >
+            <i data-lucide="eraser"></i>
+            <span>پاک‌کن</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="stickyNotesSwitcher">
+
+    <button
+        class="stickyNotesToggle"
+        type="button"
+        aria-label="یادداشت‌های چسبان"
+        aria-expanded="false"
+    >
+        <i data-lucide="sticky-note"></i>
+    </button>
+
+</div>
+
+            <div class="fontSizeSwitcher">
+
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="decrease"
+                    aria-label="کاهش اندازه فونت"
+                >
+                    <i data-lucide="minus"></i>
+                </button>
+
+                <span class="fontSizeValue">
+                    A
+                </span>
+
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="increase"
+                    aria-label="افزایش اندازه فونت"
+                >
+                    <i data-lucide="plus"></i>
+                </button>
+
+            </div>
+
+
+            <div class="themeSwitcher">
+
+                <button
+                    class="themeToggle"
+                    type="button"
+                    aria-label="تغییر تم"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="sun"></i>
+                </button>
+
+<div class="themeOptions">
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="light"
+        aria-label="تم روشن"
+    >
+        <i data-lucide="sun"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="dark"
+        aria-label="تم تاریک"
+    >
+        <i data-lucide="moon"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="forest"
+        aria-label="تم جنگلی"
+    >
+        <i data-lucide="trees"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="paperLike"
+        aria-label="تم پیپر لایک"
+    >
+        <i data-lucide="file-text"></i>
+    </button>
+
+<button
+    class="themeButton"
+    type="button"
+    data-theme="neon"
+    aria-label="تم نئون"
+>
+<i data-lucide="zap"></i>
+</button>
+
+
+</div>
+
+            </div>
+
+<button
+    class="printButton"
+    type="button"
+    aria-label="چاپ جزوه"
+>
+    <i data-lucide="printer"></i>
+</button>
+
+
+            <button
+                class="aboutButton"
+                type="button"
+                aria-label="درباره ما"
+            >
+                <i data-lucide="users-round"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+<div
+    class="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="searchPanelContent">
+
+        <div class="searchInputWrapper">
+
+            <i data-lucide="search"></i>
+
+            <input
+                class="searchInput"
+                type="search"
+                placeholder="جستجو در جزوه..."
+                aria-label="جستجو در جزوه"
+                autocomplete="off"
+            >
+
+            <button
+                class="searchClearButton"
+                type="button"
+                aria-label="پاک کردن جستجو"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="searchResultsInfo">
+            <span class="searchResultsCount">۰ نتیجه</span>
+
+            <div class="searchNavigation">
+
+                <button
+                    class="searchPreviousButton"
+                    type="button"
+                    aria-label="نتیجه قبلی"
+                    disabled
+                >
+                    <i data-lucide="chevron-up"></i>
+                </button>
+
+                <button
+                    class="searchNextButton"
+                    type="button"
+                    aria-label="نتیجه بعدی"
+                    disabled
+                >
+                    <i data-lucide="chevron-down"></i>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    <aside
+        class="sidebar"
+        aria-label="فهرست مطالب"
+        aria-hidden="true"
+    >
+
+        <div class="sidebarHeader">
+            <h2>فهرست مطالب</h2>
+        </div>
+
+        <nav
+            class="sidebarContent"
+            aria-label="فهرست مطالب"
+        >
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-1"
+                >
+                    ۱. مقدمه و کلیات
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-2"
+                >
+                    ۲. متن اصلی جزوه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-3"
+                >
+                    مفهوم کلی Bone Marrow-on-a-Chip
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-4"
+                >
+                    ساختار کلی چیپ
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-5"
+                >
+                    کانال مرکزی و ایجاد محیط استخوانی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-6"
+                >
+                    ایجاد محیط عروقی و Perivascular Niche
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-7"
+                >
+                    نقش کانال‌های خارجی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-8"
+                >
+                    ساختار فیزیکی چیپ و ماده اصلی آن
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-9"
+                >
+                    ساخت قالب اصلی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-10"
+                >
+                    اتصال چیپ به 96-well plate
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-11"
+                >
+                    آماده‌سازی سطح کانال مرکزی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-12"
+                >
+                    بارگذاری سلول‌ها در چیپ
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-13"
+                >
+                    آیا عروق داخل چیپ چاپ می‌شوند؟
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-14"
+                >
+                    ۳. تعاریف
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-15"
+                >
+                    ۴. نکات مهم
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-16"
+                >
+                    سوالات تشریحی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-17"
+                >
+                    سوالات تستی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-18"
+                >
+                    پاسخ‌نامه پرسش‌های چندگزینه‌ای
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-19"
+                >
+                    ۵. مثال‌ها
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-20"
+                >
+                    ۶. جداول مرور سریع
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-21"
+                >
+                    جدول ۱. نقش اجزای اصلی BM-on-a-Chip
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-22"
+                >
+                    جدول ۲. مراحل ایجاد محیط زیستی در کانال مرکزی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-23"
+                >
+                    جدول ۳. پارامترهای ساخت فیزیکی چیپ
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-24"
+                >
+                    جدول ۴. بارگذاری سلول‌ها و شرایط کلیدی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-25"
+                >
+                    ۷. اصطلاحات و تعاریف کلیدی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-26"
+                >
+                    Bone Marrow-on-a-Chip (BM-on-a-Chip)
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-27"
+                >
+                    Chip
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-28"
+                >
+                    PDMS (polydimethylsiloxane)
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-29"
+                >
+                    MSC (mesenchymal stromal cells)
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-30"
+                >
+                    HUVEC (human umbilical vein endothelial cells)
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-31"
+                >
+                    NHLF (normal human lung fibroblasts)
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-32"
+                >
+                    Endosteal niche
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-33"
+                >
+                    Perivascular niche
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-34"
+                >
+                    Self-organization
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-35"
+                >
+                    Lumen
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-36"
+                >
+                    Mineralization
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-37"
+                >
+                    ۹. منابع و مراجع
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-38"
+                >
+                    ۸. موارد نیازمند بررسی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-39"
+                >
+                    ۱۰. گزارش تکمیل بودن محتوا
+                </a>
+            
+        </nav>
+
+    </aside>
+
+
+    <div class="sidebarBackdrop"></div>
+
+<aside
+    class="stickyNotesPanel"
+    aria-label="یادداشت‌های چسبان"
+    aria-hidden="true"
+>
+
+    <div class="stickyNotesPanelHeader">
+
+        <h2>یادداشت‌های چسبان</h2>
+
+        <button
+            class="addStickyNoteButton"
+            type="button"
+        >
+            <i data-lucide="plus"></i>
+            <span>یادداشت جدید</span>
+        </button>
+
+    </div>
+
+    <div class="stickyNotesPanelContent">
+
+        <div class="stickyNotesEmptyState">
+<i data-lucide="file-text"></i>
+
+            <p>
+                هنوز یادداشتی ایجاد نکرده‌اید.
+            </p>
+
+        </div>
+
+        <div class="stickyNotesList"></div>
+
+    </div>
+
+</aside>
+
+<div class="stickyNotesBackdrop"></div>
+
+
+    <div
+        class="aboutModal"
+        aria-hidden="true"
+    >
+
+        <div class="aboutModalBackdrop"></div>
+
+        <section
+            class="aboutModalContent"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="aboutTitle"
+        >
+
+            <button
+                class="aboutCloseButton"
+                type="button"
+                aria-label="بستن"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <h2 id="aboutTitle">
+                آدم‌هایی که اینجا رو ساختن
+            </h2>
+
+            <p class="aboutIntroduction">
+                ما یک تیم کوچک هستیم که باور داریم یادگیری باید
+                لذت‌بخش، عمیق، و در دسترس باشد. جزوه‌ساز تلاش ماست
+                برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً
+                بتوانی با آن‌ها چیزی یاد بگیری.
+            </p>
+
+
+<div class="developerList">
+
+    <article class="developerCard">
+        <h3>شبنم رضاپور</h3>
+        <p>کسی که PDFها را راضی کرد محتوایشان را بی‌کم‌وکاست لو بدهند.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیر‌حسین شکری‌زاده سعادت‌آباد</h3>
+        <p>صدای کلاس را به متن تبدیل کرد، حتی وقتی استاد وسط جمله با میکروفون قهر می‌کرد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>مهراد اسدی</h3>
+        <p>پرامپت‌ها را طوری چید که LLM فکر کرد دارد پایان‌نامه دکتری می‌نویسد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیرسالار سهام‌پور</h3>
+        <p>مارک‌داون را به HTML تبدیل کرد و به جزوه ظاهری داد که آدم دلش بخواهد بخواندش.</p>
+    </article>
+
+</div>
+
+            <p class="aboutFooter">
+                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد.
+                <br>
+                امیدواریم یادگیریت را لذت‌بخش‌تر کند.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <div class="quickNavigation">
+        <div class="quickNavigationList"></div>
+    </div>
+
+
+    <main class="noteContainer">
+
+<div class="stickyNotesLayer"></div>
+
+        <section class="noteHeader">
+
+            <div class="noteMetadata">
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">درس</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">مبحث</span>
+                    <span class="metadataValue">Bone Marrow-on-a-Chip — ساختار، ساخت و عملکرد</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">استاد</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ جلسه</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ تولید جزوه</span>
+                    <span class="metadataValue">2026-09-20T14:22:53</span>
+                </span>
+
+            </div>
+
+
+            <div class="aiWarning">
+                <i data-lucide="triangle-alert"></i>
+
+                <p>
+                    این جزوه با استفاده از هوش مصنوعی تولید شده است.
+                    ممکن است شامل خطا یا برداشت نادرست باشد و
+                    نیازمند بررسی و بازبینی مجدد است.
+                </p>
+            </div>
+
+        </section>
+
+
+        <section class="noteSection introductionSection">
+            <h2 id="heading-1">۱. مقدمه و کلیات</h2>
+<p><strong>Bone Marrow-on-a-Chip</strong> یا به اختصار <strong>BM-on-a-Chip</strong>، در این مقالات به یک سیستم <strong>میکروفلوئیدیک زیستی</strong> گفته می‌شود که برای بازسازی بخشی از محیط طبیعی مغز استخوان انسان در مقیاس کوچک طراحی شده است.</p>
+<p>منظور از <strong>Chip</strong> در اینجا یک تراشه الکترونیکی مانند <strong>CPU</strong> یا مدار مجتمع نیست. این سیستم فاقد ترانزیستور، پردازنده و مدار الکترونیکی است و اساس آن بر <strong>میکروکانال‌های سیال</strong>، <strong>مواد پلیمری</strong>، <strong>هیدروژل</strong> و <strong>سلول‌های زنده</strong> استوار است.</p>
+<p>هدف اصلی این سیستم‌ها بازسازی محیط پیچیده مغز استخوان، شامل <strong>سلول‌های استرومال</strong>، <strong>سلول‌های اندوتلیال</strong>، <strong>سلول‌های عروقی</strong>، <strong>ماتریکس خارج سلولی</strong> و <strong>عوامل رشد</strong>، در محیطی کنترل‌شده و قابل مشاهده است تا امکان مطالعه رفتار سلول‌ها و برهم‌کنش آن‌ها با محیط اطراف، خارج از بدن فراهم شود.</p>
+<p>در مقاله <strong>Science Advances</strong>، چندین دستگاه پنج‌کاناله در یک <strong>bottomless 96-well plate</strong> قرار گرفته‌اند. این ساختار علاوه بر ساده‌تر کردن کار با دستگاه، امکان <strong>تصویربرداری</strong> و انجام آزمایش‌های متعدد به شکل استاندارد را فراهم می‌کند.</p>
+        </section>
+
+
+        <section class="noteSection mainSection">
+            <h2 id="heading-2">۲. متن اصلی جزوه</h2>
+<h3 id="heading-3">مفهوم کلی Bone Marrow-on-a-Chip</h3>
+<blockquote class="definitionBox">
+<p><strong>تعریف — Bone Marrow-on-a-Chip (BM-on-a-Chip)</strong>
+یک سیستم <strong>میکروفلوئیدیک زیستی</strong> که برای بازسازی بخشی از محیط طبیعی مغز استخوان انسان در مقیاس کوچک طراحی شده است.</p>
+</blockquote>
+<ul>
+<li><strong>Chip</strong> در اینجا یک تراشه الکترونیکی مانند <strong>CPU</strong> یا مدار مجتمع نیست.</li>
+<li>این سیستم فاقد ترانزیستور، پردازنده و مدار الکترونیکی است.</li>
+<li>اساس آن بر <strong>میکروکانال‌های سیال</strong>، <strong>مواد پلیمری</strong>، <strong>هیدروژل</strong> و <strong>سلول‌های زنده</strong> استوار است.</li>
+<li>هدف اصلی:</li>
+<li>بازسازی محیط پیچیده مغز استخوان، شامل <strong>سلول‌های استرومال</strong>، <strong>سلول‌های اندوتلیال</strong>، <strong>سلول‌های عروقی</strong>، <strong>ماتریکس خارج سلولی</strong> و <strong>عوامل رشد</strong></li>
+<li>در محیطی کنترل‌شده و قابل مشاهده</li>
+<li>فراهم کردن امکان مطالعه رفتار سلول‌ها و برهم‌کنش آن‌ها با محیط اطراف، خارج از بدن</li>
+</ul>
+<h3 id="heading-4">ساختار کلی چیپ</h3>
+<ol>
+<li>دستگاه مورد استفاده در این مطالعات از <strong>پنج کانال میکروفلوئیدیک موازی</strong> تشکیل شده است.</li>
+<li>چیدمان کانال‌454545ها:</li>
+</ol>
+<ul>
+<li>در مرکز دستگاه یک <strong>کانال اصلی</strong> وجود دارد که محل ایجاد محیط شبیه مغز استخوان است.</li>
+<li>در دو طرف کانال مرکزی، دو کانال برای عبور <strong>محیط کشت</strong> و انتقال <strong>مواد غذایی</strong> و <strong>عوامل رشد</strong> قرار گرفته‌اند.</li>
+</ul>
+<ol>
+<li>در بیرونی‌ترین قسمت نیز دو کانال دیگر وجود دارند که برای <strong>سلول‌های فیبروبلاست</strong> استفاده می‌شوند.</li>
+</ol>
+<ul>
+<li>ساختار کلی دستگاه:</li>
+<li><strong>کانال خارجی → کانال محیط کشت → کانال مرکزی → کانال محیط کشت → کانال خارجی</strong></li>
+<li>کانال‌های خارجی و مرکزی از طریق کانال‌های میانی از یکدیگر جدا هستند، اما مواد محلول و عوامل مورد نیاز می‌توانند از طریق این بخش‌ها به محیط مرکزی برسند.</li>
+<li>هر دستگاه به صورت مستقل قابل بارگذاری و کشت است.</li>
+<li>در مقاله <strong>Science Advances</strong>، چندین دستگاه پنج‌کاناله در یک <strong>bottomless 96-well plate</strong> قرار گرفته‌اند.</li>
+<li>این ساختار علاوه بر ساده‌تر کردن کار با دستگاه، امکان <strong>تصویربرداری</strong> و انجام آزمایش‌های متعدد به شکل استاندارد را فراهم می‌کند.</li>
+</ul>
+<h3 id="heading-5">کانال مرکزی و ایجاد محیط استخوانی</h3>
+<ul>
+<li>قسمت مرکزی چیپ نقش مهمی در بازسازی <strong>endosteal niche</strong> یا محیط نزدیک به سطح داخلی استخوان دارد.</li>
+<li>برای ایجاد این قسمت، از <strong>mesenchymal stromal cells (MSCs)</strong> مشتق‌شده از مغز استخوان انسان استفاده می‌شود.</li>
+<li>مراحل ایجاد محیط استخوانی:</li>
+</ul>
+<ol>
+<li>MSCها در کانال مرکزی قرار داده می‌شوند.</li>
+<li>ابتدا اجازه داده می‌شود که سلول‌ها به سطح کانال متصل شوند.</li>
+<li>سپس سلول‌ها برای حدود <strong>۲۱ روز</strong> در محیط کشت <strong>استئوژنیک</strong> قرار می‌گیرند.</li>
+<li>در این مدت MSCها به سمت سلول‌های استخوانی، به‌ویژه <strong>osteoblast-like cells</strong>، تمایز پیدا می‌کنند.</li>
+<li>یک لایه شبیه محیط <strong>اندوستئال</strong> ایجاد می‌شود.</li>
+</ol>
+<ul>
+<li>در نتیجه، کانال مرکزی دیگر صرفاً یک فضای خالی برای عبور مایع نیست، بلکه به محیطی سلولی و ماتریکسی شبیه بخشی از مغز استخوان تبدیل می‌شود.</li>
+<li>عواملی که در ایجاد ویژگی‌های محیطی مشابه مغز استخوان نقش دارند:</li>
+<li><strong>type I collagen</strong></li>
+<li><strong>fibronectin</strong></li>
+<li><strong>hyaluronan</strong></li>
+<li><strong>osteopontin</strong></li>
+<li><strong>osteocalcin</strong></li>
+<li><strong>stem cell factor</strong></li>
+<li>همچنین تحت شرایط استئوژنیک، در این ناحیه <strong>mineralization</strong> ایجاد می‌شود.</li>
+</ul>
+<blockquote class="definitionBox">
+<p><strong>تعریف — Endosteal niche</strong>
+محیط نزدیک به سطح داخلی استخوان که در این چیپ با تمایز MSCها به <strong>osteoblast-like cells</strong> و تشکیل لایه اندوستئال بازسازی می‌شود.</p>
+</blockquote>
+<h3 id="heading-6">ایجاد محیط عروقی و Perivascular Niche</h3>
+<ul>
+<li>پس از ایجاد محیط اندوستئال، مرحله بعد ایجاد یک محیط عروقی در کانال مرکزی است.</li>
+<li>برای این کار، سلول‌های <strong>HUVEC</strong> یا <strong>human umbilical vein endothelial cells</strong> به همراه <strong>MSCها</strong> در یک <strong>هیدروژل</strong> قرار می‌گیرند.</li>
+<li>هیدروژل مورد استفاده ترکیبی از <strong>fibrin</strong> و <strong>collagen type I</strong> است.</li>
+<li>در مقاله <strong>Science Advances</strong>:</li>
+<li>HUVECها با MSCها در محیط حاوی <strong>thrombin</strong> قرار داده شده‌اند.</li>
+<li>سپس با مخلوط <strong>fibrinogen</strong> و <strong>collagen I</strong> ترکیب می‌شوند.</li>
+<li>این مخلوط در کانال مرکزی قرار می‌گیرد.</li>
+<li>در ادامه، سلول‌های اندوتلیال شروع به سازمان‌دهی خود می‌کنند و یک <strong>شبکه عروقی</strong> تشکیل می‌دهند.</li>
+<li>بنابراین عروق موجود در این مدل لزوماً به صورت مکانیکی داخل چیپ ساخته نشده‌اند؛ بلکه بخش مهمی از شبکه عروقی از طریق <strong>خودسازمان‌دهی سلول‌ها (self-organization)</strong> ایجاد می‌شود.</li>
+<li>عوامل رشد مانند <strong>VEGF</strong> و <strong>ANG-1</strong> نیز برای تحریک و پشتیبانی از تشکیل این شبکه استفاده می‌شوند.</li>
+<li>شبکه حاصل می‌تواند دارای <strong>lumen</strong> باشد و امکان حرکت سلول‌ها در مسیرهای عروقی را فراهم کند.</li>
+</ul>
+<blockquote class="definitionBox">
+<p><strong>تعریف — Perivascular niche</strong>
+محیط عروقی اطراف رگ‌ها که در این مدل با قرار دادن <strong>HUVEC</strong> و <strong>MSC</strong> در هیدروژل <strong>fibrin/collagen</strong> و تشکیل شبکه عروقی بازسازی می‌شود.</p>
+</blockquote>
+<blockquote class="definitionBox">
+<p><strong>تعریف — Self-organization</strong>
+فرآیندی که در آن سلول‌های اندوتلیال بدون چاپ مکانیکی از پیش تعیین‌شده، خودشان به یکدیگر متصل شده و ساختارهای لوله‌ای شبکه عروقی را ایجاد می‌کنند.</p>
+</blockquote>
+<blockquote class="definitionBox">
+<p><strong>تعریف — Lumen</strong>
+فضای داخلی ساختارهای لوله‌ای عروقی که در شبکه حاصل از خودسازمان‌دهی سلول‌ها ایجاد می‌شود.</p>
+</blockquote>
+<h3 id="heading-7">نقش کانال‌های خارجی</h3>
+<ul>
+<li>در دو کانال خارجی، سلول‌های <strong>normal human lung fibroblasts (NHLFs)</strong> قرار داده می‌شوند.</li>
+<li>این سلول‌ها برای خودِ تشکیل استخوان استفاده نمی‌شوند؛ بلکه نقش مهمی در ایجاد محیط مناسب برای <strong>vascularization</strong> دارند.</li>
+<li>فیبروبلاست‌ها فاکتورهای مختلفی ترشح می‌کنند که تشکیل و پایداری شبکه عروقی را تقویت می‌کنند.</li>
+<li>علاوه بر این، محیط کشت می‌تواند با <strong>VEGF</strong> و <strong>ANG-1</strong> غنی شود تا شرایط مناسب برای تشکیل شبکه عروقی فراهم شود.</li>
+<li>به این ترتیب، کانال‌های خارجی به صورت غیرمستقیم به ایجاد محیط عروقی در قسمت مرکزی کمک می‌کنند.</li>
+</ul>
+<h3 id="heading-8">ساختار فیزیکی چیپ و ماده اصلی آن</h3>
+<blockquote class="definitionBox">
+<p><strong>تعریف — PDMS (polydimethylsiloxane)</strong>
+یک <strong>پلیمر سیلیکونی</strong> انعطاف‌پذیر و شفاف که در ساخت بسیاری از سیستم‌های میکروفلوئیدیک، از جمله ساختار فیزیکی اصلی کانال‌های این چیپ، استفاده می‌شود.</p>
+</blockquote>
+<ul>
+<li>قسمت فیزیکی اصلی دستگاه از <strong>PDMS</strong> یا <strong>polydimethylsiloxane</strong> ساخته شده است.</li>
+<li>PDMS یک <strong>پلیمر سیلیکونی</strong> انعطاف‌پذیر و شفاف است که در ساخت بسیاری از سیستم‌های میکروفلوئیدیک استفاده می‌شود.</li>
+<li>پژوهشگران کانال‌های ریز را مستقیماً با دست یا با یک دستگاه ساده داخل PDMS ایجاد نمی‌کنند.</li>
+<li>ابتدا یک قالب دارای الگوی کانال‌ها ساخته می‌شود.</li>
+<li>سپس PDMS روی آن قالب ریخته می‌شود.</li>
+<li>فرآیند ساخت در این مقالات به‌طور کلی:</li>
+</ul>
+<ol>
+<li>تهیه یک <strong>silicon wafer</strong> دارای الگوی موردنظر</li>
+<li>استفاده از این wafer برای ساخت یک <strong>master</strong></li>
+<li>ساخت یک <strong>قالب اپوکسی</strong> از روی master</li>
+<li>ریختن PDMS روی قالب اپوکسی تا ساختار واقعی کانال‌ها در آن ایجاد شود</li>
+</ol>
+<ul>
+<li>در مقاله <strong>Biomaterials</strong>:</li>
+<li>PDMS با نسبت <strong>۱۰ به ۱</strong> از <strong>elastomer base</strong> و <strong>curing agent</strong> مخلوط شده است.</li>
+<li>روی قالب ریخته شده است.</li>
+<li>در دمای حدود <strong>۶۵ درجه سانتی‌گراد</strong> حداقل <strong>چهار ساعت</strong> پخت داده می‌شود.</li>
+<li>سپس لایه PDMS که ساختار کانال‌ها را دارد از قالب جدا می‌شود.</li>
+</ul>
+<h3 id="heading-9">ساخت قالب اصلی</h3>
+<ul>
+<li>در مقاله <strong>Science Advances</strong>، فرآیند ساخت قالب با جزئیات بیشتری توضیح داده شده است.</li>
+<li>مراحل:</li>
+</ul>
+<ol>
+<li>ابتدا یک <strong>قالب اپوکسی</strong> از روی <strong>master</strong> ساخته می‌شود.</li>
+<li>برای جلوگیری از چسبیدن PDMS به قالب، سطح قالب با ماده‌ای به نام <strong>trichloro(1H,1H,2H,2H)-perfluorooctyl silane</strong> تیمار می‌شود.</li>
+<li>سپس PDMS با نسبت <strong>۱۰:۱</strong> مخلوط شده و روی قالب <strong>EpoxAcast</strong> ریخته می‌شود.</li>
+<li>قالب در دمای <strong>۶۵ درجه سانتی‌گراد</strong> قرار می‌گیرد تا PDMS کاملاً پلیمریزه و سخت شود.</li>
+<li>بعد از جدا کردن لایه PDMS، محل‌های ورود و خروج مایع با یک <strong>biopsy punch</strong> یک‌میلی‌متری ایجاد می‌شوند.</li>
+</ol>
+<ul>
+<li>بنابراین، ساخت کانال‌های میکروسکوپی عمدتاً از طریق <strong>قالب‌گیری (molding)</strong> انجام می‌شود.</li>
+</ul>
+<h3 id="heading-10">اتصال چیپ به 96-well plate</h3>
+<ul>
+<li>پس از ساخته‌شدن لایه PDMS، این لایه باید به یک ساختار مناسب متصل شود.</li>
+<li>در این سیستم، لایه PDMS به یک <strong>bottomless 96-well plate</strong> متصل می‌شود.</li>
+<li>مراحل اتصال:</li>
+</ul>
+<ol>
+<li>سطح plate ابتدا با محلولی حاوی <strong>2% v/v 3-mercaptopropyl trimethoxysilane در methanol</strong> تیمار می‌شود.</li>
+<li>سپس شسته و خشک می‌شود.</li>
+<li>بعد از آن، PDMS و plate با استفاده از <strong>plasma treatment</strong> فعال شده و به یکدیگر متصل می‌شوند.</li>
+<li>برای کامل شدن اتصال، مجموعه در دمای <strong>۶۵ درجه سانتی‌گراد</strong> برای <strong>یک شب</strong> نگهداری می‌شود.</li>
+</ol>
+<ul>
+<li>در قسمت پایینی دستگاه نیز از یک <strong>silicone film</strong> تجاری به نام <strong>HT-6240</strong> استفاده می‌شود که آن هم با روش <strong>plasma bonding</strong> متصل می‌شود.</li>
+</ul>
+<h3 id="heading-11">آماده‌سازی سطح کانال مرکزی</h3>
+<ul>
+<li>PDMS به طور طبیعی سطح نسبتاً <strong>آب‌گریزی</strong> دارد و این موضوع برای چسبیدن مناسب سلول‌ها و ماتریکس خارج سلولی ایده‌آل نیست.</li>
+<li>به همین دلیل، سطح کانال مرکزی با <strong>dopamine hydrochloride</strong> تیمار می‌شود تا سطح آن برای اتصال مواد زیستی مناسب‌تر شود.</li>
+<li>در این مرحله:</li>
+<li>dopamine HCl به سطح کانال اعمال می‌شود.</li>
+<li>سپس سطح شسته می‌شود.</li>
+<li>در مقاله <strong>Science Advances</strong> همچنین <strong>collagen type I</strong> برای کمک به چسبندگی سلول‌ها استفاده شده است.</li>
+<li>این کار باعث می‌شود سلول‌ها و ماتریکس مورد نیاز بتوانند در محل موردنظر باقی بمانند و محیط مناسب‌تری برای رشد سلولی ایجاد شود.</li>
+</ul>
+<h3 id="heading-12">بارگذاری سلول‌ها در چیپ</h3>
+<ul>
+<li>بعد از آماده شدن ساختار فیزیکی، مرحله اصلی یعنی <strong>cell loading</strong> انجام می‌شود.</li>
+<li>ابتدا MSCها در کانال مرکزی قرار می‌گیرند.</li>
+<li>در مطالعه <strong>Science Advances</strong>:</li>
+<li>MSCها با غلظت حدود <strong>6 × 10⁵ cells/ml</strong> و حجم <strong>۵ میکرولیتر</strong> برای هر دستگاه بارگذاری شدند.</li>
+<li>بنابراین حدود <strong>۳۰۰۰ سلول</strong> در هر دستگاه قرار گرفتند.</li>
+<li>سپس حدود <strong>۱.۵ ساعت</strong> برای اتصال اولیه سلول‌ها زمان داده شد.</li>
+<li>بعد محیط کشت اضافه شد.</li>
+<li>این سلول‌ها حدود <strong>۲۱ روز</strong> در محیط <strong>استئوژنیک</strong> رشد می‌کنند تا لایه <strong>اندوستئال</strong> شکل بگیرد.</li>
+<li>پس از آن، مخلوط حاوی <strong>HUVEC</strong> و <strong>MSC</strong> در هیدروژل <strong>fibrin/collagen</strong> در کانال مرکزی قرار می‌گیرد تا محیط <strong>perivascular</strong> ایجاد شود.</li>
+<li>در کانال‌های خارجی نیز <strong>NHLFها</strong> در یک هیدروژل <strong>fibrin</strong> قرار داده می‌شوند.</li>
+</ul>
+<h3 id="heading-13">آیا عروق داخل چیپ چاپ می‌شوند؟</h3>
+<ul>
+<li>خیر، حداقل در این دو مقاله، شبکه عروقی به این معنی که پژوهشگران آن را مانند یک لوله پلاستیکی از قبل چاپ کنند ساخته نمی‌شود.</li>
+<li>سلول‌های <strong>endothelial</strong> و سایر سلول‌های پشتیبان در هیدروژل قرار می‌گیرند و تحت تأثیر محیط و عوامل رشد، خودشان شروع به سازمان‌دهی می‌کنند.</li>
+<li>به مرور زمان:</li>
+<li><strong>endothelial cells</strong> به یکدیگر متصل شده و ساختارهای لوله‌ای ایجاد می‌کنند.</li>
+<li>این ساختارها می‌توانند <strong>lumen</strong> داشته باشند.</li>
+<li>به شبکه‌ای شبیه <strong>microvascular network</strong> تبدیل می‌شوند.</li>
+<li>بنابراین چیپ یک ترکیب مهندسی‌شده از <strong>سلول‌های زنده + مواد زیستی + ساختار فیزیکی</strong> است و بخش قابل توجهی از معماری زیستی آن توسط خود سلول‌ها شکل می‌گیرد.</li>
+</ul>
+        </section>
+
+
+        <section class="noteSection definitionsSection">
+            <h2 id="heading-14">۳. تعاریف</h2>
+<ul>
+<li><strong>Bone Marrow-on-a-Chip (BM-on-a-Chip):</strong> سیستم میکروفلوئیدیک زیستی برای بازسازی بخشی از محیط طبیعی مغز استخوان انسان در مقیاس کوچک.</li>
+<li><strong>Chip:</strong> در اینجا تراشه الکترونیکی نیست؛ ساختاری مبتنی بر میکروکانال‌های سیال، مواد پلیمری، هیدروژل و سلول‌های زنده.</li>
+<li><strong>PDMS (polydimethylsiloxane):</strong> پلیمر سیلیکونی انعطاف‌پذیر و شفاف، ماده اصلی ساختار فیزیکی کانال‌ها.</li>
+<li><strong>MSC (mesenchymal stromal cells):</strong> سلول‌های استرومال مشتق از مغز استخوان که در کانال مرکزی به <strong>osteoblast-like cells</strong> تمایز می‌یابند.</li>
+<li><strong>HUVEC (human umbilical vein endothelial cells):</strong> سلول‌های اندوتلیال ورید بند ناف انسان که در تشکیل شبکه عروقی نقش دارند.</li>
+<li><strong>NHLF (normal human lung fibroblasts):</strong> فیبروبلاست‌های ریه انسانی که در کانال‌های خارجی قرار می‌گیرند و به صورت غیرمستقیم به <strong>vascularization</strong> کمک می‌کنند.</li>
+<li><strong>Endosteal niche:</strong> محیط نزدیک به سطح داخلی استخوان که با تمایز MSCها و تشکیل لایه اندوستئال بازسازی می‌شود.</li>
+<li><strong>Perivascular niche:</strong> محیط عروقی اطراف رگ‌ها که با <strong>HUVEC + MSC</strong> در هیدروژل <strong>fibrin/collagen</strong> ایجاد می‌شود.</li>
+<li><strong>Self-organization:</strong> خودسازمان‌دهی سلول‌های اندوتلیال برای تشکیل ساختارهای لوله‌ای بدون چاپ مکانیکی از پیش تعیین‌شده.</li>
+<li><strong>Lumen:</strong> فضای داخلی ساختارهای لوله‌ای عروقی.</li>
+<li><strong>Mineralization:</strong> معدنی‌شدن ناحیه مرکزی تحت شرایط استئوژنیک.</li>
+</ul>
+        </section>
+
+
+        <section class="noteSection importantPointsSection">
+            <h2 id="heading-15">۴. نکات مهم</h2>
+<div class="calloutBox calloutBox--important" data-callout="important"><p class="calloutBoxTitle">نکته مهم</p><p>در محتوای ارائه‌شده، نکته امتحانی صریحی که توسط استاد علامت‌گذاری شده باشد ثبت نشده است؛ بنابراین این بخش به پرسش‌های تمرینی برگرفته از متن اختصاص یافته است.</p></div>
+<h3 id="heading-16">سوالات تشریحی</h3>
+<p>۱. در <strong>BM-on-a-Chip</strong>، منظور از <strong>Chip</strong> چیست و چه تفاوتی با یک <strong>CPU</strong> یا مدار مجتمع دارد؟</p>
+<p>۲. چیدمان <strong>پنج کانال میکروفلوئیدیک</strong> در این سیستم چگونه است و هر بخش چه نقشی دارد؟</p>
+<p>۳. مراحل ایجاد محیط <strong>اندوستئال</strong> در کانال مرکزی را توضیح دهید.</p>
+<p>۴. شبکه عروقی در این چیپ چگونه ایجاد می‌شود؟ آیا عروق از قبل چاپ می‌شوند؟ نقش <strong>self-organization</strong> چیست؟</p>
+<h3 id="heading-17">سوالات تستی</h3>
+<p>۱. کدام سلول‌ها در دو کانال خارجی چیپ قرار داده می‌شوند؟</p>
+<ul>
+<li>A) HUVEC</li>
+<li>B) MSC</li>
+<li>C) NHLF</li>
+<li>D) osteoblast-like cells</li>
+</ul>
+<p>۲. هیدروژل مورد استفاده برای ایجاد محیط <strong>perivascular</strong> در کانال مرکزی ترکیبی از چیست؟</p>
+<ul>
+<li>A) fibrin و collagen type I</li>
+<li>B) hyaluronan و osteopontin</li>
+<li>C) PDMS و collagen I</li>
+<li>D) thrombin و methanol</li>
+</ul>
+<p>۳. در مقاله <strong>Biomaterials</strong>، نسبت <strong>elastomer base</strong> به <strong>curing agent</strong> در مخلوط PDMS چقدر است؟</p>
+<ul>
+<li>A) ۱:۱۰</li>
+<li>B) ۱۰:۱</li>
+<li>C) ۶۵:۱</li>
+<li>D) ۱:۱</li>
+</ul>
+<p>۴. MSCها در کانال مرکزی تقریباً چند روز در محیط <strong>استئوژنیک</strong> قرار می‌گیرند تا لایه <strong>اندوستئال</strong> شکل بگیرد؟</p>
+<ul>
+<li>A) ۱.۵ ساعت</li>
+<li>B) ۴ ساعت</li>
+<li>C) ۲۱ روز</li>
+<li>D) یک شب</li>
+</ul>
+<h3 id="heading-18">پاسخ‌نامه پرسش‌های چندگزینه‌ای</h3>
+<p>۱. C<br>۲. A<br>۳. B<br>۴. C</p>
+        </section>
+
+
+        <section class="noteSection examplesSection">
+            <h2 id="heading-19">۵. مثال‌ها</h2>
+<div class="calloutBox calloutBox--example" data-callout="example"><p class="calloutBoxTitle">مثال — مقاله Biomaterials</p><p>نسبت PDMS: &lt;strong&gt;elastomer base : curing agent = ۱۰:۱&lt;/strong&gt;؛ پخت در &lt;strong&gt;۶۵ درجه سانتی‌گراد&lt;/strong&gt; حداقل &lt;strong&gt;چهار ساعت&lt;/strong&gt;.</p></div>
+<div class="calloutBox calloutBox--example" data-callout="example"><p class="calloutBoxTitle">مثال — مقاله Science Advances</p><p>بارگذاری MSC در کانال مرکزی: غلظت حدود &lt;strong&gt;6 × 10⁵ cells/ml&lt;/strong&gt;، حجم &lt;strong&gt;۵ میکرولیتر&lt;/strong&gt; برای هر دستگاه، حدود &lt;strong&gt;۳۰۰۰ سلول&lt;/strong&gt;؛ &lt;strong&gt;۱.۵ ساعت&lt;/strong&gt; اتصال اولیه؛ &lt;strong&gt;۲۱ روز&lt;/strong&gt; محیط استئوژنیک.</p></div>
+<div class="calloutBox calloutBox--example" data-callout="example"><p class="calloutBoxTitle">مثال — تیمار قالب در Science Advances</p><p>استفاده از &lt;strong&gt;trichloro(1H,1H,2H,2H)-perfluorooctyl silane&lt;/strong&gt; برای جلوگیری از چسبیدن PDMS به قالب &lt;strong&gt;EpoxAcast&lt;/strong&gt;.</p></div>
+<div class="calloutBox calloutBox--example" data-callout="example"><p class="calloutBoxTitle">مثال — اتصال به plate</p><p>تیمار با &lt;strong&gt;2% v/v 3-mercaptopropyl trimethoxysilane در methanol&lt;/strong&gt;، سپس &lt;strong&gt;plasma treatment&lt;/strong&gt; و نگهداری در &lt;strong&gt;۶۵ درجه سانتی‌گراد&lt;/strong&gt; به مدت &lt;strong&gt;یک شب&lt;/strong&gt;؛ استفاده از &lt;strong&gt;silicone film HT-6240&lt;/strong&gt; با &lt;strong&gt;plasma bonding&lt;/strong&gt;.</p></div>
+        </section>
+
+
+        <section class="noteSection quickTablesSection">
+            <h2 id="heading-20">۶. جداول مرور سریع</h2>
+<h3 id="heading-21">جدول ۱. نقش اجزای اصلی BM-on-a-Chip</h3>
+<table>
+<thead>
+<tr>
+<th>جزء</th>
+<th>سلول/ماده</th>
+<th>نقش</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>کانال مرکزی</td>
+<td>MSC، سپس HUVEC + MSC در هیدروژل fibrin/collagen</td>
+<td>ایجاد محیط شبیه مغز استخوان؛ ابتدا endosteal niche و سپس perivascular niche</td>
+</tr>
+<tr>
+<td>دو کانال محیط کشت</td>
+<td>محیط کشت، مواد غذایی، عوامل رشد</td>
+<td>انتقال مواد غذایی و عوامل رشد به کانال مرکزی</td>
+</tr>
+<tr>
+<td>دو کانال خارجی</td>
+<td>NHLF در هیدروژل fibrin</td>
+<td>کمک غیرمستقیم به vascularization</td>
+</tr>
+<tr>
+<td>PDMS</td>
+<td>polydimethylsiloxane</td>
+<td>ساختار فیزیکی اصلی کانال‌ها</td>
+</tr>
+<tr>
+<td>bottomless 96-well plate</td>
+<td>—</td>
+<td>نگهداری چند دستگاه، تصویربرداری و انجام آزمایش‌های متعدد به شکل استاندارد</td>
+</tr>
+</tbody></table>
+<h3 id="heading-22">جدول ۲. مراحل ایجاد محیط زیستی در کانال مرکزی</h3>
+<table>
+<thead>
+<tr>
+<th>مرحله</th>
+<th>سلول/ماده</th>
+<th>شرایط/نتیجه</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>۱</td>
+<td>MSC</td>
+<td>بارگذاری در کانال مرکزی؛ اتصال اولیه؛ سپس حدود ۲۱ روز محیط استئوژنیک؛ تمایز به osteoblast-like cells؛ تشکیل لایه اندوستئال</td>
+</tr>
+<tr>
+<td>۲</td>
+<td>HUVEC + MSC در هیدروژل fibrin/collagen</td>
+<td>در Science Advances: HUVEC + MSC با thrombin، سپس ترکیب با fibrinogen و collagen I؛ self-organization؛ تشکیل شبکه عروقی و lumen؛ استفاده از VEGF و ANG-1</td>
+</tr>
+<tr>
+<td>۳</td>
+<td>NHLF در هیدروژل fibrin</td>
+<td>قرارگیری در کانال‌های خارجی؛ تقویت غیرمستقیم vascularization</td>
+</tr>
+</tbody></table>
+<h3 id="heading-23">جدول ۳. پارامترهای ساخت فیزیکی چیپ</h3>
+<table>
+<thead>
+<tr>
+<th>مرحله</th>
+<th>ماده/نسبت</th>
+<th>دما/زمان/جزئیات</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>تهیه قالب</td>
+<td>silicon wafer → master → epoxy mold</td>
+<td>—</td>
+</tr>
+<tr>
+<td>تیمار قالب</td>
+<td>trichloro(1H,1H,2H,2H)-perfluorooctyl silane</td>
+<td>جلوگیری از چسبیدن PDMS به قالب</td>
+</tr>
+<tr>
+<td>مخلوط PDMS</td>
+<td>elastomer base : curing agent = ۱۰:۱</td>
+<td>ریختن روی قالب EpoxAcast؛ ۶۵ درجه سانتی‌گراد؛ در Biomaterials حداقل ۴ ساعت؛ در Science Advances تا پلیمریزاسیون کامل</td>
+</tr>
+<tr>
+<td>پانچ ورودی/خروجی</td>
+<td>biopsy punch یک‌میلی‌متری</td>
+<td>ایجاد محل‌های ورود و خروج مایع</td>
+</tr>
+<tr>
+<td>اتصال به plate</td>
+<td>2% v/v 3-mercaptopropyl trimethoxysilane در methanol</td>
+<td>شستشو و خشک‌کردن؛ plasma treatment؛ نگهداری در ۶۵ درجه سانتی‌گراد به مدت یک شب</td>
+</tr>
+<tr>
+<td>فیلم پایین</td>
+<td>silicone film تجاری HT-6240</td>
+<td>اتصال با plasma bonding</td>
+</tr>
+</tbody></table>
+<h3 id="heading-24">جدول ۴. بارگذاری سلول‌ها و شرایط کلیدی</h3>
+<table>
+<thead>
+<tr>
+<th>سلول/ماده</th>
+<th>محل</th>
+<th>مقدار/شرایط</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MSC</td>
+<td>کانال مرکزی</td>
+<td>در Science Advances: غلظت حدود ۶ × ۱۰⁵ cells/ml، حجم ۵ میکرولیتر برای هر دستگاه، حدود ۳۰۰۰ سلول؛ ۱.۵ ساعت اتصال اولیه؛ ۲۱ روز محیط استئوژنیک</td>
+</tr>
+<tr>
+<td>HUVEC + MSC</td>
+<td>کانال مرکزی</td>
+<td>در هیدروژل fibrin/collagen؛ ایجاد محیط perivascular</td>
+</tr>
+<tr>
+<td>NHLF</td>
+<td>کانال‌های خارجی</td>
+<td>در هیدروژل fibrin</td>
+</tr>
+<tr>
+<td>VEGF و ANG-1</td>
+<td>محیط کشت</td>
+<td>تحریک و پشتیبانی تشکیل شبکه عروقی</td>
+</tr>
+</tbody></table>
+        </section>
+
+
+        <section class="noteSection keyTermsSection">
+            <h2 id="heading-25">۷. اصطلاحات و تعاریف کلیدی</h2>
+<div class="definitionBox"><h3 id="heading-26">Bone Marrow-on-a-Chip (BM-on-a-Chip)</h3><p>سیستم میکروفلوئیدیک زیستی برای بازسازی بخشی از محیط طبیعی مغز استخوان انسان در مقیاس کوچک.</p></div>
+
+<div class="definitionBox"><h3 id="heading-27">Chip</h3><p>در اینجا تراشه الکترونیکی نیست؛ ساختاری مبتنی بر میکروکانال‌های سیال، مواد پلیمری، هیدروژل و سلول‌های زنده.</p></div>
+
+<div class="definitionBox"><h3 id="heading-28">PDMS (polydimethylsiloxane)</h3><p>پلیمر سیلیکونی انعطاف‌پذیر و شفاف؛ ماده اصلی ساختار فیزیکی کانال‌ها.</p></div>
+
+<div class="definitionBox"><h3 id="heading-29">MSC (mesenchymal stromal cells)</h3><p>سلول‌های استرومال مشتق از مغز استخوان که در کانال مرکزی به سلول‌های استخوانی، به‌ویژه <strong>osteoblast-like cells</strong>، تمایز می‌یابند.</p></div>
+
+<div class="definitionBox"><h3 id="heading-30">HUVEC (human umbilical vein endothelial cells)</h3><p>سلول‌های اندوتلیال ورید بند ناف انسان که در تشکیل شبکه عروقی شرکت می‌کنند.</p></div>
+
+<div class="definitionBox"><h3 id="heading-31">NHLF (normal human lung fibroblasts)</h3><p>فیبروبلاست‌های ریه انسانی که در کانال‌های خارجی قرار می‌گیرند و به صورت غیرمستقیم به <strong>vascularization</strong> کمک می‌کنند.</p></div>
+
+<div class="definitionBox"><h3 id="heading-32">Endosteal niche</h3><p>محیط نزدیک به سطح داخلی استخوان که با تمایز MSCها و تشکیل لایه اندوستئال بازسازی می‌شود.</p></div>
+
+<div class="definitionBox"><h3 id="heading-33">Perivascular niche</h3><p>محیط عروقی اطراف رگ‌ها که با <strong>HUVEC + MSC</strong> در هیدروژل <strong>fibrin/collagen</strong> ایجاد می‌شود.</p></div>
+
+<div class="definitionBox"><h3 id="heading-34">Self-organization</h3><p>خودسازمان‌دهی سلول‌های اندوتلیال برای تشکیل ساختارهای لوله‌ای بدون چاپ مکانیکی از پیش تعیین‌شده.</p></div>
+
+<div class="definitionBox"><h3 id="heading-35">Lumen</h3><p>فضای داخلی ساختارهای لوله‌ای عروقی که امکان حرکت سلول‌ها در مسیرهای عروقی را فراهم می‌کند.</p></div>
+
+<div class="definitionBox"><h3 id="heading-36">Mineralization</h3><p>معدنی‌شدن ناحیه مرکزی تحت شرایط استئوژنیک.</p></div>
+        </section>
+
+
+        <section class="noteSection referencesSection">
+            <h2 id="heading-37">۹. منابع و مراجع</h2>
+<ul>
+<li>فایل اسلاید: در ورودی ارائه‌شده مشخص نیست.</li>
+<li>نویسنده/استاد: در ورودی ارائه‌شده مشخص نیست.</li>
+<li>صوت درس: منبع صوتی جلسه (جزئیات در ورودی ارائه نشده است).</li>
+<li>مقالات مورد اشاره در متن: <strong>Science Advances</strong> و <strong>Biomaterials</strong> (بدون اطلاعات کتاب‌شناختی کامل در ورودی).</li>
+<li>محتوای این جزوه بر اساس متن بازنویسی‌شده جلسه و اسلایدهای مرتبط تدوین شده است.</li>
+</ul>
+        </section>
+
+
+        <section class="noteSection reviewSection">
+            <h2 id="heading-38">۸. موارد نیازمند بررسی</h2>
+<div class="calloutBox calloutBox--key-point" data-callout="key-point"><p class="calloutBoxTitle">⚠ منبع اسلاید نامشخص</p><p>نام فایل اسلاید و نویسنده/استاد در ورودی ارائه نشده است؛ بنابراین امکان تطبیق شماره اسلاید و provenance وجود ندارد.
+&lt;strong&gt;وضعیت:&lt;/strong&gt; نیازمند بررسی</p></div>
+<div class="calloutBox calloutBox--note" data-callout="note"><p class="calloutBoxTitle">⚠ نبود اطلاعات کتاب‌شناختی کامل مقالات</p><p>دو مقاله &lt;strong&gt;Science Advances&lt;/strong&gt; و &lt;strong&gt;Biomaterials&lt;/strong&gt; در متن ذکر شده‌اند، اما اطلاعات کامل کتاب‌شناختی (نویسنده، سال، DOI و...) در ورودی ارائه نشده است.
+&lt;strong&gt;وضعیت:&lt;/strong&gt; نیازمند بررسی</p></div>
+        </section>
+
+
+        <section class="noteSection completionSection">
+            <h2 id="heading-39">۱۰. گزارش تکمیل بودن محتوا</h2>
+<p><img src="assets/image10.jpg" alt="image10"></p>
+<ul>
+<li>تخمین تقریبی تکمیل بودن محتوا: <strong>بالا</strong> (بر اساس محتوای جزوه‌شده و بازنویسی نهایی).</li>
+<li>پوشش اسلاید: ⚠ (فایل اسلاید در ورودی مشخص نشده است؛ امکان تطبیق شماره اسلاید وجود ندارد).</li>
+<li>پوشش صوت: ⚠ (جزئیات صوت در ورودی مشخص نشده است).</li>
+<li>موارد نیازمند بررسی: ⚠ دو مورد (منبع اسلاید نامشخص، نبود اطلاعات کتاب‌شناختی کامل مقالات).</li>
+<li>ارزیابی کلی: محتوای آموزشی موجود به‌طور کامل در ساختار ده‌بخشی حفظ شده است؛ هیچ بخشی از محتوای علمی ارائه‌شده حذف یا خلاصه‌سازی زیان‌آور نشده است.</li>
+</ul>
+        </section>
+
+    </main>
+
+
+    <button
+        class="backToTop"
+        type="button"
+        aria-label="بازگشت به ابتدای صفحه"
+    >
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+
+    <script src="js/themeSwitcher.js"></script>
+    <script src="js/fontSizeSwitcher.js"></script>
+    <script src="js/aboutModal.js"></script>
+    <script src="js/quickNavigation.js"></script>
+    <script src="js/print.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/highlight.js"></script>
+    <script src="js/stickyNotes.js"></script>
+    <script src="js/viewPersistence.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarToggle = document.querySelector(".sidebarToggle");
+    const sidebarBackdrop = document.querySelector(".sidebarBackdrop");
+
+    function openSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.add("isOpen");
+        sidebarBackdrop.classList.add("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "true");
+        sidebar.setAttribute("aria-hidden", "false");
+    }
+
+    function closeSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.remove("isOpen");
+        sidebarBackdrop.classList.remove("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "false");
+        sidebar.setAttribute("aria-hidden", "true");
+    }
+
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener("click", () => {
+            if (sidebar.classList.contains("isOpen")) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+    }
+
+    if (sidebarBackdrop) {
+        sidebarBackdrop.addEventListener("click", closeSidebar);
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeSidebar();
+        }
+    });
+
+    document.querySelectorAll(".tocItem").forEach((item) => {
+        item.addEventListener("click", closeSidebar);
+    });
+</script>
+
+</body>
+
+</html>

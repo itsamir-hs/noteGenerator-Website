@@ -1,0 +1,574 @@
+/* =========================================================
+   Note Renderer — Neon Theme
+   ========================================================= */
+
+[data-theme="neon"] {
+
+    /* Page */
+    --pageBackground: #070B12;
+    --surfaceBackground: #0D1420;
+    --surfaceMuted: #111C2B;
+    --surfaceSoft: #152536;
+
+    /* Text */
+    --textPrimary: #E6F7FF;
+    --textSecondary: #8FA9BA;
+    --textMuted: #617786;
+
+    /* Borders */
+    --borderColor: #1D3445;
+    --borderStrong: #28506A;
+
+    /* Accent */
+    --accentColor: #00F0FF;
+    --accentSoft: #103743;
+
+    /* Semantic */
+    --definitionColor: #00F0FF;
+    --definitionBackground: #0B2630;
+
+    --importantColor: #FFD600;
+    --importantBackground: #2A260C;
+
+    --exampleColor: #7CFF00;
+    --exampleBackground: #14270C;
+
+    --warningColor: #FF3B81;
+    --warningBackground: #2D1020;
+
+    --successColor: #7CFF00;
+    --successBackground: #12270C;
+
+    /* Content */
+    --codeBackground: #05080D;
+    --noteBackground: #0D1822;
+
+    --listBackground: #0D1420;
+    --listBorder: #1D3445;
+
+    --tableBackground: #0D1420;
+    --tableHeaderBackground: #111C2B;
+    --tableBorder: #1D3445;
+
+    /* Shadows */
+    --shadowSmall:
+        0 2px 10px rgba(0, 240, 255, 0.06);
+
+    --shadowMedium:
+        0 10px 35px rgba(0, 240, 255, 0.10);
+}
+
+
+/* =========================================================
+   Global
+   ========================================================= */
+
+[data-theme="neon"] body {
+    background: var(--pageBackground);
+    color: var(--textPrimary);
+}
+
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+[data-theme="neon"] .appHeader {
+    background: rgba(7, 11, 18, 0.94);
+    border-bottom-color: var(--borderColor);
+    box-shadow:
+        0 1px 0 rgba(0, 240, 255, 0.05);
+}
+
+[data-theme="neon"] .appTitle {
+    color: var(--textPrimary);
+}
+
+[data-theme="neon"] .sidebarToggle,
+[data-theme="neon"] .aboutButton,
+[data-theme="neon"] .themeToggle,
+[data-theme="neon"] .fontSizeControl {
+    color: var(--textSecondary);
+}
+
+[data-theme="neon"] .sidebarToggle:hover,
+[data-theme="neon"] .aboutButton:hover,
+[data-theme="neon"] .themeToggle:hover,
+[data-theme="neon"] .fontSizeControl:hover {
+    background: var(--surfaceSoft);
+    color: var(--accentColor);
+
+    box-shadow:
+        0 0 12px rgba(0, 240, 255, 0.10);
+}
+
+
+/* =========================================================
+   Font Size Switcher
+   ========================================================= */
+
+[data-theme="neon"] .fontSizeSwitcher {
+    background: var(--surfaceBackground);
+    border-color: var(--borderColor);
+}
+
+[data-theme="neon"] .fontSizeValue {
+    color: var(--accentColor);
+}
+
+
+/* =========================================================
+   Theme Switcher
+   ========================================================= */
+
+[data-theme="neon"] .themeOptions {
+    background: var(--surfaceBackground);
+    border-color: var(--borderColor);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(0, 240, 255, 0.06);
+}
+
+[data-theme="neon"] .themeButton {
+    color: var(--textSecondary);
+}
+
+[data-theme="neon"] .themeButton:hover {
+    background: var(--surfaceSoft);
+    color: var(--accentColor);
+
+    box-shadow:
+        0 0 12px rgba(0, 240, 255, 0.12);
+}
+
+
+/* =========================================================
+   Sidebar
+   ========================================================= */
+
+[data-theme="neon"] .sidebar {
+    background: var(--surfaceBackground);
+    border-left-color: var(--borderColor);
+
+    box-shadow:
+        -10px 0 35px rgba(0, 0, 0, 0.30),
+        -2px 0 18px rgba(0, 240, 255, 0.04);
+}
+
+[data-theme="neon"] .sidebarHeader {
+    background: var(--surfaceBackground);
+    border-bottom-color: var(--borderColor);
+}
+
+[data-theme="neon"] .sidebarHeader h2 {
+    color: var(--textPrimary);
+}
+
+[data-theme="neon"] .tocItem {
+    color: var(--textSecondary);
+}
+
+[data-theme="neon"] .tocItem:hover {
+    background: var(--accentSoft);
+    color: var(--accentColor);
+}
+
+[data-theme="neon"] .tocItem.isActive {
+    background: var(--accentSoft);
+    color: var(--accentColor);
+
+    box-shadow:
+        inset -2px 0 0 var(--accentColor);
+}
+
+[data-theme="neon"] .tocSubItem {
+    color: var(--textMuted);
+}
+
+[data-theme="neon"] .tocSubItem.isActive {
+    color: var(--accentColor);
+}
+
+[data-theme="neon"] .sidebarBackdrop {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+
+/* =========================================================
+   Note Header
+   ========================================================= */
+
+[data-theme="neon"] .metadataLabel {
+    color: var(--textMuted);
+}
+
+[data-theme="neon"] .metadataValue {
+    color: var(--textPrimary);
+}
+
+[data-theme="neon"] .aiWarning {
+    background: var(--warningBackground);
+    border-color: rgba(255, 59, 129, 0.20);
+    color: var(--warningColor);
+
+    box-shadow:
+        0 0 18px rgba(255, 59, 129, 0.05);
+}
+
+
+/* =========================================================
+   Headings
+   ========================================================= */
+
+[data-theme="neon"] .noteSection > h2,
+[data-theme="neon"] .noteSection > h3,
+[data-theme="neon"] .noteSection > h4 {
+    color: var(--textPrimary);
+}
+
+[data-theme="neon"] .noteSection > h2 {
+    border-bottom-color: var(--borderColor);
+}
+
+[data-theme="neon"] .noteSection > h2::after {
+    background: var(--accentColor);
+
+    box-shadow:
+        0 0 8px rgba(0, 240, 255, 0.35);
+}
+
+
+/* =========================================================
+   Introduction
+   ========================================================= */
+
+[data-theme="neon"] .introductionSection {
+    background: var(--surfaceMuted);
+    border-color: var(--borderColor);
+    box-shadow: var(--shadowSmall);
+}
+
+
+/* =========================================================
+   Main Note
+   ========================================================= */
+
+[data-theme="neon"] .noteContainer,
+[data-theme="neon"] .noteContainer p,
+[data-theme="neon"] .noteContainer li {
+    color: var(--textPrimary);
+}
+
+[data-theme="neon"] .mainSection em {
+    color: var(--textSecondary);
+}
+
+[data-theme="neon"] .mainSection img {
+    border-color: var(--borderColor);
+    box-shadow: var(--shadowSmall);
+}
+
+[data-theme="neon"] .mainSection img:hover {
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.30),
+        0 0 18px rgba(0, 240, 255, 0.08);
+}
+
+
+/* =========================================================
+   Definitions
+   ========================================================= */
+
+[data-theme="neon"] .definitionsSection blockquote {
+    background: var(--definitionBackground);
+    border-color: rgba(0, 240, 255, 0.12);
+    border-right-color: var(--definitionColor);
+    color: var(--textPrimary);
+
+    box-shadow:
+        inset 3px 0 0 rgba(0, 240, 255, 0.04);
+}
+
+[data-theme="neon"] .definitionsSection blockquote strong:first-child {
+    color: var(--definitionColor);
+
+    text-shadow:
+        0 0 8px rgba(0, 240, 255, 0.20);
+}
+
+
+/* =========================================================
+   Important Points
+   ========================================================= */
+
+[data-theme="neon"] .importantPointsSection blockquote {
+    background: var(--importantBackground);
+    border-color: rgba(255, 214, 0, 0.12);
+    border-right-color: var(--importantColor);
+    color: var(--textPrimary);
+}
+
+[data-theme="neon"] .importantPointsSection blockquote strong:first-child {
+    color: var(--importantColor);
+}
+
+
+/* =========================================================
+   Examples
+   ========================================================= */
+
+[data-theme="neon"] .examplesSection blockquote {
+    background: var(--exampleBackground);
+    border-color: rgba(124, 255, 0, 0.12);
+    border-right-color: var(--exampleColor);
+    color: var(--textPrimary);
+}
+
+[data-theme="neon"] .examplesSection blockquote strong:first-child {
+    color: var(--exampleColor);
+}
+
+
+/* =========================================================
+   Lists
+   ========================================================= */
+
+[data-theme="neon"] .noteSection ul,
+[data-theme="neon"] .noteSection ol,
+[data-theme="neon"] .noteSection li {
+    color: var(--textPrimary);
+}
+
+
+/* =========================================================
+   Links
+   ========================================================= */
+
+[data-theme="neon"] .noteSection a {
+    color: var(--accentColor);
+}
+
+[data-theme="neon"] .noteSection a:hover {
+    text-shadow:
+        0 0 8px rgba(0, 240, 255, 0.35);
+}
+
+
+/* =========================================================
+   Tables
+   ========================================================= */
+
+[data-theme="neon"] .noteSection table {
+    background: var(--tableBackground);
+    border-color: var(--tableBorder);
+    box-shadow: var(--shadowSmall);
+}
+
+[data-theme="neon"] .noteSection th {
+    background: var(--tableHeaderBackground);
+    color: var(--textPrimary);
+    border-color: var(--tableBorder);
+}
+
+[data-theme="neon"] .noteSection td {
+    color: var(--textPrimary);
+    border-color: var(--tableBorder);
+}
+
+[data-theme="neon"] .noteSection tr:hover td {
+    background: #142231;
+}
+
+
+/* =========================================================
+   Code
+   ========================================================= */
+
+[data-theme="neon"] .noteSection code {
+    background: var(--surfaceSoft);
+    border-color: var(--borderColor);
+    color: var(--accentColor);
+}
+
+[data-theme="neon"] .noteSection pre {
+    background: var(--codeBackground);
+    border: 1px solid var(--borderStrong);
+    color: var(--textPrimary);
+
+    box-shadow:
+        inset 0 0 25px rgba(0, 240, 255, 0.025);
+}
+
+[data-theme="neon"] .noteSection pre code {
+    background: transparent;
+    border: 0;
+    color: inherit;
+}
+
+
+/* =========================================================
+   Key Terms
+   ========================================================= */
+
+[data-theme="neon"] .keyTermsSection {
+    color: var(--textPrimary);
+}
+
+
+/* =========================================================
+   References
+   ========================================================= */
+
+[data-theme="neon"] .referencesSection {
+    color: var(--textSecondary);
+}
+
+
+/* =========================================================
+   Review
+   ========================================================= */
+
+[data-theme="neon"] .reviewSection blockquote {
+    background: var(--warningBackground);
+    border-color: rgba(255, 59, 129, 0.12);
+    border-right-color: var(--warningColor);
+    color: var(--textPrimary);
+}
+
+[data-theme="neon"] .reviewSection blockquote strong {
+    color: var(--warningColor);
+
+    text-shadow:
+        0 0 8px rgba(255, 59, 129, 0.20);
+}
+
+
+/* =========================================================
+   Completion
+   ========================================================= */
+
+[data-theme="neon"] .completionSection strong {
+    color: var(--successColor);
+
+    text-shadow:
+        0 0 8px rgba(124, 255, 0, 0.20);
+}
+
+
+/* =========================================================
+   Horizontal Rules
+   ========================================================= */
+
+[data-theme="neon"] .noteSection hr {
+    border-top-color: var(--borderColor);
+}
+
+
+/* =========================================================
+   About Modal
+   ========================================================= */
+
+[data-theme="neon"] .aboutModalBackdrop {
+    background: rgba(0, 0, 0, 0.70);
+}
+
+[data-theme="neon"] .aboutModalContent {
+    background: var(--surfaceBackground);
+    border-color: var(--borderColor);
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(0, 240, 255, 0.06);
+    color: var(--textPrimary);
+}
+
+[data-theme="neon"] .aboutModalContent h2 {
+    color: var(--textPrimary);
+}
+
+[data-theme="neon"] .aboutIntroduction {
+    color: var(--textSecondary);
+}
+
+[data-theme="neon"] .aboutCloseButton {
+    color: var(--textSecondary);
+}
+
+[data-theme="neon"] .aboutCloseButton:hover {
+    background: var(--surfaceSoft);
+    color: var(--accentColor);
+}
+
+[data-theme="neon"] .developerCard {
+    background: var(--surfaceMuted);
+    border-color: var(--borderColor);
+    color: var(--textPrimary);
+}
+
+[data-theme="neon"] .developerCard:hover {
+    border-color: var(--accentColor);
+    box-shadow:
+        0 0 18px rgba(0, 240, 255, 0.08);
+}
+
+[data-theme="neon"] .developerCard h3 {
+    color: var(--textPrimary);
+}
+
+[data-theme="neon"] .developerCard p {
+    color: var(--textSecondary);
+}
+
+[data-theme="neon"] .aboutFooter {
+    color: var(--textMuted);
+}
+
+
+/* =========================================================
+   Quick Navigation
+   ========================================================= */
+
+[data-theme="neon"] .quickNavigationItem::before {
+    background: var(--borderStrong);
+}
+
+[data-theme="neon"] .quickNavigationItem:hover::before,
+[data-theme="neon"] .quickNavigationItem.isActive::before {
+    background: var(--accentColor);
+
+    box-shadow:
+        0 0 8px rgba(0, 240, 255, 0.45);
+}
+
+
+/* =========================================================
+   Back To Top
+   ========================================================= */
+
+[data-theme="neon"] .backToTop {
+    background: var(--surfaceBackground);
+    border-color: var(--borderColor);
+    color: var(--accentColor);
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="neon"] .backToTop:hover {
+    background: var(--accentColor);
+    border-color: var(--accentColor);
+    color: #070B12;
+
+    box-shadow:
+        0 0 18px rgba(0, 240, 255, 0.35);
+}
+
+
+/* =========================================================
+   Selection
+   ========================================================= */
+
+[data-theme="neon"] ::selection {
+    background: var(--accentColor);
+    color: #070B12;
+}
