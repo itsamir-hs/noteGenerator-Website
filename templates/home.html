@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>{{pageTitle}}</title>
+
+    <link
+        rel="icon"
+        href="./data/assets/favicon.svg"
+        type="image/svg+xml"
+    >
+
+    <meta
+        name="description"
+        content="{{pageDescription}}"
+    >
+
+    {{noteHead}}
+
+    <link rel="stylesheet" href="{{assetPrefix}}styles/base.css">
+    <link rel="stylesheet" href="{{assetPrefix}}styles/rtl.css">
+    <link rel="stylesheet" href="{{assetPrefix}}styles/responsive.css">
+    <link rel="stylesheet" href="{{assetPrefix}}styles/home.css">
+
+    <link
+        rel="stylesheet"
+        href="{{assetPrefix}}node_modules/katex/dist/katex.min.css"
+    >
+
+    <link rel="stylesheet" href="{{assetPrefix}}styles/dark.css">
+    <link rel="stylesheet" href="{{assetPrefix}}styles/forest.css">
+    <link rel="stylesheet" href="{{assetPrefix}}styles/paperLike.css">
+    <link rel="stylesheet" href="{{assetPrefix}}styles/neon.css">
+
+    <script src="{{assetPrefix}}node_modules/lucide/dist/umd/lucide.js"></script>
+</head>
+
+<body class="homeBody">
+
+    <header class="appHeader homeHeader">
+
+        <div class="appTitle">
+            {{pageTitle}}
+        </div>
+
+        <div class="headerControls">
+
+            <div class="themeSwitcher">
+                <button
+                    class="themeToggle"
+                    type="button"
+                    aria-label="تغییر پوسته"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="sun-moon"></i>
+                </button>
+
+                <div
+                    class="themeOptions"
+                    aria-hidden="true"
+                >
+                    <button
+                        class="themeButton isActive"
+                        type="button"
+                        data-theme="light"
+                        aria-pressed="true"
+                    >
+                        روشن
+                    </button>
+                    <button
+                        class="themeButton"
+                        type="button"
+                        data-theme="dark"
+                        aria-pressed="false"
+                    >
+                        تاریک
+                    </button>
+                    <button
+                        class="themeButton"
+                        type="button"
+                        data-theme="forest"
+                        aria-pressed="false"
+                    >
+                        جنگل
+                    </button>
+                    <button
+                        class="themeButton"
+                        type="button"
+                        data-theme="paperLike"
+                        aria-pressed="false"
+                    >
+                        کاغذی
+                    </button>
+                    <button
+                        class="themeButton"
+                        type="button"
+                        data-theme="neon"
+                        aria-pressed="false"
+                    >
+                        نئون
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="homeMain">
+
+        <section class="homeIntro">
+
+            <h1 class="homeHeading">
+                {{pageTitle}}
+            </h1>
+
+            <p class="homeSubtitle">
+                {{pageDescription}}
+            </p>
+
+        </section>
+
+        <section class="homeLibrary">
+
+            <div class="homeSearchWrapper">
+
+                <label class="homeSearchLabel" for="homeNoteFilter">
+                    جستجو در جزوه‌ها
+                </label>
+
+                <div class="homeSearchField">
+
+                    <i data-lucide="search"></i>
+
+                    <input
+                        class="homeSearchInput"
+                        id="homeNoteFilter"
+                        type="search"
+                        placeholder="عنوان، درس یا مبحث…"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+            </div>
+
+            <p class="homeCount" data-note-count hidden></p>
+
+            <ul class="noteList" data-note-list>
+{{noteList}}
+            </ul>
+
+            <p class="homeEmpty" data-note-empty hidden>
+                هیچ جزوه‌ای با این عبارت پیدا نشد.
+            </p>
+
+        </section>
+
+        <footer class="homeFooter">
+            {{pageFooter}}
+        </footer>
+
+    </main>
+
+<script src="{{assetPrefix}}src/themeSwitcher.js"></script>
+<script src="{{assetPrefix}}src/noteLibrary.js"></script>
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+
+</html>

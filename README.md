@@ -1,728 +1,429 @@
+<div align="right">
+
 # جزوه‌ساز — Note Renderer
 
-جزوه‌ساز (Note Renderer) یک ابزار برای تبدیل محتوای آموزشی ساختاریافته در قالب Markdown به یک جزوه HTML خوانا، واکنش‌گرا و قابل شخصی‌سازی است.
+**Turns structured educational Markdown into a readable, responsive, themeable
+HTML lecture note — and publishes a whole library of them as a static site.**
 
-این پروژه بخشی از یک pipeline بزرگ‌تر برای تبدیل محتوای خام آموزشی، صوت و اسلایدهای کلاس به جزوه است.
+[![Pages](https://img.shields.io/badge/site-live-4c8d2c)](https://itsamir-hs.github.io/noteGenerator-Website/)
+[![Tests](https://img.shields.io/badge/tests-18%20passing-2ea043)](#tests)
+[![License](https://img.shields.io/badge/license-ISC-blue)](#license)
 
----
-
-## ✨ قابلیت‌ها
-
-### پردازش محتوا
-
-* تبدیل Markdown به HTML
-* پشتیبانی از زبان فارسی و RTL
-* پشتیبانی از فرمول‌های ریاضی با KaTeX
-* پردازش و مدیریت مسیر تصاویر
-* پاک‌سازی و Sanitization خروجی HTML
-* تشخیص و نمایش Definition Box
-* پشتیبانی از ساختارهای مختلف برای تعریف‌ها
-* تبدیل جعبه‌های فراخوانی `> [!TYPE]` به باکس‌های رنگی (Callout Boxes)
-
-### Navigation
-
-* ساخت خودکار Table of Contents
-* Quick Navigation بین بخش‌های جزوه
-* Sidebar برای دسترسی سریع به بخش‌ها
-* نمایش بخش فعال هنگام Scroll
-* سازگاری Navigation با تغییرات DOM پس از جست‌وجو
-
-### Search
-
-* جست‌وجوی سریع در محتوای جزوه
-* نمایش تعداد نتایج
-* رفتن به نتیجه بعدی و قبلی
-* مشخص کردن نتیجه فعال
-* میانبر `Ctrl + F`
-* پاک کردن سریع جست‌وجو
-
-### Highlight
-
-* Highlight کردن متن انتخاب‌شده
-* چند رنگ آماده
-* انتخاب رنگ دلخواه
-* فعال و غیرفعال کردن Highlight
-* حالت پاک‌کن
-* ذخیره Highlightها در `localStorage`
-* بازیابی Highlightها پس از باز کردن مجدد جزوه
-
-### ظاهر و شخصی‌سازی
-
-* تغییر اندازه فونت
-* چند Theme مختلف
-* طراحی Responsive
-* حالت مناسب برای چاپ
-* پنجره معرفی پروژه و اعضای تیم
-* نمایش اطلاعات درس و جلسه
-* هشدار درباره تولید محتوای هوش مصنوعی
+</div>
 
 ---
 
-## 🎨 Themeها
+## Table of contents
 
-جزوه‌ساز از CSS Variables برای مدیریت Themeها استفاده می‌کند.
-
-Themeهای فعلی:
-
-| Theme      | وضعیت |
-| ---------- | ----- |
-| Light      | ✅     |
-| Dark       | ✅     |
-| Forest     | ✅     |
-| Paper Like | ✅     |
-| Neon       | ✅     |
-
-Theme فعال از طریق `data-theme` روی عنصر `<html>` مشخص می‌شود:
-
-```html
-<html data-theme="dark">
-```
-
-Themeها بدون تغییر در ساختار اصلی HTML می‌توانند ظاهر و رنگ‌های رابط کاربری را تغییر دهند.
+- [What it does](#what-it-does)
+- [Features](#features)
+- [Quick start](#quick-start)
+- [How a note is authored](#how-a-note-is-authored)
+- [Project layout](#project-layout)
+- [Output layout](#output-layout)
+- [The npm scripts](#the-npm-scripts)
+- [Notes without a source file](#notes-without-a-source-file)
+- [Rendering as a library](#rendering-as-a-library)
+- [Themes](#themes)
+- [How publishing works](#how-publishing-works)
+- [Tests](#tests)
+- [Configuration](#configuration)
+- [Project structure](#project-structure)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## 🧱 ساختار پروژه
+## What it does
 
-```text
-note_renderer/
-│
-├── config/
-│   └── renderer_config.json
-│
-├── data/
-│   └── input/
-│       └── note.md
-│
-├── output/
-│   └── index.html
-│
-├── src/
-│   ├── main.js
-│   ├── parser.js
-│   ├── renderer.js
-│   ├── callouts.js
-│   ├── tableOfContents.js
-│   ├── quickNavigation.js
-│   ├── search.js
-│   ├── highlight.js
-│   ├── themeSwitcher.js
-│   ├── fontSizeSwitcher.js
-│   ├── aboutModal.js
-│   ├── math_renderer.js
-│   └── image_handler.js
-│
-├── styles/
-│   ├── base.css
-│   ├── rtl.css
-│   ├── responsive.css
-│   ├── dark.css
-│   ├── forest.css
-│   ├── paperLike.css
-│   └── neon.css
-│
-├── templates/
-│   └── note.html
-│
-├── tests/
-│
-├── package.json
-├── package-lock.json
-└── README.md
-```
+Feed it a Markdown lecture note and it produces a single self-contained HTML
+page: right-to-left Persian typography, KaTeX formulas, a generated table of
+contents, sticky notes, text search, highlighting, five themes, and a print
+stylesheet.
+
+One note is one HTML file. A whole *library* of notes is a folder per note plus
+a home page that lists them, so a course, a semester or a personal study archive
+can all live at the same address.
+
+The site it produces is plain static files — no framework, no runtime, no
+server. It is published with GitHub Pages.
 
 ---
 
-## ⚙️ نصب
+## Features
 
-ابتدا وارد پروژه شوید:
+### Content
+
+| | |
+|---|---|
+| Markdown → HTML | via [marked](https://marked.js.org/), output sanitised with [DOMPurify](https://github.com/cure53/DOMPurify) |
+| Persian & RTL | `dir="rtl"`, RTL-aware layout, Latin text and code kept LTR |
+| Mathematics | `$inline$` and `$$display$$` rendered by [KaTeX](https://katex.org/) |
+| Tables | styled in every theme |
+| Code blocks | fenced blocks with language classes |
+| Images | resolved from `data/assets/`, and a path prefix that works from any folder depth |
+| Callout boxes | `> [!TIP]`, `> [!WARNING]`, `> [!IMPORTANT]`, `> [!NOTE]`, `> [!CAUTION]`, `> [!EXAMPLE]`, `> [!DEFINITION]`, `> [!KEY-POINT]`, `> [!EXAM-TIP]`, `> [!REVIEW]` |
+| Definition boxes | detected from `> **تعریف…**` blocks and from definition sections |
+| Ten sections | matched to a fixed template, with a positional fallback so a renamed heading never silently drops content |
+
+### Reading
+
+- **Table of contents** in a sidebar, generated from `h2`/`h3`, with sub-items styled
+- **Quick navigation** rail that tracks the section you are reading
+- **Search** (`Ctrl`/`Cmd` + `F`) with match count, next/previous and highlighting
+- **Highlighting** in eight colours, plus a custom colour, stored per note
+- **Sticky notes** you can create, drag, resize, delete and come back to — stored per note
+- **Font size** control
+- **Back to top**, revealed after scrolling
+- **Print stylesheet** that drops the whole interface and prints the note
+
+### Per note, not per site
+
+A note's highlights, sticky notes and scroll position are namespaced with its
+own slug, so switching notes never leaks one note's state into another. Theme
+and font size *are* shared, because those are yours, not the note's.
+
+---
+
+## Quick start
 
 ```bash
-cd ~/note_renderer/Bashligh/note_renderer
-```
-
-سپس وابستگی‌ها را نصب کنید:
-
-```bash
+git clone https://github.com/itsamir-hs/noteGenerator-Website.git
+cd noteGenerator-Website
 npm install
+npm run site      # render every note, then build the site
+npm run serve     # preview at http://localhost:8000
+```
+
+That is the whole loop. Add a `.md` file to `data/input/`, run `npm run site`,
+and the new note appears on the home page.
+
+---
+
+## How a note is authored
+
+A note is a Markdown file. The H1 is its title, and the lines directly beneath
+it are its metadata:
+
+```markdown
+# اصول کلی ایمنی و بهداشت آزمایشگاه
+
+**درس:** ایمنی و بهداشت آزمایشگاه
+**مبحث:** اصول کلی ایمنی و بهداشت فضا، کارکنان و محیط آزمایشگاه
+**استاد:** دکتر …
+**تاریخ جلسه:** 1405/07/10
+**تاریخ تولید جزوه:** 2026-10-01T18:37:36
+**نامک:** lab-safety
+
+## ۱. مقدمه و کلیات
+```
+
+| Field | Meaning | Required |
+|---|---|---|
+| `درس` | Course — shown in the header and on the home page | no |
+| `مبحث` | Topic — used to derive the folder name | no |
+| `استاد` | Instructor | no |
+| `تاریخ جلسه` | Session date | no |
+| `تاریخ تولید جزوه` | When the note was generated | no |
+| `نامک` | **Explicit folder name.** Set this when you want a short ASCII URL. | no |
+
+The folder a note is published under is resolved in this order: `نامک`, then
+`مبحث`, then `درس`, then the H1 title. Slugs keep the letters of their script,
+so a Persian title gives a Persian folder; punctuation and spaces are dropped
+and the name is capped at 48 characters. Two notes that resolve to the same
+folder get `-2`, `-3` suffixes rather than overwriting each other.
+
+---
+
+## Project layout
+
+```text
+.
+├── data/
+│   ├── input/            ← your notes go here (Markdown)
+│   ├── imported/         ← notes rendered elsewhere, kept as HTML
+│   └── assets/           ← images and the favicon notes reference
+├── renderedNotes/        ← output: one folder per note, each with index.html
+│   └── notes.json        ← manifest: every note, in order
+├── docs/                 ← output: the publishable site
+│   ├── index.html        ← the home page
+│   └── renderedNotes/    ← one folder per note
+├── templates/
+│   ├── note.html         ← note document template
+│   └── home.html         ← home page template
+├── styles/               ← base, theme, responsive, RTL, home
+├── src/                  ← renderer (Node) and browser scripts
+├── scripts/              ← site build, verification, local preview
+├── tests/                ← fixtures and assertions
+└── config/renderer_config.json
+```
+
+`renderedNotes/` and `docs/` are build output. Both are committed so the site
+is browsable and deployable straight from the repository, and both are
+regenerated from `data/` by `npm run site`.
+
+---
+
+## Output layout
+
+```text
+renderedNotes/
+├── سیستم-عصبی/
+│   └── index.html
+├── bone-marrow-on-a-chip/
+│   └── index.html
+└── notes.json
+```
+
+Every note is a folder containing an `index.html`, which is what makes
+`/renderedNotes/<slug>/` a clean URL and leaves room for a note to grow its own
+assets later.
+
+---
+
+## The npm scripts
+
+| Script | What it does |
+|---|---|
+| `npm run render` | Renders every source in `data/input/` and `data/imported/` into `renderedNotes/<slug>/index.html`, and writes `renderedNotes/notes.json` |
+| `npm run build` | Publishes the site into `docs/`: home page, notes, styles, scripts, KaTeX, images — then verifies it |
+| `npm run site` | `render` followed by `build` |
+| `npm test` | Runs the test suite |
+| `npm run serve` | Serves `docs/` at `http://localhost:8000` for a local preview |
+
+`npm run build` is also a verifier. It walks every published page, follows every
+relative link, and checks each note still carries its stylesheets, KaTeX, Lucide,
+storage helper, search panel, sticky-note layer, highlight switcher, table of
+contents and back-to-top button. A template edit that drops a script fails the
+build instead of shipping a quietly broken page.
+
+---
+
+## Notes without a source file
+
+Some notes in this library were rendered by a toolchain that is not in this
+repository. Rather than lose them, they live in `data/imported/` as finished
+HTML and are carried into the site as-is — only re-pointed at this site's
+assets, given their slug, and given the same navigation as everything else.
+
+**The file name is the URL.** Renaming `data/imported/bone-marrow-on-a-chip.html`
+changes the folder the note is published under, which is how you claim an
+address for a note that has no Markdown source.
+
+---
+
+## Rendering as a library
+
+`renderNoteHtml` is the single rendering entry point, so another tool produces
+byte-for-byte the same document instead of a second, drifting implementation.
+
+```js
+import { readFile } from "node:fs/promises";
+import { renderNoteHtml } from "./src/main.js";
+
+const { html, title, metadata, tocItems } = renderNoteHtml(
+    await readFile("./data/input/note.md", "utf8"),
+    {
+        template: await readFile("./templates/note.html", "utf8"),
+        rendererConfig: { theme: "light", language: "fa", enableMath: true },
+
+        // Where the note will be written decides how assets are referenced.
+        // "../" for a flat folder, "../../" for renderedNotes/<slug>/.
+        assetPrefix: "../../",
+
+        noteSlug: "lab-safety",
+        noteNavigation: "<nav>…</nav>"
+    }
+);
+```
+
+Lower level, if you only want a fragment:
+
+```js
+import { renderMarkdown } from "./src/renderer.js";
+
+const html = renderMarkdown(
+    markdown,
+    { enableMath: true },
+    { assetPrefix: "../../" }
+);
 ```
 
 ---
 
-## ▶️ اجرای پروژه
+## Themes
 
-برای تولید جزوه:
+Five themes, switched by `data-theme` on `<html>` and remembered between
+visits:
 
-```bash
-cd ~/note_renderer/Bashligh/note_renderer
-node src/main.js
-```
+| Key | Name | File |
+|---|---|---|
+| `light` | روشن | `styles/base.css` |
+| `dark` | تاریک | `styles/dark.css` |
+| `forest` | جنگل | `styles/forest.css` |
+| `paperLike` | کاغذی | `styles/paperLike.css` |
+| `neon` | نئون | `styles/neon.css` |
 
-در صورت موفقیت، خروجی در مسیر زیر تولید می‌شود:
-
-```text
-output/index.html
-```
-
-برای باز کردن خروجی در مرورگر:
-
-```bash
-cd ~/note_renderer/Bashligh/note_renderer
-xdg-open output/index.html
-```
+A theme name that does not match one of these — including a wrong-case one like
+`paperlike` — falls back to `light` instead of rendering with no palette at all.
+Adding a theme means a stylesheet, a `<link>` in both templates, and a button.
 
 ---
 
-## 🌐 انتشار روی GitHub Pages
-
-فایل‌های HTML داخل `output/` برای اجرا از داخل پوشه ساخته شده‌اند و به مسیرهایی مثل
-`../styles` و `../node_modules` اشاره می‌کنند. برای انتشار، اسکریپت build این مسیرها را
-به مسیرهای مستقل تبدیل می‌کند و یک سایت کامل و مستقل در پوشه `docs/` می‌سازد.
-
-```bash
-npm run build
-```
-
-ساختار سایت تولیدشده:
+## How publishing works
 
 ```text
-docs/
-├── index.html          # همهٔ فایل‌های HTML داخل output/
-├── notes.html          # فهرست جزوه‌ها
-├── styles/             # کپی styles/
-├── js/                 # فقط اسکریپت‌های سمت مرورگر از src/
-├── assets/             # تصاویر data/assets/
-└── vendor/             # katex.min.css، فونت‌های KaTeX و lucide
+data/input/*.md  ──┐
+                   ├──►  npm run render  ──►  renderedNotes/<slug>/index.html
+data/imported/  ──┘                             renderedNotes/notes.json
+                                                          │
+                                                          ▼
+                                                  npm run build
+                                                          │
+                                    ┌─────────────────────┴──────────────────┐
+                                    ▼                                        ▼
+                         docs/index.html (home)              docs/renderedNotes/<slug>/
 ```
 
-برای پیش‌نمایش محلی سایت ساخته‌شده:
+A note references shared assets from the project root, because that is where
+they live in the repository. The published site keeps the same shape — shared
+assets at the site root, notes underneath — so publishing is a directory rename
+(`src/` → `js/`, `data/assets/` → `assets/`, vendored bundles → `vendor/`)
+declared once in `scripts/siteLib.mjs`.
 
-```bash
-npm run serve
-```
-
-سپس در مرورگر باز کنید:
-
-```text
-http://localhost:8000
-```
-
-استقرار خودکار: هر بار که محتوا در `main` push شود، workflow زیر سایت را می‌سازد و منتشر می‌کند.
+GitHub Actions renders, tests, builds and deploys on every push to `main`:
 
 ```text
 .github/workflows/pages.yml
 ```
 
-پس از اولین push، در تنظیمات مخزن (Settings → Pages) منبع Publishing را روی
-`GitHub Actions` قرار دهید (workflow با `enablement` آن را خودکار فعال می‌کند).
+The live site is at **<https://itsamir-hs.github.io/noteGenerator-Website/>**.
+Pages itself is enabled with source *GitHub Actions*; the workflow only deploys,
+because a workflow token is not allowed to create the Pages site in the first
+place.
 
 ---
 
-## 📝 ورودی Markdown
+## Tests
 
-فایل ورودی اصلی:
-
-```text
-data/input/note.md
+```bash
+npm test
 ```
 
-ساختار پیشنهادی جزوه:
+No test framework — a plain script that throws on failure, so it runs anywhere
+Node does and is equally at home in CI.
 
-```markdown
-# عنوان جزوه
+It covers Markdown rendering per fixture (headings, lists, code, images, math,
+tables, RTL, callouts, definition boxes), sanitisation (script tags, event
+handler attributes and `javascript:` URLs must not survive), math toggling, note
+identity (metadata parsing, slugging, uniqueness, theme names), the rendered
+note document (no unresolved placeholders, per-note storage id, asset prefix,
+navigation, heading ids), literal `$` substitution, metadata escaping, and site
+assembly (path mapping, reference rewriting, the home page).
 
-**درس:** نام درس  
-**مبحث:** موضوع جلسه  
-**استاد:** نام استاد  
-**تاریخ جلسه:** تاریخ  
-**تاریخ تولید جزوه:** تاریخ
-
-## ۱. مقدمه و کلیات
-
-محتوای مقدمه...
-
-## ۲. متن اصلی جزوه
-
-محتوای اصلی...
-
-## ۳. تعاریف
-
-- **Term:** توضیح اصطلاح
-
-## ۴. نکات مهم
-
-نکات مهم...
-
-## ۵. مثال‌ها
-
-مثال‌ها...
-
-## ۶. جداول مرور سریع
-
-جداول...
-
-## ۷. اصطلاحات و تعاریف کلیدی
-
-### Term
-
-توضیح اصطلاح...
-
-## ۸. موارد نیازمند بررسی
-
-مواردی که نیاز به بررسی دارند...
-
-## ۹. منابع و مراجع
-
-منابع...
-
-## ۱۰. گزارش تکمیل بودن محتوا
-
-گزارش نهایی...
-```
+Add a fixture to `tests/sample_notes/` and declare its expectations in
+`expectedContent` or `forbiddenContent` in `tests/testRenderer.js`.
 
 ---
 
-## 📦 Definition Box
+## Configuration
 
-Renderer می‌تواند تعریف‌ها را به‌صورت خودکار به Definition Box تبدیل کند.
+`config/renderer_config.json`:
 
-برای مثال:
-
-```markdown
-> **تعریف — Lumen**
-> فضای داخلی یک ساختار لوله‌ای عروقی.
+```json
+{
+    "theme": "light",
+    "language": "fa",
+    "enableMath": true
+}
 ```
 
-یا در بخش تعاریف:
-
-```markdown
-## ۳. تعاریف
-
-- **Lumen:** فضای داخلی ساختارهای لوله‌ای عروقی.
-- **Mineralization:** معدنی‌شدن یک ناحیه تحت شرایط مشخص.
-```
-
-یا در بخش اصطلاحات:
-
-```markdown
-## ۷. اصطلاحات و تعاریف کلیدی
-
-### Lumen
-
-فضای داخلی ساختارهای لوله‌ای عروقی.
-
-### Mineralization
-
-معدنی‌شدن یک ناحیه تحت شرایط مشخص.
-```
-
-Renderer این ساختارها را تشخیص داده و به Definition Box تبدیل می‌کند.
+`theme` names one of the five themes above, `enableMath` turns KaTeX on or off.
+`language` is carried for the renderer's config shape and is not currently read
+by the Markdown pipeline.
 
 ---
 
-## 🔄 Pipeline
+## Project structure
 
-فرآیند کلی تولید جزوه:
+### The pipeline
 
 ```text
 Markdown
    │
-   ▼
-Parser
+   ├─► prepareMath / restoreMath   ← $…$ becomes a placeholder, then KaTeX HTML
+   ├─► parseMarkdown               ← marked
+   ├─► applyCallouts               ► [!TYPE] and definition blocks
+   ├─► definition boxes            ► DOM pass over h3s in definition sections
+   ├─► DOMPurify                   ← sanitise
+   └─► resolveImagePath            ← local images prefixed for this note's depth
    │
    ▼
-Markdown → HTML
-   │
-   ├── Math Processing
-   ├── Definition Detection
-   ├── Image Path Resolution
-   ├── HTML Sanitization
+tableOfContents                    ← stable heading ids
    │
    ▼
-Table of Contents
+mapSectionsToTemplate              ← sections onto the template's placeholders
    │
    ▼
-Template
-   │
-   ▼
-output/index.html
+templates/note.html                ← substituted and written
 ```
 
----
+### Browser scripts
 
-## 🧩 اجزای اصلی
+`src/` holds two kinds of file, and the build only publishes the second kind:
 
-### `main.js`
+| Node modules | Browser scripts |
+|---|---|
+| `main.js` — render API and CLI | `noteStorage.js` — per-note storage keys |
+| `renderer.js` — the pipeline | `themeSwitcher.js` |
+| `parser.js` — marked | `fontSizeSwitcher.js` |
+| `math_renderer.js` — KaTeX | `search.js` |
+| `callouts.js` | `highlight.js` |
+| `sanitizer.js` | `stickyNotes.js` |
+| `image_handler.js` | `quickNavigation.js` |
+| `tableOfContents.js` | `aboutModal.js` |
+| `noteIdentity.js` — slugs and metadata | `print.js` |
+|  | `backToTop.js` |
+|  | `viewPersistence.js` |
+|  | `noteLibrary.js` — home page filter |
 
-نقطه شروع اجرای Renderer است و مراحل اصلی تولید خروجی را مدیریت می‌کند.
-
-وظایف اصلی:
-
-* خواندن فایل Markdown
-* خواندن تنظیمات Renderer
-* اجرای Markdown Renderer
-* استخراج بخش‌های اصلی جزوه
-* ساخت Table of Contents
-* قرار دادن محتوا در Template
-* تولید فایل نهایی
-
----
-
-### `parser.js`
-
-وظیفه تبدیل Markdown به HTML را بر عهده دارد.
-
-برای Markdown Parsing از `marked` استفاده شده است.
+The list is declared in `scripts/siteLib.mjs`; a new browser script has to be
+added there to be published.
 
 ---
 
-### `renderer.js`
+## Roadmap
 
-لایه پردازش اصلی بین Markdown Parser و خروجی نهایی است.
-
-وظایف:
-
-* اجرای Markdown parsing
-* پردازش فرمول‌های ریاضی
-* تشخیص Definition Box
-* مدیریت مسیر تصاویر
-* HTML Sanitization
+- [ ] Source-level note management: a small editor or dashboard that writes
+      `data/input/*.md` through the same `renderNoteHtml` path
+- [ ] Grouping the home page by course, with a collapsible list per course
+- [ ] Full-text search across notes from the home page
+- [ ] Export a note to PDF, alongside the existing print stylesheet
+- [ ] Optional per-note `index.json` for notes that ship their own attachments
 
 ---
 
-### `tableOfContents.js`
+## Contributing
 
-Headingهای جزوه را شناسایی کرده و ساختار Table of Contents را ایجاد می‌کند.
+1. Fork, branch, make the change.
+2. Add or update a fixture and its expectations if you touched the pipeline.
+3. Run `npm test` and `npm run site` — the build must verify cleanly.
+4. Open a pull request describing what changed and why.
 
----
-
-### `quickNavigation.js`
-
-Navigation سریع بین بخش‌های جزوه را مدیریت می‌کند.
-
-این بخش به‌صورت پویا Sectionهای فعلی را دریافت می‌کند تا پس از تغییر DOM، مانند عملیات Search، Navigation همچنان درست کار کند.
-
----
-
-### `search.js`
-
-سیستم جست‌وجوی داخل جزوه را مدیریت می‌کند.
-
-قابلیت‌ها:
-
-* جست‌وجوی متن
-* Highlight نتایج
-* نتیجه بعدی و قبلی
-* شمارش نتایج
-* Clear کردن جست‌وجو
-* پشتیبانی از `Ctrl + F`
+Two things the build will stop you shipping: a note with an unresolved template
+placeholder, and a note that has lost a stylesheet, script or control. If the
+build complains about a broken reference, that reference is already broken for a
+reader.
 
 ---
 
-### `highlight.js`
-
-سیستم Highlight متن را مدیریت می‌کند.
-
-قابلیت‌ها:
-
-* رنگ‌های آماده
-* رنگ دلخواه
-* فعال/غیرفعال کردن Highlight
-* پاک‌کن
-* ذخیره Highlight
-* بازیابی Highlight
-
-Highlightها در `localStorage` مرورگر ذخیره می‌شوند.
-
----
-
-### `themeSwitcher.js`
-
-مسئول تغییر Theme رابط کاربری است.
-
-Theme فعال با attribute زیر مشخص می‌شود:
-
-```html
-<html data-theme="dark">
-```
-
----
-
-### `fontSizeSwitcher.js`
-
-اندازه فونت محتوای جزوه را کنترل می‌کند.
-
----
-
-### `math_renderer.js`
-
-مسئول آماده‌سازی و بازیابی فرمول‌های ریاضی برای پردازش صحیح Markdown و KaTeX است.
-
----
-
-### `image_handler.js`
-
-مسیر تصاویر موجود در Markdown را با مسیر مناسب خروجی هماهنگ می‌کند.
-
----
-
-## 📐 Responsive Design
-
-رابط کاربری برای اندازه‌های مختلف صفحه طراحی شده است.
-
-### Desktop
-
-تمرکز روی:
-
-* Sidebar
-* Quick Navigation
-* محتوای اصلی
-* کنترل‌های Header
-
-### Tablet
-
-عناصر جانبی برای استفاده بهتر از فضای صفحه کاهش پیدا می‌کنند.
-
-### Mobile
-
-رابط کاربری به حالت compact تغییر می‌کند:
-
-* کنترل‌های کوچک‌تر
-* Sidebar مناسب صفحه کوچک
-* جدول‌های قابل اسکرول
-* Modal سازگار با صفحه
-* Typography متناسب با موبایل
-
-Breakpoints اصلی:
-
-```text
-900px
-600px
-450px
-```
-
----
-
-## 🖨️ Print Support
-
-جزوه قابلیت چاپ مستقیم دارد.
-
-تنظیمات چاپ در CSS به‌گونه‌ای طراحی شده‌اند که Theme و رنگ‌های مهم محتوا تا حد امکان در خروجی چاپ حفظ شوند.
-
----
-
-## 📚 تکنولوژی‌ها
-
-این پروژه از تکنولوژی‌های زیر استفاده می‌کند:
-
-* HTML5
-* CSS3
-* JavaScript
-* Node.js
-* Markdown
-* Marked
-* KaTeX
-* DOMPurify
-* JSDOM
-* Lucide Icons
-
----
-
-## 🔌 رندر به‌صورت کتابخانه‌ای (API)
-
-`src/main.js` علاوه بر اجرای CLI (`node src/main.js`)، یک تابع قابل import هم ارائه می‌دهد تا ابزارهای دیگر (مثل داشبورد ویرایش انسانی) خروجی رندر دقیقاً یکسان تولید کنند:
-
-```javascript
-import { renderNoteHtml } from "./src/main.js";
-
-const { html, title, metadata, tocItems } = renderNoteHtml(markdownContent, {
-    template,            // محتوای templates/note.html
-    rendererConfig       // { theme, language, enableMath } از config/renderer_config.json
-});
-```
-
-نکات:
-
-* `renderNoteHtml` هیچ فایلی را نمی‌نویسد و هیچ اثر جانبی ندارد؛ فقط HTML نهایی را برمی‌گرداند.
-* بخش‌های قالب با ترتیب **عنوان → شمارهٔ ابتدای عنوان → ترتیب مکانی** نگاشت می‌شوند، بنابراین تغییر نام یک عنوان باعث حذف محتوا نمی‌شود. بخش‌های اضافی به انتهای `mainContent` اضافه می‌شوند.
-* مقدار `rendererConfig.theme` در خصیصهٔ `data-theme` خروجی اعمال می‌شود.
-
-## 📦 جعبه‌های فراخوانی (Callout Boxes)
-
-ماژول `src/callouts.js` بدون وابستگی خارجی است و هم در رندر کنندهٔ Bashligh و هم در داشبورد ویرایش استفاده می‌شود:
-
-```javascript
-import { applyCallouts, CALLOUT_TYPES, getCalloutLabel, normalizeCalloutType } from "./callouts.js";
-```
-
-نگارش‌های پشتیبانی‌شده در Markdown:
-
-```markdown
-> **تعریف — یک سلول**     ← باکس موجود Definition Box (بدون تغییر)
-> پاسخ جزئی
-
-> [!IMPORTANT] نکته مهم
->
-> بدنهٔ جعبه
-```
-
-انواع: `note`، `tip`، `important`، `warning`، `caution`، `definition`، `example`، `exam-tip`، `key-point`، `review`، `custom`
-
-خروجی به شکل زیر است:
-
-```html
-<div class="calloutBox calloutBox--important" data-callout="important">
-    <p class="calloutBoxTitle">نکته مهم</p>
-    <p>بدنهٔ جعبه</p>
-</div>
-```
-
-رنگ هر نوع از متغیرهای موجود در `styles/base.css` (`--importantColor`، `--warningColor`، …) استفاده می‌کند.
-
----
-
-## 👥 اعضای تیم
-
-| عضو                             | مسئولیت                                   |
-| ------------------------------- | ----------------------------------------- |
-| شبنم رضاپور                     | استخراج فایل‌ها                           |
-| امیر حسین شکری‌زاده سعادت‌آبادی | پردازش صوت و ویدیو                        |
-| مهراد اسدی                      | Prompt Engineering و پردازش با هوش مصنوعی |
-| امیر سالار سهام‌پور             | Frontend و طراحی رابط کاربری              |
-
----
-
-## 🧠 معماری کلی پروژه
-
-```text
-Input / Extraction
-        │
-        ▼
-Audio & Video Processing
-        │
-        ▼
-AI Processing
-        │
-        ▼
-Markdown
-        │
-        ▼
-Note Renderer
-        │
-        ▼
-HTML Note
-```
-
----
-
-## 🛠️ Naming Convention
-
-نام‌گذاری کد پروژه از قوانین زیر پیروی می‌کند.
-
-### Functions
-
-```text
-get...
-set...
-fetch...
-create...
-update...
-delete...
-validate...
-calculate...
-```
-
-### Boolean
-
-```text
-is...
-can...
-has...
-should...
-```
-
-### General
-
-* استفاده از `lowerCamelCase`
-* استفاده از نام‌های انگلیسی
-* حداقل تعداد کلمات ممکن
-* پرهیز از abbreviationهای نامشخص
-* استفاده از نام‌های self-explanatory
-* ترجیح نام‌های دقیق و قابل فهم به نام‌های کوتاه و مبهم
-
----
-
-## 🚧 وضعیت پروژه
-
-پروژه در حال توسعه است.
-
-### Completed
-
-* [x] Markdown Renderer
-* [x] RTL Layout
-* [x] Metadata
-* [x] Table of Contents
-* [x] Sidebar
-* [x] Quick Navigation
-* [x] Search
-* [x] Text Highlight
-* [x] Definition Boxes
-* [x] Font Size Control
-* [x] Theme Switcher
-* [x] Light Theme
-* [x] Dark Theme
-* [x] Forest Theme
-* [x] Paper Like Theme
-* [x] Neon Theme
-* [x] About Modal
-* [x] Responsive Layout
-* [x] Print Support
-
-### Planned
-
-* [ ] بهبود سیستم Navigation
-* [ ] تست‌های خودکار بیشتر
-* [ ] مدیریت بهتر خطاها
-* [ ] پشتیبانی از ورودی‌های متنوع‌تر
-* [ ] بهبود پردازش محتوای آموزشی
-* [ ] رابط کاربری کامل‌تر برای تولید جزوه
-
----
-
-## 📄 License
-
-این پروژه در حال توسعه برای استفاده و آزمایش تیمی است.
-
-جزئیات License در آینده مشخص خواهد شد.
-
----
-
-## 💡 هدف نهایی
-
-جزوه‌ساز قرار نیست فقط یک Markdown Renderer باشد.
-
-هدف نهایی پروژه ساخت یک pipeline کامل برای تبدیل محتوای خام آموزشی به جزوه‌ای:
-
-* ساختاریافته
-* خوانا
-* قابل مرور
-* قابل شخصی‌سازی
-* مناسب برای مطالعه
-
-است.
-
-```text
-Raw Educational Content
-          ↓
-      Processing
-          ↓
-    AI Assistance
-          ↓
-       Markdown
-          ↓
-    Note Renderer
-          ↓
-  Structured Note
-          ↓
-   Better Learning
-```
+## License
+
+ISC. The notes, images and any third-party content under `data/` are the
+property of their authors.
+
+Built with [marked](https://marked.js.org/),
+[DOMPurify](https://github.com/cure53/DOMPurify),
+[KaTeX](https://katex.org/),
+[Lucide](https://lucide.dev/) and [jsdom](https://github.com/jsdom/jsdom).

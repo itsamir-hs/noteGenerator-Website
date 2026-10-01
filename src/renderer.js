@@ -112,10 +112,24 @@ function createDefinitionBoxes(htmlContent) {
     return body.innerHTML;
 }
 
+/**
+ * Render Markdown into note HTML.
+ *
+ * @param {string} markdownContent - Note source in Markdown.
+ * @param {Object} rendererConfig - `{ theme, language, enableMath }`.
+ * @param {Object} [options]
+ * @param {string} [options.assetPrefix="../"] - Prefix prepended to relative
+ *   asset paths, so the same note works from a flat folder or a nested one.
+ * @returns {string} Sanitized HTML fragment.
+ */
 export function renderMarkdown(
     markdownContent,
-    rendererConfig
+    rendererConfig,
+    options = {}
 ) {
+    const assetPrefix =
+        options.assetPrefix ?? "../";
+
     const processedMarkdown =
         rendererConfig.enableMath
             ? prepareMath(markdownContent)
@@ -148,7 +162,8 @@ export function renderMarkdown(
         /(<img\b[^>]*\bsrc=")([^"]+)(")/g,
         (_, prefix, imagePath, suffix) => {
             return `${prefix}${resolveImagePath(
-                imagePath
+                imagePath,
+                assetPrefix
             )}${suffix}`;
         }
     );

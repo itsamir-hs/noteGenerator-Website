@@ -1,9 +1,14 @@
 /* =========================================================
    View Persistence
+
+   Each note remembers its own scroll position, so the key is
+   namespaced with the current note id (see noteStorage.js).
    ========================================================= */
 
 const scrollStorageKey =
-    "noteScrollPosition";
+    noteScopedStorageKey(
+        "noteScrollPosition"
+    );
 
 
 let scrollSaveTimer = null;

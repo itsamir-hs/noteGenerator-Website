@@ -1,0 +1,284 @@
+/* =========================================================
+   Home — Note Library
+   ========================================================= */
+
+.homeBody {
+    min-height: 100vh;
+
+    background: var(--pageBackground);
+}
+
+.homeHeader {
+    position: sticky;
+}
+
+.homeMain {
+    width: min(100% - 48px, var(--contentWidth));
+
+    margin: 0 auto;
+
+    padding-top:
+        calc(var(--headerHeight) + 56px);
+    padding-bottom: 64px;
+}
+
+.homeIntro {
+    margin-bottom: 40px;
+}
+
+.homeHeading {
+    margin: 0 0 12px;
+
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.4;
+
+    color: var(--textPrimary);
+}
+
+.homeSubtitle {
+    margin: 0;
+
+    font-size: 17px;
+
+    color: var(--textSecondary);
+}
+
+.homeSearchWrapper {
+    margin-bottom: 20px;
+}
+
+.homeSearchLabel {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: var(--textMuted);
+}
+
+.homeSearchField {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.homeSearchField svg {
+    position: absolute;
+    right: 14px;
+
+    width: 18px;
+    height: 18px;
+
+    color: var(--textMuted);
+
+    pointer-events: none;
+}
+
+.homeSearchInput {
+    width: 100%;
+
+    padding: 12px 42px 12px 16px;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    background: var(--surfaceBackground);
+    color: var(--textPrimary);
+
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusMedium);
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.homeSearchInput::placeholder {
+    color: var(--textMuted);
+}
+
+.homeSearchInput:focus {
+    outline: none;
+
+    border-color: var(--accentColor);
+
+    box-shadow: 0 0 0 3px var(--accentSoft);
+}
+
+.homeCount {
+    margin: 0 0 16px;
+
+    font-size: 13px;
+
+    color: var(--textMuted);
+}
+
+.homeCount[hidden],
+.homeEmpty[hidden] {
+    display: none;
+}
+
+.noteList {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.noteList:empty {
+    display: none;
+}
+
+.noteCard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    height: 100%;
+
+    padding: 20px;
+
+    background: var(--surfaceBackground);
+    color: inherit;
+
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusLarge);
+
+    text-decoration: none;
+
+    box-shadow: var(--shadowSmall);
+
+    transition:
+        border-color 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.noteCard:hover {
+    border-color: var(--accentColor);
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadowMedium);
+}
+
+.noteCard:focus-visible {
+    outline: 2px solid var(--accentColor);
+    outline-offset: 3px;
+}
+
+.noteCardTitle {
+    margin: 0;
+
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.6;
+
+    color: var(--textPrimary);
+}
+
+.noteCardFacts {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    margin: 0;
+
+    font-size: 13px;
+
+    color: var(--textSecondary);
+}
+
+.noteCardFact {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.noteCardFactLabel {
+    color: var(--textMuted);
+}
+
+.noteCardFactValue {
+    color: var(--textSecondary);
+}
+
+.noteCardSlug {
+    margin-top: auto;
+
+    padding-top: 10px;
+
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    direction: ltr;
+    text-align: right;
+
+    color: var(--textMuted);
+
+    border-top: 1px solid var(--borderColor);
+}
+
+.homeEmpty {
+    margin: 0;
+
+    padding: 32px;
+
+    text-align: center;
+
+    color: var(--textMuted);
+
+    background: var(--surfaceMuted);
+
+    border: 1px dashed var(--borderColor);
+    border-radius: var(--radiusLarge);
+}
+
+.homeFooter {
+    margin-top: 48px;
+    padding-top: 20px;
+
+    font-size: 13px;
+
+    color: var(--textMuted);
+
+    border-top: 1px solid var(--borderColor);
+}
+
+@media (max-width: 600px) {
+    .homeMain {
+        width: min(100% - 32px, var(--contentWidth));
+
+        padding-top: calc(var(--headerHeight) + 32px);
+    }
+
+    .homeHeading {
+        font-size: 26px;
+    }
+
+    .noteList {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+    .homeHeader,
+    .homeSearchWrapper,
+    .homeCount {
+        display: none;
+    }
+
+    .noteCard {
+        break-inside: avoid;
+
+        box-shadow: none;
+    }
+}

@@ -8,7 +8,8 @@
     "test": "node tests/testRenderer.js",
     "render": "node src/main.js",
     "build": "node scripts/build-site.mjs",
-    "serve": "node scripts/serve-site.mjs"
+    "serve": "node scripts/serve-site.mjs",
+    "site": "npm run render && npm run build"
   },
   "keywords": [],
   "author": "",

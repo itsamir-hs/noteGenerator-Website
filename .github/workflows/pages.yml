@@ -34,13 +34,14 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Build site into docs/
+      - name: Render every note
+        run: npm run render
+
+      - name: Build and verify the site
         run: npm run build
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

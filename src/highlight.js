@@ -1,3 +1,12 @@
+/* =========================================================
+   Highlight
+
+   Highlights are stored as node paths relative to .noteContainer,
+   so they only make sense for the note they were made in and are
+   namespaced with the current note id (see noteStorage.js). The
+   on/off preference stays global.
+   ========================================================= */
+
 const highlightSwitcher =
     document.querySelector(".highlightSwitcher");
 
@@ -38,7 +47,9 @@ let highlightCounter = 0;
 const highlights = new Map();
 
 const highlightStorageKey =
-    "noteHighlights";
+    noteScopedStorageKey(
+        "noteHighlights"
+    );
 
 const highlightPowerStorageKey =
     "highlightEnabled";

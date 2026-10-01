@@ -242,6 +242,18 @@ function goToPreviousResult() {
 }
 
 
+const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
+
+
+/** Result counts are read in Persian digits, like the rest of the interface. */
+function toPersianDigits(value) {
+    return String(value).replace(
+        /\d/g,
+        (digit) => persianDigits[Number(digit)]
+    );
+}
+
+
 function updateSearchInfo() {
     const totalResults = searchResults.length;
 
@@ -259,7 +271,7 @@ function updateSearchInfo() {
     }
 
     searchResultsCount.textContent =
-        `${currentResultIndex + 1} از ${totalResults}`;
+        `${toPersianDigits(currentResultIndex + 1)} از ${toPersianDigits(totalResults)}`;
 
     searchPreviousButton.disabled = false;
     searchNextButton.disabled = false;
