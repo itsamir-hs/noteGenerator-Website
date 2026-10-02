@@ -4,6 +4,22 @@ import katex from "katex";
 
 const mathExpressions = new Map();
 
+/**
+ * KaTeX has no glyphs for Arabic-script letters, so an expression containing
+ * Persian text cannot be typeset — it renders as an error box plus a wall of
+ * "Unrecognized Unicode character" warnings.
+ *
+ * The dollar-sign heuristic cannot tell prose from a formula, and Persian notes
+ * use `$` as an ordinary character often enough that a stray pair would swallow
+ * a whole sentence. Where an expression is not typesettable we leave the source
+ * text exactly as written, which is what a reader expects.
+ */
+const unTypesettableScriptPattern = /\p{Script=Arabic}/u;
+
+function isTypesettable(expression) {
+    return !unTypesettableScriptPattern.test(expression);
+}
+
 function prepareMath(markdownContent) {
     mathExpressions.clear();
 
@@ -14,7 +30,11 @@ function prepareMath(markdownContent) {
 
     let processedContent = markdownContent.replace(
         blockPattern,
-        (_, expression) => {
+        (placeholderMatch, expression) => {
+            if (!isTypesettable(expression)) {
+                return placeholderMatch;
+            }
+
             const placeholder = `MATH_BLOCK_${expressionIndex}`;
 
             mathExpressions.set(
@@ -33,7 +53,11 @@ function prepareMath(markdownContent) {
 
     processedContent = processedContent.replace(
         inlinePattern,
-        (_, expression) => {
+        (placeholderMatch, expression) => {
+            if (!isTypesettable(expression)) {
+                return placeholderMatch;
+            }
+
             const placeholder = `MATH_INLINE_${expressionIndex}`;
 
             mathExpressions.set(

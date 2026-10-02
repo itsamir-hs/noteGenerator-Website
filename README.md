@@ -208,8 +208,14 @@ assets later.
 `npm run build` is also a verifier. It walks every published page, follows every
 relative link, and checks each note still carries its stylesheets, KaTeX, Lucide,
 storage helper, search panel, sticky-note layer, highlight switcher, table of
-contents and back-to-top button. A template edit that drops a script fails the
-build instead of shipping a quietly broken page.
+contents and back-to-top button — and that every page opens and closes its
+`html`, `head` and `body` exactly once, since a browser silently repairs a
+broken document and would otherwise hide it. A template edit that drops a script
+fails the build instead of shipping a quietly broken page.
+
+If one source file cannot be rendered, the others still are: `npm run render`
+reports the failures and exits non-zero, so a single unusable file costs you that
+note rather than the whole library, and CI still stops.
 
 ---
 
@@ -220,9 +226,50 @@ repository. Rather than lose them, they live in `data/imported/` as finished
 HTML and are carried into the site as-is — only re-pointed at this site's
 assets, given their slug, and given the same navigation as everything else.
 
-**The file name is the URL.** Renaming `data/imported/bone-marrow-on-a-chip.html`
-changes the folder the note is published under, which is how you claim an
-address for a note that has no Markdown source.
+Importing is **idempotent**: importing a page this project already published
+changes nothing rather than stacking a second copy of the storage helper, the
+note id and the navigation on top of the first.
+
+### Giving a note its own images
+
+Image file names collide across courses — two different subjects both have an
+`image2.jpg`. A pre-rendered note points at `data/assets/…` in *its* repository,
+so repointing that at this repository's copy can silently put the wrong picture
+in a note. Nothing errors; the note just shows someone else's diagram.
+
+So a note may bring its own images. Put them in an `assets/` folder beside it:
+
+```text
+data/imported/
+├── anatomy-heart.html
+├── anatomy-heart/
+│   └── assets/          ← the 11 images this note's HTML asks for
+│       ├── image1.jpg
+│       └── …
+```
+
+Those references are rewritten to point inside the note's own folder, and the
+images travel with it into `renderedNotes/<slug>/assets/`. A note can equally
+live in a folder with its assets:
+
+```text
+data/imported/
+├── osmosis/
+│   ├── osmosis.html     ← named after the folder
+│   └── assets/
+```
+
+Notes are found at either layout, at any depth, and the extension's case does not
+matter. Anything left pointing at the shared library is reported at build time:
+
+```text
+  osmosis: 1 asset(s) still come from the shared data/assets library
+  (assets/image5.png). A name shared with another note may not be the same
+  picture — copy them into data/imported/osmosis/assets/ to be safe.
+```
+
+**The name is the URL.** Renaming the file (or the folder) changes the address
+the note is published at.
 
 ---
 
@@ -337,6 +384,20 @@ composition (includes expand, an unknown partial is reported by name, an
 unexpanded include is rejected), the About dialog being identical on both pages,
 the library's search styles, and site assembly (path mapping, reference
 rewriting, the home page).
+
+The awkward cases have fixtures too, because each was a real bug: a byte order
+mark in front of the title, an empty file, a note with no metadata, hostile
+metadata, a slug trying to escape the project, more sections than the template
+has slots, headings carrying inline markup, an absolute or traversing image path,
+and a stray `$` in Persian prose.
+
+The import path is exercised end to end against a throwaway project on disk,
+because the rules that matter there — which files are discovered, where their
+assets come from, what happens to a folder nobody claims — only exist on disk:
+pre-rendered adoption, idempotent re-import, note-owned versus borrowed assets,
+case-insensitive and nested discovery, colliding names getting distinct folders,
+one unusable file not taking the library down with it, and a deleted source
+having its published folder removed.
 
 Add a fixture to `tests/sample_notes/` and declare its expectations in
 `expectedContent` or `forbiddenContent` in `tests/testRenderer.js`.

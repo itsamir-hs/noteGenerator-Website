@@ -26,8 +26,10 @@ const projectDirectory = resolve(
     ".."
 );
 
+const renderedNotesDirectory = "renderedNotes";
+
 const paths = {
-    renderedNotes: join(projectDirectory, "renderedNotes"),
+    renderedNotes: join(projectDirectory, renderedNotesDirectory),
     siteDirectory: join(projectDirectory, "docs"),
     styles: join(projectDirectory, "styles"),
     scripts: join(projectDirectory, "src"),
@@ -35,7 +37,7 @@ const paths = {
     katex: join(projectDirectory, "node_modules", "katex", "dist"),
     lucide: join(projectDirectory, "node_modules", "lucide", "dist", "umd"),
     homeTemplate: join(projectDirectory, "templates", "home.html"),
-    manifest: join(projectDirectory, "renderedNotes", "notes.json")
+    manifest: join(projectDirectory, renderedNotesDirectory, "notes.json")
 };
 
 /**
@@ -49,10 +51,17 @@ async function copyRequired(from, to) {
     try {
         await cp(from, to, { recursive: true });
     } catch (error) {
+        if (error.code === "ENOENT") {
+            const missing = new Error(
+                `Cannot publish ${to.slice(projectDirectory.length + 1)}: ` +
+                `source not found (${from}). Run \`npm install\` or \`npm run render\` first.`
+            );
+            missing.code = "MISSING_SOURCE";
+            throw missing;
+        }
+
         throw new Error(
-            `Cannot publish ${to.slice(projectDirectory.length + 1)}: ` +
-            `${error.code === "ENOENT" ? "source not found" : error.message} (${from}). ` +
-            "Run `npm install` first."
+            `Cannot publish ${to.slice(projectDirectory.length + 1)}: ${error.message}`
         );
     }
 }
@@ -73,6 +82,9 @@ async function readManifest() {
 /**
  * Copy a rendered note into the site, repointing its asset references.
  *
+ * A note that owns assets keeps them in its own folder so its images travel
+ * with it rather than depending on whatever else shares their file name.
+ *
  * @param {Object} note - Manifest entry.
  */
 async function publishNote(note) {
@@ -81,12 +93,37 @@ async function publishNote(note) {
 
     const html = await readFile(source, "utf8");
 
-    await mkdir(join(target, ".."), { recursive: true });
+    await mkdir(dirname(target), { recursive: true });
     await writeFile(
         target,
         rewriteAssetReferences(html, note.path),
         "utf8"
     );
+
+    const noteAssets = join(
+        projectDirectory,
+        renderedNotesDirectory,
+        note.slug,
+        "assets"
+    );
+
+    try {
+        await copyRequired(
+            noteAssets,
+            join(
+                paths.siteDirectory,
+                renderedNotesDirectory,
+                note.slug,
+                "assets"
+            )
+        );
+    } catch (error) {
+        // Only assets the note claims to own are required; the rest may simply
+        // not exist, which the link check below would report if it mattered.
+        if (!(error.code === "MISSING_SOURCE")) {
+            throw error;
+        }
+    }
 }
 
 async function publishHomePage(notes) {

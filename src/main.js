@@ -6,13 +6,15 @@
 // instead of a second, drifting HTML implementation.
 
 import {
+    copyFile,
     mkdir,
     readdir,
     readFile,
     rm,
+    stat,
     writeFile
 } from "node:fs/promises";
-import { join } from "node:path";
+import { basename, dirname, join, relative } from "node:path";
 import { pathToFileURL } from "node:url";
 import { renderMarkdown } from "./renderer.js";
 import { createTableOfContents } from "./tableOfContents.js";
@@ -22,7 +24,8 @@ import {
     extractMetadata,
     extractNoteTitle,
     normalizeThemeName,
-    resolveNoteSlug
+    resolveNoteSlug,
+    stripByteOrderMark
 } from "./noteIdentity.js";
 import { resolveTemplateIncludes } from "./templateIncludes.js";
 
@@ -227,11 +230,15 @@ export function renderNoteHtml(markdownContent, options = {}) {
     const assetPrefix = options.assetPrefix ?? "../";
     const noteSlug = options.noteSlug ?? "note";
 
-    const noteTitle = extractNoteTitle(markdownContent);
-    const metadata = extractMetadata(markdownContent);
+    // Strip any BOM once, here, so the title and metadata parsers and the
+    // Markdown pipeline all see the same characters.
+    const source = stripByteOrderMark(markdownContent);
+
+    const noteTitle = extractNoteTitle(source);
+    const metadata = extractMetadata(source);
 
     const renderedMarkdown = renderMarkdown(
-        markdownContent,
+        source,
         rendererConfig,
         { assetPrefix }
     );
@@ -382,7 +389,7 @@ const notesManifestName = "notes.json";
  * Persian slug is the readable one — but must stay safe as a directory name and
  * as one URL path segment.
  */
-const unsafeSlugCharacters = /[\\/:*?"<>| -]/;
+const unsafeSlugCharacters = /[\\/:*?"<>|\u0000-\u001F]/;
 
 function assertPublishableSlug(slug, source) {
     const problem =
@@ -400,6 +407,13 @@ function assertPublishableSlug(slug, source) {
     }
 }
 
+/**
+ * List files in a directory by extension.
+ *
+ * The extension is matched without regard to case: a note saved as
+ * `ANATOMY.HTML` on Windows or macOS would otherwise be ignored in silence,
+ * leaving the operator to wonder why their note never appeared.
+ */
 async function listFiles(directory, extension) {
     let entries;
 
@@ -414,8 +428,16 @@ async function listFiles(directory, extension) {
         throw error;
     }
 
+    const wantedExtension = extension.toLowerCase();
+
     return entries
-        .filter((entry) => entry.isFile() && entry.name.endsWith(extension))
+        .filter(
+            (entry) =>
+                entry.isFile() &&
+                entry.name.toLowerCase().endsWith(
+                    wantedExtension
+                )
+        )
         .map((entry) => entry.name)
         .sort((a, b) => a.localeCompare(b));
 }
@@ -444,11 +466,11 @@ function identifyMarkdownSource(fileName, markdownContent) {
  * notes produced before the site existed — the file name is the slug, so
  * renaming the file is how an operator claims a URL for it.
  */
-function identifyImportedNote(fileName, html) {
+function identifyImportedNote(source, html) {
     const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/i);
     const title = titleMatch
         ? toPlainText(titleMatch[1])
-        : fileName.replace(/\.html?$/i, "");
+        : withoutExtension(basename(source));
 
     const metaOf = (name) => {
         const match = html.match(
@@ -469,13 +491,22 @@ function identifyImportedNote(fileName, html) {
         slug: metaOf("note-slug")
     };
 
+    // A note inside a folder of its own is named after that folder, not after its
+    // file: `data/imported/foldered/note.html` becomes `foldered`, which is also
+    // where its assets live. A note kept flat is named after its file.
+    const folder = dirname(source);
+    const nameHint =
+        folder === "." || folder === ""
+            ? basename(source)
+            : folder;
+
     const slug =
         metadata.slug ||
-        createNoteSlug(fileName.replace(/\.html?$/i, ""));
+        createNoteSlug(withoutExtension(nameHint));
 
     return {
         kind: "imported",
-        source: `${importedDirectory}/${fileName}`,
+        source: `${importedDirectory}/${source}`,
         title,
         metadata,
         slug
@@ -516,15 +547,17 @@ async function collectNoteIdentities() {
         );
     }
 
-    for (const fileName of await listFiles(importedDirectory, ".html")) {
+    for (const source of await listImportedNotes()) {
         const html = await readFile(
-            join(importedDirectory, fileName),
+            join(importedDirectory, source),
             "utf8"
         );
 
-        identities.push(
-            claim(identifyImportedNote(fileName, html))
-        );
+        const identity = identifyImportedNote(source, html);
+
+        identity.relativeSource = source;
+
+        identities.push(claim(identity));
     }
 
     // Library order: course first, then topic, then title, with the slug as a
@@ -595,6 +628,98 @@ async function removeStaleNoteFolders(identities) {
     }
 }
 
+/**
+ * Render one note and queue its output.
+ *
+ * Kept separate from the loop so a single unusable file can be reported
+ * without taking every other note down with it.
+ *
+ * @throws When the note cannot be rendered or adopted.
+ */
+async function renderIdentity({
+    identity, identities, index, template, rendererConfig,
+    assetPrefix, rendered, notes
+}) {
+    const previousNote = identities[index - 1] ?? null;
+    const nextNote = identities[index + 1] ?? null;
+
+    const navigation = createNoteNavigation({
+        // "Up to the library root": the same prefix that reaches the shared
+        // assets from this note's folder.
+        homeHref: assetPrefix,
+        previous: previousNote && {
+            title: previousNote.title,
+            // Notes are siblings, so leave the current folder first.
+            href: `../${previousNote.slug}/`
+        },
+        next: nextNote && {
+            title: nextNote.title,
+            href: `../${nextNote.slug}/`
+        }
+    });
+
+    let html;
+
+    if (identity.kind === "markdown") {
+        const markdownContent = await readFile(
+            identity.source,
+            "utf8"
+        );
+
+        html = renderNoteHtml(markdownContent, {
+            template,
+            rendererConfig,
+            assetPrefix,
+            noteSlug: identity.slug,
+            noteNavigation: navigation
+        });
+    } else {
+        const importedHtml = await readFile(
+            identity.source,
+            "utf8"
+        );
+
+        const ownedAssets =
+await collectImportedAssets(
+                    identity.relativeSource
+                );
+
+        const { html: adopted, sharedReferences } =
+            adoptImportedAssetReferences(
+                importedHtml,
+                ownedAssets
+            );
+
+        identity.ownedAssets = ownedAssets;
+        identity.sharedAssetReferences = sharedReferences;
+
+        html = adoptImportedNote(adopted, {
+            identity,
+            navigation
+        });
+    }
+
+    // Held in memory until every note has rendered: a note that fails
+    // halfway through must not leave the library half-rebuilt.
+    rendered.push({ identity, html });
+
+    notes.push({
+        slug: identity.slug,
+        title: identity.title,
+        course: identity.metadata.courseName,
+        topic: identity.metadata.topic,
+        instructor: identity.metadata.instructor,
+        sessionDate: identity.metadata.sessionDate,
+        generated: identity.metadata.generatedDate,
+        origin: identity.kind,
+        source: identity.source,
+        ownsAssets: (identity.ownedAssets ?? []).length,
+        sharedAssetReferences:
+            identity.sharedAssetReferences ?? [],
+        path: `${outputDirectory}/${identity.slug}/index.html`
+    });
+}
+
 export async function renderAllNotes(options = {}) {
     const identities = await collectNoteIdentities();
 
@@ -610,59 +735,48 @@ export async function renderAllNotes(options = {}) {
 
     const rendererConfig = await readRendererConfig();
 
-    await mkdir(outputDirectory, { recursive: true });
-    await removeStaleNoteFolders(identities);
-
     const notes = [];
+
+    // Sources that could not be rendered. The good notes are still written, and
+    // the process exits non-zero at the end so this can never pass unnoticed.
+    const failures = [];
+
+    // Nothing is written until every note has rendered: a failure part way
+    // through must leave the previous library intact rather than half-rebuilt.
+    const rendered = [];
 
     const assetPrefix = options.assetPrefix ?? "../../";
 
     for (const [index, identity] of identities.entries()) {
-        const previousNote = identities[index - 1] ?? null;
-        const nextNote = identities[index + 1] ?? null;
-
-        const navigation = createNoteNavigation({
-            // "Up to the library root": the same prefix that reaches the shared
-            // assets from this note's folder.
-            homeHref: assetPrefix,
-            previous: previousNote && {
-                title: previousNote.title,
-                // Notes are siblings, so leave the current folder first.
-                href: `../${previousNote.slug}/`
-            },
-            next: nextNote && {
-                title: nextNote.title,
-                href: `../${nextNote.slug}/`
-            }
-        });
-
-        let html;
-
-        if (identity.kind === "markdown") {
-            const markdownContent = await readFile(
-                identity.source,
-                "utf8"
-            );
-
-            html = renderNoteHtml(markdownContent, {
+        try {
+            await renderIdentity({
+                identity,
+                identities,
+                index,
                 template,
                 rendererConfig,
                 assetPrefix,
-                noteSlug: identity.slug,
-                noteNavigation: navigation
+                rendered,
+                notes
             });
-        } else {
-            const importedHtml = await readFile(
-                identity.source,
-                "utf8"
-            );
-
-            html = adoptImportedNote(importedHtml, {
-                identity,
-                navigation
+        } catch (error) {
+            // One unusable file must not cost the operator every other note.
+            // Record it, carry on, and fail loudly once the good ones are saved.
+            failures.push({
+                source: identity.source,
+                message: error.message
             });
         }
+    }
 
+    /* =========================================================
+       Everything rendered — now it is safe to touch the disk
+       ========================================================= */
+
+    await mkdir(outputDirectory, { recursive: true });
+    await removeStaleNoteFolders(identities);
+
+    for (const { identity, html } of rendered) {
         const noteDirectory = join(
             outputDirectory,
             identity.slug
@@ -675,18 +789,41 @@ export async function renderAllNotes(options = {}) {
             "utf8"
         );
 
-        notes.push({
-            slug: identity.slug,
-            title: identity.title,
-            course: identity.metadata.courseName,
-            topic: identity.metadata.topic,
-            instructor: identity.metadata.instructor,
-            sessionDate: identity.metadata.sessionDate,
-            generated: identity.metadata.generatedDate,
-            origin: identity.kind,
-            source: identity.source,
-            path: `${outputDirectory}/${identity.slug}/index.html`
-        });
+        // A note that owns its assets keeps them, so its images travel with it
+        // instead of depending on whatever shares their name.
+        const ownedAssets = identity.ownedAssets ?? [];
+
+        if (ownedAssets.length > 0) {
+            const sourceAssets =
+                await resolveImportedAssetsDirectory(
+                    identity.relativeSource
+                );
+            const targetAssets = join(
+                noteDirectory,
+                "assets"
+            );
+
+            await mkdir(targetAssets, { recursive: true });
+
+            for (const fileName of ownedAssets) {
+                await copyFile(
+                    join(sourceAssets, fileName),
+                    join(targetAssets, fileName)
+                );
+            }
+        }
+
+        if (
+            identity.sharedAssetReferences?.length > 0
+        ) {
+            console.warn(
+                `  ${identity.slug}: ${identity.sharedAssetReferences.length} asset(s) ` +
+                `still come from the shared data/assets library ` +
+                `(${identity.sharedAssetReferences.join(", ")}). ` +
+                "A name shared with another note may not be the same picture — " +
+                `copy them into ${importedDirectory}/${identity.slug}/assets/ to be safe.`
+            );
+        }
 
         console.log(
             `Rendered ${identity.slug}  (${identity.source})`
@@ -706,6 +843,20 @@ export async function renderAllNotes(options = {}) {
         "utf8"
     );
 
+    if (failures.length > 0) {
+        const report = failures
+            .map(
+                (failure) =>
+                    `  - ${failure.source}: ${failure.message}`
+            )
+            .join("\n");
+
+        throw new Error(
+            `${failures.length} note(s) could not be rendered. ` +
+            `The other ${notes.length} were published.\n${report}`
+        );
+    }
+
     return notes;
 }
 
@@ -717,7 +868,196 @@ export async function renderAllNotes(options = {}) {
  * make it a page of *this* site are patched, each one anchored so a structure
  * change fails loudly instead of silently skipping the note.
  */
-function adoptImportedNote(html, { identity, navigation }) {
+/**
+ * Local asset references a pre-rendered note makes, relative to the project root.
+ *
+ * A note rendered elsewhere points at `data/assets/...` in *its* repository. That
+ * path means nothing here, and the names collide across projects: two different
+ * courses both have an `image2.jpg`. Binding such a reference to this
+ * repository's copy would show the wrong picture with no error anywhere, so a
+ * note may ship its own copy in data/imported/<note>/assets/ and those
+ * references are repointed at it. Anything it does not own still resolves through
+ * the shared library, and is reported so the risk is visible rather than silent.
+ *
+ * Only `src` is matched. The note's own `<link rel="icon">` also points into
+ * data/assets/, and treating that as note content would move the favicon.
+ */
+const localAssetPattern =
+    /\bsrc="(?:\.\.\/)+data\/assets\/([^"]+)"/g;
+
+function withoutExtension(fileName) {
+    return fileName.replace(/\.html?$/i, "");
+}
+
+
+/**
+ * Find imported notes under data/imported/, at any depth.
+ *
+ * Two layouts are supported, because a note may or may not have assets of its
+ * own and either arrangement is natural:
+ *
+ *   data/imported/my-note.html  +  data/imported/my-note/assets/
+ *   data/imported/my-note/my-note.html  +  data/imported/my-note/assets/
+ *
+ * `assets` directories are never scanned for notes, so a note's own images can
+ * never be mistaken for a note of their own.
+ *
+ * @returns {Promise<string[]>} Paths relative to data/imported/.
+ */
+async function listImportedNotes() {
+    const found = [];
+
+    const walk = async (directory) => {
+        let entries;
+
+        try {
+            entries = await readdir(directory, {
+                withFileTypes: true
+            });
+        } catch (error) {
+            if (error.code === "ENOENT") {
+                return;
+            }
+            throw error;
+        }
+
+        for (const entry of entries) {
+            if (entry.isDirectory()) {
+                if (entry.name === "assets") {
+                    continue;
+                }
+
+                await walk(join(directory, entry.name));
+            } else if (
+                entry.name.toLowerCase().endsWith(".html")
+            ) {
+                found.push(
+                    relative(importedDirectory, join(directory, entry.name))
+                );
+            }
+        }
+    };
+
+    await walk(importedDirectory);
+
+    return found.sort((a, b) => a.localeCompare(b));
+}
+
+/**
+ * Where an imported note's own assets live, if it has any.
+ *
+ * Beside the note (`<note folder>/assets/`) first, then in a folder named after
+ * the file (`data/imported/<name>/assets/`), which is how a note kept flat at
+ * the top of data/imported/ stores its images.
+ *
+ * @param {string} source - Path relative to data/imported/.
+ * @returns {Promise<string|null>} Absolute path, or null when it owns none.
+ */
+async function resolveImportedAssetsDirectory(source) {
+    const candidates = [
+        // Beside the note: data/imported/<note>/assets/ (and, for a note kept
+        // flat, data/imported/assets/ — hence the explicit join rather than a
+        // bare dirname).
+        join(
+            importedDirectory,
+            dirname(source),
+            "assets"
+        ),
+        // In a folder named after the file: data/imported/<name>/assets/.
+        join(
+            importedDirectory,
+            withoutExtension(basename(source)),
+            "assets"
+        )
+    ];
+
+    for (const candidate of candidates) {
+        try {
+            await stat(candidate);
+            return candidate;
+        } catch (error) {
+            if (error.code !== "ENOENT") {
+                throw error;
+            }
+        }
+    }
+
+    return null;
+}
+
+/**
+ * List the files an imported note owns.
+ *
+ * @param {string} source - Path relative to data/imported/.
+ * @returns {Promise<string[]>} File names, flat.
+ */
+async function collectImportedAssets(source) {
+    const assetsDirectory =
+        await resolveImportedAssetsDirectory(source);
+
+    if (assetsDirectory === null) {
+        return [];
+    }
+
+    const entries = await readdir(assetsDirectory, {
+        withFileTypes: true
+    });
+
+    return entries
+        .filter((entry) => entry.isFile())
+        .map((entry) => entry.name);
+}
+
+/**
+ * Repoint an imported note's local asset references at the copies it owns.
+ *
+ * @param {string} html - Imported note source.
+ * @param {string[]} ownedAssets - File names in the note's own assets folder.
+ * @returns {{html: string, sharedReferences: string[]}} The rewritten note, and
+ *   the references that still fall through to the shared asset library.
+ */
+export function adoptImportedAssetReferences(html, ownedAssets) {
+    const owned = new Set(ownedAssets);
+    const sharedReferences = new Set();
+
+    const rewritten = html.replace(
+        localAssetPattern,
+        (match, assetPath) => {
+            const fileName = assetPath.split("/").at(-1);
+
+            if (owned.has(fileName)) {
+                return `src="assets/${fileName}"`;
+            }
+
+            sharedReferences.add(assetPath);
+            return match;
+        }
+    );
+
+    return { html: rewritten, sharedReferences: [...sharedReferences] };
+}
+
+/**
+ * Bring a pre-rendered note into line with this site's conventions.
+ *
+ * Exported for tests: the patching is anchored to specific markup, so a
+ * template change could silently stop applying one of the patches, and the only
+ * way to notice is to run the importer against a document and look at it.
+ *
+ * @param {string} html - Imported note source.
+ * @param {Object} params
+ * @param {Object} params.identity - Note identity, including `metadata`.
+ * @param {string} params.navigation - Home/prev/next markup.
+ * @returns {string} The adopted note.
+ */
+export function adoptImportedNote(html, { identity, navigation }) {
+    // A note may be imported more than once — including a page this project
+    // published itself. Re-patching one that already carries our markup would
+    // duplicate the storage helper, the note id and the navigation, so each
+    // patch is applied only to a document that lacks it.
+    const alreadyAdopted =
+        /<body[^>]*\sdata-note-slug=/.test(html);
+
     const patches = [
         [
             /(<html\b[^>]*\sdata-theme=")([^"]*)(")/,
@@ -726,26 +1066,41 @@ function adoptImportedNote(html, { identity, navigation }) {
         ],
         [
             /<body(\s[^>]*)?>/,
-            (match, attributes = "") =>
-                `<body data-note-slug="${escapeHtml(identity.slug)}"${attributes}>`
+            (match, attributes = "") => {
+                if (alreadyAdopted) {
+                    return match;
+                }
+
+                return (
+                    `<body data-note-slug="${escapeHtml(identity.slug)}"${attributes}>`
+                );
+            }
         ],
+        // No capture group on this pattern, so the replacer's first argument is
+        // the whole match. Naming the second parameter `end` would silently
+        // receive the match *offset* instead and drop the closing tag.
         [
             /<\/head>/,
-            (_, end) =>
-                `\n    <link\n` +
-                `        rel="icon"\n` +
-                `        href="../data/assets/favicon.svg"\n` +
-                `        type="image/svg+xml"\n` +
-                `    >\n\n` +
-                `${createNoteHead({
-                    title: identity.title,
-                    slug: identity.slug,
-                    metadata: identity.metadata
-                })}\n${end}`
+            (closingHead) =>
+                alreadyAdopted
+                    ? closingHead
+                    : `\n    <link\n` +
+                      `        rel="icon"\n` +
+                      `        href="../data/assets/favicon.svg"\n` +
+                      `        type="image/svg+xml"\n` +
+                      `    >\n\n` +
+                      `${createNoteHead({
+                          title: identity.title,
+                          slug: identity.slug,
+                          metadata: identity.metadata
+                      })}\n${closingHead}`
         ],
         [
             /(<div class="headerControls">)/,
-            (_, controls) => `${controls}\n\n${navigation}`
+            (_, controls) =>
+                alreadyAdopted
+                    ? `${controls}`
+                    : `${controls}\n\n${navigation}`
         ],
         // Imported notes predate per-note storage namespacing, and their
         // scripts call noteScopedStorageKey(). Load the helper ahead of them so
@@ -753,20 +1108,28 @@ function adoptImportedNote(html, { identity, navigation }) {
         [
             /([ \t]*)<script src="([^"]*)themeSwitcher\.js"><\/script>/,
             (match, indent, prefix) =>
-                `${indent}<script src="${prefix}noteStorage.js"></script>\n` +
-                `${match}`
+                alreadyAdopted || /noteStorage\.js/.test(html)
+                    ? match
+                    : `${indent}<script src="${prefix}noteStorage.js"></script>\n${match}`
         ],
         // The header title comes from the **درس:** field, which notes rendered
-        // before the site existed often lack. Fall back to the note's own
-        // title rather than leaving the header blank.
+        // before the site existed often lack. Only fill a blank one: where the
+        // original had a course name, that is better than the note title.
         [
-            /<div class="appTitle">(\s*)<\/div>/,
-            (_, whitespace) =>
-                `<div class="appTitle">${whitespace}${escapeHtml(
-                    identity.metadata.courseName ||
-                        identity.metadata.topic ||
-                        identity.title
-                )}${whitespace}</div>`
+            /(<div class="appTitle">)([\s\S]*?)(<\/div>)/,
+            (match, open, content, close) => {
+                if (toPlainText(content) !== "") {
+                    return match;
+                }
+
+                return (
+                    `${open}${escapeHtml(
+                        identity.metadata.courseName ||
+                            identity.metadata.topic ||
+                            identity.title
+                    )}${close}`
+                );
+            }
         ]
     ];
 

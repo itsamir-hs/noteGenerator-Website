@@ -1,5 +1,5 @@
 {
-    "noteCount": 5,
+    "noteCount": 6,
     "notes": [
         {
             "slug": "osmosis",
@@ -11,7 +11,23 @@
             "generated": "",
             "origin": "imported",
             "source": "data/imported/osmosis.html",
+            "ownsAssets": 7,
+            "sharedAssetReferences": [],
             "path": "renderedNotes/osmosis/index.html"
+        },
+        {
+            "slug": "anatomy-heart",
+            "title": "دستگاه گردش خون (Circulatory System) — بخش ۱",
+            "course": "",
+            "topic": "",
+            "instructor": "",
+            "sessionDate": "",
+            "generated": "",
+            "origin": "imported",
+            "source": "data/imported/anatomy-heart.html",
+            "ownsAssets": 11,
+            "sharedAssetReferences": [],
+            "path": "renderedNotes/anatomy-heart/index.html"
         },
         {
             "slug": "سیستم-عصبی",
@@ -23,6 +39,8 @@
             "generated": "",
             "origin": "markdown",
             "source": "data/input/t1.md",
+            "ownsAssets": 0,
+            "sharedAssetReferences": [],
             "path": "renderedNotes/سیستم-عصبی/index.html"
         },
         {
@@ -35,6 +53,8 @@
             "generated": "",
             "origin": "imported",
             "source": "data/imported/bone-marrow-on-a-chip.html",
+            "ownsAssets": 0,
+            "sharedAssetReferences": [],
             "path": "renderedNotes/bone-marrow-on-a-chip/index.html"
         },
         {
@@ -47,6 +67,8 @@
             "generated": "",
             "origin": "imported",
             "source": "data/imported/bone-marrow-on-a-chip-figures.html",
+            "ownsAssets": 1,
+            "sharedAssetReferences": [],
             "path": "renderedNotes/bone-marrow-on-a-chip-figures/index.html"
         },
         {
@@ -59,6 +81,8 @@
             "generated": "2026-10-01T18:37:36",
             "origin": "markdown",
             "source": "data/input/note.md",
+            "ownsAssets": 0,
+            "sharedAssetReferences": [],
             "path": "renderedNotes/اصول-کلی-ایمنی-و-بهداشت-فضا-کارکنان-و-محیط-آزمای/index.html"
         }
     ]

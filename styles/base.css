@@ -1038,6 +1038,10 @@ a {
 }
 
 
+/* Images are constrained wherever they appear in a note, not only in the main
+   section: a figure under "مقدمه" used to render at its natural size and
+   overflow the column. */
+.noteSection img,
 .mainSection img {
     display: block;
 
@@ -2346,6 +2350,7 @@ a:focus-visible {
    Desktop Images
    ========================================================= */
 
+.noteSection img,
 .mainSection img {
     max-height: 680px;
 
@@ -2353,6 +2358,7 @@ a:focus-visible {
 }
 
 
+.noteSection img:hover,
 .mainSection img:hover {
     box-shadow: var(--shadowMedium);
 }

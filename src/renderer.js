@@ -7,6 +7,7 @@ import { parseMarkdown } from "./parser.js";
 import { prepareMath, restoreMath } from "./math_renderer.js";
 import { resolveImagePath } from "./image_handler.js";
 import { applyCallouts } from "./callouts.js";
+import { stripByteOrderMark } from "./noteIdentity.js";
 
 const window = new JSDOM("").window;
 const DOMPurify = createDOMPurify(window);
@@ -130,10 +131,13 @@ export function renderMarkdown(
     const assetPrefix =
         options.assetPrefix ?? "../";
 
+    // An invisible BOM would otherwise sit in front of the first heading.
+    const source = stripByteOrderMark(markdownContent);
+
     const processedMarkdown =
         rendererConfig.enableMath
-            ? prepareMath(markdownContent)
-            : markdownContent;
+            ? prepareMath(source)
+            : source;
 
     const htmlContent =
         parseMarkdown(processedMarkdown);

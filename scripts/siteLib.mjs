@@ -276,6 +276,14 @@ async function pathExists(path) {
 }
 
 /**
+ * Containers that must open and close exactly once in a whole document.
+ *
+ * A browser repairs an unclosed <head> without complaint, so a page can look
+ * perfect while shipping broken HTML that later breaks any tool that parses it.
+ */
+const structuralTags = ["html", "head", "body"];
+
+/**
  * Check the built site the way a browser would: follow every relative link and
  * assert the note pages still carry the features they advertise.
  *
@@ -347,6 +355,21 @@ export async function verifySite(siteDirectory) {
             );
         }
 
+        for (const tag of structuralTags) {
+            const openCount = (
+                html.match(new RegExp(`<${tag}\\b`, "gi")) ?? []
+            ).length;
+            const closeCount = (
+                html.match(new RegExp(`</${tag}>`, "gi")) ?? []
+            ).length;
+
+            if (openCount !== 1 || closeCount !== 1) {
+                errors.push(
+                    `${relativePath}: <${tag}> opens ${openCount}× and closes ${closeCount}×`
+                );
+            }
+        }
+
         if (relativePath.startsWith("renderedNotes/")) {
             for (const feature of requiredNoteFeatures) {
                 if (!feature.pattern.test(html)) {
@@ -356,11 +379,11 @@ export async function verifySite(siteDirectory) {
                 }
             }
 
-            if (/\{\{[^}]*\}\}/.test(html)) {
-                errors.push(
-                    `${relativePath}: contains an unreplaced {{placeholder}}`
-                );
-            }
+            // Note: an unfilled {{placeholder}} is caught at the source, by the
+            // renderer, which refuses to write a page containing one. It is
+            // deliberately not checked here: a note may legitimately write
+            // about template syntax, and {{courseName}} in a lesson is
+            // indistinguishable from a hole in the page.
         }
     }
 

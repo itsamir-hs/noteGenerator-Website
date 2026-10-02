@@ -31,8 +31,28 @@ const METADATA_LABELS = new Map([
 ]);
 
 
+/**
+ * Remove a leading byte order mark.
+ *
+ * Editors on Windows routinely save UTF-8 with a BOM. It is invisible, but it
+ * sits in front of the first character, so a note's `# Title` stops matching and
+ * the note is published as "Untitled Note".
+ *
+ * @param {string} content - File contents.
+ * @returns {string} Contents without a leading BOM.
+ */
+function stripByteOrderMark(content) {
+    return String(content ?? "").replace(
+        /^\uFEFF/,
+        ""
+    );
+}
+
+
 function extractNoteTitle(markdownContent) {
-    const titleMatch = markdownContent.match(/^# (.+)$/m);
+    const titleMatch = stripByteOrderMark(
+        markdownContent
+    ).match(/^# (.+)$/m);
 
     return titleMatch
         ? titleMatch[1].trim()
@@ -61,7 +81,7 @@ function createEmptyMetadata() {
 function extractMetadata(markdownContent) {
     const metadata = createEmptyMetadata();
 
-    for (const line of markdownContent.split("\n")) {
+    for (const line of stripByteOrderMark(markdownContent).split("\n")) {
         const match = line.match(/^\*\*(.+?):\*\*\s*(.+)$/);
 
         if (!match) {
@@ -198,5 +218,6 @@ export {
     extractMetadata,
     extractNoteTitle,
     normalizeThemeName,
-    resolveNoteSlug
+    resolveNoteSlug,
+    stripByteOrderMark
 };
