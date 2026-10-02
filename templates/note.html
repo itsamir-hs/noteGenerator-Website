@@ -306,13 +306,7 @@
 </button>
 
 
-            <button
-                class="aboutButton"
-                type="button"
-                aria-label="درباره ما"
-            >
-                <i data-lucide="users-round"></i>
-            </button>
+{{>aboutButton}}
 
         </div>
 
@@ -440,73 +434,7 @@
 <div class="stickyNotesBackdrop"></div>
 
 
-    <div
-        class="aboutModal"
-        aria-hidden="true"
-    >
-
-        <div class="aboutModalBackdrop"></div>
-
-        <section
-            class="aboutModalContent"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="aboutTitle"
-        >
-
-            <button
-                class="aboutCloseButton"
-                type="button"
-                aria-label="بستن"
-            >
-                <i data-lucide="x"></i>
-            </button>
-
-            <h2 id="aboutTitle">
-                آدم‌هایی که اینجا رو ساختن
-            </h2>
-
-            <p class="aboutIntroduction">
-                ما یک تیم کوچک هستیم که باور داریم یادگیری باید
-                لذت‌بخش، عمیق، و در دسترس باشد. جزوه‌ساز تلاش ماست
-                برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً
-                بتوانی با آن‌ها چیزی یاد بگیری.
-            </p>
-
-
-<div class="developerList">
-
-    <article class="developerCard">
-        <h3>شبنم رضاپور</h3>
-        <p>کسی که PDFها را راضی کرد محتوایشان را بی‌کم‌وکاست لو بدهند.</p>
-    </article>
-
-    <article class="developerCard">
-        <h3>امیر‌حسین شکری‌زاده سعادت‌آباد</h3>
-        <p>صدای کلاس را به متن تبدیل کرد، حتی وقتی استاد وسط جمله با میکروفون قهر می‌کرد.</p>
-    </article>
-
-    <article class="developerCard">
-        <h3>مهراد اسدی</h3>
-        <p>پرامپت‌ها را طوری چید که LLM فکر کرد دارد پایان‌نامه دکتری می‌نویسد.</p>
-    </article>
-
-    <article class="developerCard">
-        <h3>امیرسالار سهام‌پور</h3>
-        <p>مارک‌داون را به HTML تبدیل کرد و به جزوه ظاهری داد که آدم دلش بخواهد بخواندش.</p>
-    </article>
-
-</div>
-
-            <p class="aboutFooter">
-                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد.
-                <br>
-                امیدواریم یادگیریت را لذت‌بخش‌تر کند.
-            </p>
-
-        </section>
-
-    </div>
+{{>aboutModal}}
 
 
     <div class="quickNavigation">

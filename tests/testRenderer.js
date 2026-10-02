@@ -5,6 +5,7 @@
 import { readdir, readFile } from "node:fs/promises";
 import { renderMarkdown } from "../src/renderer.js";
 import { createNoteNavigation, renderNoteHtml } from "../src/main.js";
+import { resolveTemplateIncludes } from "../src/templateIncludes.js";
 import {
     claimNoteSlug,
     createNoteSlug,
@@ -212,9 +213,10 @@ pass("slug uniqueness and theme names");
    The note document
    ========================================================= */
 
-const noteTemplate = await readFile(
-    "./templates/note.html",
-    "utf8"
+// The CLI expands `{{>partial}}` includes before rendering; renderNoteHtml
+// receives a finished template and refuses one that still has holes in it.
+const noteTemplate = await resolveTemplateIncludes(
+    await readFile("./templates/note.html", "utf8")
 );
 
 const noteHtml = renderNoteHtml(metadataSource, {
@@ -279,6 +281,104 @@ assert(
 );
 
 pass("note document");
+
+/* =========================================================
+   Template composition
+   ========================================================= */
+
+const rawNoteTemplate = await readFile(
+    "./templates/note.html",
+    "utf8"
+);
+
+let unexpandedIncludeRejected = false;
+
+try {
+    renderNoteHtml("# عنوان\n", {
+        template: rawNoteTemplate,
+        rendererConfig,
+        noteSlug: "includes"
+    });
+} catch (error) {
+    unexpandedIncludeRejected = error.message.includes("{{>about");
+}
+
+assert(
+    unexpandedIncludeRejected,
+    "a template that still contains an unexpanded include must be rejected"
+);
+
+let unknownIncludeRejected = false;
+
+try {
+    await resolveTemplateIncludes("{{>noSuchPartial}}");
+} catch (error) {
+    unknownIncludeRejected = error.message.includes("noSuchPartial");
+}
+
+assert(
+    unknownIncludeRejected,
+    "an unknown partial must be reported by name"
+);
+
+pass("template includes");
+
+// The About dialog is shared markup, so both pages must carry it identically.
+const homeTemplateForAbout = await resolveTemplateIncludes(
+    await readFile("./templates/home.html", "utf8")
+);
+
+const aboutModalPattern =
+    /<div\s+class="aboutModal"[\s\S]*?<\/section>/;
+
+const aboutInNote = noteHtml.match(aboutModalPattern)?.[0] ?? null;
+const aboutInHome = homeTemplateForAbout.match(aboutModalPattern)?.[0] ?? null;
+
+assert(
+    aboutInNote !== null &&
+        aboutInHome !== null &&
+        aboutInNote === aboutInHome,
+    "the About dialog must be identical on the note page and the home page"
+);
+
+assert(
+    aboutInHome.includes("آدم‌هایی که اینجا رو ساختن") &&
+        (aboutInHome.match(/developerCard/g) ?? []).length === 4,
+    "the About dialog should list the four people who built this"
+);
+
+assert(
+    /class="aboutButton"/.test(homeTemplateForAbout),
+    "the home page should carry the About button in its header"
+);
+
+assert(
+    homeTemplateForAbout.includes("src/aboutModal.js"),
+    "the home page should load the script that opens the About dialog"
+);
+
+pass("about dialog is shared by both pages");
+
+// The search filter hides cards with the `hidden` attribute, but the card rule
+// sets an author-level `display`, which beats the user agent's
+// `[hidden] { display: none }`. Without this rule a filtered-out card stays on
+// screen while the count claims it is gone.
+const homeStyles = await readFile(
+    "./styles/home.css",
+    "utf8"
+);
+
+assert(
+    /\.noteCard\[hidden\]\s*\{[^}]*display:\s*none/.test(homeStyles),
+    "filtered-out cards must be hidden explicitly, not just marked hidden"
+);
+
+assert(
+    /\.noteMatch\s*\{/.test(homeStyles),
+    "search hits need a visible highlight style"
+);
+
+pass("library search styles");
 
 // $& and $' are backreference syntax for String.replace: when note content is
 // substituted with a plain string they expand into the matched placeholder,

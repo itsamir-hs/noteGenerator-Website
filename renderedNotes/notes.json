@@ -1,6 +1,18 @@
 {
-    "noteCount": 4,
+    "noteCount": 5,
     "notes": [
+        {
+            "slug": "osmosis",
+            "title": "آزمایش اسمز",
+            "course": "",
+            "topic": "",
+            "instructor": "",
+            "sessionDate": "",
+            "generated": "",
+            "origin": "imported",
+            "source": "data/imported/osmosis.html",
+            "path": "renderedNotes/osmosis/index.html"
+        },
         {
             "slug": "سیستم-عصبی",
             "title": "سیستم عصبی",

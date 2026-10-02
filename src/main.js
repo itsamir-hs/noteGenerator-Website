@@ -24,6 +24,7 @@ import {
     normalizeThemeName,
     resolveNoteSlug
 } from "./noteIdentity.js";
+import { resolveTemplateIncludes } from "./templateIncludes.js";
 
 /**
  * Template placeholders, in the order they appear inside templates/note.html.
@@ -275,12 +276,12 @@ export function renderNoteHtml(markdownContent, options = {}) {
     // A key that was added to the template but not to `replacements` would be
     // blanked by the loop above, so fail here rather than shipping a hole.
     const unresolved = finalHtml.match(
-        /\{\{\s*[A-Za-z][A-Za-z0-9]*\s*\}\}/
+        /\{\{\s*>?\s*[A-Za-z][A-Za-z0-9]*\s*\}\}|\{\{>\s*[A-Za-z][A-Za-z0-9]*\s*\}\}/
     );
 
     if (unresolved) {
         throw new Error(
-            `Template placeholder ${unresolved[0]} has no replacement value.`
+            `Template placeholder ${unresolved[0]} was not filled in.`
         );
     }
 
@@ -603,9 +604,8 @@ export async function renderAllNotes(options = {}) {
         );
     }
 
-    const template = await readFile(
-        "templates/note.html",
-        "utf8"
+    const template = await resolveTemplateIncludes(
+        await readFile("templates/note.html", "utf8")
     );
 
     const rendererConfig = await readRendererConfig();

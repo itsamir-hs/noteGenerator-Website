@@ -76,7 +76,19 @@ server. It is published with GitHub Pages.
 - **Sticky notes** you can create, drag, resize, delete and come back to — stored per note
 - **Font size** control
 - **Back to top**, revealed after scrolling
+- **About dialog**, on both the home page and every note
 - **Print stylesheet** that drops the whole interface and prints the note
+
+### The library page
+
+- One card per note, with title, course, topic and date
+- **Search that shows you where it matched**: as you type, non-matching cards
+  disappear and every matching term is marked in the card — in the title, the
+  metadata and the folder name — so `۱ جزوه از ۵ جزوه` tells you *why* that one
+  survived. Press `/` to jump to the box
+- Arabic and Persian keyboards are folded before comparing, so typing `عصبي`
+  finds `عصبی`, and the highlight still shows the note's own characters
+- Theme switcher, sharing the theme with every note
 
 ### Per note, not per site
 
@@ -151,7 +163,8 @@ folder get `-2`, `-3` suffixes rather than overwriting each other.
 │   └── renderedNotes/    ← one folder per note
 ├── templates/
 │   ├── note.html         ← note document template
-│   └── home.html         ← home page template
+│   ├── home.html         ← home page template
+│   └── partials/         ← markup shared by both pages (`{{>aboutModal}}`)
 ├── styles/               ← base, theme, responsive, RTL, home
 ├── src/                  ← renderer (Node) and browser scripts
 ├── scripts/              ← site build, verification, local preview
@@ -319,8 +332,11 @@ tables, RTL, callouts, definition boxes), sanitisation (script tags, event
 handler attributes and `javascript:` URLs must not survive), math toggling, note
 identity (metadata parsing, slugging, uniqueness, theme names), the rendered
 note document (no unresolved placeholders, per-note storage id, asset prefix,
-navigation, heading ids), literal `$` substitution, metadata escaping, and site
-assembly (path mapping, reference rewriting, the home page).
+navigation, heading ids), literal `$` substitution, metadata escaping, template
+composition (includes expand, an unknown partial is reported by name, an
+unexpanded include is rejected), the About dialog being identical on both pages,
+the library's search styles, and site assembly (path mapping, reference
+rewriting, the home page).
 
 Add a fixture to `tests/sample_notes/` and declare its expectations in
 `expectedContent` or `forbiddenContent` in `tests/testRenderer.js`.

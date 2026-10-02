@@ -19,6 +19,7 @@ import {
     rewriteAssetReferences,
     verifySite
 } from "./siteLib.mjs";
+import { resolveTemplateIncludes } from "../src/templateIncludes.js";
 
 const projectDirectory = resolve(
     dirname(fileURLToPath(import.meta.url)),
@@ -89,9 +90,8 @@ async function publishNote(note) {
 }
 
 async function publishHomePage(notes) {
-    const template = await readFile(
-        paths.homeTemplate,
-        "utf8"
+    const template = await resolveTemplateIncludes(
+        await readFile(paths.homeTemplate, "utf8")
     );
 
     const html = rewriteAssetReferences(

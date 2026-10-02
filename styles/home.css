@@ -171,6 +171,37 @@
     box-shadow: var(--shadowMedium);
 }
 
+/* An author-level `display` beats the user agent's `[hidden] { display: none }`,
+   so a filtered-out card has to opt back out explicitly. */
+.noteCard[hidden] {
+    display: none;
+}
+
+/* A card that survived the current search. */
+.noteCard.isMatch {
+    border-color: var(--accentColor);
+
+    box-shadow:
+        var(--shadowSmall),
+        inset 0 0 0 1px var(--accentColor);
+}
+
+/* The search hit itself: accented by the theme's tokens, so it reads in all
+   five palettes without going back to the browser's default yellow. */
+.noteMatch {
+    padding: 0 2px;
+
+    font: inherit;
+    font-weight: 700;
+
+    color: var(--accentColor);
+    background: var(--accentSoft);
+
+    border-radius: 4px;
+
+    box-shadow: inset 0 -0.14em 0 var(--accentColor);
+}
+
 .noteCard:focus-visible {
     outline: 2px solid var(--accentColor);
     outline-offset: 3px;
