@@ -53,6 +53,9 @@ const expectedContent = {
     ],
     "code.md": ["<pre>", "language-python"],
     "image.md": ["<img"],
+    // Every way of writing an image must land in the same place, so no
+    // duplicate copy of the asset library is needed.
+    "image-paths.md": ["../data/assets/image1.jpg"],
     "math.md": ["katex", "katex-display"],
     "rtl.md": ["سیستم عصبی", "Central Nervous System"],
     "table.md": ["<table>", "<th>", "<td>"],
@@ -698,6 +701,27 @@ assert(
 );
 
 pass("image paths follow the asset prefix");
+
+const imagePathVariants = renderMarkdown(
+    await readFile(
+        `${testDirectory}/image-paths.md`,
+        "utf8"
+    ),
+    rendererConfig
+);
+
+const resolvedImagePaths = [
+    ...imagePathVariants.matchAll(/src="([^"]*)"/g)
+].map((match) => match[1]);
+
+assert(
+    resolvedImagePaths.length === 3 &&
+        new Set(resolvedImagePaths).size === 1,
+    "image1.jpg, assets/image1.jpg and data/assets/image1.jpg must all " +
+        `resolve to one file, got ${JSON.stringify(resolvedImagePaths)}`
+);
+
+pass("image path spellings agree");
 
 /* =========================================================
    The published site

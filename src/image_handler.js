@@ -18,6 +18,14 @@ const externalImagePattern =
  * library: `../../etc/passwd` becomes `etc/passwd`, which then fails the build's
  * link check loudly instead of 404ing quietly on a published page.
  *
+ * A leading `assets/` — or the whole `data/assets/` prefix — is dropped too.
+ * Notes in the wild write images several ways: `![…](figure.png)`,
+ * `![…](assets/figure.png)`, and even `![…](../../data/assets/figure.png)`.
+ * For a long time only the second form worked, because the repository carried
+ * a duplicate copy of every image under `data/assets/assets/`. Accepting all of
+ * them means the duplicate is not needed, and which form an author uses stops
+ * mattering.
+ *
  * @param {string} imagePath - Path as written in the Markdown.
  * @returns {string} Path relative to the asset library.
  */
@@ -30,6 +38,15 @@ function normalizeAssetPath(imagePath) {
                 segment !== "." &&
                 segment !== ".."
         );
+
+    if (
+        segments[0] === "data" &&
+        segments[1] === "assets"
+    ) {
+        segments.splice(0, 2);
+    } else if (segments[0] === "assets") {
+        segments.shift();
+    }
 
     return segments.join("/");
 }

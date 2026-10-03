@@ -1,5 +1,5 @@
 {
-    "noteCount": 6,
+    "noteCount": 7,
     "notes": [
         {
             "slug": "osmosis",
@@ -84,6 +84,20 @@
             "ownsAssets": 0,
             "sharedAssetReferences": [],
             "path": "renderedNotes/اصول-کلی-ایمنی-و-بهداشت-فضا-کارکنان-و-محیط-آزمای/index.html"
+        },
+        {
+            "slug": "مبانی-پزشکی-اجتماعی-بیماریهای-محیطی-و-شغلی-و-انو",
+            "title": "پزشکی اجتماعی و اپیدمیولوژی",
+            "course": "پزشکی اجتماعی و اپیدمیولوژی",
+            "topic": "مبانی پزشکی اجتماعی، بیماری‌های محیطی و شغلی و انواع مطالعات اپیدمیولوژیک",
+            "instructor": "Maryam Karimi Jaberi، PhD student in Epidemiology",
+            "sessionDate": "",
+            "generated": "2026-09-11T03:36:26",
+            "origin": "markdown",
+            "source": "data/input/test.md",
+            "ownsAssets": 0,
+            "sharedAssetReferences": [],
+            "path": "renderedNotes/مبانی-پزشکی-اجتماعی-بیماریهای-محیطی-و-شغلی-و-انو/index.html"
         }
     ]
 }
