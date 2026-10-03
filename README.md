@@ -470,31 +470,6 @@ added there to be published.
 
 ---
 
-## Roadmap
-
-- [ ] Source-level note management: a small editor or dashboard that writes
-      `data/input/*.md` through the same `renderNoteHtml` path
-- [ ] Grouping the home page by course, with a collapsible list per course
-- [ ] Full-text search across notes from the home page
-- [ ] Export a note to PDF, alongside the existing print stylesheet
-- [ ] Optional per-note `index.json` for notes that ship their own attachments
-
----
-
-## Contributing
-
-1. Fork, branch, make the change.
-2. Add or update a fixture and its expectations if you touched the pipeline.
-3. Run `npm test` and `npm run site` — the build must verify cleanly.
-4. Open a pull request describing what changed and why.
-
-Two things the build will stop you shipping: a note with an unresolved template
-placeholder, and a note that has lost a stylesheet, script or control. If the
-build complains about a broken reference, that reference is already broken for a
-reader.
-
----
-
 ## License
 
 ISC. The notes, images and any third-party content under `data/` are the
