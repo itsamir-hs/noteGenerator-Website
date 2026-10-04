@@ -16,7 +16,6 @@ function prepareMath(markdownContent) {
         blockPattern,
         (_, expression) => {
             const placeholder = `MATH_BLOCK_${expressionIndex}`;
-
             mathExpressions.set(
                 placeholder,
                 katex.renderToString(expression.trim(), {
@@ -24,9 +23,7 @@ function prepareMath(markdownContent) {
                     throwOnError: false
                 })
             );
-
             expressionIndex++;
-
             return placeholder;
         }
     );
@@ -35,7 +32,6 @@ function prepareMath(markdownContent) {
         inlinePattern,
         (_, expression) => {
             const placeholder = `MATH_INLINE_${expressionIndex}`;
-
             mathExpressions.set(
                 placeholder,
                 katex.renderToString(expression.trim(), {
@@ -43,9 +39,7 @@ function prepareMath(markdownContent) {
                     throwOnError: false
                 })
             );
-
             expressionIndex++;
-
             return placeholder;
         }
     );

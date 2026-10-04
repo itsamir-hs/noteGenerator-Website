@@ -1,0 +1,89 @@
+/* =========================================================
+   Note Page — site layer styles
+   =========================================================
+   Two rules live here:
+
+   1. the injected "back to home" control;
+   2. an additive safety override for a bug in styles/base.css (see the build
+      report): only `.mainSection img` is width-constrained, so an image that
+      ends up in any other note section renders at its natural pixel size and
+      pushes the whole document sideways. This rule only repeats what
+      base.css already does for the main section, so nothing can regress. */
+
+.noteSection img {
+    max-width: 100%;
+    height: auto;
+}
+
+.noteHomeLink {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    height: 38px;
+
+    padding: 0 12px;
+
+    color: var(--textSecondary);
+
+    text-decoration: none;
+
+    border-radius: var(--radiusSmall);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition:
+        background-color 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.noteHomeLink:hover {
+    background: var(--surfaceSoft);
+    color: var(--textPrimary);
+}
+
+.noteHomeLink:active {
+    transform: scale(0.95);
+}
+
+.noteHomeLink svg {
+    width: 18px;
+    height: 18px;
+
+    pointer-events: none;
+}
+
+.noteHomeLink:focus-visible {
+    outline: 2px solid var(--accentColor);
+    outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+
+    .noteHomeLink {
+        width: 38px;
+
+        padding: 0;
+
+        justify-content: center;
+    }
+
+    .noteHomeLinkText {
+        display: none;
+    }
+
+}
+
+@media print {
+
+    .noteHomeLink {
+        display: none !important;
+    }
+
+}

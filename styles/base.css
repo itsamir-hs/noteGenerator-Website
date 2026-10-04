@@ -150,9 +150,7 @@ a {
 .aboutButton,
 .printButton,
 .themeToggle,
-.fontSizeControl,
-.noteNavLink,
-.noteNavButton {
+.fontSizeControl {
     width: 38px;
     height: 38px;
 
@@ -181,9 +179,7 @@ a {
 .aboutButton:hover,
 .printButton:hover,
 .themeToggle:hover,
-.fontSizeControl:hover,
-.noteNavLink:hover,
-.noteNavButton:hover {
+.fontSizeControl:hover {
     background: var(--surfaceSoft);
     color: var(--textPrimary);
 }
@@ -192,40 +188,8 @@ a {
 .aboutButton:active,
 .printButton:active,
 .themeToggle:active,
-.fontSizeControl:active,
-.noteNavLink:active,
-.noteNavButton:active {
+.fontSizeControl:active {
     transform: scale(0.94);
-}
-
-.noteNavButton:disabled {
-    opacity: 0.35;
-    cursor: default;
-    transform: none;
-}
-
-.noteNavButton:disabled:hover {
-    background: transparent;
-    color: var(--textSecondary);
-}
-
-
-/* =========================================================
-   Note Navigation
-
-   Home link plus previous/next note. The whole cluster hides on
-   narrow screens where the header runs out of room.
-   ========================================================= */
-
-.noteNavigation {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.noteNavLink,
-.noteNavButton {
-    text-decoration: none;
 }
 
 
@@ -1038,10 +1002,6 @@ a {
 }
 
 
-/* Images are constrained wherever they appear in a note, not only in the main
-   section: a figure under "مقدمه" used to render at its natural size and
-   overflow the column. */
-.noteSection img,
 .mainSection img {
     display: block;
 
@@ -2236,8 +2196,6 @@ a:focus-visible {
 .themeButton:focus-visible,
 .aboutCloseButton:focus-visible,
 .backToTop:focus-visible,
-.noteNavLink:focus-visible,
-.noteNavButton:focus-visible,
 .quickNavigationItem:focus-visible,
 .tocItem:focus-visible {
     outline: 2px solid var(--accentColor);
@@ -2350,7 +2308,6 @@ a:focus-visible {
    Desktop Images
    ========================================================= */
 
-.noteSection img,
 .mainSection img {
     max-height: 680px;
 
@@ -2358,7 +2315,6 @@ a:focus-visible {
 }
 
 
-.noteSection img:hover,
 .mainSection img:hover {
     box-shadow: var(--shadowMedium);
 }

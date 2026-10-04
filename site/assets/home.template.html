@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="{{defaultTheme}}">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>{{siteTitle}}</title>
+
+    <!-- Must come before the stylesheets: applies the stored theme before the
+         first paint so a dark-theme visitor never sees a white flash. -->
+    <script src="site/assets/themeBoot.js"></script>
+
+    <meta
+        name="description"
+        content="{{siteDescription}}"
+    >
+
+    <!-- Same stylesheets as the notes, so the home page inherits every theme. -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/rtl.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="vendor/katex/katex.min.css"
+    >
+
+    <link rel="stylesheet" href="styles/dark.css">
+    <link rel="stylesheet" href="styles/forest.css">
+    <link rel="stylesheet" href="styles/paperLike.css">
+    <link rel="stylesheet" href="styles/neon.css">
+
+    <link rel="stylesheet" href="site/assets/home.css">
+
+    <script src="vendor/lucide/lucide.min.js"></script>
+</head>
+
+<body class="siteBody">
+
+    <header class="appHeader siteHeader">
+
+        <a
+            class="siteBrand"
+            href="./"
+            aria-label="صفحه اصلی"
+        >
+            <i data-lucide="library-big"></i>
+            <span class="siteBrandText">{{siteTitle}}</span>
+        </a>
+
+
+        <div class="appTitle siteTagline">
+            {{siteTagline}}
+        </div>
+
+
+        <div class="headerControls">
+
+            <div class="themeSwitcher">
+
+                <button
+                    class="themeToggle"
+                    type="button"
+                    aria-label="تغییر تم"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="sun"></i>
+                </button>
+
+                <div class="themeOptions">
+{{themeButtons}}
+                </div>
+
+            </div>
+
+            <button
+                class="contributorsButton"
+                type="button"
+                aria-label="{{contributorsButtonLabel}}"
+                aria-expanded="false"
+            >
+                <i data-lucide="users-round"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <section class="siteHero">
+
+        <h1 class="siteHeading">
+            {{siteTitle}}
+        </h1>
+
+        <p class="siteIntro">
+            {{siteTagline}}
+        </p>
+
+        <div class="siteSearch">
+
+            <div class="siteSearchField">
+
+                <i data-lucide="search"></i>
+
+                <input
+                    class="siteSearchInput"
+                    type="search"
+                    placeholder="{{searchPlaceholder}}"
+                    aria-label="{{searchPlaceholder}}"
+                    autocomplete="off"
+                >
+
+                <button
+                    class="siteSearchClear"
+                    type="button"
+                    aria-label="پاک کردن جستجو"
+                >
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+            <p class="siteSearchStatus" role="status" aria-live="polite">
+                {{notesCountLabel}}
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <main class="siteMain">
+
+        <section class="notesMenu" aria-labelledby="notesMenuTitle">
+
+            <h2 class="notesMenuTitle" id="notesMenuTitle">
+                {{notesMenuTitle}}
+            </h2>
+
+            <div class="notesMenuList" id="notesMenuList">
+{{noteCards}}
+            </div>
+
+            <p class="notesMenuEmpty" id="notesMenuEmpty" hidden>
+                {{emptySearchResultMessage}}
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer class="siteFooter">
+
+        <p>
+            {{notesCountLabel}}
+        </p>
+
+        <p class="siteFooterNote">
+            همهٔ جزوه‌ها با استفاده از هوش مصنوعی تولید شده‌اند و ممکن است
+            خطا داشته باشند.
+        </p>
+
+    </footer>
+
+
+    <div class="aboutModal siteContributorsModal" aria-hidden="true">
+
+        <div class="aboutModalBackdrop"></div>
+
+        <section
+            class="aboutModalContent"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="siteContributorsTitle"
+        >
+
+            <button
+                class="aboutCloseButton"
+                type="button"
+                aria-label="بستن"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <h2 id="siteContributorsTitle">
+                {{contributorsModalTitle}}
+            </h2>
+
+            <p class="aboutIntroduction">
+                {{contributorsIntroduction}}
+            </p>
+
+            <div class="developerList">
+{{contributorCards}}
+            </div>
+
+            <p class="aboutFooter">
+                {{contributorsFooter}}
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <!-- Search index: baked in at build time so the page works from any path,
+         including file:// and GitHub Pages project sub-paths. -->
+    <script type="application/json" id="notesIndex">{{notesJson}}</script>
+
+    <script src="site/assets/textSearch.js"></script>
+
+    <!-- Re-used verbatim from the original module: same themes, same storage key. -->
+    <script src="{{themeSwitcherScriptPath}}"></script>
+
+    <script src="{{homeScriptPath}}"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>

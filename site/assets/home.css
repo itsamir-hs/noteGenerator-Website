@@ -1,0 +1,666 @@
+/* =========================================================
+   Home Page — site layer
+   =========================================================
+   Layered on top of the note module's own stylesheets: only the
+   home-page-specific pieces live here, every colour comes from the
+   existing theme variables so light/dark/forest/paperLike/neon all work. */
+
+.siteBody {
+    min-height: 100vh;
+
+    padding-bottom: 0;
+}
+
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+.siteHeader {
+    gap: 16px;
+}
+
+.siteBrand {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 8px 12px;
+
+    color: var(--textPrimary);
+
+    text-decoration: none;
+
+    border-radius: var(--radiusSmall);
+
+    font-size: 15px;
+    font-weight: 750;
+
+    white-space: nowrap;
+
+    transition:
+        background-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.siteBrand:hover {
+    background: var(--surfaceSoft);
+}
+
+.siteBrand:active {
+    transform: scale(0.97);
+}
+
+.siteBrand svg {
+    width: 20px;
+    height: 20px;
+
+    color: var(--accentColor);
+}
+
+.siteTagline {
+    font-size: 14px;
+    font-weight: 600;
+
+    color: var(--textSecondary);
+
+    max-width: 46%;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.contributorsButton {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: 0;
+
+    border-radius: var(--radiusSmall);
+
+    color: var(--textSecondary);
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.contributorsButton:hover {
+    background: var(--surfaceSoft);
+    color: var(--textPrimary);
+}
+
+.contributorsButton:active {
+    transform: scale(0.94);
+}
+
+.contributorsButton svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* =========================================================
+   Theme Menu — keep the popover at its natural width
+   =========================================================
+   base.css anchors .themeOptions with `left: 50%`, so the space left for its
+   shrink-to-fit width is only half of the narrow .themeSwitcher. Chrome happens
+   to floor the result at the min-content width, but other engines clamp the box
+   to that remaining space and squeeze the five buttons into slivers.
+
+   Pinning `width: max-content` (which is not clamped by the available space)
+   and forbidding the buttons/icons from shrinking keeps the menu identical
+   everywhere. Only sizes that base.css already sets are repeated here. */
+
+.themeOptions {
+    width: max-content;
+    max-width: calc(100vw - 24px);
+
+    /*
+       No horizontal offset: the popover stays exactly centred on the switcher,
+       i.e. on the theme button — base.css's own `left: 50%` +
+       `translateX(-50%)` is left as it is.
+
+       Cross-axis: buttons keep their own height instead of stretching.
+    */
+    align-items: center;
+}
+
+/*
+   Nudge the theme button 12px to the left. `translate` is used instead of
+   `transform` so that base.css's `:active { transform: scale(0.94) }` press
+   animation still composes instead of being overwritten.
+*/
+.themeSwitcher .themeToggle {
+    translate: -12px 0;
+}
+
+.themeOptions .themeButton {
+    flex: 0 0 auto;
+
+    align-self: center;
+}
+
+.themeOptions .themeButton svg {
+    width: 18px;
+    height: 18px;
+
+    flex: 0 0 auto;
+}
+
+
+/* =========================================================
+   Hero + Search
+   ========================================================= */
+
+.siteHero {
+    width: min(calc(100% - 48px), 820px);
+
+    margin: 0 auto;
+
+    padding-top: calc(var(--headerHeight) + 64px);
+    padding-bottom: 12px;
+
+    text-align: center;
+}
+
+.siteHeading {
+    margin: 0 0 12px;
+
+    color: var(--textPrimary);
+
+    font-size: 32px;
+    line-height: 1.5;
+
+    font-weight: 800;
+}
+
+.siteIntro {
+    margin: 0 0 30px;
+
+    color: var(--textSecondary);
+
+    font-size: 16px;
+    line-height: 2;
+}
+
+.siteSearch {
+    margin: 0 auto;
+}
+
+.siteSearchField {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 16px;
+
+    background: var(--surfaceBackground);
+
+    border: 1px solid var(--borderColor);
+
+    border-radius: var(--radiusLarge);
+
+    box-shadow: var(--shadowSmall);
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.siteSearchField:focus-within {
+    border-color: var(--accentColor);
+
+    box-shadow:
+        var(--shadowSmall),
+        0 0 0 3px var(--accentSoft);
+}
+
+.siteSearchField > svg {
+    flex-shrink: 0;
+
+    width: 20px;
+    height: 20px;
+
+    color: var(--textMuted);
+}
+
+.siteSearchInput {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 54px;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: 0;
+    outline: 0;
+
+    color: var(--textPrimary);
+
+    font: inherit;
+
+    font-size: 15px;
+}
+
+.siteSearchInput::placeholder {
+    color: var(--textMuted);
+}
+
+.siteSearchInput::-webkit-search-cancel-button {
+    display: none;
+}
+
+.siteSearchClear {
+    flex-shrink: 0;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: 0;
+
+    border-radius: var(--radiusSmall);
+
+    color: var(--textMuted);
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.18s ease,
+        visibility 0.18s ease,
+        background-color 0.18s ease,
+        color 0.18s ease;
+}
+
+.siteSearchClear.isVisible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.siteSearchClear:hover {
+    background: var(--surfaceSoft);
+    color: var(--textPrimary);
+}
+
+.siteSearchClear svg {
+    width: 18px;
+    height: 18px;
+}
+
+.siteSearchStatus {
+    margin: 14px 0 0;
+
+    color: var(--textMuted);
+
+    font-size: 13px;
+}
+
+.siteSearchStatus mark {
+    padding: 1px 4px;
+
+    background: var(--accentSoft);
+    color: var(--accentColor);
+
+    border-radius: 4px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   Notes Menu
+   ========================================================= */
+
+.siteMain {
+    width: min(calc(100% - 48px), 1080px);
+
+    margin: 0 auto;
+
+    padding-bottom: 72px;
+}
+
+.notesMenuTitle {
+    margin: 0 0 20px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid var(--borderColor);
+
+    color: var(--textPrimary);
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.notesMenuList {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    gap: 16px;
+}
+
+.noteCard {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    height: 100%;
+
+    padding: 20px 22px;
+
+    background: var(--surfaceBackground);
+
+    border: 1px solid var(--borderColor);
+
+    border-radius: var(--radiusLarge);
+
+    color: var(--textPrimary);
+
+    text-decoration: none;
+
+    box-shadow: var(--shadowSmall);
+
+    transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        background-color 0.18s ease;
+}
+
+.noteCard:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--accentColor);
+
+    box-shadow: var(--shadowMedium);
+}
+
+.noteCard:focus-visible {
+    outline: 2px solid var(--accentColor);
+    outline-offset: 3px;
+}
+
+.noteCard[hidden] {
+    display: none;
+}
+
+.noteCardHeader {
+    display: flex;
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.noteCardTitle {
+    margin: 0;
+
+    color: var(--textPrimary);
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    font-weight: 750;
+}
+
+.noteCardMeta {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px 16px;
+
+    color: var(--textMuted);
+
+    font-size: 12.5px;
+}
+
+.noteCardMetaLabel {
+    opacity: 0.75;
+}
+
+.noteCardMetaItem bdi {
+    color: var(--textSecondary);
+
+    font-weight: 650;
+}
+
+.noteCardDescription {
+    margin: 0;
+
+    color: var(--textSecondary);
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.noteCardAction {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: auto;
+
+    padding-top: 6px;
+
+    color: var(--accentColor);
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.noteCardAction svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Search highlighting inside a card */
+
+.noteCard mark {
+    padding: 0 2px;
+
+    background: var(--accentSoft);
+    color: var(--accentColor);
+
+    border-radius: 3px;
+
+    box-shadow: inset 0 -2px 0 var(--accentColor);
+}
+
+.notesMenuEmpty {
+    margin: 40px 0;
+
+    padding: 34px;
+
+    background: var(--surfaceMuted);
+
+    border: 1px dashed var(--borderColor);
+
+    border-radius: var(--radiusLarge);
+
+    color: var(--textSecondary);
+
+    text-align: center;
+
+    font-size: 15px;
+}
+
+.notesMenuEmpty[hidden] {
+    display: none;
+}
+
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+.siteFooter {
+    padding: 28px 24px 40px;
+
+    border-top: 1px solid var(--borderColor);
+
+    background: var(--surfaceMuted);
+
+    color: var(--textMuted);
+
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+.siteFooter p {
+    margin: 0;
+}
+
+.siteFooterNote {
+    margin-top: 6px;
+}
+
+
+/* =========================================================
+   Contributors Modal
+   ========================================================= */
+
+.siteContributorsModal .aboutModalContent {
+    max-width: min(680px, 100%);
+}
+
+.siteContributorsModal .developerCard p {
+    color: var(--textSecondary);
+}
+
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .siteHero {
+        padding-top: calc(var(--headerHeight) + 44px);
+    }
+
+    .siteHeading {
+        font-size: 28px;
+    }
+
+    .siteMain {
+        width: min(calc(100% - 32px), 1080px);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .siteHeader {
+        gap: 8px;
+    }
+
+    .siteBrandText {
+        display: none;
+    }
+
+    .siteTagline {
+        display: none;
+    }
+
+    .siteHero {
+        width: calc(100% - 24px);
+
+        padding-top: calc(var(--headerHeight) + 28px);
+    }
+
+    .siteHeading {
+        font-size: 23px;
+    }
+
+    .siteIntro {
+        font-size: 14px;
+    }
+
+    .siteSearchField {
+        padding: 0 12px;
+    }
+
+    .siteSearchInput {
+        height: 48px;
+        font-size: 14px;
+    }
+
+    .siteMain {
+        width: calc(100% - 24px);
+    }
+
+    .notesMenuList {
+        grid-template-columns: 1fr;
+    }
+
+    .notesMenuTitle {
+        font-size: 19px;
+    }
+
+}
+
+
+/* =========================================================
+   Print
+   ========================================================= */
+
+@media print {
+
+    .siteHeader,
+    .siteSearch,
+    .siteFooter,
+    .siteContributorsModal {
+        display: none !important;
+    }
+
+    .siteHero {
+        padding-top: 0;
+    }
+
+    .notesMenuList {
+        grid-template-columns: 1fr;
+    }
+
+    .noteCard {
+        break-inside: avoid;
+        page-break-inside: avoid;
+
+        box-shadow: none;
+    }
+
+}

@@ -7,7 +7,6 @@ import { parseMarkdown } from "./parser.js";
 import { prepareMath, restoreMath } from "./math_renderer.js";
 import { resolveImagePath } from "./image_handler.js";
 import { applyCallouts } from "./callouts.js";
-import { stripByteOrderMark } from "./noteIdentity.js";
 
 const window = new JSDOM("").window;
 const DOMPurify = createDOMPurify(window);
@@ -113,31 +112,14 @@ function createDefinitionBoxes(htmlContent) {
     return body.innerHTML;
 }
 
-/**
- * Render Markdown into note HTML.
- *
- * @param {string} markdownContent - Note source in Markdown.
- * @param {Object} rendererConfig - `{ theme, language, enableMath }`.
- * @param {Object} [options]
- * @param {string} [options.assetPrefix="../"] - Prefix prepended to relative
- *   asset paths, so the same note works from a flat folder or a nested one.
- * @returns {string} Sanitized HTML fragment.
- */
 export function renderMarkdown(
     markdownContent,
-    rendererConfig,
-    options = {}
+    rendererConfig
 ) {
-    const assetPrefix =
-        options.assetPrefix ?? "../";
-
-    // An invisible BOM would otherwise sit in front of the first heading.
-    const source = stripByteOrderMark(markdownContent);
-
     const processedMarkdown =
         rendererConfig.enableMath
-            ? prepareMath(source)
-            : source;
+            ? prepareMath(markdownContent)
+            : markdownContent;
 
     const htmlContent =
         parseMarkdown(processedMarkdown);
@@ -166,8 +148,7 @@ export function renderMarkdown(
         /(<img\b[^>]*\bsrc=")([^"]+)(")/g,
         (_, prefix, imagePath, suffix) => {
             return `${prefix}${resolveImagePath(
-                imagePath,
-                assetPrefix
+                imagePath
             )}${suffix}`;
         }
     );

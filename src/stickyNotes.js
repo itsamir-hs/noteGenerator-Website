@@ -1,8 +1,5 @@
 /* =========================================================
    Sticky Notes
-
-   Sticky notes belong to a single note, so the storage key is
-   namespaced with the current note id (see noteStorage.js).
    ========================================================= */
 
 const stickyNotesPanel = document.querySelector(
@@ -38,9 +35,7 @@ const stickyNoteContainer = document.querySelector(
 );
 
 const stickyNotesStorageKey =
-    noteScopedStorageKey(
-        "stickyNotes"
-    );
+    "stickyNotes";
 
 let stickyNotes = [];
 
@@ -824,7 +819,7 @@ function focusStickyNote(
 
     const header =
         document.querySelector(
-            ".appHeader"
+            ".topBar"
         );
 
     const headerHeight =

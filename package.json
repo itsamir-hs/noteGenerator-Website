@@ -5,11 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "node tests/testRenderer.js",
-    "render": "node src/main.js",
-    "build": "node scripts/build-site.mjs",
-    "serve": "node scripts/serve-site.mjs",
-    "site": "npm run render && npm run build"
+    "test": "node tests/testRenderer.js"
   },
   "keywords": [],
   "author": "",

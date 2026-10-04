@@ -1,3 +1,4 @@
+```css
 /* =========================================================
    Note Renderer — Responsive
    ========================================================= */
@@ -145,9 +146,7 @@
     .sidebarToggle,
     .aboutButton,
     .themeToggle,
-    .fontSizeControl,
-    .noteNavLink,
-    .noteNavButton {
+    .fontSizeControl {
         width: 36px;
         height: 36px;
 
@@ -158,23 +157,9 @@
     .sidebarToggle svg,
     .aboutButton svg,
     .themeToggle svg,
-    .fontSizeControl svg,
-    .noteNavLink svg,
-    .noteNavButton svg {
+    .fontSizeControl svg {
         width: 17px;
         height: 17px;
-    }
-
-
-    /* -----------------------------------------------------
-       Note Navigation
-
-       The header cannot hold the full control set on a phone,
-       so prev/next make way for the link back to the library.
-       ----------------------------------------------------- */
-
-    .noteNavButton {
-        display: none;
     }
 
 
@@ -518,9 +503,7 @@
     .sidebarToggle,
     .aboutButton,
     .themeToggle,
-    .fontSizeControl,
-    .noteNavLink,
-    .noteNavButton {
+    .fontSizeControl {
         width: 34px;
         height: 34px;
     }
@@ -529,9 +512,7 @@
     .sidebarToggle svg,
     .aboutButton svg,
     .themeToggle svg,
-    .fontSizeControl svg,
-    .noteNavLink svg,
-    .noteNavButton svg {
+    .fontSizeControl svg {
         width: 16px;
         height: 16px;
     }
@@ -724,3 +705,4 @@
     }
 
 }
+```
