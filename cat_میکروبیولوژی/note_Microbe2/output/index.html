@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>دیوارهٔ سلولی باکتری‌ها</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/rtl.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../node_modules/katex/dist/katex.min.css"
+    >
+
+    <link rel="stylesheet" href="../styles/dark.css">
+    <link rel="stylesheet" href="../styles/forest.css">
+    <link rel="stylesheet" href="../styles/paperLike.css">
+    <link rel="stylesheet" href="../styles/neon.css">
+
+    <script src="../node_modules/lucide/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+
+    <header class="appHeader">
+
+        <button
+            class="sidebarToggle"
+            type="button"
+            aria-label="باز کردن فهرست مطالب"
+            aria-expanded="false"
+        >
+            <i data-lucide="panel-left"></i>
+        </button>
+
+
+        <div class="appTitle">
+            پاپیروس
+        </div>
+
+
+        <div class="headerControls">
+
+<button
+    class="searchButton"
+    type="button"
+    aria-label="جستجو در جزوه"
+    aria-expanded="false"
+>
+    <i data-lucide="search"></i>
+</button>
+
+<div class="highlightSwitcher">
+
+    <button
+        class="highlightToggle"
+        type="button"
+        aria-label="هایلایت"
+        aria-expanded="false"
+    >
+        <i data-lucide="highlighter"></i>
+    </button>
+
+
+<div
+    class="highlightOptions"
+    aria-hidden="true"
+>
+
+    <button
+        class="highlightPowerToggle"
+        type="button"
+        aria-label="روشن یا خاموش کردن هایلایت"
+        aria-pressed="true"
+    >
+        <i data-lucide="highlighter"></i>
+        <span>هایلایت روشن</span>
+    </button>
+
+        <div class="highlightColors">
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#fff176"
+                aria-label="هایلایت زرد"
+                style="--highlightColor: #fff176;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#a5d6a7"
+                aria-label="هایلایت سبز"
+                style="--highlightColor: #a5d6a7;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#90caf9"
+                aria-label="هایلایت آبی"
+                style="--highlightColor: #90caf9;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ce93d8"
+                aria-label="هایلایت بنفش"
+                style="--highlightColor: #ce93d8;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ffab91"
+                aria-label="هایلایت نارنجی"
+                style="--highlightColor: #ffab91;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ef9a9a"
+                aria-label="هایلایت قرمز"
+                style="--highlightColor: #ef9a9a;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#f48fb1"
+                aria-label="هایلایت صورتی"
+                style="--highlightColor: #f48fb1;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#80cbc4"
+                aria-label="هایلایت فیروزه‌ای"
+                style="--highlightColor: #80cbc4;"
+            ></button>
+
+        </div>
+
+
+        <div class="highlightDivider"></div>
+
+
+        <label
+            class="highlightCustomColor"
+            aria-label="انتخاب رنگ دلخواه"
+        >
+            <input
+                class="highlightColorInput"
+                type="color"
+                value="#fff176"
+            >
+
+            <i data-lucide="palette"></i>
+        </label>
+
+
+        <button
+            class="highlightEraser"
+            type="button"
+            aria-label="پاک کردن هایلایت"
+        >
+            <i data-lucide="eraser"></i>
+            <span>پاک‌کن</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="stickyNotesSwitcher">
+
+    <button
+        class="stickyNotesToggle"
+        type="button"
+        aria-label="یادداشت‌های چسبان"
+        aria-expanded="false"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+</div>
+
+            <div class="fontSizeSwitcher">
+
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="decrease"
+                    aria-label="کاهش اندازه فونت"
+                >
+                    <i data-lucide="minus"></i>
+                </button>
+
+<button
+    type="button"
+    class="fontSizeControl fontSwitchControl"
+    aria-label="تغییر فونت"
+>
+    <i data-lucide="type"></i>
+</button>
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="increase"
+                    aria-label="افزایش اندازه فونت"
+                >
+                    <i data-lucide="plus"></i>
+                </button>
+
+            </div>
+
+
+            <div class="themeSwitcher">
+
+                <button
+                    class="themeToggle"
+                    type="button"
+                    aria-label="تغییر تم"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="sun"></i>
+                </button>
+
+<div class="themeOptions">
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="light"
+        aria-label="تم روشن"
+    >
+        <i data-lucide="sun"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="dark"
+        aria-label="تم تاریک"
+    >
+        <i data-lucide="moon"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="forest"
+        aria-label="تم جنگلی"
+    >
+        <i data-lucide="trees"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="paperLike"
+        aria-label="تم پیپر لایک"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+<button
+    class="themeButton"
+    type="button"
+    data-theme="neon"
+    aria-label="تم نئون"
+>
+<i data-lucide="zap"></i>
+</button>
+
+
+</div>
+
+            </div>
+
+<button
+    class="printButton"
+    type="button"
+    aria-label="چاپ جزوه"
+>
+    <i data-lucide="printer"></i>
+</button>
+
+
+            <button
+                class="aboutButton"
+                type="button"
+                aria-label="درباره ما"
+            >
+                <i data-lucide="users-round"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+<div
+    class="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="searchPanelContent">
+
+        <div class="searchInputWrapper">
+
+            <i data-lucide="search"></i>
+
+            <input
+                class="searchInput"
+                type="search"
+                placeholder="جستجو در جزوه..."
+                aria-label="جستجو در جزوه"
+                autocomplete="off"
+            >
+
+            <button
+                class="searchClearButton"
+                type="button"
+                aria-label="پاک کردن جستجو"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="searchResultsInfo">
+            <span class="searchResultsCount">۰ نتیجه</span>
+
+            <div class="searchNavigation">
+
+                <button
+                    class="searchPreviousButton"
+                    type="button"
+                    aria-label="نتیجه قبلی"
+                    disabled
+                >
+                    <i data-lucide="chevron-up"></i>
+                </button>
+
+                <button
+                    class="searchNextButton"
+                    type="button"
+                    aria-label="نتیجه بعدی"
+                    disabled
+                >
+                    <i data-lucide="chevron-down"></i>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    <aside
+        class="sidebar"
+        aria-label="فهرست مطالب"
+        aria-hidden="true"
+    >
+
+        <div class="sidebarHeader">
+            <h2>فهرست مطالب</h2>
+        </div>
+
+        <nav
+            class="sidebarContent"
+            aria-label="فهرست مطالب"
+        >
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-1"
+                >
+                    ۱. مقدمه و کلیات
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-2"
+                >
+                    ۲. متن اصلی جزوه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-3"
+                >
+                    جایگاه و اهمیت دیوارهٔ سلولی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-4"
+                >
+                    پپتیدوگلیکان
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-5"
+                >
+                    اجزای دیوارهٔ گرم مثبت: تیکوئیک اسیدها
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-6"
+                >
+                    پوشش سلولی گرم منفی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-7"
+                >
+                    لیپوپلی‌ساکارید (LPS)
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-8"
+                >
+                    لیزوزیم، اتولیزین‌ها و اثر آنتی‌بیوتیک
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-9"
+                >
+                    رنگ‌آمیزی گرم (Gram stain)
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-10"
+                >
+                    شکل‌های غیرطبیعی دیواره: پروتوپلاست، اسفروپلاست و اشکال L
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-11"
+                >
+                    ۳. جداول مرور سریع
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-12"
+                >
+                    مقایسهٔ پوشش سلولی گرم مثبت و گرم منفی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-13"
+                >
+                    اجزای پپتیدوگلیکان و تفاوت‌های زنجیرهٔ پپتیدی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-14"
+                >
+                    مراحل ساخت و اتصال مونومر پپتیدوگلیکان
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-15"
+                >
+                    مقایسهٔ اثرهای ذکرشدهٔ مواد بر ساخت دیواره
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-16"
+                >
+                    تیکوئیک اسیدها در گرم مثبت‌ها
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-17"
+                >
+                    اجزا و ویژگی‌های LPS
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-18"
+                >
+                    ساختارهای سطحی و کاربرد تشخیصی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-19"
+                >
+                    مراحل رنگ‌آمیزی گرم
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-20"
+                >
+                    خطاهای رنگ‌آمیزی و پیامدهای ذکرشده
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-21"
+                >
+                    مقایسهٔ شکل‌های فاقد یا دچار اختلال در دیواره
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-22"
+                >
+                    ۴. اصطلاحات و تعاریف
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-23"
+                >
+                    ۵. خود‌ارزیابی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-24"
+                >
+                    سوالات تشریحی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-25"
+                >
+                    سوالات تستی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-26"
+                >
+                    ۶. موارد نیازمند بررسی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-27"
+                >
+                    ۷. ادیتور و منابع استفاده‌شده
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-28"
+                >
+                    ۸. گزارش تکمیل بودن محتوا
+                </a>
+            
+        </nav>
+
+    </aside>
+
+
+    <div class="sidebarBackdrop"></div>
+
+<aside
+    class="stickyNotesPanel"
+    aria-label="یادداشت‌های چسبان"
+    aria-hidden="true"
+>
+
+    <div class="stickyNotesPanelHeader">
+
+        <h2>یادداشت‌های چسبان</h2>
+
+        <button
+            class="addStickyNoteButton"
+            type="button"
+        >
+            <i data-lucide="plus"></i>
+            <span>یادداشت جدید</span>
+        </button>
+
+    </div>
+
+    <div class="stickyNotesPanelContent">
+
+        <div class="stickyNotesEmptyState">
+<i data-lucide="notebook-pen"></i>
+
+            <p>
+                هنوز یادداشتی ایجاد نکرده‌اید.
+            </p>
+
+        </div>
+
+        <div class="stickyNotesList"></div>
+
+    </div>
+
+</aside>
+
+<div class="stickyNotesBackdrop"></div>
+
+
+    <div
+        class="aboutModal"
+        aria-hidden="true"
+    >
+
+        <div class="aboutModalBackdrop"></div>
+
+        <section
+            class="aboutModalContent"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="aboutTitle"
+        >
+
+            <button
+                class="aboutCloseButton"
+                type="button"
+                aria-label="بستن"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <h2 id="aboutTitle">
+                آدم‌هایی که اینجا رو ساختن
+            </h2>
+
+            <p class="aboutIntroduction">
+                ما یک تیم کوچک هستیم که باور داریم یادگیری باید
+                لذت‌بخش، عمیق، و در دسترس باشد. جزوه‌ساز تلاش ماست
+                برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً
+                بتوانی با آن‌ها چیزی یاد بگیری.
+            </p>
+
+
+<div class="developerList">
+
+    <article class="developerCard">
+        <h3>شبنم رضاپور</h3>
+        <p>کسی که PDFها را راضی کرد محتوایشان را بی‌کم‌وکاست لو بدهند.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیر‌حسین شکری‌زاده سعادت‌آباد</h3>
+        <p>صدای کلاس را به متن تبدیل کرد، حتی وقتی استاد وسط جمله با میکروفون قهر می‌کرد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>مهراد اسدی</h3>
+        <p>پرامپت‌ها را طوری چید که LLM فکر کرد دارد پایان‌نامه دکتری می‌نویسد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیرسالار سهام‌پور</h3>
+        <p>مارک‌داون را به HTML تبدیل کرد و به جزوه ظاهری داد که آدم دلش بخواهد بخواندش.</p>
+    </article>
+
+</div>
+
+            <p class="aboutFooter">
+                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد.
+                <br>
+                امیدواریم یادگیریت را لذت‌بخش‌تر کند.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <div class="quickNavigation">
+        <div class="quickNavigationList"></div>
+    </div>
+
+
+    <main class="noteContainer">
+
+<div class="stickyNotesLayer"></div>
+
+        <section class="noteHeader">
+
+            <div class="noteMetadata">
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">درس</span>
+                    <span class="metadataValue">میکروب‌شناسی عمومی</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">مبحث</span>
+                    <span class="metadataValue">میکروبیولوژی عمومی - دیوارهٔ سلولی باکتری‌ها، پپتیدوگلیکان و رنگ‌آمیزی گرم - جلسه دوم</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">استاد</span>
+                    <span class="metadataValue">دکتر علی فرهادی</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ جلسه</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ تولید جزوه</span>
+                    <span class="metadataValue generatedDate">2026-10-12T01:57:08</span>
+                </span>
+
+            </div>
+
+
+            <div class="aiWarning">
+                <i data-lucide="triangle-alert"></i>
+
+                <p>
+                    این جزوه با استفاده از جزوه‌ساز پاپیروس و به صورت خودکار تولید شده است.
+                    ممکن است شامل خطا یا برداشت نادرست باشد و
+                    نیازمند بررسی و بازبینی مجدد است.
+                </p>
+            </div>
+
+        </section>
+
+
+<section class="noteSection introductionSection">
+    <h2 id="heading-1">۱. مقدمه و کلیات</h2>
+<p>در این جلسه، ساختار دیوارهٔ سلولی باکتری‌ها، پپتیدوگلیکان، تفاوت دیوارهٔ باکتری‌های گرم مثبت و گرم منفی، مکانیسم رنگ‌آمیزی گرم و شکل‌های غیرطبیعی دیواره، شامل پروتوپلاست، اسفروپلاست و اشکال L، بررسی می‌شود. در جلسهٔ قبل، سیتوپلاسم و اجزای آن، غشای سیتوپلاسمی و نقش آن در انتقال مواد مطرح شده بود؛ این جلسه از دیوارهٔ سلولی و اهمیت آن در تشخیص و درمان آغاز می‌شود.</p>
+</section>
+
+<section class="noteSection mainSection">
+    <h2 id="heading-2">۲. متن اصلی جزوه</h2>
+<h3 id="heading-3">جایگاه و اهمیت دیوارهٔ سلولی</h3>
+<p>در جلسهٔ قبل، ساختار باکتری‌ها بررسی شد: سیتوپلاسم و اجزایی مانند گرانول‌ها، پیگمان‌ها، ریبوزوم‌ها و DNA خارج‌کروموزومی، یعنی پلاسمیدها؛ سپس غشای سیتوپلاسمی و نقش آن در انتقال مواد به داخل و خارج سلول مطرح شد. همهٔ باکتری‌ها سیتوپلاسم و غشای سیتوپلاسمی دارند و ساختار غشای سیتوپلاسمی در باکتری‌ها مشابه است، اما وجود پلاسمید یا پیگمان در همهٔ باکتری‌ها یکسان نیست. بیرون از غشای سیتوپلاسمی، <strong>دیوارهٔ سلولی</strong> قرار دارد. دیواره یکی از ساختارهای اصلی تمایز باکتری‌هاست و بر اساس آن، باکتری‌ها به گرم مثبت، گرم منفی و باکتری‌های بدون دیواره تقسیم می‌شوند.</p>
+<h4>اهمیت تشخیصی و درمانی دیواره</h4>
+<p>رنگ‌آمیزی گرم یکی از نخستین قدم‌ها برای انتخاب مسیر تشخیص در آزمایشگاه است. اگر تعداد باکتری‌ها در نمونه زیاد باشد، می‌توان مستقیماً از نمونهٔ بیمار، مانند خون یا نمونهٔ فرستاده‌شده از اتاق عمل، اسمیر تهیه و آن را رنگ‌آمیزی کرد. اگر تعداد باکتری‌ها کم باشد یا نمونه مخلوطی از چند باکتری باشد، ابتدا نمونه را کشت می‌دهند و سپس باکتری رشدکرده را رنگ‌آمیزی می‌کنند. بنابراین، رنگ‌آمیزی گرم را می‌توان مستقیماً روی نمونه یا پس از کشت انجام داد.</p>
+<p>نتیجهٔ رنگ‌آمیزی مسیر آزمایش‌های بعدی را تعیین می‌کند:</p>
+<ul>
+<li>برای باکتری‌های گرم مثبت، تست‌هایی مانند کاتالاز، کوآگولاز، رشد در NaCl، اسکولین و حساسیت به چین به کار می‌روند.</li>
+<li>برای گرم منفی‌ها از تست‌های دیگری استفاده می‌شود و سپس ممکن است تست‌های افتراقی مانند TSI ،MR،VP و OF انجام شوند.</li>
+</ul>
+<p>اگر رنگ‌آمیزی اشتباه باشد، ممکن است مسیر آزمایش به‌اشتباه انتخاب شود و باکتری شناسایی نشود. تفاوت دیواره در درمان نیز اهمیت دارد: به‌علت تفاوت ساختاری، برخی آنتی‌بیوتیک‌ها بر گرم مثبت‌ها اثر می‌کنند، اما بر گرم منفی‌ها مؤثر نیستند و برای گرم منفی‌ها ممکن است داروهای دیگری لازم باشد.</p>
+<h4>کارکرد و وجود دیواره</h4>
+<p>دیواره مانند پوستهٔ تخم‌مرغ از غشای سیتوپلاسمی، سیتوپلاسم و اجزای داخل سلول محافظت می‌کند؛ در تعیین شکل باکتری، از جمله شکل کوکسی یا باسیل، نقش دارد و باکتری را در برابر فشارهای محیطی، تابش اشعه، محیط‌های قندی هایپرتونیک، محیط‌های نمکی، اسیدی و قلیایی و عوامل آسیب‌رسان دیگر محافظت می‌کند.</p>
+<p>تقریباً همهٔ باکتری‌ها، به‌جز مایکوپلاسما، هالوباکترها و ترموپلاسما، دیوارهٔ سلولی دارند. هالوباکترها نمک‌دوست‌اند و در محیط‌های هایپرتونیک و هایپراسموتیک زندگی می‌کنند. در اسلاید، ترموپلاسما به‌عنوان گروهی از آرکی‌ها ذکر شده است. در این درس دربارهٔ هالوباکترها بحث نمی‌شود. پروتوپلاست‌ها و اسفروپلاست‌ها در بخش پایانی مطرح می‌شوند.</p>
+<p>استحکام دیواره عمدتاً به لایه‌های سخت پپتیدوگلیکان مربوط است. فشار اسمزی اغلب باکتری‌ها، در نتیجهٔ غلظت مواد محلولی که با انتقال فعال وارد سلول می‌شوند، حدود ۵ تا ۲۰ اتمسفر است. نبود دیواره‌ای محکم و انعطاف‌پذیر می‌تواند در بسیاری از محیط‌ها به انفجار سلولی بینجامد.</p>
+<p>در تصویر میکروسکوپ الکترونی، غشای سیتوپلاسمی، پپتیدوگلیکان و بخش‌های دیگر پوشش سلولی گرم مثبت و گرم منفی نشان داده شده‌اند. در هر دو، غشای سیتوپلاسمی در سمت داخل قرار دارد و پپتیدوگلیکان بیرون آن است؛ در گرم مثبت، لایهٔ پپتیدوگلیکان ضخیم است و در گرم منفی، لایه‌ای نازک‌تر قرار دارد که بیرون آن غشای خارجی دیده می‌شود. بنابراین، ساختارها تا غشای سیتوپلاسمی مشابه‌اند، اما بخش بیرون از آن در گرم مثبت و گرم منفی تفاوت دارد.</p>
+<p><img src="../data/assets/assets/image2.jpg" alt="تصویر 2">
+<em>تصویر 2</em></p>
+<h3 id="heading-4">پپتیدوگلیکان</h3>
+<p>بخش عمدهٔ دیوارهٔ هر دو گروه گرم مثبت و گرم منفی را پپتیدوگلیکان (peptidoglycan; PG)، که موکوپپتید یا مورئین (murein) نیز نامیده می‌شود، تشکیل می‌دهد. این ساختار شبکه‌ای (meshlike) و ویژهٔ باکتری‌هاست و باکتری را احاطه می‌کند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پپتیدوگلیکان (peptidoglycan; PG)</strong>
+ساختار شبکه‌ای ویژهٔ باکتری‌هاست که باکتری را احاطه می‌کند و بخش عمدهٔ دیوارهٔ گرم مثبت و گرم منفی را تشکیل می‌دهد.</div></div>
+<p>پپتیدوگلیکان در گرم مثبت‌ها ممکن است تا ۴۰ لایه داشته باشد؛ در گرم منفی‌ها تعداد لایه‌های آن بسیار کمتر و معمولاً یک یا دو لایه است. می‌توان آن را به توری پنجره‌ای تشبیه کرد که مواد از منفذهایش می‌گذرند: در گرم منفی‌ها این توری یک یا دو لایه و در گرم مثبت‌ها ممکن است تا ۴۰ لایه دور باکتری باشد. این تفاوت یکی از علت‌های ضخیم‌تر بودن دیوارهٔ گرم مثبت است.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">توری پنجره‌ای: پپتیدوگلیکان به توری تشبیه شده است که مواد از منفذهایش می‌گذرند؛ این توری در گرم منفی معمولاً یک یا دو لایه و در گرم مثبت ممکن است تا ۴۰ لایه باشد.</div></div>
+<p>اسلاید مقدار پپتیدوگلیکان گرم مثبت را حدود ۵۰ درصد وزن دیواره و مقدار آن را در گرم منفی ۵ تا ۱۰ درصد وزن دیواره ذکر می‌کند.</p>
+<h4>کارکردهای پپتیدوگلیکان</h4>
+<p>پپتیدوگلیکان:</p>
+<ul>
+<li>به دیواره استحکام می‌دهد و آن را در برابر فشار اسمزی مقاوم می‌کند؛</li>
+<li>شکل سلولی را تعیین می‌کند؛</li>
+<li>به‌عنوان پیش‌ساز، در سنتز خود نقش دارد؛</li>
+<li>در گرم مثبت‌ها می‌تواند لنگرگاه اتصال مولکول‌های خاص باشد؛</li>
+<li>در تداخل با فاگوسیتوز نقش دارد؛</li>
+<li>می‌تواند پاسخ ایمنی، از جمله تحریک میتوز در لنفوسیت‌ها، را برانگیزد.</li>
+</ul>
+<p>پپتیدوگلیکان هم در جلوگیری از فاگوسیتوز و هم در شناسایی و تحریک سیستم ایمنی نقش دارد. ترکیبات ویژهٔ دیوارهٔ باکتری و ساختارهای تکرارشوندهٔ آن می‌توانند پاسخ ایمنی ذاتی را تحریک کنند.</p>
+<p><img src="../data/assets/assets/image3.jpg" alt="تصویر 3">
+<em>تصویر 3</em></p>
+<h4>اجزای پپتیدوگلیکان</h4>
+<p>پپتیدوگلیکان از سه جزء اصلی تشکیل شده است:</p>
+<h5>اسکلت پلی‌ساکاریدی</h5>
+<p>واحدهای تکرارشوندهٔ N-استیل‌مورامیک اسید (N-acetylmuramic acid; NAM، در بعضی متن‌ها NAMA) و N-استیل‌گلوکزآمین (N-acetylglucosamine; NAG، در بعضی متن‌ها NAGA) با پیوند گلیکوزیدی β-1,4 به یکدیگر متصل‌اند. این اسکلت در باکتری‌ها مشابه است.</p>
+<h5>زنجیرهٔ جانبی تتراپپتیدی</h5>
+<p>این زنجیره به NAM متصل است و ترکیب آن می‌تواند بین گونه‌ها تفاوت داشته باشد. در بسیاری از باکتری‌ها، جایگاه‌های زنجیره چنین‌اند:</p>
+<ol>
+<li><strong>جایگاه اول:</strong> L-آلانین (L-alanine)، متصل به NAM. در اسلاید، پیوند NAM و L-آلانین به‌عنوان پیوندی حساس به amidase معرفی شده است.</li>
+<li><strong>جایگاه دوم:</strong> D-گلوتامیک اسید (D-glutamic acid) یا جایگزین آن.</li>
+<li><strong>جایگاه سوم:</strong> متغیرترین جایگاه؛ در اغلب گرم منفی‌ها meso-DAP (meso-diaminopimelic acid) و در اغلب گرم مثبت‌ها L-لیزین (L-lysine) قرار می‌گیرد. در گرم مثبت‌ها این جایگاه ممکن است با DAP یا اسیدآمینهٔ دیگری نیز پر شود؛ در گرم منفی‌ها این جایگاه با L-لیزین پر نمی‌شود.</li>
+<li><strong>جایگاه چهارم:</strong> D-آلانین (D-alanine).</li>
+</ol>
+<p>بنابراین، یکی از تفاوت‌های معمول زنجیرهٔ پپتیدی گرم مثبت و گرم منفی، اسیدآمینهٔ جایگاه سوم است: معمولاً L-لیزین در گرم مثبت و meso-DAP در گرم منفی.</p>
+<h5>پیوندهای عرضی پپتیدی</h5>
+<p>گروه آمین اسیدآمینهٔ سوم یک زنجیرهٔ تتراپپتیدی با گروه کربوکسیل اسیدآمینهٔ چهارم زنجیره‌ای دیگر پیوند برقرار می‌کند و شبکه‌ای از زنجیره‌ها شکل می‌گیرد. این فرایند ترانس‌پپتیداسیون (transpeptidation) است و پروتئین‌های متصل‌شونده به پنی‌سیلین (penicillin-binding proteins; PBP)، از جمله ترانس‌پپتیدازها، در آن نقش اصلی دارند. در برخی ساختارهای نمایش‌داده‌شده، پل پپتیدی شامل واحدهای گلیسین است.</p>
+<p>در اسلاید، مونومرهای پپتیدوگلیکان Escherichia coli و Staphylococcus aureus با یکدیگر مقایسه شده‌اند.</p>
+<p><img src="../data/assets/assets/image5.jpg" alt="تصویر 5">
+<em>تصویر 5</em></p>
+<p><img src="../data/assets/assets/image6.jpg" alt="تصویر 6">
+<em>تصویر 6</em></p>
+<p><img src="../data/assets/assets/image7.jpg" alt="تصویر 7">
+<em>تصویر 7</em></p>
+<h4>سنتز و اتصال مونومرهای پپتیدوگلیکان</h4>
+<p>جزئیات ساختار برای شناخت محل اثر آنتی‌بیوتیک‌ها اهمیت دارد. مونومرهای پپتیدوگلیکان در سیتوزول ساخته می‌شوند و با کمک مولکول ناقل غشایی باکتوپرنول (bactoprenol) از غشای سیتوپلاسمی عبور می‌کنند. باکتوپرنول مونومرها را به محل رشد دیواره می‌رساند و به واردشدن آن‌ها در زنجیره‌های در حال رشد کمک می‌کند.</p>
+<p>مراحل تشکیل مونومر و اتصال آن به دیواره عبارت‌اند از:</p>
+<ol>
+<li>NAG و NAM به UDP (uridine diphosphate) متصل می‌شوند و UDP-NAG و UDP-NAM را می‌سازند.</li>
+<li>اسیدهای آمینه به UDP-NAM افزوده می‌شوند. اسلاید می‌گوید پنج اسیدآمینه به‌صورت پیاپی به UDP-NAM اضافه می‌شوند و دو اسیدآمینهٔ انتهایی D-alanine هستند که از L-alanine ساخته می‌شوند.</li>
+<li>زنجیرهٔ اولیه پنتاپپتیدی است؛ در جریان انتقال، D-alanine انتهایی جدا می‌شود و زنجیرهٔ نهایی تتراپپتیدی باقی می‌ماند. وجود پنج اسیدآمینه در شکل مونومر با زنجیرهٔ تتراپپتیدی نهایی تناقض ندارد: هنگام انتقال، اسیدآمینهٔ آخر جدا می‌شود و انرژی آزادشده در انتقال به‌کار می‌رود.</li>
+<li>مونومر NAM-pentapeptide به باکتوپرنول متصل می‌شود؛ انرژی این مرحله از یکی از گروه‌های فسفات پرانرژی UDP تأمین می‌شود.</li>
+<li>سپس NAG به NAM-pentapeptide متصل می‌شود و مونومر پپتیدوگلیکان کامل می‌شود.</li>
+<li>باکتوپرنول این مونومرها را از غشای سیتوپلاسمی عبور می‌دهد.</li>
+<li>در سطح بیرونی، transglycosidaseها مونومرها را از راه پیوند قندی به زنجیره متصل می‌کنند و transpeptidaseها زنجیره‌ها را به‌صورت عرضی به هم پیوند می‌دهند. این اتصالات به دیواره استحکام می‌بخشند و به باکتری در مقاومت به osmotic lysis کمک می‌کنند.</li>
+</ol>
+<p><img src="../data/assets/assets/image9.jpg" alt="تصویر 9">
+<em>تصویر 9</em></p>
+<p><img src="../data/assets/assets/image10.jpg" alt="تصویر 10">
+<em>تصویر 10</em></p>
+<p><img src="../data/assets/assets/image11.jpg" alt="تصویر 11">
+<em>تصویر 11</em></p>
+<p><img src="../data/assets/assets/image12.jpg" alt="تصویر 12">
+<em>تصویر 12</em></p>
+<h4>اثر آنتی‌بیوتیک‌ها بر ساخت پپتیدوگلیکان</h4>
+<p>پنی‌سیلین از طریق اثر بر PBPها و جلوگیری از ترانس‌پپتیداسیون، تشکیل پیوندهای عرضی پپتیدی را مختل می‌کند. در صورت حضور پنی‌سیلین، به‌سبب حلقهٔ بتالاکتام، آنزیم غیرفعال می‌شود و مونومرها به شبکه‌ای پیوسته تبدیل نمی‌شوند.</p>
+<p>باسیتراسین نیز در روند ایجاد پیوند قندی بین واحدها اختلال ایجاد می‌کند؛ در نتیجه، زنجیرهٔ قندی به‌شکل معمول ساخته نمی‌شود.</p>
+<p>در توضیح مدرس، <strong>لیزوزیم</strong> و پنی‌سیلین هر دو در ارتباط با اختلال در ساخت دیواره مطرح شدند و گفته شد که اگر پنی‌سیلین یا لیزوزیم به باکتری برسد و ترانس‌پپتیداز را غیرفعال کند، اتصال‌های دیواره مختل می‌شوند.</p>
+<h4>تفاوت پپتیدوگلیکان در گروه‌های باکتریایی</h4>
+<ul>
+<li><strong>آرکی‌ها:</strong> پپتیدوگلیکان در آرکی‌ها وجود ندارد. اسلاید می‌گوید برخی آرکی‌ها دارای سودوپپتیدوگلیکان (pseudomurein) هستند که با پپتیدوگلیکان تفاوت دارد: به‌جای NAMA دارای N-استیل‌اورونیک اسید است و ساختمان تتراپپتیدی آن سه اسیدآمینه از نوع L دارد. آرکی‌ها گروهی باستانی توصیف شدند و به برخی گروه‌های محیطی، از جمله گروه‌هایی مرتبط با احیای سولفید یا آهن، اشاره شد. همچنین گفته شد تا آن زمان باکتری بیماری‌زایی از این گروه که باعث بیماری در انسان شود معرفی نشده است.</li>
+<li><strong>مایکوپلاسما و کلامیدیا:</strong> پپتیدوگلیکان ندارند؛ مایکوپلاسما اساساً فاقد دیوارهٔ باکتریایی است.</li>
+<li><strong>مایکوباکتریوم‌ها:</strong> در مایکوباکتریوم‌ها، از جمله Mycobacterium tuberculosis عامل سل و Mycobacterium leprae عامل جذام، به‌جای NAM، N-glycolylmuramic acid (N-گلیکول‌مورامیک اسید) وجود دارد. این ساختار wax-like توصیف شده است و ویژگی مومی آن نفوذ رنگ را دشوار می‌کند؛ بنابراین، این باکتری‌ها با رنگ‌آمیزی معمول گرم به‌آسانی دیده نمی‌شوند. برای نمونه‌های تنفسی مشکوک، صرفاً به‌دلیل دیده‌نشدن باکتری با رنگ‌آمیزی گرم، نمونه را کنار نمی‌گذارند و از رنگ‌آمیزی اسیدفست (acid-fast) استفاده می‌کنند. روش رایج‌تر آن Ziehl–Neelsen است. اصطلاح fast در اینجا به مقاومت در برابر اسیدی اشاره دارد که در یکی از مراحل رنگ‌آمیزی به‌کار می‌رود. این روش برای نمونه‌هایی اهمیت دارد که محل نمونه‌گیری یا علائم، احتمال وجود مایکوباکتریوم را مطرح می‌کند.</li>
+</ul>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">Mycobacterium tuberculosis عامل سل و Mycobacterium leprae عامل جذام‌اند؛ این مایکوباکتریوم‌ها به‌علت ساختار مومی با رنگ‌آمیزی معمول گرم به‌آسانی دیده نمی‌شوند.</div></div>
+<h3 id="heading-5">اجزای دیوارهٔ گرم مثبت: تیکوئیک اسیدها</h3>
+<p>در دیوارهٔ گرم مثبت، افزون بر پپتیدوگلیکان، تیکوئیک اسیدها (teichoic acids) وجود دارند. بعضی از این ساختارها کوتاه‌ترند و در لایهٔ پپتیدوگلیکان قرار می‌گیرند؛ بعضی دیگر بلندترند و تا غشای سیتوپلاسمی امتداد دارند. دو نوع اصلی عبارت‌اند از:</p>
+<ul>
+<li><strong>تیکوئیک اسید دیواره‌ای (wall teichoic acid; WTA)</strong></li>
+<li><strong>تیکوئیک اسید غشایی یا لیپوتیکوئیک اسید (lipoteichoic acid; LTA)</strong></li>
+</ul>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>تیکوئیک اسید دیواره‌ای (wall teichoic acid; WTA)</strong>
+تیکوئیک اسیدی است که با پیوند کووالان به گروه هیدروکسیل کربن شمارهٔ ۶ NAMA پپتیدوگلیکان متصل می‌شود.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>لیپوتیکوئیک اسید (lipoteichoic acid; LTA)</strong>
+تیکوئیک اسیدی است که با پیوند کووالان به گلیکولیپیدهای غشای سلولی متصل است.</div></div>
+<p>تیکوئیک اسیدها به میخ‌هایی تشبیه شدند که لایه‌های پپتیدوگلیکان را کنار هم نگه می‌دارند: نوعی که به غشا می‌رسد LTA و نوع کوتاه‌تر WTA است.</p>
+<p>تیکوئیک اسیدها فقط در دیوارهٔ گرم مثبت‌ها یافت می‌شوند. این پلیمرها از واحدهای ریبیتول‌فسفات یا گلیسرول‌فسفات ساخته شده‌اند که با پیوندهای فسفودی‌استر به هم متصل‌اند. معمولاً D-آلانین و نیز گروه‌های دیگری مانند گلوکز، گالاکتوز، N-استیل‌گلوکزآمین، N-استیل‌گالاکتوزآمین و سوکسینات می‌توانند به گروه‌های هیدروکسیل گلیسرول یا ریبیتول متصل شوند. اسلاید سهم آن‌ها را تا حدود ۵۰ درصد وزن دیواره و ۱۰ درصد وزن خشک کل سلول ذکر می‌کند؛ در برخی باکتری‌های گرم مثبت، LTA نیز آنتی‌ژن مهمی است.</p>
+<p>تیکوئیک اسیدها از ساختارهای سطحی‌اند و می‌توانند به‌وسیلهٔ سیستم ایمنی شناسایی شوند و پاسخ آنتی‌بادی را برانگیزند. نقش‌های ذکرشده برای آن‌ها عبارت‌اند از:</p>
+<ul>
+<li>مقاومت در برابر لیزوزیم و آنزیم‌های تخریب‌کننده؛</li>
+<li>اتصال به باکتریوفاژ؛</li>
+<li>اتصال یا جذب Mg²⁺ به‌علت بار منفی تیکوئیک اسید؛</li>
+<li>جذب DNA و مشارکت در ترانسفورماسیون.</li>
+</ul>
+<p>فاژها ویروس‌هایی هستند که به باکتری حمله می‌کنند و می‌توانند این ساختارها را شناسایی و به آن‌ها متصل شوند.</p>
+<p><img src="../data/assets/assets/image14.jpg" alt="تصویر 14">
+<em>تصویر 14</em></p>
+<h3 id="heading-6">پوشش سلولی گرم منفی</h3>
+<h4>غشاها و فضای پری‌پلاسمیک</h4>
+<p>باکتری گرم منفی علاوه بر غشای سیتوپلاسمی (inner membrane)، لایه‌ای نازک از پپتیدوگلیکان و غشای خارجی (outer membrane) دارد. فضای میان غشای داخلی و خارجی، فضای پری‌پلاسمیک (periplasmic space) است. در این فضا پروتئین‌های انتقال مواد، آنزیم‌ها و پروتئین‌های متصل‌شونده به سوبستراها قرار دارند. برخی مواد به‌وسیلهٔ این سامانه‌ها از بیرون جذب می‌شوند و برخی دیگر از سیتوپلاسم به بیرون انتقال می‌یابند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>فضای پری‌پلاسمیک (periplasmic space)</strong>
+فضای میان غشای داخلی و غشای خارجی باکتری گرم منفی است که پروتئین‌های انتقال مواد، آنزیم‌ها و پروتئین‌های متصل‌شونده به سوبستراها در آن قرار دارند.</div></div>
+<h4>لیپوپروتئین براون</h4>
+<p>لایهٔ بیرونی پپتیدوگلیکان در گرم منفی‌ها به‌وسیلهٔ اجزایی مانند لیپوپروتئین براون (Braun’s lipoprotein) و پیوندهای غیرکووالانسی با غشای خارجی مرتبط است. طبق اسلاید، لیپوپروتئین براون:</p>
+<ul>
+<li>در بیشتر باکتری‌های گرم منفی وجود دارد، به‌جز Pseudomonas aeruginosa؛</li>
+<li>بیشترین میزان پروتئین دیوارهٔ سلولی گرم منفی را در خود دارد؛</li>
+<li>فاقد اسیدهای آمینهٔ آب‌گریز توصیف شده است؛</li>
+<li>پپتیدوگلیکان را به‌صورت کووالان به غشای خارجی متصل می‌کند.</li>
+</ul>
+<p>این ساختار در کنار پروتئین‌های فضای پری‌پلاسمیک و انتقال مواد توضیح داده شد.</p>
+<p><img src="../data/assets/assets/image16.jpg" alt="تصویر 16">
+<em>تصویر 16</em></p>
+<h4>ساختار و نفوذپذیری غشای خارجی</h4>
+<p>غشای خارجی دولایه و نامتقارن است: لایهٔ داخلی آن از نظر ترکیب به غشای سیتوپلاسمی شباهت دارد، اما لایهٔ خارجی آن دارای LPS است. جنس فسفولیپید‌های موجود در غشای خارجی، فسفاتیدیل‌اتانول‌آمین است. تنوع پروتئین‌های غشای خارجی باکتری‌های گرم منفی محدود است و این پروتئین‌ها به‌وسیلهٔ ریبوزوم‌های متصل به سطح غشای سیتوپلاسمی تولید می‌شوند. غشای خارجی با کمک لیپوپروتئین براون (پیوند کوالانسی) و نیز پورین‌ها (پیوندهای غیرکووالانسی) به پپتیدوگلیکان متصل است.</p>
+<p>غشای خارجی مانع عبور مولکول‌های هیدروفوب می‌شود و به این ترتیب باکتری را از اثر اسیدهای صفراوی محافظت می‌کند. همچنین عبور آنتی‌بیوتیک‌های بزرگ را محدود می‌کند؛ به همین دلیل مقاومت باکتری‌های گرم منفی به آنتی‌بیوتیک‌ها نسبتا بالاست. درحالی‌که برخی مولکول‌های آبدوست با وزن مولکولی پایین می‌توانند از آن عبور کنند.</p>
+<h4>انواع پروتئین‌های غشای خارجی</h4>
+<p><img src="../data/assets/assets/image19.jpg" alt="تصویر 19">
+<em>تصویر 19</em></p>
+<h4>اتصالات بایر و فضای پری‌پلاسمیک</h4>
+<p>اتصالات بایر (Bayer’s junctions) در باکتری‌های گرم منفی به انتقال پروتئین‌های غشای خارجی و پیش‌سازهای کپسول کمک می‌کنند، غشای خارجی را به غشای داخلی متصل می‌سازند، در لیز ناشی از کمپلمان نقش دارند و محل تزریق DNA فاژ هستند. اتصالات بایر به نگه‌داشتن اجزای غشای داخلی، فضای پری‌پلاسمیک و غشای خارجی در کنار هم کمک می‌کنند.</p>
+<p>فضای پری‌پلاسمیک محل وجود چند دسته ماده است:</p>
+<ul>
+<li>آنزیم‌های هیدرولیتیک که سوبستراهای غیرقابل‌انتقال را به سوبستراهای قابل‌انتقال تبدیل می‌کنند؛</li>
+<li>پپتیدوگلیکان؛</li>
+<li>پروتئین‌های متصل‌شونده به سوبستراهای خاص مانند آمینواسیدها، قندها، ویتامین‌ها و یون‌ها؛</li>
+<li>آنزیم‌های سم‌زدا که برخی آنتی‌بیوتیک‌ها را غیرفعال می‌کنند؛</li>
+<li>در گونه‌های پاتوژن گرم منفی، فاکتورهای ویرولانس کشنده از جمله کلاژن‌هیالورونیداز، پروتئاز و بتالاکتاماز.</li>
+</ul>
+<h3 id="heading-7">لیپوپلی‌ساکارید (LPS)</h3>
+<p>در سطح خارجی غشای باکتری‌های گرم منفی، لیپوپلی‌ساکارید (lipopolysaccharide; LPS) قرار دارد که اندوتوکسین نیز نامیده می‌شود. LPS سه بخش دارد: لیپید A، بخش مرکزی (Core) و آنتی‌ژن O (O antigen). برای به‌خاطر سپردن ساختار، می‌توان آن را به ریشه، ساقه و شاخه‌های یک درختچه تشبیه کرد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>لیپوپلی‌ساکارید (lipopolysaccharide; LPS)</strong>
+ساختاری در سطح خارجی غشای باکتری‌های گرم منفی است که اندوتوکسین نیز نامیده می‌شود و از لیپید A، بخش مرکزی (Core) و آنتی‌ژن O تشکیل شده است.</div></div>
+<h4>لیپید A</h4>
+<p>لیپید A بخش درون‌غشایی و عامل سمیت LPS است. اسلاید آن را متشکل از واحدهای دی‌ساکاریدی N-استیل‌گلوکزآمین، دو گروه فسفات و شش واحد اسید چرب توصیف می‌کند. اسید بتاهیدروکسی‌میریستیک (β-hydroxymyristic acid)، اسید چرب ۱۴کربنه‌ای است که <strong>همیشه</strong> در این مولکول حضور دارد؛ سایر اسیدهای چرب می‌توانند میان گونه‌های مختلف تفاوت داشته باشند.</p>
+<p>ورود لیپید A به جریان خون می‌تواند به تب شدید، شوک سپتیک و آسیب یا ازکارافتادن اندام‌های حیاتی، از جمله کلیه و کبد، منجر شود. همچنین از واکنش شوارتزمن به‌عنوان واکنشی همراه با تب، علائم شدید، آسیب بافتی و تحریک سیستم ایمنی یاد شد که می‌تواند مرگ‌آور باشد.</p>
+<h4>بخش مرکزی (Core)</h4>
+<p>بخش Core میان لیپید A و آنتی‌ژن O قرار دارد و آنتی‌ژن O را به LPS متصل می‌کند. بخش داخلی Core شامل فسفات، دو قند هپتوز و ۲کتو ۳دزوکسی اکتولوزونیک‌اسید تشکیل شده است.  بخش خارجی آن شامل هگزوزها و قندهای دیگر است که در باکتری‌های مختلف متنوع است.</p>
+<p>از دست‌رفتن Core باعث ایجاد کلونی خشن (Rough) می‌شود.</p>
+<h4>آنتی‌ژن O (یا AgO)</h4>
+<p>آنتی‌ژن O از واحدهای تکرارشوندهٔ الیگوساکاریدی ساخته می‌شود؛ این واحدها ممکن است خطی تری‌ساکاریدی یا به‌صورت تتراساکارید و پنتاساکارید شاخه‌دار باشند. توالی این پلی‌ساکاریدهای تکرارشونده میان گونه‌های یک جنس متفاوت است و اختصاصی‌بودن آنتی‌ژن O به واحدهای الیگوساکاریدی مربوط می‌شود.</p>
+<p>باکتری‌های گرم منفی بر اساس آنتی‌ژن O گروه‌بندی و سروتیپ‌بندی می‌شوند. آنتی‌ژن O در سطح باکتری قرار دارد، خاصیت آنتی‌ژنی دارد و بر ضد آن آنتی‌بادی ساخته می‌شود؛ همچنین می‌تواند گیرندهٔ فاژ باشد و در اتصال به سلول میزبان و مقاومت به فاگوسیتوز نقش داشته باشد. آنتی‌ژن O به‌وسیلهٔ آنزیم لیگاز به Core متصل می‌شود.</p>
+<p>با از دست رفتن AgO، باکتری‌ها از حالت صاف به خشن تبدیل می‌شوند.</p>
+<p><img src="../data/assets/assets/image23.jpg" alt="تصویر 23">
+<em>تصویر 23</em></p>
+<p><img src="../data/assets/assets/image24.jpg" alt="تصویر 24">
+<em>تصویر 24</em></p>
+<p><img src="../data/assets/assets/image25.jpg" alt="تصویر 25">
+<em>تصویر 25</em></p>
+<p><img src="../data/assets/assets/image26.jpg" alt="تصویر 26"><em>کلونی خشن و صاف</em></p>
+<h4>سروتیپ‌بندی و کاربرد تشخیصی آنتی‌ژن‌های سطحی</h4>
+<p>تیکوئیک اسید در گرم مثبت‌ها و آنتی‌ژن O در گرم منفی‌ها از ساختارهای سطحی قابل‌شناسایی برای سیستم ایمنی‌اند و در سروتیپ‌بندی اهمیت دارند. «سرو» به سرم و آنتی‌بادی‌های موجود در آن اشاره دارد؛ در سرولوژی، آنتی‌بادی‌های سرم بیمار بر ضد آنتی‌ژن‌های سطحی باکتری، ویروس یا انگل شناسایی می‌شوند.</p>
+<p>برای نمونه، E. coli در رودهٔ انسان وجود دارد و بسیاری از سویه‌های آن بیماری‌زا نیستند، اما برخی سویه‌ها حتی در تعداد کم می‌توانند اسهال و گاستروانتریت ایجاد کنند. O157 نمونه‌ای از سویه‌های شناخته‌شدهٔ بیماری‌زای E. coli است. یافتن E. coli در کشت مدفوع به‌تنهایی نشان نمی‌دهد که سویهٔ جداشده بیماری‌زاست، زیرا این باکتری می‌تواند بخشی از فلور طبیعی روده باشد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">O157 نمونه‌ای از سویه‌های شناخته‌شدهٔ بیماری‌زای E. coli است؛ بااین‌حال، یافتن E. coli در کشت مدفوع به‌تنهایی بیماری‌زا بودن سویه را نشان نمی‌دهد.</div></div>
+<p>در چنین مواردی می‌توان از تست سرولوژیک استفاده کرد:</p>
+<ol>
+<li>از کلونی باکتری نمونه می‌گیرند و آن را روی اسلایدهای جداگانه قرار می‌دهند.</li>
+<li>آنتی‌سرم‌های اختصاصی آنتی‌ژن O، مانند O1،O2،O5،O6 و O157، اضافه می‌کنند.</li>
+<li>واکنش با آنتی‌سرم مشخص نشان می‌دهد که باکتری با آن الگوی آنتی‌ژنی تطابق دارد و می‌تواند به تشخیص سویهٔ بیماری‌زا کمک کند.</li>
+</ol>
+<p>در صورت نداشتن واکنش، باید سویه‌های طبیعی و نیز عوامل دیگری را که گاستروانتریت ایجاد می‌کنند، از جمله Bacillus یا Clostridium difficile، در نظر گرفت.</p>
+<p>برای توضیح کاربرد بالینی، فردی که دچار اسهال و استفراغ شده است ممکن است گزارش کند غذایی خورده که چندین ساعت، مثلاً ۸ تا ۱۲ ساعت، در دمای محیط مانده است. در صورت شک به آلودگی یا مسمومیت باکتریایی، ممکن است کشت مدفوع درخواست شود؛ اما نتیجهٔ کشت و مشاهدهٔ E. coli به‌تنهایی بیماری‌زا بودن سویه را مشخص نمی‌کند و سروتیپ‌بندی می‌تواند به این تمایز کمک کند.</p>
+<p>در جدول مقایسهٔ گرم مثبت و گرم منفی، LPS و اندوتوکسین در گرم منفی‌ها وجود دارند و در گرم مثبت‌ها وجود ندارند. کپسول در برخی سویه‌های هر دو گروه ذکر شده و تولید اگزوتوکسین نیز در برخی سویه‌ها مطرح شده است.</p>
+<p><img src="../data/assets/assets/image27.jpg" alt="تصویر 27">
+<em>تصویر 27</em></p>
+<h3 id="heading-8">لیزوزیم، اتولیزین‌ها و اثر آنتی‌بیوتیک</h3>
+<p>در توضیح درس گفته شد که اختلال در دیواره، چه به‌علت لیزوزیم، پنی‌سیلین یا عوامل بیرونی مانند تابش اشعه، ممکن است اتولیزین‌های باکتری را فعال کند. اتولیزین‌ها پیوندهایی را که قبلاً در دیواره تشکیل شده‌اند تخریب می‌کنند. این فرایند به‌طور تقریبی با proofreading هنگام همانندسازی DNA مقایسه شد: در صورت اختلال، ساختار باز می‌شود تا پیوندها دوباره برقرار شوند.</p>
+<p>اگر مهار آنتی‌بیوتیکی طولانی باشد، فرصت بازسازی دیواره از بین می‌رود؛ اگر تماس کوتاه باشد، ممکن است پس از رفع اثر مهاری، باکتری برخی پیوندها را دوباره برقرار کند. در همین زمینه، بر مصرف آنتی‌بیوتیک با دوز کافی و تکمیل مدت درمان تأکید شد؛ قطع دارو پس از بهترشدن علائم می‌تواند فرصت بازسازی دیواره را فراهم کند.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">در توضیح درس بر مصرف آنتی‌بیوتیک با دوز کافی و تکمیل مدت درمان تأکید شد؛ قطع دارو پس از بهترشدن علائم می‌تواند فرصت بازسازی دیواره را فراهم کند.</div></div>
+<p>باکتری‌های گرم مثبت به پنی‌سیلین حساس‌اند و گرم منفی‌ها ممکن است مقاوم باشند؛ بنابراین، آنتی‌بیوتیک‌های دارای حلقهٔ بتالاکتام که بر ساخت دیواره اثر می‌گذارند ممکن است برای گرم مثبت‌ها مؤثر باشند، اما برای گرم منفی‌ها لزوماً مؤثر نیستند.</p>
+<p>لیزوزیم در بزاق تجمع دارد. انسان و حیواناتی مانند سگ و گربه ممکن است زخم را بلیسند؛ لیزوزیم بزاق می‌تواند بر بعضی از باکتری‌های گرم مثبت مؤثر باشد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">انسان و حیواناتی مانند سگ و گربه ممکن است زخم را بلیسند؛ لیزوزیم بزاق می‌تواند بر بعضی از باکتری‌های گرم مثبت مؤثر باشد.</div></div>
+<h3 id="heading-9">رنگ‌آمیزی گرم (Gram stain)</h3>
+<p>رنگ‌آمیزی گرم روشی ساده و سریع برای طبقه‌بندی باکتری‌ها به گرم مثبت و گرم منفی است. این روش به نام Hans Gram، پزشک آلمانی، نام‌گذاری شده و بنا بر توضیح درس، حدود ۱۱۰ سال پیش ابداع شده است. چهار مادهٔ اصلی آن کریستال ویوله، ید یا لوگول (Lugol)، استون یا استون‌الکل و سافرانین (safranin) هستند. سافرانین رنگ قرمز دارد. رنگ‌آمیزی گرم یکی از نخستین قدم‌ها در میکروب‌شناسی تشخیصی است.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>رنگ‌آمیزی گرم (Gram stain)</strong>
+روشی ساده و سریع برای طبقه‌بندی باکتری‌ها به گرم مثبت و گرم منفی است.</div></div>
+<p>بدون رنگ‌آمیزی، باکتری‌های موجود در نمونه‌های بی‌رنگ، مانند بزاق یا ادرار، ممکن است کم‌رنگ و دشوار برای دیدن باشند؛ حتی اگر دیده شوند، تصویر ممکن است برای تشخیص کافی نباشد و نمی‌توان بر اساس آن گرم مثبت یا گرم منفی بودن را تعیین کرد.</p>
+<h4>تهیهٔ نمونه و اسمیر</h4>
+<p>نمونه می‌تواند مستقیماً از بیمار گرفته شود، مانند خون، ادرار، چرک، مایع سینوویال، CSF یا ترشحات مجاری ادراری و تناسلی؛ یا از کلونی روی پلیت و نمونه‌های جامد یا نیمه‌جامد، مانند مدفوع، تهیه شود.</p>
+<p>برای نمونهٔ نیمه‌جامد می‌توان یک قطره سرم فیزیولوژی استریل افزود، نمونه را در آن حل کرد و با لوپ استریل به‌صورت گستره‌ای کوچک و گرد روی اسلاید پخش کرد.</p>
+<p>پس از تهیهٔ اسمیر، آن را خشک و با گرما فیکس می‌کنند: اسلاید را چند بار از روی شعله می‌گذرانند، نه اینکه روی شعله نگه دارند، زیرا نمونه ممکن است بسوزد. اسلاید باید فقط تا حدی گرم شود که پشت لام گرمای خفیفی داشته باشد و دست را نسوزاند.</p>
+<h4>مراحل رنگ‌آمیزی</h4>
+<ol>
+<li>کریستال ویوله را اضافه می‌کنند و حدود یک دقیقه صبر می‌کنند؛ سپس با آب مقطر به‌آرامی می‌شویند تا رنگ اضافی خارج شود.</li>
+<li>ید یا لوگول اضافه می‌کنند و حدود یک دقیقه صبر می‌کنند؛ سپس با آب می‌شویند.</li>
+<li>استون‌الکل یا الکل رنگ‌بَر را حدود ۱۵ تا ۲۰ ثانیه به‌کار می‌برند و سپس می‌شویند.</li>
+<li>سافرانین را حدود ۱۵ تا ۲۰ ثانیه اضافه می‌کنند و سپس می‌شویند.</li>
+<li>در پایان، اسلاید را در هوا خشک می‌کنند، آب اضافی را برمی‌دارند و زیر میکروسکوپ بررسی می‌کنند.</li>
+</ol>
+<p><img src="../data/assets/assets/image28.jpg" alt="تصویر 28">
+<em>تصویر 28</em></p>
+<p><img src="../data/assets/assets/image29.jpg" alt="تصویر 29">
+<em>تصویر 29</em></p>
+<h4>مکانیسم رنگ‌آمیزی</h4>
+<p>در مرحلهٔ کریستال ویوله، هم گرم مثبت و هم گرم منفی بنفش می‌شوند. مولکول‌های رنگ از پوشش سلولی عبور می‌کنند؛ ید با کریستال ویوله کمپلکس بزرگ‌تری تشکیل می‌دهد.</p>
+<p>الکل در مرحلهٔ رنگ‌بری بر غشاهای لیپیدی گرم منفی اثر می‌گذارد و آن‌ها را مختل می‌کند. در پی آن، کمپلکس کریستال ویوله–ید از گرم منفی خارج و شسته می‌شود؛ بنابراین، گرم منفی بی‌رنگ می‌شود. گرم مثبت، با لایهٔ ضخیم پپتیدوگلیکان، کمپلکس رنگ را نگه می‌دارد و بنفش باقی می‌ماند. سپس سافرانین به‌عنوان رنگ متضاد وارد گرم منفی بی‌رنگ‌شده می‌شود و آن را صورتی یا قرمز می‌کند. گرم مثبت بنفش می‌ماند، هرچند ممکن است رنگ متضاد نیز تا حدی به آن نفوذ کند. در مشاهدهٔ نهایی، گرم مثبت بنفش و گرم منفی صورتی یا قرمز دیده می‌شود.</p>
+<p>در اسلاید، مراحل با عنوان‌های تثبیت، کریستال ویوله، تیمار با ید، رنگ‌بری و رنگ متضاد سافرانین نمایش داده شده‌اند. همچنین در توضیح تصویری، ورود هر دو رنگ اولیه به دیواره، تشکیل کمپلکس با ید، از دست‌رفتن رنگ در گرم منفی پس از رنگ‌بری و حفظ رنگ در گرم مثبت نشان داده شده است.</p>
+<h4>موارد نامناسب برای رنگ‌آمیزی گرم</h4>
+<p>مواردی وجود دارند که رنگ‌آمیزی گرم برای طبقه‌بندی مناسب نیست یا نتیجهٔ آن گمراه‌کننده می‌شود:</p>
+<ul>
+<li>باکتری‌هایی که بر اثر گرسنگی مرده‌اند، کشت‌های کهنه یا کشت‌های در فاز ثابت؛ در این باکتری‌ها پپتیدوگلیکان تجزیه شده است.</li>
+<li>مایکوباکتریوم‌ها، به‌علت پوستهٔ خارجی مومی و دشواری نفوذ رنگ.</li>
+<li>مایکوپلاسما، به‌علت نبود پپتیدوگلیکان.</li>
+</ul>
+<h4>خطاها و کنترل کیفی</h4>
+<p>خطا در هر مرحله ممکن است نتیجه را تغییر دهد:</p>
+<ul>
+<li>کوتاه‌کردن زمان کریستال ویوله می‌تواند باعث شود گرم مثبت به‌اندازهٔ کافی رنگ نگیرد و بعد رنگ متضاد را بگیرد.</li>
+<li>حرارت یا شست‌وشوی بیش از حد نیز می‌تواند به از دست‌رفتن رنگ یا آسیب به نمونه بینجامد.</li>
+<li>طولانی‌کردن زمان الکل از خطاهای مهم و شایع است؛ در این حالت، گرم مثبت ممکن است رنگ کریستال ویوله را از دست بدهد و رنگ متضاد بگیرد.</li>
+<li>طولانی‌کردن زمان کریستال ویوله یا کوتاه‌کردن زمان استون‌الکل می‌تواند باعث باقی‌ماندن رنگ در گرم منفی و رنگ‌گرفتن اشتباه آن به‌صورت گرم مثبت شود.</li>
+</ul>
+<p>برای کنترل کیفی، از سویه‌هایی استفاده می‌شود که از قبل گرم مثبت یا گرم منفی بودنشان معلوم است؛ مانند E. coli، Klebsiella یا Pseudomonas برای گرم منفی و یک کوکسی از گروه Staphylococcus برای گرم مثبت. آزمایشگاه میکروب‌شناسی باید سویه‌های کنترل داشته باشد.</p>
+<p>هر بار که مواد رنگ‌آمیزی عوض می‌شوند، مواد جدید تهیه می‌شود، روش تغییر می‌کند یا فرد انجام‌دهنده عوض می‌شود، سویه‌های کنترل را با مواد و روش جدید رنگ‌آمیزی می‌کنند. برای مثال، اگر Staphylococcus epidermidis که گرم مثبت است صورتی شود، درحالی‌که باید بنفش باشد، باید علت را بررسی کرد؛ ممکن است زمان الکل بیش از حد یا زمان کریستال ویوله کوتاه بوده باشد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">اگر Staphylococcus epidermidis که گرم مثبت است صورتی شود، درحالی‌که باید بنفش باشد، باید علت را بررسی کرد؛ برای نمونه، زمان الکل ممکن است بیش از حد یا زمان کریستال ویوله کوتاه بوده باشد.</div></div>
+<p>زمان‌های پیشنهادی همواره الزاماً دقیقاً یک دقیقه و ۱۵ ثانیه نیستند و ممکن است بر اساس پروتکل، مواد و نتیجهٔ سویه‌های کنترل تنظیم شوند؛ برای مثال، زمانی ممکن است از ۱۵ به ۲۰ یا ۳۰ ثانیه، یا از یک دقیقه به ۴۵ ثانیه تغییر کند.</p>
+<h3 id="heading-10">شکل‌های غیرطبیعی دیواره: پروتوپلاست، اسفروپلاست و اشکال L</h3>
+<h4>پروتوپلاست</h4>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پروتوپلاست</strong>
+اگر لیزوزوم یا آنتی‌بیوتیک‌های موثر بر دیواره، در یک محیط <strong>هایپرتونیک</strong> حاوی ۲۰٪ ساکارز، بر روی یک باکتری گرم مثبت اثر کند باکتری <strong>کاملا</strong> دیواره سلولی خود را از دست می‌دهد و به حالت پروتوپلاست در می‌آید که فاقد پپتیدوگلیکان است.</div></div>
+<h4>اسفروپلاست</h4>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>اسفروپلاست</strong>
+آنتی‌بیوتیک‌ها (مانند پلی‌میکسین) یا برداشت یون‌های Mg و Ca به وسیله EDTA یا تتراسایکلین، غشای خارجی را مختل می‌کند. اضافه کردن لیزوزیم به سلول‌هایی که غشا‌های خارجی خود را از دست داده‌اند (در محیط <strong>هایپرتونیک</strong> حاوی ۲۰٪ ساکارز) باعث ایجاد اسفروبلاست می‌شود که همانند پروتوپلاست در برابر شرایط اسموتیکی حساس هستند.</div></div>
+<p>در اسفروبلاست بر خلاف پروتوپلاست مقداری از پپتیدوگلیکان <strong>باقی می‌ماند</strong>.</p>
+<h4>اشکال L</h4>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>اشکال L</strong>
+ باکتری‌های فاقد دیواره سلولی هستند که در محیط هایپرتونیک زنده می‌مانند، به پنی‌سیلین مقاوم‌اند و می‌توانند به حالت طبیعی برگردند.</div></div>
+<p>اشکال L ممکن است به‌طور خودبه‌خود در بعضی باکتری‌ها ایجاد شوند یا در شرایط خاص، از جمله مواجهه با عوامل شیمیایی، آنتی‌سرم، عوامل فیزیکی، لیزوزیم یا غلظت‌های suboptimum آنتی‌بیوتیک‌ها پدید آیند. خانم نوبل نخستین بار این اشکال را هنگام مطالعهٔ Streptobacillus moniliformis معرفی کرده است.</p>
+<p>اشکال L در محیط هایپرتونیک زنده می‌مانند و تکثیر می‌یابند. پس از برطرف‌شدن عامل محرک، می‌توانند دوباره دیواره بسازند و به حالت طبیعی برگردند. این اشکال در ایجاد عفونت مزمن و عود عفونت پس از بازگشت به حالت طبیعی نقش دارند و به‌علت نداشتن پپتیدوگلیکان به پنی‌سیلین مقاوم‌اند.</p>
+<p>مایکوپلاسما نیز فاقد دیواره است، اما در گروه پروتوپلاست، اسفروپلاست یا اشکال L قرار نمی‌گیرد. مایکوپلاسما و اشکال L از نظر رشد روی آگار و مورفولوژی شباهت دارند و ممکن است کلونی‌هایی شبیه تخم‌مرغ نیمرو تشکیل دهند؛ اما اشکال L پس از رفع عامل محرک می‌توانند دیواره بسازند، درحالی‌که مایکوپلاسماها هرگز نمی‌توانند پپتیدوگلیکان بسازند و از نظر ژنتیکی نیز با اشکال L متفاوت‌اند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">مایکوپلاسما و اشکال L ممکن است کلونی‌هایی شبیه تخم‌مرغ نیمرو تشکیل دهند؛ اشکال L پس از رفع عامل محرک می‌توانند دیواره بسازند، اما مایکوپلاسماها نمی‌توانند پپتیدوگلیکان بسازند.</div></div>
+<p>بحث جلسه با رنگ‌آمیزی گرم به پایان می‌رسد؛ جلسهٔ بعد با مرور مطالب باقی‌مانده و بحث اسفروپلاست‌ها و پروتوپلاست‌ها ادامه خواهد یافت.</p>
+</section>
+
+<section class="noteSection quickTablesSection">
+    <h2 id="heading-11">۳. جداول مرور سریع</h2>
+<h3 id="heading-12">مقایسهٔ پوشش سلولی گرم مثبت و گرم منفی</h3>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>گرم مثبت</th>
+<th>گرم منفی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>لایهٔ پپتیدوگلیکان</td>
+<td>ضخیم؛ ممکن است تا ۴۰ لایه داشته باشد</td>
+<td>نازک؛ معمولاً یک یا دو لایه</td>
+</tr>
+<tr>
+<td>مقدار پپتیدوگلیکان در وزن دیواره</td>
+<td>حدود ۵۰ درصد</td>
+<td>۵ تا ۱۰ درصد</td>
+</tr>
+<tr>
+<td>غشای خارجی</td>
+<td>وجود ندارد</td>
+<td>وجود دارد؛ دولایه و نامتقارن</td>
+</tr>
+<tr>
+<td>تیکوئیک اسید</td>
+<td>وجود دارد</td>
+<td>در دیواره وجود ندارد</td>
+</tr>
+<tr>
+<td>LPS و اندوتوکسین</td>
+<td>وجود ندارد</td>
+<td>وجود دارد</td>
+</tr>
+<tr>
+<td>کپسول</td>
+<td>در برخی سویه‌ها ذکر شده است</td>
+<td>در برخی سویه‌ها ذکر شده است</td>
+</tr>
+<tr>
+<td>تولید اگزوتوکسین</td>
+<td>در برخی سویه‌ها مطرح شده است</td>
+<td>در برخی سویه‌ها مطرح شده است</td>
+</tr>
+<tr>
+<td>رنگ نهایی در رنگ‌آمیزی گرم</td>
+<td>بنفش</td>
+<td>صورتی یا قرمز</td>
+</tr>
+</tbody></table>
+<h3 id="heading-13">اجزای پپتیدوگلیکان و تفاوت‌های زنجیرهٔ پپتیدی</h3>
+<table>
+<thead>
+<tr>
+<th>جزء یا جایگاه</th>
+<th>شرح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>اسکلت پلی‌ساکاریدی</td>
+<td>واحدهای تکرارشوندهٔ NAM و NAG با پیوند گلیکوزیدی β-1,4؛ این اسکلت در باکتری‌ها مشابه است</td>
+</tr>
+<tr>
+<td>جایگاه اول زنجیرهٔ پپتیدی</td>
+<td>L-آلانین متصل به NAM؛ پیوند NAM و L-آلانین در اسلاید حساس به amidase معرفی شده است</td>
+</tr>
+<tr>
+<td>جایگاه دوم</td>
+<td>D-گلوتامیک اسید یا جایگزین آن</td>
+</tr>
+<tr>
+<td>جایگاه سوم</td>
+<td>متغیرترین جایگاه؛ معمولاً L-لیزین در گرم مثبت‌ها و meso-DAP در گرم منفی‌ها؛ در گرم مثبت‌ها ممکن است DAP یا اسیدآمینهٔ دیگری نیز باشد</td>
+</tr>
+<tr>
+<td>جایگاه چهارم</td>
+<td>D-آلانین</td>
+</tr>
+<tr>
+<td>پیوند عرضی</td>
+<td>گروه آمین اسیدآمینهٔ سوم یک زنجیره با گروه کربوکسیل اسیدآمینهٔ چهارم زنجیرهٔ دیگر پیوند می‌یابد</td>
+</tr>
+<tr>
+<td>آنزیم‌ها و پروتئین‌های مرتبط</td>
+<td>PBPها، از جمله ترانس‌پپتیدازها، در ترانس‌پپتیداسیون نقش اصلی دارند؛ transglycosidaseها پیوند قندی را ایجاد می‌کنند</td>
+</tr>
+</tbody></table>
+<h3 id="heading-14">مراحل ساخت و اتصال مونومر پپتیدوگلیکان</h3>
+<table>
+<thead>
+<tr>
+<th>مرحله</th>
+<th>رویداد</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>۱</td>
+<td>NAG و NAM به UDP متصل می‌شوند و UDP-NAG و UDP-NAM را می‌سازند</td>
+</tr>
+<tr>
+<td>۲</td>
+<td>اسیدهای آمینه به UDP-NAM افزوده می‌شوند؛ دو اسیدآمینهٔ انتهایی D-alanine هستند که از L-alanine ساخته می‌شوند</td>
+</tr>
+<tr>
+<td>۳</td>
+<td>زنجیرهٔ اولیه پنتاپپتیدی است؛ هنگام انتقال D-alanine انتهایی جدا می‌شود و زنجیرهٔ نهایی تتراپپتیدی باقی می‌ماند</td>
+</tr>
+<tr>
+<td>۴</td>
+<td>NAM-pentapeptide به باکتوپرنول متصل می‌شود؛ انرژی از یکی از گروه‌های فسفات پرانرژی UDP تأمین می‌شود</td>
+</tr>
+<tr>
+<td>۵</td>
+<td>NAG به NAM-pentapeptide متصل می‌شود و مونومر کامل می‌شود</td>
+</tr>
+<tr>
+<td>۶</td>
+<td>باکتوپرنول مونومر را از غشای سیتوپلاسمی عبور می‌دهد و به محل رشد دیواره می‌رساند</td>
+</tr>
+<tr>
+<td>۷</td>
+<td>transglycosidaseها پیوند قندی و transpeptidaseها پیوندهای عرضی را ایجاد می‌کنند</td>
+</tr>
+</tbody></table>
+<h3 id="heading-15">مقایسهٔ اثرهای ذکرشدهٔ مواد بر ساخت دیواره</h3>
+<table>
+<thead>
+<tr>
+<th>ماده</th>
+<th>اثر ذکرشده در درس</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>پنی‌سیلین</td>
+<td>اثر بر PBPها و جلوگیری از ترانس‌پپتیداسیون؛ تشکیل پیوندهای عرضی پپتیدی مختل می‌شود</td>
+</tr>
+<tr>
+<td>باسیتراسین</td>
+<td>اختلال در روند ایجاد پیوند قندی بین واحدها</td>
+</tr>
+<tr>
+<td>لیزوزیم</td>
+<td>در توضیح درس در ارتباط با اختلال در ساخت دیواره مطرح شده است؛ جزئیات مکانیسم در منبع روشن نیست</td>
+</tr>
+<tr>
+<td>عوامل بیرونی مانند تابش اشعه</td>
+<td>ممکن است اختلال در دیواره ایجاد کنند و اتولیزین‌ها را فعال کنند</td>
+</tr>
+<tr>
+<td>اتولیزین‌ها</td>
+<td>پیوندهایی را که قبلاً در دیواره تشکیل شده‌اند تخریب می‌کنند</td>
+</tr>
+</tbody></table>
+<h3 id="heading-16">تیکوئیک اسیدها در گرم مثبت‌ها</h3>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>WTA</th>
+<th>LTA</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>نام</td>
+<td>تیکوئیک اسید دیواره‌ای (wall teichoic acid)</td>
+<td>لیپوتیکوئیک اسید (lipoteichoic acid)</td>
+</tr>
+<tr>
+<td>محل اتصال</td>
+<td>گروه هیدروکسیل کربن شمارهٔ ۶ NAMA</td>
+<td>گلیکولیپیدهای غشای سلولی</td>
+</tr>
+<tr>
+<td>امتداد</td>
+<td>نوع کوتاه‌تر و واقع در لایهٔ پپتیدوگلیکان</td>
+<td>نوعی که تا غشا امتداد دارد</td>
+</tr>
+<tr>
+<td>محل وجود</td>
+<td>دیوارهٔ گرم مثبت‌ها</td>
+<td>دیوارهٔ گرم مثبت‌ها و متصل به غشا</td>
+</tr>
+</tbody></table>
+<p>تیکوئیک اسیدها از واحدهای ریبیتول‌فسفات یا گلیسرول‌فسفات ساخته می‌شوند. نقش‌های ذکرشده برای آن‌ها شامل مقاومت در برابر لیزوزیم و آنزیم‌های تخریب‌کننده، اتصال به باکتریوفاژ، جذب Mg²⁺، جذب DNA و مشارکت در ترانسفورماسیون است.</p>
+<h3 id="heading-17">اجزا و ویژگی‌های LPS</h3>
+<table>
+<thead>
+<tr>
+<th>بخش</th>
+<th>ویژگی‌های مطرح‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>لیپید A</td>
+<td>بخش درون‌غشایی و عامل سمیت LPS؛ شامل واحدهای دی‌ساکاریدی N-استیل‌گلوکزآمین، دو گروه فسفات و شش واحد اسید چرب؛ β-hydroxymyristic acid اسید چرب ۱۴کربنه‌ای است که همیشه حضور دارد</td>
+</tr>
+<tr>
+<td>بخش مرکزی (Core)</td>
+<td>میان لیپید A و آنتی‌ژن O قرار دارد و آنتی‌ژن O را به LPS متصل می‌کند؛ بخش داخلی شامل فسفات، دو هپتوز و KDO است؛ جزئیات KDO در متن OCR ناقص است</td>
+</tr>
+<tr>
+<td>آنتی‌ژن O</td>
+<td>از واحدهای تکرارشوندهٔ الیگوساکاریدی ساخته می‌شود؛ در سروتیپ‌بندی، شناسایی آنتی‌بادی، اتصال به سلول میزبان، مقاومت به فاگوسیتوز و اتصال فاژ نقش دارد</td>
+</tr>
+</tbody></table>
+<h3 id="heading-18">ساختارهای سطحی و کاربرد تشخیصی</h3>
+<table>
+<thead>
+<tr>
+<th>گروه باکتریایی</th>
+<th>ساختار سطحی ذکرشده برای سروتیپ‌بندی</th>
+<th>نکتهٔ تشخیصی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>گرم مثبت</td>
+<td>تیکوئیک اسید</td>
+<td>ساختار سطحی قابل‌شناسایی برای سیستم ایمنی</td>
+</tr>
+<tr>
+<td>گرم منفی</td>
+<td>آنتی‌ژن O</td>
+<td>برای گروه‌بندی و سروتیپ‌بندی به‌کار می‌رود؛ بر ضد آن آنتی‌بادی ساخته می‌شود</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>نمونه یا وضعیت</th>
+<th>نکته</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>E. coli در کشت مدفوع</td>
+<td>به‌تنهایی بیماری‌زا بودن سویه را نشان نمی‌دهد؛ E. coli می‌تواند بخشی از فلور طبیعی روده باشد</td>
+</tr>
+<tr>
+<td>O157</td>
+<td>نمونه‌ای از سویه‌های شناخته‌شدهٔ بیماری‌زای E. coli</td>
+</tr>
+<tr>
+<td>تست سرولوژیک</td>
+<td>آنتی‌سرم‌های اختصاصی آنتی‌ژن O، مانند O1، O2، O5، O6 و O157، برای کمک به تشخیص الگوی آنتی‌ژنی به‌کار می‌روند</td>
+</tr>
+<tr>
+<td>کشت منفی از نظر واکنش با آنتی‌سرم</td>
+<td>باید سویه‌های طبیعی و عوامل دیگری مانند Bacillus یا Clostridium difficile نیز در نظر گرفته شوند</td>
+</tr>
+<tr>
+<td>مثال غذایی</td>
+<td>در مثال درس، فردی با اسهال و استفراغ غذایی را گزارش می‌کند که ۸ تا ۱۲ ساعت در دمای محیط مانده است</td>
+</tr>
+</tbody></table>
+<h3 id="heading-19">مراحل رنگ‌آمیزی گرم</h3>
+<table>
+<thead>
+<tr>
+<th>مرحله</th>
+<th>ماده یا کار</th>
+<th align="right">زمان ذکرشده</th>
+<th>نتیجه یا نکته</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>۱</td>
+<td>کریستال ویوله؛ سپس شست‌وشوی ملایم با آب مقطر</td>
+<td align="right">حدود یک دقیقه</td>
+<td>هر دو گروه بنفش می‌شوند</td>
+</tr>
+<tr>
+<td>۲</td>
+<td>ید یا لوگول؛ سپس شست‌وشو</td>
+<td align="right">حدود یک دقیقه</td>
+<td>کمپلکس بزرگ‌تر کریستال ویوله–ید تشکیل می‌شود</td>
+</tr>
+<tr>
+<td>۳</td>
+<td>استون‌الکل یا الکل رنگ‌بَر؛ سپس شست‌وشو</td>
+<td align="right">حدود ۱۵ تا ۲۰ ثانیه</td>
+<td>گرم منفی بی‌رنگ می‌شود؛ گرم مثبت کمپلکس رنگ را نگه می‌دارد</td>
+</tr>
+<tr>
+<td>۴</td>
+<td>سافرانین؛ سپس شست‌وشو</td>
+<td align="right">حدود ۱۵ تا ۲۰ ثانیه</td>
+<td>گرم منفی صورتی یا قرمز می‌شود</td>
+</tr>
+<tr>
+<td>۵</td>
+<td>خشک‌کردن در هوا و بررسی میکروسکوپی</td>
+<td align="right">—</td>
+<td>گرم مثبت بنفش و گرم منفی صورتی یا قرمز دیده می‌شود</td>
+</tr>
+</tbody></table>
+<h3 id="heading-20">خطاهای رنگ‌آمیزی و پیامدهای ذکرشده</h3>
+<table>
+<thead>
+<tr>
+<th>خطا</th>
+<th>پیامد احتمالی ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>کوتاه‌کردن زمان کریستال ویوله</td>
+<td>گرم مثبت به‌اندازهٔ کافی رنگ نمی‌گیرد و ممکن است رنگ متضاد را بگیرد</td>
+</tr>
+<tr>
+<td>حرارت یا شست‌وشوی بیش از حد</td>
+<td>از دست‌رفتن رنگ یا آسیب به نمونه</td>
+</tr>
+<tr>
+<td>طولانی‌کردن زمان الکل</td>
+<td>گرم مثبت ممکن است کریستال ویوله را از دست بدهد و رنگ متضاد بگیرد</td>
+</tr>
+<tr>
+<td>طولانی‌کردن زمان کریستال ویوله یا کوتاه‌کردن زمان استون‌الکل</td>
+<td>گرم منفی ممکن است رنگ را نگه دارد و اشتباه گرم مثبت دیده شود</td>
+</tr>
+</tbody></table>
+<h3 id="heading-21">مقایسهٔ شکل‌های فاقد یا دچار اختلال در دیواره</h3>
+<table>
+<thead>
+<tr>
+<th>شکل یا گروه</th>
+<th>وضعیت دیواره و شرایط مطرح‌شده</th>
+<th>نکتهٔ متمایزکننده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>پروتوپلاست</td>
+<td>دیواره کاملاً از دست رفته است؛ با اثر لیزوزیم یا آنتی‌بیوتیک مؤثر بر دیواره بر گرم مثبت در محیط هایپرتونیک حاوی حدود ۲۰٪ ساکارز مطرح شده است</td>
+<td>محیط هایپرتونیک به پایداری سلول فاقد دیواره کمک می‌کند</td>
+</tr>
+<tr>
+<td>اسفروپلاست</td>
+<td>برداشت ناقص دیواره یا آسیب غشای خارجی؛ پولی‌میکسین و ساکارز در اسلاید مطرح شده‌اند</td>
+<td>یادت نره منو پر کنی!</td>
+</tr>
+<tr>
+<td>اشکال L</td>
+<td>ممکن است خودبه‌خود یا پس از مواجهه با عوامل شیمیایی، آنتی‌سرم، عوامل فیزیکی، لیزوزیم یا غلظت‌های suboptimum آنتی‌بیوتیک‌ها ایجاد شوند</td>
+<td>در محیط هایپرتونیک زنده می‌مانند و تکثیر می‌یابند؛ پس از رفع عامل محرک می‌توانند دیواره بسازند</td>
+</tr>
+<tr>
+<td>مایکوپلاسما</td>
+<td>فاقد دیواره و پپتیدوگلیکان است</td>
+<td>برخلاف اشکال L نمی‌تواند پپتیدوگلیکان بسازد؛ از نظر ژنتیکی نیز متفاوت است</td>
+</tr>
+</tbody></table>
+</section>
+
+<section class="noteSection keyTermsSection">
+    <h2 id="heading-22">۴. اصطلاحات و تعاریف</h2>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پپتیدوگلیکان (peptidoglycan; PG)</strong>
+ساختار شبکه‌ای ویژهٔ باکتری‌هاست که باکتری را احاطه می‌کند و بخش عمدهٔ دیوارهٔ گرم مثبت و گرم منفی را تشکیل می‌دهد.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>تیکوئیک اسید دیواره‌ای (wall teichoic acid; WTA)</strong>
+تیکوئیک اسیدی است که با پیوند کووالان به گروه هیدروکسیل کربن شمارهٔ ۶ NAM متصل می‌شود.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>لیپوتیکوئیک اسید (lipoteichoic acid; LTA)</strong>
+تیکوئیک اسیدی است که با پیوند کووالان به گلیکولیپیدهای غشای سلولی متصل است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>فضای پری‌پلاسمیک (periplasmic space)</strong>
+فضای میان غشای داخلی و غشای خارجی باکتری گرم منفی است که پروتئین‌های انتقال مواد، آنزیم‌ها و پروتئین‌های متصل‌شونده به سوبستراها در آن قرار دارند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>لیپوپلی‌ساکارید (lipopolysaccharide; LPS)</strong>
+ساختاری در سطح خارجی غشای باکتری‌های گرم منفی است که اندوتوکسین نیز نامیده می‌شود و از لیپید A، بخش مرکزی (Core) و آنتی‌ژن O تشکیل شده است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>رنگ‌آمیزی گرم (Gram stain)</strong>
+روشی ساده و سریع برای طبقه‌بندی باکتری‌ها به گرم مثبت و گرم منفی است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پروتوپلاست</strong>
+باکتری‌ای است که دیوارهٔ سلولی خود را کاملاً از دست داده است.</div></div>
+</section>
+
+<section class="noteSection selfAssessmentSection">
+    <h2 id="heading-23">۵. خود‌ارزیابی</h2>
+<h3 id="heading-24">سوالات تشریحی</h3>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>تفاوت دیوارهٔ گرم مثبت و گرم منفی را از نظر تعداد لایه‌های پپتیدوگلیکان، وجود غشای خارجی و نتیجهٔ نهایی رنگ‌آمیزی گرم توضیح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>گرم مثبت پپتیدوگلیکان ضخیمی دارد که ممکن است تا ۴۰ لایه باشد و در رنگ‌آمیزی گرم بنفش می‌ماند. گرم منفی پپتیدوگلیکان نازک‌تری دارد، معمولاً یک یا دو لایه، و غشای خارجی آن دارای LPS است؛ پس از رنگ‌بری بی‌رنگ می‌شود و پس از دریافت سافرانین، صورتی یا قرمز دیده می‌شود.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>سه جزء اصلی پپتیدوگلیکان را نام ببرید و نقش اتصال‌های عرضی را شرح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>سه جزء اصلی عبارت‌اند از اسکلت پلی‌ساکاریدی NAM و NAG، زنجیرهٔ جانبی تتراپپتیدی متصل به NAM و پیوندهای عرضی پپتیدی. پیوندهای عرضی با اتصال زنجیره‌ها شبکه‌ای ایجاد می‌کنند که به دیواره استحکام می‌دهد؛ transpeptidaseها و PBPها در تشکیل آن‌ها نقش دارند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>مراحل اصلی رنگ‌آمیزی گرم را به‌ترتیب بنویسید و توضیح دهید چرا گرم منفی در پایان صورتی یا قرمز می‌شود.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>ابتدا کریستال ویوله، سپس ید یا لوگول، بعد استون‌الکل یا الکل رنگ‌بَر و در پایان سافرانین به کار می‌رود. الکل غشاهای لیپیدی گرم منفی را مختل می‌کند و کمپلکس کریستال ویوله–ید از آن خارج می‌شود؛ سافرانین وارد سلول بی‌رنگ‌شده می‌شود و آن را صورتی یا قرمز می‌کند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>اجزای LPS را نام ببرید و دو ویژگی یا نقش آنتی‌ژن O را شرح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>LPS از لیپید A، بخش مرکزی (Core) و آنتی‌ژن O تشکیل شده است. آنتی‌ژن O در سروتیپ‌بندی باکتری‌های گرم منفی کاربرد دارد، بر ضد آن آنتی‌بادی ساخته می‌شود و می‌تواند گیرندهٔ فاژ باشد؛ همچنین در اتصال به سلول میزبان و مقاومت به فاگوسیتوز نقش دارد.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>اشکال L و مایکوپلاسما را از نظر توانایی بازسازی دیواره و ارتباط با پپتیدوگلیکان مقایسه کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>اشکال L فاقد پپتیدوگلیکان‌اند، اما پس از برطرف‌شدن عامل محرک می‌توانند دوباره دیواره بسازند و به حالت طبیعی برگردند. مایکوپلاسما نیز فاقد دیواره است، اما نمی‌تواند پپتیدوگلیکان بسازد و از نظر ژنتیکی با اشکال L متفاوت است.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<h3 id="heading-25">سوالات تستی</h3>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>کدام گزینه ترکیب معمول جایگاه سوم زنجیرهٔ تتراپپتیدی را درست بیان می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">معمولاً L-لیزین در گرم مثبت و meso-DAP در گرم منفی</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">معمولاً meso-DAP در گرم مثبت و L-لیزین در گرم منفی</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">D-آلانین در گرم مثبت و NAM در گرم منفی</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">NAG در گرم مثبت و N-استیل‌اورونیک اسید در گرم منفی</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در بسیاری از گرم مثبت‌ها جایگاه سوم L-لیزین و در اغلب گرم منفی‌ها meso-DAP است.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>کدام مولکول مونومرهای پپتیدوگلیکان را از غشای سیتوپلاسمی عبور می‌دهد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">سافرانین</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">باکتوپرنول</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">لیپوپروتئین براون</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">آنتی‌ژن O</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>باکتوپرنول ناقل غشایی مونومرهاست و آن‌ها را به محل رشد دیواره می‌رساند.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>پنی‌سیلین در توضیح درس عمدتاً با اختلال در کدام فرایند مرتبط شده است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">تشکیل پیوندهای عرضی پپتیدی از راه اثر بر PBPها</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">اتصال آنتی‌ژن O به Core</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">تشکیل کمپلکس کریستال ویوله–ید</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">انتقال آنتی‌ژن O از غشای خارجی</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>پنی‌سیلین از طریق اثر بر PBPها و جلوگیری از ترانس‌پپتیداسیون، تشکیل پیوندهای عرضی را مختل می‌کند.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>کدام ویژگی دربارهٔ تیکوئیک اسیدها درست است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">فقط در دیوارهٔ گرم منفی وجود دارند</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">فقط در دیوارهٔ گرم مثبت یافت می‌شوند</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">بخش درون‌غشایی LPS را تشکیل می‌دهند</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">رنگ متضاد رنگ‌آمیزی گرم هستند</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>تیکوئیک اسیدها در دیوارهٔ گرم مثبت‌ها یافت می‌شوند.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>کدام گزینه دربارهٔ LTA درست است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">با پیوند کووالان به گلیکولیپیدهای غشای سلولی متصل است</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">بخشی از آنتی‌ژن O است</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">میان غشای داخلی و خارجی گرم منفی قرار دارد</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">به‌وسیلهٔ باکتوپرنول ساخته می‌شود</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>LTA با پیوند کووالان به گلیکولیپیدهای غشای سلولی متصل است.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="6"><div class="questionBoxHeader">سؤال 6</div><div class="questionBoxPrompt"><p>کدام بخش LPS عامل سمیت آن معرفی شده است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">آنتی‌ژن O</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">بخش خارجی Core</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">لیپید A</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">هگزوزهای Core</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>لیپید A بخش درون‌غشایی و عامل سمیت LPS معرفی شده است.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="7"><div class="questionBoxHeader">سؤال 7</div><div class="questionBoxPrompt"><p>در رنگ‌آمیزی گرم، کدام رویداد باعث بی‌رنگ‌شدن گرم منفی می‌شود؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">سافرانین کمپلکس کریستال ویوله–ید را خارج می‌کند</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">الکل غشاهای لیپیدی گرم منفی را مختل می‌کند و کمپلکس کریستال ویوله–ید خارج می‌شود</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">ید دیوارهٔ گرم مثبت را تجزیه می‌کند</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">کریستال ویوله فقط وارد گرم مثبت می‌شود</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در مرحلهٔ رنگ‌بری، الکل غشاهای لیپیدی گرم منفی را مختل می‌کند و کمپلکس رنگ از آن خارج می‌شود.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="8"><div class="questionBoxHeader">سؤال 8</div><div class="questionBoxPrompt"><p>کدام گروه به‌علت پوستهٔ خارجی مومی ممکن است با رنگ‌آمیزی معمول گرم به‌آسانی دیده نشود؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">مایکوباکتریوم‌ها</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">باکتری‌های دارای تیکوئیک اسید</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">همهٔ باکتری‌های گرم مثبت</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">باکتری‌های دارای WTA</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>ویژگی مومی مایکوباکتریوم‌ها نفوذ رنگ را دشوار می‌کند؛ در این موارد از رنگ‌آمیزی اسیدفست استفاده می‌شود.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="9"><div class="questionBoxHeader">سؤال 9</div><div class="questionBoxPrompt"><p>کدام گزینه دربارهٔ پروتوپلاست مطابق محتوای درس است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">باکتری‌ای است که دیوارهٔ سلولی خود را کاملاً از دست داده است</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">باکتری‌ای است که فقط LPS خود را از دست داده است</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">باکتری‌ای است که غشای خارجی بیشتری ساخته است</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">باکتری‌ای است که آنتی‌ژن O آن به Core متصل شده است</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>پروتوپلاست باکتری‌ای است که دیوارهٔ سلولی خود را کاملاً از دست داده است.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="10"><div class="questionBoxHeader">سؤال 10</div><div class="questionBoxPrompt"><p>کدام گزینه تفاوت اشکال L و مایکوپلاسما را درست بیان می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">مایکوپلاسما پس از رفع عامل محرک دیواره می‌سازد، اما اشکال L نمی‌سازند</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">هر دو پس از رفع عامل محرک دیواره می‌سازند</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">اشکال L پس از رفع عامل محرک می‌توانند دیواره بسازند، اما مایکوپلاسما نمی‌تواند پپتیدوگلیکان بسازد</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">هر دو دارای پپتیدوگلیکان هستند</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>اشکال L می‌توانند پس از رفع عامل محرک دیواره بسازند؛ مایکوپلاسماها نمی‌توانند پپتیدوگلیکان بسازند.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+</section>
+
+<section class="noteSection reviewSection">
+    <h2 id="heading-26">۶. موارد نیازمند بررسی</h2>
+<p>تمام موارد نیازمند بررسی، بررسی و کادر‌های مربوطه حذف گردید.</p>
+</section>
+
+<section class="noteSection editorAndSourcesSection">
+    <h2 id="heading-27">۷. ادیتور و منابع استفاده‌شده</h2>
+<p><strong>ادیتور:</strong> مهراد اسدی</p>
+<p><strong>منابع استفاده‌شده:</strong> اسلاید‌ها و ویس ضبط‌شده کلاس</p>
+</section>
+
+<section class="noteSection completionSection">
+    <h2 id="heading-28">۸. گزارش تکمیل بودن محتوا</h2>
+<p><strong>برآورد تقریبی تکمیل محتوا:</strong> حدود ۹۵٪</p>
+<ul>
+<li>✓ پوشش محتوای اسلایدها: نکات قابل‌بازیابی، ساختارها، تصاویر و مطالب جدول‌پذیر درج شده‌اند. ممکن است متون استخراج شده از تصاویر اندکی خلاصه شده باشند.</li>
+<li>✓ پوشش محتوای صوت: توضیحات و مثال‌های آموزشی مطرح‌شده در درس درج شده‌اند.</li>
+<li>⚠ شکاف‌های حل‌نشده: بررسی و حل شدند.</li>
+</ul>
+</section>
+
+    </main>
+
+
+    <button
+        class="backToTop"
+        type="button"
+        aria-label="بازگشت به ابتدای صفحه"
+    >
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+
+    <script src="../src/themeSwitcher.js"></script>
+    <script src="../src/fontSizeSwitcher.js"></script>
+    <script src="../src/aboutModal.js"></script>
+    <script src="../src/quickNavigation.js"></script>
+    <script src="../src/print.js"></script>
+    <script src="../src/search.js"></script>
+    <script src="../src/highlight.js"></script>
+    <script src="../src/stickyNotes.js"></script>
+    <script src="../src/viewPersistence.js"></script>
+    <script src="../src/questionInteractions.js"></script>
+    <script src="../src/fontSwitcher.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarToggle = document.querySelector(".sidebarToggle");
+    const sidebarBackdrop = document.querySelector(".sidebarBackdrop");
+
+    function openSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.add("isOpen");
+        sidebarBackdrop.classList.add("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "true");
+        sidebar.setAttribute("aria-hidden", "false");
+    }
+
+    function closeSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.remove("isOpen");
+        sidebarBackdrop.classList.remove("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "false");
+        sidebar.setAttribute("aria-hidden", "true");
+    }
+
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener("click", () => {
+            if (sidebar.classList.contains("isOpen")) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+    }
+
+    if (sidebarBackdrop) {
+        sidebarBackdrop.addEventListener("click", closeSidebar);
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeSidebar();
+        }
+    });
+
+    document.querySelectorAll(".tocItem").forEach((item) => {
+        item.addEventListener("click", closeSidebar);
+    });
+</script>
+
+</body>
+
+</html>

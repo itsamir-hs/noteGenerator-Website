@@ -1,0 +1,2582 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>میکروب‌شناسی عمومی</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/rtl.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../node_modules/katex/dist/katex.min.css"
+    >
+
+    <link rel="stylesheet" href="../styles/dark.css">
+    <link rel="stylesheet" href="../styles/forest.css">
+    <link rel="stylesheet" href="../styles/paperLike.css">
+    <link rel="stylesheet" href="../styles/neon.css">
+
+    <script src="../node_modules/lucide/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+
+    <header class="appHeader">
+
+        <button
+            class="sidebarToggle"
+            type="button"
+            aria-label="باز کردن فهرست مطالب"
+            aria-expanded="false"
+        >
+            <i data-lucide="panel-left"></i>
+        </button>
+
+
+        <div class="appTitle">
+            پاپیروس
+        </div>
+
+
+        <div class="headerControls">
+
+<button
+    class="searchButton"
+    type="button"
+    aria-label="جستجو در جزوه"
+    aria-expanded="false"
+>
+    <i data-lucide="search"></i>
+</button>
+
+<div class="highlightSwitcher">
+
+    <button
+        class="highlightToggle"
+        type="button"
+        aria-label="هایلایت"
+        aria-expanded="false"
+    >
+        <i data-lucide="highlighter"></i>
+    </button>
+
+
+<div
+    class="highlightOptions"
+    aria-hidden="true"
+>
+
+    <button
+        class="highlightPowerToggle"
+        type="button"
+        aria-label="روشن یا خاموش کردن هایلایت"
+        aria-pressed="true"
+    >
+        <i data-lucide="highlighter"></i>
+        <span>هایلایت روشن</span>
+    </button>
+
+        <div class="highlightColors">
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#fff176"
+                aria-label="هایلایت زرد"
+                style="--highlightColor: #fff176;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#a5d6a7"
+                aria-label="هایلایت سبز"
+                style="--highlightColor: #a5d6a7;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#90caf9"
+                aria-label="هایلایت آبی"
+                style="--highlightColor: #90caf9;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ce93d8"
+                aria-label="هایلایت بنفش"
+                style="--highlightColor: #ce93d8;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ffab91"
+                aria-label="هایلایت نارنجی"
+                style="--highlightColor: #ffab91;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ef9a9a"
+                aria-label="هایلایت قرمز"
+                style="--highlightColor: #ef9a9a;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#f48fb1"
+                aria-label="هایلایت صورتی"
+                style="--highlightColor: #f48fb1;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#80cbc4"
+                aria-label="هایلایت فیروزه‌ای"
+                style="--highlightColor: #80cbc4;"
+            ></button>
+
+        </div>
+
+
+        <div class="highlightDivider"></div>
+
+
+        <label
+            class="highlightCustomColor"
+            aria-label="انتخاب رنگ دلخواه"
+        >
+            <input
+                class="highlightColorInput"
+                type="color"
+                value="#fff176"
+            >
+
+            <i data-lucide="palette"></i>
+        </label>
+
+
+        <button
+            class="highlightEraser"
+            type="button"
+            aria-label="پاک کردن هایلایت"
+        >
+            <i data-lucide="eraser"></i>
+            <span>پاک‌کن</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="stickyNotesSwitcher">
+
+    <button
+        class="stickyNotesToggle"
+        type="button"
+        aria-label="یادداشت‌های چسبان"
+        aria-expanded="false"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+</div>
+
+            <div class="fontSizeSwitcher">
+
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="decrease"
+                    aria-label="کاهش اندازه فونت"
+                >
+                    <i data-lucide="minus"></i>
+                </button>
+
+<button
+    type="button"
+    class="fontSizeControl fontSwitchControl"
+    aria-label="تغییر فونت"
+>
+    <i data-lucide="type"></i>
+</button>
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="increase"
+                    aria-label="افزایش اندازه فونت"
+                >
+                    <i data-lucide="plus"></i>
+                </button>
+
+            </div>
+
+
+            <div class="themeSwitcher">
+
+                <button
+                    class="themeToggle"
+                    type="button"
+                    aria-label="تغییر تم"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="sun"></i>
+                </button>
+
+<div class="themeOptions">
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="light"
+        aria-label="تم روشن"
+    >
+        <i data-lucide="sun"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="dark"
+        aria-label="تم تاریک"
+    >
+        <i data-lucide="moon"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="forest"
+        aria-label="تم جنگلی"
+    >
+        <i data-lucide="trees"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="paperLike"
+        aria-label="تم پیپر لایک"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+<button
+    class="themeButton"
+    type="button"
+    data-theme="neon"
+    aria-label="تم نئون"
+>
+<i data-lucide="zap"></i>
+</button>
+
+
+</div>
+
+            </div>
+
+<button
+    class="printButton"
+    type="button"
+    aria-label="چاپ جزوه"
+>
+    <i data-lucide="printer"></i>
+</button>
+
+
+            <button
+                class="aboutButton"
+                type="button"
+                aria-label="درباره ما"
+            >
+                <i data-lucide="users-round"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+<div
+    class="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="searchPanelContent">
+
+        <div class="searchInputWrapper">
+
+            <i data-lucide="search"></i>
+
+            <input
+                class="searchInput"
+                type="search"
+                placeholder="جستجو در جزوه..."
+                aria-label="جستجو در جزوه"
+                autocomplete="off"
+            >
+
+            <button
+                class="searchClearButton"
+                type="button"
+                aria-label="پاک کردن جستجو"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="searchResultsInfo">
+            <span class="searchResultsCount">۰ نتیجه</span>
+
+            <div class="searchNavigation">
+
+                <button
+                    class="searchPreviousButton"
+                    type="button"
+                    aria-label="نتیجه قبلی"
+                    disabled
+                >
+                    <i data-lucide="chevron-up"></i>
+                </button>
+
+                <button
+                    class="searchNextButton"
+                    type="button"
+                    aria-label="نتیجه بعدی"
+                    disabled
+                >
+                    <i data-lucide="chevron-down"></i>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    <aside
+        class="sidebar"
+        aria-label="فهرست مطالب"
+        aria-hidden="true"
+    >
+
+        <div class="sidebarHeader">
+            <h2>فهرست مطالب</h2>
+        </div>
+
+        <nav
+            class="sidebarContent"
+            aria-label="فهرست مطالب"
+        >
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-1"
+                >
+                    ۱. مقدمه و کلیات
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-2"
+                >
+                    ۲. متن اصلی جزوه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-3"
+                >
+                    معرفی درس و اهداف جلسه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-4"
+                >
+                    منابع و شیوهٔ ارزیابی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-5"
+                >
+                    بررسی باکتری‌ها
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-6"
+                >
+                    ترکیب تقریبی سلول باکتری
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-7"
+                >
+                    ساختار کلی باکتری
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-8"
+                >
+                    گرانول‌ها و واکوئل‌های سیتوپلاسمی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-9"
+                >
+                    رنگدانه‌ها و رنگ کلونی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-10"
+                >
+                    غشای سیتوپلاسمی و پوشش سلولی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-11"
+                >
+                    مزوزوم
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-12"
+                >
+                    انتقال مواد از غشای سیتوپلاسمی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-13"
+                >
+                    ترشح از باکتری
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-14"
+                >
+                    کاربرد سیستم‌های ترشحی در تولید پروتئین
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-15"
+                >
+                    کاربرد ساختارهای باکتری در مسیرهای شغلی و پژوهشی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-16"
+                >
+                    ۳. جداول مرور سریع
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-17"
+                >
+                    ویژگی‌های بررسی، شکل، آرایش و اندازهٔ باکتری‌ها
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-18"
+                >
+                    کلونی و اندازه در وضعیت‌های مختلف رشد
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-19"
+                >
+                    ترکیب سلول باکتری و ساختارهای اصلی و فرعی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-20"
+                >
+                    ساختارهای داخل‌سلولی و عناصر ذخیره‌ای
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-21"
+                >
+                    پوشش سلولی، غشا و مزوزوم
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-22"
+                >
+                    مسیرهای انتقال مواد
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-23"
+                >
+                    رنگدانه‌ها و سیستم‌های ترشحی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-24"
+                >
+                    کاربردهای میکروب‌شناسی و ارزیابی درس
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-25"
+                >
+                    ۴. اصطلاحات و تعاریف
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-26"
+                >
+                    ۵. خود‌ارزیابی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-27"
+                >
+                    سوالات تشریحی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-28"
+                >
+                    سوالات تستی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-29"
+                >
+                    ۷. ادیتور و منابع استفاده‌شده
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-30"
+                >
+                    ۸. گزارش تکمیل بودن محتوا
+                </a>
+            
+        </nav>
+
+    </aside>
+
+
+    <div class="sidebarBackdrop"></div>
+
+<aside
+    class="stickyNotesPanel"
+    aria-label="یادداشت‌های چسبان"
+    aria-hidden="true"
+>
+
+    <div class="stickyNotesPanelHeader">
+
+        <h2>یادداشت‌های چسبان</h2>
+
+        <button
+            class="addStickyNoteButton"
+            type="button"
+        >
+            <i data-lucide="plus"></i>
+            <span>یادداشت جدید</span>
+        </button>
+
+    </div>
+
+    <div class="stickyNotesPanelContent">
+
+        <div class="stickyNotesEmptyState">
+<i data-lucide="notebook-pen"></i>
+
+            <p>
+                هنوز یادداشتی ایجاد نکرده‌اید.
+            </p>
+
+        </div>
+
+        <div class="stickyNotesList"></div>
+
+    </div>
+
+</aside>
+
+<div class="stickyNotesBackdrop"></div>
+
+
+    <div
+        class="aboutModal"
+        aria-hidden="true"
+    >
+
+        <div class="aboutModalBackdrop"></div>
+
+        <section
+            class="aboutModalContent"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="aboutTitle"
+        >
+
+            <button
+                class="aboutCloseButton"
+                type="button"
+                aria-label="بستن"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <h2 id="aboutTitle">
+                آدم‌هایی که اینجا رو ساختن
+            </h2>
+
+            <p class="aboutIntroduction">
+                ما یک تیم کوچک هستیم که باور داریم یادگیری باید
+                لذت‌بخش، عمیق، و در دسترس باشد. جزوه‌ساز تلاش ماست
+                برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً
+                بتوانی با آن‌ها چیزی یاد بگیری.
+            </p>
+
+
+<div class="developerList">
+
+    <article class="developerCard">
+        <h3>شبنم رضاپور</h3>
+        <p>کسی که PDFها را راضی کرد محتوایشان را بی‌کم‌وکاست لو بدهند.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیر‌حسین شکری‌زاده سعادت‌آباد</h3>
+        <p>صدای کلاس را به متن تبدیل کرد، حتی وقتی استاد وسط جمله با میکروفون قهر می‌کرد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>مهراد اسدی</h3>
+        <p>پرامپت‌ها را طوری چید که LLM فکر کرد دارد پایان‌نامه دکتری می‌نویسد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیرسالار سهام‌پور</h3>
+        <p>مارک‌داون را به HTML تبدیل کرد و به جزوه ظاهری داد که آدم دلش بخواهد بخواندش.</p>
+    </article>
+
+</div>
+
+            <p class="aboutFooter">
+                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد.
+                <br>
+                امیدواریم یادگیریت را لذت‌بخش‌تر کند.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <div class="quickNavigation">
+        <div class="quickNavigationList"></div>
+    </div>
+
+
+    <main class="noteContainer">
+
+<div class="stickyNotesLayer"></div>
+
+        <section class="noteHeader">
+
+            <div class="noteMetadata">
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">درس</span>
+                    <span class="metadataValue">میکروب‌شناسی عمومی</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">مبحث</span>
+                    <span class="metadataValue">میکروبیولوژی - شکل، اندازه و ساختار باکتری‌ها؛ از اجزای داخل‌سلولی تا سیستم‌های ترشحی-جلسه اول</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">استاد</span>
+                    <span class="metadataValue">دکتر علی فرهادی</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ جلسه</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ تولید جزوه</span>
+                    <span class="metadataValue generatedDate">2026-10-12T00:47:16</span>
+                </span>
+
+            </div>
+
+
+            <div class="aiWarning">
+                <i data-lucide="triangle-alert"></i>
+
+                <p>
+                    این جزوه با استفاده از جزوه‌ساز پاپیروس و به صورت خودکار تولید شده است.
+                    ممکن است شامل خطا یا برداشت نادرست باشد و
+                    نیازمند بررسی و بازبینی مجدد است.
+                </p>
+            </div>
+
+        </section>
+
+
+<section class="noteSection introductionSection">
+    <h2 id="heading-1">۱. مقدمه و کلیات</h2>
+<p>(ادیتور:دنیای میکروب دنیایی پر از شگفتی و زیباییست بیایید باهم به این دنیای شیرین سفر کنیم :)   سفر خوبی را برایتان ارزو میکنم)</p>
+<p>این جلسه از درس میکروب‌شناسی عمومی برای دانشجویان کارشناسی علوم آزمایشگاهی است. هدف، آشنایی با شکل و اندازهٔ باکتری‌ها و ساختارهای آن‌ها، از جمله گرانول‌ها، واکوئل‌ها، نوکلئوئید و دانه‌های ولوتین است. در ادامه، اجزای سلول باکتری، غشای سیتوپلاسمی، انتقال مواد، سیستم‌های ترشحی و نمونه‌هایی از کاربردهای میکروب‌شناسی محیطی و صنعتی بررسی می‌شوند.</p>
+</section>
+
+<section class="noteSection mainSection">
+    <h2 id="heading-2">۲. متن اصلی جزوه</h2>
+<h3 id="heading-3">معرفی درس و اهداف جلسه</h3>
+<p>در این ترم، مباحث پایه‌ای میکروب‌شناسی هم از جنبه‌های آزمایشگاهی و هم از نظر مبانی نظری بررسی می‌شوند. بخش آزمایشگاهی شامل معرفی محیط‌های کشت، طرز تهیهٔ آن‌ها و یادگیری تست‌های پایه است. این درس پایهٔ انجام آزمایش‌ها و کار با محیط کشت را فراهم می‌کند و مبانی لازم برای درس‌های تخصصی‌تر باکتری‌شناسی آزمایشگاهی و نظری را ارائه می‌دهد.</p>
+<p>برای نمونه، در این درس بررسی می‌شود که رنگ‌آمیزی گرم چگونه انجام می‌شود، باکتری‌ها چگونه به گرم‌مثبت و گرم‌منفی تقسیم می‌شوند و چه خطاهایی ممکن است باعث شوند باکتری گرم‌مثبت را گرم‌منفی یا برعکس تشخیص دهند. همچنین دربارهٔ علت استفاده از محیط مک‌کانکی (MacConkey) به‌جای EMB صحبت می‌شود. در EMB گاهی انتظار می‌رود فقط گرم‌منفی‌ها رشد کنند، اما به‌صورت استثنا بعضی گرم‌مثبت‌ها هم رشد می‌کنند. این اتفاق در مک‌کانکی کمتر است و به پپتون و ترکیبات آن مربوط می‌شود.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">مقایسهٔ رشد در EMB و مک‌کانکی: در EMB گاهی بعضی گرم‌مثبت‌ها هم رشد می‌کنند، اما این اتفاق در مک‌کانکی کمتر است.</div></div>
+<p>با یادگیری اثر آنتی‌بیوتیک‌ها بر بخش‌های مختلف باکتری، می‌توان فهمید چرا برای بیماری تنفسی مرتبط با باکتری‌های گرم‌مثبت، معمولاً آنتی‌بیوتیکی که بیشتر بر گرم‌منفی‌ها اثر دارد انتخاب نمی‌شود. سفکسیم و سیپروفلوکساسین broad-spectrum هستند، اما اثرشان بیشتر بر گرم‌منفی‌هاست؛ در مقابل، آزیترومایسین یا آموکسی‌سیلین بر ساختارهای باکتری‌های گرم‌مثبت ــ که بیشتر عفونت‌های تنفسی را ایجاد می‌کنند ــ اثر دارند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در بیماری تنفسی مرتبط با باکتری‌های گرم‌مثبت، در مثال درس سفکسیم و سیپروفلوکساسین ــ با وجود broad-spectrum بودن و اثر بیشتر بر گرم‌منفی‌ها ــ با آزیترومایسین یا آموکسی‌سیلین مقایسه شده‌اند.</div></div>
+<p>میکروب‌شناسی عمومی بیشتر بر «چرایی» و «چگونگی»، مبانی و مکانیسم‌ها تمرکز دارد. در مقابل، باکتری‌شناسی ترم بعد شامل حفظ تعداد زیادی از باکتری‌ها، ساختارها، داروها و واکسن‌های آن‌هاست. در آزمون ارشد و دکتری معمولاً از باکتری‌شناسی ترم بعد بیشتر سؤال می‌آید؛ اما در درس‌هایی مانند ایمنی‌شناسی و بیوتکنولوژی و نیز برای داوطلبان کنکور پزشکی، مباحث میکروب‌شناسی این ترم بیشتر مورد سؤال قرار می‌گیرند.</p>
+<h3 id="heading-4">منابع و شیوهٔ ارزیابی</h3>
+<p>کتاب‌های مرجع درس Jawetz و Murray هستند و مطالعهٔ هرکدام برای درس و آزمون ارشد کافی است. برای مباحث و جلساتی که دکتر فرهادی تدریس می‌کند، اسلایدها و PDFهای ارائه‌شده برای امتحان کافی‌اند و از مطالب خارج از اسلاید سؤال داده نمی‌شود. مطالعهٔ کتاب‌ها برای علاقه‌مندان یا کسانی که می‌خواهند توضیحات و جزئیات بیشتری بخوانند توصیه می‌شود.</p>
+<p>مسئول درس نظری و عملی خانم دکتر توسل هستند. حدود ۵۰ درصد مطالب با دکتر فرهادی و ۵۰ درصد با ایشان است. سیاست کلی میان‌ترم و وزن میان‌ترم و فاینال را خانم دکتر مشخص می‌کنند. دکتر فرهادی معمولاً از هر جلسه‌ای که پیش از میان‌ترم تدریس می‌کند، ۵ تا ۶ سؤال تستی می‌دهد؛ برای مثال، اگر سه جلسه پیش از میان‌ترم تدریس کند، از هر جلسه ۵ تا ۶ سؤال تستی خواهد بود.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">اگر سه جلسه پیش از میان‌ترم تدریس شود، دکتر فرهادی معمولاً از هر جلسه ۵ تا ۶ سؤال تستی می‌دهد.</div></div>
+<h3 id="heading-5">بررسی باکتری‌ها</h3>
+<h4>ویژگی‌های میکروسکوپی و ماکروسکوپی</h4>
+<p>باکتری‌ها به‌طور هم‌زمان بر اساس خصوصیات میکروسکوپی و ماکروسکوپی بررسی می‌شوند:</p>
+<ul>
+<li><strong>خصوصیات میکروسکوپی:</strong> رنگ‌پذیری گرم و مورفولوژی زیر میکروسکوپ.</li>
+<li><strong>خصوصیات ماکروسکوپی:</strong> ویژگی‌های کلونی پس از کشت نمونهٔ بیمار روی پلیت حاوی محیط غنی از مواد موردنیاز باکتری.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>نوع بررسی</th>
+<th>ویژگی‌های بررسی‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>میکروسکوپی</td>
+<td>رنگ‌پذیری گرم و مورفولوژی زیر میکروسکوپ</td>
+</tr>
+<tr>
+<td>ماکروسکوپی</td>
+<td>ویژگی‌های کلونی پس از کشت نمونهٔ بیمار روی پلیت حاوی محیط غنی از مواد موردنیاز باکتری</td>
+</tr>
+</tbody></table>
+<h4>شکل باکتری‌ها</h4>
+<p>شکل‌های اصلی باکتری‌ها عبارت‌اند از:</p>
+<ul>
+<li><strong>باسیل (bacillus) یا rod:</strong> شکل میله‌ای. واژهٔ rod برای باسیل‌های کاملاً میله‌ای و چهارگوش، مانند <em>Bacillus anthracis</em> و برخی باسیل‌های انتروباکتریا، به‌کار می‌رود.</li>
+<li><strong>کوکوس/کوکسی (coccus/cocci):</strong> شکل کروی.</li>
+<li><strong>اسپیریل (spirillum):</strong> شکل فنری.</li>
+<li><strong>کوکوباسیل:</strong> بعضی باسیل‌ها فشرده‌تر و گردترند و شبیه کوکسی به‌نظر می‌رسند. این باکتری‌ها باسیل‌اند، اما برخلاف rod تیپیک، حالت چهارگوش و میله‌ای کامل ندارند.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>شکل</th>
+<th>توصیف در درس</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>باسیل (bacillus) یا rod</td>
+<td>شکل میله‌ای؛ rod برای باسیل‌های کاملاً میله‌ای و چهارگوش به‌کار می‌رود.</td>
+</tr>
+<tr>
+<td>کوکوس/کوکسی (coccus/cocci)</td>
+<td>شکل کروی</td>
+</tr>
+<tr>
+<td>اسپیریل (spirillum)</td>
+<td>شکل فنری</td>
+</tr>
+<tr>
+<td>کوکوباسیل</td>
+<td>باسیل فشرده‌تر و گردتر، شبیه کوکسی؛ برخلاف rod تیپیک، حالت چهارگوش و میله‌ای کامل ندارد.</td>
+</tr>
+</tbody></table>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent"><em>Bacillus anthracis</em> و برخی باسیل‌های انتروباکتریا نمونه‌هایی هستند که در درس برای rodهای کاملاً میله‌ای و چهارگوش ذکر شده‌اند.</div></div>
+<h4>آرایش سلول‌ها</h4>
+<p>آرایش کوکسی‌ها از خصوصیات میکروسکوپی است:</p>
+<ul>
+<li>آرایش خوشه‌ای: استافیلوکوک (staphylococcus)</li>
+<li>آرایش زنجیره‌ای: استرپتوکوک (streptococcus)</li>
+<li>آرایش چهارتایی: تتراد (tetrad)</li>
+<li>آرایش هشت‌تایی: سارسیـنا (sarcina)</li>
+</ul>
+<p>باسیل‌ها نیز ممکن است زنجیره‌ای باشند که به آن‌ها استرپتوباسیل (streptobacillus) گفته می‌شود. آرایش استافیلوکوکی و استرپتوکوکی مربوط به کوکسی‌هاست و برای اسپیریل‌ها به‌کار نمی‌رود.</p>
+<table>
+<thead>
+<tr>
+<th>آرایش</th>
+<th>نام در درس</th>
+<th>گروه مربوط</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>خوشه‌ای</td>
+<td>استافیلوکوک (staphylococcus)</td>
+<td>کوکسی</td>
+</tr>
+<tr>
+<td>زنجیره‌ای</td>
+<td>استرپتوکوک (streptococcus)</td>
+<td>کوکسی</td>
+</tr>
+<tr>
+<td>چهارتایی</td>
+<td>تتراد (tetrad)</td>
+<td>کوکسی</td>
+</tr>
+<tr>
+<td>هشت‌تایی</td>
+<td>سارسیـنا (sarcina)</td>
+<td>کوکسی</td>
+</tr>
+<tr>
+<td>زنجیره‌ای</td>
+<td>استرپتوباسیل (streptobacillus)</td>
+<td>باسیل</td>
+</tr>
+</tbody></table>
+<h4>کلونی و ویژگی‌های ماکروسکوپی</h4>
+<p>اغلب باکتری‌ها پس از حدود ۱۸ تا ۲۴ ساعت رشد می‌کنند؛ هرچند بعضی باکتری‌ها برای رشد به زمان بیشتری، حتی چند هفته، نیاز دارند. مجموعهٔ میلیاردها باکتری که از تکثیر یک باکتری به‌وجود آمده است ــ با تقسیم به دو، چهار، هشت، شانزده و به همین ترتیب ــ کلونی نام دارد و با چشم غیرمسلح دیده می‌شود.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>کلونی</strong>
+مجموعهٔ میلیاردها باکتری که از تکثیر یک باکتری به‌وجود آمده است و با چشم غیرمسلح دیده می‌شود.</div></div>
+<p>کلونی‌ها ممکن است:</p>
+<ul>
+<li>رنگ‌های مختلف یا بوی خاص داشته باشند؛</li>
+<li>مقعر یا محدب (convex) باشند؛</li>
+<li>هنگام جداکردن با لوپ، حالت کشسانی نشان دهند.</li>
+</ul>
+<p>این ویژگی‌ها به جهت‌دادن به تشخیص کمک می‌کنند، اما به‌تنهایی تشخیص قطعی نیستند. برای مثال:</p>
+<ul>
+<li>کلونی‌های بزرگ، صورتی و کش‌دار ذهن را به‌سمت <em>Klebsiella</em> می‌برند.</li>
+<li>کلونی‌های کوچک و طلایی، همراه با گرم‌مثبت‌بودن، به‌خصوص در نمونهٔ زخم یا مخاط، به <em>Staphylococcus aureus</em> (استاف طلایی) اشاره می‌کنند.</li>
+</ul>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">کلونی‌های بزرگ، صورتی و کش‌دار ذهن را به‌سمت <em>Klebsiella</em> می‌برند؛ کلونی‌های کوچک و طلایی، همراه با گرم‌مثبت‌بودن، به‌خصوص در نمونهٔ زخم یا مخاط، به <em>Staphylococcus aureus</em> (استاف طلایی) اشاره می‌کنند.</div></div>
+<p>ترکیب خصوصیات میکروسکوپی و ماکروسکوپی، رنگ‌آمیزی و تست‌های بیوشیمیایی به تشخیص می‌انجامد. سپس مشخص می‌شود باکتری به کدام آنتی‌بیوتیک‌ها حساس، مقاوم یا دارای مقاومت متوسط است؛ آنتی‌بیوتیک‌های مناسب پیشنهاد می‌شوند و مجموعهٔ نتایج در report می‌آید.</p>
+<h4>شکل و اندازهٔ باکتری‌ها</h4>
+<p>اندازه‌های ارائه‌شده برای باکتری‌ها عبارت‌اند از:</p>
+<ul>
+<li>کوکسی‌ها: ۰٫۷۵ تا ۱٫۵ میکرومتر</li>
+<li>باسیل‌ها: ۰٫۷۵ تا ۸ میکرومتر</li>
+<li>اسپیروکت‌ها: ۵ تا ۵۰۰ میکرومتر</li>
+</ul>
+<p>لازم نیست این اعداد حفظ شوند؛ هدف، ایجاد تصور ذهنی از اندازهٔ باکتری‌هاست.</p>
+<table>
+<thead>
+<tr>
+<th>گروه</th>
+<th align="right">اندازهٔ ارائه‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>کوکسی‌ها</td>
+<td align="right">۰٫۷۵ تا ۱٫۵ میکرومتر</td>
+</tr>
+<tr>
+<td>باسیل‌ها</td>
+<td align="right">۰٫۷۵ تا ۸ میکرومتر</td>
+</tr>
+<tr>
+<td>اسپیروکت‌ها</td>
+<td align="right">۵ تا ۵۰۰ میکرومتر</td>
+</tr>
+</tbody></table>
+<p>اندازه به سن کشت نیز بستگی دارد. باکتری‌های مسن اغلب کروی‌شکل‌اند و باسیل‌های در حال رشد ممکن است چند برابر باکتری‌های پیر درازتر باشند. کوکسی در حال رشد نیز ممکن است طولی معادل ۵۰ درصد بیشتر از عرض خود داشته باشد. بنابراین، پیش از نام‌گذاری، لازم است سلول‌ها در حالت‌های مختلف رشد بررسی شوند.</p>
+<table>
+<thead>
+<tr>
+<th>حالت رشد</th>
+<th>تغییر اندازه یا شکل ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>باکتری مسن</td>
+<td>اغلب کروی‌شکل</td>
+</tr>
+<tr>
+<td>باسیل در حال رشد</td>
+<td>ممکن است چند برابر باکتری پیر درازتر باشد</td>
+</tr>
+<tr>
+<td>کوکسی در حال رشد</td>
+<td>ممکن است طولی معادل ۵۰ درصد بیشتر از عرض خود داشته باشد</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image1.jpg" alt="تصویر 1">
+<em>تصویر 1</em></p>
+<p><img src="../data/assets/assets/image2.jpg" alt="تصویر 2">
+<em>تصویر 2</em></p>
+<p><img src="../data/assets/assets/image3.jpg" alt="تصویر 3">
+<em>تصویر 3</em></p>
+<h3 id="heading-6">ترکیب تقریبی سلول باکتری</h3>
+<p>ترکیب تقریبی سلول باکتری ۷۰٪ آب و ۳۰٪ وزن خشک است. ترکیب وزن خشک به‌صورت زیر ذکر شده است:</p>
+<ul>
+<li>حدود ۷۰٪ پروتئین، از جمله ریبوزوم‌ها، آنزیم‌ها و ساختارهای سطحی</li>
+<li>۱۲٪ RNA</li>
+<li>۶٪ چربی</li>
+<li>۵٪ پلی‌ساکارید</li>
+<li>۴٪ فسفولیپید</li>
+<li>۳٪ DNA</li>
+</ul>
+<p>لازم نیست این اعداد حفظ شوند؛ کافی است بدانیم این ترکیبات در باکتری حضور دارند.</p>
+<table>
+<thead>
+<tr>
+<th>بخش یا ترکیب</th>
+<th align="right">مقدار تقریبی ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>آب</td>
+<td align="right">۷۰٪ سلول</td>
+</tr>
+<tr>
+<td>وزن خشک</td>
+<td align="right">۳۰٪ سلول</td>
+</tr>
+<tr>
+<td>پروتئین، از جمله ریبوزوم‌ها، آنزیم‌ها و ساختارهای سطحی</td>
+<td align="right">حدود ۷۰٪ وزن خشک</td>
+</tr>
+<tr>
+<td>RNA</td>
+<td align="right">۱۲٪ وزن خشک</td>
+</tr>
+<tr>
+<td>چربی</td>
+<td align="right">۶٪ وزن خشک</td>
+</tr>
+<tr>
+<td>پلی‌ساکارید</td>
+<td align="right">۵٪ وزن خشک</td>
+</tr>
+<tr>
+<td>فسفولیپید</td>
+<td align="right">۴٪ وزن خشک</td>
+</tr>
+<tr>
+<td>DNA</td>
+<td align="right">۳٪ وزن خشک</td>
+</tr>
+</tbody></table>
+<h3 id="heading-7">ساختار کلی باکتری</h3>
+<p>در سه جلسهٔ مربوط به ساختار باکتری‌ها، بررسی از مرکز باکتری آغاز می‌شود و لایه‌به‌لایه به بیرون می‌رسد. برای توضیح این روند از مثال تخم‌مرغ آب‌پز استفاده می‌شود. باکتری پروکاریوت است و هسته ندارد؛ بنابراین، تخم‌مرغ را نباید از جهت داشتن زرده و هسته با باکتری یکی دانست. باکتری هسته ندارد، اما لایه‌های تخم‌مرغ ــ به‌جز این تفاوت ــ برای تصور لایه‌های باکتری مثال مناسبی‌اند. ابتدا محتویات داخلی و سپس لایه‌های بیرونی بررسی می‌شوند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای تصور لایه‌های باکتری از تخم‌مرغ آب‌پز مثال زده می‌شود؛ با این تفاوت که باکتری پروکاریوت است و هسته ندارد، پس نباید از جهت داشتن زرده و هسته با تخم‌مرغ یکی دانسته شود.</div></div>
+<p><img src="../data/assets/assets/image7.jpg" alt="تصویر 7">
+<em>تصویر 7</em></p>
+<h4>ساختارهای اصلی و فرعی</h4>
+<p>ساختارهای باکتری به اصلی و فرعی تقسیم می‌شوند.</p>
+<p><strong>ساختارهای اصلی:</strong></p>
+<ul>
+<li>مادهٔ وراثتی یا CHROMOSOME</li>
+<li>سیتوپلاسم (CYTOPLASM)</li>
+<li>غشای سیتوپلاسمی (CELL MEMBRANE)</li>
+<li>مزوزوم (MEZOSOME)</li>
+<li>دیوارهٔ سلولی (CELL WALL)</li>
+</ul>
+<p><strong>ساختارهای فرعی:</strong></p>
+<ul>
+<li>کپسول (CAPSULE)</li>
+<li>فلاژل/تاژک (FLAGELLA)</li>
+<li>پیلی/فیمبریا (PILLUS)</li>
+<li>اسپور (SPORE)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>گروه ساختاری</th>
+<th>اجزا</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>اصلی</td>
+<td>مادهٔ وراثتی یا CHROMOSOME؛ سیتوپلاسم (CYTOPLASM)؛ غشای سیتوپلاسمی (CELL MEMBRANE)؛ مزوزوم (MEZOSOME)؛ دیوارهٔ سلولی (CELL WALL)</td>
+</tr>
+<tr>
+<td>فرعی</td>
+<td>کپسول (CAPSULE)؛ فلاژل/تاژک (FLAGELLA)؛ پیلی/فیمبریا (PILLUS)؛ اسپور (SPORE)</td>
+</tr>
+</tbody></table>
+<p>بسیاری از باکتری‌ها ممکن است کپسول، فلاژل، پیلی یا اسپور داشته باشند یا نداشته باشند. تقریباً همهٔ باکتری‌ها ساختارهای اصلی را دارند، به‌جز دیوارهٔ سلولی که حدود سه خانوادهٔ باکتریایی فاقد آن هستند. از شناخته‌شده‌ترین باکتری‌های بیماری‌زای فاقد دیواره، مایکوپلاسماها هستند.</p>
+<h4>سیتوپلاسم و محتویات آن</h4>
+<p>در سیتوپلاسم DNA، RNA، ریبوزوم‌ها، پروتئین‌ها و مواد دیگر وجود دارند. باکتری مانند سلول یوکاریوتی هسته ندارد، اما DNA آن در ناحیه‌ای متراکم و فشرده قرار می‌گیرد که نوکلئوئید (nucleoid)، یعنی شبه‌هسته، نام دارد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>نوکلئوئید (nucleoid)</strong>
+ناحیه‌ای متراکم و فشرده در باکتری که DNA در آن قرار می‌گیرد و «شبه‌هسته» نامیده می‌شود؛ باکتری هسته ندارد.</div></div>
+<h5>نوکلئوئید و DNA باکتری</h5>
+<p>می‌توان DNA حلقوی را به تسبیحی حلقه‌شده تشبیه کرد که داخل سیتوپلاسم درهم‌پیچیده و فشرده است. شکل شماتیک باکتری در حال رشد یا استراحت، پیش از ورود به تقسیم، نوکلئوئید را نشان می‌دهد. هنگام تقسیم، همانندسازی (replication) و دوبرابرشدن DNA و حرکت آن به دو قطب باکتری رخ می‌دهد. در توضیح درس، این وضعیت به‌طور تقریبی با تشکیل سانترومر در سلول یوکاریوتی مقایسه شده است. در حالت معمول، DNA دورشته‌ای باکتری در جایگاهی از سیتوپلاسم قرار دارد.</p>
+<p>پروکاریوت‌ها ساختار هسته ندارند و DNA خود را در نوکلئوئید بسته‌بندی می‌کنند. نوکلئوئید اغلب باکتری‌ها حاوی یک DNA منفرد و حلقوی با طول تقریبی ۱ میلی‌متر است. شمار ژن‌ها در پروکاریوت‌ها از ۴۶۸ ژن در <em>(Mycoplasma genitalium)مایکوپلاسما ژنیتالوم</em>  که کوچک‌ترین DNA را دارد و استرپتو مایسس کویلی کالر (<em>Streptomyces coelicolor)</em>  تعداد 7825 ژن در DNA خود دارد؛ نام جنس <em>Streptomyces</em> و نام گونهٔ نمونه <em>Streptomyces coelicolor</em> است.</p>
+<p>کوچک‌ترین DNA مربوط به مایکوپلاسما <em>(Mycoplasma)</em> و بزرگ‌ترین DNA مربوط به استرپتومایسس کویلی کالر <em>Streptomyces coelicolor</em>  است. DNA باکتری‌ها، برخلاف DNA یوکاریوت‌ها، به‌شکل کروموزوم مجزای آشکار دیده نمی‌شود و به‌صورت شبکهٔ منتشر کروماتینی باقی می‌ماند. جزئیات ژنتیک باکتری‌ها، جهش‌ها و نقش آن‌ها در مقاومت آنتی‌بیوتیکی و طراحی داروها در مبحث ژنتیک مطرح می‌شود. مواد ضدمیکروبی (antimicrobial agents) شامل آنتی‌بیوتیک‌ها و ترکیباتی مانند فنول‌ها نیز بررسی می‌شوند.</p>
+<h5>عناصر خارج‌کروموزومی</h5>
+<p>علاوه بر DNA کروموزومی، عناصر خارج‌کروموزومی از جنس DNA و گاهی RNA وجود دارند که منشأ آن‌ها خود کروموزوم نیست و جزو ژنوم باکتری به‌شمار نمی‌روند. پلاسمیدها شناخته‌شده‌ترین این عناصرند؛ در سیتوپلاسم شناورند و می‌توانند خطی یا حلقوی باشند.</p>
+<p>پلاسمیدها در ژن‌درمانی و تولید داروها کاربرد دارند. ژن‌درمانی‌های مبتنی بر پلاسمید به پلاسمیدهایی متکی‌اند که نخست از باکتری‌ها گرفته شدند. جزئیات پلاسمیدها پس از میان‌ترم مطرح خواهد شد.</p>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>عناصر خارج‌کروموزومی</td>
+<td>از جنس DNA و گاهی RNA؛ منشأ آن‌ها خود کروموزوم نیست و جزو ژنوم باکتری به‌شمار نمی‌روند</td>
+</tr>
+<tr>
+<td>پلاسمیدها</td>
+<td>شناخته‌شده‌ترین عناصر خارج‌کروموزومی؛ در سیتوپلاسم شناور و خطی یا حلقوی</td>
+</tr>
+<tr>
+<td>کاربرد پلاسمیدها</td>
+<td>ژن‌درمانی و تولید داروها؛ ژن‌درمانی‌های مبتنی بر پلاسمید به پلاسمیدهایی متکی‌اند که نخست از باکتری‌ها گرفته شدند</td>
+</tr>
+</tbody></table>
+<h4>ریبوزوم باکتری</h4>
+<p>ریبوزوم باکتری ضریب رسوبی 70S دارد و از زیرواحدهای 30S و 50S تشکیل شده است. ریبوزوم‌های پروکاریوتی و یوکاریوتی در سیتوپلاسم آزادند.</p>
+<ul>
+<li>زیرواحد 30S دارای ۲۱ پروتئین و RNA مربوط به 16S است.</li>
+<li>زیرواحد 50S دارای ۳۴ پروتئین و RNAهای 23S و 5S است.</li>
+</ul>
+<p>ریبوزوم باکتری از روی mRNA پروتئین تولید می‌کند.</p>
+<table>
+<thead>
+<tr>
+<th>بخش ریبوزوم باکتری</th>
+<th>اجزای ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ریبوزوم کامل</td>
+<td>ضریب رسوبی 70S</td>
+</tr>
+<tr>
+<td>زیرواحد 30S</td>
+<td>۲۱ پروتئین و RNA مربوط به 16S</td>
+</tr>
+<tr>
+<td>زیرواحد 50S</td>
+<td>۳۴ پروتئین و RNAهای 23S و 5S</td>
+</tr>
+<tr>
+<td>کارکرد</td>
+<td>تولید پروتئین از روی mRNA</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image8.jpg" alt="تصویر 8">
+<em>تصویر 8</em></p>
+<p><img src="../data/assets/assets/image9.jpg" alt="تصویر 9">
+<em>تصویر 9</em></p>
+<h4>فلاژل و پیلی</h4>
+<p>در شکل‌های شماتیک، فلاژل اندام حرکتی باکتری و فیمبریا یا پیلی (fimbria/pilus) اندام اتصال آن است.</p>
+<p><img src="../data/assets/image7.jpg" alt="image7"></p>
+<p>پیلی به اتصال باکتری به سطح، به‌ویژه در سطوحی که جریان وجود دارد، کمک می‌کند و از عوامل بیماری‌زایی است. برای نمونه، بعضی باکتری‌ها وارد مجاری ادرار می‌شوند، اما نمی‌توانند عفونت ایجاد کنند؛ اتصال به کمک پیلی می‌تواند استقرار باکتری را تسهیل و بیماری‌زایی را افزایش دهد.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">بعضی باکتری‌ها وارد مجاری ادرار می‌شوند، اما نمی‌توانند عفونت ایجاد کنند؛ اتصال به کمک پیلی می‌تواند استقرار باکتری را تسهیل و بیماری‌زایی را افزایش دهد.</div></div>
+<p>فلاژل اندام حرکتی است، اما در توضیح درس گفته شد که حرکت باکتری به کمک آن معمولاً مزیت بیماری‌زایی عمده‌ای در بدن ندارد: بافت‌ها غالباً جامدند و در مایعاتی مانند خون، ادرار و CSF، خود مایع جریان دارد. در مقایسهٔ پیلی و فلاژل از نظر افزایش pathogenicity، پیلی اهمیت بیشتری دارد. پیلی با اتصال به دیوارهٔ عروق، یورترا یا مثانه مانع شسته‌شدن و دفع باکتری می‌شود و به استقرار و colonization، یعنی اتصال و مستقرشدن، کمک می‌کند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>colonization</strong>
+اتصال و مستقرشدن باکتری.</div></div>
+<table>
+<thead>
+<tr>
+<th>ساختار</th>
+<th>نقش یا توضیح در درس</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>پیلی/فیمبریا (fimbria/pilus)</td>
+<td>اندام اتصال؛ کمک به اتصال به سطح و استقرار باکتری، به‌ویژه در سطوحی که جریان وجود دارد</td>
+</tr>
+<tr>
+<td>فلاژل</td>
+<td>اندام حرکتی؛ حرکت آن در بدن معمولاً مزیت بیماری‌زایی عمده‌ای ندارد، چون بافت‌ها غالباً جامدند و در مایعاتی مانند خون، ادرار و CSF خود مایع جریان دارد</td>
+</tr>
+</tbody></table>
+<h3 id="heading-8">گرانول‌ها و واکوئل‌های سیتوپلاسمی</h3>
+<p>^دمتگرم که داری با قدرت میخونی :) اینجا یه نکته ای باید اضافه کنم که طبق حرف استاد سه گرانول PHB ،متاکروماتیک و دانه های پلی ساکاریدی مهمه و توی امتحان میاد ولی بهتره همه گرانول هارو بلد باشید^</p>
+<p>در سیتوپلاسم ممکن است گرانول‌هایی وجود داشته باشند که هم از نظر میکروب‌شناسی عمومی اهمیت دارند و هم گاهی در تشخیص کمک می‌کنند.</p>
+<h4>دانه‌های متاکروماتیک، ولوتین و Babes-Ernst</h4>
+<p>دانه‌های متاکروماتیک در باکتری‌هایی مانند <em>Corynebacterium</em> و <em>Mycobacterium tuberculosis</em> دیده می‌شوند. متاکروماتیک یعنی دانه رنگی متفاوت از رنگ زمینه می‌گیرد؛ برای نمونه، باکتری گرم‌مثبت ممکن است بنفش دیده شود و دانه‌ای صورتی‌رنگ در سیتوپلاسم داشته باشد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>دانهٔ متاکروماتیک</strong>
+دانه‌ای که رنگی متفاوت از رنگ زمینه می‌گیرد.</div></div>
+<p>این دانه‌ها تجمع فسفات‌اند و گاهی در قطب باکتری دیده می‌شوند. در تصویر، باسیل گرم‌مثبتی نشان داده شده که در یکی از قطب‌های آن دانه‌ای متاکروماتیک با ظاهری متورم و متفاوت از بقیهٔ سلول دیده می‌شود. این دانه‌ها را دانه‌های ولوتین، دانه‌های Babes-Ernst و دانه‌های قطبی نیز می‌نامند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در تصویر، باسیل گرم‌مثبتی نشان داده شده که در یکی از قطب‌های آن دانه‌ای متاکروماتیک با ظاهری متورم و متفاوت از بقیهٔ سلول دیده می‌شود.</div></div>
+<p>رنگ آن‌ها به روش رنگ‌آمیزی بستگی دارد. با روش Albert، رنگ‌هایی مانند toluidine blue یا methylene blue ممکن است قرمز دیده شوند و با رنگ‌آمیزی Neisser نیز قابل‌ردیابی‌اند. دانه‌های متاکروماتیک اغلب در انتهای فاز رشد لگاریتمی دیده می‌شوند. نمونه‌های ذکرشده <em>Corynebacterium</em> و <em>Mycobacterium tuberculosis</em> هستند.</p>
+<table>
+<thead>
+<tr>
+<th>ویژگی دانه‌های متاکروماتیک</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ماهیت</td>
+<td>تجمع فسفات</td>
+</tr>
+<tr>
+<td>جایگاه</td>
+<td>گاهی در قطب باکتری</td>
+</tr>
+<tr>
+<td>نام‌های دیگر</td>
+<td>دانه‌های ولوتین، Babes-Ernst و دانه‌های قطبی</td>
+</tr>
+<tr>
+<td>زمان مشاهدهٔ رایج</td>
+<td>اغلب در انتهای فاز رشد لگاریتمی</td>
+</tr>
+<tr>
+<td>رنگ‌آمیزی‌های ذکرشده</td>
+<td>Albert، toluidine blue، methylene blue و Neisser</td>
+</tr>
+<tr>
+<td>نمونه‌ها</td>
+<td><em>Corynebacterium</em> و <em>Mycobacterium tuberculosis</em></td>
+</tr>
+</tbody></table>
+<h4>گرانول‌های پلی‌ساکاریدی گلیکوژنی</h4>
+<p>بعضی باکتری‌ها گرانول‌های پلی‌ساکاریدی گلیکوژنی یا گلوسیدی دارند. برای ردیابی آن‌ها از ید استفاده می‌شود؛ ید گلیکوژن را قهوه‌ای می‌کند. در برخی باکتری‌ها، از جمله انتروباکتریاسه، می‌توان پس از رنگ‌آمیزی یک قطره محلول لوگول حاوی ید افزود و قهوه‌ای‌شدن دانه‌ها را به‌عنوان نشانهٔ گلیکوژنی‌بودن آن‌ها مشاهده کرد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در برخی باکتری‌ها، از جمله انتروباکتریاسه، پس از رنگ‌آمیزی می‌توان یک قطره محلول لوگول حاوی ید افزود و قهوه‌ای‌شدن دانه‌ها را به‌عنوان نشانهٔ گلیکوژنی‌بودن آن‌ها مشاهده کرد.</div></div>
+<h4>گرانول‌های پلی‌بتاهیدروکسی‌بوتیریک اسید</h4>
+<p>گرانول‌های پلی‌بتاهیدروکسی‌بوتیریک اسید (PHB) ذخیرهٔ کربن‌اند. وقتی کربن محیط فراوان و نیتروژن یا مواد دیگر کم باشد، باکتری کربن را به‌شکل PHB ذخیره می‌کند. این گرانول‌ها ماهیت لیپیدی دارند و با Sudan Black سیاه می‌شوند؛ ممکن است در رنگ‌آمیزی گرم با اسپور اشتباه شوند. در نمونه‌برداری از کلونی و رنگ‌آمیزی با Sudan Black، محل گرانول درون باکتری تیره دیده می‌شود.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>گرانول‌های پلی‌بتاهیدروکسی‌بوتیریک اسید (PHB)</strong>
+گرانول‌هایی با ماهیت لیپیدی که کربن را ذخیره می‌کنند؛ باکتری در شرایط فراوانی کربن محیط و کمبود نیتروژن یا مواد دیگر، کربن را به‌شکل PHB ذخیره می‌کند.</div></div>
+<p>باکتری‌های ذکرشده شامل <em>Pseudomonas</em>، <em>Pseudomonas aeruginosa</em>، <em>Bacillus</em>، <em>Legionella</em> و <em>Burkholderia</em> هستند. اسلاید نیز به PHB در تصویر TEM از مقطع نازک باکتری در حال تقسیم <em>P. mandelii</em> اشاره می‌کند.</p>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>اطلاعات ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>نقش PHB</td>
+<td>ذخیرهٔ کربن</td>
+</tr>
+<tr>
+<td>شرایط ذخیره‌سازی</td>
+<td>کربن محیط فراوان و نیتروژن یا مواد دیگر کم</td>
+</tr>
+<tr>
+<td>ماهیت گرانول</td>
+<td>لیپیدی</td>
+</tr>
+<tr>
+<td>رنگ‌آمیزی</td>
+<td>Sudan Black؛ گرانول سیاه می‌شود</td>
+</tr>
+<tr>
+<td>نکتهٔ تشخیصی</td>
+<td>ممکن است در رنگ‌آمیزی گرم با اسپور اشتباه شود</td>
+</tr>
+<tr>
+<td>باکتری‌های ذکرشده</td>
+<td><em>Pseudomonas</em>، <em>Pseudomonas aeruginosa</em>، <em>Bacillus</em>، <em>Legionella</em> و <em>Burkholderia</em></td>
+</tr>
+<tr>
+<td>مورد تصویر اسلاید</td>
+<td>PHB در تصویر TEM از مقطع نازک باکتری در حال تقسیم <em>P. mandelii</em></td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image10.jpg" alt="تصویر 10">
+<em>تصویر 10</em></p>
+<p><img src="../data/assets/assets/image11.jpg" alt="تصویر 11">
+<em>تصویر 11</em></p>
+<p><img src="../data/assets/assets/image12.jpg" alt="تصویر 12">
+<em>تصویر 12</em></p>
+<h4>ساختارهای ذخیره‌ای و گرانول‌های باکتری‌های محیطی</h4>
+<p>در باکتری‌های محیطی، از جمله گونه‌های غیر بیماری‌زا، مگنتوزوم‌ها، گرانول‌های سولفوری، کربوکسی‌زوم‌ها و واکوئل‌های گازی نیز دیده می‌شوند.</p>
+<h5>سیدروفور و مگنتوزوم</h5>
+<p>در گفتار، برای توضیح جذب آهن به سیدروفور (siderophore) اشاره شد. سیدروفورها مولکول‌هایی هستند که باکتری ترشح می‌کند؛ آن‌ها به آهن متصل می‌شوند و به انتقال آن به‌سمت سلول و جذب آهن کمک می‌کنند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>سیدروفور (siderophore)</strong>
+مولکولی که باکتری ترشح می‌کند، به آهن متصل می‌شود و به انتقال آن به‌سمت سلول و جذب آهن کمک می‌کند.</div></div>
+<p>در طبیعت، بعضی باکتری‌های مصرف‌کنندهٔ آهن مگنتوزوم تولید می‌کنند. این گرانول‌های آهنی شامل Fe₃O₄ هستند و غشایی حاوی فسفولیپید، پروتئین و گلیکوپروتئین آن‌ها را احاطه می‌کند. مگنتوزوم‌ها خاصیت مغناطیسی و magnetotaxis را ایجاد می‌کنند و به باکتری در جهت‌یابی به‌سمت آهن کمک می‌کنند.</p>
+<p>در گفتار، magnetotaxis به‌معنای حرکت مرتبط با میدان مغناطیسی توضیح داده شد و با موارد زیر مقایسه شد:</p>
+<ul>
+<li>aerotaxis: حرکت به‌سمت هوا و اکسیژن</li>
+<li>chemotaxis: حرکت به‌سمت مواد شیمیایی</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>واژه</th>
+<th>توضیح در درس</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>magnetotaxis</td>
+<td>حرکت مرتبط با میدان مغناطیسی؛ در درس با جهت‌یابی به‌سمت آهن مرتبط شده است</td>
+</tr>
+<tr>
+<td>aerotaxis</td>
+<td>حرکت به‌سمت هوا و اکسیژن</td>
+</tr>
+<tr>
+<td>chemotaxis</td>
+<td>حرکت به‌سمت مواد شیمیایی</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image13.jpg" alt="تصویر 13">
+<em>تصویر 13</em></p>
+<p><img src="../data/assets/assets/image14.png" alt="تصویر 14">
+<em>تصویر 14</em></p>
+<h5>گرانول سولفوری و کربوکسی‌زوم</h5>
+<p>بسیاری از پروکاریوت‌ها گرانول سولفوری را به‌عنوان منبع انرژی ذخیره می‌کنند. در صورت نیاز، سولفور موجود در گرانول به سولفات اکسید می‌شود و در دسترس باکتری قرار می‌گیرد.</p>
+<p>کربوکسی‌زوم‌ها پوششی پروتئینی دارند و در باکتری‌های اتوتروف مانند سیانوباکترها دیده می‌شوند. آن‌ها حاوی آنزیم ریبولوز ۱،۵-بیس‌فسفات کربوکسیلاز هستند که CO₂ را تثبیت می‌کند. در نمودار اسلاید، carbonic anhydrase و تبدیل PGA به phosphoglycolate نیز نشان داده شده و این واکنش به‌عنوان wasteful side reaction معرفی شده است.</p>
+<table>
+<thead>
+<tr>
+<th>ساختار</th>
+<th>ویژگی و کارکرد ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>گرانول سولفوری</td>
+<td>منبع انرژی ذخیره‌ای؛ سولفور آن در صورت نیاز به سولفات اکسید می‌شود و در دسترس باکتری قرار می‌گیرد</td>
+</tr>
+<tr>
+<td>کربوکسی‌زوم</td>
+<td>پوشش پروتئینی دارد؛ در باکتری‌های اتوتروف مانند سیانوباکترها دیده می‌شود؛ حاوی ریبولوز ۱،۵-بیس‌فسفات کربوکسیلاز برای تثبیت CO₂ است</td>
+</tr>
+<tr>
+<td>موارد نمودار اسلاید</td>
+<td>carbonic anhydrase، تبدیل PGA به phosphoglycolate و معرفی این واکنش به‌عنوان wasteful side reaction</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image15.jpg" alt="تصویر 15">
+<em>تصویر 15</em></p>
+<h5>واکوئل‌های گازی و باکتری‌های اعماق دریا</h5>
+<p>واکوئل‌های گازی در بعضی باکتری‌های آبزی، از جمله سیانوباکترها، به شناورماندن کمک می‌کنند تا باکتری رسوب نکند و به اعماق دریا نرود. این واکوئل‌ها از نور نیز محافظت می‌کنند. غشای آن‌ها پروتئینی است و به مولکول‌های آب و حلال‌ها اجازهٔ نفوذ نمی‌دهد، اما گازها می‌توانند از آن عبور کنند.</p>
+<p>در گفتار، این ساختارها برای سیانوباکترهای سطح‌زی که فتوسنتز می‌کنند مهم دانسته شدند. در مقابل، باکتری‌های barophilic فشار زیاد را ترجیح می‌دهند و می‌توانند در اعماق دریا، جایی که موجودات دریازی زندگی می‌کنند، حضور داشته باشند و آن‌ها را تجزیه کنند. همهٔ باکتری‌ها توان زندگی در اعماق دریا را ندارند و برای آن به ویژگی‌های ساختاری مناسب نیاز است.</p>
+<table>
+<thead>
+<tr>
+<th>ساختار یا گروه</th>
+<th>ویژگی‌های ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>واکوئل گازی</td>
+<td>در بعضی باکتری‌های آبزی، از جمله سیانوباکترها؛ کمک به شناورماندن و نرفتن به اعماق؛ محافظت از نور؛ غشای پروتئینی که آب و حلال‌ها از آن عبور نمی‌کنند، اما گازها عبور می‌کنند</td>
+</tr>
+<tr>
+<td>سیانوباکترهای سطح‌زی</td>
+<td>فتوسنتز می‌کنند؛ واکوئل‌های گازی برایشان مهم دانسته شده است</td>
+</tr>
+<tr>
+<td>باکتری‌های barophilic</td>
+<td>فشار زیاد را ترجیح می‌دهند و می‌توانند در اعماق دریا حضور داشته باشند و موجودات دریازی را تجزیه کنند</td>
+</tr>
+<tr>
+<td>زندگی در اعماق دریا</td>
+<td>همهٔ باکتری‌ها توان آن را ندارند و به ویژگی‌های ساختاری مناسب نیاز است</td>
+</tr>
+</tbody></table>
+<h4>کاربردهای میکروب‌شناسی محیطی و صنعتی</h4>
+<p>اهمیت ساختارهای باکتری‌های محیطی تنها به میکروب‌شناسی غیرپزشکی محدود نیست؛ مرز میکروب‌شناسی پزشکی، محیطی، غذایی و صنعتی در عمل کم‌رنگ شده است. از ترکیب یک باکتری محیطی ممکن است داروی ضدسرطان تولید شود یا از آنزیم آن به‌عنوان کیت تشخیصی استفاده شود.</p>
+<h5>تولید DNA پلی‌مراز برای PCR</h5>
+<p>DNA پلی‌مراز مورد استفاده در PCR از باکتری <em>Thermus aquaticus</em> گرفته شده است. این آنزیم thermostable است و دمای بالا را تحمل می‌کند، درحالی‌که پلی‌مرازهای دیگر جایگزین آن نمی‌شوند.</p>
+<p>در روایت درس، Kary Mullis، بیوشیمیستی که برندهٔ جایزهٔ نوبل شد، هنگام رانندگی به‌سمت خانه در کالیفرنیا کنار چشمه‌های آب گرم و گوگردی توقف کرد. آب زردرنگ و در حال جوشیدن بود و می‌دانستند <em>Thermus aquaticus</em> در آنجا رشد می‌کند و سبب رسوب گوگرد و زردشدن سنگ‌ها می‌شود. او به این فکر افتاد که باکتری‌ای که دمای حدود ۹۵ درجه را تحمل می‌کند باید آنزیم مقاوم به دما داشته باشد؛ نمونه‌ای از سنگ برداشت، باکتری را جدا کرد و DNA پلی‌مراز آن را استخراج کرد. آنزیم حاصل در PCR به‌کار رفت و در مسیر رسیدن او به جایزهٔ نوبل نقش داشت. Taq از <em>Thermus aquaticus</em> گرفته شده است؛ <em>Thermus</em> نام جنس و <em>aquaticus</em> نام گونه است. PCR در تشخیص بیماری‌های مختلف، از جمله بیماری‌های ژنتیکی و هماتولوژیک، کاربرد دارد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">DNA پلی‌مراز مورد استفاده در PCR از <em>Thermus aquaticus</em> گرفته شده است. در روایت درس، Kary Mullis باکتری را از نمونهٔ سنگ کنار چشمه‌های آب گرم و گوگردی جدا کرد و DNA پلی‌مراز آن را استخراج کرد؛ Taq از <em>Thermus aquaticus</em> گرفته شده است.</div></div>
+<table>
+<thead>
+<tr>
+<th>مورد</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>باکتری منبع</td>
+<td><em>Thermus aquaticus</em></td>
+</tr>
+<tr>
+<td>آنزیم</td>
+<td>DNA پلی‌مراز مورد استفاده در PCR؛ thermostable و مقاوم به دمای بالا</td>
+</tr>
+<tr>
+<td>نام Taq</td>
+<td>از <em>Thermus aquaticus</em>؛ <em>Thermus</em> نام جنس و <em>aquaticus</em> نام گونه است</td>
+</tr>
+<tr>
+<td>روایت درس</td>
+<td>Kary Mullis باکتری را از نمونهٔ سنگ کنار چشمه‌های آب گرم و گوگردی جدا کرد و DNA پلی‌مراز آن را استخراج کرد</td>
+</tr>
+<tr>
+<td>کاربرد PCR ذکرشده</td>
+<td>تشخیص بیماری‌های مختلف، از جمله بیماری‌های ژنتیکی و هماتولوژیک</td>
+</tr>
+</tbody></table>
+<h5>تجزیهٔ ترکیبات پساب صنعتی</h5>
+<p>نمونهٔ دیگری از میکروب‌شناسی صنعتی، جداسازی باکتری‌ای برای تجزیهٔ ترکیبات پساب کارخانه‌های ریسندگی است. دکتر پوربابایی، که در میکروب‌شناسی صنعتی و بیوتکنولوژی میکروبی کار کرده‌اند، چنین باکتری‌ای را جدا کرده و کاربرد آن را ثبت اختراع کرده‌اند.</p>
+<p>کارخانه‌هایی که پسابشان در مناطقی مانند یزد و هرمزگان آلودگی شیمیایی ایجاد می‌کرد، می‌توانند پساب را به استخری هدایت کنند که باکتری‌ها به‌طور مداوم به آن افزوده می‌شوند. پساب چند روز در استخر می‌ماند تا باکتری‌ها مواد مضر را تجزیه کنند و سپس وارد محیط می‌شود. برای افزایش سرعت تکثیر، تغییرات ژنتیکی ایجاد و سویه ارتقا داده شده است. این کار هم آلودگی را کاهش می‌دهد و هم کاربرد تجاری دارد. میکروب‌شناسی محیطی و غذایی زمینهٔ کار فراوانی دارد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در نمونهٔ درس، باکتری‌ای برای تجزیهٔ ترکیبات پساب کارخانه‌های ریسندگی جدا شده است. پساب به استخری هدایت می‌شود که باکتری‌ها به‌طور مداوم به آن افزوده می‌شوند؛ پس از چند روز، باکتری‌ها مواد مضر را تجزیه می‌کنند و پساب وارد محیط می‌شود.</div></div>
+<h3 id="heading-9">رنگدانه‌ها و رنگ کلونی</h3>
+<p>گرانول ساختاری درون سیتوپلاسم یک باکتری است، اما پیگمان یا رنگدانه‌ای که در کلونی دیده می‌شود، رنگ تجمعی باکتری‌هاست و با گرانول اشتباه نمی‌شود. سه پدیدهٔ رنگی از هم متمایزند:</p>
+<ol>
+<li>رنگ باکتری منفرد که می‌تواند از گرانول‌های درون‌سیتوپلاسمی ناشی شود و زیر میکروسکوپ دیده می‌شود.</li>
+<li>رنگ کلونی، یعنی رنگ مجموعهٔ باکتری‌ها که ماکروسکوپی است.</li>
+<li>پیگمان‌هایی که ترشح می‌شوند و محیط کشت را تغییر رنگ می‌دهند.</li>
+</ol>
+<p>دو مورد اخیر با چشم و به‌صورت ماکروسکوپی دیده می‌شوند و می‌توانند در تشخیص کمک کنند.</p>
+<table>
+<thead>
+<tr>
+<th>پدیدهٔ رنگی</th>
+<th>محل یا منشأ و شیوهٔ مشاهده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>رنگ باکتری منفرد</td>
+<td>می‌تواند ناشی از گرانول‌های درون‌سیتوپلاسمی باشد و زیر میکروسکوپ دیده شود</td>
+</tr>
+<tr>
+<td>رنگ کلونی</td>
+<td>رنگ مجموعهٔ باکتری‌ها؛ ماکروسکوپی</td>
+</tr>
+<tr>
+<td>پیگمان ترشح‌شده</td>
+<td>ترشح می‌شود و محیط کشت را تغییر رنگ می‌دهد؛ ماکروسکوپی</td>
+</tr>
+</tbody></table>
+<h4>نمونه‌های رنگدانه‌ای</h4>
+<p>رنگدانه‌ها و نمونه‌های اسلاید عبارت‌اند از:</p>
+<ul>
+<li>رنگ قرمز در <em>Serratia marcescens</em>، با نام prodigiosin</li>
+<li>رنگ بنفش در <em>Bacillus violaceus</em></li>
+<li>رنگ نارنجی یا زرد در <em>Staphylococcus aureus</em>، <em>Sarcina</em> نارنجی یا زرد و برخی <em>Mycobacterium</em>ها، از جمله نمونه‌های منتسب به سل یا جذام؛ اسلاید نام phitocol را برای آن آورده است.</li>
+<li>رنگ صورتی در <em>Bacillus subtilis</em></li>
+<li>رنگ سیاه در <em>Bacillus mesentericus</em></li>
+<li>رنگدانهٔ سبزـزرد فلورسانس، fluorescein یا pyoverdin، که زیر اشعهٔ ماوراءبنفش رنگ سبز فلورسانس ایجاد می‌کند و برای <em>Pseudomonas aeruginosa</em> و <em>Bacillus fluorescens putidus</em> ذکر شده است.</li>
+<li>رنگدانهٔ آبیِ غیرفلورسانس pyocyanin که <em>Pseudomonas aeruginosa</em> تولید می‌کند.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>رنگ یا ویژگی رنگی</th>
+<th>نمونه یا رنگدانهٔ ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>قرمز</td>
+<td><em>Serratia marcescens</em>؛ prodigiosin</td>
+</tr>
+<tr>
+<td>بنفش</td>
+<td><em>Bacillus violaceus</em></td>
+</tr>
+<tr>
+<td>نارنجی یا زرد</td>
+<td><em>Staphylococcus aureus</em>، <em>Sarcina</em> نارنجی یا زرد و برخی <em>Mycobacterium</em>ها، از جمله نمونه‌های منتسب به سل یا جذام؛ نام phitocol در اسلاید</td>
+</tr>
+<tr>
+<td>صورتی</td>
+<td><em>Bacillus subtilis</em></td>
+</tr>
+<tr>
+<td>سیاه</td>
+<td><em>Bacillus mesentericus</em></td>
+</tr>
+<tr>
+<td>سبز فلورسانس زیر UV</td>
+<td>fluorescein یا pyoverdin؛ برای <em>Pseudomonas aeruginosa</em> و <em>Bacillus fluorescens putidus</em> ذکر شده است</td>
+</tr>
+<tr>
+<td>آبیِ غیرفلورسانس</td>
+<td>pyocyanin؛ تولیدشده توسط <em>Pseudomonas aeruginosa</em></td>
+</tr>
+</tbody></table>
+<p><em>Pseudomonas aeruginosa</em> می‌تواند pyoverdin و pyocyanin تولید کند. وقتی کلونی یا محیط کشت آن در معرض UV قرار بگیرد، pyoverdin رنگ سبز فلورسانس نشان می‌دهد؛ pyocyanin بدون تابش UV هم آبی است. در گفتار گفته شد خود <em>Pseudomonas aeruginosa</em> نیز رنگ سبز دارد و تقریباً بوی یاس می‌دهد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent"><em>Pseudomonas aeruginosa</em> می‌تواند pyoverdin و pyocyanin تولید کند: pyoverdin زیر UV سبز فلورسانس نشان می‌دهد و pyocyanin بدون تابش UV هم آبی است. در گفتار، برای خود باکتری رنگ سبز و بویی تقریباً شبیه یاس نیز ذکر شد.</div></div>
+<p>برای نمونه، در کشت تنفسی فرد مبتلا به cystic fibrosis ممکن است پس از حدود ۲۴ ساعت محیط آبی دیده شود و زیر UV سبز فلورسانس نشان دهد. این ویژگی‌ها سرنخ تشخیصی‌اند، اما جای تست‌های تأییدی را نمی‌گیرند. تجربهٔ مشاهدهٔ کلونی و پلیت به تشخیص جهت می‌دهد، ولی تشخیص قطعی نباید فقط بر آن استوار باشد؛ این ویژگی‌ها مشخص می‌کنند کدام تست‌های افتراقی را انجام دهیم.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در کشت تنفسی فرد مبتلا به cystic fibrosis ممکن است پس از حدود ۲۴ ساعت محیط آبی دیده شود و زیر UV سبز فلورسانس نشان دهد.</div></div>
+<p><img src="../data/assets/assets/image16.jpg" alt="تصویر 16">
+<em>تصویر 16</em></p>
+<p><img src="../data/assets/assets/image17.jpg" alt="تصویر 17">
+<em>تصویر 17</em></p>
+<p><img src="../data/assets/assets/image18.jpg" alt="تصویر 18">
+<em>تصویر 18</em></p>
+<p><img src="../data/assets/assets/image19.jpg" alt="تصویر 19">
+<em>تصویر 19</em></p>
+<h3 id="heading-10">غشای سیتوپلاسمی و پوشش سلولی</h3>
+<p>لایهٔ بیرونی‌تر سیتوپلاسم، غشای سیتوپلاسمی یا غشای سیتوپلاسمیک (cytoplasmic membrane) است. برای تصور جایگاه آن، از لایهٔ نازک روی سفیدهٔ تخم‌مرغ آب‌پز، زیر پوسته، مثال زده شد. غشای باکتری ساختاری دولایهٔ لیپیدی دارد و میان سیتوپلاسم و لایه‌های بیرونی قرار گرفته است؛ دیوارهٔ سلولی در خارج غشا قرار دارد.</p>
+<p>مجموعهٔ غشای سیتوپلاسمی و لایه‌های خارج از آن را پوشش سلولی می‌نامند. این پوشش مجموعهٔ ساختارهایی است که پروتوپلاست سلول را احاطه می‌کند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پوشش سلولی</strong>
+مجموعهٔ غشای سیتوپلاسمی و لایه‌های خارج از آن؛ مجموعهٔ ساختارهایی که پروتوپلاست سلول را احاطه می‌کند.</div></div>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای تصور جایگاه غشای سیتوپلاسمی، از لایهٔ نازک روی سفیدهٔ تخم‌مرغ آب‌پز، زیر پوسته، مثال زده شد.</div></div>
+<h4>ترکیب و ویژگی‌های غشای سیتوپلاسمی</h4>
+<p>غشای سیتوپلاسمی باکتری از نظر کلی ساختاری دولایه دارد، اما برخلاف غشای بسیاری از یوکاریوت‌ها فاقد استروئید است، به‌جز در <em>Mycoplasma</em>. حدود ۷۰٪ آن پروتئین، ۲۰ تا ۳۰٪ لیپید و مقدار کمی کربوهیدرات است. فسفولیپیدهای غالب پروکاریوت‌ها فسفاتیدیل اتانول‌آمین (حدود ۷۵٪) و سپس فسفاتیدیل گلیسرول (حدود ۲۰٪) ذکر شده‌اند.</p>
+<p>غشای فسفولیپوپروتئینی خاصیت جذب انتخابی دارد و به حفظ فشار اسمزی درون سلول در حد معین کمک می‌کند؛ چربی‌های غشا نیز در این ویژگی نقش دارند.</p>
+<table>
+<thead>
+<tr>
+<th>ویژگی یا ترکیب غشا</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ساختار کلی</td>
+<td>دولایه</td>
+</tr>
+<tr>
+<td>استروئید</td>
+<td>غشای بسیاری از یوکاریوت‌ها را ندارد؛ استثنای ذکرشده <em>Mycoplasma</em> است</td>
+</tr>
+<tr>
+<td>ترکیب تقریبی</td>
+<td>حدود ۷۰٪ پروتئین، ۲۰ تا ۳۰٪ لیپید و مقدار کمی کربوهیدرات</td>
+</tr>
+<tr>
+<td>فسفولیپید غالب</td>
+<td>فسفاتیدیل اتانول‌آمین، حدود ۷۵٪</td>
+</tr>
+<tr>
+<td>فسفولیپید بعدی</td>
+<td>فسفاتیـدیل گلیسرول، حدود ۲۰٪</td>
+</tr>
+<tr>
+<td>خاصیت ذکرشده</td>
+<td>جذب انتخابی و کمک به حفظ فشار اسمزی درون سلول در حد معین؛ چربی‌های غشا نیز نقش دارند</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image20.png" alt="تصویر 20">
+<em>تصویر 20</em></p>
+<p><img src="../data/assets/assets/image21.jpg" alt="تصویر 21">
+<em>تصویر 21</em></p>
+<h4>نقش‌های غشای سیتوپلاسمی</h4>
+<p>از نقش‌های غشای سیتوپلاسمی می‌توان به موارد زیر اشاره کرد:</p>
+<ul>
+<li>نفوذپذیری انتخابی و انتقال مواد به درون سلول</li>
+<li>تنظیم ورود و خروج مواد و انتقال مایعات</li>
+<li>انتقال الکترون و انجام واکنش‌های فسفریلاسیون اکسیداتیو در باکتری‌های هوازی</li>
+<li>تولید ATP</li>
+<li>ترشح آنزیم‌های هیدرولیزکننده به خارج</li>
+<li>داشتن آنزیم‌ها و مولکول‌های حامل دخیل در بیوسنتز DNA، پلیمرهای دیوارهٔ سلولی و چربی‌های غشا</li>
+<li>داشتن گیرنده‌ها و پروتئین‌هایی که با chemotaxis و حرکت در پاسخ به عوامل محیطی ارتباط دارند</li>
+</ul>
+<p>پرمئازها از جمله آنزیم‌های مسئول جذب مواد از محیط رقیق‌تر به داخل سلول غلیظ‌ترند. غشای باکتری محل تولید ATP است. در گفتار، این نقش با تولید ATP در سلول‌های یوکاریوتی مقایسه شد و گفته شد این نقش در سلول‌های یوکاریوتی به این شکل مشاهده نمی‌شود.</p>
+<table>
+<thead>
+<tr>
+<th>نقش یا ویژگی غشای سیتوپلاسمی</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>انتقال مواد</td>
+<td>نفوذپذیری انتخابی، تنظیم ورود و خروج مواد و انتقال مایعات</td>
+</tr>
+<tr>
+<td>انتقال مواد به درون سلول</td>
+<td>پرمئازها از جمله آنزیم‌های مسئول جذب مواد از محیط رقیق‌تر به داخل سلول غلیظ‌ترند</td>
+</tr>
+<tr>
+<td>تنفس و انرژی</td>
+<td>انتقال الکترون، واکنش‌های فسفریلاسیون اکسیداتیو در باکتری‌های هوازی و تولید ATP</td>
+</tr>
+<tr>
+<td>ترشح</td>
+<td>ترشح آنزیم‌های هیدرولیزکننده به خارج</td>
+</tr>
+<tr>
+<td>بیوسنتز</td>
+<td>داشتن آنزیم‌ها و مولکول‌های حامل دخیل در بیوسنتز DNA، پلیمرهای دیوارهٔ سلولی و چربی‌های غشا</td>
+</tr>
+<tr>
+<td>پاسخ به محیط</td>
+<td>داشتن گیرنده‌ها و پروتئین‌های مرتبط با chemotaxis و حرکت در پاسخ به عوامل محیطی</td>
+</tr>
+</tbody></table>
+<h4>ساختارهای پوشش سلولی</h4>
+<p>ساختارهای پوشش سلولی و ترکیبات سازندهٔ آن‌ها در اسلاید چنین آمده‌اند:</p>
+<ul>
+<li><strong>غشای پلاسمایی:</strong> حاوی فسفولیپیدها، پروتئین‌ها و آنزیم‌های شرکت‌کننده در تولید انرژی پتانسیل غشایی و انتقال است.</li>
+<li><strong>پپتیدوگلیکان:</strong> از زنجیره‌های گلیکان حاوی GlcNAc و MurNAc تشکیل می‌شود که با پل‌های پپتیدی اتصال متقاطع دارند.</li>
+<li><strong>اسیدهای تایکوئیک:</strong> شامل پلی‌ریبیتول‌فسفات یا گلیسرول‌فسفات‌اند و با پپتیدوگلیکان ارتباط دارند. اسید لیپوتایکوئیک به لیپید متصل است.</li>
+<li><strong>فضای پری‌پلاسمی:</strong> حاوی آنزیم‌های دخیل در انتقال، تجزیه و سنتز است.</li>
+<li><strong>غشای خارجی باکتری‌های گرم‌منفی:</strong> شامل فسفولیپیدها همراه با اسیدهای چرب اشباع‌شده و پروتئین‌هایی از جمله پورین‌ها، لیپوپروتئین‌ها و پروتئین‌های انتقالی است.</li>
+<li><strong>LPS:</strong> شامل ساکارید مرکزی و آنتی‌ژن O است.</li>
+<li><strong>کپسول:</strong> از پلی‌ساکاریدها، از جمله دی‌ساکاریدها و تری‌ساکاریدها، تشکیل می‌شود.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>ساختار پوشش سلولی</th>
+<th>ترکیب یا ویژگی ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>غشای پلاسمایی</td>
+<td>فسفولیپیدها، پروتئین‌ها و آنزیم‌های شرکت‌کننده در تولید انرژی پتانسیل غشایی و انتقال</td>
+</tr>
+<tr>
+<td>پپتیدوگلیکان</td>
+<td>زنجیره‌های گلیکان حاوی GlcNAc و MurNAc، با پل‌های پپتیدی دارای اتصال متقاطع</td>
+</tr>
+<tr>
+<td>اسیدهای تایکوئیک</td>
+<td>پلی‌ریبیتول‌فسفات یا گلیسرول‌فسفات؛ مرتبط با پپتیدوگلیکان</td>
+</tr>
+<tr>
+<td>اسید لیپوتایکوئیک</td>
+<td>متصل به لیپید</td>
+</tr>
+<tr>
+<td>فضای پری‌پلاسمی</td>
+<td>آنزیم‌های دخیل در انتقال، تجزیه و سنتز</td>
+</tr>
+<tr>
+<td>غشای خارجی باکتری‌های گرم‌منفی</td>
+<td>فسفولیپیدها همراه با اسیدهای چرب اشباع‌شده؛ پورین‌ها، لیپوپروتئین‌ها و پروتئین‌های انتقالی</td>
+</tr>
+<tr>
+<td>LPS</td>
+<td>ساکارید مرکزی و آنتی‌ژن O</td>
+</tr>
+<tr>
+<td>کپسول</td>
+<td>پلی‌ساکاریدها، از جمله دی‌ساکاریدها و تری‌ساکاریدها</td>
+</tr>
+</tbody></table>
+<p>پپتیدوگلیکان باکتری‌های گرم‌منفی نازک‌تر از پپتیدوگلیکان گرم‌مثبت‌هاست. غشای سیتوپلاسمی در باکتری‌های گرم‌مثبت و گرم‌منفی ساختار کلی مشابهی دارد، اما لایهٔ بیرونی دیوارهٔ سلولی در این دو گروه متفاوت است.</p>
+<p><img src="../data/assets/assets/image22.jpg" alt="تصویر 22">
+<em>تصویر 22</em></p>
+<p><img src="../data/assets/assets/image23.png" alt="تصویر 23">
+<em>تصویر 23</em></p>
+<h3 id="heading-11">مزوزوم</h3>
+<p>پیش از بحث دیواره، چین‌خوردگی‌هایی از غشای سیتوپلاسمی به داخل سیتوپلاسم معرفی می‌شوند که مزوزوم (mesosome) نام دارند. در اسلاید، این چین‌خوردگی‌ها در گروه‌های مختلف باکتریایی، به‌ویژه در محل تولید دیوارهٔ سلولی، توصیف شده‌اند و فعالیت تنفس سلولی و تولید دیواره به آن‌ها نسبت داده شده است.</p>
+<ul>
+<li>مزوزوم سپتال (septal) در ساخت دیوارهٔ جداکنندهٔ دو سلول متصل هنگام تقسیم و اتصال به DNA باکتری نقش دارد.</li>
+<li>مزوزوم‌های جانبی (lateral) در تنفس سلولی، ترشح پروتئین‌های خارج‌سلولی و جایگاه آنزیم‌های فسفریلاسیون اکسیداتیو نقش دارند.</li>
+</ul>
+<p>غشای سلولی از نظر فعالیت تنفسی می‌تواند معادل لایهٔ داخلی میتوکندری عمل کند.</p>
+<p>در گفتار نیز مزوزوم‌ها به‌صورت چین‌خوردگی‌های لترال یا جانبی و چین‌خوردگی‌های عمیق‌تر توصیف شدند. اگر فرورفتگی‌های عمیق روبه‌روی هم باشند، مزوزوم سپتال نام دارند. هنگام تقسیم دوتایی، با رشد باکتری دیواره به‌سمت مرکز پیش می‌رود و دو مزوزوم سپتال به هم می‌رسند تا باکتری به دو قسمت تقسیم شود. چین‌خوردگی‌های جانبی محل فعالیت تنفس سلولی دانسته شدند؛ باکتری‌ها میتوکندری ندارند و تنفس سلولی و آنزیم‌های فسفریلاسیون اکسیداتیو در چین‌خوردگی‌های جانبی و غشای سیتوپلاسمی مطرح شدند.</p>
+<table>
+<thead>
+<tr>
+<th>نوع مزوزوم</th>
+<th>نقش‌های نسبت‌داده‌شده در اسلاید و گفتار</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>سپتال (septal)</td>
+<td>ساخت دیوارهٔ جداکنندهٔ دو سلول متصل هنگام تقسیم؛ اتصال به DNA باکتری؛ رسیدن دو چین‌خوردگی روبه‌رو به هم هنگام تقسیم دوتایی و تقسیم باکتری به دو قسمت</td>
+</tr>
+<tr>
+<td>جانبی (lateral)</td>
+<td>تنفس سلولی؛ ترشح پروتئین‌های خارج‌سلولی؛ جایگاه آنزیم‌های فسفریلاسیون اکسیداتیو</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image24.png" alt="تصویر 24">
+<em>تصویر 24</em></p>
+<p><img src="../data/assets/assets/image25.jpg" alt="تصویر 25">
+<em>تصویر 25</em></p>
+<h3 id="heading-12">انتقال مواد از غشای سیتوپلاسمی</h3>
+<p>قبل از هر چیز اشاره کنم بخش سیستم های انتقالی طبق گفته استاد برای امتحان مورد پرسش قرار نمیگیرد :)  غشای سیتوپلاسمی مسیرهای انتقال مواد را نیز در بر دارد. اسلاید انتقال ساده، انتقال وابسته به یون، انتقال فعال و انتقال گروهی را معرفی می‌کند. در گفتار گفته شد این اسلاید برای یادآوری انتشار ساده، انتشار تسهیل‌شده، انتقال وابسته به ATP، انتقال یون‌ها و انتقال گروهی است و برای این بخش قرار نیست سؤال امتحانی داده شود.</p>
+<h4>انتقال وابسته به پروتئین‌های اتصال‌دهنده: ABC Transporter</h4>
+<p>انتقال وابسته به پروتئین‌های اتصال‌دهنده با نام‌های مترادف ABC Transporter و ATP Binding cassette معرفی شده است. این سیستم از ATP یا مواد فسفات‌دار پرانرژی استفاده می‌کند و در اسلاید به‌عنوان انتقال فعال اولیه آمده است.</p>
+<p>کارکرد آن به یکپارچگی غشای خارجی وابسته است. سوبسترا به پروتئین‌های اتصال‌دهنده‌ای ارائه می‌شود که در گرم‌منفی‌ها در فضای پری‌پلاسمی و در گرم‌مثبت‌ها در سطح خارجی سلول قرار دارند. پرمئازهای هیدروفیلیک، سوبسترا را از کمپلکس پروتئین اتصال‌دهنده ـ سوبسترا می‌گیرند و کانالی برای عبور آن از غشا فراهم می‌کنند. ATPase هیدروفیلیک متصل به غشا برای تغییر شکل پرمئاز ATP مصرف می‌کند.</p>
+<p>برای انتقال هر مولکول سوبسترا، دو ATP ذکر شده است: یکی برای تغییر شکل پرمئاز و دیگری برای فسفریله‌کردن سوبسترا. نمونه‌ها و کاربردهای ذکرشده عبارت‌اند از:</p>
+<ul>
+<li>ورود هیستیدین به سلول باکتری</li>
+<li>سیستم انتقال ATP/ADP translocase در <em>Rickettsia</em> و <em>Chlamydia</em></li>
+<li>انتقال اغلب مواد غذایی در باکتری‌های گرم‌منفی</li>
+</ul>
+<p>سیستم‌های مشابهی در باکتری‌های گرم‌مثبت، از جمله <em>Pneumococcus</em> و <em>Bacillus</em>، نیز ذکر شده‌اند.</p>
+<table>
+<thead>
+<tr>
+<th>ویژگی ABC Transporter</th>
+<th>اطلاعات ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>نام‌های مترادف</td>
+<td>ABC Transporter؛ ATP Binding cassette</td>
+</tr>
+<tr>
+<td>منبع انرژی و طبقه‌بندی</td>
+<td>ATP یا مواد فسفات‌دار پرانرژی؛ انتقال فعال اولیه</td>
+</tr>
+<tr>
+<td>پروتئین اتصال‌دهنده</td>
+<td>در گرم‌منفی‌ها در فضای پری‌پلاسمی؛ در گرم‌مثبت‌ها در سطح خارجی سلول</td>
+</tr>
+<tr>
+<td>پرمئاز</td>
+<td>سوبسترا را از کمپلکس پروتئین اتصال‌دهنده ـ سوبسترا می‌گیرد و کانال عبور از غشا فراهم می‌کند</td>
+</tr>
+<tr>
+<td>ATPase</td>
+<td>هیدروفیلیک و متصل به غشا؛ برای تغییر شکل پرمئاز ATP مصرف می‌کند</td>
+</tr>
+<tr>
+<td>مصرف انرژی ذکرشده</td>
+<td>دو ATP برای هر مولکول سوبسترا: یکی برای تغییر شکل پرمئاز و دیگری برای فسفریله‌کردن سوبسترا</td>
+</tr>
+<tr>
+<td>نمونه‌ها و کاربردها</td>
+<td>ورود هیستیدین؛ انتقال ATP/ADP translocase در <em>Rickettsia</em> و <em>Chlamydia</em>؛ انتقال اغلب مواد غذایی در گرم‌منفی‌ها</td>
+</tr>
+<tr>
+<td>نمونه‌های گرم‌مثبت</td>
+<td>سیستم‌های مشابه در <em>Pneumococcus</em> و <em>Bacillus</em></td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image26.jpg" alt="تصویر 26">
+<em>تصویر 26</em></p>
+<h4>انتقال وابسته به یون</h4>
+<p>انتقال وابسته به یون، انتقال chemiosmotic یا انتقال فعال ثانویه نامیده می‌شود. منبع انرژی آن نیروی محرکهٔ پروتون (PMF) و در باکتری‌های هالوفیل، نیروی محرکهٔ سدیم است.</p>
+<p>سه نوع آن در اسلاید آمده است:</p>
+<ul>
+<li><strong>uniport:</strong> ورود یک مادهٔ محلول به سلول در یک جهت.</li>
+<li><strong>symport یا cotransport:</strong> انتقال هم‌زمان دو ماده با بار مخالف، یا یک یون به‌همراه مولکولی خنثی، در یک جهت و با یک حامل.</li>
+<li><strong>antiport:</strong> انتقال هم‌زمان دو ماده در دو جهت مخالف و با یک حامل. متن اسلاید برای antiport می‌گوید دو ماده بار یکسان دارند.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>نوع انتقال وابسته به یون</th>
+<th>توصیف اسلاید</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>uniport</td>
+<td>ورود یک مادهٔ محلول به سلول در یک جهت</td>
+</tr>
+<tr>
+<td>symport یا cotransport</td>
+<td>انتقال هم‌زمان دو ماده با بار مخالف، یا یک یون به‌همراه مولکولی خنثی، در یک جهت و با یک حامل</td>
+</tr>
+<tr>
+<td>antiport</td>
+<td>انتقال هم‌زمان دو ماده در دو جهت مخالف و با یک حامل؛ متن اسلاید می‌گوید دو ماده بار یکسان دارند</td>
+</tr>
+</tbody></table>
+<p>در بخش کاربردهای انتقال وابسته به یون، اسلاید به نقش آن در حرکت به‌سمت مواد کربنی (chemotaxis)، تنظیم مسیرهای متابولیک متعدد و مهار کاتابولیک اشاره می‌کند. همچنین می‌گوید این سیستم‌ها در باکتری‌های هوازی اختیاری و در گروه‌هایی از باکتری‌ها وجود دارند، اما در هوازی‌های اجباری وجود ندارند؛ انطباق دقیق این موارد با ردیف‌های جدول از متن استخراج‌شده روشن نیست.</p>
+<h4>انتقال گروهی و سیستم فسفوترانسفراز</h4>
+<p>انتقال گروهی با نام‌های مترادف متابولیسم حامل (vectorial metabolism)، متابولیسم برداری یا عمودی و سیستم فسفوترانسفراز معرفی شده است. اسلاید می‌گوید این روش انتقال فعال نیست، چون شیب غلظتی در آن دخیل نیست؛ برای تغییر شکل پرمئاز ATP لازم ندارد و مواد هنگام انتقال فسفریله می‌شوند. منبع فسفات phosphoenolpyruvate (PEP) است و برای انتقال هر سوبسترا یک PEP مصرف می‌شود.</p>
+<p>سه پروتئین در این سیستم نقش دارند:</p>
+<ul>
+<li>پروتئین هیستیدین (HPr)، پروتئین سیتوپلاسمی</li>
+<li>آنزیم I یا EI، پروتئین سیتوپلاسمی</li>
+<li>آنزیم II یا EII، پروتئین متصل به غشای سیتوپلاسمی که از زیرواحدهای EIIA، EIIB و EIIC تشکیل شده است.</li>
+</ul>
+<p>EII اختصاصی قند است، چون هر قند EII ویژهٔ خود را دارد؛ HPr و EI پروتئین‌های عمومی این سیستم‌اند. در اسلاید، انتقال لاکتوز نیز به‌عنوان کاربرد ذکر شده است. برای <em>Escherichia coli</em> نوشته شده حدود ۸۴٪ سوبستراها از این مسیر انتقال می‌یابند.</p>
+<p>این سیستم در باکتری‌های هوازی و بی‌هوازی دیده می‌شود، اما در باکتری‌های هوازی شایع‌تر دانسته شده است، زیرا در آن‌ها تولید نیروی محرکهٔ یونی شرایط مناسب‌تری دارد. قندهای نام‌برده‌شده برای این مسیر شامل mannose، mannitol، گالاکتون/گالاکتیتول، cellobiose، trehalose و fructose هستند؛ یکی از نام‌های قندی در متن اسلاید به‌صورت مخدوش آمده است.</p>
+<p>اسلاید همچنین نقش این سیستم را در chemotaxis و حرکت به‌سمت مواد کربنی و در تنظیم مسیرهای متابولیک متعدد، از جمله catabolite repression، ذکر می‌کند و برای حضور آن در انواع باکتری‌های هوازی و بی‌هوازی قیدی آورده که بخشی از آن در متن به‌هم‌ریخته است.</p>
+<table>
+<thead>
+<tr>
+<th>ویژگی انتقال گروهی/سیستم فسفوترانسفراز</th>
+<th>اطلاعات ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>نام‌های دیگر</td>
+<td>متابولیسم حامل (vectorial metabolism)، متابولیسم برداری یا عمودی، سیستم فسفوترانسفراز</td>
+</tr>
+<tr>
+<td>وضعیت انتقال</td>
+<td>اسلاید می‌گوید انتقال فعال نیست، چون شیب غلظتی دخیل نیست</td>
+</tr>
+<tr>
+<td>انرژی</td>
+<td>برای تغییر شکل پرمئاز ATP لازم ندارد؛ منبع فسفات phosphoenolpyruvate (PEP) است</td>
+</tr>
+<tr>
+<td>مصرف</td>
+<td>برای انتقال هر سوبسترا یک PEP</td>
+</tr>
+<tr>
+<td>تغییر سوبسترا</td>
+<td>مواد هنگام انتقال فسفریله می‌شوند</td>
+</tr>
+<tr>
+<td>پروتئین‌ها</td>
+<td>HPr و EI سیتوپلاسمی؛ EII متصل به غشا و دارای زیرواحدهای EIIA، EIIB و EIIC</td>
+</tr>
+<tr>
+<td>اختصاصیت</td>
+<td>EII برای هر قند اختصاصی است؛ HPr و EI عمومی‌اند</td>
+</tr>
+<tr>
+<td>نمونه‌ها و فراوانی ذکرشده</td>
+<td>انتقال لاکتوز؛ برای <em>Escherichia coli</em> حدود ۸۴٪ سوبستراها از این مسیر انتقال می‌یابند</td>
+</tr>
+<tr>
+<td>گروه‌های باکتریایی</td>
+<td>در هوازی‌ها و بی‌هوازی‌ها دیده می‌شود؛ در هوازی‌ها شایع‌تر دانسته شده است</td>
+</tr>
+<tr>
+<td>قندهای نام‌برده‌شده</td>
+<td>mannose، mannitol، گالاکتون/گالاکتیتول، cellobiose، trehalose و fructose؛ یکی از نام‌های قندی در متن اسلاید مخدوش است</td>
+</tr>
+<tr>
+<td>نقش‌های ذکرشده در اسلاید</td>
+<td>chemotaxis و حرکت به‌سمت مواد کربنی؛ تنظیم مسیرهای متابولیک متعدد، از جمله catabolite repression</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image27.jpg" alt="تصویر 27">
+<em>تصویر 27</em></p>
+<h3 id="heading-13">ترشح از باکتری</h3>
+<p>ترشح متابولیت‌ها، مواد دفعی، پروتئین‌ها، سموم (toxins) و موادی مانند siderophoreها نیز با غشا و سیستم‌های ترشحی ارتباط دارد. برخی ترکیبات به بیرون فرستاده می‌شوند و برخی، مانند siderophoreهای متصل‌شونده به آهن، در ادامه به جذب آهن کمک می‌کنند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent"><strong>بیشتر بدانید
+آهن‌بَرها</strong> یا <strong>سیدروفورها</strong> (Siderophore)، ملکول های کوچکی هستند که به صورت <a href="https://fa.wikipedia.org/wiki/%DA%A9%DB%8C%E2%80%8C%D9%84%DB%8C%D8%AA">کی‌لیت</a> با <a href="https://fa.wikipedia.org/wiki/%D8%A2%D9%87%D9%86">آهن</a> پیوند دارند و به‌وسیله <a href="https://fa.wikipedia.org/wiki/%D9%85%DB%8C%DA%A9%D8%B1%D9%88%D8%A7%D8%B1%DA%AF%D8%A7%D9%86%DB%8C%D8%B3%D9%85">میکروارگانیسم‌های</a> گوناگون از قبیل <a href="https://fa.wikipedia.org/wiki/%D8%A8%D8%A7%DA%A9%D8%AA%D8%B1%DB%8C_%D8%A8%DB%8C%E2%80%8C%D9%87%D9%88%D8%A7%D8%B2%DB%8C">باکتری‌های بی‌هوازی</a>، <a href="https://fa.wikipedia.org/wiki/%D9%82%D8%A7%D8%B1%DA%86">قارچ‌ها</a> و <a href="https://fa.wikipedia.org/wiki/%D8%B1%DB%8C%D8%B4%D9%87">ریشه‌های</a> <a href="https://fa.wikipedia.org/wiki/%DA%AF%DB%8C%D8%A7%D9%87">گیاهان</a> ساخته می‌شوند</div></div>
+<h4>سیستم ترشحی Type I</h4>
+<p>سیستم ترشحی Type I در اسلاید با ABC Transporter یا ATP Binding cassette مرتبط شده است. این سیستم مستقل از Sec است، signal peptide ندارد، پروتئین در یک مرحله از غشا عبور می‌کند و هنگام انتقال به‌شکل unfold است.</p>
+<p>در گفتار، Type I به‌عنوان راهی ساده برای ترشح ترکیبات، متابولیت‌ها، مواد دفعی، آنزیم‌ها یا توکسین‌ها به محیط توصیف شد. باکتری ماده را به بیرون آزاد می‌کند و آن ماده ممکن است به سلول هدف برسد یا نرسد.</p>
+<h4>سیستم ترشحی Type II و مسیر Sec</h4>
+<p>سیستم ترشحی Type II با نام General Secretory Pathway (GSP) آمده است. طبق اسلاید، این سیستم به Sec وابسته و دارای signal peptide است؛ طول signal peptide در اسلاید ۱۵ تا ۴۰ اسیدآمینه ذکر شده و پروتئین به‌وسیلهٔ ریبوزوم‌های سیتوپلاسمی ساخته می‌شود.</p>
+<p>اسلاید در یک بخش می‌گوید پروتئین در یک مرحله از غشا عبور می‌کند، اما در توضیحی دیگر می‌گوید پروتئین‌های ترشحی Type II ابتدا از غشای سیتوپلاسمی عبور می‌کنند و سپس از غشای خارجی خارج می‌شوند. در گفتار، برای Type II ترشح ترکیبات پپتیدی ساخته‌شده روی ریبوزوم، مانند آنزیم‌های پروتئینی، توضیح داده شد؛ signal peptide در ابتدای زنجیره، با حدود ۱۰ تا ۱۵ اسیدآمینه، عبور پروتئین را تسهیل می‌کند.</p>
+<p>در اسلاید آمده است که پروتئین‌های Type II و Type V به‌صورت پیش‌پروتئین در ریبوزوم‌های سیتوپلاسمی ساخته می‌شوند و دارای توالی signal هستند. برای ترشح، به سیستم Sec در غشای داخلی وابسته‌اند. در <em>Escherichia coli</em>، سیستم Sec شامل SecY، SecD، SecB، SecA و SecF است. SecA به‌صورت ATPase انرژی خروج پروتئین ترشحی را فراهم می‌کند و SecB به‌عنوان chaperone پروتئین را برای ترشح آماده می‌کند.</p>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>Type I</th>
+<th>Type II</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>وابستگی به Sec</td>
+<td>مستقل از Sec</td>
+<td>طبق اسلاید وابسته به Sec</td>
+</tr>
+<tr>
+<td>signal peptide</td>
+<td>ندارد</td>
+<td>دارد؛ طول آن ۱۵ تا ۴۰ اسید امینه</td>
+</tr>
+<tr>
+<td>عبور از غشا</td>
+<td>طبق اسلاید یک‌مرحله‌ای و هنگام انتقال بدون تغییر باقی می ماند؛ هنگام انتقال پروتئین unfold است</td>
+<td>طبق متن اسلاید عبور یک‌مرحله‌ای</td>
+</tr>
+<tr>
+<td>توضیح گفتار</td>
+<td>ترشح ترکیبات، متابولیت‌ها، مواد دفعی، آنزیم‌ها یا توکسین‌ها به محیط</td>
+<td>ترشح ترکیبات پپتیدی ساخته‌شده روی ریبوزوم، مانند آنزیم‌های پروتئینی</td>
+</tr>
+<tr>
+<td>سرنوشت یا مسیر در توضیح درس</td>
+<td>ماده به محیط آزاد می‌شود و ممکن است به سلول هدف برسد یا نرسد</td>
+<td>signal peptide عبور پروتئین را تسهیل می‌کند</td>
+</tr>
+</tbody></table>
+<h4>سیستم ترشحی Type III</h4>
+<p>در اسلاید، سیستم ترشحی Type III وابسته به Sec نیست و signal peptide ندارد؛ پروتئین‌ها را طی یک مرحله عبور می‌دهد و پروتئین هنگام انتقال بدون تغییر باقی می‌ماند. پروتئین‌های ترشحی آن باید unfold باشند. همچنین در اسلاید، Type III با انتقال مستقیم پروتئین به سیتوپلاسم سلول میزبان و افزایش virulence مرتبط شده است.</p>
+<p>در گفتار، Type III یکی از سیستم‌های مهم در باکتری‌های بیماری‌زاتر دانسته شد: باکتری ابتدا به سلول هدف متصل می‌شود، سپس با ایجاد اختلال در غشای سلول هدف و آسیب به cytoskeleton منافذی ایجاد می‌کند و توکسین را مستقیماً به داخل سلول تزریق می‌کند. اتصال باکتری به سلول و تزریق مستقیم، احتمال رسیدن مادهٔ مؤثر به هدف را نسبت به آزادکردن آن در محیط افزایش می‌دهد.</p>
+<p>در اسلاید، این سیستم با نام دیگری نیز آمده است: سیستم وابسته به سلول (contact-dependent system). گفته شده پروتئین‌های ترشحی را مانند سرنگ مستقیماً به سیتوپلاسم سلول میزبان تزریق می‌کند و پروتئین‌های ترشح‌شده از این سیستم به‌شدت با virulence ارتباط دارند.</p>
+<h5>مقایسهٔ Type I، Type II و Type III در توضیح درس</h5>
+<ul>
+<li><strong>Type I:</strong> ماده یا توکسین به‌صورت نسبتاً بی‌هدف در محیط آزاد می‌شود و ممکن است به سلول هدف برسد یا نرسد، رقیق شود یا دفع شود. در نتیجه، ممکن است باکتری برای ایجاد اثر به مقدار زیادی توکسین نیاز داشته باشد.</li>
+<li><strong>Type II:</strong> signal peptide به عبور پروتئین از غشا و دیوارهٔ باکتری کمک می‌کند، اما پس از آزادشدن در محیط، پروتئین همچنان ممکن است به هدف برسد یا نرسد.</li>
+<li><strong>Type III:</strong> باکتری به سلول هدف متصل می‌شود و ماده را مستقیماً به درون آن تزریق می‌کند.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>سیستم</th>
+<th>چگونگی رسیدن ماده به هدف در توضیح درس</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Type I</td>
+<td>ماده یا توکسین به محیط آزاد می‌شود؛ ممکن است به هدف برسد یا نرسد، رقیق شود یا دفع شود</td>
+</tr>
+<tr>
+<td>Type II</td>
+<td>signal peptide به عبور پروتئین از غشا و دیوارهٔ باکتری کمک می‌کند؛ پس از آزادشدن در محیط، پروتئین همچنان ممکن است به هدف برسد یا نرسد</td>
+</tr>
+<tr>
+<td>Type III</td>
+<td>باکتری به سلول هدف متصل می‌شود و ماده را مستقیماً به درون آن تزریق می‌کند</td>
+</tr>
+</tbody></table>
+<p>برای توضیح اهمیت Type III، مثالی از باکتری متصل به سلول روده یا کبد آورده شد: باکتری می‌خواهد سلول را تخریب کند تا موادی مانند پروتئین‌ها، DNA، اسیدهای آلی و مواد مغذی آن در دسترس قرار گیرند. در Type III، باکتری به سلول هدف متصل می‌شود، به اسکلت سلولی آن آسیب می‌زند، پروتئین‌هایی ترشح می‌کند که منافذ ایجاد می‌کنند و سپس توکسین را مستقیماً وارد سلول می‌کند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در مثال درس، باکتری به سلول روده یا کبد متصل می‌شود، به اسکلت سلولی آن آسیب می‌زند، پروتئین‌هایی ترشح می‌کند که منافذ ایجاد می‌کنند و سپس توکسین را مستقیماً وارد سلول می‌کند؛ هدف مورد اشاره، تخریب سلول و در دسترس قرارگرفتن موادی مانند پروتئین‌ها، DNA، اسیدهای آلی و مواد مغذی آن است.</div></div>
+<p>توکسین‌ها می‌توانند هدف‌های متفاوتی داشته باشند؛ برای نمونه، ریبوزوم سلول را تخریب کنند یا رونویسی را مختل کنند. هر توکسین مکانیسم خود را دارد و دربارهٔ توکسین‌های مهم در مباحث بعدی صحبت می‌شود.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای نمونه، توکسین‌ها می‌توانند ریبوزوم سلول را تخریب کنند یا رونویسی را مختل کنند.</div></div>
+<h4>سیستم ترشحی Type IV</h4>
+<p>سیستم ترشحی Type IV نام‌های مترادف سیستم انتقال کونژوگاسیونی و سیستم ترشحی شبه‌پیلی دارد. این سیستم می‌تواند وابسته به Sec یا غیروابسته به Sec باشد و در انتقال DNA و پروتئین نقش دارد. وقتی یک پروکاریوت با پروکاریوت دیگر یا با سلول یوکاریوتی تماس برقرار می‌کند، سیستم فعال می‌شود؛ مجموعه‌ای از پروتئین‌های VirB در این مسیر درگیرند.</p>
+<p>در گفتار، Type IV به کونژوگاسیون و انتقال مواد ژنتیکی، متابولیت‌ها، توکسین‌ها یا پروتئین‌ها با ابزاری شبیه پیلی جنسی تشبیه شد. برخلاف Type III که منافذی برای تزریق ایجاد می‌کند، Type IV از ساختاری شبیه پیلی برای انتقال استفاده می‌کند.</p>
+<h4>سیستم ترشحی Type V</h4>
+<p>سیستم ترشحی Type V با نام autotransporter آمده است؛ به Sec وابسته و دارای signal peptide است و پروتئین‌های ترشحی طی دو مرحله از غشا خارج می‌شوند.</p>
+<p>در گفتار، Type V تا حدی شبیه Type II و دارای signal peptide توصیف شد، اما تفاوت دقیق signal peptideها از نظر توالی اسیدآمینه، folding و کارایی انتقال مشخص نشد. دربارهٔ این تفاوت‌ها اطلاعات جامعی ارائه نشده است.</p>
+<p><img src="../data/assets/image29.png" alt="image29"></p>
+<table>
+<thead>
+<tr>
+<th>نوع سیستم ترشحی</th>
+<th>وابستگی به Sec و signal peptide</th>
+<th>شیوه یا ویژگی انتقال ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Type I</td>
+<td>مستقل از Sec؛ signal peptide ندارد</td>
+<td>عبور یک‌مرحله‌ای؛ پروتئین هنگام انتقال unfold است</td>
+</tr>
+<tr>
+<td>Type II</td>
+<td>وابسته به Sec؛ دارای signal peptide</td>
+<td>دربارهٔ تعداد مراحل و طول signal peptide، اسلاید و گفتار اطلاعات متفاوتی می‌دهند؛ به متن review رجوع شود</td>
+</tr>
+<tr>
+<td>Type III</td>
+<td>وابسته به Sec نیست؛ signal peptide ندارد</td>
+<td>عبور یک‌مرحله‌ای؛ پروتئین‌های ترشحی باید unfold باشند؛ در اسلاید با انتقال مستقیم به سیتوپلاسم سلول میزبان مرتبط است</td>
+</tr>
+<tr>
+<td>Type IV</td>
+<td>می‌تواند وابسته یا غیروابسته به Sec باشد</td>
+<td>سیستم انتقال کونژوگاسیونی و شبه‌پیلی؛ در انتقال DNA و پروتئین نقش دارد؛ پروتئین‌های VirB درگیرند</td>
+</tr>
+<tr>
+<td>Type V</td>
+<td>وابسته به Sec؛ دارای signal peptide</td>
+<td>autotransporter؛ ترشح طی دو مرحله</td>
+</tr>
+</tbody></table>
+<h4>گسترش انواع سیستم‌های ترشحی</h4>
+<p>در روایت درس، تا حدود ۸ تا ۱۰ سال پیش فقط Type I تا Type III شناخته‌شده بودند و بعد Type IV و Type V نیز معرفی شدند؛ دربارهٔ آن‌ها اطلاعات جامعی در دسترس مدرس نبود.</p>
+<p>برای بررسی ساختار پروتئین‌ها و پپتیدها از bioinformatics و روش‌های in silico استفاده می‌شود. systems biology و مهندسی سیستم‌های بیولوژیک نیز از حوزه‌های جدیدی معرفی شدند که به‌تدریج در دانشگاه‌های کشور راه‌اندازی می‌شوند.</p>
+<h3 id="heading-14">کاربرد سیستم‌های ترشحی در تولید پروتئین</h3>
+<p>یک کاربرد مهندسی ژنتیک برای ترشح پروتئین، تولید insulin است. ژن insulin را می‌توان با پلاسمید یا ترکیب دیگری وارد باکتری کرد تا باکتری آن را تولید کند. اگر insulin داخل باکتری انباشته شود، ممکن است باکتری از بین برود و برای ادامهٔ تولید ناچار شویم کشت تازه‌ای انجام دهیم.</p>
+<p>افزودن signal peptide هدایت‌کننده به ابتدای زنجیرهٔ پپتیدی می‌تواند پروتئین را به محیط خارج هدایت کند. در این صورت، به‌جای لیزکردن باکتری و استخراج insulin از داخل آن، باکتری زنده می‌ماند و محصول به سوپرناتانت می‌رود. سپس insulin را می‌توان با HPLC یا روش دیگری خالص‌سازی کرد.</p>
+<p>این کار نمونه‌ای از مهندسی ژنتیک است: signal peptide را به N-terminal یا C-terminal متصل می‌کنند و ژن مربوط را طوری وارد باکتری می‌کنند که پروتئین دارای signal peptide ترشح شود. همین شیوه می‌تواند برای تولید داروهای دیگری که ژنشان در باکتری قرار داده می‌شود نیز به‌کار رود.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای تولید insulin، ژن آن را می‌توان با پلاسمید یا ترکیب دیگری وارد باکتری کرد. افزودن signal peptide هدایت‌کننده باعث می‌شود محصول به سوپرناتانت برود؛ سپس insulin را می‌توان با HPLC یا روش دیگری خالص‌سازی کرد.</div></div>
+<table>
+<thead>
+<tr>
+<th>مرحله یا ویژگی</th>
+<th>توضیح در مثال تولید insulin</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ورود ژن</td>
+<td>ژن insulin با پلاسمید یا ترکیب دیگری وارد باکتری می‌شود</td>
+</tr>
+<tr>
+<td>مسئلهٔ انباشته‌شدن داخل سلول</td>
+<td>insulin داخل باکتری ممکن است باعث ازبین‌رفتن باکتری شود و برای ادامهٔ تولید به کشت تازه نیاز باشد</td>
+</tr>
+<tr>
+<td>هدایت به بیرون</td>
+<td>افزودن signal peptide به ابتدای زنجیرهٔ پپتیدی</td>
+</tr>
+<tr>
+<td>حاصل</td>
+<td>باکتری زنده می‌ماند و محصول به سوپرناتانت می‌رود</td>
+</tr>
+<tr>
+<td>خالص‌سازی</td>
+<td>HPLC یا روش دیگر</td>
+</tr>
+<tr>
+<td>جایگاه اتصال signal peptide</td>
+<td>N-terminal یا C-terminal</td>
+</tr>
+</tbody></table>
+<h3 id="heading-15">کاربرد ساختارهای باکتری در مسیرهای شغلی و پژوهشی</h3>
+<p>ساختارهای پایهٔ میکروب‌شناسی ممکن است برای مسیرهای شغلی و پژوهشی متفاوت کاربرد داشته باشند. دانشجویان ممکن است وارد آزمایشگاه تشخیصی، پژوهش، مؤسسهٔ داروسازی یا تولید کیت شوند. ممکن است در ادامه رشته‌ای مانند بیوشیمی بخوانند و در دورهٔ ارشد یا دکتری واحد میکروب‌شناسی نداشته باشند، اما آشنایی قبلی می‌تواند در پروژه‌های بعدی جرقه‌ای برای استفاده از یک ساختار یا روش باشد.</p>
+<p>در آزمایشگاه تشخیصی، این دانش می‌تواند به تشخیص باکتری و حساسیت آن به آنتی‌بیوتیک کمک کند؛ در پژوهش یا صنعت نیز همان مبانی می‌توانند کاربرد دیگری پیدا کنند.</p>
+<p><img src="../data/assets/assets/image30.jpg" alt="تصویر 30">
+<em>تصویر 30</em></p>
+</section>
+
+<section class="noteSection quickTablesSection">
+    <h2 id="heading-16">۳. جداول مرور سریع</h2>
+<h3 id="heading-17">ویژگی‌های بررسی، شکل، آرایش و اندازهٔ باکتری‌ها</h3>
+<table>
+<thead>
+<tr>
+<th>موضوع</th>
+<th>دسته یا ویژگی</th>
+<th>توصیف یا مقدار</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>بررسی میکروسکوپی</td>
+<td>رنگ و مورفولوژی</td>
+<td>رنگ‌پذیری گرم و مورفولوژی زیر میکروسکوپ</td>
+</tr>
+<tr>
+<td>بررسی ماکروسکوپی</td>
+<td>کلونی</td>
+<td>ویژگی‌های کلونی پس از کشت نمونهٔ بیمار روی پلیت حاوی محیط غنی از مواد موردنیاز باکتری</td>
+</tr>
+<tr>
+<td>شکل</td>
+<td>باسیل (bacillus) یا rod</td>
+<td>شکل میله‌ای؛ rod برای باسیل‌های کاملاً میله‌ای و چهارگوش</td>
+</tr>
+<tr>
+<td>شکل</td>
+<td>کوکوس/کوکسی (coccus/cocci)</td>
+<td>کروی</td>
+</tr>
+<tr>
+<td>شکل</td>
+<td>اسپیریل (spirillum)</td>
+<td>فنری</td>
+</tr>
+<tr>
+<td>شکل</td>
+<td>کوکوباسیل</td>
+<td>باسیل فشرده‌تر و گردتر، شبیه کوکسی؛ نه rod تیپیک</td>
+</tr>
+<tr>
+<td>آرایش</td>
+<td>خوشه‌ای</td>
+<td>استافیلوکوک (staphylococcus)، در کوکسی‌ها</td>
+</tr>
+<tr>
+<td>آرایش</td>
+<td>زنجیره‌ای</td>
+<td>استرپتوکوک (streptococcus)، در کوکسی‌ها</td>
+</tr>
+<tr>
+<td>آرایش</td>
+<td>چهارتایی</td>
+<td>تتراد (tetrad)، در کوکسی‌ها</td>
+</tr>
+<tr>
+<td>آرایش</td>
+<td>هشت‌تایی</td>
+<td>سارسیـنا (sarcina)، در کوکسی‌ها</td>
+</tr>
+<tr>
+<td>آرایش</td>
+<td>زنجیره‌ای</td>
+<td>استرپتوباسیل (streptobacillus)، در باسیل‌ها</td>
+</tr>
+<tr>
+<td>اندازه</td>
+<td>کوکسی‌ها</td>
+<td>۰٫۷۵ تا ۱٫۵ میکرومتر</td>
+</tr>
+<tr>
+<td>اندازه</td>
+<td>باسیل‌ها</td>
+<td>۰٫۷۵ تا ۸ میکرومتر</td>
+</tr>
+<tr>
+<td>اندازه</td>
+<td>اسپیروکت‌ها</td>
+<td>۵ تا ۵۰۰ میکرومتر</td>
+</tr>
+</tbody></table>
+<h3 id="heading-18">کلونی و اندازه در وضعیت‌های مختلف رشد</h3>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>اطلاعات ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>زمان رشد اغلب باکتری‌ها</td>
+<td>حدود ۱۸ تا ۲۴ ساعت؛ بعضی باکتری‌ها حتی چند هفته زمان می‌خواهند</td>
+</tr>
+<tr>
+<td>تعریف کلونی</td>
+<td>مجموعهٔ میلیاردها باکتری حاصل از تکثیر یک باکتری؛ با چشم غیرمسلح دیده می‌شود</td>
+</tr>
+<tr>
+<td>ویژگی‌های کلونی</td>
+<td>رنگ، بو، مقعر یا محدب‌بودن، کشسانی هنگام جداکردن با لوپ</td>
+</tr>
+<tr>
+<td>کلونی‌های بزرگ، صورتی و کش‌دار</td>
+<td>ذهن را به‌سمت <em>Klebsiella</em> می‌برند</td>
+</tr>
+<tr>
+<td>کلونی‌های کوچک و طلایی</td>
+<td>همراه با گرم‌مثبت‌بودن، به‌خصوص در نمونهٔ زخم یا مخاط، به <em>Staphylococcus aureus</em> اشاره می‌کنند</td>
+</tr>
+<tr>
+<td>باکتری مسن</td>
+<td>اغلب کروی‌شکل</td>
+</tr>
+<tr>
+<td>باسیل در حال رشد</td>
+<td>ممکن است چند برابر باکتری پیر درازتر باشد</td>
+</tr>
+<tr>
+<td>کوکسی در حال رشد</td>
+<td>ممکن است طولی معادل ۵۰٪ بیشتر از عرض خود داشته باشد</td>
+</tr>
+<tr>
+<td>تشخیص</td>
+<td>ویژگی‌های کلونی به‌تنهایی تشخیص قطعی نیستند؛ با خصوصیات میکروسکوپی و ماکروسکوپی، رنگ‌آمیزی و تست‌های بیوشیمیایی ترکیب می‌شوند</td>
+</tr>
+</tbody></table>
+<h3 id="heading-19">ترکیب سلول باکتری و ساختارهای اصلی و فرعی</h3>
+<table>
+<thead>
+<tr>
+<th>موضوع</th>
+<th>گروه یا جزء</th>
+<th>مقدار یا توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ترکیب سلول</td>
+<td>آب</td>
+<td>۷۰٪ سلول</td>
+</tr>
+<tr>
+<td>ترکیب سلول</td>
+<td>وزن خشک</td>
+<td>۳۰٪ سلول</td>
+</tr>
+<tr>
+<td>وزن خشک</td>
+<td>پروتئین، از جمله ریبوزوم‌ها، آنزیم‌ها و ساختارهای سطحی</td>
+<td>حدود ۷۰٪</td>
+</tr>
+<tr>
+<td>وزن خشک</td>
+<td>RNA</td>
+<td>۱۲٪</td>
+</tr>
+<tr>
+<td>وزن خشک</td>
+<td>چربی</td>
+<td>۶٪</td>
+</tr>
+<tr>
+<td>وزن خشک</td>
+<td>پلی‌ساکارید</td>
+<td>۵٪</td>
+</tr>
+<tr>
+<td>وزن خشک</td>
+<td>فسفولیپید</td>
+<td>۴٪</td>
+</tr>
+<tr>
+<td>وزن خشک</td>
+<td>DNA</td>
+<td>۳٪</td>
+</tr>
+<tr>
+<td>ساختارهای اصلی</td>
+<td>اجزا</td>
+<td>مادهٔ وراثتی یا CHROMOSOME؛ سیتوپلاسم؛ غشای سیتوپلاسمی؛ مزوزوم؛ دیوارهٔ سلولی</td>
+</tr>
+<tr>
+<td>ساختارهای فرعی</td>
+<td>اجزا</td>
+<td>کپسول؛ فلاژل/تاژک؛ پیلی/فیمبریا؛ اسپور</td>
+</tr>
+<tr>
+<td>استثنا دربارهٔ ساختارهای اصلی</td>
+<td>دیوارهٔ سلولی</td>
+<td>حدود سه خانوادهٔ باکتریایی فاقد آن هستند؛ از نمونه‌های شناخته‌شدهٔ بیماری‌زا، مایکوپلاسماها هستند</td>
+</tr>
+</tbody></table>
+<h3 id="heading-20">ساختارهای داخل‌سلولی و عناصر ذخیره‌ای</h3>
+<table>
+<thead>
+<tr>
+<th>ساختار یا جزء</th>
+<th>ویژگی یا کارکرد ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>نوکلئوئید</td>
+<td>ناحیهٔ متراکم و فشردهٔ حاوی DNA؛ باکتری هسته ندارد</td>
+</tr>
+<tr>
+<td>DNA باکتری</td>
+<td>اغلب یک DNA منفرد و حلقوی؛ در گفتار طول تقریبی ۱ میلی‌متر ذکر شده است</td>
+</tr>
+<tr>
+<td>عناصر خارج‌کروموزومی</td>
+<td>از جنس DNA و گاهی RNA؛ منشأ آن‌ها خود کروموزوم نیست و جزو ژنوم باکتری به‌شمار نمی‌روند</td>
+</tr>
+<tr>
+<td>پلاسمید</td>
+<td>شناخته‌شده‌ترین عنصر خارج‌کروموزومی؛ در سیتوپلاسم شناور و خطی یا حلقوی؛ کاربرد در ژن‌درمانی و تولید دارو</td>
+</tr>
+<tr>
+<td>ریبوزوم</td>
+<td>ضریب رسوبی 70S؛ از زیرواحدهای 30S و 50S تشکیل شده و از روی mRNA پروتئین تولید می‌کند</td>
+</tr>
+<tr>
+<td>زیرواحد 30S</td>
+<td>۲۱ پروتئین و RNA مربوط به 16S</td>
+</tr>
+<tr>
+<td>زیرواحد 50S</td>
+<td>۳۴ پروتئین و RNAهای 23S و 5S</td>
+</tr>
+<tr>
+<td>دانهٔ متاکروماتیک</td>
+<td>تجمع فسفات؛ ممکن است در قطب باشد و رنگی متفاوت از زمینه بگیرد؛ نام‌های دیگر: دانهٔ ولوتین، Babes-Ernst و دانهٔ قطبی</td>
+</tr>
+<tr>
+<td>دانه‌های متاکروماتیک</td>
+<td>اغلب در انتهای فاز رشد لگاریتمی دیده می‌شوند؛ رنگ‌آمیزی‌های ذکرشده: Albert، toluidine blue، methylene blue و Neisser</td>
+</tr>
+<tr>
+<td>گرانول گلیکوژنی</td>
+<td>با ید ردیابی می‌شود؛ ید گلیکوژن را قهوه‌ای می‌کند؛ در مثال از محلول لوگول استفاده شده است</td>
+</tr>
+<tr>
+<td>PHB</td>
+<td>گرانول لیپیدی ذخیره‌کنندهٔ کربن؛ در فراوانی کربن و کمبود نیتروژن یا مواد دیگر ساخته می‌شود؛ با Sudan Black سیاه می‌شود</td>
+</tr>
+<tr>
+<td>باکتری‌های ذکرشده برای PHB</td>
+<td><em>Pseudomonas</em>، <em>Pseudomonas aeruginosa</em>، <em>Bacillus</em>، <em>Legionella</em> و <em>Burkholderia</em>؛ تصویر اسلاید به <em>P. mandelii</em> اشاره دارد</td>
+</tr>
+<tr>
+<td>سیدروفور</td>
+<td>مولکول ترشح‌شدهٔ باکتری که به آهن متصل می‌شود و به انتقال و جذب آن کمک می‌کند</td>
+</tr>
+<tr>
+<td>مگنتوزوم</td>
+<td>گرانول آهنی شامل Fe₃O₄؛ احاطه‌شده با غشایی حاوی فسفولیپید، پروتئین و گلیکوپروتئین؛ مرتبط با خاصیت مغناطیسی و magnetotaxis</td>
+</tr>
+<tr>
+<td>گرانول سولفوری</td>
+<td>منبع انرژی ذخیره‌ای؛ سولفور آن در صورت نیاز به سولفات اکسید می‌شود</td>
+</tr>
+<tr>
+<td>کربوکسی‌زوم</td>
+<td>پوشش پروتئینی؛ در باکتری‌های اتوتروف مانند سیانوباکترها؛ حاوی ریبولوز ۱،۵-بیس‌فسفات کربوکسیلاز برای تثبیت CO₂</td>
+</tr>
+<tr>
+<td>واکوئل گازی</td>
+<td>در بعضی باکتری‌های آبزی از جمله سیانوباکترها؛ کمک به شناورماندن و محافظت از نور؛ غشای پروتئینی آن به آب و حلال‌ها اجازهٔ نفوذ نمی‌دهد، اما گازها عبور می‌کنند</td>
+</tr>
+</tbody></table>
+<h3 id="heading-21">پوشش سلولی، غشا و مزوزوم</h3>
+<table>
+<thead>
+<tr>
+<th>ساختار</th>
+<th>ترکیب، نقش یا ویژگی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>غشای سیتوپلاسمی</td>
+<td>دولایه؛ در بسیاری از یوکاریوت‌ها استروئید وجود دارد، اما در غشای باکتری ذکرشده جز در <em>Mycoplasma</em> مطرح نشده است</td>
+</tr>
+<tr>
+<td>ترکیب تقریبی غشا</td>
+<td>حدود ۷۰٪ پروتئین، ۲۰ تا ۳۰٪ لیپید و مقدار کمی کربوهیدرات</td>
+</tr>
+<tr>
+<td>فسفولیپیدهای غالب</td>
+<td>فسفاتیدیل اتانول‌آمین حدود ۷۵٪؛ فسفاتیدیل گلیسرول حدود ۲۰٪</td>
+</tr>
+<tr>
+<td>نقش‌های غشای سیتوپلاسمی</td>
+<td>نفوذپذیری انتخابی؛ تنظیم ورود و خروج مواد؛ انتقال الکترون و فسفریلاسیون اکسیداتیو در باکتری‌های هوازی؛ تولید ATP؛ ترشح آنزیم‌های هیدرولیزکننده؛ مشارکت در بیوسنتز؛ گیرنده‌ها و پروتئین‌های مرتبط با chemotaxis</td>
+</tr>
+<tr>
+<td>پپتیدوگلیکان</td>
+<td>زنجیره‌های گلیکان حاوی GlcNAc و MurNAc با پل‌های پپتیدی دارای اتصال متقاطع</td>
+</tr>
+<tr>
+<td>اسیدهای تایکوئیک</td>
+<td>پلی‌ریبیتول‌فسفات یا گلیسرول‌فسفات؛ مرتبط با پپتیدوگلیکان</td>
+</tr>
+<tr>
+<td>اسید لیپوتایکوئیک</td>
+<td>متصل به لیپید</td>
+</tr>
+<tr>
+<td>فضای پری‌پلاسمی</td>
+<td>حاوی آنزیم‌های دخیل در انتقال، تجزیه و سنتز</td>
+</tr>
+<tr>
+<td>غشای خارجی گرم‌منفی‌ها</td>
+<td>فسفولیپیدها، اسیدهای چرب اشباع‌شده، پورین‌ها، لیپوپروتئین‌ها و پروتئین‌های انتقالی</td>
+</tr>
+<tr>
+<td>LPS</td>
+<td>ساکارید مرکزی و آنتی‌ژن O</td>
+</tr>
+<tr>
+<td>کپسول</td>
+<td>پلی‌ساکاریدها، از جمله دی‌ساکاریدها و تری‌ساکاریدها</td>
+</tr>
+<tr>
+<td>تفاوت دیواره</td>
+<td>پپتیدوگلیکان گرم‌منفی‌ها نازک‌تر از گرم‌مثبت‌هاست؛ غشای سیتوپلاسمی دو گروه ساختار کلی مشابه دارد</td>
+</tr>
+<tr>
+<td>مزوزوم سپتال</td>
+<td>ساخت دیوارهٔ جداکنندهٔ دو سلول هنگام تقسیم، اتصال به DNA و رسیدن چین‌خوردگی‌های روبه‌رو به هم هنگام تقسیم دوتایی</td>
+</tr>
+<tr>
+<td>مزوزوم جانبی</td>
+<td>تنفس سلولی، ترشح پروتئین‌های خارج‌سلولی و جایگاه آنزیم‌های فسفریلاسیون اکسیداتیو</td>
+</tr>
+</tbody></table>
+<h3 id="heading-22">مسیرهای انتقال مواد</h3>
+<table>
+<thead>
+<tr>
+<th>مسیر یا نوع</th>
+<th>منبع انرژی، سازوکار و نمونه‌های ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ABC Transporter / ATP Binding cassette</td>
+<td>انتقال فعال اولیه؛ استفاده از ATP یا مواد فسفات‌دار پرانرژی؛ پروتئین اتصال‌دهنده در فضای پری‌پلاسمی گرم‌منفی‌ها و سطح خارجی گرم‌مثبت‌ها؛ پرمئاز سوبسترا را منتقل می‌کند و ATPase برای تغییر شکل آن ATP مصرف می‌کند</td>
+</tr>
+<tr>
+<td>ABC Transporter</td>
+<td>دو ATP برای هر مولکول سوبسترا ذکر شده: یکی برای تغییر شکل پرمئاز و دیگری برای فسفریله‌کردن سوبسترا</td>
+</tr>
+<tr>
+<td>نمونه‌های ABC Transporter</td>
+<td>ورود هیستیدین؛ ATP/ADP translocase در <em>Rickettsia</em> و <em>Chlamydia</em>؛ انتقال اغلب مواد غذایی در گرم‌منفی‌ها؛ سیستم‌های مشابه در <em>Pneumococcus</em> و <em>Bacillus</em></td>
+</tr>
+<tr>
+<td>انتقال وابسته به یون</td>
+<td>انتقال chemiosmotic یا انتقال فعال ثانویه؛ نیروی محرکهٔ پروتون (PMF) و در باکتری‌های هالوفیل نیروی محرکهٔ سدیم</td>
+</tr>
+<tr>
+<td>uniport</td>
+<td>ورود یک مادهٔ محلول به سلول در یک جهت</td>
+</tr>
+<tr>
+<td>symport/cotransport</td>
+<td>انتقال هم‌زمان دو ماده با بار مخالف، یا یک یون و مولکول خنثی، در یک جهت و با یک حامل</td>
+</tr>
+<tr>
+<td>antiport</td>
+<td>انتقال هم‌زمان دو ماده در دو جهت مخالف و با یک حامل؛ متن اسلاید می‌گوید دو ماده بار یکسان دارند</td>
+</tr>
+<tr>
+<td>انتقال گروهی/فسفوترانسفراز</td>
+<td>منبع فسفات phosphoenolpyruvate (PEP)؛ یک PEP برای هر سوبسترا؛ مواد هنگام انتقال فسفریله می‌شوند؛ طبق اسلاید شیب غلظتی دخیل نیست و برای تغییر شکل پرمئاز ATP لازم نیست</td>
+</tr>
+<tr>
+<td>پروتئین‌های سیستم فسفوترانسفراز</td>
+<td>HPr و EI سیتوپلاسمی؛ EII متصل به غشا و دارای زیرواحدهای EIIA، EIIB و EIIC؛ EII برای هر قند اختصاصی و HPr و EI عمومی‌اند</td>
+</tr>
+<tr>
+<td>موارد ذکرشده برای سیستم فسفوترانسفراز</td>
+<td>انتقال لاکتوز؛ حدود ۸۴٪ سوبستراهای <em>Escherichia coli</em>؛ در باکتری‌های هوازی و بی‌هوازی، با شیوع بیشتر در هوازی‌ها</td>
+</tr>
+<tr>
+<td>قندهای ذکرشده برای سیستم فسفوترانسفراز</td>
+<td>mannose، mannitol، گالاکتون/گالاکتیتول، cellobiose، trehalose و fructose؛ یکی از نام‌های قندی در متن اسلاید مخدوش است</td>
+</tr>
+<tr>
+<td>کاربردهای منسوب به انتقال وابسته به یون در اسلاید</td>
+<td>chemotaxis، حرکت به‌سمت مواد کربنی، تنظیم مسیرهای متابولیک و مهار کاتابولیک؛ ارتباط دقیق با ردیف‌ها روشن نیست</td>
+</tr>
+</tbody></table>
+<h3 id="heading-23">رنگدانه‌ها و سیستم‌های ترشحی</h3>
+<table>
+<thead>
+<tr>
+<th>موضوع</th>
+<th>ویژگی یا نمونه</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>رنگ باکتری منفرد</td>
+<td>ممکن است ناشی از گرانول‌های درون‌سیتوپلاسمی باشد؛ زیر میکروسکوپ دیده می‌شود</td>
+</tr>
+<tr>
+<td>رنگ کلونی</td>
+<td>رنگ مجموعهٔ باکتری‌ها؛ ماکروسکوپی</td>
+</tr>
+<tr>
+<td>پیگمان ترشح‌شده</td>
+<td>محیط کشت را تغییر رنگ می‌دهد؛ ماکروسکوپی</td>
+</tr>
+<tr>
+<td>قرمز</td>
+<td><em>Serratia marcescens</em>؛ prodigiosin</td>
+</tr>
+<tr>
+<td>بنفش</td>
+<td><em>Bacillus violaceus</em></td>
+</tr>
+<tr>
+<td>نارنجی یا زرد</td>
+<td><em>Staphylococcus aureus</em>، <em>Sarcina</em> و برخی <em>Mycobacterium</em>ها؛ نام phitocol در اسلاید</td>
+</tr>
+<tr>
+<td>صورتی</td>
+<td><em>Bacillus subtilis</em></td>
+</tr>
+<tr>
+<td>سیاه</td>
+<td><em>Bacillus mesentericus</em></td>
+</tr>
+<tr>
+<td>سبز فلورسانس زیر UV</td>
+<td>fluorescein یا pyoverdin؛ برای <em>Pseudomonas aeruginosa</em> و <em>Bacillus fluorescens putidus</em> ذکر شده است</td>
+</tr>
+<tr>
+<td>آبیِ غیرفلورسانس</td>
+<td>pyocyanin؛ تولیدشده توسط <em>Pseudomonas aeruginosa</em></td>
+</tr>
+<tr>
+<td>Type I</td>
+<td>مستقل از Sec؛ بدون signal peptide؛ عبور یک‌مرحله‌ای؛ پروتئین هنگام انتقال unfold است؛ ماده به محیط آزاد می‌شود</td>
+</tr>
+<tr>
+<td>Type II</td>
+<td>وابسته به Sec و دارای signal peptide؛ طول signal peptide در اسلاید ۱۵ تا ۴۰ و در گفتار ۱۰ تا ۱۵ اسیدآمینه؛ دربارهٔ تعداد مراحل عبور اطلاعات متعارض است</td>
+</tr>
+<tr>
+<td>Type III</td>
+<td>مستقل از Sec و بدون signal peptide؛ انتقال یک‌مرحله‌ای؛ در اسلاید انتقال مستقیم به سیتوپلاسم سلول میزبان و ارتباط با virulence ذکر شده است</td>
+</tr>
+<tr>
+<td>Type IV</td>
+<td>سیستم انتقال کونژوگاسیونی و شبه‌پیلی؛ وابسته یا غیروابسته به Sec؛ انتقال DNA و پروتئین؛ دخالت پروتئین‌های VirB</td>
+</tr>
+<tr>
+<td>Type V</td>
+<td>autotransporter؛ وابسته به Sec، دارای signal peptide و ترشح طی دو مرحله</td>
+</tr>
+<tr>
+<td>Type III در مثال گفتار</td>
+<td>اتصال به سلول هدف، ایجاد اختلال در غشا و آسیب به cytoskeleton، ایجاد منافذ و تزریق مستقیم توکسین</td>
+</tr>
+</tbody></table>
+<h3 id="heading-24">کاربردهای میکروب‌شناسی و ارزیابی درس</h3>
+<table>
+<thead>
+<tr>
+<th>موضوع</th>
+<th>اطلاعات ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>Thermus aquaticus</em> و PCR</td>
+<td>منبع DNA پلی‌مراز thermostable؛ در روایت درس با Kary Mullis، نمونهٔ سنگ کنار چشمه‌های آب گرم و استخراج DNA پلی‌مراز مرتبط است؛ PCR برای تشخیص بیماری‌های مختلف از جمله بیماری‌های ژنتیکی و هماتولوژیک کاربرد دارد</td>
+</tr>
+<tr>
+<td>تجزیهٔ پساب صنعتی</td>
+<td>باکتری جداشده برای تجزیهٔ ترکیبات پساب کارخانه‌های ریسندگی؛ نگهداری پساب چند روز در استخر با افزودن مداوم باکتری‌ها؛ تغییرات ژنتیکی برای افزایش سرعت تکثیر و ارتقای سویه</td>
+</tr>
+<tr>
+<td>تولید insulin</td>
+<td>ورود ژن با پلاسمید یا ترکیب دیگر؛ افزودن signal peptide برای ترشح به سوپرناتانت و زنده‌ماندن باکتری؛ خالص‌سازی با HPLC یا روش دیگر؛ اتصال signal peptide به N-terminal یا C-terminal</td>
+</tr>
+<tr>
+<td>منابع درسی</td>
+<td>Jawetz و Murray؛ برای امتحان مباحث تدریس‌شده توسط دکتر فرهادی، اسلایدها و PDFهای ارائه‌شده کافی‌اند</td>
+</tr>
+<tr>
+<td>تقسیم تدریس</td>
+<td>حدود ۵۰٪ مطالب با دکتر فرهادی و ۵۰٪ با خانم دکتر توسل؛ مسئول درس نظری و عملی و تعیین‌کنندهٔ سیاست میان‌ترم و وزن میان‌ترم و فاینال، خانم دکتر توسل معرفی شده‌اند</td>
+</tr>
+<tr>
+<td>نمونهٔ تعداد سؤال</td>
+<td>دکتر فرهادی معمولاً از هر جلسهٔ پیش از میان‌ترم ۵ تا ۶ سؤال تستی می‌دهد؛ در مثال سه جلسه، از هر جلسه ۵ تا ۶ سؤال</td>
+</tr>
+<tr>
+<td>کاربردهای مسیر شغلی</td>
+<td>آزمایشگاه تشخیصی، پژوهش، مؤسسهٔ داروسازی و تولید کیت؛ کمک به تشخیص باکتری و حساسیت آنتی‌بیوتیکی</td>
+</tr>
+</tbody></table>
+</section>
+
+<section class="noteSection keyTermsSection">
+    <h2 id="heading-25">۴. اصطلاحات و تعاریف</h2>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>کلونی</strong>
+مجموعهٔ میلیاردها باکتری که از تکثیر یک باکتری به‌وجود آمده است و با چشم غیرمسلح دیده می‌شود.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>نوکلئوئید (nucleoid)</strong>
+ناحیه‌ای متراکم و فشرده در باکتری که DNA در آن قرار می‌گیرد و «شبه‌هسته» نامیده می‌شود؛ باکتری هسته ندارد.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>colonization</strong>
+اتصال و مستقرشدن باکتری.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>دانهٔ متاکروماتیک</strong>
+دانه‌ای که رنگی متفاوت از رنگ زمینه می‌گیرد.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>گرانول‌های پلی‌بتاهیدروکسی‌بوتیریک اسید (PHB)</strong>
+گرانول‌هایی با ماهیت لیپیدی که کربن را ذخیره می‌کنند؛ باکتری در شرایط فراوانی کربن محیط و کمبود نیتروژن یا مواد دیگر، کربن را به‌شکل PHB ذخیره می‌کند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>سیدروفور (siderophore)</strong>
+مولکولی که باکتری ترشح می‌کند، به آهن متصل می‌شود و به انتقال آن به‌سمت سلول و جذب آهن کمک می‌کند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پوشش سلولی</strong>
+مجموعهٔ غشای سیتوپلاسمی و لایه‌های خارج از آن؛ مجموعهٔ ساختارهایی که پروتوپلاست سلول را احاطه می‌کند.</div></div>
+</section>
+
+<section class="noteSection selfAssessmentSection">
+    <h2 id="heading-26">۵. خود‌ارزیابی</h2>
+<h3 id="heading-27">سوالات تشریحی</h3>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>تفاوت خصوصیات میکروسکوپی و ماکروسکوپی باکتری‌ها را شرح دهید و توضیح دهید چرا ویژگی‌های کلونی به‌تنهایی برای تشخیص قطعی کافی نیستند.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>خصوصیات میکروسکوپی شامل رنگ‌پذیری گرم و مورفولوژی زیر میکروسکوپ است؛ خصوصیات ماکروسکوپی شامل ویژگی‌های کلونی پس از کشت نمونه روی پلیت است. ویژگی‌هایی مانند رنگ، بو، شکل یا کشسانی کلونی به تشخیص جهت می‌دهند، اما تشخیص با ترکیب خصوصیات میکروسکوپی و ماکروسکوپی، رنگ‌آمیزی و تست‌های بیوشیمیایی انجام می‌شود.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>ریبوزوم باکتری از چه زیرواحدهایی تشکیل شده و هر زیرواحد چه اجزایی دارد؟</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>ریبوزوم باکتری ضریب رسوبی 70S دارد و از زیرواحدهای 30S و 50S تشکیل شده است. زیرواحد 30S دارای ۲۱ پروتئین و RNA مربوط به 16S است؛ زیرواحد 50S دارای ۳۴ پروتئین و RNAهای 23S و 5S است. ریبوزوم از روی mRNA پروتئین تولید می‌کند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>ویژگی‌های گرانول‌های PHB، شرایط ذخیره‌شدن آن‌ها و روش رنگ‌آمیزی ذکرشده برای شناسایی‌شان را شرح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>گرانول‌های پلی‌بتاهیدروکسی‌بوتیریک اسید (PHB) ذخیرهٔ کربن‌اند و ماهیت لیپیدی دارند. وقتی کربن محیط فراوان و نیتروژن یا مواد دیگر کم باشد، باکتری کربن را به‌شکل PHB ذخیره می‌کند. این گرانول‌ها با Sudan Black سیاه می‌شوند و ممکن است در رنگ‌آمیزی گرم با اسپور اشتباه شوند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>انتقال وابسته به پروتئین‌های اتصال‌دهنده (ABC Transporter) چگونه انجام می‌شود و برای انتقال هر مولکول سوبسترا چه میزان ATP ذکر شده است؟</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>سوبسترا به پروتئین اتصال‌دهنده ارائه می‌شود؛ پروتئین‌های اتصال‌دهنده در گرم‌منفی‌ها در فضای پری‌پلاسمی و در گرم‌مثبت‌ها در سطح خارجی سلول قرار دارند. پرمئاز سوبسترا را از کمپلکس پروتئین اتصال‌دهنده ـ سوبسترا می‌گیرد و کانالی برای عبور آن از غشا فراهم می‌کند. ATPase متصل به غشا برای تغییر شکل پرمئاز ATP مصرف می‌کند. برای انتقال هر مولکول سوبسترا دو ATP ذکر شده است: یکی برای تغییر شکل پرمئاز و دیگری برای فسفریله‌کردن سوبسترا.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>در توضیح درس، Type I، Type II و Type III از نظر چگونگی رسیدن مادهٔ ترشح‌شده به سلول هدف چه تفاوتی دارند؟</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در Type I ماده یا توکسین به محیط آزاد می‌شود و ممکن است به سلول هدف برسد یا نرسد، رقیق شود یا دفع شود. در Type II، signal peptide به عبور پروتئین از غشا و دیوارهٔ باکتری کمک می‌کند، اما پس از آزادشدن در محیط، پروتئین همچنان ممکن است به هدف برسد یا نرسد. در Type III، باکتری به سلول هدف متصل می‌شود و ماده را مستقیماً به درون آن تزریق می‌کند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<h3 id="heading-28">سوالات تستی</h3>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>کدام گزینه آرایش خوشه‌ای کوکسی‌ها را نام می‌برد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">استرپتوکوک (streptococcus)</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">استافیلوکوک (staphylococcus)</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">استرپتوباسیل (streptobacillus)</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">تتراد (tetrad)</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>استافیلوکوک آرایش خوشه‌ای کوکسی‌هاست.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>کدام توصیف دربارهٔ نوکلئوئید با درس سازگار است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">هسته‌ای غشادار که در باکتری قرار دارد</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">ناحیه‌ای متراکم و فشرده که DNA باکتری در آن قرار می‌گیرد</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">ساختاری خارج از سلول که پیلی را می‌سازد</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">زیرواحدی از ریبوزوم باکتری</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>نوکلئوئید ناحیه‌ای متراکم و فشرده برای قرارگیری DNA است؛ باکتری هسته ندارد.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>کدام گزینه دربارهٔ دانه‌های متاکروماتیک درست است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">تجمع فسفات‌اند و ممکن است رنگی متفاوت از زمینه بگیرند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">گرانول‌های لیپیدی ذخیره‌کنندهٔ کربن‌اند و با Sudan Black سیاه می‌شوند.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">ساختارهایی هستند که گاز از آن‌ها عبور نمی‌کند.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">زیرواحدهای ریبوزوم باکتری‌اند.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>دانه‌های متاکروماتیک تجمع فسفات‌اند و رنگی متفاوت از رنگ زمینه می‌گیرند.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>برای شناسایی گرانول‌های گلیکوژنی ذکرشده در درس از چه چیزی استفاده می‌شود؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">Sudan Black</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">محلول لوگول حاوی ید</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">UV برای مشاهدهٔ pyocyanin</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">HPLC</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>ید گلیکوژن را قهوه‌ای می‌کند؛ در مثال درس از محلول لوگول حاوی ید استفاده می‌شود.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>کدام ترکیب دربارهٔ مگنتوزوم‌ها مطابق درس است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">حاوی Fe₃O₄ هستند و با خاصیت مغناطیسی و magnetotaxis ارتباط دارند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">حاوی ریبولوز ۱،۵-بیس‌فسفات کربوکسیلاز هستند و CO₂ را تثبیت می‌کنند.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">از زیرواحدهای 30S و 50S تشکیل شده‌اند.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">گرانول‌های گلیکوژنی‌اند که با ید قهوه‌ای می‌شوند.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>مگنتوزوم‌ها گرانول‌های آهنی شامل Fe₃O₄ هستند و با خاصیت مغناطیسی و magnetotaxis ارتباط دارند.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="6"><div class="questionBoxHeader">سؤال 6</div><div class="questionBoxPrompt"><p>کدام گزینه یکی از نقش‌های غشای سیتوپلاسمی باکتری است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">تولید ATP</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">ساخت هستهٔ غشادار</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">تولید آنتی‌ژن O در همهٔ باکتری‌ها</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">تبدیل DNA باکتری به کروموزوم مجزای آشکار</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>تولید ATP از نقش‌های ذکرشده برای غشای سیتوپلاسمی است.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="7"><div class="questionBoxHeader">سؤال 7</div><div class="questionBoxPrompt"><p>در ABC Transporter، چند ATP برای انتقال هر مولکول سوبسترا ذکر شده است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">یک ATP</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">دو ATP</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">سه ATP</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">یک PEP</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>دو ATP ذکر شده است: یکی برای تغییر شکل پرمئاز و دیگری برای فسفریله‌کردن سوبسترا.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="8"><div class="questionBoxHeader">سؤال 8</div><div class="questionBoxPrompt"><p>در انتقال گروهی، منبع فسفات ذکرشده کدام است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">ATP</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">phosphoenolpyruvate (PEP)</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">Fe₃O₄</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">PMF</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>منبع فسفات phosphoenolpyruvate (PEP) است و برای انتقال هر سوبسترا یک PEP مصرف می‌شود.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="9"><div class="questionBoxHeader">سؤال 9</div><div class="questionBoxPrompt"><p>کدام توصیف با Type III در درس سازگار است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">انتقال مستقیم ماده به محیط، بدون اتصال به سلول هدف</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">وابستگی به Sec و داشتن signal peptide</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">اتصال باکتری به سلول هدف و تزریق مستقیم ماده به درون آن</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">انتقال مواد فقط با مصرف یک PEP برای هر سوبسترا</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در Type III باکتری به سلول هدف متصل می‌شود و ماده را مستقیماً به درون آن تزریق می‌کند.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="10"><div class="questionBoxHeader">سؤال 10</div><div class="questionBoxPrompt"><p>کدام پیگمان &lt;em&gt;Pseudomonas aeruginosa&lt;/em&gt; بدون تابش UV آبی دیده می‌شود؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">pyoverdin</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">fluorescein</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">pyocyanin</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">prodigiosin</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>pyocyanin رنگدانهٔ آبیِ غیرفلورسانس است؛ pyoverdin زیر UV سبز فلورسانس نشان می‌دهد.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+</section>
+
+<section class="noteSection reviewSection">
+    
+</section>
+
+<section class="noteSection editorAndSourcesSection">
+    <h2 id="heading-29">۷. ادیتور و منابع استفاده‌شده</h2>
+<p><strong>ادیتور:</strong> علیرضا اسفندیاری</p>
+<p><strong>منابع استفاده‌شده:</strong></p>
+<ul>
+<li>صوت درس</li>
+<li>اسلایدهای درس</li>
+<li>Jawetz و Murray به‌عنوان کتاب‌های مرجع معرفی‌شده در درس.</li>
+</ul>
+</section>
+
+<section class="noteSection completionSection">
+    <h2 id="heading-30">۸. گزارش تکمیل بودن محتوا</h2>
+<p><strong>برآورد تقریبی تکمیل محتوا:</strong> حدود 99%</p>
+<ul>
+<li>✓ پوشش محتوای اسلایدها: مطالب متنی و اطلاعات آموزشی ارائه‌شده حفظ شده‌اند؛ برای بعضی تصاویر، جزئیات محتوایی مستقلی در متن موجود نبود.</li>
+<li>✓ پوشش محتوای صوت: توضیحات، مثال‌ها، تأکیدهای آموزشی و اطلاعات ارزیابی مطرح‌شده در گفتار حفظ شده‌اند.</li>
+<li>⚠ این جزوه سعی شده در بینظیرترین حالت ممکن باشه ولی درصورت مشاهده مشکل به ادیتورها یا صاحبین سایت منتقل کنید با تشکر از توجه شما</li>
+</ul>
+</section>
+
+    </main>
+
+
+    <button
+        class="backToTop"
+        type="button"
+        aria-label="بازگشت به ابتدای صفحه"
+    >
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+
+    <script src="../src/themeSwitcher.js"></script>
+    <script src="../src/fontSizeSwitcher.js"></script>
+    <script src="../src/aboutModal.js"></script>
+    <script src="../src/quickNavigation.js"></script>
+    <script src="../src/print.js"></script>
+    <script src="../src/search.js"></script>
+    <script src="../src/highlight.js"></script>
+    <script src="../src/stickyNotes.js"></script>
+    <script src="../src/viewPersistence.js"></script>
+    <script src="../src/questionInteractions.js"></script>
+    <script src="../src/fontSwitcher.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarToggle = document.querySelector(".sidebarToggle");
+    const sidebarBackdrop = document.querySelector(".sidebarBackdrop");
+
+    function openSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.add("isOpen");
+        sidebarBackdrop.classList.add("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "true");
+        sidebar.setAttribute("aria-hidden", "false");
+    }
+
+    function closeSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.remove("isOpen");
+        sidebarBackdrop.classList.remove("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "false");
+        sidebar.setAttribute("aria-hidden", "true");
+    }
+
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener("click", () => {
+            if (sidebar.classList.contains("isOpen")) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+    }
+
+    if (sidebarBackdrop) {
+        sidebarBackdrop.addEventListener("click", closeSidebar);
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeSidebar();
+        }
+    });
+
+    document.querySelectorAll(".tocItem").forEach((item) => {
+        item.addEventListener("click", closeSidebar);
+    });
+</script>
+
+</body>
+
+</html>

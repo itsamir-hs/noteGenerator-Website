@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>خون‌سازی (Hematopoiesis)- پارت 3</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/rtl.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../node_modules/katex/dist/katex.min.css"
+    >
+
+    <link rel="stylesheet" href="../styles/dark.css">
+    <link rel="stylesheet" href="../styles/forest.css">
+    <link rel="stylesheet" href="../styles/paperLike.css">
+    <link rel="stylesheet" href="../styles/neon.css">
+
+    <script src="../node_modules/lucide/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+
+    <header class="appHeader">
+
+        <button
+            class="sidebarToggle"
+            type="button"
+            aria-label="باز کردن فهرست مطالب"
+            aria-expanded="false"
+        >
+            <i data-lucide="panel-left"></i>
+        </button>
+
+
+        <div class="appTitle">
+            پاپیروس
+        </div>
+
+
+        <div class="headerControls">
+
+<button
+    class="searchButton"
+    type="button"
+    aria-label="جستجو در جزوه"
+    aria-expanded="false"
+>
+    <i data-lucide="search"></i>
+</button>
+
+<div class="highlightSwitcher">
+
+    <button
+        class="highlightToggle"
+        type="button"
+        aria-label="هایلایت"
+        aria-expanded="false"
+    >
+        <i data-lucide="highlighter"></i>
+    </button>
+
+
+<div
+    class="highlightOptions"
+    aria-hidden="true"
+>
+
+    <button
+        class="highlightPowerToggle"
+        type="button"
+        aria-label="روشن یا خاموش کردن هایلایت"
+        aria-pressed="true"
+    >
+        <i data-lucide="highlighter"></i>
+        <span>هایلایت روشن</span>
+    </button>
+
+        <div class="highlightColors">
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#fff176"
+                aria-label="هایلایت زرد"
+                style="--highlightColor: #fff176;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#a5d6a7"
+                aria-label="هایلایت سبز"
+                style="--highlightColor: #a5d6a7;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#90caf9"
+                aria-label="هایلایت آبی"
+                style="--highlightColor: #90caf9;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ce93d8"
+                aria-label="هایلایت بنفش"
+                style="--highlightColor: #ce93d8;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ffab91"
+                aria-label="هایلایت نارنجی"
+                style="--highlightColor: #ffab91;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ef9a9a"
+                aria-label="هایلایت قرمز"
+                style="--highlightColor: #ef9a9a;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#f48fb1"
+                aria-label="هایلایت صورتی"
+                style="--highlightColor: #f48fb1;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#80cbc4"
+                aria-label="هایلایت فیروزه‌ای"
+                style="--highlightColor: #80cbc4;"
+            ></button>
+
+        </div>
+
+
+        <div class="highlightDivider"></div>
+
+
+        <label
+            class="highlightCustomColor"
+            aria-label="انتخاب رنگ دلخواه"
+        >
+            <input
+                class="highlightColorInput"
+                type="color"
+                value="#fff176"
+            >
+
+            <i data-lucide="palette"></i>
+        </label>
+
+
+        <button
+            class="highlightEraser"
+            type="button"
+            aria-label="پاک کردن هایلایت"
+        >
+            <i data-lucide="eraser"></i>
+            <span>پاک‌کن</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="stickyNotesSwitcher">
+
+    <button
+        class="stickyNotesToggle"
+        type="button"
+        aria-label="یادداشت‌های چسبان"
+        aria-expanded="false"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+</div>
+
+            <div class="fontSizeSwitcher">
+
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="decrease"
+                    aria-label="کاهش اندازه فونت"
+                >
+                    <i data-lucide="minus"></i>
+                </button>
+
+<button
+    type="button"
+    class="fontSizeControl fontSwitchControl"
+    aria-label="تغییر فونت"
+>
+    <i data-lucide="type"></i>
+</button>
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="increase"
+                    aria-label="افزایش اندازه فونت"
+                >
+                    <i data-lucide="plus"></i>
+                </button>
+
+            </div>
+
+
+            <div class="themeSwitcher">
+
+                <button
+                    class="themeToggle"
+                    type="button"
+                    aria-label="تغییر تم"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="sun"></i>
+                </button>
+
+<div class="themeOptions">
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="light"
+        aria-label="تم روشن"
+    >
+        <i data-lucide="sun"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="dark"
+        aria-label="تم تاریک"
+    >
+        <i data-lucide="moon"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="forest"
+        aria-label="تم جنگلی"
+    >
+        <i data-lucide="trees"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="paperLike"
+        aria-label="تم پیپر لایک"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+<button
+    class="themeButton"
+    type="button"
+    data-theme="neon"
+    aria-label="تم نئون"
+>
+<i data-lucide="zap"></i>
+</button>
+
+
+</div>
+
+            </div>
+
+<button
+    class="printButton"
+    type="button"
+    aria-label="چاپ جزوه"
+>
+    <i data-lucide="printer"></i>
+</button>
+
+
+            <button
+                class="aboutButton"
+                type="button"
+                aria-label="درباره ما"
+            >
+                <i data-lucide="users-round"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+<div
+    class="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="searchPanelContent">
+
+        <div class="searchInputWrapper">
+
+            <i data-lucide="search"></i>
+
+            <input
+                class="searchInput"
+                type="search"
+                placeholder="جستجو در جزوه..."
+                aria-label="جستجو در جزوه"
+                autocomplete="off"
+            >
+
+            <button
+                class="searchClearButton"
+                type="button"
+                aria-label="پاک کردن جستجو"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="searchResultsInfo">
+            <span class="searchResultsCount">۰ نتیجه</span>
+
+            <div class="searchNavigation">
+
+                <button
+                    class="searchPreviousButton"
+                    type="button"
+                    aria-label="نتیجه قبلی"
+                    disabled
+                >
+                    <i data-lucide="chevron-up"></i>
+                </button>
+
+                <button
+                    class="searchNextButton"
+                    type="button"
+                    aria-label="نتیجه بعدی"
+                    disabled
+                >
+                    <i data-lucide="chevron-down"></i>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    <aside
+        class="sidebar"
+        aria-label="فهرست مطالب"
+        aria-hidden="true"
+    >
+
+        <div class="sidebarHeader">
+            <h2>فهرست مطالب</h2>
+        </div>
+
+        <nav
+            class="sidebarContent"
+            aria-label="فهرست مطالب"
+        >
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-1"
+                >
+                    ۱. مقدمه و کلیات
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-2"
+                >
+                    ۲. متن اصلی جزوه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-3"
+                >
+                    تعریف و محل خون‌سازی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-4"
+                >
+                    لنفوسیت‌ها و مراکز بلوغ آن‌ها
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-5"
+                >
+                    ریزمحیط مغز استخوان (Bone Marrow Microenvironment)
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-6"
+                >
+                    خودنوزایی و انواع سلول‌های بنیادی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-7"
+                >
+                    شاخه‌های اصلی خون‌سازی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-8"
+                >
+                    شناسایی progenitorها و markerها
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-9"
+                >
+                    Homing و mobilization سلول‌های بنیادی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-10"
+                >
+                    مسیرهای مؤثر بر stemness و تمایز
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-11"
+                >
+                    Epigenetic و تنظیم بیان ژن
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-12"
+                >
+                    Transcription factorها
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-13"
+                >
+                    Growth factorها و cytokineها
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-14"
+                >
+                    Erythropoiesis
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-15"
+                >
+                    ۳. جداول مرور سریع
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-16"
+                >
+                    مراحل و محل‌های خون‌سازی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-17"
+                >
+                    سلول‌ها، پیش‌سازها و توان تمایز
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-18"
+                >
+                    Markerها و مسیرهای تمایز
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-19"
+                >
+                    مسیرهای پیام‌رسانی مرتبط با stemness
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-20"
+                >
+                    Epigenetic و عوامل تنظیم‌کننده
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-21"
+                >
+                    Growth factorها و cytokineها
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-22"
+                >
+                    EPO، G-CSF و GM-CSF
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-23"
+                >
+                    مسیر بلوغ اریتروئیدی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-24"
+                >
+                    ۴. اصطلاحات و تعاریف
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-25"
+                >
+                    ۵. خود‌ارزیابی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-26"
+                >
+                    سوالات تشریحی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-27"
+                >
+                    سوالات تستی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-28"
+                >
+                    ۷. ادیتور و منابع استفاده‌شده
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-29"
+                >
+                    ۸. گزارش تکمیل بودن محتوا
+                </a>
+            
+        </nav>
+
+    </aside>
+
+
+    <div class="sidebarBackdrop"></div>
+
+<aside
+    class="stickyNotesPanel"
+    aria-label="یادداشت‌های چسبان"
+    aria-hidden="true"
+>
+
+    <div class="stickyNotesPanelHeader">
+
+        <h2>یادداشت‌های چسبان</h2>
+
+        <button
+            class="addStickyNoteButton"
+            type="button"
+        >
+            <i data-lucide="plus"></i>
+            <span>یادداشت جدید</span>
+        </button>
+
+    </div>
+
+    <div class="stickyNotesPanelContent">
+
+        <div class="stickyNotesEmptyState">
+<i data-lucide="notebook-pen"></i>
+
+            <p>
+                هنوز یادداشتی ایجاد نکرده‌اید.
+            </p>
+
+        </div>
+
+        <div class="stickyNotesList"></div>
+
+    </div>
+
+</aside>
+
+<div class="stickyNotesBackdrop"></div>
+
+
+    <div
+        class="aboutModal"
+        aria-hidden="true"
+    >
+
+        <div class="aboutModalBackdrop"></div>
+
+        <section
+            class="aboutModalContent"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="aboutTitle"
+        >
+
+            <button
+                class="aboutCloseButton"
+                type="button"
+                aria-label="بستن"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <h2 id="aboutTitle">
+                آدم‌هایی که اینجا رو ساختن
+            </h2>
+
+            <p class="aboutIntroduction">
+                ما یک تیم کوچک هستیم که باور داریم یادگیری باید
+                لذت‌بخش، عمیق، و در دسترس باشد. جزوه‌ساز تلاش ماست
+                برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً
+                بتوانی با آن‌ها چیزی یاد بگیری.
+            </p>
+
+
+<div class="developerList">
+
+    <article class="developerCard">
+        <h3>شبنم رضاپور</h3>
+        <p>کسی که PDFها را راضی کرد محتوایشان را بی‌کم‌وکاست لو بدهند.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیر‌حسین شکری‌زاده سعادت‌آباد</h3>
+        <p>صدای کلاس را به متن تبدیل کرد، حتی وقتی استاد وسط جمله با میکروفون قهر می‌کرد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>مهراد اسدی</h3>
+        <p>پرامپت‌ها را طوری چید که LLM فکر کرد دارد پایان‌نامه دکتری می‌نویسد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیرسالار سهام‌پور</h3>
+        <p>مارک‌داون را به HTML تبدیل کرد و به جزوه ظاهری داد که آدم دلش بخواهد بخواندش.</p>
+    </article>
+
+</div>
+
+            <p class="aboutFooter">
+                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد.
+                <br>
+                امیدواریم یادگیریت را لذت‌بخش‌تر کند.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <div class="quickNavigation">
+        <div class="quickNavigationList"></div>
+    </div>
+
+
+    <main class="noteContainer">
+
+<div class="stickyNotesLayer"></div>
+
+        <section class="noteHeader">
+
+            <div class="noteMetadata">
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">درس</span>
+                    <span class="metadataValue">خون‌شناسی</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">مبحث</span>
+                    <span class="metadataValue">هماتولوژی- خون‌سازی (Hematopoiesis)- جلسه 6 کلاس</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">استاد</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ جلسه</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ تولید جزوه</span>
+                    <span class="metadataValue generatedDate">2026-10-13T02:47:52</span>
+                </span>
+
+            </div>
+
+
+            <div class="aiWarning">
+                <i data-lucide="triangle-alert"></i>
+
+                <p>
+                    این جزوه با استفاده از جزوه‌ساز پاپیروس و به صورت خودکار تولید شده است.
+                    ممکن است شامل خطا یا برداشت نادرست باشد و
+                    نیازمند بررسی و بازبینی مجدد است.
+                </p>
+            </div>
+
+        </section>
+
+
+<section class="noteSection introductionSection">
+    <h2 id="heading-1">۱. مقدمه و کلیات</h2>
+<p>خون‌سازی (hematopoiesis) فرایند تکثیر، تقسیم و تمایز سلول‌های پیش‌ساز خونی است. این فرایند در طول رشد از کیسهٔ زرده به کبد و سپس مغز استخوان منتقل می‌شود. موضوعات این درس شامل مراکز خون‌سازی، رده‌های خونی و پیش‌سازهای آن‌ها، ریزمحیط مغز استخوان، مسیرهای پیام‌رسانی و عوامل رشد، تنظیم erythropoiesis و مراحل بلوغ گلبول قرمز است. قسمت های قبل به طور مفصل در پارت های قبلی شرح داده شد، حتما قبل از مطالعه این پارت، پارت های قبلی مبحث خونسازی را مطالعه بفرمایید.</p>
+</section>
+
+<section class="noteSection mainSection">
+    <h2 id="heading-2">۲. متن اصلی جزوه</h2>
+<h3 id="heading-3">تعریف و محل خون‌سازی</h3>
+<p>خون‌سازی (hematopoiesis) شامل تکثیر، تقسیم و تمایز سلول‌های پیش‌ساز خونی است.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>خون‌سازی (hematopoiesis)</strong>
+فرایند تکثیر، تقسیم و تمایز سلول‌های پیش‌ساز خونی.</div></div>
+<p>با توجه به مرحلهٔ رشد، خون‌سازی ابتدا در <strong>کیسهٔ زرده(Yolk Sac)</strong> سپس در <strong>کبد(Fetal Liver)</strong> و بعد در <strong>مغز استخوان(Bone Marrow)</strong> انجام می‌شود. در نمودار شکل زیر وضعیت خون‌سازی را در سنین مختلف و دوران جنینی مشاهده می‌کنید.</p>
+<p><img src="../data/assets/screenshot_20261018_175337.png" alt="screenshot_20261018_175337"></p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">پس از تولد، مغز استخوان تنها ارگان خون‌ساز است؛ بنابراین برای <strong>بررسی وضعیت خون‌سازی فرد</strong>، <strong>نمونهٔ مغز استخوان</strong> بررسی می‌شود.</div></div>
+<h4>محل خون‌سازی در مراحل رشد</h4>
+<ul>
+<li><p><em><strong>کیسهٔ زرده(Yolk Sac):</strong></em> رگ‌زایی و خون‌سازی هم‌زمان انجام می‌شوند؛ این مرحله <strong>خون‌سازی درون‌رگی (Intravascular Hematopoiesis)</strong> یا <strong>خون‌سازی اولیه (Primitive Hematopoiesis)</strong> نام دارد. <strong>سلول های مادر اولیه یا Primitive stem cell ها</strong>  RBC های بزرگ هسته دار و مگالوبلاستیک تولید می‌کنند و به‌صورت مجتمع‌هایی کنار هم قرار می‌گیرند که به آن‌ها <strong>blood island یا جزایر خونی</strong> می‌گویند. بررسی میکروسکوپی نشان می‌دهد که <strong>فقط ردهٔ اریتروئیدی (Erythropoiesis)</strong> وجود دارد؛ ازاین‌رو به آن خون‌سازی اولیه می‌گویند. هموگلوبین گلبول‌های قرمز این مرحله شامل هموگلوبین‌های گاور ۱ (Gower 1)، گاور ۲ (Gower 2) و  پورت‌لند (Portland) است <strong>(هموگلوبین های رویانی Embryonic Hb)</strong></p>
+</li>
+<li><p><em><strong>ناحیهٔ آورتا-گونادا-مزونفروس (Aorta-Gonada-Mesonephrous; AGM):</strong></em> با ادامهٔ تکامل (development) و ورود به مراحل اندام‌زایی (organogenesis)، در ناحیهٔ آورتا-گونادا-مزونفروس (aorta-gonad-mesonephros) بخش‌هایی از قوس شکمی آئورت، کلیه(ساختار های پایه نفرون) و غدد جنسی(گنادها) شکل می‌گیرند. در این ناحیه <strong>Secondary stem cell یا سلول های مادر ثانویه(نهایی)</strong> پدید می‌آیند که با وجود توان خون‌سازی متمرکز و محدود، می‌توانند <strong>همهٔ رده‌های خونی</strong> را بسازند. این فرایند را <strong>خون‌سازی قطعی یا ثانویه (definitive hematopoiesis)</strong> یا <strong>خون‌سازی برون‌رگی (Extravascular Hematopoiesis)</strong> می‌نامند.</p>
+</li>
+<li><p><em><strong>کبد (Fetal Liver):</strong></em> stem cellهای نهایی در AGM  به‌تدریج به کبد مهاجرت می‌کنند و کبد تا نزدیکی تولد(چند روز تا یک هفته قبل از تولد) محل خون‌سازی است و پس از آن متوقف می‌شود؛ سپس خون‌سازی به مغز استخوان منتقل می‌شود. (مغز استخوان مقصد اصلی Stem cell ها و محل نهایی خون‌سازی است)</p>
+</li>
+<li><p><em><strong>مغز استخوان (Bone Marrow) پس از تولد:</strong></em> ابتدا همهٔ استخوان‌ها خون‌سازی می‌کنند؛ اما با سازمان‌یافتن کانون‌های خون‌سازی، استخوان‌های دراز بیشتر نقش اتصال ماهیچه‌ها، حرکت و محافظت را بر عهده می‌گیرند و خون‌سازی عمدتا در استخوان های پهن صورت می‌گیرد. در بزرگسالان خون‌سازی عمدتاً در استخوان‌های پهن و کوتاه انجام می‌شود. محل استاندارد نمونه‌برداری از مغز استخوان در بزرگسالان، که در مراکز سراسر دنیا معرفی شده است، بخش خلفی استخوان ایلیاک (posterior iliac crest; PIS) است.</p>
+</li>
+</ul>
+<p><img src="../data/assets/screenshot_20261018_185647.png" alt="screenshot_20261018_185647"></p>
+<p><img src="../data/assets/screenshot_20261018_180710.png" alt="screenshot_20261018_180710"></p>
+<table>
+<thead>
+<tr>
+<th>مرحله/محل</th>
+<th>ویژگی‌های خون‌سازی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>کیسهٔ زرده</td>
+<td>رگ‌زایی و خون‌سازی هم‌زمان؛ خون‌سازی درون‌رگی و اولیه؛ مجتمع‌های سلولی blood island؛ فقط ردهٔ اریتروئیدی؛ هموگلوبین‌های گاور ۱، گاور ۲ و پورت‌لند(هموگلوبین های رویانی)</td>
+</tr>
+<tr>
+<td>ناحیهٔ AGM</td>
+<td>پیدایش stem cellهایی با توان خون‌سازی محدود که می‌توانند همهٔ رده‌های خونی را بسازند؛ خون‌سازی قطعی (definitive hematopoiesis) یا برون رگی</td>
+</tr>
+<tr>
+<td>کبد</td>
+<td>سپس stem cell ها به کبد مهاجرت می‌کنند و کبد تا نزدیکی تولد محل خون‌سازی است</td>
+</tr>
+<tr>
+<td>مغز استخوان پس از تولد</td>
+<td>تنها ارگان خون‌ساز پس از تولد؛ در بزرگسالان خون‌سازی عمدتاً در استخوان‌های پهن و کوتاه است؛ محل استاندارد نمونه‌برداری بخش خلفی استخوان ایلیاک (posterior iliac crest) است</td>
+</tr>
+</tbody></table>
+<h3 id="heading-4">لنفوسیت‌ها و مراکز بلوغ آن‌ها</h3>
+<p><strong>تیموس</strong> ارگان اختصاصی تمایز لنفوسیت T است؛ بیشتر سلول‌های خونی در مغز استخوان تکامل پیدا می‌کنند و لنفوسیت T در تیموس. <strong>نام‌های T(Thymus) و B(Bone marrow) به مراکز تکامل و بلوغ این سلول‌ها اشاره دارند.</strong> B نخست در پرندگان و در بورس فابریسیوس (bursa of Fabricius)، ارگانی مرتبط با دستگاه گوارش، شناخته شد؛ این ارگان تکامل سلول‌های B را انجام می‌دهد. در مدل انسانی نیز B با bone marrow همخوانی دارد، زیرا سلول B در مغز استخوان تکامل پیدا می‌کند.</p>
+<p>لنفوسیت‌ها شامل B، T و سلول‌های NK (Natural Killer Cells) هستند؛ زیرمجموعهٔ NKT  از T cell نیز وجود دارد. B و T با آنتی‌ژن‌ها مقابله می‌کنند. آنتی‌ژن بیگانه الزاماً چیزی نیست که از بیرون وارد بدن شده باشد؛ سلول توموریِ ایجادشده در بدن نیز آنتی‌ژن‌های بیگانه دارد. برخی عوامل آنتی‌ژنی راه‌هایی برای فرار پیدا می‌کنند و شاخص‌هایی ارائه می‌دهند که B و T آن‌ها را نمی‌شناسند؛ اما NK cell می‌تواند آن‌ها را شناسایی و با آن‌ها مقابله کند.</p>
+<table>
+<thead>
+<tr>
+<th>سلول/ساختار</th>
+<th>محل تکامل یا نقش ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B cell</td>
+<td>در انسان در مغز استخوان تکامل پیدا می‌کند؛ با آنتی‌ژن‌ها مقابله می‌کند</td>
+</tr>
+<tr>
+<td>T cell</td>
+<td>تمایز اختصاصی آن در تیموس انجام می‌شود؛ با آنتی‌ژن‌ها مقابله می‌کند</td>
+</tr>
+<tr>
+<td>NK cell</td>
+<td>می‌تواند برخی عوامل آنتی‌ژنی را که B و T نمی‌شناسند شناسایی و با آن‌ها مقابله کند</td>
+</tr>
+<tr>
+<td>NKT</td>
+<td>زیرمجموعه‌ای دیگر از لنفوسیت‌های T</td>
+</tr>
+</tbody></table>
+<p>در برخی درمان‌های اختصاصی تومور، از جمله برای بعضی بدخیمی‌ها و سرطان پستان، لنفوسیت‌های بیمار جدا و در محیط بیرون از بدن برای مقابلهٔ اختصاصی با تومور آماده می‌شوند. شاخص‌های لنفوسیتی تغییر می‌کنند تا سلول‌ها هدف توموری را شناسایی کنند. این رویکرد از حوزه‌های <strong>cell therapy</strong> است و می‌تواند درمان اختصاصی فراهم کند و اثرات درمان‌هایی مانند شیمی‌درمانی و رادیوتراپی را کاهش دهد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در برخی درمان‌های اختصاصی تومور، از جمله برای بعضی بدخیمی‌ها و سرطان پستان، لنفوسیت‌های بیمار جدا و در محیط بیرون از بدن برای مقابلهٔ اختصاصی با تومور آماده می‌شوند؛ شاخص‌های لنفوسیتی تغییر می‌کنند تا سلول‌ها هدف توموری را شناسایی کنند.</div></div>
+<h3 id="heading-5">ریزمحیط مغز استخوان (Bone Marrow Microenvironment)</h3>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>ریزمحیط(Microenvironment):</strong> در هماتولوژی به معنای مجموعه شرایط و سلول هایی است که در اطراف سلول بنیادی یا سلول پیش ساز خونی قرار دارند و بر رفتار و چگونگی تولید رده های خونی اثر گذارند.</div></div>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای مثال وقتی گفته می‌شود خون سازی جنینی ابتدا در کیسه زرده شروع می‌شود، در واقع کیسه زرده ریزمحیط مناسب برای خون سازی جنینی را دارد که در اثر بالغ شدن این ریز محیط کارایی خود را از دست می‌دهد و خون سازی به ارگان های بعدی منتقل می‌شود که ریز محیط مناسب جهت ادامه خون‌سازی را دارا هستند مثل کبد.</div></div>
+<p>ریز‌محیط مغز استخوان شامل <strong>سلول‌های استرومال (Stromal cells)</strong> مانند fibroblast، osteoblast، reticular adventitial cell و macrophage است؛ بعدها T cellها نیز در این مجموعه مطرح می‌شوند. این سلول‌ها با <strong>ارسال سیگنال و فراهم‌کردن فاکتور های رشد (growth factor)</strong> <strong>از خون‌سازی حمایت می‌کنند و عوامل سمی را جذب و از بین می‌برند.</strong> در برخی منابع، نقش آن‌ها به‌صورت پرستار یا nurse توصیف می‌شود؛ ازاین‌رو به آن‌ها stromal cell گفته می‌شود.</p>
+<p><strong>عوامل ریزمحیط مغز استخوان هم سلولی‌اند و هم غیرسلولی.</strong> <strong>growth factorها یا عوامل رشد و transcription factorها یا عوامل رونویسی</strong> از <strong>عوامل غیرسلولی</strong> مؤثر بر خون‌سازی و تمایز هستند.</p>
+<p><img src="../data/assets/photo_2026-10-18_21-16-38.jpg" alt="photo_2026-10-18_21-16-38"></p>
+<table>
+<thead>
+<tr>
+<th>اجزای ریزمحیط مغز استخوان</th>
+<th>نقش یا ویژگی ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fibroblast، osteoblast، reticular&nbsp; adventitial cell، macrophage و بعدها T cell</td>
+<td>سلول‌های استرومال</td>
+</tr>
+<tr>
+<td>سلول‌های استرومال</td>
+<td>ارسال سیگنال و فراهم‌کردن growth factor؛ حمایت از خون‌سازی؛ جذب و از بین بردن عوامل سمی</td>
+</tr>
+<tr>
+<td>عوامل سلولی و غیرسلولی</td>
+<td>هر دو در ریزمحیط مطرح‌اند</td>
+</tr>
+<tr>
+<td>growth factorها و transcription factorها</td>
+<td>عوامل غیرسلولی مؤثر بر خون‌سازی و تمایز</td>
+</tr>
+</tbody></table>
+<h3 id="heading-6">خودنوزایی و انواع سلول‌های بنیادی</h3>
+<p>ویژگی مهم stem cell و progenitor cell، <strong>خودنوزایی (self-renewal)</strong> است. این سلول‌ها می‌توانند <strong>تقسیم میتوزی متقارن یا نامتقارن</strong> انجام دهند و جایگزین خود را در مجموعهٔ سلولی حفظ کنند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>خودنوزایی (self-renewal)</strong>
+توانایی stem cell و progenitor cell برای حفظ جایگزین خود در مجموعهٔ سلولی از طریق تقسیم میتوزی متقارن یا نامتقارن.</div></div>
+<p>سلول آغازین خون‌سازی، <strong>hematopoietic stem cell (HSC)</strong> یا <strong>pluripotent hematopoietic stem cell</strong> است. در اینجا pluripotent(چند توان بودن) به <strong>توانایی ساختن همهٔ سلول‌های ردهٔ بافت خونی</strong> اشاره دارد و با totipotent یکی نیست. (پیشوند هایی که پیش از نام سلول آورده می‌شود کارایی و توانایی آن را توضیح می‌دهند) برای مقایسه، پس از ترکیب oocyte ثانویه با spermatozoa، zygote یا سلول تخم تشکیل می‌شود و با تقسیم‌های میتوزی به دو، چهار و هشت سلول می‌رسد. در مثال مطرح‌شده، به سلول‌های هشت‌سلولی totipotent stem cell گفته می‌شود؛ اگر یکی از آن‌ها جدا و در شرایط مناسب نگهداری شود، می‌تواند جنین کامل ایجاد کند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در مثال مطرح‌شده، پس از تشکیل zygote و تقسیم به دو، چهار و هشت سلول، به سلول‌های هشت‌سلولی totipotent stem cell گفته می‌شود؛ اگر یکی از آن‌ها جدا و در شرایط مناسب نگهداری شود، می‌تواند جنین کامل ایجاد کند.</div></div>
+<p><img src="../data/assets/screenshot_20261018_192534.png" alt="screenshot_20261018_192534"></p>
+<p>خون‌سازی را می‌توان به کارخانه‌ای با خط‌های تولید مختلف تشبیه کرد: یک خط neutrophil و خط‌های دیگر monocyte، eosinophil، basophil، erythrocyte، platelet، T cell، NK cell و B cell تولید می‌کنند ( به تصویر بالا توجه کنید و آن را حفظ کنید!)</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">تشبیه خون‌سازی به <strong>کارخانه‌ای با خط‌های تولید مختلف</strong>: یک خط neutrophil و خط‌های دیگر monocyte، eosinophil، basophil، erythrocyte، platelet، T cell، NK cell و B cell تولید می‌کنند.</div></div>
+<h3 id="heading-7">شاخه‌های اصلی خون‌سازی</h3>
+<p>سلول‌های خونی به دو مجموعهٔ (میلوئید) <strong>myeloid</strong> و  (لنفوئید)<strong>lymphoid</strong> تقسیم می‌شوند:</p>
+<ul>
+<li>ردهٔ lymphoid شامل B، T و NK است و NKT نیز زیرمجموعه‌ای دیگر به شمار می‌آید.</li>
+<li>جهت‌گیری HSC به‌سوی myeloid یا lymphoid در این مرحله <strong>stochastic</strong> یعنی <strong>تصادفی</strong> توصیف شده است. عامل مشخصی که به‌تنهایی این جهت‌گیری را تعیین کند معرفی نشده است، هرچند شرایط فیزیولوژیک اثر دارند.</li>
+</ul>
+<p>برای ورود به ردهٔ myeloid، HSC تقسیم نامتقارن می‌کند: یک سلول جای خود می‌ماند و سلول دیگر تمایزیافته‌تر می‌شود و <strong>common myeloid progenitor</strong> یا <strong>CFU-GEMM</strong> نام می‌گیرد. CFU-GEMM مخفف <strong>colony-forming unit—granulocyte, erythrocyte, monocyte, megakaryocyte</strong> است(به ترتیب). در کشت آزمایشگاهی، این سلول می‌تواند (کلنی) colony شامل granulocyte، erythrocyte، monocyte و megakaryocyte بسازد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>CFU-GEMM (colony-forming unit—granulocyte, erythrocyte, monocyte, megakaryocyte)</strong>
+سلولی که در کشت آزمایشگاهی می‌تواند colony شامل granulocyte، erythrocyte، monocyte و megakaryocyte بسازد.</div></div>
+<p>در مقایسه با HSC، که هر دو ردهٔ myeloid و lymphoid را می‌سازد، common myeloid progenitor به ساخت ردهٔ myeloid محدود شده است. در مقابل، common lymphoid progenitor می‌تواند B cell، T cell و NK cell ایجاد کند. نمودارهای اسلاید نیز شاخه‌های common myeloid progenitor، CFU-GEMM، CFU-GM، CFU-Eo، CFU-Baso، CFU-MegE و common lymphoid progenitor و پیش‌سازهای T/NK و B را نشان می‌دهند.</p>
+<table>
+<thead>
+<tr>
+<th>سلول/پیش‌ساز</th>
+<th>توان تمایز ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HSC</td>
+<td>ساخت هر دو ردهٔ myeloid و lymphoid</td>
+</tr>
+<tr>
+<td>common myeloid progenitor</td>
+<td>ساخت ردهٔ myeloid</td>
+</tr>
+<tr>
+<td>common lymphoid progenitor</td>
+<td>ایجاد B cell، T cell و NK cell</td>
+</tr>
+<tr>
+<td>CFU-GEMM</td>
+<td>ساخت colony شامل granulocyte، erythrocyte، monocyte و megakaryocyte</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image1.png" alt="تصویر 1">
+<em>تصویر ۱</em></p>
+<h4>تمایز در ردهٔ myeloid</h4>
+<p>common myeloid progenitor را <strong>mixed myeloid stem cell</strong> نیز می‌نامند، زیرا می‌تواند همهٔ سلول‌های myeloid را بسازد.</p>
+<ul>
+<li><strong>مسیر اریتروئیدی و megakaryocyte:</strong> سلول common myeloid progenitor تقسیم می‌کند و <strong>CFU-MegE</strong>، یعنی <strong>colony-forming unit megakaryocyte-erythrocyte</strong>، ایجاد می‌شود. این سلول هنوز به یک ردهٔ نهایی متعهد نشده است و در شرایط مناسب می‌تواند megakaryocyte، platelet و erythrocyte ایجاد کند.<ul>
+<li>پس از تمایز بیشتر و تقسیم میتوز، سلول به <strong>BFU-E (burst-forming unit-erythroid)</strong> یا <strong>CFU-E (colony-forming unit-erythroid)</strong> می‌رسد.</li>
+<li>لفظ burst یعنی انفجاری که هر BFU-E در شرایط مطلوب ۵۰٬۰۰۰ تا ۱۰۰٬۰۰۰ گلبول قرمز و هر CFU-E تا ۳۰٬۰۰۰ گلبول قرمز تولید می‌کند. این مقدار به شرایط بدن بستگی دارد: در ارتفاع زیاد و با افزایش نیاز به اکسیژن، مسیر بیشتر به سمت BFU-E می‌رود و در مناطق کم‌ارتفاع CFU-E بیشتر مطرح می‌شود.</li>
+<li>بسیاری از کتاب‌ها ترتیب BFU-E و سپس CFU-E را می‌آورند؛ شرایط فیزیولوژیک تعیین می‌کند کدام‌یک ابتدا به وجود بیاید. در هر صورت، BFU-E و CFU-E  فقط ردهٔ گلبول قرمز را تولید می‌کنند. به چنین سلول هایی committed progenitor گفته می‌شود یعنی پیش ساز هایی که متعهد به تولید یه رده سلولی خاص هستند و فقط همان رده را تولید می‌کنند</li>
+</ul>
+</li>
+<li><ul>
+<li>مسیر دیگر این شاخه به‌سوی CFU-Meg و تولید platelet  و megakaryocyte می‌رود.</li>
+</ul>
+</li>
+<li><strong>مسیر neutrophil و monocyte:</strong> سلول common myeloid progenitor به **CFU-GM (**<strong>colony-forming unit</strong> <strong>granulocyte-monocyte )</strong> تبدیل می‌شود. CFU-GM توانایی تولید neutrophil و monocyte را دارد؛ برای تولید neutrophil به CFU-G و برای تولید monocyte به CFU-M تبدیل می‌شود. این‌ها committed progenitor هستند، چون سرنوشتشان به یک رده محدود شده است. CFU-G در این نام به معنی granulocyte بزرگ‌شده نیست؛ در این کاربرد granulocyte نمایندهٔ neutrophil است.</li>
+<li><strong>مسیرهای اختصاصی دیگر:</strong> رده‌های eosinophil و basophil از common myeloid progenitor و از طریق CFU-Eo و CFU-Baso به‌طور اختصاصی ایجاد می‌شوند.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>پیش‌ساز/مسیر</th>
+<th>سلول‌های حاصل یا سرنوشت ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>common myeloid progenitor → CFU-MegE</td>
+<td>megakaryocyte، platelet و erythrocyte؛ در این مرحله هنوز به یک ردهٔ نهایی متعهد نشده است</td>
+</tr>
+<tr>
+<td>BFU-E و CFU-E</td>
+<td>committed progenitor؛ فقط تولید ردهٔ گلبول قرمز؛ مقادیر بیان‌شده به‌ترتیب ۵۰٬۰۰۰ تا ۱۰۰٬۰۰۰ و حداکثر ۳۰٬۰۰۰ گلبول قرمز</td>
+</tr>
+<tr>
+<td>شاخهٔ CFU-Meg</td>
+<td>تولید platelet</td>
+</tr>
+<tr>
+<td>common myeloid progenitor → CFU-GM</td>
+<td>توانایی تولید neutrophil و monocyte</td>
+</tr>
+<tr>
+<td>CFU-G</td>
+<td>تولید neutrophil؛ در این کاربرد granulocyte نمایندهٔ neutrophil است</td>
+</tr>
+<tr>
+<td>CFU-M</td>
+<td>تولید monocyte</td>
+</tr>
+<tr>
+<td>CFU-Eo</td>
+<td>ایجاد اختصاصی ردهٔ eosinophil</td>
+</tr>
+<tr>
+<td>CFU-Baso</td>
+<td>ایجاد اختصاصی ردهٔ basophil</td>
+</tr>
+</tbody></table>
+<p>در امتداد درخت، self-renewal و قدرت تمایز به‌تدریج کاهش می‌یابد. در انتهای مسیر، neutrophil، monocyte و erythrocyte سلول‌هایی متمایز با کارکردهای متفاوت‌اند، هرچند اجداد مشترک دارند. تأکید شده است که درخت خون‌سازی باید حفظ شود و تمرین آن برای جلسهٔ بعد نیز مورد پرسش خواهد بود. برای تمرین، درخت را چند بار از روی حافظه بنویسید و در صورت فراموشی، جای خالی بگذارید و تمرین را تکرار کنید.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">درخت خون‌سازی باید حفظ شود و تمرین آن برای جلسهٔ بعد نیز مورد پرسش خواهد بود. برای تمرین، درخت را چند بار از روی حافظه بنویسید و در صورت فراموشی، جای خالی بگذارید و تمرین را تکرار کنید.</div></div>
+<h3 id="heading-8">شناسایی progenitorها و markerها</h3>
+<p>تا مراحل اولیهٔ نشان‌داده‌شده در نمودار یعنی قسمت های سبز، سلول‌ها از نظر مورفولوژی قابل شناسایی نیستند؛ progenitorها شبیه هم و شبیه lymphocyte هستند. <strong>CD34</strong> یکی از markerهای این سلول‌هاست. بررسی CD34 همراه با CD38 و سپس markerهای رده‌ای می‌تواند مسیر تمایز را نشان دهد:</p>
+<ul>
+<li>ردهٔ اریتروئیدی: CD11 و CD71</li>
+<li>ردهٔ myeloid: CD33</li>
+<li>megakaryocyte: CD41 و CD61</li>
+</ul>
+<p>از مرحله‌ای به بعد، سلول‌ها از نظر مورفولوژی قابل شناسایی‌اند. شکل‌های اسلاید نیز سلول‌های CD34-positive و colonyهای CD34-positive در کشت را نشان می‌دهند.</p>
+<table>
+<thead>
+<tr>
+<th>مورد بررسی</th>
+<th>markerهای ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>سلول‌های مراحل اولیهٔ progenitor</td>
+<td>CD34؛ همراه با CD38 در بررسی مسیر تمایز</td>
+</tr>
+<tr>
+<td>ردهٔ اریتروئیدی</td>
+<td>CD11 و CD71</td>
+</tr>
+<tr>
+<td>ردهٔ myeloid</td>
+<td>CD33</td>
+</tr>
+<tr>
+<td>megakaryocyte</td>
+<td>CD41 و CD61</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image12.png" alt="تصویر 12">
+<em>تصویر ۱۲</em></p>
+<p><img src="../data/assets/assets/image13.png" alt="تصویر 13">
+<em>تصویر ۱۳</em></p>
+<h3 id="heading-9">Homing و mobilization سلول‌های بنیادی</h3>
+<p>HSCها توانایی <strong>homing</strong> یا مسیریابی دارند. می‌توان CD34-positive stem cellها را از خون جدا کرد؛ در پیوند، آن‌ها را از راه ورید به بیمار تزریق می‌کنند تا خودشان به مغز استخوان برسند، جایگزین شوند و خون‌سازی را آغاز کنند. جمع‌آوری سلول از خون اهداکننده، در مقایسه با بیهوش‌کردن اهداکننده و گرفتن نمونه از حدود ۱۵ محل مغز استخوان، روشی آسان‌تر، سریع‌تر و غیر تهاجمی تر یا non-invasive است. شکل‌های مربوط به homing به مغز استخوان و mobilization از مغز استخوان به خون محیطی نیز این جابه‌جایی را نشان می‌دهند.</p>
+<p><img src="../data/assets/assets/image2.jpg" alt="تصویر 2">
+<em>تصویر ۲</em></p>
+<p>شکل: Figure 18-03. Copyright © 2005 Elsevier Inc. (USA) All rights reserved.</p>
+<p>HSC از طریق ligandهای مختلف با سلول‌های استرومال ارتباط برقرار می‌کند. یکی از این ارتباط‌ها از طریق CXCR4 است که سلول را در مغز استخوان نگه می‌دارد. با تجویز غلظت زیاد G-CSF، این ارتباط شکسته می‌شود و سلول‌های مادر خون‌ساز از مغز استخوان وارد خون محیطی می‌شوند. دگزامتازون نیز گاهی همراه G-CSF برای mobilization به کار می‌رود.</p>
+<p>برای جمع‌آوری سلول‌ها ممکن است از فرد خواسته شود داروها را مثلاً ۱۸ ساعت پیش از مراجعه تزریق کند؛ سپس خون گرفته می‌شود و stem cellها جدا، در کیسه جمع‌آوری و فریز می‌شوند تا برای پیوند استفاده شوند. آماده‌سازی و پردازش این سلول‌ها از فعالیت‌های تیم پیوند است.</p>
+<table>
+<thead>
+<tr>
+<th>فرایند/عامل</th>
+<th>توضیح ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>homing</td>
+<td>CD34-positive stem cellهای تزریق‌شده از راه ورید خودشان به مغز استخوان می‌رسند، جایگزین می‌شوند و خون‌سازی را آغاز می‌کنند</td>
+</tr>
+<tr>
+<td>CXCR4</td>
+<td>یکی از ارتباط‌های HSC با سلول‌های استرومال؛ سلول را در مغز استخوان نگه می‌دارد</td>
+</tr>
+<tr>
+<td>G-CSF با غلظت زیاد</td>
+<td>ارتباط نگه‌دارنده شکسته می‌شود و سلول‌های مادر خون‌ساز وارد خون محیطی می‌شوند</td>
+</tr>
+<tr>
+<td>دگزامتازون</td>
+<td>گاهی همراه G-CSF برای mobilization به کار می‌رود</td>
+</tr>
+<tr>
+<td>جمع‌آوری و آماده‌سازی</td>
+<td>خون گرفته می‌شود، stem cellها جدا و در کیسه جمع‌آوری و فریز می‌شوند</td>
+</tr>
+</tbody></table>
+<h3 id="heading-10">مسیرهای مؤثر بر stemness و تمایز</h3>
+<p>از مسیرهای مؤثر بر stemness که باعث می‌شود stem cell ها ویژگی خود را حفظ کنند به این 4 سیگنال  نیاز دارند: <strong>Jagged–Delta signaling، Wnt signaling، Hedgehog و Janus kinase</strong> ذکر شده‌اند. در گفتار، چهار مورد <strong>Jagged–Delta، Wnt، Notch و Janus kinase یا JAK–STAT</strong> نام برده شده‌اند.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent"><strong>نام مسیر چهارم stemness</strong>
+اسلاید Hedgehog را در فهرست مسیرها آورده است، اما استاد به‌جای آن Notch را به‌عنوان مورد چهارم نام می‌برد؛ هر دو صورت حفظ شده‌اند.</div></div>
+<h4>Jagged–Delta/Notch</h4>
+<p>در Jagged–Delta/Notch، سلول استرومال با سلول مادر خون‌ساز ارتباط برقرار می‌کند. Notch بخشی خارج‌سلولی دارد و با اتصال ligand، گیرنده بریده می‌شود و پیام به داخل سلول می‌رسد؛ تا پیش از اتصال ligand پیامی منتقل نمی‌شود. این مسیر به cleavageهای گیرنده وابسته است.</p>
+<p>در شکل، موارد زیر نشان داده شده‌اند:</p>
+<ul>
+<li>ligand endocytosis و Notch receptor</li>
+<li>furin cleavage (S1)</li>
+<li>ADAM cleavage (S2)</li>
+<li>γ-secretase cleavage (S3/S4)</li>
+<li>fringe glycosylation، O-fucosylation و O-glucosylation</li>
+<li>proteasomal degradation و transcriptional switch</li>
+</ul>
+<p><strong>پیام مطرح‌شده، جلوگیری از apoptosis، بقای سلول و امکان تقسیم میتوزی متقارن یا نامتقارن است.</strong></p>
+<p><img src="../data/assets/assets/image3.jpg" alt="تصویر 3">
+<em>تصویر ۳</em></p>
+<p>شکل: Figure 19-02. Copyright © 2005 Elsevier Inc. (USA) All rights reserved.</p>
+<p><img src="../data/assets/assets/image4.jpg" alt="تصویر 4">
+<em>تصویر ۴</em></p>
+<h4>Wnt</h4>
+<p>در Wnt، گیرندهٔ سطح سلول از LRP5/6 و Frizzled تشکیل می‌شود. وقتی این دو از هم جدا باشند، β-catenin در سیتوپلاسم فسفریله است. با رسیدن Wnt، LRP و Frizzled به هم متصل می‌شوند؛ β-catenin  دفسفریله می‌شود و وارد هسته می‌گردد. β-catenin نقش transcription factor دارد و ژن‌های مرتبط با تقسیم میتوز سلول را رونویسی می‌کند.</p>
+<p>فعال‌شدن بیش‌ازحد و مهارنشدن این مسیر می‌تواند در بدخیمی‌ها و سرطان‌های خونی مطرح باشد؛ در این بدخیمی‌ها ممکن است مسیرها آسیب دیده یا جهش‌یافته باشند.</p>
+<p><img src="../data/assets/assets/image5.jpg" alt="تصویر 5">
+<em>تصویر ۵</em></p>
+<h4>Hedgehog</h4>
+<p>در شکل‌های Hedgehog signaling، اجزای Gli 1/2 و Act و نیز Ci نشان داده شده‌اند. جزئیات بیشتری از عملکرد این نمودار  توضیح داده نشده است.</p>
+<p><img src="../data/assets/assets/image6.jpg" alt="تصویر 6">
+<em>تصویر ۶</em></p>
+<p><img src="../data/assets/assets/image7.png" alt="تصویر 7">
+<em>تصویر ۷</em></p>
+<h4>Janus kinase و JAK–STAT</h4>
+<p>در Janus kinase signaling، مسیر JAK–STAT مطرح است. تصویر مسیر JAK2–STAT5 و نیز چرخهٔ گیرندهٔ cytokine، اتصال cytokine، فعال‌شدن JAK، recruitment و phosphorylation شدن STAT، dimerization و انتقال STAT dimer به هسته برای رونویسی را نشان می‌دهد. در نمودار، phosphorylation پروتئین‌های مرتبط با گیرنده، تخریب پروتئینی وابسته به proteasome، negative feedback inhibition و cross-talk inhibition نیز دیده می‌شوند.</p>
+<p><img src="../data/assets/assets/image8.jpg" alt="تصویر 8">
+<em>تصویر ۸</em></p>
+<table>
+<thead>
+<tr>
+<th>مسیر</th>
+<th>اجزا/رویدادهای ذکرشده</th>
+<th>پیامد یا نکتهٔ مطرح‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Jagged–Delta/Notch</td>
+<td>اتصال ligand؛ cleavageهای furin (S1)، ADAM (S2) و γ-secretase (S3/S4)؛ ligand endocytosis و تغییر transcriptional switch</td>
+<td>جلوگیری از apoptosis، بقای سلول و امکان تقسیم میتوزی متقارن یا نامتقارن</td>
+</tr>
+<tr>
+<td>Wnt</td>
+<td>اتصال LRP5/6 و Frizzled پس از رسیدن Wnt؛ dephosphorylation شدن β-catenin و ورود آن به هسته</td>
+<td>β-catenin نقش transcription factor دارد و ژن‌های مرتبط با تقسیم میتوز سلول را رونویسی می‌کند؛ فعال‌شدن بیش‌ازحد و مهارنشدن مسیر می‌تواند در بدخیمی‌ها مطرح باشد</td>
+</tr>
+<tr>
+<td>Hedgehog</td>
+<td>در شکل‌ها Gli 1/2، Act و Ci نشان داده شده‌اند</td>
+<td>جزئیات بیشتری از عملکرد نمودار در گفتار توضیح داده نشده است</td>
+</tr>
+<tr>
+<td>Janus kinase/JAK–STAT</td>
+<td>فعال‌شدن JAK؛ recruitment و phosphorylation شدن STAT؛ dimerization و انتقال STAT dimer به هسته؛ negative feedback و cross-talk inhibition</td>
+<td>مسیرهای cytokine می‌توانند به proliferation یا survival منجر شوند؛ SOCS از مهارکننده‌های منفی است</td>
+</tr>
+</tbody></table>
+<h3 id="heading-11">Epigenetic و تنظیم بیان ژن</h3>
+<p>Epigenetic به عواملی گفته می‌شود که بدون تغییر توالی DNA، بیان ژن را تغییر می‌دهند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Epigenetic</strong>
+عواملی که بدون تغییر توالی DNA، بیان ژن را تغییر می‌دهند.</div></div>
+<p>برای مثال، methylation و acetylation می‌توانند بیان ژن را تغییر دهند:</p>
+<ul>
+<li>افزایش methylation با کاهش بیان ژن و کاهش آن با افزایش بیان ژن همراه دانسته شده است.</li>
+<li>افزایش acetylation نیز بیان ژن را بیشتر می‌کند.</li>
+<li>microRNA نیز در تنظیم بیان ژن مطرح است.</li>
+</ul>
+<p>در توضیح استاد، بخش‌هایی از RNA حاصل از فرایند رونویسی و حذف intronها به قطعاتی کوچک، در حدود ۱۹ تا ۲۵ nucleotide، ارتباط داده شد و به‌دلیل اندازهٔ کوچک، microRNA نام گرفت. Epigenetic در stemness و تمایز نقش دارد.</p>
+<p>از عوامل مطرح‌شده در اسلایدها BMI1، TET2، DNMT1، DNMT3A و FoxO هستند:</p>
+<ul>
+<li><strong>BMI1</strong> یکی از اجزای اصلی <strong>polycomb group complex 1 (PRC1)</strong> است؛ با تنظیم chromatin structure در gene silencing نقش دارد و برای self-renewal سلول‌های بنیادی طبیعی و سرطانی ضروری دانسته شده است.</li>
+<li><strong>TET2</strong> با تبدیل 5-methylcytosine (5 mC) به 5-hydroxymethylcytosine (5 hmC) در DNA hydroxymethylation و پیشبرد DNA demethylation نقش دارد.</li>
+<li><strong>DNA methylation</strong> در gene expression، chromatin stability و genetic imprinting مؤثر است.</li>
+<li><strong>FoxO</strong> در برابر ROS مطرح شده است.</li>
+<li>عبارت <strong>ICD I,II</strong> نیز در فهرست اسلاید آمده است، اما مقصود آن از متن موجود روشن نیست.</li>
+</ul>
+<p> طی حدود پنج تا ده سال گذشته این عوامل به‌تدریج شناسایی شده‌اند و آسیب یا تغییر آن‌ها در بدخیمی‌های خونی نقش دارد؛ بنابراین ممکن است علاوه بر شیمی‌درمانی، تنظیم یا مهار تغییرهای epigenetic نیز مطرح باشد.</p>
+<table>
+<thead>
+<tr>
+<th>عامل/فرایند</th>
+<th>نقش یا ارتباط ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>افزایش methylation</td>
+<td>همراه با کاهش بیان ژن</td>
+</tr>
+<tr>
+<td>کاهش methylation</td>
+<td>همراه با افزایش بیان ژن</td>
+</tr>
+<tr>
+<td>افزایش acetylation</td>
+<td>افزایش بیان ژن</td>
+</tr>
+<tr>
+<td>microRNA</td>
+<td>در تنظیم بیان ژن مطرح است؛ قطعات کوچک حدود ۱۹ تا ۲۵ nucleotide در توضیح درس به آن مرتبط شدند</td>
+</tr>
+<tr>
+<td>BMI1</td>
+<td>جزء اصلی PRC1؛ تنظیم chromatin structure و gene silencing؛ ضروری دانسته‌شده برای self-renewal سلول‌های بنیادی طبیعی و سرطانی</td>
+</tr>
+<tr>
+<td>TET2</td>
+<td>تبدیل 5-methylcytosine به 5-hydroxymethylcytosine؛ نقش در DNA hydroxymethylation و پیشبرد DNA demethylation</td>
+</tr>
+<tr>
+<td>DNA methylation</td>
+<td>مؤثر بر gene expression، chromatin stability و genetic imprinting</td>
+</tr>
+<tr>
+<td>FoxO</td>
+<td>در برابر ROS مطرح شده است</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image9.png" alt="تصویر 9">
+<em>تصویر ۹</em></p>
+<h3 id="heading-12">Transcription factorها</h3>
+<p>Transcription factorها بر تمایز و بیان ژن‌های خونی اثر دارند و می‌توانند در بیماری‌زایی و بدخیمی‌های خونی نقش داشته باشند. برای مثال، در ژن β-globin توالی‌های متعددی وجود دارد؛ ژن هموگلوبین، چه زنجیرهٔ α و چه β، سه exon و دو intron دارد. transcription factorها در توالی‌های تنظیمی و نزدیک محل آغاز رونویسی قرار می‌گیرند و به آغاز و افزایش سرعت رونویسی یا transcription کمک می‌کنند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">ژن هموگلوبین، چه زنجیرهٔ α و چه β، سه exon و دو intron دارد؛ transcription factorها در توالی‌های تنظیمی و نزدیک محل آغاز رونویسی قرار می‌گیرند و به آغاز و افزایش سرعت transcription کمک می‌کنند.</div></div>
+<p>در مراحل ابتدایی HSC به‌سوی myeloid stem cell، SCL، RUNX1، TAL1 و MLL مطرح‌اند؛ با ورود سلول به ردهٔ اریتروئیدی، transcription factorهای مؤثر تغییر می‌کنند. اسلایدها نیز Runx1، GATA-1، GATA-2، MLL، Gfi-1b و Bmi-1 را در ارتباط با self-renewal و رده‌های سلولی نشان می‌دهند. در نمودارهای دیگر، Lmo-2، LT-HSC، Bmi-1 و Gfi-1 در ارتباط با production، survival یا self-renewal سلول‌های HSC آمده‌اند. همچنین GATA-1، GATA-2، FOG-1 و Fli-1 در کنار مراحل progenitor و committed precursor مطرح‌اند.</p>
+<h4>GATA-1 و تمایز اریتروئیدی</h4>
+<p>GATA-1 به توالی‌های GATA در promoter متصل می‌شود و نامش از همین توالی گرفته شده است. از میان شش GATA، سه مورد در hematopoiesis مطرح‌اند. GATA-1 برای ردهٔ اریتروئیدی مهم است؛ جهش در ژن آن می‌تواند کم‌خونی شدید ایجاد کند و وضعیت ممکن است شبیه thalassemia major باشد و به تزریق خون نیاز پیدا کند.</p>
+<p>GATA-1 همراهی به نام FOG (Friend of GATA) دارد و این دو در تمایز اریتروئیدی نقش دارند. در مراحل پیش‌ساز، NFE2 و EKLF نیز مطرح‌اند؛ نام‌های توسعه‌یافتهٔ آن‌ها در اسلاید/گفتار به‌ترتیب <strong>nuclear factor erythroid 2</strong> و <strong>erythroid Krüppel-like factor</strong> آمده است. اختلال در این transcription factorها می‌تواند تمایز اریتروئیدی را مختل کند.</p>
+<h4>فاکتورهای مرتبط با شاخه‌های خونی</h4>
+<p>در نمودارهای transcription factor، SCL، C/EBPα، GATA-1، GATA-2، PU.1، NF-E2، AML1/RUNX1، GATA-3 و Egr/Nab نیز در ارتباط با شاخه‌های myeloid، lymphoid، megakaryocyte و erythrocyte نشان داده شده‌اند. در نموداری دیگر، PU.1 و C/EBPβ در ارتباط با رده‌های myeloid و lymphocyte آمده‌اند. شرح شکل تأکید می‌کند که سرنوشت و تولید سلول با فعالیت transcription factorها و بیان یا خاموش‌شدن ژن‌های بلوغ رقم می‌خورد.</p>
+<p>متن اسلاید دربارهٔ <strong>core binding factors</strong> می‌گوید این فاکتورها دو زنجیرهٔ α و β دارند؛ CBFα با AML1/RUNX1 شناخته می‌شود و CBFβ در granulocyteها ذکر شده است. CBF برای بلوغ سلول‌های myeloid حساس است. اسلاید همچنین بیان می‌کند که ادغام ژنی ناشی از (1;8):21 فاکتور نسخه‌برداری ناهنجار CBF ایجاد می‌کند و مانع نسخه‌برداری می‌شود.</p>
+<table>
+<thead>
+<tr>
+<th>عامل/گروه</th>
+<th>ارتباط ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SCL، RUNX1، TAL1 و MLL</td>
+<td>مطرح در مراحل ابتدایی HSC به‌سوی myeloid stem cell</td>
+</tr>
+<tr>
+<td>Runx1، GATA-1، GATA-2، MLL، Gfi-1b و Bmi-1</td>
+<td>در اسلایدها در ارتباط با self-renewal و رده‌های سلولی</td>
+</tr>
+<tr>
+<td>Lmo-2، LT-HSC، Bmi-1 و Gfi-1</td>
+<td>در نمودارها در ارتباط با production، survival یا self-renewal سلول‌های HSC</td>
+</tr>
+<tr>
+<td>GATA-1، GATA-2، FOG-1 و Fli-1</td>
+<td>در کنار مراحل progenitor و committed precursor</td>
+</tr>
+<tr>
+<td>GATA-1 و FOG</td>
+<td>در تمایز اریتروئیدی نقش دارند</td>
+</tr>
+<tr>
+<td>NFE2 و ELF</td>
+<td>در مراحل پیش‌ساز مطرح‌اند؛ نام‌های توسعه‌یافته در متن آمده است</td>
+</tr>
+<tr>
+<td>SCL، C/EBPα، GATA-1، GATA-2، PU.1، NF-E2، AML1/RUNX1، GATA-3 و Egr/Nab</td>
+<td>در نمودارها در ارتباط با شاخه‌های myeloid، lymphoid، megakaryocyte و erythrocyte</td>
+</tr>
+<tr>
+<td>PU.1 و C/EBPβ</td>
+<td>در نموداری دیگر در ارتباط با رده‌های myeloid و lymphocyte</td>
+</tr>
+<tr>
+<td>CBFα/AML1/RUNX1 و CBFβ</td>
+<td>CBFها دو زنجیره دارند؛ CBF برای بلوغ سلول‌های myeloid حساس است و CBFβ در granulocyteها ذکر شده است</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image30.png" alt="تصویر 30">
+<em>تصویر ۳۰</em></p>
+<p><img src="../data/assets/assets/image31.jpg" alt="تصویر 31">
+<em>تصویر ۳۱</em></p>
+<p><img src="../data/assets/assets/image32.jpg" alt="تصویر 32">
+<em>تصویر ۳۲</em></p>
+<p><img src="../data/assets/assets/image34.jpg" alt="تصویر 34">
+<em>تصویر ۳۴</em></p>
+<p><img src="../data/assets/assets/image47.jpg" alt="تصویر 47">
+<em>تصویر ۴۷</em></p>
+<p><img src="../data/assets/assets/image50.jpg" alt="تصویر 50">
+<em>تصویر ۵۰</em></p>
+<h4>Micro RNA در خون‌سازی</h4>
+<p>Micro RNA in Hematopoiesis نیز به‌عنوان موضوعی در اسلاید آمده است. شکل نام‌هایی از جمله miR-190 و miR-34a را در کنار برخی رده‌ها، از جمله mast cell، T helper و dendritic cell، نشان می‌دهد.</p>
+<p><img src="../data/assets/assets/image26.png" alt="تصویر 26">
+<em>تصویر ۲۶</em></p>
+<p><img src="../data/assets/assets/image27.jpg" alt="تصویر 27">
+<em>تصویر ۲۷</em></p>
+<p><img src="../data/assets/assets/image28.jpg" alt="تصویر 28">
+<em>تصویر ۲۸</em></p>
+<h3 id="heading-13">Growth factorها و cytokineها</h3>
+<h4>اصطلاحات و کارکرد کلی</h4>
+<p>بسیاری از growth factorها محصول فعالیت سلول‌های استرومال‌اند. <strong>CSF</strong> مخفف <strong>colony-stimulating factor</strong> است. وقتی GM در نام GM-CSF می‌آید، اثر آن بر سلول‌های GM-CFU مطرح است.</p>
+<p>اصطلاح <strong>interleukin</strong> ابتدا برای موادی به کار رفت که سلول‌های ایمنی یا leukocyteها در فضای بین‌سلولی ترشح می‌کردند و بر سلول‌های دیگر اثر می‌گذاشتند؛ بعدها واژهٔ عام‌تر <strong>cytokine</strong> رواج یافت. cytokine پیام‌رسان یا محرکی است که بر سلول اثر می‌گذارد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Cytokine</strong>
+پیام‌رسان یا محرکی که بر سلول اثر می‌گذارد.</div></div>
+<h5>Interleukinها و عوامل اختصاصی رده‌ها</h5>
+<ul>
+<li><strong>IL-3 و GM-CSF</strong> فاکتورهای رشد عمومی‌اند و می‌توانند زمینهٔ رشد را برای رده‌های مختلف، از جمله erythrocyte و platelet، فراهم کنند.</li>
+<li>برای <strong>neutrophil</strong> به G-CSF، برای <strong>ردهٔ اریتروئیدی</strong> به erythropoietin (EPO) و برای <strong>platelet</strong> به thrombopoietin (TPO) در کنار فاکتور های رشد عمومی نیاز است.</li>
+<li><strong>M-CSF</strong> محرک تولید monocyte است.</li>
+<li><strong>IL-6</strong> در تمایز B cell و تبدیل آن به plasma cell نقش دارد و در التهاب‌ها و بیماری‌های التهابی نیز افزایش می‌یابد.</li>
+<li><strong>IL-5</strong> در برخی کتاب‌های قدیمی eosinophilopoietic hormone نامیده شده است.</li>
+<li><strong>IL-4</strong> در تکامل پاسخ B cell و تولید آنتی‌بادی مطرح است: در ابتدا B cellها با کمک T cellها IgM و سپس IgG می‌سازند و پاسخ آنتی‌بادی اختصاصی‌تر می‌شود. در درس، IL-4 برای این تکامل و تمایز لنفوسیت‌ها مطرح شد.</li>
+<li>اسلایدها <strong>IL-3</strong> را در basophilic differentiation، <strong>IL-6</strong> را در B-cell differentiation و رشد malignant plasma cell، <strong>IL-11</strong> را در ردهٔ megakaryocyte و <strong>IL-7</strong> را به‌عنوان growth factor سلول‌های lymphoid و عامل هم‌افزا با FLT3L ذکر می‌کنند.</li>
+<li>IL-3 اثر synergistic با G-CSF، M-CSF، GM-CSF، IL-1، IL-4، IL-5، IL-6 و IL-11 دارد.</li>
+<li>TPO از طریق گیرندهٔ c-Mpl، که tyrosine kinase است، در HSC و ردهٔ megakaryocyte مطرح است. اسلاید آن را با EPO به‌صورت competitive نیز توصیف می‌کند.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>عامل</th>
+<th>نقش یا ارتباط ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IL-3 و GM-CSF</td>
+<td>فاکتورهای رشد عمومی؛ زمینهٔ رشد برای رده‌های مختلف، از جمله erythrocyte و platelet</td>
+</tr>
+<tr>
+<td>G-CSF</td>
+<td>رشد ردهٔ neutrophil</td>
+</tr>
+<tr>
+<td>EPO</td>
+<td>رشد ردهٔ اریتروئیدی</td>
+</tr>
+<tr>
+<td>TPO</td>
+<td>رشد ردهٔ platelet</td>
+</tr>
+<tr>
+<td>M-CSF</td>
+<td>محرک تولید monocyte</td>
+</tr>
+<tr>
+<td>IL-6</td>
+<td>تمایز B cell و تبدیل آن به plasma cell؛ افزایش در التهاب‌ها و بیماری‌های التهابی</td>
+</tr>
+<tr>
+<td>IL-5</td>
+<td>در برخی کتاب‌های قدیمی eosinophilopoietic hormone نامیده شده است</td>
+</tr>
+<tr>
+<td>IL-4</td>
+<td>در تکامل پاسخ B cell، تولید آنتی‌بادی و تمایز لنفوسیت‌ها مطرح است</td>
+</tr>
+<tr>
+<td>IL-3</td>
+<td>در basophilic differentiation؛ اثر synergistic با G-CSF، M-CSF، GM-CSF، IL-1، IL-4، IL-5، IL-6 و IL-11</td>
+</tr>
+<tr>
+<td>IL-6</td>
+<td>در اسلایدها در B-cell differentiation و رشد malignant plasma cell</td>
+</tr>
+<tr>
+<td>IL-11</td>
+<td>در ردهٔ megakaryocyte</td>
+</tr>
+<tr>
+<td>IL-7</td>
+<td>growth factor سلول‌های lymphoid و عامل هم‌افزا با FLT3L</td>
+</tr>
+<tr>
+<td>TPO</td>
+<td>از طریق c-Mpl، یک tyrosine kinase، در HSC و ردهٔ megakaryocyte مطرح است</td>
+</tr>
+</tbody></table>
+<h5>عوامل مهارکنندهٔ erythropoiesis</h5>
+<p>در اسلاید، عوامل مهارکنندهٔ erythropoiesis شامل IFN-γ، TGF-β و TNF-α هستند. در گفتار نیز توضیح داده شد که افزایش این عوامل می‌تواند مغز استخوان را سرکوب کند و خون‌سازی را کاهش دهد.</p>
+<p>IFN-γ از T cellها و T helperها ترشح می‌شود. TNF-α مخفف tumor necrosis factor است و در مواجههٔ بدن با عواملی مانند تومور آزاد می‌شود. افزایش این cytokineها در بدخیمی‌ها، بیماری‌های مزمن التهابی مانند rheumatoid arthritis، lupus و Sjögren و بیماری‌های عفونی مزمن مانند سل می‌تواند با کم‌خونی همراه باشد. کم‌خونی بیماران سرطانی نیز می‌تواند با افزایش عوامل سرکوب‌کنندهٔ خون‌سازی مرتبط باشد.</p>
+<table>
+<thead>
+<tr>
+<th>عامل/شرایط</th>
+<th>ارتباط ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IFN-γ، TGF-β و TNF-α</td>
+<td>عوامل مهارکنندهٔ erythropoiesis؛ افزایش آن‌ها می‌تواند مغز استخوان را سرکوب و خون‌سازی را کاهش دهد</td>
+</tr>
+<tr>
+<td>IFN-γ</td>
+<td>از T cellها و T helperها ترشح می‌شود</td>
+</tr>
+<tr>
+<td>TNF-α</td>
+<td>مخفف tumor necrosis factor؛ در مواجههٔ بدن با عواملی مانند تومور آزاد می‌شود</td>
+</tr>
+<tr>
+<td>بدخیمی‌ها، rheumatoid arthritis، lupus، Sjögren و سل مزمن</td>
+<td>افزایش cytokineهای ذکرشده می‌تواند با کم‌خونی همراه باشد</td>
+</tr>
+</tbody></table>
+<h4>EPO، G-CSF و GM-CSF</h4>
+<h5>EPO</h5>
+<p>EPO از سلول‌های interstitial اطراف tubule در کلیه ترشح می‌شود و بر erythroid progenitorهای مغز استخوان، از جمله BFU-E و CFU-E، اثر می‌کند. این عامل تکثیر این پیش‌سازها را تحریک و از apoptosis آن‌ها جلوگیری می‌کند.</p>
+<p>کاربردهای فهرست‌شده برای EPO عبارت‌اند از:</p>
+<ul>
+<li>کم‌خونی بیماری مزمن کلیه در بیماران predialysis، تحت دیالیز یا مبتلا به کم‌خونی مزمن</li>
+<li>کم‌خونی بیماران سرطانی تحت شیمی‌درمانی</li>
+<li>جمع‌آوری autologous predonation blood</li>
+<li>کم‌خونی در HIV برای امکان استفاده از zidovudine (AZT)</li>
+<li>پس از autologous hematopoietic stem cell transplant</li>
+</ul>
+<h5>G-CSF</h5>
+<p><img src="../data/assets/screenshot_20261018_211624.png" alt="screenshot_20261018_211624"></p>
+<p>G-CSF از منابع سلولی‌ای مانند endothelial cells، placenta، fibroblasts، monocytes و macrophages در جدول اسلاید آمده است. این عامل بر neutrophil precursors اثر می‌کند، تولید granulocyte colonies را تحریک می‌کند، progenitorها را به‌سمت neutrophil سوق می‌دهد و بلوغ neutrophil را تحریک می‌کند.</p>
+<p>کاربردهای درج‌شده عبارت‌اند از chemotherapy-induced neutropenia، stem cell mobilization، peripheral blood/bone marrow transplantation و congenital، idiopathic و cyclic neutropenia. در اسلایدی دیگر، برای G-CSF عبارت «Promote from G0 to G1» آمده است.</p>
+<p>در گفتار، برای بیمارانی که شیمی‌درمانی یا رادیوتراپی می‌شوند، تجویز G-CSF حدود ۴۸ تا ۷۲ ساعت پس از درمان مطرح شد؛ ممکن است دو تا سه آمپول به‌صورت داخل‌جلدی تزریق شود. داخل‌جلدی یعنی پوست را بالا می‌گیرند و تزریق را در همان ناحیه انجام می‌دهند.</p>
+<h5>GM-CSF</h5>
+<p>در اسلاید، T cells، macrophages، endothelial cells، fibroblasts و mast cells به‌عنوان منابع GM-CSF، و bone marrow progenitor cells، dendritic cells، macrophages و NKT cells به‌عنوان اهداف آن ذکر شده‌اند. در فعالیت‌های آن، antigen presentation، T-cell homeostasis و hematopoietic cell growth factor آمده‌اند.</p>
+<p>کاربردهای فهرست‌شده شامل chemotherapy-induced neutropenia، stem cell mobilization، peripheral blood/bone marrow transplantation و leukemia treatment است. در غلظت پایین، GM-CSF می‌تواند با افزایش بیان C-fms در GM-CFU، مسیر را به‌سمت monocyte سوق دهد.</p>
+<table>
+<thead>
+<tr>
+<th>عامل</th>
+<th>منبع/هدف یا اثر ذکرشده</th>
+<th>کاربردهای درج‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>EPO</td>
+<td>از سلول‌های interstitial اطراف tubule در کلیه ترشح می‌شود؛ بر BFU-E و CFU-E اثر می‌کند؛ تکثیر را تحریک و از apoptosis جلوگیری می‌کند</td>
+<td>کم‌خونی بیماری مزمن کلیه؛ کم‌خونی بیماران سرطانی تحت شیمی‌درمانی؛ جمع‌آوری autologous predonation blood؛ کم‌خونی در HIV برای امکان استفاده از AZT؛ پس از autologous hematopoietic stem cell transplant</td>
+</tr>
+<tr>
+<td>G-CSF</td>
+<td>منابع جدول: endothelial cells، placenta، fibroblasts، monocytes و macrophages؛ بر neutrophil precursors اثر می‌کند و تولید granulocyte colonies و بلوغ neutrophil را تحریک می‌کند</td>
+<td>chemotherapy-induced neutropenia؛ stem cell mobilization؛ peripheral blood/bone marrow transplantation؛ congenital، idiopathic و cyclic neutropenia</td>
+</tr>
+<tr>
+<td>GM-CSF</td>
+<td>منابع: T cells، macrophages، endothelial cells، fibroblasts و mast cells؛ اهداف: bone marrow progenitor cells، dendritic cells، macrophages و NKT cells؛ فعالیت‌ها شامل antigen presentation، T-cell homeostasis و hematopoietic cell growth factor</td>
+<td>chemotherapy-induced neutropenia؛ stem cell mobilization؛ peripheral blood/bone marrow transplantation؛ leukemia treatment</td>
+</tr>
+</tbody></table>
+<h4>M-CSF، TPO، SCF و FLT3</h4>
+<ul>
+<li><strong>M-CSF</strong> با نام <strong>C-SF1</strong> نیز آمده است و گیرندهٔ آن FMS است.</li>
+<li><strong>TPO</strong> محرک اصلی تولید platelet و تمایز megakaryocyteها است. در اسلاید، نقش آن در stem cellها و ردهٔ megakaryocyte نیز ذکر شده است.</li>
+<li><strong>SCF</strong> با نام‌های <strong>stem cell factor، mast cell growth factor و Steel factor</strong> شناخته شده است. C-kit ligand در اسلاید برای fibroblast و endothelial cell ذکر شده و گیرندهٔ آن <strong>c-Kit (CD117)</strong> است. c-Kit یک tyrosine kinase است، از apoptosis جلوگیری می‌کند و در embryogenesis نقش دارد. دو شکل free و membranous برای آن ذکر شده‌اند. اسلاید می‌گوید mutation در SCF با poor prognosis در AML همراه است.</li>
+<li>شکل Kit Expression، گیرندهٔ Kit را در multipotent hematopoietic stem cell، common myeloid progenitor، erythrocyte، mast cell، myeloblast، small lymphocyte، NK cell، B و T lymphocyte، megakaryocyte، plasma cell و macrophage نشان می‌دهد.</li>
+<li><strong>FLT3</strong> یک tyrosine kinase و در اسلاید مشابه C-FMS توصیف شده است؛ بیشترین بیان آن در lymphoid stem cell ذکر شده و mutation آن در AML مطرح است. مهارکننده‌های FLT3 فهرست‌شده عبارت‌اند از sorafenib، lestaurtinib، sunitinib، tandutinib، quizartinib، midostaurin، gilteritinib، crenolanib، cabozantinib، Sel24-B489، G-749، AMG 925، TTT-3002 و FF-10101.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>عامل/گیرنده</th>
+<th>ویژگی‌ها و ارتباط‌های ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>M-CSF</td>
+<td>با نام C-SF1 نیز آمده است؛ گیرندهٔ آن FMS است</td>
+</tr>
+<tr>
+<td>TPO</td>
+<td>محرک اصلی تولید platelet و تمایز megakaryocyteها؛ در stem cellها و ردهٔ megakaryocyte نیز مطرح است</td>
+</tr>
+<tr>
+<td>SCF</td>
+<td>با نام‌های stem cell factor، mast cell growth factor و Steel factor؛ C-kit ligand برای fibroblast و endothelial cell ذکر شده است</td>
+</tr>
+<tr>
+<td>c-Kit (CD117)</td>
+<td>گیرندهٔ SCF؛ tyrosine kinase؛ جلوگیری از apoptosis و نقش در embryogenesis؛ دو شکل free و membranous؛ mutation در SCF با poor prognosis در AML همراه دانسته شده است</td>
+</tr>
+<tr>
+<td>FLT3</td>
+<td>tyrosine kinase؛ در اسلاید مشابه C-FMS توصیف شده؛ بیشترین بیان در lymphoid stem cell؛ mutation در AML مطرح است</td>
+</tr>
+<tr>
+<td>مهارکننده‌های FLT3</td>
+<td>sorafenib، lestaurtinib، sunitinib، tandutinib، quizartinib، midostaurin، gilteritinib، crenolanib، cabozantinib، Sel24-B489، G-749، AMG 925، TTT-3002 و FF-10101</td>
+</tr>
+</tbody></table>
+<h4>فهرست فعالیت‌ها، منابع و کاربردهای cytokineها در اسلایدها</h4>
+<p>در اسلایدهای growth factorها، G-CSF، GM-CSF، M-CSF، EPO، TPO، SCF/KIT ligand، FLT3 ligand و interleukinهای مختلف در ارتباط با رده‌های خونی و کاربردهای درمانی فهرست شده‌اند.</p>
+<p>اسلایدهای درمانی مجموعه‌ای از کاربردها از جمله stem cell mobilization، پس از chemotherapy/transplantation، bone marrow failure states، تحریک تولید platelet (اما نه در دوزهای قابل‌تحمل)، melanoma، renal cell carcinoma، lymphoma، HIV، allergy treatment، adjuvant درمان بیماری عفونی، asthma، کاربرد احتمالی در vaccines، rheumatoid arthritis، adoptive cell therapy و تولید antigen-specific T cells را نیز فهرست می‌کنند.</p>
+<p>فعالیت‌های جدول عبارت‌اند از proliferation of hematopoietic progenitors، costimulation with other cytokines، cell growth/activation of T cells and B cells، megakaryocyte maturation، neural differentiation، acute phase reactant، مهار cytokine production و macrophageها، تمایز T cell/T helper و cytotoxicity سلول‌های CD8+/NK.</p>
+<p>منابع و اهداف سلولی ذکرشده شامل HSC و progenitorها، T cells، B cells، liver، macrophages، CD4+ و CD8+ T cells، NK cells، monocytes، fibroblasts، endothelial cells و osteoblasts است. جدول استخراج‌شده، نسبت دقیق بعضی از این فعالیت‌ها، منابع و کاربردها را به cytokineهای نام‌برده وصل نمی‌کند.</p>
+<table>
+<thead>
+<tr>
+<th>دستهٔ اطلاعات اسلایدها</th>
+<th>موارد فهرست‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>کاربردهای درمانی</td>
+<td>stem cell mobilization؛ پس از chemotherapy/transplantation؛ bone marrow failure states؛ تحریک تولید platelet (اما نه در دوزهای قابل‌تحمل)؛ melanoma؛ renal cell carcinoma؛ lymphoma؛ HIV؛ allergy treatment؛ adjuvant درمان بیماری عفونی؛ asthma؛ کاربرد احتمالی در vaccines؛ rheumatoid arthritis؛ adoptive cell therapy؛ تولید antigen-specific T cells</td>
+</tr>
+<tr>
+<td>فعالیت‌ها</td>
+<td>proliferation of hematopoietic progenitors؛ costimulation with other cytokines؛ cell growth/activation of T cells and B cells؛ megakaryocyte maturation؛ neural differentiation؛ acute phase reactant؛ مهار cytokine production و macrophageها؛ تمایز T cell/T helper؛ cytotoxicity سلول‌های CD8+/NK</td>
+</tr>
+<tr>
+<td>منابع و اهداف سلولی</td>
+<td>HSC و progenitorها؛ T cells؛ B cells؛ liver؛ macrophages؛ CD4+ و CD8+ T cells؛ NK cells؛ monocytes؛ fibroblasts؛ endothelial cells؛ osteoblasts</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image9.png" alt="تصویر 9">
+<em>تصویر ۹</em></p>
+<p><img src="../data/assets/assets/image10.png" alt="تصویر 10">
+<em>تصویر ۱۰</em></p>
+<p><img src="../data/assets/assets/image11.jpg" alt="تصویر 11">
+<em>تصویر ۱۱</em></p>
+<h4>موقعیت کروموزومی و MDS</h4>
+<p>در اسلاید، محل ژن بعضی از cytokineها روی کروموزوم ۵ نشان داده شده است. در گفتار، <strong>MDS (myelodysplastic syndrome)</strong> یا <strong>preleukemia</strong>، معمولاً در افراد بالای ۵۰ تا ۶۰ سال، مطرح شد. در بسیاری از این افراد ژن‌های مرتبط با کروموزوم ۵ معیوب‌اند و در برخی، بخشی از کروموزوم ۵ حذف شده است؛ تولید GM-CSF، IL-3، IL-5 و IL-4 ممکن است مختل شود. حذف کروموزوم لزوماً در همهٔ سلول‌ها نیست و می‌تواند به همان رده یا cloneای محدود باشد که بیماری در آن ایجاد شده است.</p>
+<p>اسلاید دیگری فهرستی از عوامل و موقعیت‌های کروموزومی آن‌ها دارد، اما تعدادی از اعداد و نمادهای آن در متن استخراج‌شده مخدوش‌اند.</p>
+<h4>تولید recombinant EPO</h4>
+<p>EPO از کلیه ترشح می‌شود؛ بنابراین در نارسایی کلیه، اگر EPO کافی وجود نداشته باشد، باید از بیرون تأمین شود. EPO نوترکیب (recombinant) با فناوری DNA تولید می‌شود: ژن آن را جدا و کلون می‌کنند، در vector قرار می‌دهند و vector را در E. coli می‌گذارند تا با رشد باکتری در محیط کشت، EPO تولید شود.</p>
+<p> به تولید EPO و G-CSF در ایران نیز اشاره شد و محصول recombinant به‌عنوان پروتئینی توصیف شد که عوامل مزاحم و اضافی آن حذف شده‌اند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در توضیح تولید EPO نوترکیب، ژن را جدا و کلون می‌کنند، در vector قرار می‌دهند و vector را در E. coli می‌گذارند تا با رشد باکتری در محیط کشت، EPO تولید شود.</div></div>
+<h4>ارتباط TPO با کبد و platelet</h4>
+<p>کبد محل تولید TPO است. در سیروز، فیبروز یا سرطان کبد ممکن است platelet بسیار پایین باشد، چون اختلال عملکرد کبد تولید TPO را مختل می‌کند و تولید platelet کاهش می‌یابد. پایش شمارش platelet می‌تواند در ارزیابی وضعیت بیمار کمک‌کننده باشد؛ در گفتار این نکته به‌عنوان روشی کم‌هزینه‌تر در مقایسه با FibroScan مطرح شد.</p>
+<h4>Growth factorها در درخت خون‌سازی</h4>
+<p>در درخت خون‌سازی، SCF از مراحل بالایی اثر می‌کند و IL-3 و GM-CSF به‌عنوان عوامل رشد عمومی در مراحل مختلف دیده می‌شوند؛ EPO برای مسیر اریتروئیدی و TPO برای مسیر platelet لازم‌اند. هرچه در مسیر پایین‌تر می‌رویم، سلول‌ها تمایزیافته‌تر می‌شوند. CD34-positive cellها شبیه هم و شبیه lymphocyte هستند و به‌آسانی از روی مورفولوژی از هم افتراق داده نمی‌شوند.</p>
+<p>نمودارهای اسلاید مسیرهای مختلف را همراه با عوامل رشد نشان می‌دهند: از HSC و common myeloid و common lymphoid progenitorها تا granulocyte-monocyte، eosinophil-basophil و megakaryocyte-erythrocyte progenitorها و در نهایت سلول‌های بالغ.</p>
+<table>
+<thead>
+<tr>
+<th>عامل رشد</th>
+<th>جایگاه/مسیر ذکرشده در درخت خون‌سازی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SCF</td>
+<td>اثر از مراحل بالایی</td>
+</tr>
+<tr>
+<td>IL-3 و GM-CSF</td>
+<td>عوامل رشد عمومی در مراحل مختلف</td>
+</tr>
+<tr>
+<td>EPO</td>
+<td>مسیر اریتروئیدی</td>
+</tr>
+<tr>
+<td>TPO</td>
+<td>مسیر platelet</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image22.jpg" alt="تصویر 22">
+<em>تصویر ۲۲</em></p>
+<p><img src="../data/assets/assets/image24.png" alt="تصویر 24">
+<em>تصویر ۲۴</em></p>
+<p><img src="../data/assets/assets/image25.png" alt="تصویر 25">
+<em>تصویر ۲۵</em></p>
+<p><img src="../data/assets/assets/image29.jpg" alt="تصویر 29">
+<em>تصویر ۲۹</em></p>
+<p><img src="../data/assets/assets/image48.jpg" alt="تصویر 48">
+<em>تصویر ۴۸</em></p>
+<p><img src="../data/assets/assets/image51.jpg" alt="تصویر 51">
+<em>تصویر ۵۱</em></p>
+<h3 id="heading-14">Erythropoiesis</h3>
+<h4>تنظیم تولید EPO به‌وسیلهٔ اکسیژن و HIF</h4>
+<p>برای erythropoiesis، EPO از مسیر JAK–STAT5 پیام می‌دهد. <strong>HIF (hypoxia-inducible factor)</strong> در پاسخ به کاهش اکسیژن مطرح است. در توضیح گفتار، پروتئینی در ناحیهٔ قوس آئورت به‌عنوان HIF معرفی شد و گفته شد با پایین‌آمدن فشار یا میزان اکسیژن خون، HIF آزاد می‌شود و به کلیه می‌رسد؛ بخش زیادی از خون آئورت نیز برای فیلترشدن به کلیه می‌رود.</p>
+<p>HIF یک transcription factor است که رونویسی ژن EPO را فعال می‌کند. EPO ذخیرهٔ ازپیش‌ساخته‌شده‌ای در بدن ندارد؛ ژن آن برحسب نیاز رونویسی و هورمون ترشح می‌شود. EPO سپس به مغز استخوان می‌رود و خون‌سازی و به‌طور خاص erythropoiesis را تحریک می‌کند.</p>
+<p>نمودار HIF در اسلاید، در شرایط oxygen بالا، hydroxylation توسط prolyl hydroxylase و نقش VHL در degradation via proteasome را نشان می‌دهد؛ در hypoxia، HIF-α پایدار می‌ماند و بر اهدافی مانند glycolytic enzymes، VEGF و EpoR/erythropoiesis اثر می‌گذارد. در نمودار، angiogenesis و تأمین آهن نیز در کنار اهداف HIF آمده‌اند.</p>
+<p>پس از انجام سیگنال، HIF باید تخریب شود. پروتئین‌های غیرضروری، بدساخته، آسیب‌دیده یا متعلق به ویروس و باکتری می‌توانند با اتصال ubiquitin برای تخریب توسط proteasome نشانه‌گذاری شوند. <strong>VHL (von Hippel–Lindau)</strong> در تخریب HIF نقش دارد. اگر VHL درست کار نکند، HIF تخریب نمی‌شود و تولید EPO ادامه می‌یابد؛ در گفتار این وضعیت با polycythemia (پرخونی) مرتبط شد. همچنین به polycythemia Chuvash(پرخونی چوواش) در برخی گروه‌ها در نواحی کوهستانی ارمنستان و گرجستان اشاره شد که در آن VHL درست کار نمی‌کند و polycythemia رخ می‌دهد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در گفتار به polycythemia Chuvash در برخی گروه‌ها در نواحی کوهستانی ارمنستان و گرجستان اشاره شد که در آن VHL درست کار نمی‌کند و polycythemia رخ می‌دهد.</div></div>
+<p><img src="../data/assets/assets/image15.jpg" alt="تصویر 15">
+<em>تصویر ۱۵</em></p>
+<p><img src="../data/assets/assets/image16.png" alt="تصویر 16">
+<em>تصویر ۱۶</em></p>
+<h4>انتقال پیام EPO و مهار آن</h4>
+<p>EPO به سلول‌های دارای EPO receptor متصل می‌شود. بخش سیتوپلاسمی گیرنده فسفریله و docking site ایجاد می‌کند؛ سپس STAT5 به آن متصل می‌شود. JAK–STAT5 در انتقال پیام EPO نقش دارد و STAT5 به‌صورت dimer عمل می‌کند. فعال‌شدن JAK–STAT رونویسی، تمایز و تکامل به‌سمت ردهٔ اریتروئیدی را افزایش می‌دهد.</p>
+<p>TPO نیز به‌طور مشابه پیام می‌دهد، اما در ردهٔ megakaryocytic اثر می‌کند و EPO در ردهٔ erythroid مؤثر است.</p>
+<p>پس از فعال‌شدن مسیر، باید سیگنال نیز مهار شود. فعال‌شدن JAK–STAT ژن مهارکنندهٔ مسیر را هم تحریک می‌کند؛ با افزایش محصول آن، مسیر سرکوب می‌شود. این مهارکننده <strong>SOCS (suppressor of cytokine signaling)</strong> نام دارد و نمونه‌ای از negative feedback است. اسلاید مسیر cytokine receptor، phosphorylation و dimerization شدن STAT، انتقال STAT dimer به nucleus، رونویسی ژن و تخریب proteasomal را نیز نشان می‌دهد.</p>
+<table>
+<thead>
+<tr>
+<th>عامل/مرحله</th>
+<th>توضیح ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>EPO و EPO receptor</td>
+<td>اتصال EPO؛ phosphorylation بخش سیتوپلاسمی گیرنده و ایجاد docking site؛ اتصال STAT</td>
+</tr>
+<tr>
+<td>JAK–STAT5</td>
+<td>انتقال پیام EPO؛ STAT5 به‌صورت dimer عمل می‌کند؛ افزایش رونویسی، تمایز و تکامل به‌سمت ردهٔ اریتروئیدی</td>
+</tr>
+<tr>
+<td>TPO</td>
+<td>پیام‌رسانی مشابه؛ اثر در ردهٔ megakaryocytic</td>
+</tr>
+<tr>
+<td>EPO</td>
+<td>اثر در ردهٔ erythroid</td>
+</tr>
+<tr>
+<td>SOCS</td>
+<td>مهارکنندهٔ مسیر؛ محصولی که پس از فعال‌شدن مسیر افزایش می‌یابد و سرکوب مسیر نمونه‌ای از negative feedback است</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image17.png" alt="تصویر 17">
+<em>تصویر ۱۷</em></p>
+<p><img src="../data/assets/assets/image18.jpg" alt="تصویر 18">
+<em>تصویر ۱۸</em></p>
+<h5>JAK2 و polycythemia vera (پرخونی سرطانی)</h5>
+<p>در polycythemia vera، JAK–STAT بدون نیاز به EPO پیوسته سیگنال می‌فرستد؛ علت مطرح‌شده جهش در JAK است. اگر پرخونی علت مشخصی نداشته باشد، آزمایش JAK2 برای بررسی polycythemia vera پرخونی سرطانی انجام می‌شود. JAK2 V617F نیز به‌عنوان عنوان اسلاید آمده است.</p>
+<p><img src="../data/assets/assets/image19.jpg" alt="تصویر 19">
+<em>تصویر ۱۹</em></p>
+<h4>کشت BFU-E و CFU-E</h4>
+<p>در تصویر BFU-E، کشت پس از ۱۴ روز برای هر سلول ۵۰٬۰۰۰ گلبول قرمز و کشت CFU-E پس از حدود یک هفته ۳۰٬۰۰۰ گلبول قرمز نشان داده شده است. اعداد این توضیح با دامنهٔ ۵۰٬۰۰۰ تا ۱۰۰٬۰۰۰ برای BFU-E و حداکثر ۳۰٬۰۰۰ برای CFU-E که پیش‌تر در گفتار آمده بود، در اصل هم‌جهت‌اند؛ یکی تعداد مشخص‌شده در مثال کشت و دیگری دامنهٔ بیان‌شده برای شرایط مطلوب است.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در تصویر، کشت BFU-E پس از ۱۴ روز برای هر سلول ۵۰٬۰۰۰ گلبول قرمز و کشت CFU-E پس از حدود یک هفته ۳۰٬۰۰۰ گلبول قرمز نشان داده شده است.</div></div>
+<table>
+<thead>
+<tr>
+<th>پیش‌ساز</th>
+<th>توضیح کشت در تصویر</th>
+<th>بیان کلی پیش‌تر در گفتار</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BFU-E</td>
+<td>پس از ۱۴ روز، ۵۰٬۰۰۰ گلبول قرمز برای هر سلول</td>
+<td>۵۰٬۰۰۰ تا ۱۰۰٬۰۰۰ گلبول قرمز در شرایط مطلوب</td>
+</tr>
+<tr>
+<td>CFU-E</td>
+<td>پس از حدود یک هفته، ۳۰٬۰۰۰ گلبول قرمز</td>
+<td>تا ۳۰٬۰۰۰ گلبول قرمز</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image20.jpg" alt="تصویر 20">
+<em>تصویر ۲۰</em></p>
+<h4>مراحل بلوغ اریتروئیدی</h4>
+<p>در مسیر erythropoiesis، سلول committed یعنی BFU-E یا CFU-E تقسیم می‌شود و نخستین سلولی را ایجاد می‌کند که با light microscopy قابل شناسایی است: <strong>pronormoblast</strong>. این سلول تقسیم می‌کند و <strong>basophilic normoblast</strong> به وجود می‌آورد؛ سپس تقسیم‌های بعدی <strong>polychromatophilic normoblast</strong> را ایجاد می‌کنند. پس از این مرحله، سلول دیگر توان تقسیم میتوزی ندارد. هسته فشرده می‌شود و سلول به <strong>orthochromatophilic normoblast</strong> می‌رسد؛ هسته را بیرون می‌اندازد و به <strong>reticulocyte</strong> تبدیل می‌شود. reticulocyte هنوز RNA دارد، حدود ۴۸ تا ۷۲ ساعت در مغز استخوان می‌ماند و سپس وارد خون می‌شود؛ حدود ۲۴ ساعت در خون می‌ماند تا erythrocyte بالغ شود.</p>
+<p>ترتیب مراحل چنین است:</p>
+<ol>
+<li>pronormoblast</li>
+<li>basophilic normoblast</li>
+<li>polychromatophilic normoblast</li>
+<li>orthochromatophilic normoblast</li>
+<li>reticulocyte</li>
+<li>erythrocyte</li>
+</ol>
+<p>در این مسیر، اندازهٔ سلول و هسته به‌تدریج کاهش می‌یابد و هسته فشرده‌تر می‌شود. فشرده‌ترین هسته‌ای که ممکن است در خون محیطی دیده شود، هستهٔ orthochromatophilic normoblast است.</p>
+<p>در توضیح گفتار، ساختارهای هسته‌ای اریتروئیدی به‌صورت reticular توصیف شدند: در مراحل اولیه رشته‌ها بازتر و هسته آشکارتر است؛ سپس رشته‌ها نزدیک و فشرده می‌شوند و هسته کمتر دیده می‌شود تا ظاهر لکه‌لکه پیدا کند. سیتوپلاسم polychromatophilic normoblast به رنگ گلبول قرمز نیست و تیره‌تر و چندرنگ دیده می‌شود. در orthochromatophilic normoblast، سیتوپلاسم تقریباً همرنگ گلبول قرمز مجاور است؛  ortho به معنای «مجاور» . در pronormoblast، حاشیهٔ سفید اطراف هسته ناحیهٔ Golgi است و <strong>perinuclear halo</strong> نام دارد.</p>
+<table>
+<thead>
+<tr>
+<th>مرحله</th>
+<th>ویژگی‌های ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pronormoblast</td>
+<td>نخستین سلول مسیر که با light microscopy قابل شناسایی است؛ دارای perinuclear halo در ناحیهٔ Golgi</td>
+</tr>
+<tr>
+<td>basophilic normoblast</td>
+<td>پس از تقسیم pronormoblast ایجاد می‌شود</td>
+</tr>
+<tr>
+<td>polychromatophilic normoblast</td>
+<td>پس از تقسیم‌های بعدی ایجاد می‌شود؛ سیتوپلاسم تیره‌تر و چندرنگ است؛ پس از این مرحله سلول دیگر توان تقسیم میتوزی ندارد</td>
+</tr>
+<tr>
+<td>orthochromatophilic normoblast</td>
+<td>هسته فشرده؛ سیتوپلاسم تقریباً همرنگ گلبول قرمز مجاور؛ هستهٔ فشردهٔ آن ممکن است در خون محیطی دیده شود</td>
+</tr>
+<tr>
+<td>reticulocyte</td>
+<td>هسته را بیرون انداخته است؛ هنوز RNA دارد؛ حدود ۴۸ تا ۷۲ ساعت در مغز استخوان و حدود ۲۴ ساعت در خون می‌ماند</td>
+</tr>
+<tr>
+<td>erythrocyte</td>
+<td>مرحلهٔ بالغ</td>
+</tr>
+</tbody></table>
+<p>ترتیب مسیر: <strong>pronormoblast → basophilic normoblast → polychromatophilic normoblast → orthochromatophilic normoblast → reticulocyte → erythrocyte</strong>.</p>
+<p><img src="../data/assets/assets/image35.jpg" alt="تصویر 35">
+<em>تصویر ۳۵</em></p>
+<p><img src="../data/assets/assets/image36.png" alt="تصویر 36">
+<em>تصویر ۳۶</em></p>
+<p><img src="../data/assets/assets/image37.png" alt="تصویر 37">
+<em>تصویر ۳۷</em></p>
+<p><img src="../data/assets/assets/image38.png" alt="تصویر 38">
+<em>تصویر ۳۸</em></p>
+<p><img src="../data/assets/assets/image40.jpg" alt="تصویر 40">
+<em>تصویر ۴۰</em></p>
+<p><img src="../data/assets/assets/image41.jpg" alt="تصویر 41">
+<em>تصویر ۴۱</em></p>
+<p><img src="../data/assets/assets/image42.jpg" alt="تصویر 42">
+<em>تصویر ۴۲</em></p>
+<p><img src="../data/assets/assets/image43.jpg" alt="تصویر 43">
+<em>تصویر ۴۳</em></p>
+<p><img src="../data/assets/assets/image44.jpg" alt="تصویر 44">
+<em>تصویر ۴۴</em></p>
+<p><img src="../data/assets/assets/image45.jpg" alt="تصویر 45">
+<em>تصویر ۴۵</em></p>
+<h4>Erythroblastic island</h4>
+<p>در مغز استخوان، سلول‌های اریتروئیدی کنار هم قرار می‌گیرند. macrophage مرکزی می‌تواند عوامل مکمل و آهن را در اختیار ردهٔ اریتروئیدی قرار دهد و مواد زائد، از جمله هسته‌ها و میتوکندری‌های خارج‌شده، را دریافت و ببلعد. تجمع سلول‌های erythroblast در اطراف یک macrophage، <strong>erythroblastic island</strong> نام دارد. هرچه سلول‌ها بالغ‌تر می‌شوند، به macrophage نزدیک‌تر می‌شوند و میان آن‌ها تبادل مواد انجام می‌شود.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Erythroblastic island</strong>
+تجمع سلول‌های erythroblast در اطراف یک macrophage در مغز استخوان.</div></div>
+<p><img src="../data/assets/assets/image39.jpg" alt="تصویر 39">
+<em>تصویر ۳۹</em></p>
+<p>در اسلاید، نام مراحل به‌صورت pronormoblast، basophilic normoblast، polychromatophilic normoblast، orthochromic normoblast، polychromatic erythrocyte و erythrocyte آمده است. سایر نمودارهای خون‌سازی نیز رابطهٔ pluripotent stem cell، پیش‌سازهای myeloid و lymphoid، سلول‌های precursor و سلول‌های بالغ را نشان می‌دهند؛ کلید یکی از شکل‌ها میان precursor cells of “blasts”، formed elements of circulating blood، tissue cells و pluripotent stem cell تمایز می‌گذارد.</p>
+<p><img src="../data/assets/assets/image33.jpg" alt="تصویر 33">
+<em>تصویر ۳۳</em></p>
+<p><img src="../data/assets/assets/image46.jpg" alt="تصویر 46">
+<em>تصویر ۴۶</em></p>
+<p><img src="../data/assets/assets/image49.jpg" alt="تصویر 49">
+<em>تصویر ۴۹</em></p>
+<h4>محل‌های اثر EPO و پرسش پایانی</h4>
+<p>EPO سه محل اثر دارد. :</p>
+<ul>
+<li>آزادسازی reticulocyteهای ذخیره‌شده در مغز استخوان</li>
+<li>تقویت تولید hemoglobin در پیش‌سازها</li>
+<li>سریع‌ترکردن تقسیم‌ها</li>
+</ul>
+</section>
+
+<section class="noteSection quickTablesSection">
+    <h2 id="heading-15">۳. جداول مرور سریع</h2>
+<h3 id="heading-16">مراحل و محل‌های خون‌سازی</h3>
+<table>
+<thead>
+<tr>
+<th>مرحله/محل</th>
+<th>ویژگی‌های مهم</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>کیسهٔ زرده</td>
+<td>رگ‌زایی و خون‌سازی هم‌زمان؛ blood island؛ فقط ردهٔ اریتروئیدی؛ هموگلوبین‌های گاور ۱، گاور ۲ و گاور ۳</td>
+</tr>
+<tr>
+<td>آورتا-گونادا-مزونفروس</td>
+<td>پیدایش stem cellهایی با توان محدود که می‌توانند همهٔ رده‌های خونی را بسازند؛ definitive hematopoiesis</td>
+</tr>
+<tr>
+<td>کبد</td>
+<td>محل خون‌سازی تا نزدیکی تولد؛ زمان دقیق توقف در گفتار روشن نیست</td>
+</tr>
+<tr>
+<td>مغز استخوان پس از تولد</td>
+<td>تنها ارگان خون‌ساز پس از تولد؛ در بزرگسالان عمدتاً استخوان‌های پهن و کوتاه؛ نمونه‌برداری از posterior iliac</td>
+</tr>
+</tbody></table>
+<h3 id="heading-17">سلول‌ها، پیش‌سازها و توان تمایز</h3>
+<table>
+<thead>
+<tr>
+<th>سلول/پیش‌ساز</th>
+<th>توان یا سرنوشت ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HSC</td>
+<td>ایجاد رده‌های myeloid و lymphoid</td>
+</tr>
+<tr>
+<td>common myeloid progenitor</td>
+<td>ایجاد ردهٔ myeloid</td>
+</tr>
+<tr>
+<td>common lymphoid progenitor</td>
+<td>ایجاد B cell، T cell و NK cell</td>
+</tr>
+<tr>
+<td>CFU-GEMM</td>
+<td>در کشت colony شامل granulocyte، erythrocyte، monocyte و megakaryocyte می‌سازد</td>
+</tr>
+<tr>
+<td>CFU-MegE</td>
+<td>امکان ایجاد megakaryocyte، platelet و erythrocyte؛ هنوز به یک ردهٔ نهایی متعهد نشده است</td>
+</tr>
+<tr>
+<td>BFU-E و CFU-E</td>
+<td>committed progenitorهای تولیدکنندهٔ ردهٔ گلبول قرمز</td>
+</tr>
+<tr>
+<td>CFU-GM</td>
+<td>توانایی تولید neutrophil و monocyte</td>
+</tr>
+<tr>
+<td>CFU-G و CFU-M</td>
+<td>به‌ترتیب تولید neutrophil و monocyte</td>
+</tr>
+<tr>
+<td>CFU-Eo و CFU-Baso</td>
+<td>ایجاد اختصاصی eosinophil و basophil</td>
+</tr>
+</tbody></table>
+<h3 id="heading-18">Markerها و مسیرهای تمایز</h3>
+<table>
+<thead>
+<tr>
+<th>مورد</th>
+<th>Markerها/جزئیات</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>progenitorهای اولیه</td>
+<td>CD34؛ همراه با CD38 در بررسی مسیر</td>
+</tr>
+<tr>
+<td>ردهٔ اریتروئیدی</td>
+<td>CD11 و CD71</td>
+</tr>
+<tr>
+<td>ردهٔ myeloid</td>
+<td>CD33</td>
+</tr>
+<tr>
+<td>megakaryocyte</td>
+<td>CD41 و CD61</td>
+</tr>
+<tr>
+<td>homing</td>
+<td>CD34-positive stem cellها پس از تزریق وریدی به مغز استخوان می‌رسند</td>
+</tr>
+<tr>
+<td>mobilization</td>
+<td>G-CSF با غلظت زیاد ارتباط نگه‌دارندهٔ CXCR4 را می‌شکند و سلول‌ها را وارد خون محیطی می‌کند</td>
+</tr>
+</tbody></table>
+<h3 id="heading-19">مسیرهای پیام‌رسانی مرتبط با stemness</h3>
+<table>
+<thead>
+<tr>
+<th>مسیر</th>
+<th>اجزا و رویدادها</th>
+<th>پیامد یا نکته</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Jagged–Delta/Notch</td>
+<td>اتصال ligand؛ furin (S1)، ADAM (S2) و γ-secretase (S3/S4)؛ ligand endocytosis</td>
+<td>جلوگیری از apoptosis، بقای سلول و تقسیم میتوزی متقارن یا نامتقارن</td>
+</tr>
+<tr>
+<td>Wnt</td>
+<td>اتصال LRP5/6 و Frizzled؛ dephosphorylation شدن β-catenin و ورود آن به هسته</td>
+<td>β-catenin به‌عنوان transcription factor، رونویسی ژن‌های مرتبط با تقسیم؛ فعال‌شدن بیش‌ازحد ممکن است در بدخیمی مطرح باشد</td>
+</tr>
+<tr>
+<td>Hedgehog</td>
+<td>Gli 1/2، Act و Ci در شکل</td>
+<td>جزئیات عملکرد در گفتار توضیح داده نشده است</td>
+</tr>
+<tr>
+<td>Janus kinase/JAK–STAT</td>
+<td>فعال‌شدن JAK؛ recruitment و phosphorylation شدن STAT؛ dimerization و انتقال به هسته؛ negative feedback و cross-talk inhibition</td>
+<td>cytokineها می‌توانند به proliferation یا survival منجر شوند؛ SOCS مهارکنندهٔ منفی است</td>
+</tr>
+</tbody></table>
+<h3 id="heading-20">Epigenetic و عوامل تنظیم‌کننده</h3>
+<table>
+<thead>
+<tr>
+<th>عامل/فرایند</th>
+<th>ارتباط ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>افزایش methylation</td>
+<td>کاهش بیان ژن</td>
+</tr>
+<tr>
+<td>کاهش methylation</td>
+<td>افزایش بیان ژن</td>
+</tr>
+<tr>
+<td>افزایش acetylation</td>
+<td>افزایش بیان ژن</td>
+</tr>
+<tr>
+<td>microRNA</td>
+<td>تنظیم بیان ژن؛ قطعات کوچک حدود ۱۹ تا ۲۵ nucleotide در توضیح درس به آن مرتبط شدند</td>
+</tr>
+<tr>
+<td>BMI1</td>
+<td>جزء اصلی PRC1؛ تنظیم chromatin structure و gene silencing؛ مرتبط با self-renewal</td>
+</tr>
+<tr>
+<td>TET2</td>
+<td>تبدیل 5-methylcytosine به 5-hydroxymethylcytosine؛ DNA hydroxymethylation و DNA demethylation</td>
+</tr>
+<tr>
+<td>DNA methylation</td>
+<td>مؤثر بر gene expression، chromatin stability و genetic imprinting</td>
+</tr>
+<tr>
+<td>FoxO</td>
+<td>در برابر ROS مطرح شده است</td>
+</tr>
+</tbody></table>
+<h3 id="heading-21">Growth factorها و cytokineها</h3>
+<table>
+<thead>
+<tr>
+<th>عامل</th>
+<th>نقش یا ارتباط ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IL-3 و GM-CSF</td>
+<td>growth factor عمومی؛ زمینهٔ رشد برای رده‌های مختلف، از جمله erythrocyte و platelet</td>
+</tr>
+<tr>
+<td>G-CSF</td>
+<td>رشد و بلوغ neutrophil؛ mobilization سلول‌های بنیادی</td>
+</tr>
+<tr>
+<td>EPO</td>
+<td>ردهٔ اریتروئیدی؛ اثر بر BFU-E و CFU-E، تحریک تکثیر و جلوگیری از apoptosis</td>
+</tr>
+<tr>
+<td>TPO</td>
+<td>platelet و تمایز megakaryocyte؛ اثر از طریق c-Mpl</td>
+</tr>
+<tr>
+<td>M-CSF</td>
+<td>محرک تولید monocyte؛ گیرندهٔ FMS</td>
+</tr>
+<tr>
+<td>IL-6</td>
+<td>تمایز B cell به plasma cell؛ افزایش در التهاب؛ در اسلاید رشد malignant plasma cell</td>
+</tr>
+<tr>
+<td>IL-5</td>
+<td>در برخی منابع قدیمی eosinophilopoietic hormone</td>
+</tr>
+<tr>
+<td>IL-4</td>
+<td>تکامل پاسخ B cell، تولید آنتی‌بادی و تمایز لنفوسیت‌ها</td>
+</tr>
+<tr>
+<td>IL-11</td>
+<td>ردهٔ megakaryocyte</td>
+</tr>
+<tr>
+<td>IL-7</td>
+<td>growth factor سلول‌های lymphoid؛ هم‌افزا با FLT3L</td>
+</tr>
+<tr>
+<td>IFN-γ، TGF-β و TNF-α</td>
+<td>مهار erythropoiesis؛ افزایش می‌تواند مغز استخوان را سرکوب کند</td>
+</tr>
+</tbody></table>
+<h3 id="heading-22">EPO، G-CSF و GM-CSF</h3>
+<table>
+<thead>
+<tr>
+<th>عامل</th>
+<th>منبع/هدف یا اثر</th>
+<th>کاربردهای درج‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>EPO</td>
+<td>ترشح از سلول‌های interstitial اطراف tubule کلیه؛ اثر بر BFU-E و CFU-E؛ تحریک تکثیر و مهار apoptosis</td>
+<td>کم‌خونی بیماری مزمن کلیه؛ کم‌خونی بیماران سرطانی تحت شیمی‌درمانی؛ autologous predonation blood؛ کم‌خونی در HIV برای استفاده از AZT؛ پس از autologous hematopoietic stem cell transplant</td>
+</tr>
+<tr>
+<td>G-CSF</td>
+<td>منابع جدول: endothelial cells، placenta، fibroblasts، monocytes و macrophages؛ تحریک تولید granulocyte colonies و بلوغ neutrophil</td>
+<td>chemotherapy-induced neutropenia؛ mobilization؛ peripheral blood/bone marrow transplantation؛ congenital، idiopathic و cyclic neutropenia</td>
+</tr>
+<tr>
+<td>GM-CSF</td>
+<td>منابع: T cells، macrophages، endothelial cells، fibroblasts و mast cells؛ اهداف: bone marrow progenitor cells، dendritic cells، macrophages و NKT cells</td>
+<td>chemotherapy-induced neutropenia؛ mobilization؛ peripheral blood/bone marrow transplantation؛ leukemia treatment</td>
+</tr>
+</tbody></table>
+<h3 id="heading-23">مسیر بلوغ اریتروئیدی</h3>
+<table>
+<thead>
+<tr>
+<th>مرحله</th>
+<th>ویژگی‌های ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pronormoblast</td>
+<td>نخستین سلول قابل شناسایی با light microscopy؛ دارای perinuclear halo در ناحیهٔ Golgi</td>
+</tr>
+<tr>
+<td>basophilic normoblast</td>
+<td>پس از تقسیم pronormoblast ایجاد می‌شود</td>
+</tr>
+<tr>
+<td>polychromatophilic normoblast</td>
+<td>سیتوپلاسم تیره‌تر و چندرنگ؛ پس از این مرحله تقسیم میتوزی متوقف می‌شود</td>
+</tr>
+<tr>
+<td>orthochromatophilic normoblast</td>
+<td>هسته فشرده؛ سیتوپلاسم تقریباً همرنگ گلبول قرمز مجاور</td>
+</tr>
+<tr>
+<td>reticulocyte</td>
+<td>هسته خارج شده، RNA باقی است؛ ۴۸ تا ۷۲ ساعت در مغز استخوان و حدود ۲۴ ساعت در خون</td>
+</tr>
+<tr>
+<td>erythrocyte</td>
+<td>مرحلهٔ بالغ</td>
+</tr>
+</tbody></table>
+<p>ترتیب: <strong>pronormoblast → basophilic normoblast → polychromatophilic normoblast → orthochromatophilic normoblast → reticulocyte → erythrocyte</strong>.</p>
+</section>
+
+<section class="noteSection keyTermsSection">
+    <h2 id="heading-24">۴. اصطلاحات و تعاریف</h2>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>خون‌سازی (hematopoiesis)</strong>
+فرایند تکثیر، تقسیم و تمایز سلول‌های پیش‌ساز خونی.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>خودنوزایی (self-renewal)</strong>
+توانایی stem cell و progenitor cell برای حفظ جایگزین خود در مجموعهٔ سلولی از طریق تقسیم میتوزی متقارن یا نامتقارن.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>CFU-GEMM (colony-forming unit—granulocyte, erythrocyte, monocyte, megakaryocyte)</strong>
+سلولی که در کشت آزمایشگاهی می‌تواند colony شامل granulocyte، erythrocyte، monocyte و megakaryocyte بسازد.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Epigenetic</strong>
+عواملی که بدون تغییر توالی DNA، بیان ژن را تغییر می‌دهند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Cytokine</strong>
+پیام‌رسان یا محرکی که بر سلول اثر می‌گذارد.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Erythroblastic island</strong>
+تجمع سلول‌های erythroblast در اطراف یک macrophage در مغز استخوان.</div></div>
+</section>
+
+<section class="noteSection selfAssessmentSection">
+    <h2 id="heading-25">۵. خود‌ارزیابی</h2>
+<h3 id="heading-26">سوالات تشریحی</h3>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>مراحل اصلی محل خون‌سازی را در طول رشد و پس از تولد شرح دهید و ویژگی شاخص خون‌سازی در کیسهٔ زرده و ناحیهٔ آورتا-گونادا-مزونفروس را بیان کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>خون‌سازی ابتدا در کیسهٔ زرده انجام می‌شود؛ در آن رگ‌زایی و خون‌سازی هم‌زمان‌اند، blood island تشکیل می‌شود و فقط ردهٔ اریتروئیدی دیده می‌شود. سپس در ناحیهٔ آورتا-گونادا-مزونفروس stem cellهایی پدید می‌آیند که با توان خون‌سازی محدود می‌توانند همهٔ رده‌های خونی را بسازند؛ این فرایند definitive hematopoiesis نام دارد. stem cellها سپس به کبد مهاجرت می‌کنند و تا نزدیکی تولد خون‌سازی در کبد انجام می‌شود. پس از تولد، مغز استخوان تنها ارگان خون‌ساز است.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>تفاوت توان تمایز HSC، common myeloid progenitor و common lymphoid progenitor را توضیح دهید و شاخه‌های اصلی myeloid را نام ببرید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>HSC می‌تواند هر دو ردهٔ myeloid و lymphoid را بسازد؛ common myeloid progenitor به ردهٔ myeloid محدود است و common lymphoid progenitor می‌تواند B، T و NK بسازد. در ردهٔ myeloid، مسیرهایی برای erythrocyte و megakaryocyte/platelet، neutrophil و monocyte، و نیز eosinophil و basophil مطرح شده‌اند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>پیام‌رسانی EPO را از اتصال به گیرنده تا تنظیم منفی مسیر شرح دهید و نقش SOCS را ذکر کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>EPO به EPO receptor متصل می‌شود؛ بخش سیتوپلاسمی گیرنده فسفریله و docking site ایجاد می‌کند و STAT به آن متصل می‌شود. JAK–STAT5 در انتقال پیام نقش دارد و STAT5 به‌صورت dimer عمل می‌کند؛ مسیر رونویسی، تمایز و تکامل به‌سمت ردهٔ اریتروئیدی را افزایش می‌دهد. فعال‌شدن مسیر ژن مهارکنندهٔ آن را نیز تحریک می‌کند. SOCS (suppressor of cytokine signaling) با افزایش محصولش مسیر را سرکوب می‌کند و نمونه‌ای از negative feedback است.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>مراحل بلوغ اریتروئیدی را به‌ترتیب بنویسید و تغییرات مهم reticulocyte را بیان کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>ترتیب مراحل عبارت است از pronormoblast، basophilic normoblast، polychromatophilic normoblast، orthochromatophilic normoblast، reticulocyte و erythrocyte. reticulocyte پس از بیرون‌انداختن هسته ایجاد می‌شود، هنوز RNA دارد، حدود ۴۸ تا ۷۲ ساعت در مغز استخوان می‌ماند و سپس وارد خون می‌شود؛ حدود ۲۴ ساعت در خون می‌ماند تا erythrocyte بالغ شود.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>نقش ریزمحیط مغز استخوان و دو راه mobilization یا رسیدن سلول‌های بنیادی به مغز استخوان را بر اساس متن توضیح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>سلول‌های استرومال ریزمحیط، از جمله fibroblast، osteoblast، reticular cell، adventitial cell و macrophage، با ارسال سیگنال و فراهم‌کردن growth factor از خون‌سازی حمایت می‌کنند و عوامل سمی را جذب و از بین می‌برند. در homing، CD34-positive stem cellها از راه ورید تزریق می‌شوند و خودشان به مغز استخوان می‌رسند. در mobilization، CXCR4 یکی از ارتباط‌هایی است که سلول را در مغز استخوان نگه می‌دارد؛ تجویز غلظت زیاد G-CSF این ارتباط را می‌شکند و سلول‌های مادر خون‌ساز وارد خون محیطی می‌شوند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<h3 id="heading-27">سوالات تستی</h3>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>کدام گزینه ویژگی خون‌سازی در کیسهٔ زرده را درست بیان می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">فقط ردهٔ lymphoid وجود دارد و خون‌سازی پس از تولد انجام می‌شود.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">رگ‌زایی و خون‌سازی هم‌زمان‌اند و فقط ردهٔ اریتروئیدی دیده می‌شود.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">خون‌سازی قطعی در آن آغاز می‌شود و همهٔ رده‌ها در مغز استخوان ساخته می‌شوند.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">خون‌سازی فقط در سلول‌های T انجام می‌شود.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در کیسهٔ زرده رگ‌زایی و خون‌سازی هم‌زمان است و بررسی میکروسکوپی فقط ردهٔ اریتروئیدی را نشان می‌دهد.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>کدام گزینه دربارهٔ توان تمایز common lymphoid progenitor درست است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">فقط erythrocyte می‌سازد.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">فقط neutrophil و monocyte می‌سازد.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">می‌تواند B cell، T cell و NK cell ایجاد کند.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">می‌تواند همهٔ رده‌های myeloid و lymphoid را بسازد.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>common lymphoid progenitor می‌تواند B cell، T cell و NK cell ایجاد کند.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>کدام markerها در متن برای megakaryocyte ذکر شده‌اند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">CD41 و CD61</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">CD11 و CD71</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">CD33 و CD38</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">CD34 و CD11</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>برای megakaryocyte، CD41 و CD61 ذکر شده‌اند.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>بر اساس متن، افزایش غلظت G-CSF چه اثری بر سلول‌های مادر خون‌ساز دارد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">آن‌ها را در مغز استخوان نگه می‌دارد.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">ارتباط CXCR4 را می‌شکند و ورود آن‌ها به خون محیطی را افزایش می‌دهد.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">آن‌ها را مستقیماً به erythrocyte تبدیل می‌کند.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">مانع هرگونه mobilization می‌شود.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در متن گفته شده است که با تجویز غلظت زیاد G-CSF، ارتباطی که سلول را در مغز استخوان نگه می‌دارد شکسته می‌شود و سلول‌ها وارد خون محیطی می‌شوند.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>در مسیر Wnt، پس از رسیدن Wnt چه تغییری برای β-catenin توصیف شده است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">فسفریله می‌شود و در سیتوپلاسم باقی می‌ماند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">dephosphorylated می‌شود و وارد هسته می‌گردد.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">به‌طور مستقیم به EPO receptor متصل می‌شود.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">به proteasome متصل می‌شود و تخریب می‌گردد.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>اتصال LRP و Frizzled پس از رسیدن Wnt با dephosphorylation شدن β-catenin و ورود آن به هسته همراه است.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="6"><div class="questionBoxHeader">سؤال 6</div><div class="questionBoxPrompt"><p>کدام گزینه نقش TET2 را مطابق متن بیان می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">تبدیل 5-methylcytosine به 5-hydroxymethylcytosine و نقش در DNA hydroxymethylation</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">اتصال به EPO receptor و فعال‌کردن STAT5</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">تولید colony شامل granulocyte و erythrocyte</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">جلوگیری از خروج reticulocyte از مغز استخوان</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>TET2 با تبدیل 5-methylcytosine به 5-hydroxymethylcytosine در DNA hydroxymethylation و پیشبرد DNA demethylation نقش دارد.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="7"><div class="questionBoxHeader">سؤال 7</div><div class="questionBoxPrompt"><p>کدام عامل در متن محرک تولید monocyte معرفی شده است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">M-CSF</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">EPO</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">TPO</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">IL-5</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>M-CSF محرک تولید monocyte است.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="8"><div class="questionBoxHeader">سؤال 8</div><div class="questionBoxPrompt"><p>کدام گزینه ترتیب مراحل بلوغ اریتروئیدی را درست نشان می‌دهد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">pronormoblast → polychromatophilic normoblast → basophilic normoblast → reticulocyte → erythrocyte</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">pronormoblast → basophilic normoblast → polychromatophilic normoblast → orthochromatophilic normoblast → reticulocyte → erythrocyte</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">BFU-E → erythrocyte → pronormoblast → reticulocyte</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">basophilic normoblast → pronormoblast → erythrocyte → orthochromatophilic normoblast</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>این ترتیب مراحل بلوغ اریتروئیدی در متن آمده است.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="9"><div class="questionBoxHeader">سؤال 9</div><div class="questionBoxPrompt"><p>در مسیر HIF، VHL چه نقشی دارد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">ساختن platelet از CFU-G</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">تخریب HIF</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">تبدیل B cell به plasma cell</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">اتصال مستقیم به β-catenin برای ورود آن به هسته</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>VHL در تخریب HIF نقش دارد؛ اگر درست کار نکند، HIF تخریب نمی‌شود و تولید EPO ادامه می‌یابد.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="10"><div class="questionBoxHeader">سؤال 10</div><div class="questionBoxPrompt"><p>کدام گزینه دربارهٔ نمونه‌گیری خون در نوزادان تا شش‌ماهگی مطابق متن است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">باید از نوک انگشت خون گرفت.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">باید از پاشنه استفاده کرد و نباید از نوک انگشت خون گرفت.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">فقط نمونهٔ وریدی مجاز است و استفاده از خون مویرگی ممنوع است.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">خون مویرگی در گلوکز و پتاسیم از خون وریدی بیشتر است.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>تا شش‌ماهگی نباید از نوک انگشت خون گرفت و باید از پاشنه استفاده کرد؛ همچنین گلوکز و پتاسیم در خون وریدی از خون مویرگی بیشتر است.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+</section>
+
+<section class="noteSection reviewSection">
+    
+</section>
+
+<section class="noteSection editorAndSourcesSection">
+    <h2 id="heading-28">۷. ادیتور و منابع استفاده‌شده</h2>
+<p><strong>ادیتور:</strong> نیما قاسمی (ن.ق.شب‌زنده‌دار)</p>
+<p><strong>منابع استفاده‌شده:</strong></p>
+<ul>
+<li>صوت درس</li>
+<li>پاور و اسلاید های hematopoeisis</li>
+<li>رفرنس های معتبر هماتولوژی</li>
+</ul>
+</section>
+
+<section class="noteSection completionSection">
+    <h2 id="heading-29">۸. گزارش تکمیل بودن محتوا</h2>
+<p><strong>برآورد تقریبی تکمیل محتوا:</strong> حدود ۹۵٪؛ موارد خوانا و قابل بازیابی از محتوای اسلاید و گفتار حفظ شده‌اند.</p>
+<ul>
+<li>✓ پوشش محتوای اسلایدها: مطالب متنی، نمودارها، اصطلاحات، اعداد و تصویرهای ارجاع‌داده‌شده تا حد قابل‌بازیابی درج شده‌اند.</li>
+<li>✓ پوشش محتوای صوت: توضیحات، مثال‌ها، نکته‌های عملی و تأکیدهای آموزشی قابل‌بازیابی درج شده‌اند.</li>
+</ul>
+</section>
+
+    </main>
+
+
+    <button
+        class="backToTop"
+        type="button"
+        aria-label="بازگشت به ابتدای صفحه"
+    >
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+
+    <script src="../src/themeSwitcher.js"></script>
+    <script src="../src/fontSizeSwitcher.js"></script>
+    <script src="../src/aboutModal.js"></script>
+    <script src="../src/quickNavigation.js"></script>
+    <script src="../src/print.js"></script>
+    <script src="../src/search.js"></script>
+    <script src="../src/highlight.js"></script>
+    <script src="../src/stickyNotes.js"></script>
+    <script src="../src/viewPersistence.js"></script>
+    <script src="../src/questionInteractions.js"></script>
+    <script src="../src/fontSwitcher.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarToggle = document.querySelector(".sidebarToggle");
+    const sidebarBackdrop = document.querySelector(".sidebarBackdrop");
+
+    function openSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.add("isOpen");
+        sidebarBackdrop.classList.add("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "true");
+        sidebar.setAttribute("aria-hidden", "false");
+    }
+
+    function closeSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.remove("isOpen");
+        sidebarBackdrop.classList.remove("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "false");
+        sidebar.setAttribute("aria-hidden", "true");
+    }
+
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener("click", () => {
+            if (sidebar.classList.contains("isOpen")) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+    }
+
+    if (sidebarBackdrop) {
+        sidebarBackdrop.addEventListener("click", closeSidebar);
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeSidebar();
+        }
+    });
+
+    document.querySelectorAll(".tocItem").forEach((item) => {
+        item.addEventListener("click", closeSidebar);
+    });
+</script>
+
+</body>
+
+</html>

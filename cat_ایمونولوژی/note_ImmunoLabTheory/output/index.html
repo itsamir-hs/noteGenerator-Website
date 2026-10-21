@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>برهم‌کنش‌های آنتی‌ژن و آنتی‌بادی (Ag–Ab interactions)</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/rtl.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../node_modules/katex/dist/katex.min.css"
+    >
+
+    <link rel="stylesheet" href="../styles/dark.css">
+    <link rel="stylesheet" href="../styles/forest.css">
+    <link rel="stylesheet" href="../styles/paperLike.css">
+    <link rel="stylesheet" href="../styles/neon.css">
+
+    <script src="../node_modules/lucide/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+
+    <header class="appHeader">
+
+        <button
+            class="sidebarToggle"
+            type="button"
+            aria-label="باز کردن فهرست مطالب"
+            aria-expanded="false"
+        >
+            <i data-lucide="panel-left"></i>
+        </button>
+
+
+        <div class="appTitle">
+            پاپیروس
+        </div>
+
+
+        <div class="headerControls">
+
+<button
+    class="searchButton"
+    type="button"
+    aria-label="جستجو در جزوه"
+    aria-expanded="false"
+>
+    <i data-lucide="search"></i>
+</button>
+
+<div class="highlightSwitcher">
+
+    <button
+        class="highlightToggle"
+        type="button"
+        aria-label="هایلایت"
+        aria-expanded="false"
+    >
+        <i data-lucide="highlighter"></i>
+    </button>
+
+
+<div
+    class="highlightOptions"
+    aria-hidden="true"
+>
+
+    <button
+        class="highlightPowerToggle"
+        type="button"
+        aria-label="روشن یا خاموش کردن هایلایت"
+        aria-pressed="true"
+    >
+        <i data-lucide="highlighter"></i>
+        <span>هایلایت روشن</span>
+    </button>
+
+        <div class="highlightColors">
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#fff176"
+                aria-label="هایلایت زرد"
+                style="--highlightColor: #fff176;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#a5d6a7"
+                aria-label="هایلایت سبز"
+                style="--highlightColor: #a5d6a7;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#90caf9"
+                aria-label="هایلایت آبی"
+                style="--highlightColor: #90caf9;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ce93d8"
+                aria-label="هایلایت بنفش"
+                style="--highlightColor: #ce93d8;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ffab91"
+                aria-label="هایلایت نارنجی"
+                style="--highlightColor: #ffab91;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ef9a9a"
+                aria-label="هایلایت قرمز"
+                style="--highlightColor: #ef9a9a;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#f48fb1"
+                aria-label="هایلایت صورتی"
+                style="--highlightColor: #f48fb1;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#80cbc4"
+                aria-label="هایلایت فیروزه‌ای"
+                style="--highlightColor: #80cbc4;"
+            ></button>
+
+        </div>
+
+
+        <div class="highlightDivider"></div>
+
+
+        <label
+            class="highlightCustomColor"
+            aria-label="انتخاب رنگ دلخواه"
+        >
+            <input
+                class="highlightColorInput"
+                type="color"
+                value="#fff176"
+            >
+
+            <i data-lucide="palette"></i>
+        </label>
+
+
+        <button
+            class="highlightEraser"
+            type="button"
+            aria-label="پاک کردن هایلایت"
+        >
+            <i data-lucide="eraser"></i>
+            <span>پاک‌کن</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="stickyNotesSwitcher">
+
+    <button
+        class="stickyNotesToggle"
+        type="button"
+        aria-label="یادداشت‌های چسبان"
+        aria-expanded="false"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+</div>
+
+            <div class="fontSizeSwitcher">
+
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="decrease"
+                    aria-label="کاهش اندازه فونت"
+                >
+                    <i data-lucide="minus"></i>
+                </button>
+
+<button
+    type="button"
+    class="fontSizeControl fontSwitchControl"
+    aria-label="تغییر فونت"
+>
+    <i data-lucide="type"></i>
+</button>
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="increase"
+                    aria-label="افزایش اندازه فونت"
+                >
+                    <i data-lucide="plus"></i>
+                </button>
+
+            </div>
+
+
+            <div class="themeSwitcher">
+
+                <button
+                    class="themeToggle"
+                    type="button"
+                    aria-label="تغییر تم"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="sun"></i>
+                </button>
+
+<div class="themeOptions">
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="light"
+        aria-label="تم روشن"
+    >
+        <i data-lucide="sun"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="dark"
+        aria-label="تم تاریک"
+    >
+        <i data-lucide="moon"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="forest"
+        aria-label="تم جنگلی"
+    >
+        <i data-lucide="trees"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="paperLike"
+        aria-label="تم پیپر لایک"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+<button
+    class="themeButton"
+    type="button"
+    data-theme="neon"
+    aria-label="تم نئون"
+>
+<i data-lucide="zap"></i>
+</button>
+
+
+</div>
+
+            </div>
+
+<button
+    class="printButton"
+    type="button"
+    aria-label="چاپ جزوه"
+>
+    <i data-lucide="printer"></i>
+</button>
+
+
+            <button
+                class="aboutButton"
+                type="button"
+                aria-label="درباره ما"
+            >
+                <i data-lucide="users-round"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+<div
+    class="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="searchPanelContent">
+
+        <div class="searchInputWrapper">
+
+            <i data-lucide="search"></i>
+
+            <input
+                class="searchInput"
+                type="search"
+                placeholder="جستجو در جزوه..."
+                aria-label="جستجو در جزوه"
+                autocomplete="off"
+            >
+
+            <button
+                class="searchClearButton"
+                type="button"
+                aria-label="پاک کردن جستجو"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="searchResultsInfo">
+            <span class="searchResultsCount">۰ نتیجه</span>
+
+            <div class="searchNavigation">
+
+                <button
+                    class="searchPreviousButton"
+                    type="button"
+                    aria-label="نتیجه قبلی"
+                    disabled
+                >
+                    <i data-lucide="chevron-up"></i>
+                </button>
+
+                <button
+                    class="searchNextButton"
+                    type="button"
+                    aria-label="نتیجه بعدی"
+                    disabled
+                >
+                    <i data-lucide="chevron-down"></i>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    <aside
+        class="sidebar"
+        aria-label="فهرست مطالب"
+        aria-hidden="true"
+    >
+
+        <div class="sidebarHeader">
+            <h2>فهرست مطالب</h2>
+        </div>
+
+        <nav
+            class="sidebarContent"
+            aria-label="فهرست مطالب"
+        >
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-1"
+                >
+                    ۱. مقدمه و کلیات
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-2"
+                >
+                    ۲. متن اصلی جزوه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-3"
+                >
+                    شناسایی اختصاصی آنتی‌ژن و آنتی‌بادی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-4"
+                >
+                    تنوع اپیتوپ‌ها و انتخاب کلونال
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-5"
+                >
+                    کلاس‌های آنتی‌بادی (Antibody Classes)
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-6"
+                >
+                    آگلوتیناسیون
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-7"
+                >
+                    تعیین گروه خونی ABO و Rh
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-8"
+                >
+                    تست رایت برای تشخیص تب مالت
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-9"
+                >
+                    ارتباط مباحث و ادامهٔ درس
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-10"
+                >
+                    ۳. جداول مرور سریع
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-11"
+                >
+                    ۴. اصطلاحات و تعاریف
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-12"
+                >
+                    ۵. خود‌ارزیابی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-13"
+                >
+                    سوالات تشریحی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-14"
+                >
+                    سوالات تستی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-15"
+                >
+                    ۷. ادیتور و منابع استفاده‌شده
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-16"
+                >
+                    ۸. گزارش تکمیل بودن محتوا
+                </a>
+            
+        </nav>
+
+    </aside>
+
+
+    <div class="sidebarBackdrop"></div>
+
+<aside
+    class="stickyNotesPanel"
+    aria-label="یادداشت‌های چسبان"
+    aria-hidden="true"
+>
+
+    <div class="stickyNotesPanelHeader">
+
+        <h2>یادداشت‌های چسبان</h2>
+
+        <button
+            class="addStickyNoteButton"
+            type="button"
+        >
+            <i data-lucide="plus"></i>
+            <span>یادداشت جدید</span>
+        </button>
+
+    </div>
+
+    <div class="stickyNotesPanelContent">
+
+        <div class="stickyNotesEmptyState">
+<i data-lucide="notebook-pen"></i>
+
+            <p>
+                هنوز یادداشتی ایجاد نکرده‌اید.
+            </p>
+
+        </div>
+
+        <div class="stickyNotesList"></div>
+
+    </div>
+
+</aside>
+
+<div class="stickyNotesBackdrop"></div>
+
+
+    <div
+        class="aboutModal"
+        aria-hidden="true"
+    >
+
+        <div class="aboutModalBackdrop"></div>
+
+        <section
+            class="aboutModalContent"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="aboutTitle"
+        >
+
+            <button
+                class="aboutCloseButton"
+                type="button"
+                aria-label="بستن"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <h2 id="aboutTitle">
+                آدم‌هایی که اینجا رو ساختن
+            </h2>
+
+            <p class="aboutIntroduction">
+                ما یک تیم کوچک هستیم که باور داریم یادگیری باید
+                لذت‌بخش، عمیق، و در دسترس باشد. جزوه‌ساز تلاش ماست
+                برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً
+                بتوانی با آن‌ها چیزی یاد بگیری.
+            </p>
+
+
+<div class="developerList">
+
+    <article class="developerCard">
+        <h3>شبنم رضاپور</h3>
+        <p>کسی که PDFها را راضی کرد محتوایشان را بی‌کم‌وکاست لو بدهند.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیر‌حسین شکری‌زاده سعادت‌آباد</h3>
+        <p>صدای کلاس را به متن تبدیل کرد، حتی وقتی استاد وسط جمله با میکروفون قهر می‌کرد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>مهراد اسدی</h3>
+        <p>پرامپت‌ها را طوری چید که LLM فکر کرد دارد پایان‌نامه دکتری می‌نویسد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیرسالار سهام‌پور</h3>
+        <p>مارک‌داون را به HTML تبدیل کرد و به جزوه ظاهری داد که آدم دلش بخواهد بخواندش.</p>
+    </article>
+
+</div>
+
+            <p class="aboutFooter">
+                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد.
+                <br>
+                امیدواریم یادگیریت را لذت‌بخش‌تر کند.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <div class="quickNavigation">
+        <div class="quickNavigationList"></div>
+    </div>
+
+
+    <main class="noteContainer">
+
+<div class="stickyNotesLayer"></div>
+
+        <section class="noteHeader">
+
+            <div class="noteMetadata">
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">درس</span>
+                    <span class="metadataValue">ایمنی‌شناسی</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">مبحث</span>
+                    <span class="metadataValue">آزمایشگاه ایمونولوژی- تئوری برهم‌کنش‌های آنتی‌ژن و آنتی‌بادی - جلسه ۱</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">استاد</span>
+                    <span class="metadataValue">Tahereh Kalantari، PhD in Medical Immunology</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ جلسه</span>
+                    <span class="metadataValue">2026/10/03</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ تولید جزوه</span>
+                    <span class="metadataValue generatedDate">2026-10-12T20:02:38</span>
+                </span>
+
+            </div>
+
+
+            <div class="aiWarning">
+                <i data-lucide="triangle-alert"></i>
+
+                <p>
+                    این جزوه با استفاده از جزوه‌ساز پاپیروس و به صورت خودکار تولید شده است.
+                    ممکن است شامل خطا یا برداشت نادرست باشد و
+                    نیازمند بررسی و بازبینی مجدد است.
+                </p>
+            </div>
+
+        </section>
+
+
+<section class="noteSection introductionSection">
+    <h2 id="heading-1">۱. مقدمه و کلیات</h2>
+<p>در جلسه‌های تئوری ایمونولوژی، تاریخچهٔ ایمنی‌شناسی و چند اصطلاح و مفهوم پایه مطرح شده است. برای دنبال‌کردن کار آزمایشگاهی، شناخت ساختار آنتی‌ژن و آنتی‌بادی ضروری است؛ ناآشنایی با این ساختارها می‌تواند کار عملی را دشوار کند. در این جلسه برهم‌کنش‌های آنتی‌ژن و آنتی‌بادی، کلاس‌ها و ساختار آنتی‌بادی‌ها، آگلوتیناسیون، تعیین گروه خونی ABO و Rh و تست رایت برای تشخیص تب مالت بررسی می‌شود. مباحث تئوری آنتی‌ژن و آنتی‌بادی در جلسات دیگر ادامه می‌یابد.</p>
+</section>
+
+<section class="noteSection mainSection">
+    <h2 id="heading-2">۲. متن اصلی جزوه</h2>
+<h3 id="heading-3">شناسایی اختصاصی آنتی‌ژن و آنتی‌بادی</h3>
+<h4>اپیتوپ و پاراتوپ</h4>
+<p>ساختار آنتی‌بادی شبیه حرف انگلیسی Y است و بازوهای آن می‌توانند به آنتی‌ژن متصل شوند. این اتصال را می‌توان به اتصال قفل و کلید تشبیه کرد: بخشی از آنتی‌ژن با بخشی از آنتی‌بادی مکمل است.</p>
+<p><img src="../data/assets/image_1_small.jpg" alt="image_1_small">
+<em>تصویر 1</em></p>
+<p><img src="../data/assets/image_2_small.jpg" alt="image_2_small">
+<em>تصویر 2</em></p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">اگر ناحیه‌ای از آنتی‌ژن دایره‌ای شکل یا چندضلعی باشد، ناحیهٔ متناظر آنتی‌بادی شکل مکملی دارد و می‌تواند آن را در خود جای دهد.</div></div>
+<p>تمام قسمت‌های یک عامل میکروبی پس از ورود به بدن به‌عنوان آنتی‌ژن شناخته نمی‌شوند؛ بخش‌های مشخصی از آن می‌توانند با آنتی‌بادی برخورد کنند و شناسایی شوند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>اپیتوپ (epitope)</strong>
+ناحیه‌ای از آنتی‌ژن که آنتی‌بادی آن را شناسایی می‌کند. کوچک‌ترین بخشی از آنتی‌ژن که می‌تواند به‌طور اختصاصی با آنتی‌بادی اتصال برقرار کند، اپیتوپ است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پاراتوپ (paratope)</strong>
+ناحیهٔ متناظر آنتی‌بادی که به اپیتوپ متصل می‌شود. پاراتوپ به‌عنوان محل اتصال آنتی‌ژن روی آنتی‌بادی (antigen-binding site of an antibody) معرفی می‌شود.</div></div>
+<ol>
+<li>آنتی‌بادی‌ها با نام ایمونوگلوبولین‌ها (immunoglobulins) نیز شناخته می‌شوند.</li>
+<li>آنتی‌ژن‌ها مولکول‌هایی هستند که به‌وسیلهٔ آنتی‌بادی‌ها شناسایی می‌شوند.</li>
+<li>اپیتوپ بخش مشخصی از آنتی‌ژن است که به آنتی‌بادی متصل می‌شود. پاراتوپ محل اتصال آنتی‌ژن روی آنتی‌بادی می‌باشد.</li>
+<li>اپیتوپ و پاراتوپ به‌طور اختصاصی با هم برهم‌کنش می‌کنند و این اتصال به شناسایی آنتی‌ژن و پاسخ ایمنی می‌انجامد.</li>
+</ol>
+<p><img src="../data/assets/assets/image4.jpg" alt="تصویر 3">
+<em>تصویر 3</em></p>
+<h4>ساختار زنجیره‌ای آنتی‌بادی</h4>
+<p>هر مونومر آنتی‌بادی چهار زنجیره دارد: دو زنجیرهٔ کوچک و دو زنجیرهٔ بلند. زنجیره‌های کوچک، زنجیره‌های سبک (light chains) نام دارند و زنجیره‌های بلند، چون سنگین‌تر هستند، زنجیره‌های سنگین (heavy chains) نام دارند. بنابراین، واحد ساختاری اصلی آنتی‌بادی یک مونومر متشکل از دو زنجیرهٔ سبک و دو زنجیرهٔ سنگین است.</p>
+<p>در شکل زیر heavy chain ،light chain و همچنین نواحی Variable (V) regions و Constant (C) regions مشخص شده‌اند.</p>
+<p><img src="../data/assets/image_4_small.jpg" alt="image_4_small">
+<em>تصویر 4</em></p>
+<p><strong>نکتهٔ تکمیلی: تحمل ایمنی (Immune Tolerance) و خودایمنی (Autoimmunity)</strong></p>
+<p>بدن انسان نیز دارای آنتی‌ژن‌های خودی است؛ بااین‌حال، در شرایط طبیعی، دستگاه ایمنی معمولاً به اجزای خود بدن حمله نمی‌کند. این ویژگی به فرایندی به نام تحمل ایمنی (Immune Tolerance) مربوط است.</p>
+<p>در بیماری‌های خودایمنی، تحمل نسبت به برخی اجزای خودی مختل می‌شود و دستگاه ایمنی به بافت‌های بدن حمله می‌کند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در بیماری ام‌اس (MS)، دستگاه ایمنی به اجزای دستگاه عصبی مرکزی، واکنش ایمنی آسیب‌زا نشان می‌دهد.</div></div>
+<p><em><strong>این مبحث در جلسات آیندهٔ درس، به‌طور مفصل‌تر بررسی خواهد شد.</strong></em></p>
+<h3 id="heading-4">تنوع اپیتوپ‌ها و انتخاب کلونال</h3>
+<p>به‌ندرت پیش می‌آید که یک آنتی‌ژن فقط یک اپیتوپ داشته باشد. یک عامل میکروبی، مانند باکتری ممکن است تعداد زیادی اپیتوپ داشته باشد که لزوماً از یک نوع نیستند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای مثال، یک عامل میکروبی ممکن است ۱۰۰۰ اپیتوپ داشته باشد که از چهار نوع مختلف‌اند.</div></div>
+<p>اگر آنتی‌ژن سلول B را برای ساخت آنتی‌بادی تحریک کند، در بدن دست‌کم <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mn>10</mn><mn>8</mn></msup></mrow>10^8</math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span> کلون سلول B وجود دارند که می‌توانند در برابر آن قرار بگیرند. اگر آنتی‌ژن یک نوع اپیتوپ داشته باشد، از میان آن کلون‌ها فقط یک نوع کلون را تحریک می‌کند؛ اگر سه نوع اپیتوپ متفاوت داشته باشد، می‌تواند سه نوع کلون را تحریک کند و در ادامه سه نوع آنتی‌بادی متفاوت ساخته شود. این فرایند به انتخاب کلونال (clonal selection) مربوط است که جلسهٔ قبل مطرح شد و در ادامهٔ مبحث آنتی‌بادی‌ها بیشتر بررسی خواهد شد.</p>
+<h3 id="heading-5">کلاس‌های آنتی‌بادی (Antibody Classes)</h3>
+<h4>پنج کلاس آنتی‌بادی</h4>
+<p>آنتی‌بادی‌ها یا ایمونوگلوبولین‌ها (Immunoglobulins; Ig) بر اساس ویژگی‌های زنجیرهٔ سنگین خود به پنج کلاس اصلی تقسیم می‌شوند:
+IgG، IgM، IgA، IgE و IgD.</p>
+<p><img src="../data/assets/Isotypes.png" alt="Isotypes">
+<em>کلاس‌های آنتی‌بادی</em></p>
+<p>در برخورد بدن با یک عامل میکروبی، از جمله در تب مالت دو کلاس IgM و IgG اهمیت دارند. نام‌های دیگر تب مالت، بروسلوز (brucellosis) و تب مدیترانه‌ای هستند. در بیماری‌های میکروبی، معمولاً نخستین آنتی‌بادی‌ای که در بدن بالا می‌رود IgM است. پس از آن کلاس‌سوئیچینگ (class switching) رخ می‌دهد و کلاس آنتی‌بادی از IgM به IgG تبدیل می‌شود.</p>
+<h4>مقدار IgG سرم و تغییر IgM و IgG</h4>
+<p>بیشترین آنتی‌بادی سرم خون IgG است و تقریباً ۷۵ تا ۸۰ درصد آنتی‌بادی سرم را تشکیل می‌دهد.</p>
+<p>افزایش IgM در سرم خون در بسیاری از عفونت‌ها می‌تواند نشان‌دهندهٔ قرارداشتن بیماری در فاز حاد (acute) باشد. با گذشت زمان، سطح IgM ممکن است کاهش یابد، درحالی‌که IgG برای مدت طولانی‌تری در بدن باقی می‌ماند و می‌تواند تا حدی نقش محافظتی داشته باشد. بنابراین، منفی‌شدن IgM همراه با مثبت‌ماندن IgG می‌تواند با عبور از مرحلهٔ حاد عفونت سازگار باشد. این الگو در بسیاری از بیماری‌های میکروبی دیده می‌شود.</p>
+<h4>شکل مونومری و چندمونومری آنتی‌بادی‌ها</h4>
+<p>مونومر آنتی‌بادی چهارزنجیره‌ای است. برخی ایمونوگلوبولین‌ها می‌توانند به شکل مونومر یا ساختارهای چندمونومری وجود داشته باشند. IgA می‌تواند به شکل مونومر یا دایمر وجود داشته باشد. همچنین ساختارهای تریمر و تترامر آن نیز گزارش شده‌اند.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">اگرچه IgA می‌تواند به شکل مونومر و دایمر وجود داشته باشد و شکل‌های چندمونومری بزرگ‌تر نیز گزارش شده‌اند، شکل غالب IgA در سرم مونومری و شکل غالب آن در ترشحات مخاطی دایمری است. IgD نیز عمدتاً به شکل مونومر شناخته می‌شود.</div></div>
+<ul>
+<li>مونومر (Monomer): یک واحد چهارزنجیره‌ای آنتی‌بادی.</li>
+<li>دایمر (Dimer): دو واحد مونومری متصل به یکدیگر.</li>
+<li>تریمر (Trimer): سه واحد مونومری.</li>
+<li>تترامر (Tetramer): چهار واحد مونومری.</li>
+<li>پنتامر (Pentamer): پنج واحد مونومری.</li>
+</ul>
+<p><img src="../data/assets/monomer_and_dimer_and_etc.png" alt="monomer_and_dimer_and_etc">
+<em>نام‌گذاری مجموعه‌های مولکولی بر اساس تعداد زیرواحدها</em></p>
+<p>IgM در حالت کلی و شکل ترشحی خود، پنتامر (Pentamer) است. یعنی پنج مونومر آنتی‌بادی در کنار هم قرار گرفته‌اند. در مقابل، اگر IgG به میکروب متصل شود، دو ظرفیت اتصال یا دو والانس (Valency) دارد.</p>
+<p>IgM با پنج مونومر و دو ظرفیت اتصال برای هر مونومر، در مجموع ده ظرفیت اتصال به آنتی‌ژن دارد. بنابراین، IgM می‌تواند با برقرارکردن اتصالات متعدد با آنتی‌ژن‌های اطراف، قدرت اتصال کلی بیشتری ایجاد کند؛ کاری که IgG به دلیل داشتن تنها دو ظرفیت اتصال، ممکن است نتواند به همان سرعت انجام دهد.</p>
+<p><img src="../data/assets/assets/image5.jpg" alt="تصویر 5">
+<em>تصویر 5</em></p>
+<h4>پیوندهای دی‌سولفیدی IgM و تست 2ME</h4>
+<p>باندهای باریکی که مونومرهای IgM را به هم وصل می‌کنند، باندهای دی‌سولفیدی (disulfide bonds) هستند. در آزمایشگاه از این ویژگی استفاده می‌شود: مواد احیاکننده، پیوندهای دی‌سولفیدی را می‌شکنند و گروه‌های سولفیدریل (SH) حاصل می‌شوند.</p>
+<p>مادهٔ احیاکننده‌ای که معمولاً در آزمایشگاه استفاده می‌شود و نام یک تست هم هست، ۲-مرکاپتواتانول (2-mercaptoethanol) است که به آن 2ME می‌گویند. در آزمایشگاه ایمونولوژی تستی به نام تست 2ME وجود دارد که در کار با بیماران مبتلا به تب مالت با آن آشنا می‌شوید.</p>
+<p><img src="../data/assets/assets/image6.jpg" alt="تصویر 6">
+<em>تصویر 6</em></p>
+<p>از این ویژگی در برخی تست‌ها برای جداکردن IgM استفاده می‌شود. در بیماران مبتلا به تب مالت، جداکردن IgM می‌تواند مشکل‌ساز باشد: در حالت معمول، IgM در فاز حاد بالا می‌رود و با گذشت زمان و ورود بیماری به فاز تحت‌حاد (subacute) و مزمن، کم‌کم حذف می‌شود؛ اما این الگو در بیماران تب مالت برقرار نیست. علت این تفاوت بعداً توضیح داده می‌شود و به همین دلیل برای این بیماران از مادهٔ احیاکننده استفاده می‌کنند.</p>
+<h4>IgD</h4>
+<p>IgD آنتی‌بادی نسبتاً حساسی است و در برابر پروتئازها (proteases) آسیب‌پذیری بالایی دارد؛ به همین دلیل، ممکن است به‌سرعت تجزیه شود. این آنتی‌بادی حدود ۰/۲ درصد از کل آنتی‌بادی‌های موجود در سرم خون را تشکیل می‌دهد. با وجود غلظت پایین در سرم، IgD نقش مهمی در عملکرد سیستم ایمنی دارد و اهمیت آن بررسی خواهد شد.</p>
+<h3 id="heading-6">آگلوتیناسیون</h3>
+<h4>تعریف آگلوتیناسیون</h4>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>آگلوتیناسیون (agglutination)</strong>
+واکنشی است که در آن تعداد زیادی آنتی‌ژن و آنتی‌بادی به هم متصل می‌شوند و شبکه (lattice) تشکیل می‌دهند؛ این شبکه را می‌توان با چشم غیرمسلح دید.</div></div>
+<p>اساس بسیاری از تست‌هایی که در درس ایمنی‌شناسی ۱ انجام می‌شوند، واکنش آگلوتیناسیون  است. در حال حاضر، آشنایی با مبنای رسوب‌گذاری (Precipitation) و فلوکولاسیون (Flocculation) ضروری نیست؛ این دو روش در ادامهٔ جلسات، با هدف مقایسه بررسی خواهند شد.</p>
+<p>آگلوتیناسیون انواع مختلفی دارد که از جملهٔ آن‌ها می‌توان به آگلوتیناسیون مستقیم (Direct Agglutination)، آگلوتیناسیون غیرمستقیم (Indirect Agglutination)، آگلوتیناسیون غیرفعال (Passive Agglutination) و آگلوتیناسیون غیرفعال معکوس (Reverse Passive Agglutination) اشاره کرد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">از جمله تست‌های مرتبط با آگلوتیناسیون می‌توان به تست رایت (Wright test)، تست ویدال (Widal test)، تست فاکتور روماتوئید (RF) و تست پروتئین واکنشی C (CRP) اشاره کرد که اساس تست و نوع آگلوتیناسیون آنها در جلسات آینده توضیح داده می‌شود؛ برای مثال تست ویدال بر اساس آگلوتیناسیون مستقیم (Direct Agglutination) انجام می‌شود.</div></div>
+<p>تست رایت (Wright Test) یکی از تست‌های مهم در آزمایشگاه ایمنی‌شناسی است که برای تشخیص تب مالت (Brucellosis) به کار می‌رود. در این جلسه، تست رایت به‌صورت تئوری بررسی می‌شود و طی چند جلسه در کلاس آزمایشگاه، مراحل انجام تست و نحوهٔ بررسی و تفسیر نتایج آن به‌صورت عملی آموزش داده خواهد شد.</p>
+<h4>آگلوتیناسیون مستقیم</h4>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>آگلوتیناسیون مستقیم (direct agglutination)</strong>
+در این نوع آگلوتیناسیون، آنتی‌ژن به‌صورت ذرات نامحلول و آنتی‌بادی به‌صورت محلول وجود دارد. در این روش، آنتی‌ژن یا آنتی‌بادی برای انجام واکنش به ذرات دیگری متصل نشده‌اند یا به‌طور مصنوعی تغییر داده نشده‌اند؛ بنابراین، واکنش بر اثر اتصال مستقیم آنتی‌بادی به آنتی‌ژن مربوطه و ایجاد تجمع ذرات (آگلوتیناسیون) رخ می‌دهد.</div></div>
+<h3 id="heading-7">تعیین گروه خونی ABO و Rh</h3>
+<h4>آنتی‌ژن‌های گروه خونی</h4>
+<p>یکی از نمونه‌های روشن آگلوتیناسیون، تعیین گروه خونی ABO است. روی سطح گلبول‌های قرمز (RBC) گروه A، آنتی‌ژن A وجود دارد.  در گروه B، آنتی‌ژن B (دقیق‌تر، اپیتوپ‌های B) وجود دارد. در گروه AB هر دو آنتی‌ژن A و B وجود دارند و در گروه O هیچ‌کدام از این دو آنتی‌ژن وجود ندارد.</p>
+<p><img src="../data/assets/blood_group.jpg" alt="blood_group">
+<em>تصویر 7</em></p>
+<p>در تعیین گروه خونی، آنتی‌ژن‌های Rh نیز بررسی می‌شوند: اگر فرد آنتی‌ژن Rh را داشته باشد، Rh مثبت است و اگر آن را نداشته باشد، Rh منفی است. آنتی‌ژن Rh نیز روی سطح گلبول قرمز اپیتوپ مشخصی دارد.</p>
+<p><img src="../data/assets/Rh_test-1.png" alt="Rh_test-1">
+<em>تصویر 8</em></p>
+<h4>معرف‌های آنتی‌بادی در تعیین گروه خونی</h4>
+<p>برای تعیین گروه خونی در سیستم‌های ABO و Rh، از سه معرف آنتی‌بادی استفاده می‌شود:</p>
+<ul>
+<li>Anti-A: آنتی‌بادی ضد آنتی‌ژن A</li>
+<li>Anti-B: آنتی‌بادی ضد آنتی‌ژن B</li>
+<li>Anti-D: آنتی‌بادی ضد آنتی‌ژن D که برای تعیین وضعیت Rh خون به کار می‌رود.</li>
+</ul>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">رنگ معرف‌های آنتی‌بادی بر اساس استانداردهای جهانی مشخص می‌شود؛ به‌طوری‌که معرف Anti-A آبی، Anti-B زرد و Anti-D بی‌رنگ است. این رنگ‌بندی سلیقه‌ای نیست و برای شناسایی آسان‌تر معرف‌ها به کار می‌رود.</div></div>
+<p><img src="../data/assets/blood-group-test-kit-500x500.jpg" alt="blood-group-test-kit-500x500">
+<em>تصویر 9</em></p>
+<p><img src="../data/assets/image11_small.jpg" alt="image11_small">
+<em>تصویر 10</em></p>
+<p><img src="../data/assets/image12_small.jpg" alt="image12_small">
+<em>تصویر 11</em></p>
+<p><img src="../data/assets/image13_small.jpg" alt="image13_small">
+<em>تصویر 12</em></p>
+<h4>روش انجام آزمایش روی اسلاید</h4>
+<ol>
+<li>روی اسلاید شیشه‌ای سه قطره خون می‌گذارند و به‌ترتیب anti-B، anti-A و anti-D را به آن‌ها می‌افزایند.</li>
+<li>هر قطره را با وسیله‌ای به نام اپلیکاتور (applicator) مخلوط می‌کنند. هنگام مخلوط‌کردن باید مراقب بود قطره نپاشد و کار به‌آرامی انجام شود.</li>
+<li>سپس اسلاید را روی شیکر می‌گذارند یا با دست تکان می‌دهند؛ در آزمایشگاه معمولاً از دست استفاده می‌شود. حرکت باید طوری باشد که نمونه‌ها روی هم نریزند.</li>
+<li>نمونه باید دو دقیقهٔ کامل تکان داده شود. اگر هنگام تکان‌دادن صحبت می‌کنید، دستتان باید همچنان حرکت کند؛ زمان کامل دو دقیقه را رعایت کنید.</li>
+</ol>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">برای هر قطره باید از اپلیکاتور جداگانه استفاده کرد. نباید اپلیکاتورِ استفاده‌شده در قطرهٔ اول را در قطرهٔ دوم به کار برد، چون نمونهٔ اول به نمونهٔ دوم منتقل می‌شود و تست به‌هم می‌ریزد.</div></div>
+<p><img src="../data/assets/assets/image15.jpg" alt="تصویر 13">
+<em>تصویر 13</em></p>
+<p><img src="../data/assets/assets/image14.jpg" alt="تصویر 14">
+<em>تصویر 14</em></p>
+<p><img src="../data/assets/assets/image17.jpg" alt="تصویر 15">
+<em>تصویر 15</em></p>
+<p><img src="../data/assets/ABO_Rh_result_small.jpg" alt="ABO_Rh_result_small">
+<em>تصویر 16</em></p>
+<h4>زمان مشاهده واکنش و مبنای آگلوتیناسیون</h4>
+<p>در آزمایش تعیین گروه خونی، واکنش با معرف‌های Anti-A و Anti-B معمولاً در مدت کوتاهی، اغلب کمتر از ۳۰ ثانیه، قابل مشاهده است. بااین‌حال، در صورت عدم مشاهده آگلوتیناسیون، باید واکنش تا پایان زمان تعیین‌شده در دستورالعمل کیت، معمولاً حداکثر ۲ دقیقه، بررسی شود. در گروه خونی O، به دلیل نبود آنتی‌ژن‌های A و B روی سطح گلبول‌های قرمز، انتظار می‌رود واکنش با هر دو معرف منفی باشد. در بررسی Rh، مشاهده واکنش با معرف Anti-D ممکن است به زمان بیشتری نیاز داشته باشد؛ بنابراین، باید تا حدود ۲ دقیقه صبر کرد و سپس نتیجه را بررسی کرد.</p>
+<p>در این آزمایش، به‌جای اصطلاح عمومی «لخته‌شدن»، از اصطلاح علمی آگلوتیناسیون (Agglutination) استفاده می‌شود. آگلوتیناسیون به تجمع قابل مشاهده گلبول‌های قرمز در اثر اتصال اختصاصی آنتی‌بادی به آنتی‌ژن‌های سطح آن‌ها گفته می‌شود.
+در این فرایند، آنتی‌ژن‌های گروه خونی روی غشای گلبول‌های قرمز که غیر‌محلول هستند، قرار دارند و بخشی از ساختار غشایی سلول محسوب می‌شوند. آنتی‌بادی‌های موجود در معرف، پروتئین‌هایی محلول هستند که با اتصال به آنتی‌ژن اختصاصی خود، گلبول‌های قرمز را به یکدیگر پیوند می‌دهند و موجب تجمع آن‌ها می‌شوند.
+بنابراین، اساس این آزمایش، واکنش اختصاصی آنتی‌ژن–آنتی‌بادی و ایجاد آگلوتیناسیون قابل مشاهده است.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">اساس این واکنش آگلوتیناسیون، اتصال آنتی‌بادی محلول به آنتی‌ژن‌های غیرمحلولِ سطح سلول‌ها و در نتیجه، تجمع قابل مشاهده آن‌هاست.
+<strong>آگلوتیناسیون مستقیم = آنتی‌بادی محلول + آنتی‌ژن غیرمحلول</strong></div></div>
+<p><strong>نقش ویو باکس در واکنش Rh</strong></p>
+<p>در بعضی آزمایشگاه‌های بانک خون، دستگاهی به نام ویو باکس (view box) وجود دارد که نور LED و مقداری گرما دارد. اسلاید را روی آن می‌گذارند و خود ویو باکس را با دست حرکت می‌دهند؛ در این حالت شیکینگ (shaking) و تیلتینگ (tilting) انجام می‌شود. ویو باکس اسلاید را تا ۳۷ درجه گرم می‌کند. برای واکنش Rh دمای ۳۷ درجه لازم است تا واکنش به‌خوبی انجام شود، اما برای ABO لازم نیست و واکنش به‌سرعت دیده می‌شود.</p>
+<h4>تفاوت واکنش ABO و Rh</h4>
+<p>یکی از عوامل تفاوت سرعت واکنش ABO و Rh، کلاس آنتی‌بادی است. آنتی‌بادی ABO از کلاس IgM است. IgM پنتامر است و به‌سرعت میان RBCها پل تشکیل می‌دهد؛ بنابراین آگلوتیناسیون در کمتر از ۳۰ ثانیه دیده می‌شود. آنتی‌بادی Rh از کلاس IgG است.</p>
+<p>در نمونهٔ نشان‌داده‌شدهٔ زیر، واکنش A و واکنش B مشخص‌اند و نتیجهٔ Rh منفی است. در نمونه مقداری رسوب دیده می‌شود و گلبول‌های قرمز ته‌نشین شده‌اند. پس از برداشتن اسلاید و بررسی نمونه، دانه‌های ریز و زبر دیده می‌شوند؛ تشخیص آن‌ها ممکن است در ابتدا، به ویژه از فاصلهٔ دور، دشوار باشد. شکل آگلوتیناسیون‌ها نیز متفاوت است: در یک حالت، قطرات به یکدیگر متصل شده و توده‌ای تشکیل می‌دهند، درحالی‌که در واکنش Rh، تجمع ممکن است به شکل دانه‌های ریز و به‌هم‌پیوسته دیده شود.</p>
+<p><img src="../data/assets/ABO_Rh_result_small.jpg" alt="ABO_Rh_result_small">
+<em>تصویر 17</em></p>
+<p>عامل دیگر تفاوت واکنش، ماهیت آنتی‌ژن است. اگر آنتی‌ژن پلی‌ساکاریدی یا کربوهیدراتی باشد، تنها آنتی‌بادی ایجادشده علیه آن از کلاس IgM است. آنتی‌ژن‌های سطح RBC در گروه‌های ABO کربوهیدراتی‌اند و به همین دلیل آنتی‌بادی علیه آن‌ها IgM است. آنتی‌ژن Rh پروتئینی است؛ بنابراین پاسخ از IgM به سمت IgG کلاس‌سوئیچ می‌کند و حدود ۹۵ تا ۹۶ درصد آنتی‌بادی ایجادشده در آنجا IgG است. به همین دلیل، برای تعیین ABO از آنتی‌بادی‌های کلاس IgM و برای Rh از آنتی‌بادی‌های کلاس IgG استفاده می‌شود.</p>
+<h3 id="heading-8">تست رایت برای تشخیص تب مالت</h3>
+<h4>نوع واکنش و مواد مورد استفاده</h4>
+<p>در تست رایت برای تشخیص تب مالت، در سرم بیمار آنتی‌بادی وجود دارد و در آزمایشگاه آنتی‌ژن را به آن اضافه می‌کنند. این آنتی‌ژن از عامل بیماری‌زا، یعنی باکتری بروسلا (Brucella)، تهیه می‌شود. گونه‌های بیماری‌زای این میکروب بعداً توضیح داده می‌شوند؛ این میکروب بسیار خطرناک است و آماده‌سازی آن به‌سادگی انجام نمی‌شود. افراد متخصص، این میکروب را غیرفعال می‌کنند، با محلول بافری مخلوط می‌کنند و به شکل سوسپانسیون درمی‌آورند. سپس محلول رنگی به آن اضافه می‌کنند.</p>
+<p>یکی از این مواد رزبنگال (Rose Bengal) است؛ نام این رنگ به رز بنگال در هندوستان برمی‌گردد و ممکن است امروزه نمونهٔ مشابه آن را به‌صورت مصنوعی تولید کنند. رنگ آن صورتی پررنگ است. این محلول با pH خاصی تهیه شده است؛ علت اسیدی‌کردن pH و کاربرد این رنگ بعداً توضیح داده می‌شود.</p>
+<p><img src="../data/assets/image18_small.jpg" alt="image18_small">
+<em>تصویر 18</em></p>
+<p>آنتی‌ژن مورد استفاده برای تب مالت به‌صورت ویال آماده است و سرم بیمار به‌عنوان منبع آنتی‌بادی به کار می‌رود.</p>
+<h4>انجام آزمایش و نکات کار با سوسپانسیون</h4>
+<ol>
+<li>سرم بیمار و معرف آنتی‌ژنی رزبنگال، مطابق دستورالعمل کیت آماده می‌شوند.</li>
+<li>یک قطره از سرم بیمار و یک قطره از آنتی‌ژن رزبنگال را روی اسلاید می‌گذارند.</li>
+<li>آن را آرام و کامل مخلوط می‌کنند تا سوسپانسیون یکنواختی ایجاد شود.</li>
+<li>صفحه، طبق دستورالعمل کیت به‌آرامی حرکت داده می‌شود و در زمان تعیین‌شده، معمولاً حدود ۴ دقیقه، واکنش را بررسی می‌کنند.</li>
+</ol>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent"><strong>پیش از کار در آزمایشگاه باید بروشور را مطالعه کرد.</strong> آنتی‌ژن به‌صورت سوسپانسیون است. بنابراین سوسپانسیون را آرام و کامل مخلوط کنید تا یکنواخت شود؛ در غیر این صورت ممکن است در بخشی از محلول آنتی‌ژن وجود نداشته باشد و هنگام افزودن آن به سرم، مقدار نامناسبی آنتی‌ژن وارد شود.</div></div>
+<p>برای تست رایت و ویدال، نمونه را باید دست‌کم ۳ تا ۴ دقیقه تکان داد. این زمان برای رایت و ویدال است و برای تست‌های دیگر معمولاً حدود دو دقیقه است. اگر نتیجه مثبت شد، باید اقدامات دیگری نیز انجام داد و تست‌های تأییدی هم وجود دارند که بعداً توضیح داده می‌شوند.</p>
+<p><img src="../data/assets/brucella_test_pink_small.jpg" alt="brucella_test_pink_small">
+<em>تصویر 19</em></p>
+<p>برای تشخیص تب مالت بیش از یک آنتی‌ژن به کار می‌رود: یکی آبی و دیگری صورتی است و تفاوت آن‌ها در آزمایشگاه توضیح داده می‌شود. در تصویر زیر، آنتی‌ژن آبی‌رنگ دیده می‌شود.</p>
+<p><img src="../data/assets/brucella_test_small.jpg" alt="brucella_test_small">
+<em>تصویر 20</em></p>
+<h4>انتخاب زمینهٔ اسلاید</h4>
+<p>اسلایدها زمینهٔ سفید یا مشکی دارند. اگر آنتی‌ژن آبی استفاده می‌کنید، زمینه باید سفید باشد تا کنتراست وجود داشته باشد؛ برای زمینهٔ مشکی آنتی‌ژن‌هایی با رنگ سفید در نظر گرفته شده‌اند.</p>
+<p><img src="../data/assets/immunology_black_slide_small.jpg" alt="immunology_black_slide_small">
+<em>تصویر 21</em></p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">هنگام برداشتن اسلاید دقت کنید اسلاید درست را انتخاب کنید و رنگ نمونه با زمینه کنتراست داشته باشد.</div></div>
+<h3 id="heading-9">ارتباط مباحث و ادامهٔ درس</h3>
+<p>این مباحث به یکدیگر مرتبط‌اند و ایمونولوژی تا حدی مفهومی است؛ اگر یک جلسه حضور نداشته باشید یا اصطلاحات مربوط به آنتی‌ژن و آنتی‌بادی را متوجه نشوید، دنبال‌کردن مباحث جلسه‌های بعد دشوار می‌شود. برخلاف بعضی مباحث باکتری‌شناسی که موضوع یک جلسه لزوماً به جلسهٔ بعد وابسته نیست، در ایمونولوژی باید میان مطالب ارتباط برقرار کرد.</p>
+</section>
+
+<section class="noteSection quickTablesSection">
+    <h2 id="heading-10">۳. جداول مرور سریع</h2>
+<table>
+<thead>
+<tr>
+<th>مفهوم</th>
+<th>جایگاه</th>
+<th>نقش در اتصال</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>اپیتوپ (epitope)</td>
+<td>ناحیه‌ای از آنتی‌ژن</td>
+<td>به‌طور اختصاصی با آنتی‌بادی اتصال برقرار می‌کند</td>
+</tr>
+<tr>
+<td>پاراتوپ (paratope)</td>
+<td>ناحیه‌ای از آنتی‌بادی</td>
+<td>به اپیتوپ متصل می‌شود؛ محل اتصال آنتی‌ژن روی آنتی‌بادی است</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>بخش مونومر آنتی‌بادی</th>
+<th align="right">تعداد در هر مونومر</th>
+<th>نام در اسلاید</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>زنجیرهٔ کوچک</td>
+<td align="right">۲</td>
+<td>زنجیرهٔ سبک (light chain)</td>
+</tr>
+<tr>
+<td>زنجیرهٔ بلند</td>
+<td align="right">۲</td>
+<td>زنجیرهٔ سنگین (heavy chain)</td>
+</tr>
+<tr>
+<td>مجموع زنجیره‌ها</td>
+<td align="right">۴</td>
+<td>دو زنجیرهٔ سبک و دو زنجیرهٔ سنگین</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>تنوع اپیتوپ در آنتی‌ژن</th>
+<th>کلون‌های سلول B تحریک‌شده</th>
+<th>نتیجهٔ بیان‌شده در درس</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>یک نوع اپیتوپ</td>
+<td>یک نوع کلون</td>
+<td>تحریک یک نوع کلون</td>
+</tr>
+<tr>
+<td>سه نوع اپیتوپ متفاوت</td>
+<td>سه نوع کلون</td>
+<td>ساخته‌شدن سه نوع آنتی‌بادی متفاوت</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>کلاس‌های آنتی‌بادی ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IgG</td>
+</tr>
+<tr>
+<td>IgM</td>
+</tr>
+<tr>
+<td>IgA</td>
+</tr>
+<tr>
+<td>IgE</td>
+</tr>
+<tr>
+<td>IgD</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>ویژگی یا وضعیت</th>
+<th>IgM</th>
+<th>IgG</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>در بیماری‌های میکروبی</td>
+<td>معمولاً نخستین آنتی‌بادی‌ای است که بالا می‌رود</td>
+<td>پس از class switching از IgM به آن تبدیل می‌شود</td>
+</tr>
+<tr>
+<td>ارتباط با فاز بیماری طبق درس</td>
+<td>بالابودن نشان‌دهندهٔ فاز حاد است؛ پایین‌آمدن نشان می‌دهد فرد از فاز حاد خارج شده است</td>
+<td>اگر IgM منفی و IgG باقی مانده باشد، IgG می‌تواند تا حدی محافظت ایجاد کند</td>
+</tr>
+<tr>
+<td>سهم از آنتی‌بادی سرم</td>
+<td>حدود ۵ تا ۱۰ درصد</td>
+<td>تقریباً ۷۵ تا ۸۰ درصد</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>آنتی‌بادی</th>
+<th>شکل یا تعداد مونومرها</th>
+<th>ظرفیت اتصال مطابق توضیح درس</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IgA</td>
+<td>می‌تواند تک‌مونومر، دایمر، تریمر یا تترامر باشد</td>
+<td>به ازای هر مونومر دو ظرفیت</td>
+</tr>
+<tr>
+<td>IgD</td>
+<td>می‌تواند تک‌مونومر باشد</td>
+<td>دوظرفیتی</td>
+</tr>
+<tr>
+<td>IgG</td>
+<td>مونومر</td>
+<td>دوظرفیتی؛ دو ظرفیت اتصال</td>
+</tr>
+<tr>
+<td>IgM</td>
+<td>پنتامر؛ پنج مونومر</td>
+<td>دو ظرفیت اتصال برای هر مونومر؛ در مجموع ده ظرفیت اتصال</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>باندهای اتصال‌دهندهٔ مونومرهای IgM</td>
+<td>باندهای دی‌سولفیدی (disulfide bonds)</td>
+</tr>
+<tr>
+<td>اثر مواد احیاکننده</td>
+<td>بازکردن باندهای دی‌سولفیدی و تشکیل گروه‌های SH</td>
+</tr>
+<tr>
+<td>مادهٔ احیاکنندهٔ نام‌برده‌شده</td>
+<td>۲-مرکاپتواتانول (2-mercaptoethanol)، یا 2ME</td>
+</tr>
+<tr>
+<td>کاربرد ذکرشده</td>
+<td>استفاده از این ویژگی در برخی تست‌ها برای جداکردن IgM؛ تست 2ME در کار با بیماران تب مالت</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>ویژگی IgD</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>حساسیت</td>
+<td>به پروتئازها حساس است</td>
+</tr>
+<tr>
+<td>سرنوشت پس از ساخته‌شدن</td>
+<td>به‌علت این حساسیت سریع تخریب می‌شود</td>
+</tr>
+<tr>
+<td>سهم از آنتی‌بادی سرم</td>
+<td>حدود&nbsp;۰/۲&nbsp;درصد</td>
+</tr>
+<tr>
+<td>ساختار ذکرشده</td>
+<td>می‌تواند به شکل تک‌مونومر باشد</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>مورد</th>
+<th>توضیح در درس</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>آگلوتیناسیون</td>
+<td>اتصال تعداد زیادی آنتی‌ژن و آنتی‌بادی به‌صورت شبکه‌ای که با چشم غیرمسلح دیده می‌شود</td>
+</tr>
+<tr>
+<td>انواع نام‌برده‌شده</td>
+<td>مستقیم، غیرمستقیم، reverse passive agglutination و passive agglutination</td>
+</tr>
+<tr>
+<td>تست‌های نام‌برده‌شده</td>
+<td>CRP، RF، Wright test و Widal</td>
+</tr>
+<tr>
+<td>Wright test</td>
+<td>چند جلسه از کلاس آزمایشگاه را در بر می‌گیرد</td>
+</tr>
+<tr>
+<td>Widal</td>
+<td>اساس آن direct agglutination است</td>
+</tr>
+<tr>
+<td>precipitation و flocculation</td>
+<td>برای مقایسه در جلسات آینده توضیح داده می‌شوند</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>نوع واکنش</th>
+<th>وضعیت آنتی‌ژن</th>
+<th>وضعیت آنتی‌بادی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>آگلوتیناسیون مستقیم</td>
+<td>نامحلول</td>
+<td>محلول</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>گروه خونی ABO</th>
+<th>آنتی‌ژن‌های ذکرشده روی سطح RBC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>آنتی‌ژن A</td>
+</tr>
+<tr>
+<td>B</td>
+<td>آنتی‌ژن B؛ دقیق‌تر، اپیتوپ‌های B</td>
+</tr>
+<tr>
+<td>AB</td>
+<td>آنتی‌ژن A و آنتی‌ژن B</td>
+</tr>
+<tr>
+<td>O</td>
+<td>هیچ‌کدام از آنتی‌ژن‌های A و B</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>معرف آنتی‌بادی</th>
+<th>هدفِ ذکرشده</th>
+<th>رنگ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>anti-A</td>
+<td>ضد آنتی‌ژن A</td>
+<td>آبی</td>
+</tr>
+<tr>
+<td>anti-B</td>
+<td>ضد آنتی‌ژن B</td>
+<td>زرد</td>
+</tr>
+<tr>
+<td>anti-D</td>
+<td>بررسی Rh</td>
+<td>بی‌رنگ</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>مرحله</th>
+<th>کار</th>
+<th>نکتهٔ ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>۱</td>
+<td>روی اسلاید شیشه‌ای سه قطره خون بگذارید و به‌ترتیب anti-A، anti-B و anti-D را بیفزایید</td>
+<td>—</td>
+</tr>
+<tr>
+<td>۲</td>
+<td>هر قطره را با اپلیکاتور مخلوط کنید</td>
+<td>آرام مخلوط کنید تا قطره نپاشد</td>
+</tr>
+<tr>
+<td>۳</td>
+<td>برای هر قطره اپلیکاتور جداگانه به کار ببرید</td>
+<td>از انتقال نمونهٔ اول به دوم و به‌هم‌ریختن تست جلوگیری می‌کند</td>
+</tr>
+<tr>
+<td>۴</td>
+<td>اسلاید را روی شیکر بگذارید یا با دست تکان دهید</td>
+<td>نمونه‌ها روی هم نریزند؛ در آزمایشگاه معمولاً از دست استفاده می‌شود</td>
+</tr>
+<tr>
+<td>۵</td>
+<td>نمونه را تکان دهید</td>
+<td>دو دقیقهٔ کامل؛ اگر هنگام تکان‌دادن صحبت می‌کنید، دست باید همچنان حرکت کند</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>مورد</th>
+<th>زمان یا شرایط ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>anti-A و anti-B</td>
+<td>معمولاً پاسخ در کمتر از ۳۰ ثانیه دیده می‌شود</td>
+</tr>
+<tr>
+<td>گروه خونی O</td>
+<td>تا پایان دو دقیقه صبر می‌کنند تا ببینند واکنش منفی می‌ماند یا نه</td>
+</tr>
+<tr>
+<td>Rh</td>
+<td>چند دقیقه صبر می‌کنند و دو دقیقه را کامل می‌کنند</td>
+</tr>
+<tr>
+<td>view box</td>
+<td>نور LED و مقداری گرما دارد و اسلاید را تا ۳۷ درجه گرم می‌کند</td>
+</tr>
+<tr>
+<td>واکنش Rh</td>
+<td>دمای ۳۷ درجه لازم است تا واکنش به‌خوبی انجام شود</td>
+</tr>
+<tr>
+<td>واکنش ABO</td>
+<td>به دمای ۳۷ درجه نیاز ندارد و به‌سرعت دیده می‌شود</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>ABO</th>
+<th>Rh</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>آنتی‌بادی مورد استفاده/ذکرشده</td>
+<td>IgM</td>
+<td>IgG</td>
+</tr>
+<tr>
+<td>ماهیت آنتی‌ژن</td>
+<td>کربوهیدراتی یا پلی‌ساکاریدی</td>
+<td>پروتئینی</td>
+</tr>
+<tr>
+<td>توضیح ساختاری یا کلاسی</td>
+<td>IgM پنتامر است و به‌سرعت میان RBCها پل تشکیل می‌دهد</td>
+<td>پاسخ از IgM به سمت IgG کلاس‌سوئیچ می‌کند</td>
+</tr>
+<tr>
+<td>سرعت یا شرایط واکنش</td>
+<td>آگلوتیناسیون معمولاً در کمتر از ۳۰ ثانیه دیده می‌شود؛ دمای ۳۷ درجه لازم نیست</td>
+<td>برای واکنش دمای ۳۷ درجه لازم است تا واکنش به‌خوبی انجام شود</td>
+</tr>
+<tr>
+<td>نسبت آنتی‌بادی ذکرشده</td>
+<td>—</td>
+<td>حدود ۹۵ تا ۹۶ درصد آنتی‌بادی ایجادشده در آنجا IgG است</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>جزء یا مرحله</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>سرم بیمار</td>
+<td>منبع آنتی‌بادی</td>
+</tr>
+<tr>
+<td>آنتی‌ژن</td>
+<td>از باکتری بروسلا (Brucella) تهیه می‌شود</td>
+</tr>
+<tr>
+<td>آماده‌سازی میکروب</td>
+<td>افراد متخصص آن را غیرفعال می‌کنند، با محلول بافری مخلوط و به‌صورت سوسپانسیون درمی‌آورند</td>
+</tr>
+<tr>
+<td>محلول رنگی</td>
+<td>پس از آماده‌سازی سوسپانسیون به آن اضافه می‌شود</td>
+</tr>
+<tr>
+<td>رزبنگال (Rose Bengal)</td>
+<td>مادهٔ نام‌برده‌شده؛ رنگ آن صورتی پررنگ است</td>
+</tr>
+<tr>
+<td>pH آنتی‌ژن</td>
+<td>آنتی‌ژن با pH خاص تهیه شده است؛ علت اسیدی‌کردن pH و کاربرد آن بعداً توضیح داده می‌شود</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>مورد</th>
+<th>زمان تکان‌دادن</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>تست رایت و ویدال</td>
+<td>دست‌کم ۳ تا ۴ دقیقه</td>
+</tr>
+<tr>
+<td>تست‌های دیگر</td>
+<td>معمولاً حدود دو دقیقه</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>زمینهٔ اسلاید</th>
+<th>رنگ آنتی‌ژن ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>سفید</td>
+<td>آبی</td>
+</tr>
+<tr>
+<td>مشکی</td>
+<td>سفید</td>
+</tr>
+</tbody></table>
+</section>
+
+<section class="noteSection keyTermsSection">
+    <h2 id="heading-11">۴. اصطلاحات و تعاریف</h2>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>اپیتوپ (epitope)</strong>
+ناحیه‌ای از آنتی‌ژن که آنتی‌بادی آن را شناسایی می‌کند. کوچک‌ترین بخشی از آنتی‌ژن که می‌تواند به‌طور اختصاصی با آنتی‌بادی اتصال برقرار کند، اپیتوپ است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پاراتوپ (paratope)</strong>
+ناحیهٔ متناظر آنتی‌بادی که به اپیتوپ متصل می‌شود. پاراتوپ به‌عنوان محل اتصال آنتی‌ژن روی آنتی‌بادی (antigen-binding site of an antibody) معرفی می‌شود.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>آگلوتیناسیون (agglutination)</strong>
+واکنشی است که در آن تعداد زیادی آنتی‌ژن و آنتی‌بادی به هم متصل می‌شوند و شبکه (lattice) تشکیل می‌دهند؛ این شبکه را می‌توان با چشم غیرمسلح دید.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>آگلوتیناسیون مستقیم (direct agglutination)</strong>
+در این نوع آگلوتیناسیون، آنتی‌ژن به‌صورت ذرات نامحلول و آنتی‌بادی به‌صورت محلول وجود دارد. در این روش، آنتی‌ژن یا آنتی‌بادی برای انجام واکنش به ذرات دیگری متصل نشده‌اند یا به‌طور مصنوعی تغییر داده نشده‌اند؛ بنابراین، واکنش بر اثر اتصال مستقیم آنتی‌بادی به آنتی‌ژن مربوطه و ایجاد تجمع ذرات (آگلوتیناسیون) رخ می‌دهد.</div></div>
+</section>
+
+<section class="noteSection selfAssessmentSection">
+    <h2 id="heading-12">۵. خود‌ارزیابی</h2>
+<h3 id="heading-13">سوالات تشریحی</h3>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>تفاوت اپیتوپ و پاراتوپ چیست و چگونه در شناسایی اختصاصی آنتی‌ژن نقش دارند؟</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>اپیتوپ ناحیه‌ای از آنتی‌ژن است که آنتی‌بادی آن را شناسایی می‌کند و کوچک‌ترین بخش آنتی‌ژن است که می‌تواند به‌طور اختصاصی متصل شود. پاراتوپ ناحیهٔ متناظر آنتی‌بادی و محل اتصال آنتی‌ژن روی آنتی‌بادی است. این دو به‌طور اختصاصی با هم برهم‌کنش می‌کنند و اتصالشان به شناسایی آنتی‌ژن و پاسخ ایمنی می‌انجامد.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>ساختار زنجیره‌ای یک مونومر آنتی‌بادی را شرح دهید و تعداد ظرفیت‌های اتصال IgG و IgM را طبق درس مقایسه کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>هر مونومر آنتی‌بادی چهار زنجیره دارد: دو زنجیرهٔ سبک و دو زنجیرهٔ سنگین. IgG دو ظرفیت اتصال دارد. IgM پنتامر است و با دو ظرفیت اتصال برای هر یک از پنج مونومر، ده ظرفیت اتصال دارد.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>تغییر معمول IgM و IgG در بیماری‌های میکروبی را توضیح دهید و بگویید بالابودن یا پایین‌آمدن IgM در درس به چه وضعیتی نسبت داده شده است.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>معمولاً IgM نخستین آنتی‌بادی‌ای است که در بیماری‌های میکروبی بالا می‌رود و بعد از class switching، کلاس آنتی‌بادی از IgM به IgG تبدیل می‌شود. بالابودن IgM نشان‌دهندهٔ فاز حاد است و پایین‌آمدن آن نشان می‌دهد فرد از فاز حاد خارج شده است. اگر IgM منفی و IgG باقی مانده باشد، IgG می‌تواند تا حدی محافظت ایجاد کند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>مراحل انجام آزمایش تعیین گروه خونی روی اسلاید و دلیل استفاده از اپلیکاتورهای جداگانه را شرح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>سه قطره خون روی اسلاید می‌گذارند و به‌ترتیب anti-A، anti-B و anti-D را به آن‌ها می‌افزایند. هر قطره را با اپلیکاتور مخلوط می‌کنند و برای هر قطره از اپلیکاتور جداگانه استفاده می‌کنند تا نمونهٔ اول به نمونهٔ دوم منتقل نشود و تست به‌هم نریزد. سپس اسلاید را روی شیکر می‌گذارند یا با دست تکان می‌دهند، به‌طوری‌که نمونه‌ها روی هم نریزند، و نمونه را دو دقیقهٔ کامل تکان می‌دهند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>تفاوت‌های گفته‌شده میان واکنش ABO و Rh را از نظر آنتی‌بادی، ماهیت آنتی‌ژن و سرعت یا شرایط واکنش بیان کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>آنتی‌بادی ABO از کلاس IgM است و آنتی‌ژن‌های سطح RBC در گروه‌های ABO کربوهیدراتی‌اند؛ IgM پنتامر است و سریع میان RBCها پل تشکیل می‌دهد. بنابراین، آگلوتیناسیون معمولاً در کمتر از ۳۰ ثانیه دیده می‌شود و برای ABO دمای ۳۷ درجه لازم نیست. آنتی‌بادی Rh از کلاس IgG است و آنتی‌ژن Rh پروتئینی است؛ پاسخ از IgM به سمت کلاس‌سوئیچ IgG  می‌کند و برای انجام مناسب واکنش Rh دمای ۳۷ درجه لازم است.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<h3 id="heading-14">سوالات تستی</h3>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>کدام گزینه تعریف اپیتوپ را مطابق درس بیان می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">ناحیه‌ای از آنتی‌بادی که به اپیتوپ متصل می‌شود</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">ناحیه‌ای از آنتی‌ژن که آنتی‌بادی آن را شناسایی می‌کند</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">زنجیرهٔ سنگین آنتی‌بادی</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">باند دی‌سولفیدی میان مونومرهای IgM</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>اپیتوپ ناحیه‌ای از آنتی‌ژن است که آنتی‌بادی آن را شناسایی می‌کند.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>هر مونومر آنتی‌بادی چند زنجیره دارد و ترکیب آن چیست؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">دو زنجیرهٔ سبک و دو زنجیرهٔ سنگین</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">چهار زنجیرهٔ سبک و یک زنجیرهٔ سنگین</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">پنج زنجیرهٔ سبک و پنج زنجیرهٔ سنگین</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">یک زنجیرهٔ سبک و دو زنجیرهٔ سنگین</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>هر مونومر آنتی‌بادی چهار زنجیره دارد: دو زنجیرهٔ سبک و دو زنجیرهٔ سنگین.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>طبق مثال انتخاب کلونال در درس، آنتی‌ژنی با سه نوع اپیتوپ متفاوت چه نتیجه‌ای می‌تواند داشته باشد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">تحریک سه نوع کلون و ساخته‌شدن سه نوع آنتی‌بادی متفاوت</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">تحریک یک نوع کلون و ساخته‌شدن یک نوع آنتی‌بادی</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">حذف همهٔ کلون‌های سلول B</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">تبدیل سه اپیتوپ به یک زنجیرهٔ سنگین</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>درس توضیح می‌دهد که سه نوع اپیتوپ متفاوت می‌تواند سه نوع کلون را تحریک کند و در ادامه سه نوع آنتی‌بادی متفاوت ساخته شود.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>کدام توالی، تغییر معمول کلاس آنتی‌بادی در بیماری‌های میکروبی را نشان می‌دهد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">ابتدا IgG و سپس IgM</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">ابتدا IgM و سپس IgG پس از class switching</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">ابتدا IgD و سپس IgE</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">ابتدا IgA و سپس IgD</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>معمولاً IgM نخستین آنتی‌بادی‌ای است که بالا می‌رود و سپس class switching از IgM به IgG رخ می‌دهد.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>کدام گزینه دربارهٔ شکل IgM و ظرفیت اتصال آن درست است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">مونومر است و دو ظرفیت اتصال دارد</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">پنتامر است و در مجموع ده ظرفیت اتصال دارد</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">دایمر است و یک ظرفیت اتصال دارد</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">تترامر است و چهار ظرفیت اتصال دارد</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>IgM پنتامر است و با دو ظرفیت اتصال برای هر مونومر، در مجموع ده ظرفیت اتصال دارد.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="6"><div class="questionBoxHeader">سؤال 6</div><div class="questionBoxPrompt"><p>در آگلوتیناسیون مستقیم، وضعیت آنتی‌ژن و آنتی‌بادی چگونه است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">آنتی‌ژن محلول و آنتی‌بادی نامحلول</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">هر دو نامحلول</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">آنتی‌ژن نامحلول و آنتی‌بادی محلول</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">هر دو محلول</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در تعریف آگلوتیناسیون مستقیم، آنتی‌ژن نامحلول و آنتی‌بادی محلول است.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="7"><div class="questionBoxHeader">سؤال 7</div><div class="questionBoxPrompt"><p>کدام ترکیب معرف و رنگ آن در تعیین گروه خونی مطابق درس است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">anti-A زرد، anti-B آبی، anti-D بی‌رنگ</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">anti-A آبی، anti-B زرد، anti-D بی‌رنگ</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">anti-A بی‌رنگ، anti-B زرد، anti-D آبی</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">anti-A آبی، anti-B بی‌رنگ، anti-D زرد</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>رنگ‌های ذکرشده برای معرف‌ها عبارت‌اند از anti-A آبی، anti-B زرد و anti-D بی‌رنگ.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="8"><div class="questionBoxHeader">سؤال 8</div><div class="questionBoxPrompt"><p>برای بررسی Rh، طبق درس چه دمایی در view box لازم است تا واکنش به‌خوبی انجام شود؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">۲۵ درجه</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">۳۰ درجه</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">۳۷ درجه</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">دما هیچ نقشی ندارد</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>view box اسلاید را تا ۳۷ درجه گرم می‌کند و برای واکنش Rh دمای ۳۷ درجه لازم است.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="9"><div class="questionBoxHeader">سؤال 9</div><div class="questionBoxPrompt"><p>در تست 2ME، مادهٔ نام‌برده‌شده چه اثری بر باندهای دی‌سولفیدی دارد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">آن‌ها را باز می‌کند و گروه‌های SH کنار هم قرار می‌گیرند</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">آن‌ها را به زنجیره‌های سبک تبدیل می‌کند</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">آن‌ها را به اپیتوپ تبدیل می‌کند</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">آن‌ها را به آنتی‌ژن‌های ABO تبدیل می‌کند</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>مواد احیاکننده باندهای دی‌سولفیدی را باز می‌کنند و گروه‌های SH کنار هم قرار می‌گیرند؛ مادهٔ نام‌برده‌شده 2-mercaptoethanol یا 2ME است.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="10"><div class="questionBoxHeader">سؤال 10</div><div class="questionBoxPrompt"><p>زمان تکان‌دادن ذکرشده برای تست رایت و ویدال چقدر است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">کمتر از ۳۰ ثانیه</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">حدود دو دقیقه</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">دست‌کم ۳ تا ۴ دقیقه</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">پنج دقیقهٔ کامل</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>برای تست رایت و ویدال نمونه را دست‌کم ۳ تا ۴ دقیقه تکان می‌دهند؛ برای تست‌های دیگر معمولاً حدود دو دقیقه است.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+</section>
+
+<section class="noteSection reviewSection">
+    
+</section>
+
+<section class="noteSection editorAndSourcesSection">
+    <h2 id="heading-15">۷. ادیتور و منابع استفاده‌شده</h2>
+<p><strong>ادیتور:</strong> الهه کشاورزنژاد</p>
+<p><strong>منابع استفاده‌شده:</strong></p>
+<ul>
+<li>فایل اسلاید: 1405-7-11- Ag -Ab interaction</li>
+<li>صوت درس</li>
+</ul>
+</section>
+
+<section class="noteSection completionSection">
+    <h2 id="heading-16">۸. گزارش تکمیل بودن محتوا</h2>
+<p><strong>برآورد تقریبی تکمیل محتوا:</strong> پوشش محتوای ارائه‌شده در اسلایدها و صوت در جزوه کامل انجام شده است؛ این برآورد تضمین ریاضیِ نبود هرگونه کاستی نیست.</p>
+<ul>
+<li>✓ پوشش اسلایدها: محتوای آموزشی، تصاویر و نمودارِ ارجاع‌شده در محتوای ارائه‌شده حفظ شده‌اند.</li>
+<li>✓ پوشش صوت درس: توضیحات، مثال‌ها، مراحل عملی و نکات مدرس بازتاب داده شده‌اند.</li>
+</ul>
+</section>
+
+    </main>
+
+
+    <button
+        class="backToTop"
+        type="button"
+        aria-label="بازگشت به ابتدای صفحه"
+    >
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+
+    <script src="../src/themeSwitcher.js"></script>
+    <script src="../src/fontSizeSwitcher.js"></script>
+    <script src="../src/aboutModal.js"></script>
+    <script src="../src/quickNavigation.js"></script>
+    <script src="../src/print.js"></script>
+    <script src="../src/search.js"></script>
+    <script src="../src/highlight.js"></script>
+    <script src="../src/stickyNotes.js"></script>
+    <script src="../src/viewPersistence.js"></script>
+    <script src="../src/questionInteractions.js"></script>
+    <script src="../src/fontSwitcher.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarToggle = document.querySelector(".sidebarToggle");
+    const sidebarBackdrop = document.querySelector(".sidebarBackdrop");
+
+    function openSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.add("isOpen");
+        sidebarBackdrop.classList.add("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "true");
+        sidebar.setAttribute("aria-hidden", "false");
+    }
+
+    function closeSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.remove("isOpen");
+        sidebarBackdrop.classList.remove("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "false");
+        sidebar.setAttribute("aria-hidden", "true");
+    }
+
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener("click", () => {
+            if (sidebar.classList.contains("isOpen")) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+    }
+
+    if (sidebarBackdrop) {
+        sidebarBackdrop.addEventListener("click", closeSidebar);
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeSidebar();
+        }
+    });
+
+    document.querySelectorAll(".tocItem").forEach((item) => {
+        item.addEventListener("click", closeSidebar);
+    });
+</script>
+
+</body>
+
+</html>

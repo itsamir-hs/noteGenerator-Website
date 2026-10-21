@@ -3,63 +3,53 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پاپیروس</title>
+    <meta name="description" content="پاپیروس؛ کتابخانهٔ جزوه‌ها">
+    <meta name="theme-color" content="#f0e2c7">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <link rel="icon" type="image/jpeg" href="papyruswebicon.jpg">
+    <link rel="apple-touch-icon" href="papyruswebicon.jpg">
 
-    <title>جزوه‌ساز — کتابخانه جزوه‌ها</title>
-
-    <!-- Must come before the stylesheets: applies the stored theme before the
-         first paint so a dark-theme visitor never sees a white flash. -->
-    <script src="site/assets/themeBoot.js"></script>
-
-    <meta
-        name="description"
-        content="ساعت‌های کلاس، تبدیل‌شده به جزوه‌هایی که می‌شود واقعاً خواند."
-    >
-
-    <!-- Same stylesheets as the notes, so the home page inherits every theme. -->
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/rtl.css">
-    <link rel="stylesheet" href="styles/responsive.css">
-
-    <link
-        rel="stylesheet"
-        href="vendor/katex/katex.min.css"
-    >
-
-    <link rel="stylesheet" href="styles/dark.css">
-    <link rel="stylesheet" href="styles/forest.css">
-    <link rel="stylesheet" href="styles/paperLike.css">
-    <link rel="stylesheet" href="styles/neon.css">
-
-    <link rel="stylesheet" href="site/assets/home.css">
-
-    <script src="vendor/lucide/lucide.min.js"></script>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="پاپیروس">
+    <meta property="og:title" content="پاپیروس">
+    <meta property="og:description" content="پاپیروس؛ کتابخانهٔ جزوه‌ها">
+    <meta property="og:url" content="https://itsamir-hs.github.io/papyrus/">
+    <meta property="og:image" content="https://itsamir-hs.github.io/papyrus/papyruswebicon.jpg">
+    <meta property="og:locale" content="fa_IR">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="پاپیروس">
+    <meta name="twitter:description" content="پاپیروس؛ کتابخانهٔ جزوه‌ها">
+    <meta name="twitter:image" content="https://itsamir-hs.github.io/papyrus/papyruswebicon.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function() {
+            var theme = localStorage.getItem('noteTheme') || 'light';
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
 </head>
 
-<body class="siteBody">
+<body>
 
-    <header class="appHeader siteHeader">
+    <header class="appHeader">
 
-        <a
-            class="siteBrand"
-            href="./"
-            aria-label="صفحه اصلی"
-        >
-            <i data-lucide="library-big"></i>
-            <span class="siteBrandText">جزوه‌ساز — کتابخانه جزوه‌ها</span>
-        </a>
-
-
-        <div class="appTitle siteTagline">
-            ساعت‌های کلاس، تبدیل‌شده به جزوه‌هایی که می‌شود واقعاً خواند.
+        <div class="appTitle">
+            پاپیروس
         </div>
 
-
         <div class="headerControls">
+
+            <div class="searchBox">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="جستجو در جزوه‌ها..."
+                    aria-label="جستجو در جزوه‌ها"
+                >
+            </div>
 
             <div class="themeSwitcher">
 
@@ -69,7 +59,7 @@
                     aria-label="تغییر تم"
                     aria-expanded="false"
                 >
-                    <i data-lucide="sun"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
                 </button>
 
                 <div class="themeOptions">
@@ -80,217 +70,82 @@
                         data-theme="light"
                         aria-label="تم روشن"
                     >
-                        <i data-lucide="sun"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
                     </button>
-            
+
                     <button
                         class="themeButton"
                         type="button"
                         data-theme="dark"
                         aria-label="تم تاریک"
                     >
-                        <i data-lucide="moon"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
                     </button>
-            
+
                     <button
                         class="themeButton"
                         type="button"
                         data-theme="forest"
                         aria-label="تم جنگلی"
                     >
-                        <i data-lucide="trees"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z"/><path d="M7 16v6"/><path d="M13 19v3"/><path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5"/></svg>
                     </button>
-            
+
                     <button
                         class="themeButton"
                         type="button"
                         data-theme="paperLike"
                         aria-label="تم پیپر لایک"
                     >
-                        <i data-lucide="file-text"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
                     </button>
-            
+
                     <button
                         class="themeButton"
                         type="button"
                         data-theme="neon"
                         aria-label="تم نئون"
                     >
-                        <i data-lucide="zap"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
                     </button>
-            
+
+
                 </div>
 
             </div>
 
             <button
-                class="contributorsButton"
+                class="aboutButton"
                 type="button"
-                aria-label="آدم هایی که اینجا رو ساختن"
-                aria-expanded="false"
+                aria-label="درباره ما"
             >
-                <i data-lucide="users-round"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
             </button>
 
         </div>
 
     </header>
 
-
-    <section class="siteHero">
-
-        <h1 class="siteHeading">
-            جزوه‌ساز — کتابخانه جزوه‌ها
-        </h1>
-
-        <p class="siteIntro">
-            ساعت‌های کلاس، تبدیل‌شده به جزوه‌هایی که می‌شود واقعاً خواند.
-        </p>
-
-        <div class="siteSearch">
-
-            <div class="siteSearchField">
-
-                <i data-lucide="search"></i>
-
-                <input
-                    class="siteSearchInput"
-                    type="search"
-                    placeholder="جستجو در عنوان، درس، مبحث و برچسب‌ها..."
-                    aria-label="جستجو در عنوان، درس، مبحث و برچسب‌ها..."
-                    autocomplete="off"
-                >
-
-                <button
-                    class="siteSearchClear"
-                    type="button"
-                    aria-label="پاک کردن جستجو"
-                >
-                    <i data-lucide="x"></i>
-                </button>
-
-            </div>
-
-            <p class="siteSearchStatus" role="status" aria-live="polite">
-                ۳ جزوه
-            </p>
-
+    <div class="toolbar" role="group" aria-label="مرتب‌سازی">
+        <span class="toolbarLabel">مرتب‌سازی:</span>
+        <div class="segmented">
+            <button class="sortButton" type="button" data-sort="newest" aria-pressed="true">جدیدترین</button>
+            <button class="sortButton" type="button" data-sort="session" aria-pressed="false">شماره جلسه</button>
+            <button class="sortButton" type="button" data-sort="title" aria-pressed="false">حروف الفبا</button>
         </div>
+    </div>
 
-    </section>
+    <main class="notesContainer" id="notesContainer"></main>
 
+    <div class="emptyState" id="emptyState" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17h.01"/><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9a2 2 0 1 1 4 .3c-.6 1-2 1.2-2 2.7"/></svg>
+        <p>نوتی یافت نشد</p>
+    </div>
 
-    <main class="siteMain">
-
-        <section class="notesMenu" aria-labelledby="notesMenuTitle">
-
-            <h2 class="notesMenuTitle" id="notesMenuTitle">
-                منوی جزوه‌ها
-            </h2>
-
-            <div class="notesMenuList" id="notesMenuList">
-
-                <a
-                    class="noteCard isFeatured"
-                    href="notes/lab-safety/"
-                    data-note-slug="lab-safety"
-                    aria-label="اصول کلی ایمنی و بهداشت فضا، کارکنان و محیط آزمایشگاه — اصول کلی ایمنی و بهداشت فضای کار، کارکنان و محیط آزمایشگاه؛ از راه‌های انتقال عفونت تا سانتریفوژ و پیشگیری ثانویه."
-                >
-                    <div class="noteCardHeader">
-
-                        <h3 class="noteCardTitle">
-                            اصول کلی ایمنی و بهداشت فضا، کارکنان و محیط آزمایشگاه
-                        </h3>
-
-                        
-                    </div>
-
-                    <div class="noteCardMeta"><span class="noteCardMetaItem"><span class="noteCardMetaLabel">درس:</span> <bdi>ایمنی و بهداشت آزمایشگاه</bdi></span><span class="noteCardMetaItem"><span class="noteCardMetaLabel">تاریخ:</span> <bdi>2026-10-01T18:37:36</bdi></span></div>
-
-                    <p class="noteCardDescription">اصول کلی ایمنی و بهداشت فضای کار، کارکنان و محیط آزمایشگاه؛ از راه‌های انتقال عفونت تا سانتریفوژ و پیشگیری ثانویه.</p>
-
-                    <span class="noteCardAction">
-                        <i data-lucide="book-open"></i>
-                        <span>خواندن جزوه</span>
-                    </span>
-                </a>
-            
-                <a
-                    class="noteCard"
-                    href="notes/nervous-system/"
-                    data-note-slug="nervous-system"
-                    aria-label="سیستم عصبی — ساختار سیستم عصبی، اجزای اصلی، رابطه‌های ریاضی و جدول مرور اجزای سیستم عصبی مرکزی و محیطی."
-                >
-                    <div class="noteCardHeader">
-
-                        <h3 class="noteCardTitle">
-                            سیستم عصبی
-                        </h3>
-
-                        
-                    </div>
-
-                    
-
-                    <p class="noteCardDescription">ساختار سیستم عصبی، اجزای اصلی، رابطه‌های ریاضی و جدول مرور اجزای سیستم عصبی مرکزی و محیطی.</p>
-
-                    <span class="noteCardAction">
-                        <i data-lucide="book-open"></i>
-                        <span>خواندن جزوه</span>
-                    </span>
-                </a>
-            
-                <a
-                    class="noteCard"
-                    href="notes/bone-marrow-on-a-chip/"
-                    data-note-slug="bone-marrow-on-a-chip"
-                    aria-label="Bone Marrow-on-a-Chip — ساختار، ساخت و عملکرد — ساختار، ساخت و عملکرد مدل مغز استخوان روی تراشه؛ از ساختارهای هم‌کشسان تا کاربردهای دارورسانی."
-                >
-                    <div class="noteCardHeader">
-
-                        <h3 class="noteCardTitle">
-                            Bone Marrow-on-a-Chip — ساختار، ساخت و عملکرد
-                        </h3>
-
-                        
-                    </div>
-
-                    <div class="noteCardMeta"><span class="noteCardMetaItem"><span class="noteCardMetaLabel">تاریخ:</span> <bdi>2026-09-20T14:22:53</bdi></span></div>
-
-                    <p class="noteCardDescription">ساختار، ساخت و عملکرد مدل مغز استخوان روی تراشه؛ از ساختارهای هم‌کشسان تا کاربردهای دارورسانی.</p>
-
-                    <span class="noteCardAction">
-                        <i data-lucide="book-open"></i>
-                        <span>خواندن جزوه</span>
-                    </span>
-                </a>
-            
-            </div>
-
-            <p class="notesMenuEmpty" id="notesMenuEmpty" hidden>
-                هیچ جزوه‌ای با این عبارت پیدا نشد.
-            </p>
-
-        </section>
-
-    </main>
-
-
-    <footer class="siteFooter">
-
-        <p>
-            ۳ جزوه
-        </p>
-
-        <p class="siteFooterNote">
-            همهٔ جزوه‌ها با استفاده از هوش مصنوعی تولید شده‌اند و ممکن است
-            خطا داشته باشند.
-        </p>
-
-    </footer>
-
-
-    <div class="aboutModal siteContributorsModal" aria-hidden="true">
+    <div
+        class="aboutModal"
+        aria-hidden="true"
+    >
 
         <div class="aboutModalBackdrop"></div>
 
@@ -298,7 +153,7 @@
             class="aboutModalContent"
             role="dialog"
             aria-modal="true"
-            aria-labelledby="siteContributorsTitle"
+            aria-labelledby="aboutTitle"
         >
 
             <button
@@ -306,65 +161,53 @@
                 type="button"
                 aria-label="بستن"
             >
-                <i data-lucide="x"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </button>
 
-            <h2 id="siteContributorsTitle">
+            <h2 id="aboutTitle">
                 آدم‌هایی که اینجا رو ساختن
             </h2>
 
             <p class="aboutIntroduction">
-                ما یک تیم کوچک هستیم که باور داریم یادگیری باید لذت‌بخش، عمیق و در دسترس باشد. جزوه‌ساز تلاش ماست برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً بتوانی با آن‌ها چیزی یاد بگیری.
+                ما یک تیم کوچک هستیم که باور داریم یادگیری باید
+                لذت‌بخش، عمیق، و در دسترس باشد. پاپیروس تلاش ماست
+                برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً
+                بتوانی با آن‌ها چیزی یاد بگیری.
             </p>
 
             <div class="developerList">
 
                 <article class="developerCard">
                     <h3>شبنم رضاپور</h3>
-                    <p>استخراج فایل‌ها</p>
+                    <p>کسی که PDFها را راضی کرد محتوایشان را بی‌کم‌وکاست لو بدهند.</p>
                 </article>
-            
+
                 <article class="developerCard">
                     <h3>امیر‌حسین شکری‌زاده سعادت‌آباد</h3>
-                    <p>پردازش صوت و ویدیو</p>
+                    <p>صدای کلاس را به متن تبدیل کرد، حتی وقتی استاد وسط جمله با میکروفون قهر می‌کرد.</p>
                 </article>
-            
+
                 <article class="developerCard">
                     <h3>مهراد اسدی</h3>
-                    <p>پرامپت‌نویسی و پردازش با هوش مصنوعی</p>
+                    <p>پرامپت‌ها را طوری چید که LLM فکر کرد دارد پایان‌نامه دکتری می‌نویسد.</p>
                 </article>
-            
+
                 <article class="developerCard">
                     <h3>امیرسالار سهام‌پور</h3>
-                    <p>فرانت‌اند و طراحی رابط کاربری</p>
+                    <p>مارک‌داون را به HTML تبدیل کرد و به جزوه ظاهری داد که آدم دلش بخواهد بخواندش.</p>
                 </article>
-            
+
             </div>
 
             <p class="aboutFooter">
-                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد. امیدواریم یادگیریت را لذت‌بخش‌تر کند.
+                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد.
             </p>
 
         </section>
 
     </div>
 
-
-    <!-- Search index: baked in at build time so the page works from any path,
-         including file:// and GitHub Pages project sub-paths. -->
-    <script type="application/json" id="notesIndex">[{"slug":"lab-safety","title":"اصول کلی ایمنی و بهداشت فضا، کارکنان و محیط آزمایشگاه","description":"اصول کلی ایمنی و بهداشت فضای کار، کارکنان و محیط آزمایشگاه؛ از راه‌های انتقال عفونت تا سانتریفوژ و پیشگیری ثانویه.","course":"ایمنی و بهداشت آزمایشگاه","topic":"اصول کلی ایمنی و بهداشت فضا، کارکنان و محیط آزمایشگاه","instructor":"","url":"notes/lab-safety/","searchText":"اصول کلی ایمنی و بهداشت فضا کارکنان و محیط ازمایشگاه ایمنی و بهداشت ازمایشگاه اصول کلی ایمنی و بهداشت فضا کارکنان و محیط ازمایشگاه 2026 10 01t18 37 36 اصول کلی ایمنی و بهداشت فضای کار کارکنان و محیط ازمایشگاه از راه های انتقال عفونت تا سانتریفوژ و پیشگیری ثانویه 1 مقدمه و کلیات 2 متن اصلی جزوه 3 تعاریف 4 نکات مهم 5 مثال ها 6 جداول مرور سریع 7 اصطلاحات و تعاریف کلیدی"},{"slug":"nervous-system","title":"سیستم عصبی","description":"ساختار سیستم عصبی، اجزای اصلی، رابطه‌های ریاضی و جدول مرور اجزای سیستم عصبی مرکزی و محیطی.","course":"","topic":"","instructor":"","url":"notes/nervous-system/","searchText":"سیستم عصبی ساختار سیستم عصبی اجزای اصلی رابطه های ریاضی و جدول مرور اجزای سیستم عصبی مرکزی و محیطی مقدمه"},{"slug":"bone-marrow-on-a-chip","title":"Bone Marrow-on-a-Chip — ساختار، ساخت و عملکرد","description":"ساختار، ساخت و عملکرد مدل مغز استخوان روی تراشه؛ از ساختارهای هم‌کشسان تا کاربردهای دارورسانی.","course":"","topic":"Bone Marrow-on-a-Chip — ساختار، ساخت و عملکرد","instructor":"","url":"notes/bone-marrow-on-a-chip/","searchText":"bone marrow on a chip ساختار ساخت و عملکرد bone marrow on a chip ساختار ساخت و عملکرد 2026 09 20t14 22 53 ساختار ساخت و عملکرد مدل مغز استخوان روی تراشه از ساختارهای هم کشسان تا کاربردهای دارورسانی 1 مقدمه و کلیات 2 متن اصلی جزوه 3 تعاریف 4 نکات مهم 5 مثال ها 6 جداول مرور سریع 7 اصطلاحات و تعاریف کلیدی 9 منابع و مراجع 8 موارد نیازمند بررسی 10 گزارش تکمیل بودن محتوا"}]</script>
-
-    <script src="site/assets/textSearch.js"></script>
-
-    <!-- Re-used verbatim from the original module: same themes, same storage key. -->
-    <script src="src/themeSwitcher.js"></script>
-
-    <script src="site/assets/home.js"></script>
-
-    <script>
-        lucide.createIcons();
-    </script>
-
+    <script src="app.js"></script>
 </body>
 
 </html>

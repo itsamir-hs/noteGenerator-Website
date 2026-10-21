@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>تاریخچهٔ ایمنی‌شناسی پزشکی</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/rtl.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../node_modules/katex/dist/katex.min.css"
+    >
+
+    <link rel="stylesheet" href="../styles/dark.css">
+    <link rel="stylesheet" href="../styles/forest.css">
+    <link rel="stylesheet" href="../styles/paperLike.css">
+    <link rel="stylesheet" href="../styles/neon.css">
+
+    <script src="../node_modules/lucide/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+
+    <header class="appHeader">
+
+        <button
+            class="sidebarToggle"
+            type="button"
+            aria-label="باز کردن فهرست مطالب"
+            aria-expanded="false"
+        >
+            <i data-lucide="panel-left"></i>
+        </button>
+
+
+        <div class="appTitle">
+            پاپیروس
+        </div>
+
+
+        <div class="headerControls">
+
+<button
+    class="searchButton"
+    type="button"
+    aria-label="جستجو در جزوه"
+    aria-expanded="false"
+>
+    <i data-lucide="search"></i>
+</button>
+
+<div class="highlightSwitcher">
+
+    <button
+        class="highlightToggle"
+        type="button"
+        aria-label="هایلایت"
+        aria-expanded="false"
+    >
+        <i data-lucide="highlighter"></i>
+    </button>
+
+
+<div
+    class="highlightOptions"
+    aria-hidden="true"
+>
+
+    <button
+        class="highlightPowerToggle"
+        type="button"
+        aria-label="روشن یا خاموش کردن هایلایت"
+        aria-pressed="true"
+    >
+        <i data-lucide="highlighter"></i>
+        <span>هایلایت روشن</span>
+    </button>
+
+        <div class="highlightColors">
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#fff176"
+                aria-label="هایلایت زرد"
+                style="--highlightColor: #fff176;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#a5d6a7"
+                aria-label="هایلایت سبز"
+                style="--highlightColor: #a5d6a7;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#90caf9"
+                aria-label="هایلایت آبی"
+                style="--highlightColor: #90caf9;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ce93d8"
+                aria-label="هایلایت بنفش"
+                style="--highlightColor: #ce93d8;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ffab91"
+                aria-label="هایلایت نارنجی"
+                style="--highlightColor: #ffab91;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ef9a9a"
+                aria-label="هایلایت قرمز"
+                style="--highlightColor: #ef9a9a;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#f48fb1"
+                aria-label="هایلایت صورتی"
+                style="--highlightColor: #f48fb1;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#80cbc4"
+                aria-label="هایلایت فیروزه‌ای"
+                style="--highlightColor: #80cbc4;"
+            ></button>
+
+        </div>
+
+
+        <div class="highlightDivider"></div>
+
+
+        <label
+            class="highlightCustomColor"
+            aria-label="انتخاب رنگ دلخواه"
+        >
+            <input
+                class="highlightColorInput"
+                type="color"
+                value="#fff176"
+            >
+
+            <i data-lucide="palette"></i>
+        </label>
+
+
+        <button
+            class="highlightEraser"
+            type="button"
+            aria-label="پاک کردن هایلایت"
+        >
+            <i data-lucide="eraser"></i>
+            <span>پاک‌کن</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="stickyNotesSwitcher">
+
+    <button
+        class="stickyNotesToggle"
+        type="button"
+        aria-label="یادداشت‌های چسبان"
+        aria-expanded="false"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+</div>
+
+            <div class="fontSizeSwitcher">
+
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="decrease"
+                    aria-label="کاهش اندازه فونت"
+                >
+                    <i data-lucide="minus"></i>
+                </button>
+
+<button
+    type="button"
+    class="fontSizeControl fontSwitchControl"
+    aria-label="تغییر فونت"
+>
+    <i data-lucide="type"></i>
+</button>
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="increase"
+                    aria-label="افزایش اندازه فونت"
+                >
+                    <i data-lucide="plus"></i>
+                </button>
+
+            </div>
+
+
+            <div class="themeSwitcher">
+
+                <button
+                    class="themeToggle"
+                    type="button"
+                    aria-label="تغییر تم"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="sun"></i>
+                </button>
+
+<div class="themeOptions">
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="light"
+        aria-label="تم روشن"
+    >
+        <i data-lucide="sun"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="dark"
+        aria-label="تم تاریک"
+    >
+        <i data-lucide="moon"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="forest"
+        aria-label="تم جنگلی"
+    >
+        <i data-lucide="trees"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="paperLike"
+        aria-label="تم پیپر لایک"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+<button
+    class="themeButton"
+    type="button"
+    data-theme="neon"
+    aria-label="تم نئون"
+>
+<i data-lucide="zap"></i>
+</button>
+
+
+</div>
+
+            </div>
+
+<button
+    class="printButton"
+    type="button"
+    aria-label="چاپ جزوه"
+>
+    <i data-lucide="printer"></i>
+</button>
+
+
+            <button
+                class="aboutButton"
+                type="button"
+                aria-label="درباره ما"
+            >
+                <i data-lucide="users-round"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+<div
+    class="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="searchPanelContent">
+
+        <div class="searchInputWrapper">
+
+            <i data-lucide="search"></i>
+
+            <input
+                class="searchInput"
+                type="search"
+                placeholder="جستجو در جزوه..."
+                aria-label="جستجو در جزوه"
+                autocomplete="off"
+            >
+
+            <button
+                class="searchClearButton"
+                type="button"
+                aria-label="پاک کردن جستجو"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="searchResultsInfo">
+            <span class="searchResultsCount">۰ نتیجه</span>
+
+            <div class="searchNavigation">
+
+                <button
+                    class="searchPreviousButton"
+                    type="button"
+                    aria-label="نتیجه قبلی"
+                    disabled
+                >
+                    <i data-lucide="chevron-up"></i>
+                </button>
+
+                <button
+                    class="searchNextButton"
+                    type="button"
+                    aria-label="نتیجه بعدی"
+                    disabled
+                >
+                    <i data-lucide="chevron-down"></i>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    <aside
+        class="sidebar"
+        aria-label="فهرست مطالب"
+        aria-hidden="true"
+    >
+
+        <div class="sidebarHeader">
+            <h2>فهرست مطالب</h2>
+        </div>
+
+        <nav
+            class="sidebarContent"
+            aria-label="فهرست مطالب"
+        >
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-1"
+                >
+                    ۱. مقدمه و کلیات
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-2"
+                >
+                    هدف این جلسه:
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-3"
+                >
+                    اطلاعات درس و شیوهٔ ارزیابی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-4"
+                >
+                    ۲. متن اصلی جزوه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-5"
+                >
+                    مشاهدهٔ اولیه: حفاظت پس از مواجهه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-6"
+                >
+                    تعریف و کارکردهای ایمنی‌شناسی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-7"
+                >
+                    جایگاه ایمنی‌شناسی در درس و آزمایشگاه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-8"
+                >
+                    خط زمانی کلی ایمنی‌شناسی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-9"
+                >
+                    از مشاهدهٔ بالینی تا واکسیناسیون
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-10"
+                >
+                    نگاه سلولی و نگاه humoral
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-11"
+                >
+                    Burnet و انتخاب کلونال
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-12"
+                >
+                    Köhler و Milstein و فناوری hybridoma
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-13"
+                >
+                    کاربردهای آزمایشگاهی ایمنی‌شناسی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-14"
+                >
+                    اصطلاحات کلیدی جلسه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-15"
+                >
+                    مرور نقش دانشمندان
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-16"
+                >
+                    ۳. جداول مرور سریع
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-17"
+                >
+                    خط زمانی کلی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-18"
+                >
+                    مواجهه و حافظهٔ ایمنی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-19"
+                >
+                    variolation و روش Jenner
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-20"
+                >
+                    ضعیف‌سازی و غیرفعال‌سازی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-21"
+                >
+                    سلول‌های فاگوسیت‌کننده
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-22"
+                >
+                    ایمنی سلولی و ایمنی humoral
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-23"
+                >
+                    ایمنی ذاتی و اکتسابی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-24"
+                >
+                    نظریهٔ آموزشی و clonal selection
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-25"
+                >
+                    اجزا و عملکرد روش hybridoma
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-26"
+                >
+                    روش‌های آزمایشگاهی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-27"
+                >
+                    نقش دانشمندان و دستاوردها
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-28"
+                >
+                    ۴. اصطلاحات و تعاریف
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-29"
+                >
+                    ۵. خود‌ارزیابی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-30"
+                >
+                    سوالات تشریحی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-31"
+                >
+                    سوالات تستی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-32"
+                >
+                    ۷. ادیتور و منابع استفاده‌شده
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-33"
+                >
+                    ۸. گزارش تکمیل بودن محتوا
+                </a>
+            
+        </nav>
+
+    </aside>
+
+
+    <div class="sidebarBackdrop"></div>
+
+<aside
+    class="stickyNotesPanel"
+    aria-label="یادداشت‌های چسبان"
+    aria-hidden="true"
+>
+
+    <div class="stickyNotesPanelHeader">
+
+        <h2>یادداشت‌های چسبان</h2>
+
+        <button
+            class="addStickyNoteButton"
+            type="button"
+        >
+            <i data-lucide="plus"></i>
+            <span>یادداشت جدید</span>
+        </button>
+
+    </div>
+
+    <div class="stickyNotesPanelContent">
+
+        <div class="stickyNotesEmptyState">
+<i data-lucide="notebook-pen"></i>
+
+            <p>
+                هنوز یادداشتی ایجاد نکرده‌اید.
+            </p>
+
+        </div>
+
+        <div class="stickyNotesList"></div>
+
+    </div>
+
+</aside>
+
+<div class="stickyNotesBackdrop"></div>
+
+
+    <div
+        class="aboutModal"
+        aria-hidden="true"
+    >
+
+        <div class="aboutModalBackdrop"></div>
+
+        <section
+            class="aboutModalContent"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="aboutTitle"
+        >
+
+            <button
+                class="aboutCloseButton"
+                type="button"
+                aria-label="بستن"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <h2 id="aboutTitle">
+                آدم‌هایی که اینجا رو ساختن
+            </h2>
+
+            <p class="aboutIntroduction">
+                ما یک تیم کوچک هستیم که باور داریم یادگیری باید
+                لذت‌بخش، عمیق، و در دسترس باشد. جزوه‌ساز تلاش ماست
+                برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً
+                بتوانی با آن‌ها چیزی یاد بگیری.
+            </p>
+
+
+<div class="developerList">
+
+    <article class="developerCard">
+        <h3>شبنم رضاپور</h3>
+        <p>کسی که PDFها را راضی کرد محتوایشان را بی‌کم‌وکاست لو بدهند.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیر‌حسین شکری‌زاده سعادت‌آباد</h3>
+        <p>صدای کلاس را به متن تبدیل کرد، حتی وقتی استاد وسط جمله با میکروفون قهر می‌کرد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>مهراد اسدی</h3>
+        <p>پرامپت‌ها را طوری چید که LLM فکر کرد دارد پایان‌نامه دکتری می‌نویسد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیرسالار سهام‌پور</h3>
+        <p>مارک‌داون را به HTML تبدیل کرد و به جزوه ظاهری داد که آدم دلش بخواهد بخواندش.</p>
+    </article>
+
+</div>
+
+            <p class="aboutFooter">
+                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد.
+                <br>
+                امیدواریم یادگیریت را لذت‌بخش‌تر کند.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <div class="quickNavigation">
+        <div class="quickNavigationList"></div>
+    </div>
+
+
+    <main class="noteContainer">
+
+<div class="stickyNotesLayer"></div>
+
+        <section class="noteHeader">
+
+            <div class="noteMetadata">
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">درس</span>
+                    <span class="metadataValue">ایمنی‌شناسی پزشکی</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">مبحث</span>
+                    <span class="metadataValue">ایمونولوژی - تاریخچهٔ ایمنی‌شناسی و ارتباط آن با آزمایشگاه - جلسه اول</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">استاد</span>
+                    <span class="metadataValue">دکتر طاهره کلانتری</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ جلسه</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ تولید جزوه</span>
+                    <span class="metadataValue generatedDate">2026-10-12T01:11:42</span>
+                </span>
+
+            </div>
+
+
+            <div class="aiWarning">
+                <i data-lucide="triangle-alert"></i>
+
+                <p>
+                    این جزوه با استفاده از جزوه‌ساز پاپیروس و به صورت خودکار تولید شده است.
+                    ممکن است شامل خطا یا برداشت نادرست باشد و
+                    نیازمند بررسی و بازبینی مجدد است.
+                </p>
+            </div>
+
+        </section>
+
+
+<section class="noteSection introductionSection">
+    <h2 id="heading-1">۱. مقدمه و کلیات</h2>
+<p>موضوع جلسه، تاریخچه‌ای از ایمنی‌شناسی است؛ هدف، برقرارکردن ارتباط میان علوم پایهٔ ایمونولوژی و کار آزمایشگاه، به‌ویژه تست‌های اختصاصی آزمایشگاه ایمونولوژی است.</p>
+<h3 id="heading-2">هدف این جلسه:</h3>
+<p>مسیر کلی جلسه «از یک مشاهدهٔ ساده تا آزمایشگاه مدرن ایمنی‌شناسی» است. در پایان جلسه، دانشجو باید بتواند تفاوت نگاه تاریخی به ایمنی‌شناسی و نگاه علمی و مدرن امروزی را توضیح دهد، نقش Jenner، Pasteur، Metchnikoff، Ehrlich و Burnet را در یک خط زمانی قرار دهد و ارتباط تاریخچهٔ ایمنی‌شناسی را با تست‌های آزمایشگاهی مدرن، از جمله ELISA، flow cytometry و immunoassay، درک کند.</p>
+<h3 id="heading-3">اطلاعات درس و شیوهٔ ارزیابی</h3>
+<p>نمره‌دهی درس از ۲۰ نمره است: پایان‌ترم ۱۰ نمره، میان‌ترم ۵ نمره، Quizهای کوتاه ۳ نمره و فعالیت آموزشی ۲ نمره.</p>
+<p>فعالیت آموزشی شامل پاسخ‌دادن به پرسش‌های مطرح‌شده در کلاس است. پرسش‌ها ممکن است دربارهٔ جلسهٔ قبل باشند یا در جریان بحث همان جلسه مطرح شوند. مشارکت و پاسخ‌گویی فعال‌تر، امتیاز بیشتری برای فعالیت کلاسی دارد.</p>
+<p>اگر دانشجو در جلسه‌ای که Quiz برگزار می‌شود حضور نداشته باشد، نمرهٔ آن Quiz را نمی‌گیرد.</p>
+</section>
+
+<section class="noteSection mainSection">
+    <h2 id="heading-4">۲. متن اصلی جزوه</h2>
+<h3 id="heading-5">مشاهدهٔ اولیه: حفاظت پس از مواجهه</h3>
+<p><img src="../data/assets/assets/image3.jpg" alt="تصویر 3">
+<em>تصویر 3</em></p>
+<p>در تصویر به حفاظت در برابر آبلهٔ انسانی پس از مواجهه با آبلهٔ گاوی اشاره شده است.</p>
+<p>پیش از تعریف ایمنی‌شناسی و ورود به تاریخچهٔ ایمونولوژی، این پرسش مطرح می‌شود: چرا بعضی افراد پس از ابتلا به یک بیماری عفونی، در مواجههٔ دوباره با همان عامل بیماری‌زا کمتر بیمار می‌شوند؟</p>
+<p>این موضوع دربارهٔ همهٔ افراد صدق نمی‌کند، اما در بعضی افراد دیده می‌شود. در مواجههٔ نخست با عامل بیگانه، بدن پاسخ ایمنی ایجاد می‌کند. اگر همان عامل دوباره وارد شود، پاسخ می‌تواند زودتر شکل بگیرد و زمان لازم برای پاسخ‌دادن به antigen کاهش یابد. بدن عامل بیماری‌زا را به خاطر می‌سپارد و در مواجههٔ بعدی، <strong>حافظهٔ ایمنی (immune memory)</strong> به حفاظت کمک می‌کند. سلول‌های B و سلول‌های حافظه در این فرایند نقش دارند.</p>
+<p>عفونت اولیه یا واکسن می‌تواند زمینهٔ شکل‌گیری حافظهٔ ایمنی را فراهم کند. میزان حفاظت به نوع عامل بیماری‌زا، واکسن و وضعیت ایمنی فرد بستگی دارد؛ وضعیت سیستم ایمنی و ژنتیک فرد نیز بر پاسخ او مؤثر است.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">حفاظت در برابر آبلهٔ انسانی پس از مواجهه با آبلهٔ گاوی، نمونه‌ای از حفاظت پس از مواجهه است.</div></div>
+<h3 id="heading-6">تعریف و کارکردهای ایمنی‌شناسی</h3>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>ایمنی‌شناسی</strong>
+علمی است که توضیح می‌دهد بدن چگونه غیرخودی را تشخیص می‌دهد (Recognition)، پاسخ دفاعی ایجاد می‌کند (Response)، پاسخ را تنظیم و کنترل می‌کند (Regulation) و تجربه را به خاطر می‌سپارد (Memory).</div></div>
+<p>ایمنی‌شناسی علمی است که توضیح می‌دهد بدن چگونه:</p>
+<table>
+<thead>
+<tr>
+<th>اصطلاح علمی</th>
+<th>تعریف</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1) recognition</td>
+<td>غیرخودی را تشخیص می‌دهد</td>
+</tr>
+<tr>
+<td>2) response</td>
+<td>پاسخ دفاعی ایجاد می‌کند</td>
+</tr>
+<tr>
+<td>3) regulation</td>
+<td>پاسخ را تنظیم و کنترل می‌کند</td>
+</tr>
+<tr>
+<td>4) memory</td>
+<td>تجربه را به خاطر می‌سپارد</td>
+</tr>
+</tbody></table>
+<p>ابتدا عامل بیگانه شناسایی می‌شود و سپس سلول‌های ایمنی در برابر آن پاسخ دفاعی ایجاد می‌کنند. پاسخ ایمنی باید تنظیم شود؛ اگر مهار نشود، ممکن است به بدن خود فرد آسیب برساند، از جمله در پاسخ‌های بیش‌ازحد مانند مواردی از hypersensitivity.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">اختلال در تنظیم پاسخ ایمنی می‌تواند با بعضی بیماری‌ها، از جمله بیماری‌های خودایمنی مانند MS و دیابت نوع یک، ارتباط داشته باشد.</div></div>
+<p>ارتباط دقیق این بیماری‌ها با تنظیم پاسخ ایمنی در جلسهٔ مربوط به خودایمنی بررسی می‌شود.</p>
+<p><strong>آمار ابتلا به MS</strong>
+ گفته شده «از هر ۹ نفر یک نفر به این بیماری مبتلاست.</p>
+<h4>حافظهٔ ایمنی</h4>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Memory</strong>
+بدن تجربهٔ قبلی را به خاطر می‌سپارد؛ سلول‌های حافظه (memory cells) یادآوری می‌کنند که بدن پیش‌تر با آن میکروب مواجه شده است، بنابراین در مواجههٔ دوباره می‌تواند سریع‌تر واکنش نشان دهد.  میزان و نوع این حفاظت به وضعیت سیستم ایمنی، ژنتیک فرد و عوامل دیگری نیز بستگی دارد.</div></div>
+<h3 id="heading-7">جایگاه ایمنی‌شناسی در درس و آزمایشگاه</h3>
+<p>ایمنی‌شناسی فقط یک درس تئوری نیست؛ اساس بسیاری از <strong>تست‌های تشخیصی، واکسن‌ها، آنتی‌بادی‌های مونوکلونال و تشخیص نقص ایمنی</strong> است.</p>
+<p>در ایمنی‌شناسی ۱ ابتدا پایه‌های سیستم ایمنی بررسی می‌شوند. ترتیب کلی مباحث چنین است:</p>
+<ol>
+<li><strong>سلول های ایمنی</strong></li>
+<li><strong>ارگان‌های اولیه و سپس ارگان‌های ثانویه</strong></li>
+<li><strong>آنتی‌ژن و آنتی‌بادی</strong></li>
+<li><strong>پاسخ‌های ایمنی ذاتی و اکتسابی</strong></li>
+<li><strong>فعالیت‌های B cell و T cell</strong></li>
+</ol>
+<p>در ایمنی‌شناسی ۲ بیشتر به بیماری‌ها و واکسیناسیون پرداخته می‌شود.</p>
+<h3 id="heading-8">خط زمانی کلی ایمنی‌شناسی</h3>
+<p>مسیر تاریخی کلی به این ترتیب است:</p>
+<table>
+<thead>
+<tr>
+<th>زمان</th>
+<th>دانشمند یا دستاورد</th>
+<th>موضوع</th>
+<th>ترتیب وقوع</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>۱۷۹۶</td>
+<td>Jenner</td>
+<td>ایدهٔ واکسیناسیون</td>
+<td>1</td>
+</tr>
+<tr>
+<td>دههٔ ۱۸۸۰</td>
+<td>Pasteur</td>
+<td>کار روی واکسن ضعیف‌شده</td>
+<td>2</td>
+</tr>
+<tr>
+<td>۱۸۸۲</td>
+<td>Metchnikoff</td>
+<td>phagocytosis و ایمنی سلولی</td>
+<td>3</td>
+</tr>
+<tr>
+<td>دههٔ ۱۸۹۰</td>
+<td>Ehrlich</td>
+<td>antibody و ایمنی humoral</td>
+<td>4</td>
+</tr>
+<tr>
+<td>۱۹۵۷</td>
+<td>Burnet</td>
+<td>انتخاب کلونال (clonal selection)</td>
+<td>5</td>
+</tr>
+<tr>
+<td>۱۹۷۵</td>
+<td>hybridoma</td>
+<td>تولید آنتی‌بادی مونوکلونال</td>
+<td>6</td>
+</tr>
+<tr>
+<td>ایمنی‌شناسی امروز</td>
+<td>—</td>
+<td>ELISA، Flow، immunotherapy و آنتی‌بادی‌های مونوکلونال</td>
+<td>7</td>
+</tr>
+</tbody></table>
+<p>در این جلسه دانستن مسیر کلی اهمیت دارد و لازم نیست سال‌ها حفظ شوند، هرچند دانستن آن‌ها مفید است.</p>
+<h3 id="heading-9">از مشاهدهٔ بالینی تا واکسیناسیون</h3>
+<h4>مشاهده‌های پیش از علم مدرن</h4>
+<p>پیش از شکل‌گیری علم مدرن، ایمنی‌شناسی از آزمایشگاه شروع نشد، بلکه از <strong>مشاهدهٔ بالینی</strong> آغاز شد. (مشاهدهٔ تاریخی این بود که بعضی افراد پس از یک بار مواجهه با بیماری، در مواجههٔ بعدی کمتر بیمار می‌شدند.) این مشاهده مفهوم حفاظت پس از مواجهه و Memory را مطرح کرد، اما هنوز سازوکار سلولی یا مولکولی آن شناخته نشده بود. در آن زمان عامل بیماری‌زا یا pathogen را نمی‌شناختند.</p>
+<h4>Edward Jenner و آبلهٔ گاوی</h4>
+<p>زنان گاو دوشی که به آبلهٔ گاوی مبتلا می‌شدند، اگر بعداً در معرض آبلهٔ انسانی قرار می‌گرفتند، کمتر بیمار می‌شدند یا علائمی نشان نمی‌دادند. Jenner روی دست این زنان زخم‌هایی دید که نشانهٔ آبلهٔ گاوی بود. آبلهٔ گاوی شبیه آبلهٔ انسانی است، اما بیماری خفیف‌تری ایجاد می‌کند و علائم کشندهٔ آبلهٔ انسانی را ندارد. Jenner نمی‌دانست pathogen چیست و بر پایهٔ <strong>مشاهده‌های تجربی</strong> به نتیجه رسید.</p>
+<p>در سال ۱۷۹۶، در اواخر قرن هجدهم، پزشک انگلیسی Edward Jenner افراد را با واکسیناسیون آشنا کرد. او از مایع یا مادهٔ روی زخم آبلهٔ گاوی برداشت و به پسربچه‌ای حدوداً ۱۰ تا ۱۲ ساله تزریق کرد. پس از مدتی، پسر را با مادهٔ آبلهٔ انسانی مواجه کرد. این کار بر اساس قوانین اخلاقی امروز ممنوع است؛ اما در آن زمان چنین محدودیت‌هایی وجود نداشت و اگر فردی داوطلب می‌شد، این کار انجام می‌گرفت.</p>
+<p>آبلهٔ انسانی بیماری خطرناکی بود و می‌توانست فرد را بکشد. پسربچه پس از مواجههٔ قبلی با آبلهٔ گاوی در برابر آبلهٔ انسانی محافظت شد. این حفاظت به <strong>شباهت antigen ای</strong> میان دو عامل (آبله انسانی و آبله گاوی) نسبت داده می‌شود؛ در نتیجه، آبلهٔ انسانی در بدن او خود را نشان نداد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در سال ۱۷۹۶، Jenner از مایع یا مادهٔ روی زخم آبلهٔ گاوی برداشت و به پسربچه‌ای حدوداً ۱۰ تا ۱۲ ساله تزریق کرد. پس از مدتی، پسر را با مادهٔ آبلهٔ انسانی مواجه کرد؛ پسربچه در برابر آبلهٔ انسانی محافظت شد.</div></div>
+<p>ایدهٔ اصلی Jenner استفادهٔ کنترل‌شده از عاملی کم‌خطرتر برای ایجاد حفاظت بود. این ایده به ایمنی اکتسابی و حافظهٔ ایمنی مربوط است. Jenner یافته‌های خود را در ۱۷۹۸ منتشر کرد و کار او نقطهٔ عطفی در توسعهٔ واکسیناسیون شد.</p>
+<h4>مقایسهٔ واکسیناسیون Jenner با variolation</h4>
+<p>پیش از Jenner روش variolation نیز وجود داشت. در این روش از مادهٔ آبلهٔ انسانی، مثلاً از زخم‌های آبله، برای مواجهه‌دادن فرد دیگری استفاده می‌کردند. این روش خطرناک بود، چون عامل بیماری‌زا ممکن بود وارد بدن شود و حتی باعث مرگ شود.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent"><strong>تفاوت اساسی روش Jenner استفاده از آبلهٔ گاوی به‌عنوان منبعی کم‌خطرتر بود.</strong></div></div>
+<ul>
+<li><strong>واژه‌های cowpox و smallpox به‌ترتیب به آبلهٔ گاوی و آبلهٔ انسانی اشاره دارند.</strong></li>
+</ul>
+<h4>واژهٔ vaccination</h4>
+<p>واژهٔ واکسیناسیون (Vaccination) از کلمهٔ لاتین Vacca به معنی «گاو ماده» گرفته شده است. این نام به ادوارد جنر در اواخر قرن هجدهم مربوط می‌شود که با استفاده از ویروس آبلهٔ گاوی، روشی برای پیشگیری از آبلهٔ انسانی ابداع کرد. بعدها لویی پاستور در قرن نوزدهم این مفهوم را گسترش داد و واژهٔ واکسیناسیون به افتخار جنر برای روش‌های ایمن‌سازی به کار رفت.</p>
+<h4>Louis Pasteur و گسترش علمی واکسیناسیون</h4>
+<p>تقریباً یک قرن پس از Jenner، Louis Pasteur واکسیناسیون را گسترش داد و آن را به مطالعهٔ علمی و آزمایشگاهی رساند. Jenner بر پایهٔ مشاهده‌های تجربی به نتیجه رسیده بود؛ Pasteur موضوع را در آزمایشگاه بررسی کرد. <strong>در زمان Pasteur عامل‌های بیماری‌زا شناخته شده بودند و بیماری‌های عفونی را با عامل میکروبی مشخص مرتبط می‌دانستند.</strong></p>
+<p><strong>Pasteur روی عامل‌های میکروبی کار کرد و بعضی از آن‌ها را attenuate، یعنی ضعیف، کرد. میکروب هنوز زنده بود، اما بیماری‌زایی آن بسیار کمتر می‌شد و خاصیت antigenicity آن باقی می‌ماند. بنابراین، بدن می‌توانست آن را به‌عنوان antigen شناسایی کند و بدون ایجاد بیماری پاسخ ایمنی بسازد.</strong></p>
+<p><strong>او بعضی عامل‌های میکروبی را کاملاً غیرفعال نیز کرد. در این حالت، عامل بیماری‌زا از بین می‌رفت، اما ساختارهای antigenی باقی می‌ماندند و بدن می‌توانست آن‌ها را شناسایی کند.</strong></p>
+<h4>از مشاهده به آزمایش کنترل شده: pasteur</h4>
+<p>مسیر کلی واکسن چنین است:</p>
+<ol>
+<li>عامل بیماری‌زا (Pathogen)</li>
+<li>ضعیف‌سازی یا غیرفعال‌سازی (Attenuation)</li>
+<li>مواجههٔ کنترل‌شده یا vaccination</li>
+<li>ایجاد پاسخ ایمنی (Immune response)</li>
+<li>حفاظت بعدی (Protection)</li>
+</ol>
+<p>واکسن بدن را با عامل میکروبی ضعیف‌شده یا غیرفعال‌شده مواجه می‌کند. بیماری‌زایی عامل از بین رفته یا بسیار کم شده، اما خاصیت antigenی حفظ شده است؛ بنابراین، سیستم ایمنی می‌تواند آن را شناسایی کند و پاسخ بدهد.</p>
+<h4>ورود ایمنی‌شناسی به آزمایشگاه</h4>
+<p>در دورهٔ Pasteur تغییر مهمی رخ داد: روشن شد که بیماری‌های عفونی عامل مشخصی دارند. وقتی عامل بیماری‌زا قابل شناسایی شد، پاسخ بدن نیز قابل اندازه‌گیری شد و ایمنی‌شناسی وارد آزمایشگاه شد. از همین‌جا مفاهیمی مانند antigen، antibody و serology اهمیت پیدا کردند و ایمنی‌شناسی به پایهٔ بسیاری از تست‌های تشخیصی تبدیل شد.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">اگر عامل بیماری‌زا قابل شناسایی باشد، پاسخ بدن نیز قابل اندازه‌گیری است</div></div>
+<h3 id="heading-10">نگاه سلولی و نگاه humoral</h3>
+<h4>Metchnikoff و phagocytosis</h4>
+<p>Metchnikoff به نگاه سلولی در ایمنی‌شناسی و phagocytosis شناخته می‌شود. در مشاهده‌ای که از ستارهٔ دریایی داشت، به بلعیدن ذرات به‌وسیلهٔ سلول‌ها توجه کرد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Phagocytosis</strong>
+بلعیدن و حذف ذرات یا میکروب‌ها به‌وسیلهٔ سلول‌های دفاعی.</div></div>
+<p>Phagocytosis یعنی بلعیدن و حذف ذرات یا میکروب‌ها به‌وسیلهٔ سلول‌های دفاعی. ایمنی فرایندی فعال و سلولی است: <strong>سلول‌های دفاعی می‌توانند حرکت کنند، عامل را تشخیص دهند، به‌سوی آن بروند</strong>، آن را ببلعند و درون خود تخریب کنند.</p>
+<blockquote>
+<p>سلول‌های فاگوسیت‌کننده یا phagocyte شامل <strong>neutrophil و macrophage</strong> هستند. در خون محیطی، بیشترین درصد سلول‌های فاگوسیت‌کننده neutrophilها هستند؛ در بافت، macrophageها حضور دارند. Monocyteها با ورود از خون به بافت تغییر شکل می‌دهند و به macrophage تبدیل می‌شوند. <strong>Dendritic cell</strong> نیز از سلول‌هایی است که در جلسه‌های بعد و در بحث ایمنی ذاتی بررسی می‌شود.</p>
+</blockquote>
+<p>اگر پرسیده شود کدام سلول‌های خون محیطی بیشتر در phagocytosis درگیرند، پاسخ <strong>neutrophil</strong> است. این پاسخ <strong>دربارهٔ خون محیطی</strong> است، نه بافت. این بحث در جلسه‌های بعد به neutrophil، macrophage و dendritic cell وصل می‌شود.</p>
+<h4>Ehrlich، Behring و ایمنی humoral</h4>
+<p>Ehrlich به ایمنی humoral و antibody پرداخت؛ در کنار او، Behring نیز روی این موضوع کار کرده است. ایمنی humoral یکی از بخش‌های ایمنی اکتسابی یا ایمنی اختصاصی است. ایمنی اکتسابی دو زیرگروه دارد: ایمنی سلولی که با T cellها ارتباط دارد و ایمنی humoral که با B cellها ارتباط دارد.</p>
+<p>B cellها گیرنده‌هایی روی سطح خود دارند که شبیه antibody هستند. پس از برخورد B cell با antigen و تکثیر آن، بخشی از سلول‌ها به plasma cell تبدیل می‌شوند و مقدار زیادی antibody ترشح می‌کنند.</p>
+<ul>
+<li>antibodyهای روی سطح B cell، membrane antibody یا آنتی‌بادی‌های غشایی‌اند.</li>
+<li>antibodyهای ترشح‌شده، secretory antibody یا آنتی‌بادی‌های ترشحی‌اند.</li>
+</ul>
+<p>در سرم خون بیمار، antibody ترشح‌شده را بررسی می‌کنیم، نه antibody متصل به سطح B cell.</p>
+<p>Antibodyها مولکول‌های محلول نیز هستند و می‌توانند به‌طور اختصاصی به antigen متصل شوند. در ایمنی اختصاصی، antigen با اختصاصیت بالا شناخته می‌شود و اتصال را می‌توان به قفل و کلید تشبیه کرد. antibody ساختاری شبیه حرف Y انگلیسی دارد و دو سر بازوهای آن به antigen متصل می‌شوند. اگر محل اتصال antibody فرورفته باشد، بخش متناس ب antigen باید شکل مکمل داشته باشد تا اتصال اختصاصی برقرار شود.</p>
+<p><img src="../data/assets/antibody-antigen.png" alt="antibody-antigen"></p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">اتصال اختصاصی antigen و antibody در ایمنی اختصاصی به قفل و کلید تشبیه شده است؛ دو سر بازوهای antibody با ساختار شبیه حرف Y به antigen متصل می‌شوند.</div></div>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">اختصاصیت اصل مهم این بحث و پایهٔ بسیاری از تست‌های serology، ELISA و immunoassay است.</div></div>
+<h4>ارتباط ایمنی سلولی و humoral</h4>
+<p>در گذشته، ایمنی‌شناسی گاهی به‌صورت بحثی دربارهٔ «سلول یا antibody» مطرح می‌شد؛ اما امروز می‌دانیم هر دو لازم‌اند و با هم کار می‌کنند.</p>
+<ul>
+<li>ایمنی humoral شامل antibodyها و نیز Complement است و به خنثی‌سازی میکروب، فعال‌سازی التهاب و کمک به phagocytosis ارتباط دارد.</li>
+<li>ایمنی سلولی شامل phagocyteها و لنفوسیت‌های T است و می‌تواند با کشتن سلول آلوده ارتباط داشته باشد.</li>
+</ul>
+<p>سیستم ایمنی شبکه‌ای هماهنگ از سلول‌ها و مولکول‌هاست و نباید ایمنی سلولی و humoral را دو بخش کاملاً جدا و مستقل تصور کرد. مولکول‌های محلول در پلاسما با ایمنی humoral و سلول‌ها با ایمنی سلولی مرتبط‌اند.</p>
+<p>برای مثال، در بعضی بیماری‌ها مانند MS ممکن است T cellها به سیستم عصبی مرکزی (central nervous system) و myelin آسیب بزنند. بااین‌حال، حتی اگر نقش اصلی در بیماری با T cellها باشد، B cellها و antibodyها را نمی‌توان نادیده گرفت. سیستم ایمنی بدون هماهنگی میان سلول‌ها و مولکول‌ها کار نمی‌کند و این دو بخش در کنار هم عمل می‌کنند.</p>
+<h4>ایمنی ذاتی و اکتسابی</h4>
+<p>ویژگی‌های مهم ایمنی اکتسابی اختصاصیت و حافظه‌اند؛ این ویژگی‌ها به همین شکل در ایمنی ذاتی مطرح نیستند.</p>
+<ul>
+<li>Macrophage، dendritic cell و neutrophil در ایمنی ذاتی قرار می‌گیرند.</li>
+<li>در ایمنی اکتسابی، B cell و T cell حضور دارند و antigen می‌تواند کلون مناسب را انتخاب کند.</li>
+</ul>
+<h3 id="heading-11">Burnet و انتخاب کلونال</h3>
+<p>در سال ۱۹۵۷، Burnet نظریهٔ انتخاب کلونال (clonal selection) را مطرح کرد.</p>
+<p>در گذشته نظریهٔ آموزشی وجود داشت. بر اساس آن تصور می‌شد antigen که وارد بدن می‌شود، به سلول‌ها آموزش می‌دهد و گیرنده‌هایشان را طوری تغییر می‌دهد که شبیه antigen شوند. Burnet این تصور را نپذیرفت و گفت بدن از قبل کلون‌های متنوعی دارد و antigen کلون مناسب را انتخاب می‌کند. او تعداد کلون‌های B cell و T cell را حدود ۱۰⁸ تا ۱۰¹⁴ بیان کرد؛ ۱۰⁸ برابر با ۱۰۰ میلیون است. گیرندهٔ هر کلون با گیرندهٔ کلون دیگر تفاوت دارد و سلول‌ها لازم نیست با ورود هر antigen آموزش ببینند و گیرنده‌هایشان را تغییر دهند.</p>
+<p>وقتی antigen وارد بدن می‌شود، با گیرنده‌های گوناگون برخورد می‌کند. اگر گیرنده‌ای با آن antigen جور باشد، اتصال اختصاصی برقرار می‌شود و همان کلون انتخاب می‌شود؛ سپس کلون انتخاب‌شده تکثیر می‌شود و سلول‌های مشابه می‌سازد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>کلون</strong>
+یک سلول B یا T و سلول‌های مشابهی که از تکثیر آن به‌وجود می‌آیند.</div></div>
+<p>منظور از کلون، یک سلول B یا T و سلول‌های مشابهی است که از تکثیر آن به‌وجود می‌آیند. در این توضیح، به‌ویژه B cell مطرح است، چون گیرندهٔ سطحی آن ساختاری شبیه antibody دارد. سلول‌های B تکثیرشده می‌توانند به plasma cell تبدیل شوند و antibody مشابه گیرندهٔ سطح B cell را ترشح کنند. بنابراین، در سرم بیمار می‌توان antibody ترشح‌شده را اندازه‌گیری کرد.</p>
+<p>در شکل انتخاب کلونال، برای ساده‌شدن توضیح، چند کلون از میان تعداد زیادی کلون نشان داده شده‌اند: antigen با گیرنده‌های مختلف برخورد می‌کند، کلون دارای گیرندهٔ متناسب را انتخاب می‌کند و آن کلون تکثیر می‌شود. پیام اصلی این است که پاسخ اختصاصی از انتخاب و تکثیر یک کلون سلولی مناسب ایجاد می‌شود، نه از تغییر گیرندهٔ سلول پس از ورود antigen.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">درک بهتر
+«حتی اگر بدن پیش‌تر با یک آنتی‌ژن خاص مواجه نشده باشد، از قبل کلون‌های سلولی متنوعی با گیرنده‌های گوناگون در سیستم ایمنی وجود دارند. ویروس‌ها نیز می‌توانند تغییر کنند؛ برای مثال، در مورد سویه‌های جدید کرونا، چون آنتی‌ژن آن‌ها با نوع قبلی تفاوت داشت، سیستم ایمنی نمی‌توانست از آنتی بادی های پیشین استفاده کند. به همین دلیل است که هر سال برای آنفلوآنزا واکسن جدیدی توصیه می‌شود؛ زیرا با تغییر نوع ویروس و آنتی‌ژن‌های آن، لازم است دوباره علیه سویه جدید واکسینه شویم.»</div></div>
+<h3 id="heading-12">Köhler و Milstein و فناوری hybridoma</h3>
+<p>در سال ۱۹۷۵، Köhler و Milstein با فناوری hybridoma آنتی‌بادی‌های مونوکلونال تولید کردند و در ایمونولوژی تحول ایجاد شد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>آنتی‌بادی مونوکلونال</strong>
+آنتی‌بادی‌هایی که از یک کلون منشأ می‌گیرند و اختصاصیت یکسان دارند.</div></div>
+<p>مونوکلونال یعنی آنتی‌بادی‌هایی که از یک کلون منشأ می‌گیرند و اختصاصیت یکسان دارند. در این روش، یک کلون از میان کلون‌های موجود انتخاب و با سلول سرطانی ادغام می‌شود. B cell به‌تنهایی عمر محدودی دارد، اما سلول سرطانی توانایی تکثیر طولانی‌مدت دارد (سلول سرطانی عمر طولانی دارد) . با ادغام آن‌ها، سلولی به‌دست می‌آید که می‌تواند مدت زیادی تکثیر شود و antibody تولید کند. این سلول حاصل را می‌توان در محیط کشت نگهداری کرد و برای تولید آنتی‌بادی مونوکلونال به کار برد؛ در گفتار گفته شد که می‌توان از آن برای مدت طولانی‌تر، حتی یکی‌دو سال، استفاده کرد.</p>
+<p>آنتی‌بادی مونوکلونال برای تشخیص بیماری‌ها و نیز درمان به‌کار می‌رود. کاربردهای درمانی، از جمله در immunotherapy، در ادامهٔ درس بیشتر بررسی می‌شوند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای مثال، اگر برای تشخیص سرطانی بخواهیم علیه marker آن، CD20، آنتی‌بادی تولید کنیم، کلونی انتخاب می‌شود که به آن هدف متصل شود.</div></div>
+<p>آنتی‌بادی مونوکلونال برای علوم آزمایشگاهی اهمیت ویژه دارد، زیرا در تشخیص آزمایشگاهی اختصاصیت و تکرارپذیری مهم‌اند. <strong>کلیدواژهٔ این بخش Specificity است.</strong> Köhler و Milstein به‌سبب توانایی و کارشان در ژنتیک توانستند این روش را پیش ببرند. دانشجویان می‌توانند برای جلسهٔ بعد چند دقیقه دربارهٔ فناوری hybridoma مطالعه کنند و توضیح دهند.</p>
+<h3 id="heading-13">کاربردهای آزمایشگاهی ایمنی‌شناسی</h3>
+<p>در آزمایشگاه‌های امروز، ثمرهٔ تاریخچهٔ ایمنی‌شناسی را در تست‌هایی مانند serology، ELISA، immunofluorescence و flow cytometry می‌بینیم.</p>
+<h4>Serology</h4>
+<p>در serology وجود antibody یا antigen بررسی می‌شود. در آزمایشگاه سرولوژی، برخلاف آزمایش‌هایی که سلول‌های خون را شناسایی می‌کنند، مولکول‌های محلول در سرم بررسی می‌شوند. Antibodyها ماهیت پروتئینی دارند و در <strong>سرم خون</strong> به‌صورت محلول‌اند. معمولاً به‌دنبال <strong>antibody</strong> هستیم و در موارد کمتری antigen را در سرم بیمار تشخیص می‌دهیم.</p>
+<h4>روش‌های آزمایشگاهی دیگر</h4>
+<ul>
+<li><strong>ELISA:</strong> اتصال اختصاصی بررسی می‌شود و تغییر رنگ دیده می‌شود.</li>
+<li><strong>Immunofluorescence:</strong> می‌توان محل antigen را در بافت یا سلول مشاهده کرد و بعضی antigenها را در بافت شناسایی کرد.</li>
+<li><strong>Flow cytometry:</strong> سلول‌ها با markerها شناسایی می‌شوند.</li>
+</ul>
+<p>بسیاری از این تست‌ها بر مفاهیمی مانند antigen، antibody و serology تکیه دارند.</p>
+<h3 id="heading-14">اصطلاحات کلیدی جلسه</h3>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Antigen</strong>
+در تعریف کلی این جلسه، هر چیزی است که سیستم ایمنی آن را شناسایی می‌کند. در بعضی کتاب‌ها antigen به عاملی گفته می‌شود که وارد بدن می‌شود و پاسخ ایمنی ایجاد می‌کند؛ در این بحث منظور عاملی است که سیستم ایمنی آن را می‌شناسد و در برابرش پاسخ ایجاد می‌شود.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Antibody</strong>
+مولکولی از سیستم ایمنی است که به‌طور اختصاصی antigen را شناسایی می‌کند و به آن متصل می‌شود.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Immunity</strong>
+توانایی دفاع و ایجاد حفاظت در بدن.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Phagocytosis</strong>
+بلعیدن و حذف ذرات به‌وسیلهٔ سلول‌های دفاعی.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Vaccine</strong>
+مواجههٔ کنترل‌شده‌ای برای آموزش سیستم ایمنی.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Memory</strong>
+پاسخ سریع‌تر یا قوی‌تر در مواجههٔ بعدی.</div></div>
+<p>این واژه‌ها از اصطلاحات کلیدی جلسه‌اند.</p>
+<h3 id="heading-15">مرور نقش دانشمندان</h3>
+<ul>
+<li><strong>Jenner:</strong> ایدهٔ واکسیناسیون را بر پایهٔ مشاهدهٔ بالینی مطرح کرد، بی‌آنکه علت علمی آن را بداند.</li>
+<li><strong>Pasteur:</strong> واکسن‌ها را به‌صورت علمی بررسی کرد و دربارهٔ ضعیف‌سازی عامل بیماری‌زا کار کرد.</li>
+<li><strong>Metchnikoff:</strong> با phagocytosis و ایمنی سلولی شناخته می‌شود و دربارهٔ سلول‌های T نیز کار کرد؛ در این جلسه بر phagocytosis تأکید شد.</li>
+<li><strong>Ehrlich:</strong> دربارهٔ ایمنی humoral کار کرد؛ Behring نیز در این حوزه فعالیت داشت.</li>
+<li><strong>Burnet:</strong> نظریهٔ clonal selection را مطرح کرد.</li>
+<li><strong>Köhler و Milstein:</strong> با hybridoma آنتی‌بادی مونوکلونال تولید کردند.</li>
+</ul>
+<p>تلفظ نام Milstein ممکن است در منابع انگلیسی و آلمانی متفاوت باشد.</p>
+<p>دانشجویان در یک فعالیت سه‌دقیقه‌ای خط زمانی را کامل می‌کنند و Jenner، Pasteur، Ehrlich، Burnet، Metchnikoff و Hybridoma را در جایگاه‌های مربوط قرار می‌دهند.</p>
+<p>سه پیام اصلی جلسه عبارت‌اند از:</p>
+<ol>
+<li>ایمنی‌شناسی از مشاهدهٔ بالینی شروع شد.</li>
+<li>دو نگاه اصلی سلولی و مولکولی شکل گرفت.</li>
+<li>مفاهیم این دو نگاه امروزه پایهٔ تست‌های آزمایشگاهی و درمان‌های هدفمند هستند.</li>
+</ol>
+<p>جلسهٔ بعد به سلول‌های سیستم ایمنی می‌پردازد. پرسش آغازین جلسهٔ بعد این است: اگر phagocytosis مهم است، کدام سلول‌ها آن را انجام می‌دهند؟</p>
+<ul>
+<li>Neutrophil نخستین پاسخ سریع است.</li>
+<li>Macrophage عمل بلعیدن و پیام‌رسانی دارد.</li>
+<li>Dendritic cell پلی میان innate و adaptive است.</li>
+<li>Lymphocyte با اختصاصیت و حافظه ارتباط دارد.</li>
+</ul>
+</section>
+
+<section class="noteSection quickTablesSection">
+    <h2 id="heading-16">۳. جداول مرور سریع</h2>
+<h3 id="heading-17">خط زمانی کلی</h3>
+<table>
+<thead>
+<tr>
+<th>زمان</th>
+<th>دانشمند یا دستاورد</th>
+<th>موضوع</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>۱۷۹۶</td>
+<td>Jenner</td>
+<td>ایدهٔ واکسیناسیون</td>
+</tr>
+<tr>
+<td>دههٔ ۱۸۸۰</td>
+<td>Pasteur</td>
+<td>کار روی واکسن ضعیف‌شده</td>
+</tr>
+<tr>
+<td>۱۸۸۲</td>
+<td>Metchnikoff</td>
+<td>phagocytosis و ایمنی سلولی</td>
+</tr>
+<tr>
+<td>دههٔ ۱۸۹۰</td>
+<td>Ehrlich</td>
+<td>antibody و ایمنی humoral</td>
+</tr>
+<tr>
+<td>۱۹۵۷</td>
+<td>Burnet</td>
+<td>انتخاب کلونال (clonal selection)</td>
+</tr>
+<tr>
+<td>۱۹۷۵</td>
+<td>hybridoma</td>
+<td>تولید آنتی‌بادی مونوکلونال</td>
+</tr>
+<tr>
+<td>ایمنی‌شناسی امروز</td>
+<td>—</td>
+<td>ELISA، Flow، immunotherapy و آنتی‌بادی‌های مونوکلونال</td>
+</tr>
+</tbody></table>
+<h3 id="heading-18">مواجهه و حافظهٔ ایمنی</h3>
+<table>
+<thead>
+<tr>
+<th>جنبه</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>مواجههٔ نخست</td>
+<td>بدن در برابر عامل بیگانه پاسخ ایمنی ایجاد می‌کند.</td>
+</tr>
+<tr>
+<td>مواجههٔ دوباره با همان عامل</td>
+<td>پاسخ می‌تواند زودتر شکل بگیرد و زمان لازم برای پاسخ‌دادن به antigen کاهش یابد.</td>
+</tr>
+<tr>
+<td>نقش حافظهٔ ایمنی</td>
+<td>تجربهٔ قبلی را به خاطر می‌سپارد و به حفاظت در مواجههٔ بعدی کمک می‌کند.</td>
+</tr>
+<tr>
+<td>شکل‌گیری زمینهٔ حافظه</td>
+<td>عفونت اولیه یا واکسن می‌تواند زمینهٔ شکل‌گیری حافظهٔ ایمنی را فراهم کند.</td>
+</tr>
+<tr>
+<td>عوامل مؤثر بر میزان و نوع حفاظت</td>
+<td>نوع عامل بیماری‌زا، واکسن، وضعیت ایمنی، وضعیت سیستم ایمنی و ژنتیک فرد.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-19">variolation و روش Jenner</h3>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>variolation</th>
+<th>روش Jenner</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>مادهٔ مورد استفاده</td>
+<td>مادهٔ آبلهٔ انسانی، مثلاً از زخم‌های آبله</td>
+<td>آبلهٔ گاوی</td>
+</tr>
+<tr>
+<td>توصیف خطر</td>
+<td>خطرناک بود، چون عامل بیماری‌زا ممکن بود وارد بدن شود و حتی باعث مرگ شود.</td>
+<td>آبلهٔ گاوی منبعی کم‌خطرتر بود.</td>
+</tr>
+<tr>
+<td>واژهٔ مرتبط</td>
+<td>smallpox: آبلهٔ انسانی</td>
+<td>cowpox: آبلهٔ گاوی</td>
+</tr>
+</tbody></table>
+<h3 id="heading-20">ضعیف‌سازی و غیرفعال‌سازی</h3>
+<table>
+<thead>
+<tr>
+<th>رویکرد</th>
+<th>وضعیت عامل بیماری‌زا</th>
+<th>آنچه حفظ می‌شود یا رخ می‌دهد</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ضعیف‌سازی (attenuation)</td>
+<td>میکروب زنده است، اما بیماری‌زایی آن بسیار کمتر می‌شود.</td>
+<td>خاصیت antigenicity باقی می‌ماند و بدن می‌تواند آن را به‌عنوان antigen شناسایی کند و پاسخ ایمنی بسازد.</td>
+</tr>
+<tr>
+<td>غیرفعال‌سازی</td>
+<td>عامل بیماری‌زا کاملاً غیرفعال می‌شود و از بین می‌رود.</td>
+<td>ساختارهای antigenی باقی می‌مانند و بدن می‌تواند آن‌ها را شناسایی کند.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-21">سلول‌های فاگوسیت‌کننده</h3>
+<table>
+<thead>
+<tr>
+<th>سلول یا گروه سلولی</th>
+<th>جایگاه یا نکتهٔ مطرح‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>neutrophil</td>
+<td>در خون محیطی، بیشترین درصد سلول‌های فاگوسیت‌کننده را دارد.</td>
+</tr>
+<tr>
+<td>macrophage</td>
+<td>در بافت حضور دارد.</td>
+</tr>
+<tr>
+<td>Monocyte</td>
+<td>با ورود از خون به بافت تغییر شکل می‌دهد و به macrophage تبدیل می‌شود.</td>
+</tr>
+<tr>
+<td>Dendritic cell</td>
+<td>از سلول‌هایی است که در بحث ایمنی ذاتی بررسی می‌شود.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-22">ایمنی سلولی و ایمنی humoral</h3>
+<table>
+<thead>
+<tr>
+<th>جنبه</th>
+<th>ایمنی humoral</th>
+<th>ایمنی سلولی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ارتباط داده‌شده در این جلسه</td>
+<td>B cellها</td>
+<td>T cellها</td>
+</tr>
+<tr>
+<td>جایگاه در تقسیم‌بندی</td>
+<td>یکی از زیرگروه‌های ایمنی اکتسابی یا اختصاصی</td>
+<td>یکی از زیرگروه‌های ایمنی اکتسابی یا اختصاصی</td>
+</tr>
+<tr>
+<td>اجزای مطرح‌شده</td>
+<td>antibodyها و Complement</td>
+<td>phagocyteها و لنفوسیت‌های T</td>
+</tr>
+<tr>
+<td>ارتباط‌ها و کارکردهای مطرح‌شده</td>
+<td>خنثی‌سازی میکروب، فعال‌سازی التهاب و کمک به phagocytosis</td>
+<td>می‌تواند با کشتن سلول آلوده ارتباط داشته باشد</td>
+</tr>
+<tr>
+<td>ارتباط کلی</td>
+<td>مولکول‌های محلول در پلاسما با ایمنی humoral مرتبط‌اند.</td>
+<td>سلول‌ها با ایمنی سلولی مرتبط‌اند.</td>
+</tr>
+<tr>
+<td>نکتهٔ مربوط به antibody</td>
+<td>B cell و antibody؛ antibody سطح B cell، membrane antibody است و antibody ترشح‌شده، secretory antibody است.</td>
+<td>—</td>
+</tr>
+</tbody></table>
+<h3 id="heading-23">ایمنی ذاتی و اکتسابی</h3>
+<table>
+<thead>
+<tr>
+<th>ویژگی یا سلول</th>
+<th>ایمنی ذاتی</th>
+<th>ایمنی اکتسابی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>سلول‌های ذکرشده</td>
+<td>Macrophage، dendritic cell و neutrophil</td>
+<td>B cell و T cell</td>
+</tr>
+<tr>
+<td>اختصاصیت و حافظه</td>
+<td>این ویژگی‌ها به همین شکل در ایمنی ذاتی مطرح نیستند.</td>
+<td>اختصاصیت و حافظه از ویژگی‌های مهم آن‌اند.</td>
+</tr>
+<tr>
+<td>ارتباط با انتخاب کلون</td>
+<td>—</td>
+<td>antigen می‌تواند کلون مناسب را انتخاب کند.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-24">نظریهٔ آموزشی و clonal selection</h3>
+<table>
+<thead>
+<tr>
+<th>نظریهٔ آموزشیِ گذشته</th>
+<th>نظریهٔ انتخاب کلونال Burnet</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>تصور می‌شد antigen که وارد بدن می‌شود، به سلول‌ها آموزش می‌دهد و گیرنده‌هایشان را طوری تغییر می‌دهد که شبیه antigen شوند.</td>
+<td>بدن از قبل کلون‌های متنوعی دارد و antigen کلون مناسب را انتخاب می‌کند.</td>
+</tr>
+<tr>
+<td>گیرنده پس از ورود antigen تغییر می‌کند.</td>
+<td>گیرنده‌های کلون‌ها از قبل متفاوت‌اند و لازم نیست با ورود هر antigen تغییر کنند.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-25">اجزا و عملکرد روش hybridoma</h3>
+<table>
+<thead>
+<tr>
+<th>جزء یا ویژگی</th>
+<th>توضیح در روش hybridoma</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B cell</td>
+<td>به‌تنهایی عمر محدودی دارد.</td>
+</tr>
+<tr>
+<td>سلول سرطانی</td>
+<td>توانایی تکثیر طولانی‌مدت دارد.</td>
+</tr>
+<tr>
+<td>ادغام دو سلول</td>
+<td>سلولی به‌دست می‌آید که می‌تواند مدت زیادی تکثیر شود و antibody تولید کند.</td>
+</tr>
+<tr>
+<td>سلول حاصل</td>
+<td>می‌توان آن را در محیط کشت نگهداری کرد و برای تولید آنتی‌بادی مونوکلونال به کار برد؛ در گفتار گفته شد که می‌توان از آن برای مدت طولانی‌تر، حتی یکی‌دو سال، استفاده کرد.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-26">روش‌های آزمایشگاهی</h3>
+<table>
+<thead>
+<tr>
+<th>روش یا حوزه</th>
+<th>آنچه در آن بررسی یا شناسایی می‌شود</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Serology</td>
+<td>وجود antibody یا antigen؛ مولکول‌های محلول در سرم بررسی می‌شوند. معمولاً به‌دنبال antibody هستیم و در موارد کمتری antigen را در سرم بیمار تشخیص می‌دهیم.</td>
+</tr>
+<tr>
+<td>ELISA</td>
+<td>اتصال اختصاصی بررسی می‌شود و تغییر رنگ دیده می‌شود.</td>
+</tr>
+<tr>
+<td>Immunofluorescence</td>
+<td>محل antigen در بافت یا سلول مشاهده می‌شود و بعضی antigenها در بافت شناسایی می‌شوند.</td>
+</tr>
+<tr>
+<td>Flow cytometry</td>
+<td>سلول‌ها با markerها شناسایی می‌شوند.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-27">نقش دانشمندان و دستاوردها</h3>
+<table>
+<thead>
+<tr>
+<th>دانشمند یا دستاورد</th>
+<th>نقش مطرح‌شده در جلسه</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Jenner</td>
+<td>ایدهٔ واکسیناسیون را بر پایهٔ مشاهدهٔ بالینی مطرح کرد، بی‌آنکه علت علمی آن را بداند.</td>
+</tr>
+<tr>
+<td>Pasteur</td>
+<td>واکسن‌ها را به‌صورت علمی بررسی کرد و دربارهٔ ضعیف‌سازی عامل بیماری‌زا کار کرد.</td>
+</tr>
+<tr>
+<td>Metchnikoff</td>
+<td>با phagocytosis و ایمنی سلولی شناخته می‌شود و دربارهٔ سلول‌های T نیز کار کرد؛ در این جلسه بر phagocytosis تأکید شد.</td>
+</tr>
+<tr>
+<td>Ehrlich و Behring</td>
+<td>Ehrlich دربارهٔ ایمنی humoral کار کرد؛ Behring نیز در این حوزه فعالیت داشت.</td>
+</tr>
+<tr>
+<td>Burnet</td>
+<td>نظریهٔ clonal selection را مطرح کرد.</td>
+</tr>
+<tr>
+<td>Köhler و Milstein</td>
+<td>با hybridoma آنتی‌بادی مونوکلونال تولید کردند.</td>
+</tr>
+</tbody></table>
+</section>
+
+<section class="noteSection keyTermsSection">
+    <h2 id="heading-28">۴. اصطلاحات و تعاریف</h2>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>ایمنی‌شناسی</strong>
+علمی است که توضیح می‌دهد بدن چگونه غیرخودی را تشخیص می‌دهد (Recognition)، پاسخ دفاعی ایجاد می‌کند (Response)، پاسخ را تنظیم و کنترل می‌کند (Regulation) و تجربه را به خاطر می‌سپارد (Memory).</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Memory</strong>
+بدن تجربهٔ قبلی را به خاطر می‌سپارد؛ سلول‌های حافظه (memory cells) یادآوری می‌کنند که بدن پیش‌تر با آن میکروب مواجه شده است، بنابراین در مواجههٔ دوباره می‌تواند سریع‌تر واکنش نشان دهد.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Vaccine</strong>
+مواجههٔ کنترل‌شده‌ای برای آموزش سیستم ایمنی.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Phagocytosis</strong>
+بلعیدن و حذف ذرات یا میکروب‌ها به‌وسیلهٔ سلول‌های دفاعی.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>کلون</strong>
+یک سلول B یا T و سلول‌های مشابهی که از تکثیر آن به‌وجود می‌آیند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>آنتی‌بادی مونوکلونال</strong>
+آنتی‌بادی‌هایی که از یک کلون منشأ می‌گیرند و اختصاصیت یکسان دارند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Antigen</strong>
+در تعریف کلی این جلسه، هر چیزی است که سیستم ایمنی آن را شناسایی می‌کند. در بعضی کتاب‌ها antigen به عاملی گفته می‌شود که وارد بدن می‌شود و پاسخ ایمنی ایجاد می‌کند؛ در این بحث منظور عاملی است که سیستم ایمنی آن را می‌شناسد و در برابرش پاسخ ایجاد می‌شود.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Antibody</strong>
+مولکولی از سیستم ایمنی است که به‌طور اختصاصی antigen را شناسایی می‌کند و به آن متصل می‌شود.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Immunity</strong>
+توانایی دفاع و ایجاد حفاظت در بدن.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Phagocytosis</strong>
+بلعیدن و حذف ذرات به‌وسیلهٔ سلول‌های دفاعی.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Vaccine</strong>
+مواجههٔ کنترل‌شده‌ای برای آموزش سیستم ایمنی.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Memory</strong>
+پاسخ سریع‌تر یا قوی‌تر در مواجههٔ بعدی.</div></div>
+</section>
+
+<section class="noteSection selfAssessmentSection">
+    <h2 id="heading-29">۵. خود‌ارزیابی</h2>
+<h3 id="heading-30">سوالات تشریحی</h3>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>چهار کارکردی را که ایمنی‌شناسی دربارهٔ عملکرد بدن توضیح می‌دهد نام ببرید و به‌اختصار شرح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>ایمنی‌شناسی توضیح می‌دهد بدن چگونه غیرخودی را تشخیص می‌دهد (Recognition)، پاسخ دفاعی ایجاد می‌کند (Response)، پاسخ را تنظیم و کنترل می‌کند (Regulation) و تجربه را به خاطر می‌سپارد (Memory).</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>روش Jenner را با variolation مقایسه کنید و توضیح دهید چرا روش Jenner کم‌خطرتر توصیف شده است.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در variolation از مادهٔ آبلهٔ انسانی، مثلاً از زخم‌های آبله، برای مواجهه‌دادن فرد دیگری استفاده می‌کردند؛ این روش خطرناک بود، چون عامل بیماری‌زا ممکن بود وارد بدن شود و حتی باعث مرگ شود. روش Jenner از آبلهٔ گاوی به‌عنوان منبعی کم‌خطرتر استفاده می‌کرد.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>مسیر کلی انتخاب کلونال را از برخورد antigen با گیرنده‌ها تا تولید پاسخ اختصاصی توضیح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>بدن از قبل کلون‌های متنوعی با گیرنده‌های متفاوت دارد. وقتی antigen وارد بدن می‌شود، با گیرنده‌های گوناگون برخورد می‌کند؛ گیرندهٔ متناسب با آن اتصال اختصاصی برقرار می‌کند و کلون مربوط انتخاب می‌شود. کلون انتخاب‌شده تکثیر می‌شود و سلول‌های مشابه می‌سازد. بنابراین، پاسخ اختصاصی از انتخاب و تکثیر کلون مناسب ایجاد می‌شود، نه از تغییر گیرندهٔ سلول پس از ورود antigen.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>در روش hybridoma، نقش B cell و سلول سرطانی در تولید آنتی‌بادی مونوکلونال چیست؟</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>B cell به‌تنهایی عمر محدودی دارد، اما سلول سرطانی توانایی تکثیر طولانی‌مدت دارد. با ادغام آن‌ها، سلولی به‌دست می‌آید که می‌تواند مدت زیادی تکثیر شود و antibody تولید کند. سلول حاصل را می‌توان در محیط کشت نگهداری کرد و برای تولید آنتی‌بادی مونوکلونال به کار برد.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>تفاوت سرولوژی، ELISA، Immunofluorescence و Flow cytometry را بر اساس آنچه در هر روش بررسی یا شناسایی می‌شود بیان کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در serology وجود antibody یا antigen بررسی می‌شود و مولکول‌های محلول در سرم مورد توجه‌اند؛ معمولاً به‌دنبال antibody هستیم و در موارد کمتری antigen را در سرم بیمار تشخیص می‌دهیم. در ELISA اتصال اختصاصی بررسی می‌شود و تغییر رنگ دیده می‌شود. در Immunofluorescence می‌توان محل antigen را در بافت یا سلول مشاهده کرد و بعضی antigenها را در بافت شناسایی کرد. در Flow cytometry سلول‌ها با markerها شناسایی می‌شوند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<h3 id="heading-31">سوالات تستی</h3>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>کدام گزینه ترتیب کارکردهای اصلی بدن در تعریف ایمنی‌شناسی را به‌درستی بیان می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">شناسایی غیرخودی، ایجاد پاسخ دفاعی، تنظیم پاسخ و به‌خاطرسپردن تجربه</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">ایجاد پاسخ دفاعی، حذف حافظه، تغییر antigen و توقف پاسخ</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">تنظیم پاسخ، تولید pathogen، شناسایی سلول و حذف antibody</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">به‌خاطرسپردن تجربه، تغییر گیرنده‌ها پس از هر مواجهه، حذف پاسخ دفاعی و تولید antigen</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>ایمنی‌شناسی به Recognition، Response، Regulation و Memory می‌پردازد.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>کدام گزینه تفاوت درست میان variolation و روش Jenner را بیان می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">هر دو فقط از آبلهٔ گاوی استفاده می‌کردند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">variolation از مادهٔ آبلهٔ انسانی استفاده می‌کرد و روش Jenner از آبلهٔ گاوی استفاده کرد.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">variolation بر پایهٔ hybridoma بود و روش Jenner بر پایهٔ antibody.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">روش Jenner از مادهٔ آبلهٔ انسانی استفاده می‌کرد و variolation از عامل ضعیف‌شدهٔ Pasteur.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در variolation از مادهٔ آبلهٔ انسانی استفاده می‌شد؛ تفاوت اساسی روش Jenner استفاده از آبلهٔ گاوی به‌عنوان منبعی کم‌خطرتر بود.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>طبق توضیح جلسه، در عامل میکروبی ضعیف‌شده به روش Pasteur چه ویژگی‌ای باقی می‌ماند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">بیماری‌زایی آن بدون هیچ تغییری باقی می‌ماند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">خاصیت antigenicity آن باقی می‌ماند و بیماری‌زایی آن بسیار کمتر می‌شود.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">همهٔ ساختارهای antigenی از بین می‌روند.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">دیگر زنده نیست و هیچ پاسخ ایمنی ایجاد نمی‌کند.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در ضعیف‌سازی، میکروب زنده می‌ماند، بیماری‌زایی آن بسیار کمتر می‌شود و خاصیت antigenicity آن باقی می‌ماند.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>کدام گزینه دربارهٔ phagocyteها مطابق مطالب جلسه است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">در خون محیطی بیشترین درصد سلول‌های فاگوسیت‌کننده neutrophilها هستند و در بافت macrophageها حضور دارند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">در خون محیطی بیشترین درصد را macrophageها دارند و در بافت فقط neutrophilها حضور دارند.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">Monocyteها در بافت به neutrophil تبدیل می‌شوند.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">Dendritic cellها در جلسه به‌عنوان سلول‌های خارج از ایمنی ذاتی معرفی شدند.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>neutrophilها در خون محیطی بیشترین درصد سلول‌های فاگوسیت‌کننده را دارند؛ macrophageها در بافت حضور دارند و Monocyteها با ورود از خون به بافت به macrophage تبدیل می‌شوند.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>طبق تقسیم‌بندی مطرح‌شده در جلسه، ایمنی humoral بیشتر با کدام سلول‌ها ارتباط دارد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">T cellها</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">B cellها</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">neutrophilها</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">Monocyteها</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>ایمنی humoral با B cellها و ایمنی سلولی با T cellها ارتباط داده شد.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="6"><div class="questionBoxHeader">سؤال 6</div><div class="questionBoxPrompt"><p>در نظریهٔ clonal selection، پس از ورود antigen چه اتفاقی می‌افتد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">گیرندهٔ همهٔ سلول‌ها تغییر می‌کند تا شبیه antigen شود.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">antigen کلون دارای گیرندهٔ متناسب را انتخاب می‌کند و آن کلون تکثیر می‌شود.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">همهٔ کلون‌ها به‌طور یکسان از بین می‌روند.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">فقط سلول‌های سرطانی antigen را شناسایی می‌کنند.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>بدن از قبل کلون‌های متنوعی دارد و antigen کلون دارای گیرندهٔ متناسب را انتخاب می‌کند؛ سپس آن کلون تکثیر می‌شود.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="7"><div class="questionBoxHeader">سؤال 7</div><div class="questionBoxPrompt"><p>در روش hybridoma، چرا B cell با سلول سرطانی ادغام می‌شود؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">چون B cell به‌تنهایی عمر محدودی دارد و سلول سرطانی توانایی تکثیر طولانی‌مدت دارد.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">چون سلول سرطانی به‌تنهایی antibody غشایی B cell را اندازه‌گیری می‌کند.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">چون ادغام باعث حذف اختصاصیت antibody می‌شود.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">چون B cell توانایی تولید antibody ندارد.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>B cell به‌تنهایی عمر محدودی دارد، اما سلول سرطانی توانایی تکثیر طولانی‌مدت دارد؛ ادغام آن‌ها سلولی ایجاد می‌کند که می‌تواند مدت زیادی تکثیر شود و antibody تولید کند.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="8"><div class="questionBoxHeader">سؤال 8</div><div class="questionBoxPrompt"><p>در serology معمولاً چه چیزی در سرم بررسی می‌شود؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">فقط سلول‌های خون</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">معمولاً antibody و در موارد کمتری antigen</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">فقط محل سلول‌ها در بافت</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">فقط تغییر رنگ ناشی از ELISA</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در serology مولکول‌های محلول در سرم بررسی می‌شوند؛ معمولاً به‌دنبال antibody هستیم و در موارد کمتری antigen را در سرم بیمار تشخیص می‌دهیم.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="9"><div class="questionBoxHeader">سؤال 9</div><div class="questionBoxPrompt"><p>کدام جفت «روش آزمایشگاهی ـ کاربرد مطرح‌شده در جلسه» درست است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">Flow cytometry ـ مشاهدهٔ محل antigen در بافت</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">Immunofluorescence ـ شناسایی سلول‌ها با markerها</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">ELISA ـ بررسی اتصال اختصاصی و مشاهدهٔ تغییر رنگ</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">Serology ـ شناسایی سلول‌های خون به‌جای مولکول‌های محلول</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در ELISA اتصال اختصاصی بررسی می‌شود و تغییر رنگ دیده می‌شود؛ در Immunofluorescence محل antigen در بافت یا سلول مشاهده می‌شود و در Flow cytometry سلول‌ها با markerها شناسایی می‌شوند.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="10"><div class="questionBoxHeader">سؤال 10</div><div class="questionBoxPrompt"><p>کدام گزینه دربارهٔ ایمنی ذاتی و اکتسابی مطابق مطالب جلسه است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">ایمنی ذاتی با اختصاصیت و حافظه تعریف شد و ایمنی اکتسابی فاقد این ویژگی‌هاست.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">Macrophage، dendritic cell و neutrophil در ایمنی ذاتی قرار می‌گیرند؛ B cell و T cell در ایمنی اکتسابی حضور دارند.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">B cell و T cell فقط در ایمنی ذاتی حضور دارند.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">antigen در انتخاب کلون مناسب نقشی ندارد.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>طبق جلسه، Macrophage، dendritic cell و neutrophil در ایمنی ذاتی قرار می‌گیرند؛ در ایمنی اکتسابی B cell و T cell حضور دارند و antigen می‌تواند کلون مناسب را انتخاب کند.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+</section>
+
+<section class="noteSection reviewSection">
+    
+</section>
+
+<section class="noteSection editorAndSourcesSection">
+    <h2 id="heading-32">۷. ادیتور و منابع استفاده‌شده</h2>
+<p><strong>منابع استفاده‌شده:</strong></p>
+<ul>
+<li>صوت درس</li>
+<li>Abbas AK, Lichtman AH, Pillai S, <em>Cellular and Molecular Immunology</em></li>
+<li>Murphy K, Weaver C, <em>Janeway’s Immunobiology</em></li>
+<li><em>Kuby Immunology</em></li>
+<li>Parham P, <em>The Immune System</em></li>
+<li>کتاب ایمونولوژی دکتر محمد بهزادگانی (پیشنهادشده در گفتار)</li>
+</ul>
+<p><strong>ادیتور:</strong></p>
+<p>آوین باقرزاده</p>
+</section>
+
+<section class="noteSection completionSection">
+    <h2 id="heading-33">۸. گزارش تکمیل بودن محتوا</h2>
+<p><strong>برآورد تقریبی تکمیل محتوا:</strong> حدود ۹۵٪؛ برآوردی بر اساس پوشش محتوای ارائه‌شده، نه اثبات ریاضی کامل‌بودن.</p>
+<ul>
+<li>✓ پوشش محتوای تصویری و مطالب اسلایدِ ارائه‌شده در متن</li>
+<li>✓ پوشش نکات آموزشی و توضیحات گفتاری ارائه‌شده</li>
+</ul>
+</section>
+
+    </main>
+
+
+    <button
+        class="backToTop"
+        type="button"
+        aria-label="بازگشت به ابتدای صفحه"
+    >
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+
+    <script src="../src/themeSwitcher.js"></script>
+    <script src="../src/fontSizeSwitcher.js"></script>
+    <script src="../src/aboutModal.js"></script>
+    <script src="../src/quickNavigation.js"></script>
+    <script src="../src/print.js"></script>
+    <script src="../src/search.js"></script>
+    <script src="../src/highlight.js"></script>
+    <script src="../src/stickyNotes.js"></script>
+    <script src="../src/viewPersistence.js"></script>
+    <script src="../src/questionInteractions.js"></script>
+    <script src="../src/fontSwitcher.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarToggle = document.querySelector(".sidebarToggle");
+    const sidebarBackdrop = document.querySelector(".sidebarBackdrop");
+
+    function openSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.add("isOpen");
+        sidebarBackdrop.classList.add("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "true");
+        sidebar.setAttribute("aria-hidden", "false");
+    }
+
+    function closeSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.remove("isOpen");
+        sidebarBackdrop.classList.remove("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "false");
+        sidebar.setAttribute("aria-hidden", "true");
+    }
+
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener("click", () => {
+            if (sidebar.classList.contains("isOpen")) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+    }
+
+    if (sidebarBackdrop) {
+        sidebarBackdrop.addEventListener("click", closeSidebar);
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeSidebar();
+        }
+    });
+
+    document.querySelectorAll(".tocItem").forEach((item) => {
+        item.addEventListener("click", closeSidebar);
+    });
+</script>
+
+</body>
+
+</html>

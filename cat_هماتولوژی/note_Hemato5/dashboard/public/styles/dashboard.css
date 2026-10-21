@@ -1,0 +1,1965 @@
+/* =========================================================
+   Human editing dashboard — layout and components.
+
+   The stylesheet deliberately reuses Bashligh's CSS variables
+   (defined in styles/base.css and the theme files) so the dashboard
+   follows the same colours, radii, shadows and typography as the note
+   it edits.
+   ========================================================= */
+
+:root {
+    --dashHeaderHeight: 56px;
+    --dashToolbarHeight: 48px;
+    --dashSidebarWidth: 296px;
+    --dashStatusHeight: 40px;
+    --dashEditorWidth: 860px;
+    --dashFocusRing: 2px solid var(--accentColor);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body.dashBody {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    overflow: hidden;
+
+    background: var(--pageBackground);
+    color: var(--textPrimary);
+
+    font-family: "Vazirmatn", "Tahoma", sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+
+    margin: -1px;
+    padding: 0;
+
+    overflow: hidden;
+
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+.dashHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    min-height: var(--dashHeaderHeight);
+    padding: 0 14px;
+
+    background: var(--surfaceBackground);
+    border-bottom: 1px solid var(--borderColor);
+}
+
+.dashBrand,
+.dashHeaderActions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.dashHeaderActions {
+    position: relative;
+}
+
+.dashBrandName {
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.dashNoteName {
+    max-width: 340px;
+
+    padding: 3px 10px;
+
+    overflow: hidden;
+
+    color: var(--textSecondary);
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    background: var(--surfaceMuted);
+    border: 1px solid var(--borderColor);
+    border-radius: 999px;
+}
+
+.saveStatus {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 4px 10px;
+
+    color: var(--textSecondary);
+    font-size: 12px;
+    white-space: nowrap;
+
+    background: var(--surfaceMuted);
+    border: 1px solid var(--borderColor);
+    border-radius: 999px;
+}
+
+.saveStatus::before {
+    width: 8px;
+    height: 8px;
+
+    content: "";
+
+    background: var(--textMuted);
+    border-radius: 50%;
+}
+
+.saveStatus.is_dirty {
+    color: var(--importantColor);
+    border-color: var(--importantColor);
+}
+
+.saveStatus.is_dirty::before {
+    background: var(--importantColor);
+}
+
+.saveStatus.is_saved::before {
+    background: var(--successColor);
+}
+
+.saveStatus.is_error {
+    color: var(--warningColor);
+    border-color: var(--warningColor);
+}
+
+.saveStatus.is_error::before {
+    background: var(--warningColor);
+}
+
+
+/* =========================================================
+   Buttons and inputs (same vocabulary as the note UI)
+   ========================================================= */
+
+.dashButton,
+.dashIconButton,
+.toolButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    min-height: 34px;
+    padding: 6px 12px;
+
+    color: var(--textPrimary);
+    font-size: 13.5px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    background: var(--surfaceBackground);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusSmall);
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.dashIconButton,
+.toolButton {
+    min-width: 34px;
+    padding: 6px 8px;
+}
+
+.dashButton svg,
+.dashIconButton svg,
+.toolButton svg {
+    width: 16px;
+    height: 16px;
+}
+
+.dashButton:hover,
+.dashIconButton:hover,
+.toolButton:hover {
+    background: var(--surfaceSoft);
+    border-color: var(--borderStrong);
+}
+
+.dashButton:focus-visible,
+.dashIconButton:focus-visible,
+.toolButton:focus-visible,
+.dashSelect:focus-visible,
+.dashInput:focus-visible,
+textarea:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[contenteditable]:focus-visible,
+button:focus-visible {
+    outline: var(--dashFocusRing);
+    outline-offset: 1px;
+}
+
+.dashButton:disabled,
+.dashIconButton:disabled,
+.toolButton:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.dashButtonPrimary {
+    color: #fff;
+    background: var(--accentColor);
+    border-color: var(--accentColor);
+}
+
+.dashButtonPrimary:hover {
+    filter: brightness(1.08);
+    background: var(--accentColor);
+}
+
+.dashButtonDanger {
+    color: #fff;
+    background: var(--warningColor);
+    border-color: var(--warningColor);
+}
+
+.dashButtonSmall {
+    min-height: 30px;
+    padding: 4px 10px;
+    font-size: 12.5px;
+}
+
+.toolButton.is_active {
+    color: var(--accentColor);
+    background: var(--accentSoft);
+    border-color: var(--accentColor);
+}
+
+.dashSelect,
+.dashInput {
+    min-height: 34px;
+    padding: 5px 10px;
+
+    color: var(--textPrimary);
+    font-size: 13.5px;
+    font-family: inherit;
+
+    background: var(--surfaceBackground);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusSmall);
+}
+
+
+/* =========================================================
+   Toolbar
+   ========================================================= */
+
+.dashToolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    min-height: var(--dashToolbarHeight);
+    padding: 6px 14px;
+
+    overflow-x: auto;
+
+    background: var(--surfaceMuted);
+    border-bottom: 1px solid var(--borderColor);
+}
+
+.toolbarGroup {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-inline-end: 10px;
+
+    border-inline-end: 1px solid var(--borderColor);
+}
+
+.toolbarGroupEnd {
+    padding-inline-end: 0;
+    border-inline-end: 0;
+}
+
+
+
+/* =========================================================
+   Main layout
+   ========================================================= */
+
+/*
+ * Pane visibility model: every pane owns a fixed grid column and the
+ * layout-manager body classes only collapse that column's track to 0.
+ * Explicit grid-column placement keeps the surviving panes in their own
+ * tracks when one window is minimized, so closing the sidebar can never
+ * push the editor into a zero-width column.
+ */
+body {
+    --sidebarTrack: var(--dashSidebarWidth, 296px);
+    --editorTrack: minmax(0, 1fr);
+    --previewTrack: 0px; /* the live preview starts minimized */
+}
+
+body:not(.preview_hidden) {
+    --previewTrack: minmax(0, 1fr);
+}
+
+body.sidebar_hidden {
+    --sidebarTrack: 0px;
+}
+
+body.editor_hidden {
+    --editorTrack: 0px;
+}
+
+/* Maximized editor: the other windows are hidden (but their layout is kept)
+   so the editing surface can use the full width of the screen. */
+body.editor_maximized {
+    --sidebarTrack: 0px;
+    --previewTrack: 0px;
+}
+
+body.editor_maximized .dashSidebar,
+body.editor_maximized .dashPreviewPane {
+    display: none;
+}
+
+body.editor_maximized .editorSurface {
+    max-width: 1400px;
+}
+
+.dashMain {
+    display: grid;
+    grid-template-columns: var(--sidebarTrack) var(--editorTrack) var(--previewTrack);
+
+    flex: 1;
+    min-height: 0;
+
+    overflow: hidden;
+}
+
+.dashSidebar {
+    grid-column: 1;
+}
+
+.dashEditorPane {
+    grid-column: 2;
+}
+
+.dashPreviewPane {
+    grid-column: 3;
+}
+
+body.sidebar_hidden .dashSidebar,
+body.editor_hidden .dashEditorPane,
+body.preview_hidden .dashPreviewPane {
+    display: none;
+}
+
+/* =========================================================
+   Window layout manager (open / minimized panes)
+   ========================================================= */
+
+/* Floating restore chips: the only way back when a pane is minimized. */
+.restoreBar {
+    position: fixed;
+    inset-block-end: 44px;
+    inset-inline-start: 12px;
+
+    display: none;
+    gap: 6px;
+    z-index: 40;
+}
+
+.restoreChip {
+    display: none;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+
+    color: var(--textSecondary);
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    background: var(--surfaceBackground);
+    border: 1px solid var(--borderColor);
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.restoreChip:hover {
+    color: var(--textPrimary);
+    border-color: var(--accentColor);
+}
+
+body.sidebar_hidden #restoreSidebarChip,
+body.editor_hidden #restoreEditorChip,
+body:not(.preview_hidden) #restorePreviewChip {
+    display: inline-flex;
+}
+
+body.sidebar_hidden .restoreBar,
+body.editor_hidden .restoreBar,
+body:not(.preview_hidden) .restoreBar {
+    display: flex;
+}
+
+/* Layout menu (header popover) */
+.layoutMenu {
+    position: absolute;
+    inset-block-start: calc(100% + 6px);
+    inset-inline-end: 0;
+
+    flex-direction: column;
+    gap: 2px;
+    min-width: 240px;
+    padding: 8px;
+
+    background: var(--surfaceBackground);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusMedium);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    z-index: 60;
+}
+
+.layoutMenu[hidden] {
+    display: none;
+}
+
+.layoutOption {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+
+    font-size: 13px;
+    color: var(--textPrimary);
+
+    cursor: pointer;
+    border-radius: var(--radiusSmall);
+}
+
+.layoutOption:hover {
+    background: var(--surfaceMuted);
+}
+
+.dashSidebar {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    overflow: hidden;
+
+    background: var(--surfaceBackground);
+    border-inline-end: 1px solid var(--borderColor);
+}
+
+.dashTabs {
+    display: flex;
+    gap: 2px;
+
+    padding: 8px 8px 0;
+
+    border-bottom: 1px solid var(--borderColor);
+}
+
+.dashTab {
+    flex: 1;
+    padding: 7px 4px;
+
+    color: var(--textSecondary);
+    font-size: 12.5px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid transparent;
+}
+
+.dashTab.isActive {
+    color: var(--accentColor);
+    border-bottom-color: var(--accentColor);
+}
+
+.tabBadge {
+    display: inline-block;
+    min-width: 18px;
+    padding: 0 5px;
+
+    color: #fff;
+    font-size: 11px;
+    line-height: 18px;
+    text-align: center;
+
+    background: var(--warningColor);
+    border-radius: 999px;
+}
+
+.dashSidebarBody {
+    flex: 1;
+    padding: 12px;
+
+    overflow-y: auto;
+}
+
+.dashPanel {
+    display: none;
+}
+
+.dashPanel.is_active {
+    display: block;
+}
+
+.panelHeader {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.panelHint {
+    margin: 0 0 10px;
+
+    color: var(--textMuted);
+    font-size: 12.5px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   Outline
+   ========================================================= */
+
+.outlineList,
+.reviewList,
+.assetList,
+.issueList,
+.noteCandidateList {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.outlineItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 5px 6px;
+
+    border-radius: var(--radiusSmall);
+}
+
+.outlineItem:hover {
+    background: var(--surfaceSoft);
+}
+
+.outlineLink {
+    flex: 1;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    color: var(--textPrimary);
+    font-size: 13px;
+    text-align: start;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    background: none;
+    border: 0;
+}
+
+.outlineItem[data-level="1"] .outlineLink {
+    font-weight: 700;
+}
+
+.outlineItem[data-level="2"] .outlineLink {
+    padding-inline-start: 12px;
+    font-weight: 600;
+}
+
+.outlineItem[data-level="3"] .outlineLink {
+    padding-inline-start: 26px;
+    color: var(--textSecondary);
+}
+
+.outlineItem[data-level="4"] .outlineLink,
+.outlineItem[data-level="5"] .outlineLink,
+.outlineItem[data-level="6"] .outlineLink {
+    padding-inline-start: 40px;
+    color: var(--textMuted);
+}
+
+.outlineMove {
+    display: none;
+    padding: 2px 6px;
+
+    color: var(--textSecondary);
+    font-size: 12px;
+
+    cursor: pointer;
+
+    background: var(--surfaceBackground);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusSmall);
+}
+
+.outlineItem:hover .outlineMove,
+.outlineMove:focus-visible {
+    display: inline-block;
+}
+
+
+/* =========================================================
+   Assets / review / issues panels
+   ========================================================= */
+
+.assetItem {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+
+    padding: 6px;
+
+    border: 1px solid transparent;
+    border-radius: var(--radiusSmall);
+}
+
+.assetItem:hover {
+    background: var(--surfaceSoft);
+    border-color: var(--borderColor);
+}
+
+.assetItem.is_unused {
+    opacity: 0.72;
+}
+
+.assetThumb {
+    width: 56px;
+    height: 42px;
+
+    object-fit: cover;
+
+    background: var(--surfaceMuted);
+    border: 1px solid var(--borderColor);
+    border-radius: 6px;
+}
+
+.assetMeta {
+    min-width: 0;
+}
+
+.assetName {
+    overflow: hidden;
+
+    font-size: 12.5px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.assetState {
+    color: var(--textMuted);
+    font-size: 11.5px;
+}
+
+.assetState.is_used {
+    color: var(--successColor);
+}
+
+.assetActions {
+    display: flex;
+    gap: 4px;
+}
+
+.reviewItem,
+.issueItem {
+    padding: 8px 10px;
+    margin-bottom: 8px;
+
+    font-size: 12.5px;
+    line-height: 1.6;
+
+    background: var(--surfaceMuted);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusSmall);
+}
+
+.issueItem[data-level="error"] {
+    border-inline-start: 4px solid var(--warningColor);
+}
+
+.issueItem[data-level="warning"] {
+    border-inline-start: 4px solid var(--importantColor);
+}
+
+.issueItem[data-level="info"] {
+    border-inline-start: 4px solid var(--textMuted);
+}
+
+.reviewItem.is_resolved {
+    opacity: 0.65;
+    border-inline-start: 4px solid var(--successColor);
+}
+
+.reviewItem:not(.is_resolved) {
+    border-inline-start: 4px solid var(--importantColor);
+}
+
+.itemActions {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.emptyState {
+    padding: 18px 10px;
+
+    color: var(--textMuted);
+    font-size: 12.5px;
+    text-align: center;
+
+    background: var(--surfaceMuted);
+    border: 1px dashed var(--borderColor);
+    border-radius: var(--radiusSmall);
+}
+
+
+/* =========================================================
+   Editor pane
+   ========================================================= */
+
+.dashPane {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+
+    background: var(--pageBackground);
+}
+
+.dashEditorPane {
+    border-inline-end: 1px solid var(--borderColor);
+}
+
+.paneHeader {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 9px 16px;
+
+    background: var(--surfaceBackground);
+    border-bottom: 1px solid var(--borderColor);
+}
+
+.paneTitle {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--textSecondary);
+}
+
+.paneHint {
+    color: var(--textMuted);
+    font-size: 12px;
+}
+
+.editorSurface {
+    flex: 1;
+    width: 100%;
+    max-width: var(--dashEditorWidth);
+    margin: 0 auto;
+    padding: 22px 26px 60px;
+
+    overflow-y: auto;
+
+    background: var(--surfaceBackground);
+    border-inline-start: 1px solid transparent;
+    border-inline-end: 1px solid transparent;
+    box-shadow: var(--shadowSmall);
+}
+
+/* "Edit as Markdown" dialog: the raw source of a single block. */
+.blockMarkdownSource {
+    width: 100%;
+    min-height: 240px;
+    padding: 14px;
+
+    color: var(--textPrimary);
+    font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    tab-size: 4;
+    white-space: pre;
+    unicode-bidi: plaintext;
+
+    resize: vertical;
+
+    background: var(--surfaceMuted);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusSmall);
+}
+
+
+/* =========================================================
+   Document blocks
+   ========================================================= */
+
+.docBlock {
+    position: relative;
+
+    padding: 5px 2px;
+    margin: 2px 0;
+
+    border: 1px solid transparent;
+    border-radius: var(--radiusSmall);
+}
+
+.docBlock::after {
+    position: absolute;
+    inset-block: 2px;
+    inset-inline-start: -14px;
+
+    display: none;
+
+    content: "";
+
+    background: repeating-linear-gradient(
+        to bottom,
+        var(--borderColor) 0 4px,
+        transparent 4px 8px
+    );
+}
+
+.docBlock:hover {
+    background: var(--surfaceMuted);
+}
+
+.docBlock.is_selected {
+    background: var(--accentSoft);
+    border-color: var(--accentColor);
+}
+
+.docBlock.is_dragging {
+    opacity: 0.45;
+}
+
+.docBlock.is_dropTarget {
+    box-shadow: inset 0 3px 0 var(--accentColor);
+}
+
+.blockGutter {
+    position: absolute;
+    inset-inline-start: -34px;
+    inset-block-start: 6px;
+
+    display: none;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.docBlock:hover .blockGutter,
+.docBlock.is_selected .blockGutter,
+.docBlock:focus-within .blockGutter {
+    display: flex;
+}
+
+.blockActionButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+    padding: 0;
+
+    color: var(--textSecondary);
+    font-size: 12px;
+
+    cursor: pointer;
+
+    background: var(--surfaceBackground);
+    border: 1px solid var(--borderColor);
+    border-radius: 6px;
+}
+
+.blockActionButton:hover {
+    color: var(--accentColor);
+    border-color: var(--accentColor);
+}
+
+.dragHandle {
+    cursor: grab;
+}
+
+.blockActions {
+    /* Float above the block (outside it) so the toolbar never covers the
+       content the operator is editing. */
+    position: absolute;
+    inset-block-start: -34px;
+    inset-inline-end: 0;
+
+    display: none;
+    gap: 4px;
+    padding: 3px;
+
+    background: var(--surfaceBackground);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusSmall);
+    box-shadow: var(--shadowSmall);
+    z-index: 30;
+}
+
+/* Keep a hover bridge across the gap so the toolbar does not close while
+   the pointer travels from the block up to the floating toolbar. */
+.blockActions::before {
+    content: "";
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline: 0;
+    height: 36px;
+}
+
+.docBlock:hover .blockActions,
+.docBlock.is_selected .blockActions,
+.docBlock:focus-within .blockActions {
+    display: flex;
+}
+
+.blockTypeChip {
+    padding: 2px 7px;
+
+    color: var(--textMuted);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    background: var(--surfaceMuted);
+    border-radius: 999px;
+}
+
+.blockBody {
+    min-width: 0;
+}
+
+.blockEditable {
+    min-height: 1.4em;
+    padding: 2px 4px;
+
+    outline: none;
+    white-space: pre-wrap;
+    word-break: break-word;
+
+    /* Mixed Persian/English: each paragraph resolves its own direction from
+       its first strong character (Unicode bidi "plaintext"), mirroring how
+       the renderer treats note content, so punctuation, numbers and English
+       terms inside Persian sentences keep their natural order. */
+    unicode-bidi: plaintext;
+}
+
+/* Editor-view-only per-block direction/alignment override. Applied to the
+   block shell so every editable element inside inherits it; never serialized
+   into the Markdown, so the renderer's semantics are untouched. */
+.docBlock[data-dir="rtl"] .blockEditable,
+.docBlock[data-dir="rtl"] .blockTable {
+    direction: rtl;
+    text-align: right;
+    unicode-bidi: isolate;
+}
+
+.docBlock[data-dir="ltr"] .blockEditable,
+.docBlock[data-dir="ltr"] .blockTable {
+    direction: ltr;
+    text-align: left;
+    unicode-bidi: isolate;
+}
+
+.docBlock[data-align="right"] .blockEditable {
+    text-align: right;
+}
+
+.docBlock[data-align="center"] .blockEditable {
+    text-align: center;
+}
+
+.docBlock[data-align="left"] .blockEditable {
+    text-align: left;
+}
+
+.blockDirControl {
+    display: flex;
+    gap: 4px;
+    margin-inline-start: 8px;
+}
+
+.dashSelectSmall {
+    font-size: 11px;
+    padding: 2px 6px;
+}
+
+.blockEditable:empty::before {
+    color: var(--textMuted);
+    content: attr(data-placeholder);
+}
+
+.blockHeading {
+    margin: 6px 0 2px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.blockHeading[data-depth="1"] {
+    font-size: 1.7em;
+}
+
+.blockHeading[data-depth="2"] {
+    font-size: 1.4em;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--borderColor);
+}
+
+.blockHeading[data-depth="3"] {
+    font-size: 1.2em;
+}
+
+.blockHeading[data-depth="4"],
+.blockHeading[data-depth="5"],
+.blockHeading[data-depth="6"] {
+    font-size: 1.08em;
+}
+
+.blockParagraph {
+    font-size: 1em;
+    line-height: 2;
+}
+
+.blockParagraph em {
+    color: var(--textSecondary);
+}
+
+.blockCode,
+.blockFormula textarea,
+.blockTextarea,
+.blockRaw textarea {
+    width: 100%;
+    padding: 10px 12px;
+
+    color: var(--textPrimary);
+    font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
+    font-size: 13px;
+    line-height: 1.7;
+
+    resize: vertical;
+
+    background: var(--codeBackground, var(--surfaceMuted));
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusSmall);
+}
+
+.blockTextarea {
+    font-family: inherit;
+    font-size: 14.5px;
+    line-height: 1.8;
+}
+
+.blockMetaRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.blockMetaLabel {
+    flex: 0 0 auto;
+    min-width: 130px;
+    padding: 5px 8px;
+
+    color: var(--textSecondary);
+    font-size: 13px;
+    font-weight: 700;
+
+    background: var(--surfaceMuted);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusSmall);
+}
+
+.blockMetaValue {
+    flex: 1;
+    min-width: 0;
+    padding: 5px 8px;
+
+    color: var(--textPrimary);
+    font-size: 13.5px;
+
+    background: var(--surfaceBackground);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusSmall);
+}
+
+.rawBanner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 5px 10px;
+    margin-bottom: 6px;
+
+    color: var(--importantColor);
+    font-size: 12px;
+
+    background: var(--importantBackground);
+    border: 1px solid var(--importantColor);
+    border-radius: var(--radiusSmall);
+}
+
+.blockDivider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--textMuted);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.blockDivider::before,
+.blockDivider::after {
+    flex: 1;
+    height: 1px;
+    content: "";
+    background: var(--borderColor);
+}
+
+
+/* =========================================================
+   Lists
+   ========================================================= */
+
+.blockList ul,
+.blockList ol {
+    margin: 4px 0;
+    padding-inline-start: 26px;
+}
+
+.blockList li {
+    line-height: 1.9;
+}
+
+.blockList .listItemRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.blockList .listItemActions {
+    display: none;
+    gap: 3px;
+}
+
+.blockList li:hover .listItemActions,
+.blockList li:focus-within .listItemActions {
+    display: flex;
+}
+
+/* Automatic bidirectional lists: `data-dir` is set by the block view from the
+   item's first strong character, so bullets and numbers sit on the side the
+   text actually starts from (Persian → right, English → left). */
+.blockList ul[data-dir="rtl"],
+.blockList ol[data-dir="rtl"] {
+    direction: rtl;
+}
+
+.blockList li[data-dir="ltr"] {
+    direction: ltr;
+}
+
+
+/* =========================================================
+   Tables
+   ========================================================= */
+
+.blockTableWrap {
+    overflow-x: auto;
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusMedium);
+}
+
+.blockTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.blockTable th,
+.blockTable td {
+    padding: 7px 10px;
+
+    text-align: start;
+    vertical-align: top;
+
+    border: 1px solid var(--borderColor);
+}
+
+.blockTable th {
+    background: var(--surfaceSoft);
+    font-weight: 700;
+}
+
+.blockTable td {
+    background: var(--surfaceBackground);
+}
+
+.blockTable [contenteditable] {
+    outline: none;
+}
+
+.blockTable tr:hover td {
+    background: var(--surfaceMuted);
+}
+
+.tableActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+
+/* =========================================================
+   Callout / quotation boxes (mirrors Bashligh's calloutBox)
+   ========================================================= */
+
+.blockCallout {
+    --calloutColor: var(--accentColor);
+    --calloutBackground: var(--accentSoft);
+
+    padding: 12px 14px;
+
+    background: var(--calloutBackground);
+    border: 1px solid var(--borderColor);
+    border-inline-start: 4px solid var(--calloutColor);
+    border-radius: var(--radiusMedium);
+}
+
+.blockCallout[data-type="tip"] {
+    --calloutColor: var(--successColor);
+    --calloutBackground: var(--successBackground);
+}
+
+.blockCallout[data-type="important"],
+.blockCallout[data-type="exam-tip"] {
+    --calloutColor: var(--importantColor);
+    --calloutBackground: var(--importantBackground);
+}
+
+.blockCallout[data-type="warning"],
+.blockCallout[data-type="caution"],
+.blockCallout[data-type="review"] {
+    --calloutColor: var(--warningColor);
+    --calloutBackground: var(--warningBackground);
+}
+
+.blockCallout[data-type="definition"] {
+    --calloutColor: var(--definitionColor);
+    --calloutBackground: var(--definitionBackground);
+}
+
+.blockCallout[data-type="example"] {
+    --calloutColor: var(--exampleColor);
+    --calloutBackground: var(--exampleBackground);
+}
+
+.blockCallout[data-type="custom"] {
+    --calloutColor: var(--textSecondary);
+    --calloutBackground: var(--surfaceMuted);
+}
+
+.calloutHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.calloutTypeSelect {
+    padding: 3px 8px;
+
+    color: var(--calloutColor);
+    font-size: 12.5px;
+    font-weight: 700;
+
+    background: var(--surfaceBackground);
+    border: 1px solid var(--calloutColor);
+    border-radius: var(--radiusSmall);
+}
+
+.calloutTitleInput {
+    flex: 1;
+    min-width: 0;
+    padding: 3px 8px;
+
+    color: var(--calloutColor);
+    font-size: 14.5px;
+    font-weight: 700;
+
+    background: transparent;
+    border: 1px dashed transparent;
+    border-radius: 6px;
+}
+
+.calloutTitleInput:hover,
+.calloutTitleInput:focus {
+    background: var(--surfaceBackground);
+    border-color: var(--borderColor);
+}
+
+.calloutBody {
+    padding: 4px 6px;
+
+    font-size: 14.5px;
+    line-height: 1.9;
+
+    outline: none;
+    white-space: pre-wrap;
+    unicode-bidi: plaintext;
+}
+
+.blockTable td,
+.blockTable th {
+    unicode-bidi: plaintext;
+}
+
+.tableMenu {
+    position: relative;
+    display: inline-block;
+}
+
+.tableMenuBody {
+    position: absolute;
+    inset-block-start: calc(100% + 4px);
+    inset-inline-start: 0;
+
+    flex-direction: column;
+    min-width: 190px;
+    padding: 6px;
+
+    background: var(--surfaceBackground);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusMedium);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    z-index: 50;
+}
+
+.tableMenuBody[hidden] {
+    display: none;
+}
+
+.tableMenuItem {
+    padding: 6px 10px;
+
+    color: var(--textPrimary);
+    font-size: 13px;
+    text-align: start;
+
+    cursor: pointer;
+
+    background: none;
+    border: 0;
+    border-radius: var(--radiusSmall);
+}
+
+.tableMenuItem:hover {
+    background: var(--accentSoft);
+    color: var(--accentColor);
+}
+
+.tableMenuSeparator {
+    height: 1px;
+    margin: 4px 6px;
+    background: var(--borderColor);
+}
+
+.tableQuickActions {
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   Image blocks
+   ========================================================= */
+
+.blockImage {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+
+    background: var(--surfaceMuted);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusMedium);
+}
+
+.blockImage img {
+    display: block;
+    max-width: 100%;
+    max-height: 420px;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+
+    background: var(--surfaceBackground);
+    border-radius: var(--radiusSmall);
+}
+
+.blockImage.is_missing img {
+    display: none;
+}
+
+.imageMissing {
+    display: none;
+
+    padding: 24px;
+
+    color: var(--warningColor);
+    font-size: 13px;
+    text-align: center;
+
+    border: 1px dashed var(--warningColor);
+    border-radius: var(--radiusSmall);
+}
+
+.blockImage.is_missing .imageMissing {
+    display: block;
+}
+
+.imageFields {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 6px;
+    align-items: center;
+}
+
+.imageFields label {
+    color: var(--textSecondary);
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.imageFields input {
+    width: 100%;
+    padding: 5px 8px;
+
+    color: var(--textPrimary);
+    font-size: 13px;
+
+    background: var(--surfaceBackground);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusSmall);
+}
+
+.imageActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+
+/* =========================================================
+   Formula blocks
+   ========================================================= */
+
+.blockFormula {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+
+    background: var(--surfaceMuted);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusMedium);
+}
+
+.blockFormula textarea {
+    min-height: 74px;
+    background: var(--surfaceBackground);
+}
+
+.formulaPreview {
+    min-height: 20px;
+    padding: 6px 8px;
+
+    overflow-x: auto;
+
+    text-align: center;
+
+    background: var(--surfaceBackground);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusSmall);
+}
+
+.inlineMathSource {
+    padding: 0 3px;
+
+    font-family: "SFMono-Regular", "Consolas", monospace;
+    font-size: 0.92em;
+
+    background: var(--surfaceSoft);
+    border-radius: 4px;
+}
+
+
+/* =========================================================
+   Preview pane
+   ========================================================= */
+
+.previewFrame {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+
+    background: var(--pageBackground);
+    border: 0;
+}
+
+
+/* =========================================================
+   Status bar
+   ========================================================= */
+
+.dashStatusbar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    min-height: var(--dashStatusHeight);
+    padding: 0 14px;
+
+    color: var(--textSecondary);
+    font-size: 12.5px;
+
+    background: var(--surfaceBackground);
+    border-top: 1px solid var(--borderColor);
+}
+
+.statusItem {
+    white-space: nowrap;
+}
+
+.statusIssues.has_issues {
+    color: var(--importantColor);
+    font-weight: 700;
+}
+
+.paneHeaderMain {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    min-width: 0;
+}
+
+.paneToggleButton {
+    flex: none;
+}
+
+.paneHeaderButtons {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex: none;
+}
+
+
+/* =========================================================
+   Dialogs and toasts
+   ========================================================= */
+
+.dashDialog {
+    width: min(560px, calc(100vw - 32px));
+    max-height: calc(100vh - 64px);
+    padding: 0;
+
+    color: var(--textPrimary);
+
+    background: var(--surfaceBackground);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusLarge);
+    box-shadow: var(--shadowMedium);
+}
+
+.dashDialogWide {
+    width: min(760px, calc(100vw - 32px));
+}
+
+.dashDialog::backdrop {
+    background: rgba(15, 20, 26, 0.55);
+    backdrop-filter: blur(2px);
+}
+
+.dialogForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 20px;
+}
+
+.dialogForm h2 {
+    margin: 0 0 4px;
+
+    font-size: 18px;
+}
+
+.dialogForm h3 {
+    margin: 8px 0 0;
+
+    font-size: 14px;
+    color: var(--textSecondary);
+}
+
+.dialogForm label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--textSecondary);
+}
+
+.dialogHint {
+    margin: 0;
+
+    color: var(--textMuted);
+    font-size: 12.5px;
+    line-height: 1.7;
+}
+
+.dialogRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.checkboxLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 13px;
+}
+
+.findCount {
+    color: var(--textMuted);
+    font-size: 12.5px;
+}
+
+.dialogActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.noteCandidateList {
+    max-height: 260px;
+    overflow-y: auto;
+
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusSmall);
+}
+
+.noteCandidate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    width: 100%;
+    padding: 9px 12px;
+
+    color: var(--textPrimary);
+    font-size: 13px;
+    text-align: start;
+
+    cursor: pointer;
+
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--borderColor);
+}
+
+.noteCandidate:last-child {
+    border-bottom: 0;
+}
+
+.noteCandidate:hover {
+    background: var(--surfaceSoft);
+}
+
+.noteCandidateKind {
+    color: var(--textMuted);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.reviewSummary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+
+    margin: 0;
+}
+
+.summaryCard {
+    padding: 10px 12px;
+
+    background: var(--surfaceMuted);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusMedium);
+}
+
+.summaryCard dt {
+    color: var(--textMuted);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.summaryCard dd {
+    margin: 3px 0 0;
+
+    overflow: hidden;
+
+    font-size: 15px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.summaryCard dd.is_warning {
+    color: var(--importantColor);
+}
+
+.exportTarget {
+    margin: 0;
+
+    padding: 8px 10px;
+
+    color: var(--textSecondary);
+    font-family: "SFMono-Regular", "Consolas", monospace;
+    font-size: 12px;
+
+    background: var(--surfaceMuted);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusSmall);
+}
+
+.shortcutTable {
+    width: 100%;
+    font-size: 13px;
+    border-collapse: collapse;
+}
+
+.shortcutTable td {
+    padding: 5px 6px;
+    border-bottom: 1px solid var(--borderColor);
+}
+
+.shortcutTable td:first-child {
+    width: 46%;
+    color: var(--textSecondary);
+    white-space: nowrap;
+}
+
+kbd {
+    padding: 1px 5px;
+
+    font-family: inherit;
+    font-size: 12px;
+
+    background: var(--surfaceMuted);
+    border: 1px solid var(--borderColor);
+    border-bottom-width: 2px;
+    border-radius: 5px;
+}
+
+.toastRegion {
+    position: fixed;
+    inset-block-end: 54px;
+    inset-inline-end: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    z-index: 2000;
+}
+
+.toast {
+    min-width: 240px;
+    max-width: 380px;
+    padding: 10px 14px;
+
+    color: var(--textPrimary);
+    font-size: 13px;
+
+    background: var(--surfaceBackground);
+    border: 1px solid var(--borderColor);
+    border-inline-start: 4px solid var(--accentColor);
+    border-radius: var(--radiusMedium);
+    box-shadow: var(--shadowMedium);
+
+    animation: toastIn 0.18s ease;
+}
+
+.toast.is_error {
+    border-inline-start-color: var(--warningColor);
+}
+
+.toast.is_success {
+    border-inline-start-color: var(--successColor);
+}
+
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   Responsive behaviour
+   ========================================================= */
+
+@media (max-width: 1400px) {
+    body {
+        --sidebarTrack: minmax(220px, var(--dashSidebarWidth, 296px));
+    }
+}
+
+/*
+ * On narrow screens the panes stack vertically. Pane visibility is still
+ * owned exclusively by the layout-manager body classes (sidebar_hidden,
+ * editor_hidden, preview_hidden), so a minimized pane stays hidden at every
+ * width and the responsive rules only change how open panes are arranged.
+ */
+@media (max-width: 1100px) {
+    /*
+     * Narrow screens: the open panes stack vertically. Panes are laid out
+     * with flexbox so two visible panes can never overlap (they used to share
+     * one grid cell) and a hidden pane simply takes no space.
+     */
+    .dashMain {
+        display: flex;
+        flex-direction: column;
+
+        overflow-y: auto;
+    }
+
+    .dashSidebar {
+        flex: 0 0 auto;
+        max-height: 32vh;
+        border-bottom: 1px solid var(--borderColor);
+    }
+
+    .dashEditorPane {
+        flex: 1 1 auto;
+        min-height: 50vh;
+    }
+
+    .dashPreviewPane {
+        flex: 1 1 auto;
+        min-height: 50vh;
+    }
+
+    body.editor_maximized .dashSidebar,
+    body.editor_maximized .dashPreviewPane {
+        display: none;
+    }
+
+    .dashNoteName {
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 820px) {
+    .dashBrandName {
+        display: none;
+    }
+
+    .dashButton span {
+        display: none;
+    }
+
+    .dashButton {
+        padding: 6px 9px;
+    }
+
+    .editorSurface {
+        padding: 16px 14px 60px;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .blockGutter {
+        inset-inline-start: -6px;
+    }
+
+    .dashStatusbar {
+        gap: 10px;
+        overflow-x: auto;
+    }
+}
+
+@media print {
+    .dashHeader,
+    .dashToolbar,
+    .dashSidebar,
+    .dashStatusbar,
+    .blockActions,
+    .blockGutter {
+        display: none !important;
+    }
+}

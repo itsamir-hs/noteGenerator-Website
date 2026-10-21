@@ -1,0 +1,3 @@
+# Runtime artefacts of the editing dashboard.
+logs/
+tests/fixtures/edited/

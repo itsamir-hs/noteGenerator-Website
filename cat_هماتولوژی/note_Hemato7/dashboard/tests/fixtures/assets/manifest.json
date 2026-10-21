@@ -1,0 +1,10 @@
+{
+    "images": [
+        {
+            "id": 1,
+            "placeholder": "[IMAGE_1]",
+            "relativePath": "assets/image10.jpg",
+            "sourcePage": 4
+        }
+    ]
+}
