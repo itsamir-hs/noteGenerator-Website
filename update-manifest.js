@@ -10,7 +10,8 @@
  * instead of <note folder>/note.html. If a folder has both, note.html wins.
  *
  * Title lookup (first hit wins):
- *   1. "**مبحث:** <title>" in <note folder>/data/input/note.md (if that file exists)
+ *   1. "**مبحث:** <title>" in <note folder>/note.md, or the old
+ *      <note folder>/data/input/note.md (or any single .md in the folder)
  *   2. "<strong>مبحث:</strong> <title>" inside note.html
  *   3. <title> of note.html
  *   4. the folder name
@@ -121,9 +122,24 @@ function parseTitle(title) {
 
 /* ---------- titles from files ---------- */
 
+// Markdown source of a note: note.md next to note.html (new flat layout),
+// data/input/note.md (old layout), or any single .md file in the folder.
+function findMarkdownFile(folderPath) {
+    for (const candidate of ["note.md", path.join("data", "input", "note.md")]) {
+        const candidatePath = path.join(folderPath, candidate);
+        if (fs.existsSync(candidatePath)) return candidatePath;
+    }
+
+    const anyMd = fs
+        .readdirSync(folderPath)
+        .filter((name) => name.toLowerCase().endsWith(".md"))
+        .sort()[0];
+    return anyMd ? path.join(folderPath, anyMd) : null;
+}
+
 function readTitleFromMarkdown(folderPath) {
-    const mdPath = path.join(folderPath, "data", "input", "note.md");
-    if (!fs.existsSync(mdPath)) return null;
+    const mdPath = findMarkdownFile(folderPath);
+    if (!mdPath) return null;
 
     const md = fs.readFileSync(mdPath, "utf8").replace(/^\uFEFF/, "");
     const match = md.match(/\*\*\s*مبحث\s*:?\s*\*\*\s*:?[ \t]*(.+)/);

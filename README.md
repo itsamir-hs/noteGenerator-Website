@@ -25,7 +25,8 @@ papyrus/
 ├── papyruswebicon.jpg    # Favicon + share-link image
 ├── .github/workflows/deploy.yml
 ├── note_<name>/          # A note
-│   └── note.html         # (old layout note_<name>/output/index.html also works)
+│   ├── note.html
+│   └── note.md           # optional, source of the title (old layout note_<name>/output/index.html also works)
 └── cat_<category>/       # Optional manual category folder
     └── note_<name>/
         └── note.html
@@ -52,7 +53,7 @@ Titles follow `<course name> - <subject> - <class session>` (separator is a hyph
 
 Where the title itself comes from, first hit wins:
 
-1. The `**مبحث:** <title>` line of `data/input/note.md` inside the note folder
+1. The `**مبحث:** <title>` line of `note.md` inside the note folder (the old `data/input/note.md` location, or any single `.md` file in the folder, also works)
 2. A `<strong>مبحث:</strong> <title>` line inside the note file
 3. The `<title>` of the note file
 4. The folder name
