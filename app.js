@@ -146,7 +146,8 @@ function compareByTitle(a, b) {
 
 // Comparator for a sort key, optionally reversed.
 //   newest  - most recent first (reversed: oldest first)
-//   session - course, then session number (notes without course/session always last)
+//   session - session number only (all "session 1" notes, then all "session 2" ...),
+//             ties by course, then title; notes without a session number always last
 //   title   - alphabetical
 function buildComparator(key, reverse) {
     const dir = reverse ? -1 : 1;
@@ -160,17 +161,16 @@ function buildComparator(key, reverse) {
     }
 
     return (a, b) => {
-        if (!a.course !== !b.course) return a.course ? -1 : 1;
-
-        const byCourse = collator.compare(a.course || "", b.course || "");
-        if (byCourse) return dir * byCourse;
-
         const aHasSession = a.sessionNumber != null;
         const bHasSession = b.sessionNumber != null;
         if (aHasSession !== bHasSession) return aHasSession ? -1 : 1;
         if (aHasSession && a.sessionNumber !== b.sessionNumber) {
             return dir * (a.sessionNumber - b.sessionNumber);
         }
+
+        if (!a.course !== !b.course) return a.course ? -1 : 1;
+        const byCourse = collator.compare(a.course || "", b.course || "");
+        if (byCourse) return dir * byCourse;
 
         return dir * compareByTitle(a, b);
     };

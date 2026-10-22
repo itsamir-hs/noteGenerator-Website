@@ -72,7 +72,7 @@ Course names are matched ignoring Arabic/Persian letter variants and half-spaces
 - The workflow commits `notes.json` back to the repo after each build; that is what remembers the dates. If you also run the script locally, pull before you push and don't commit your local `notes.json`.
 - The first run with this system treats every existing note as already known, so nothing is tagged new at that point.
 - A note shows the tag for 24 hours (`newNoteHours` in `app.js`), and it disappears earlier once the note is opened on that device.
-- Pick one sort: **newest**, **session** (course, then session number) or **alphabetical**. Two switches combine with any of them:
+- Pick one sort: **newest**, **session** (by session number only: every session 1, then every session 2 ..., whatever the course or category) or **alphabetical**. Two switches combine with any of them:
   - **دسته‌بندی** groups the notes into one section per category (alphabetical, "بدون دسته‌بندی" last), and the chosen sort orders the notes inside each section. So "category + session" lists each category's notes by session number.
   - **معکوس** reverses the order ("جدیدترین" turns into "قدیمی‌ترین"). Notes without a session number stay at the end; with grouping on, the category order is flipped too.
 - Without grouping, the list is flat, so the latest notes of different categories sit side by side.
