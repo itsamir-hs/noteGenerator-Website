@@ -84,39 +84,84 @@ const sessionWords = new Map([
     ["چهل", 40], ["چهلم", 40], ["پنجاه", 50], ["پنجاهم", 50],
 ]);
 
-// "جلسه دوم" -> 2, "جلسه ۱۲" -> 12, "جلسه بیست و یکم" -> 21, "جلسه سی‌ام" -> 30
-function parseSessionNumber(text) {
-    const normalized = normalizeText(text);
-    const digits = normalized.match(/\d+/);
-    if (digits) return Number(digits[0]);
+const sessionKeyword = /جلسه|session|lecture/i;
+const ignoredSessionTokens = new Set(["و", "ام", "ی", "جلسه", "session", "lecture"]);
 
-    let total = 0;
-    let found = false;
-    for (let token of normalized.split(/[^\p{L}\p{N}]+/u)) {
+function sessionTokens(text) {
+    return normalizeText(text)
+        .split(/[^\p{L}\p{N}]+/u)
+        .filter(Boolean)
         // "بیست‌ویکم" / "بیست ویکم": drop the glued "و"
-        if (!sessionWords.has(token) && token.startsWith("و")) token = token.slice(1);
-        if (sessionWords.has(token)) {
-            total += sessionWords.get(token);
-            found = true;
-        }
-    }
-    return found ? total : null;
+        .map((t) => (!sessionWords.has(t) && t.startsWith("و") && sessionWords.has(t.slice(1)) ? t.slice(1) : t));
 }
 
+// First number written in the text, as digits (Persian/Arabic/English) or words.
+//   "جلسه دوم" -> 2   "جلسه ۱۲" -> 12   "جلسه بیست و یکم" -> 21   "جلسه سی‌ام" -> 30
+//   "جلسه سوم و چهارم" -> 3 (first one)
+function parseSessionNumber(text) {
+    let source = normalizeText(text);
+    const keyword = source.match(sessionKeyword);
+    if (keyword) source = source.slice(keyword.index + keyword[0].length);
+
+    const tokens = sessionTokens(source);
+    for (let i = 0; i < tokens.length; i++) {
+        if (/^\d+$/.test(tokens[i])) return Number(tokens[i]);
+
+        const value = sessionWords.get(tokens[i]);
+        if (value === undefined) continue;
+
+        // tens (20, 30 ...) may be followed by a unit: "بیست و یکم" = 21
+        if (value >= 20) {
+            let j = i + 1;
+            while (tokens[j] === "و") j++;
+            const unit = sessionWords.get(tokens[j]);
+            return unit !== undefined && unit >= 1 && unit <= 9 ? value + unit : value;
+        }
+        return value;
+    }
+    return null;
+}
+
+// Text made only of session words / digits (so "اول", "۱۶" or "بیست و یکم", not a subject)
+function isPlainSession(text) {
+    const tokens = sessionTokens(text);
+    return (
+        tokens.length > 0 &&
+        tokens.some((t) => /^\d+$/.test(t) || sessionWords.has(t)) &&
+        tokens.every((t) => /^\d+$/.test(t) || sessionWords.has(t) || ignoredSessionTokens.has(t))
+    );
+}
+
+// "<course> - <subject> - <session>"; the session part may also come first/middle
+// when it is the one containing the word "جلسه".
 function parseTitle(title) {
     const parts = title
         .split(/\s+[-–—]\s+/)
         .map((p) => p.trim())
         .filter(Boolean);
-    if (parts.length < 2) return {};
 
-    const result = { course: parts[0] };
-
+    const result = {};
     let sessionText = null;
-    if (parts.length >= 3) {
-        sessionText = parts[parts.length - 1];
-    } else if (/جلسه|session|lecture/i.test(normalizeText(parts[1]))) {
-        sessionText = parts[1];
+
+    if (parts.length >= 2) {
+        let sessionIndex = -1;
+        for (let i = parts.length - 1; i >= 0; i--) {
+            if (sessionKeyword.test(normalizeText(parts[i]))) {
+                sessionIndex = i;
+                break;
+            }
+        }
+        if (sessionIndex === -1 && parts.length >= 3 && isPlainSession(parts[parts.length - 1])) {
+            sessionIndex = parts.length - 1;
+        }
+
+        if (sessionIndex !== 0) result.course = parts[0];
+        if (sessionIndex !== -1) sessionText = parts[sessionIndex];
+    } else {
+        // No " - " separators at all: still pick up "... جلسه X" at the end
+        const normalized = normalizeText(title);
+        const keyword = normalized.match(sessionKeyword);
+        if (keyword) sessionText = normalized.slice(keyword.index);
     }
 
     if (sessionText) {
@@ -299,6 +344,14 @@ function baselineDate(relativeFile) {
     return (Number.isNaN(date.getTime()) || date > baselineCutoff ? baselineCutoff : date).toISOString();
 }
 
+// Same course written with small spelling differences -> one canonical spelling
+const courseNames = new Map();
+function canonicalCourse(name) {
+    const key = normalizeText(name).toLowerCase();
+    if (!courseNames.has(key)) courseNames.set(key, name);
+    return courseNames.get(key);
+}
+
 const notes = rawNotes.map((raw) => {
     const parsed = parseTitle(raw.title);
     const id = noteId(raw.path);
@@ -321,7 +374,7 @@ const notes = rawNotes.map((raw) => {
           : null;
 
     if (category) note.category = category;
-    if (parsed.course) note.course = parsed.course;
+    if (parsed.course) note.course = canonicalCourse(parsed.course);
     if (parsed.session) note.session = parsed.session;
     if (parsed.sessionNumber !== undefined) note.sessionNumber = parsed.sessionNumber;
     note.added = added;

@@ -68,17 +68,34 @@ const uncategorizedLabel = "بدون دسته‌بندی";
 
 /* ---------- sorting + "new" tag ---------- */
 
-const sortStorageKey = "papyrusSort";
-const sortModes = ["newest", "session", "title"];
+const sortStorageKey = "papyrusSortV2";
+const legacySortStorageKey = "papyrusSort"; // settings of the previous version
+const sortKeys = ["newest", "session", "title"];
 const newNoteHours = 24; // how long the "جدید" tag stays on a note
 const seenStorageKey = "papyrusSeenNotes";
-const collator = new Intl.Collator("fa");
-const sortButtons = document.querySelectorAll(".sortButton");
+const collator = new Intl.Collator("fa", { numeric: true });
+const sortButtons = document.querySelectorAll(".sortButton[data-sort]");
+const toggleButtons = document.querySelectorAll(".sortButton[data-toggle]");
 
-let sortMode = "newest";
+let sortKey = "newest";
+let groupByCategory = false;
+let reverseSort = false;
+
 try {
-    const savedSort = localStorage.getItem(sortStorageKey);
-    if (sortModes.includes(savedSort)) sortMode = savedSort;
+    const saved = JSON.parse(localStorage.getItem(sortStorageKey));
+    if (saved && typeof saved === "object") {
+        if (sortKeys.includes(saved.key)) sortKey = saved.key;
+        groupByCategory = saved.group === true;
+        reverseSort = saved.reverse === true;
+    } else {
+        const legacy = localStorage.getItem(legacySortStorageKey);
+        if (legacy === "category") {
+            sortKey = "session";
+            groupByCategory = true;
+        } else if (sortKeys.includes(legacy)) {
+            sortKey = legacy;
+        }
+    }
 } catch (_) {
     /* storage unavailable */
 }
@@ -127,37 +144,63 @@ function compareByTitle(a, b) {
     return collator.compare(a.title, b.title);
 }
 
-const noteComparators = {
-    // newest first
-    newest: (a, b) => b.timestamp - a.timestamp || compareByTitle(a, b),
+// Comparator for a sort key, optionally reversed.
+//   newest  - most recent first (reversed: oldest first)
+//   session - course, then session number (notes without course/session always last)
+//   title   - alphabetical
+function buildComparator(key, reverse) {
+    const dir = reverse ? -1 : 1;
 
-    // course, then session number (notes without a session go last)
-    session: (a, b) => {
+    if (key === "newest") {
+        return (a, b) => dir * (b.timestamp - a.timestamp || compareByTitle(a, b));
+    }
+
+    if (key === "title") {
+        return (a, b) => dir * compareByTitle(a, b);
+    }
+
+    return (a, b) => {
         if (!a.course !== !b.course) return a.course ? -1 : 1;
+
         const byCourse = collator.compare(a.course || "", b.course || "");
-        if (byCourse) return byCourse;
+        if (byCourse) return dir * byCourse;
 
-        const sa = a.sessionNumber ?? Infinity;
-        const sb = b.sessionNumber ?? Infinity;
-        if (sa !== sb) return sa < sb ? -1 : 1;
+        const aHasSession = a.sessionNumber != null;
+        const bHasSession = b.sessionNumber != null;
+        if (aHasSession !== bHasSession) return aHasSession ? -1 : 1;
+        if (aHasSession && a.sessionNumber !== b.sessionNumber) {
+            return dir * (a.sessionNumber - b.sessionNumber);
+        }
 
-        return compareByTitle(a, b);
-    },
-
-    title: compareByTitle,
-};
+        return dir * compareByTitle(a, b);
+    };
+}
 
 function updateSortButtons() {
     sortButtons.forEach((button) => {
-        button.setAttribute("aria-pressed", String(button.dataset.sort === sortMode));
+        button.setAttribute("aria-pressed", String(button.dataset.sort === sortKey));
+
+        // "جدیدترین" becomes "قدیمی‌ترین" when reversed
+        if (button.dataset.label) {
+            button.textContent =
+                reverseSort && button.dataset.reverseLabel
+                    ? button.dataset.reverseLabel
+                    : button.dataset.label;
+        }
+    });
+
+    toggleButtons.forEach((button) => {
+        const active = button.dataset.toggle === "group" ? groupByCategory : reverseSort;
+        button.setAttribute("aria-pressed", String(active));
     });
 }
 
-function setSortMode(mode) {
-    if (!sortModes.includes(mode)) return;
-    sortMode = mode;
+function applySortChange() {
     try {
-        localStorage.setItem(sortStorageKey, mode);
+        localStorage.setItem(
+            sortStorageKey,
+            JSON.stringify({ key: sortKey, group: groupByCategory, reverse: reverseSort })
+        );
     } catch (_) {
         /* storage unavailable */
     }
@@ -166,7 +209,18 @@ function setSortMode(mode) {
 }
 
 sortButtons.forEach((button) => {
-    button.addEventListener("click", () => setSortMode(button.dataset.sort));
+    button.addEventListener("click", () => {
+        sortKey = button.dataset.sort;
+        applySortChange();
+    });
+});
+
+toggleButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        if (button.dataset.toggle === "group") groupByCategory = !groupByCategory;
+        else reverseSort = !reverseSort;
+        applySortChange();
+    });
 });
 
 updateSortButtons();
@@ -217,9 +271,16 @@ function renderNotes(query = "") {
 
     emptyState.hidden = true;
 
-    const compare = noteComparators[sortMode];
+    const compare = buildComparator(sortKey, reverseSort);
 
-    // Group by category; uncategorized goes last
+    // Not grouped: one flat list, categories play no role
+    if (!groupByCategory) {
+        notesContainer.appendChild(createGrid([...filtered].sort(compare), q));
+        return;
+    }
+
+    // Grouped: one section per category (alphabetical, flipped when reversed),
+    // notes inside each section follow the chosen sort. Uncategorized stays last.
     const groups = new Map();
     const uncategorized = [];
 
@@ -232,27 +293,14 @@ function renderNotes(query = "") {
         groups.get(note.category).push(note);
     });
 
-    uncategorized.sort(compare);
+    const dir = reverseSort ? -1 : 1;
+    const sections = [...groups.entries()]
+        .sort(([a], [b]) => dir * collator.compare(a, b))
+        .map(([name, list]) => ({ name, list: list.sort(compare) }));
 
-    // No categories at all: plain grid, no headings
-    if (groups.size === 0) {
-        notesContainer.appendChild(createGrid(uncategorized, q));
-        return;
+    if (uncategorized.length) {
+        sections.push({ name: null, list: uncategorized.sort(compare) });
     }
-
-    const sections = [...groups.entries()].map(([name, list]) => {
-        list.sort(compare);
-        return { name, list, latest: Math.max(...list.map((n) => n.timestamp)) };
-    });
-
-    // Newest mode: the category with the most recent note comes first
-    sections.sort((a, b) =>
-        sortMode === "newest"
-            ? b.latest - a.latest || collator.compare(a.name, b.name)
-            : collator.compare(a.name, b.name)
-    );
-
-    if (uncategorized.length) sections.push({ name: null, list: uncategorized });
 
     sections.forEach(({ name, list }) => {
         const section = document.createElement("section");

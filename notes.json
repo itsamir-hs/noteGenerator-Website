@@ -103,6 +103,16 @@
       "added": "2026-10-22T06:35:52.068Z"
     },
     {
+      "id": "note_Hemato3",
+      "path": "cat_هماتولوژی/note_Hemato3/output/index.html",
+      "title": "هماتولوژی - گلبول قرمز، بررسی CBC و morphology گلبول قرمز - جلسه ۳",
+      "category": "هماتولوژی",
+      "course": "هماتولوژی",
+      "session": "جلسه ۳",
+      "sessionNumber": 3,
+      "added": "2026-10-15T22:02:49.000Z"
+    },
+    {
       "id": "note_Hemato2",
       "path": "cat_هماتولوژی/note_Hemato2/output/index.html",
       "title": "هماتولوژی - هموگلوبین و سینتیک هموگلوبین - جلسه دوم",
@@ -113,10 +123,22 @@
       "added": "2026-10-18T19:54:03.000Z"
     },
     {
+      "id": "note_Hemato4",
+      "path": "cat_هماتولوژی/note_Hemato4/output/index.html",
+      "title": "هماتولوژی - hematopoiesis (3) - جلسه چهارم",
+      "category": "هماتولوژی",
+      "course": "هماتولوژی",
+      "session": "جلسه چهارم",
+      "sessionNumber": 4,
+      "added": "2026-10-18T20:55:26.000Z"
+    },
+    {
       "id": "note_Hemato6",
       "path": "cat_هماتولوژی/note_Hemato6/output/index.html",
       "title": "هماتولوژی- خون‌سازی (Hematopoiesis)- جلسه 6 کلاس",
       "category": "هماتولوژی",
+      "session": "جلسه 6 کلاس",
+      "sessionNumber": 6,
       "added": "2026-10-18T18:08:44.000Z"
     },
     {
@@ -124,6 +146,8 @@
       "path": "cat_هماتولوژی/note_Hemato7/output/index.html",
       "title": "هماتولوژی-آنمی‌های مرتبط با آهن و متابولیسم آهن-جلسه 7 کلاس",
       "category": "هماتولوژی",
+      "session": "جلسه 7 کلاس",
+      "sessionNumber": 7,
       "added": "2026-10-19T15:43:11.709Z"
     },
     {
@@ -131,21 +155,9 @@
       "path": "cat_هماتولوژی/note_Hemato5/output/index.html",
       "title": "هماتولوژی-رتیکولوسیت ها و تکامل گلبول های قرمز-جلسه 5 کلاس",
       "category": "هماتولوژی",
+      "session": "جلسه 5 کلاس",
+      "sessionNumber": 5,
       "added": "2026-10-15T22:02:49.000Z"
-    },
-    {
-      "id": "note_Hemato3",
-      "path": "cat_هماتولوژی/note_Hemato3/output/index.html",
-      "title": "هماتولوژی-گلبول قرمز، بررسی CBC و morphology گلبول قرمز-جلسه ۳ کلاس",
-      "category": "هماتولوژی",
-      "added": "2026-10-15T22:02:49.000Z"
-    },
-    {
-      "id": "note_Hemato4",
-      "path": "cat_هماتولوژی/note_Hemato4/output/index.html",
-      "title": "hematopoiesis 3-جلسه چهارم",
-      "category": "هماتولوژی",
-      "added": "2026-10-18T20:55:26.000Z"
     }
   ]
 }
