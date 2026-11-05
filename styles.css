@@ -559,13 +559,11 @@ body {
 }
 
 /* =========================================================
-   Tabs (edited / unedited notes)
+   Tabs (edited / unedited notes) - live in the top bar
    ========================================================= */
 
-.tabs {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: clamp(16px, 3vw, 24px) clamp(16px, 3vw, 24px) 0;
+.headerTabs {
+    min-width: 0;
 }
 
 .tabsSegmented {
@@ -578,13 +576,14 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 10px 18px;
+    padding: 6px 16px;
     border: none;
     border-radius: var(--radiusSmall);
     background: transparent;
     color: var(--textSecondary);
     font-family: inherit;
-    font-size: 15px;
+    font-size: 14px;
+    white-space: nowrap;
     cursor: pointer;
     transition: background 0.15s ease, color 0.15s ease;
 }
@@ -614,10 +613,6 @@ body {
 .tabButton[aria-selected="true"] .tabCount {
     color: inherit;
     opacity: 0.8;
-}
-
-.tabs + .toolbar {
-    padding-top: 12px;
 }
 
 /* =========================================================
@@ -738,9 +733,26 @@ body {
    Responsive
    ========================================================= */
 
+@media (max-width: 900px) {
+    /* title + tabs on the first row, search and buttons on the next one */
+    .headerControls {
+        width: 100%;
+    }
+}
+
 @media (max-width: 640px) {
     .appHeader {
         padding: 10px 16px;
+    }
+
+    /* tabs get their own full-width row under the title */
+    .headerTabs {
+        width: 100%;
+    }
+
+    .tabButton {
+        padding: 6px 8px;
+        font-size: 13px;
     }
 
     .headerControls {

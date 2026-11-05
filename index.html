@@ -39,6 +39,17 @@
             پاپیروس
         </div>
 
+        <nav class="headerTabs" role="tablist" aria-label="نوع جزوه‌ها">
+            <div class="segmented tabsSegmented">
+                <button class="tabButton" type="button" role="tab" id="tabEdited" data-tab="edited" aria-selected="true" aria-controls="notesContainer">
+                    جزوه های ادیت شده <span class="tabCount"></span>
+                </button>
+                <button class="tabButton" type="button" role="tab" id="tabUnedited" data-tab="unedited" aria-selected="false" aria-controls="notesContainer" tabindex="-1">
+                    خروجی پاپیروس <span class="tabCount"></span>
+                </button>
+            </div>
+        </nav>
+
         <div class="headerControls">
 
             <div class="searchBox">
@@ -125,17 +136,6 @@
         </div>
 
     </header>
-
-    <nav class="tabs" role="tablist" aria-label="نوع جزوه‌ها">
-        <div class="segmented tabsSegmented">
-            <button class="tabButton" type="button" role="tab" id="tabEdited" data-tab="edited" aria-selected="true" aria-controls="notesContainer">
-                جزوه های ادیت شده <span class="tabCount"></span>
-            </button>
-            <button class="tabButton" type="button" role="tab" id="tabUnedited" data-tab="unedited" aria-selected="false" aria-controls="notesContainer" tabindex="-1">
-                خروجی پاپیروس <span class="tabCount"></span>
-            </button>
-        </div>
-    </nav>
 
     <div class="toolbar" role="group" aria-label="مرتب‌سازی">
         <span class="toolbarLabel">مرتب‌سازی:</span>
