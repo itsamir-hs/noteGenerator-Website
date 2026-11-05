@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<!-- Application shell of the human editing dashboard (Bashligh's editing layer). -->
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Note Editing Dashboard — Bashligh</title>
+
+    <!-- Declared icon: keeps browsers from requesting a missing /favicon.ico. -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <!-- Bashligh's own theme stylesheets: the dashboard shares the note's visual language. -->
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/dark.css">
+    <link rel="stylesheet" href="/styles/forest.css">
+    <link rel="stylesheet" href="/styles/paperLike.css">
+    <link rel="stylesheet" href="/styles/neon.css">
+
+    <link rel="stylesheet" href="/public/styles/dashboard.css">
+
+    <!-- Same Markdown parser the renderer uses, exposed to the browser. -->
+    <script type="importmap">
+        {
+            "imports": {
+                "marked": "/node_modules/marked/lib/marked.esm.js"
+            }
+        }
+    </script>
+
+    <script src="/node_modules/katex/dist/katex.min.js" defer></script>
+    <script src="/node_modules/lucide/dist/umd/lucide.js" defer></script>
+</head>
+
+<body class="dashBody" data-panel="outline">
+
+    <header class="dashHeader">
+        <div class="dashBrand">
+            <button
+                class="dashIconButton paneToggleButton"
+                type="button"
+                id="sidebarToggle"
+                data-pane="sidebar"
+                aria-label="Toggle the outline sidebar"
+                title="Toggle sidebar"
+                aria-expanded="true"
+            >
+                <i data-lucide="panel-left"></i>
+            </button>
+
+            <span class="dashBrandName">Note Editing Dashboard</span>
+
+            <span class="dashNoteName" id="noteName" title="Currently open note">No note open</span>
+        </div>
+
+        <div class="dashHeaderActions" role="toolbar" aria-label="Document actions">
+            <span class="saveStatus" id="saveStatus" role="status" aria-live="polite">—</span>
+
+            <button class="dashButton" type="button" id="openButton" title="Open a note (Ctrl+O)">
+                <i data-lucide="folder-open"></i>
+                <span>Open</span>
+            </button>
+
+            <button class="dashButton" type="button" id="saveButton" title="Save the edited note (Ctrl+S)">
+                <i data-lucide="save"></i>
+                <span>Save</span>
+            </button>
+
+            <button class="dashIconButton" type="button" id="undoButton" aria-label="Undo (Ctrl+Z)" title="Undo (Ctrl+Z)">
+                <i data-lucide="undo-2"></i>
+            </button>
+
+            <button class="dashIconButton" type="button" id="redoButton" aria-label="Redo (Ctrl+Shift+Z)" title="Redo (Ctrl+Shift+Z)">
+                <i data-lucide="redo-2"></i>
+            </button>
+
+            <button class="dashIconButton" type="button" id="findButton" aria-label="Find and replace (Ctrl+F)" title="Find and replace (Ctrl+F)">
+                <i data-lucide="search"></i>
+            </button>
+
+            <button class="dashIconButton" type="button" id="validateButton" aria-label="Check the note" title="Check the note for problems">
+                <i data-lucide="list-checks"></i>
+            </button>
+
+            <button class="dashButton dashButtonPrimary" type="button" id="exportButton" title="Review and export through the Bashligh renderer">
+                <i data-lucide="file-output"></i>
+                <span>Export</span>
+            </button>
+
+            <label class="dashSelectLabel" for="themeSelect">
+                <span class="visuallyHidden">Theme</span>
+                <select id="themeSelect" class="dashSelect" aria-label="Theme">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="forest">Forest</option>
+                    <option value="paperLike">Paper</option>
+                    <option value="neon">Neon</option>
+                </select>
+            </label>
+
+            <button class="dashIconButton" type="button" id="layoutButton" aria-label="Choose which windows are open" title="Windows: sidebar, document, preview" aria-haspopup="true" aria-expanded="false">
+                <i data-lucide="layout-panel-left"></i>
+            </button>
+
+            <div class="layoutMenu" id="layoutMenu" hidden>
+                <label class="layoutOption">
+                    <input type="checkbox" id="layoutSidebar" checked>
+                    <span>Sidebar (Outline · Images · Review)</span>
+                </label>
+                <label class="layoutOption">
+                    <input type="checkbox" id="layoutEditor" checked>
+                    <span>Document editor</span>
+                </label>
+                <label class="layoutOption">
+                    <input type="checkbox" id="layoutPreview">
+                    <span>Live preview</span>
+                </label>
+            </div>
+
+            <button class="dashIconButton" type="button" id="helpButton" aria-label="Keyboard shortcuts and help" title="Keyboard shortcuts and help">
+                <i data-lucide="circle-help"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="dashToolbar" role="toolbar" aria-label="Formatting">
+        <div class="toolbarGroup">
+            <button class="toolButton" type="button" data-command="bold" title="Bold (Ctrl+B)" aria-label="Bold"><b>B</b></button>
+            <button class="toolButton" type="button" data-command="italic" title="Italic (Ctrl+I)" aria-label="Italic"><i>I</i></button>
+            <button class="toolButton" type="button" data-command="inlineCode" title="Inline code" aria-label="Inline code"><code>&lt;/&gt;</code></button>
+            <button class="toolButton" type="button" data-command="link" title="Link (Ctrl+K)" aria-label="Insert link"><i data-lucide="link"></i></button>
+        </div>
+
+        <div class="toolbarGroup">
+            <label class="dashSelectLabel" for="headingSelect">
+                <span class="visuallyHidden">Block style</span>
+                <select id="headingSelect" class="dashSelect" aria-label="Block style">
+                    <option value="paragraph">Paragraph</option>
+                    <option value="1">Title (H1)</option>
+                    <option value="2">Section (H2)</option>
+                    <option value="3">Subsection (H3)</option>
+                    <option value="4">Heading (H4)</option>
+                </select>
+            </label>
+            <button class="toolButton" type="button" data-command="bulletList" title="Bullet list" aria-label="Bullet list"><i data-lucide="list"></i></button>
+            <button class="toolButton" type="button" data-command="numberList" title="Numbered list" aria-label="Numbered list"><i data-lucide="list-ordered"></i></button>
+            <button class="toolButton" type="button" data-command="quote" title="Quotation" aria-label="Quotation"><i data-lucide="quote"></i></button>
+        </div>
+
+        <div class="toolbarGroup">
+            <button class="toolButton" type="button" data-command="callout" title="Insert information box" aria-label="Insert information box"><i data-lucide="badge-info"></i></button>
+            <button class="toolButton" type="button" data-command="table" title="Insert table" aria-label="Insert table"><i data-lucide="table-2"></i></button>
+            <button class="toolButton" type="button" data-command="formula" title="Insert display formula" aria-label="Insert display formula"><i data-lucide="sigma"></i></button>
+            <button class="toolButton" type="button" data-command="image" title="Insert image" aria-label="Insert image"><i data-lucide="image-plus"></i></button>
+            <button class="toolButton" type="button" data-command="codeBlock" title="Code block" aria-label="Code block"><i data-lucide="square-code"></i></button>
+            <button class="toolButton" type="button" data-command="rawBlock" title="Raw Markdown block" aria-label="Raw Markdown block"><i data-lucide="file-code-2"></i></button>
+        </div>
+
+    </div>
+
+    <main class="dashMain">
+        <aside class="dashSidebar" id="sidebar" aria-label="Note panels">
+            <nav class="dashTabs" role="tablist" aria-label="Sidebar panels">
+                <button class="dashTab isActive" role="tab" aria-selected="true" data-panel="outline" id="tab-outline" type="button">Outline</button>
+                <button class="dashTab" role="tab" aria-selected="false" data-panel="assets" id="tab-assets" type="button">Images</button>
+                <button class="dashTab" role="tab" aria-selected="false" data-panel="review" id="tab-review" type="button">Review</button>
+                <button class="dashTab" role="tab" aria-selected="false" data-panel="issues" id="tab-issues" type="button">Issues <span class="tabBadge" id="issuesBadge" hidden>0</span></button>
+            </nav>
+
+            <div class="dashSidebarBody">
+                <section class="dashPanel is_active" id="panel-outline" role="tabpanel" aria-labelledby="tab-outline">
+                    <ol class="outlineList" id="outlineList"></ol>
+                </section>
+
+                <section class="dashPanel" id="panel-assets" role="tabpanel" aria-labelledby="tab-assets" hidden>
+                    <div class="panelHeader">
+                        <button class="dashButton dashButtonSmall" type="button" id="uploadAssetButton">
+                            <i data-lucide="upload"></i>
+                            <span>Upload image</span>
+                        </button>
+                        <input type="file" id="assetFileInput" accept="image/png,image/jpeg,image/gif,image/webp,image/bmp" hidden>
+                    </div>
+                    <p class="panelHint">Images in this note's asset folder. Used images are marked.</p>
+                    <ul class="assetList" id="assetList"></ul>
+                </section>
+
+                <section class="dashPanel" id="panel-review" role="tabpanel" aria-labelledby="tab-review" hidden>
+                    <p class="panelHint">Content the generator flagged for a human check. Markers are kept until you resolve them.</p>
+                    <ul class="reviewList" id="reviewList"></ul>
+                </section>
+
+                <section class="dashPanel" id="panel-issues" role="tabpanel" aria-labelledby="tab-issues" hidden>
+                    <p class="panelHint">Checks run before export. Warnings do not block exporting.</p>
+                    <ul class="issueList" id="issueList"></ul>
+                </section>
+            </div>
+        </aside>
+
+        <section class="dashPane dashEditorPane" aria-label="Editing area">
+            <div class="paneHeader">
+                <div class="paneHeaderMain">
+                    <span class="paneTitle">Document</span>
+                    <span class="paneHint" id="editorHint">Click a block to edit it</span>
+                </div>
+                <span class="paneHeaderButtons">
+                    <button class="dashIconButton" type="button" id="editorPaneMaximize" aria-label="Maximize the document editor" title="Maximize this window">
+                        <i data-lucide="maximize-2"></i>
+                    </button>
+                    <button class="dashIconButton paneToggleButton" type="button" id="editorPaneToggle" data-pane="editor" aria-label="Minimize the document editor" title="Minimize this window">
+                        <i data-lucide="minimize-2"></i>
+                    </button>
+                </span>
+            </div>
+
+            <div class="editorSurface" id="editorSurface" aria-label="Note content"></div>
+        </section>
+
+        <section class="dashPane dashPreviewPane" aria-label="Live preview">
+            <div class="paneHeader">
+                <div class="paneHeaderMain">
+                    <span class="paneTitle">Preview</span>
+                    <span class="paneHint">Rendered by the Bashligh renderer</span>
+                </div>
+                <button class="dashIconButton paneToggleButton" type="button" id="previewPaneToggle" data-pane="preview" aria-label="Minimize the live preview" title="Minimize this window">
+                    <i data-lucide="minimize-2"></i>
+                </button>
+            </div>
+            <iframe
+                class="previewFrame"
+                id="previewFrame"
+                title="Live preview of the note as Bashligh renders it"
+            ></iframe>
+        </section>
+    </main>
+
+    <!-- Restore chips: appear when a window is minimized -->
+    <div class="restoreBar" aria-label="Restore minimized windows">
+        <button class="restoreChip" type="button" id="restoreSidebarChip" data-pane="sidebar">
+            <i data-lucide="panel-left"></i> Sidebar
+        </button>
+        <button class="restoreChip" type="button" id="restoreEditorChip" data-pane="editor">
+            <i data-lucide="file-text"></i> Editor
+        </button>
+        <button class="restoreChip" type="button" id="restorePreviewChip" data-pane="preview">
+            <i data-lucide="eye"></i> Preview
+        </button>
+    </div>
+
+    <footer class="dashStatusbar">
+        <span class="statusItem" id="statusCounts">—</span>
+        <span class="statusItem" id="statusSaved">Not saved yet</span>
+        <span class="statusItem statusIssues" id="statusIssues">0 issues</span>
+    </footer>
+
+    <!-- Find & replace -->
+    <dialog class="dashDialog" id="findDialog" aria-labelledby="findDialogTitle">
+        <form method="dialog" class="dialogForm" id="findForm">
+            <h2 id="findDialogTitle">Find and replace</h2>
+
+            <label for="findInput">Find</label>
+            <input class="dashInput" type="text" id="findInput" autocomplete="off">
+
+            <div class="dialogRow">
+                <label class="checkboxLabel">
+                    <input type="checkbox" id="findCaseSensitive">
+                    <span>Match case</span>
+                </label>
+                <span class="findCount" id="findCount" role="status" aria-live="polite">0 results</span>
+            </div>
+
+            <label for="replaceInput">Replace with</label>
+            <input class="dashInput" type="text" id="replaceInput" autocomplete="off">
+
+            <div class="dialogActions">
+                <button class="dashButton" type="button" id="findPreviousButton">Previous</button>
+                <button class="dashButton" type="button" id="findNextButton">Next</button>
+                <button class="dashButton" type="button" id="replaceButton">Replace</button>
+                <button class="dashButton" type="button" id="replaceAllButton">Replace all</button>
+                <button class="dashButton dashButtonPrimary" type="submit" value="close">Close</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Edit a single block as Markdown -->
+    <dialog class="dashDialog dashDialogWide" id="blockMarkdownDialog" aria-labelledby="blockMarkdownTitle">
+        <form class="dialogForm" id="blockMarkdownForm">
+            <h2 id="blockMarkdownTitle">Edit block as Markdown</h2>
+
+            <p class="dialogHint">This block's Markdown source. Apply to parse it back into the document (empty source deletes the block).</p>
+
+            <textarea class="blockMarkdownSource" id="blockMarkdownSource" spellcheck="false" aria-label="Markdown source of this block"></textarea>
+
+            <div class="dialogActions">
+                <button class="dashButton" type="button" id="blockMarkdownCancel">Cancel</button>
+                <button class="dashButton dashButtonPrimary" type="submit" id="blockMarkdownApply">Apply</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Open note -->
+    <dialog class="dashDialog" id="openDialog" aria-labelledby="openDialogTitle">
+        <form method="dialog" class="dialogForm" id="openForm">
+            <h2 id="openDialogTitle">Open a note</h2>
+
+            <label for="openPathInput">Note path (relative to the project folder)</label>
+            <input class="dashInput" type="text" id="openPathInput" list="notePathList" placeholder="output.md" autocomplete="off">
+            <datalist id="notePathList"></datalist>
+
+            <p class="dialogHint">Pick a generated note (Markdown) together with its asset folder. The original file is never overwritten when you save.</p>
+
+            <ul class="noteCandidateList" id="noteCandidateList"></ul>
+
+            <div class="dialogActions">
+                <button class="dashButton" type="button" id="openCancelButton">Cancel</button>
+                <button class="dashButton dashButtonPrimary" type="submit" value="open">Open note</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Final review & export -->
+    <dialog class="dashDialog dashDialogWide" id="exportDialog" aria-labelledby="exportDialogTitle">
+        <div class="dialogForm">
+            <h2 id="exportDialogTitle">Final review</h2>
+
+            <dl class="reviewSummary" id="exportSummary"></dl>
+
+            <h3>Checks</h3>
+            <ul class="issueList" id="exportIssueList"></ul>
+
+            <p class="exportTarget" id="exportTarget"></p>
+
+            <label class="checkboxLabel shareBundleOption">
+                <input type="checkbox" id="shareIncludeEditor">
+                <span>Share zip: include the editing dashboard (editors run <code>npm install</code> once)</span>
+            </label>
+            <p class="dialogHint" id="shareBundleHint">
+                Review bundle: note.md, a standalone note.html that opens offline, and the images it uses. No renderer or dashboard source.
+            </p>
+
+            <div class="dialogActions">
+                <button class="dashButton" type="button" id="exportCancelButton">Close</button>
+                <button class="dashButton" type="button" id="exportSaveButton">Save first</button>
+                <button class="dashButton" type="button" id="shareCreateButton">Create share zip</button>
+                <button class="dashButton dashButtonPrimary" type="button" id="exportConfirmButton">Export through Bashligh</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Help -->
+    <dialog class="dashDialog" id="helpDialog" aria-labelledby="helpDialogTitle">
+        <div class="dialogForm">
+            <h2 id="helpDialogTitle">Keyboard shortcuts</h2>
+            <table class="shortcutTable">
+                <tbody>
+                    <tr><td><kbd>Ctrl</kbd>+<kbd>S</kbd></td><td>Save the edited note</td></tr>
+                    <tr><td><kbd>Ctrl</kbd>+<kbd>Z</kbd></td><td>Undo</td></tr>
+                    <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd></td><td>Redo</td></tr>
+                    <tr><td><kbd>Ctrl</kbd>+<kbd>F</kbd></td><td>Find</td></tr>
+                    <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></td><td>Find and replace</td></tr>
+                    <tr><td><kbd>Ctrl</kbd>+<kbd>B</kbd></td><td>Bold</td></tr>
+                    <tr><td><kbd>Ctrl</kbd>+<kbd>I</kbd></td><td>Italic</td></tr>
+                    <tr><td><kbd>Ctrl</kbd>+<kbd>K</kbd></td><td>Insert link</td></tr>
+                    <tr><td><kbd>Enter</kbd></td><td>New paragraph below</td></tr>
+                    <tr><td><kbd>Shift</kbd>+<kbd>Enter</kbd></td><td>Line break inside the paragraph</td></tr>
+                    <tr><td><kbd>Backspace</kbd> at the start</td><td>Merge with the previous block</td></tr>
+                    <tr><td><kbd>Alt</kbd>+<kbd>↑</kbd> / <kbd>Alt</kbd>+<kbd>↓</kbd></td><td>Move the current block</td></tr>
+                    <tr><td><kbd>Ctrl</kbd>+<kbd>Enter</kbd></td><td>Preview the note now</td></tr>
+                </tbody>
+            </table>
+
+            <div class="dialogActions">
+                <button class="dashButton dashButtonPrimary" type="button" id="helpCloseButton">Close</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Generic confirmation for destructive actions -->
+    <dialog class="dashDialog" id="confirmDialog" aria-labelledby="confirmDialogTitle">
+        <div class="dialogForm">
+            <h2 id="confirmDialogTitle">Are you sure?</h2>
+            <p class="dialogHint" id="confirmDialogMessage"></p>
+            <div class="dialogActions">
+                <button class="dashButton" type="button" id="confirmCancelButton">Cancel</button>
+                <button class="dashButton dashButtonDanger" type="button" id="confirmOkButton">Delete</button>
+            </div>
+        </div>
+    </dialog>
+
+    <div class="toastRegion" id="toastRegion" aria-live="polite" aria-atomic="false"></div>
+
+    <script type="module" src="/public/js/app.js"></script>
+</body>
+
+</html>

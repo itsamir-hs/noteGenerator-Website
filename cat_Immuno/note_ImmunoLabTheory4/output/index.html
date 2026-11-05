@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>تیتراسیون روی اسلاید</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/rtl.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../node_modules/katex/dist/katex.min.css"
+    >
+
+    <link rel="stylesheet" href="../styles/dark.css">
+    <link rel="stylesheet" href="../styles/forest.css">
+    <link rel="stylesheet" href="../styles/paperLike.css">
+    <link rel="stylesheet" href="../styles/neon.css">
+    <link rel="stylesheet" href="../styles/print.css" media="print">
+
+    <script src="../node_modules/lucide/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+
+    <div class="printBrand" aria-hidden="true" style="display:none">پاپیروس</div>
+
+    <header class="appHeader">
+
+        <button
+            class="sidebarToggle"
+            type="button"
+            aria-label="باز کردن فهرست مطالب"
+            aria-expanded="false"
+        >
+            <i data-lucide="panel-left"></i>
+        </button>
+
+
+        <div class="appTitle">
+            پاپیروس
+        </div>
+
+
+        <div class="headerControls">
+
+<button
+    class="searchButton"
+    type="button"
+    aria-label="جستجو در جزوه"
+    aria-expanded="false"
+>
+    <i data-lucide="search"></i>
+</button>
+
+<div class="highlightSwitcher">
+
+    <button
+        class="highlightToggle"
+        type="button"
+        aria-label="هایلایت"
+        aria-expanded="false"
+    >
+        <i data-lucide="highlighter"></i>
+    </button>
+
+
+<div
+    class="highlightOptions"
+    aria-hidden="true"
+>
+
+    <button
+        class="highlightPowerToggle"
+        type="button"
+        aria-label="روشن یا خاموش کردن هایلایت"
+        aria-pressed="true"
+    >
+        <i data-lucide="highlighter"></i>
+        <span>هایلایت روشن</span>
+    </button>
+
+        <div class="highlightColors">
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#fff176"
+                aria-label="هایلایت زرد"
+                style="--highlightColor: #fff176;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#a5d6a7"
+                aria-label="هایلایت سبز"
+                style="--highlightColor: #a5d6a7;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#90caf9"
+                aria-label="هایلایت آبی"
+                style="--highlightColor: #90caf9;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ce93d8"
+                aria-label="هایلایت بنفش"
+                style="--highlightColor: #ce93d8;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ffab91"
+                aria-label="هایلایت نارنجی"
+                style="--highlightColor: #ffab91;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ef9a9a"
+                aria-label="هایلایت قرمز"
+                style="--highlightColor: #ef9a9a;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#f48fb1"
+                aria-label="هایلایت صورتی"
+                style="--highlightColor: #f48fb1;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#80cbc4"
+                aria-label="هایلایت فیروزه‌ای"
+                style="--highlightColor: #80cbc4;"
+            ></button>
+
+        </div>
+
+
+        <div class="highlightDivider"></div>
+
+
+        <label
+            class="highlightCustomColor"
+            aria-label="انتخاب رنگ دلخواه"
+        >
+            <input
+                class="highlightColorInput"
+                type="color"
+                value="#fff176"
+            >
+
+            <i data-lucide="palette"></i>
+        </label>
+
+
+        <button
+            class="highlightEraser"
+            type="button"
+            aria-label="پاک کردن هایلایت"
+        >
+            <i data-lucide="eraser"></i>
+            <span>پاک‌کن</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="stickyNotesSwitcher">
+
+    <button
+        class="stickyNotesToggle"
+        type="button"
+        aria-label="یادداشت‌های چسبان"
+        aria-expanded="false"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+</div>
+
+            <div class="fontSizeSwitcher">
+
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="decrease"
+                    aria-label="کاهش اندازه فونت"
+                >
+                    <i data-lucide="minus"></i>
+                </button>
+
+<button
+    type="button"
+    class="fontSizeControl fontSwitchControl"
+    aria-label="تغییر فونت"
+>
+    <i data-lucide="type"></i>
+</button>
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="increase"
+                    aria-label="افزایش اندازه فونت"
+                >
+                    <i data-lucide="plus"></i>
+                </button>
+
+            </div>
+
+
+            <div class="themeSwitcher">
+
+                <button
+                    class="themeToggle"
+                    type="button"
+                    aria-label="تغییر تم"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="sun"></i>
+                </button>
+
+<div class="themeOptions">
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="light"
+        aria-label="تم روشن"
+    >
+        <i data-lucide="sun"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="dark"
+        aria-label="تم تاریک"
+    >
+        <i data-lucide="moon"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="forest"
+        aria-label="تم جنگلی"
+    >
+        <i data-lucide="trees"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="paperLike"
+        aria-label="تم پیپر لایک"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+<button
+    class="themeButton"
+    type="button"
+    data-theme="neon"
+    aria-label="تم نئون"
+>
+<i data-lucide="zap"></i>
+</button>
+
+
+</div>
+
+            </div>
+
+<button
+    class="printButton"
+    type="button"
+    aria-label="چاپ جزوه"
+>
+    <i data-lucide="printer"></i>
+</button>
+
+
+            <button
+                class="aboutButton"
+                type="button"
+                aria-label="درباره ما"
+            >
+                <i data-lucide="users-round"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+<div
+    class="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="searchPanelContent">
+
+        <div class="searchInputWrapper">
+
+            <i data-lucide="search"></i>
+
+            <input
+                class="searchInput"
+                type="search"
+                placeholder="جستجو در جزوه..."
+                aria-label="جستجو در جزوه"
+                autocomplete="off"
+            >
+
+            <button
+                class="searchClearButton"
+                type="button"
+                aria-label="پاک کردن جستجو"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="searchResultsInfo">
+            <span class="searchResultsCount">۰ نتیجه</span>
+
+            <div class="searchNavigation">
+
+                <button
+                    class="searchPreviousButton"
+                    type="button"
+                    aria-label="نتیجه قبلی"
+                    disabled
+                >
+                    <i data-lucide="chevron-up"></i>
+                </button>
+
+                <button
+                    class="searchNextButton"
+                    type="button"
+                    aria-label="نتیجه بعدی"
+                    disabled
+                >
+                    <i data-lucide="chevron-down"></i>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    <aside
+        class="sidebar"
+        aria-label="فهرست مطالب"
+        aria-hidden="true"
+    >
+
+        <div class="sidebarHeader">
+            <h2>فهرست مطالب</h2>
+        </div>
+
+        <nav
+            class="sidebarContent"
+            aria-label="فهرست مطالب"
+        >
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-1"
+                >
+                    ۱. مقدمه و کلیات
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-2"
+                >
+                    ۲. متن اصلی جزوه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-3"
+                >
+                    کاربرد و هدف
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-4"
+                >
+                    روش‌های انجام تیتراسیون روی اسلاید
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-5"
+                >
+                    روش اول: حجم‌ بیشتر سرم، بدون نیاز به نرمال سالین
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-6"
+                >
+                    روش دوم: حجم کمتر سرم، نیازمند نرمال سالین
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-7"
+                >
+                    مقایسهٔ دو روش اسلایدی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-8"
+                >
+                    پرسش دربارهٔ Rose Bengal
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-9"
+                >
+                    پرسش دربارهٔ کیت A/M
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-10"
+                >
+                    ۳. جداول مرور سریع
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-11"
+                >
+                    مقایسهٔ روش‌ها و کاربردها
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-12"
+                >
+                    روش اول: حجم‌های متفاوت سرم
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-13"
+                >
+                    روش دوم: رقت و تیتر متناظر
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-14"
+                >
+                    جهت استفاده از اپلیکاتور مشترک
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-15"
+                >
+                    ۵. خود‌ارزیابی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-16"
+                >
+                    سوالات تشریحی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-17"
+                >
+                    سوالات تستی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-18"
+                >
+                    ۷. ادیتور و منابع استفاده‌شده
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-19"
+                >
+                    ۸. گزارش تکمیل بودن محتوا
+                </a>
+            
+        </nav>
+
+    </aside>
+
+
+    <div class="sidebarBackdrop"></div>
+
+<aside
+    class="stickyNotesPanel"
+    aria-label="یادداشت‌های چسبان"
+    aria-hidden="true"
+>
+
+    <div class="stickyNotesPanelHeader">
+
+        <h2>یادداشت‌های چسبان</h2>
+
+        <button
+            class="addStickyNoteButton"
+            type="button"
+        >
+            <i data-lucide="plus"></i>
+            <span>یادداشت جدید</span>
+        </button>
+
+    </div>
+
+    <div class="stickyNotesPanelContent">
+
+        <div class="stickyNotesEmptyState">
+<i data-lucide="notebook-pen"></i>
+
+            <p>
+                هنوز یادداشتی ایجاد نکرده‌اید.
+            </p>
+
+        </div>
+
+        <div class="stickyNotesList"></div>
+
+    </div>
+
+</aside>
+
+<div class="stickyNotesBackdrop"></div>
+
+
+    <div
+        class="aboutModal"
+        aria-hidden="true"
+    >
+
+        <div class="aboutModalBackdrop"></div>
+
+        <section
+            class="aboutModalContent"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="aboutTitle"
+        >
+
+            <button
+                class="aboutCloseButton"
+                type="button"
+                aria-label="بستن"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <h2 id="aboutTitle">
+                آدم‌هایی که اینجا رو ساختن
+            </h2>
+
+            <p class="aboutIntroduction">
+                ما یک تیم کوچک هستیم که باور داریم یادگیری باید
+                لذت‌بخش، عمیق، و در دسترس باشد. جزوه‌ساز تلاش ماست
+                برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً
+                بتوانی با آن‌ها چیزی یاد بگیری.
+            </p>
+
+
+<div class="developerList">
+
+    <article class="developerCard">
+        <h3>شبنم رضاپور</h3>
+        <p>کسی که PDFها را راضی کرد محتوایشان را بی‌کم‌وکاست لو بدهند.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیر‌حسین شکری‌زاده سعادت‌آباد</h3>
+        <p>صدای کلاس را به متن تبدیل کرد، حتی وقتی استاد وسط جمله با میکروفون قهر می‌کرد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>مهراد اسدی</h3>
+        <p>پرامپت‌ها را طوری چید که LLM فکر کرد دارد پایان‌نامه دکتری می‌نویسد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیرسالار سهام‌پور</h3>
+        <p>مارک‌داون را به HTML تبدیل کرد و به جزوه ظاهری داد که آدم دلش بخواهد بخواندش.</p>
+    </article>
+
+</div>
+
+            <p class="aboutFooter">
+                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد.
+                <br>
+                امیدواریم یادگیریت را لذت‌بخش‌تر کند.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <div class="quickNavigation">
+        <div class="quickNavigationList"></div>
+    </div>
+
+
+    <main class="noteContainer">
+
+<div class="stickyNotesLayer"></div>
+
+        <section class="noteHeader">
+
+            <div class="noteMetadata">
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">درس</span>
+                    <span class="metadataValue">آزمایشگاه ایمونولوژی</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">مبحث</span>
+                    <span class="metadataValue">آز ایمونولوژی - تیتراسیون روی اسلاید - جلسه چهارم</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">استاد</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ جلسه</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ تولید جزوه</span>
+                    <span class="metadataValue generatedDate">2026-10-24T17:28:35</span>
+                </span>
+
+            </div>
+
+
+            <div class="aiWarning">
+                <i data-lucide="triangle-alert"></i>
+
+                <p>
+                    این جزوه با استفاده از جزوه‌ساز پاپیروس و به صورت خودکار تولید شده است.
+                    ممکن است شامل خطا یا برداشت نادرست باشد و
+                    نیازمند بررسی و بازبینی مجدد است.
+                </p>
+            </div>
+
+        </section>
+
+
+<section class="noteSection introductionSection">
+    <h2 id="heading-1">۱. مقدمه و کلیات</h2>
+<p>تیتراسیون اسلایدی برای گزارش <strong>تیتر تقریبی</strong> آنتی‌بادی به کار می‌رود و می‌تواند پیش از آماده‌شدن نتیجهٔ تست لوله‌ای، اطلاعاتی برای تصمیم‌گیری دربارهٔ بیمار مشکوک به تب مالت فراهم کند.
+در این مبحث، دو روش تیتراسیون اسلایدی بررسی می‌شود: روش اول؛ استفاده از حجم بالایی از سرم و بدون نیاز به نرمال سالین. روش دوم؛ نیازمند نرمال سالین و حجم کم سرم.
+ کاربرد، نحوهٔ اجرا و گزارش تیتر این روش‌ها، تفاوتشان با تست لوله‌ای، آنتی‌ژن‌های مورد استفاده و پرسش‌های مطرح‌شده دربارهٔ Rose Bengal و کیت Brucella IgM نیز مطرح می‌شوند.</p>
+</section>
+
+<section class="noteSection mainSection">
+    <h2 id="heading-2">۲. متن اصلی جزوه</h2>
+<h3 id="heading-3">کاربرد و هدف</h3>
+<p>تیتراسیون روی اسلاید برای گزارش تیتر تقریبی آنتی‌بادی به کار می‌رود. پزشک برای تصمیم‌گیری دربارهٔ بیمار مشکوک به تب مالت باید تیتر را بداند؛ به‌ویژه در وضعیت حاد که ممکن است نخواهد حدود ۲۴ ساعت برای نتیجهٔ تست لوله‌ای صبر کند. بنابراین، می‌توان پیش از انجام تست تأییدی لوله‌ای، تیتر تقریبی را با تیتراسیون روی اسلاید گزارش کرد.</p>
+<p>این روش برای بعضی بیماری‌ها، به‌خصوص تب مالت و حصبه، و نیز برخی بیماری‌های دیگر به کار می‌رود. در جلسهٔ قبل، تب مالت به روش کیفی یا screening بررسی شد و نتیجه به‌صورت positive یا negative و با درجهٔ واکنش، مانند ۴+، ۳+ یا ۲+ به بالا، گزارش می‌شد. در روش نیمه‌کمی این جلسه، نتیجه به‌صورت تیتر آنتی‌بادی، برای مثال ۱:۱۶۰، گزارش می‌شود. </p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">تیتراسیون اسلایدی تیتر تقریبی می‌دهد و به دقت تست لوله‌ای نیست؛ بنابراین، برای تأیید، تست لوله‌ای نیز انجام می‌شود.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent">این کادر برای درک بهتر می‌باشد
+در این بخش تست‌های کمی، نیمه کمی و کیفی را به طور خلاصه بررسی می‌کنیم.
+<strong>روش کمی:</strong> غلظت آنالیت با یک واحد اندازه‌گیری مشخص گزارش می‌شود.
+<strong>روش نیمه کمی:</strong> غلظت آنالیت به صورت تقریبی و در قالب یک شاخص نسبی گزارش می‌شود.
+<strong>روش کیفی:</strong> مشخص می‌کند ماده‌ی مورد نظر وجود دارد یا خیر. 
+تست اسلایدی Rose Bengal و Rapid Wright جلسه قبل، در دسته تست‌های کیفی قرار می‌گیرند به این علت که نتیجه نهایی به شکل (مثبت) یا (منفی)، وجود یا عدم وجود آگلوتیناسیون گزارش شد.
+تیتراسیون روی اسلاید با Rapid Wright در این جلسه، به بررسی نیمه کمی می‌پردازد.</div></div>
+<h3 id="heading-4">روش‌های انجام تیتراسیون روی اسلاید</h3>
+<p>برای تب مالت(بروسلوز) از اسلایدهای با زمینهٔ سفید استفاده می‌کنیم؛ جهت مشاهده‌ی بهتر رنگ آنتی‌ژن و تشکیل آگلوتیناسیون.
+ اسلایدهای با زمینهٔ سیاه مربوط به تست‌های دیگری هستند که فعلاً موضوع بحث نیستند.
+برای تیتراسیون اسلایدی و روش لوله‌ایِ از آنتی‌ژن Rapid Wright استفاده می‌شود. تفاوتی که بین این دو وجود دارد، برای تست لوله‌ای  آنتی‌ژن Rapid Wright که 1:10 رقیق شده مورد استفاده قرار می‌گیرد. همین موضوع باعث می‌شود آنتی‌ژن Rapid Wright تست‌های لوله‌ای آبی روشن باشند.</p>
+<h4>پیش‌نیاز</h4>
+<p>کیت تشخیصی تب مالت(بروسلوز) واکنش‌های ایجادشده در حجم‌ سرم‌های ۸۰، ۴۰، ۲۰، ۱۰ و ۵ میکرولیتر را با تیترهای ۱:۲۰ تا ۱:۳۲۰ نشان می‌دهد؛ این حجم‌ها تقریباً معادل مقادیر متناظر در یک آزمون لوله‌ای هستند و به صورت تجربی به دست آمده‌اند.
+البته جهت تایید نهایی تست‌های لوله‌ای ضروری می‌باشند.
+جدول زیر را به عنوان یک قاعده <strong>تجربی</strong> و <strong>تقریبی</strong> به یاد داشته باشید:</p>
+<p><img src="../data/assets/assets/Screenshot_2026-10-29_205039.png" alt="رابطه تجربی بین حجم سرم و تیترتقریبی"></p>
+<p>در این جلسه به بررسی دو روش تیتراسیون روی اسلاید پرداخته شده‌است. 
+روش اولِ شرح‌داده‌شده در کتاب دکتر پاکزاد؛ کتاب‌ اصول و تفسیر آزمایش‌های سرولوژی بالینی 
+روش دوم شرح داده شده در کتاب دکتر قلعه‌نویی و همکاران.</p>
+<h3 id="heading-5">روش اول: حجم‌ بیشتر سرم، بدون نیاز به نرمال سالین</h3>
+<p><strong>1-</strong> روی اسلاید شش‌خانه، به‌ترتیب حجم‌های زیر از سرم بیمار را می‌ریزیم. <strong>مقدار سرم در هر خانه نصف خانهٔ قبل است</strong>:
+<em>تیترهای تقریبی متناظر را با جدول بخش پیش‌نیاز تطبیق بدید جهت درک بهتر</em></p>
+<table>
+<thead>
+<tr>
+<th>شماره خانه</th>
+<th>حجم سرم</th>
+<th align="right">معادل برحسب mL</th>
+<th align="right">تیتر تقریبی متناظر</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>۸۰ میکرولیتر</td>
+<td align="right">۰٫۰۸ mL</td>
+<td align="right">۱:۲۰</td>
+</tr>
+<tr>
+<td>2</td>
+<td>۴۰ میکرولیتر</td>
+<td align="right">۰٫۰۴ mL</td>
+<td align="right">۱:۴۰</td>
+</tr>
+<tr>
+<td>3</td>
+<td>۲۰ میکرولیتر</td>
+<td align="right">۰٫۰۲ mL</td>
+<td align="right">۱:۸۰</td>
+</tr>
+<tr>
+<td>4</td>
+<td>۱۰ میکرولیتر</td>
+<td align="right">۰٫۰۱ mL</td>
+<td align="right">۱:۱۶۰</td>
+</tr>
+<tr>
+<td>5</td>
+<td>۵ میکرولیتر</td>
+<td align="right">۰٫۰۰۵ mL</td>
+<td align="right">۱:۳۲۰</td>
+</tr>
+<tr>
+<td>6(کنترل منفی)</td>
+<td>یک قطره آنتی‌ژن</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+</tbody></table>
+<p>اگر سمپلر در دسترس نباشد و از پیپت استفاده شود، دانستن معادل حجم‌ سرم‌ها برحسب mL کمک‌کننده است.
+<strong>2-</strong> پس از این مرحله به هر شش خانه یک قطره آنتی‌ژن Rapid Wright اضافه و مخلوط می‌کنیم.</p>
+<p>جهت مخلوط کردن بهتر است از اپلیکاتورهای جداگانه استفاده شود. اگر قصد دارید از یک اپلیکاتور استفاده کنید، از خانهٔ دارای کمترین مقدار سرم، یعنی رقیق‌ترین خانه، شروع کنید و به‌سمت خانه‌های غلیظ‌تر بروید. انتقال از خانه‌های غلیظ‌تر به رقیق‌تر می‌تواند باعث اثر carry-over شود و بر نتیجه‌ی خانه‌های رقیق‌تر اثر بگذارد.</p>
+<p><strong>3-</strong> پس از مخلوط‌کردن، پلیت را ۳ تا ۴ دقیقه تکان می‌دهیم. مطابق بروشور کیت عمل کنید: اگر زمان ۳ تا ۴ دقیقه ذکر شده باشد، ۳ دقیقه هم قابل‌قبول است؛ اما اگر زمان ۴ دقیقه قید شده باشد، پلیت را حتماً ۴ دقیقهٔ کامل تکان دهید.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">اگر در بروشور کیت زمان ۴ دقیقه قید شده باشد، پلیت را حتماً ۴ دقیقهٔ کامل تکان دهید.</div></div>
+<p>در نهایت واکنش‌ها از مثبت‌های قوی‌تر به واکنش‌های ضعیف‌تر و سپس به منفی می‌رسند.</p>
+<h4>نحوه‌ی گزارش نتیجه‌ی تست</h4>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">در هر دو روش تیتراسیون روی اسلاید، قاعده این است که آخرین خانه‌ای را که آگلوتیناسیون ۲+ دارد، مبنای گزارش تیتر قرار دهیم. 
+توجه کنید در گزارش نتیجه تست، حتما تیتر تقریبی هم بیان شود.</div></div>
+<p>بنابراین:</p>
+<ul>
+<li>اگر آخرین خانهٔ ۲+ خانهٔ ۸۰ میکرولیتری باشد، تیتر تقریبی ۱:۲۰ است.</li>
+<li>اگر آخرین خانهٔ ۲+ خانهٔ ۴۰ میکرولیتری باشد، تیتر ۱:۴۰ است.</li>
+<li>اگر آخرین خانهٔ ۲+ به‌ترتیب خانهٔ ۲۰، ۱۰ یا ۵ میکرولیتری باشد، تیترهای تقریبی ۱:۸۰، ۱:۱۶۰ یا ۱:۳۲۰ گزارش می‌شوند.</li>
+</ul>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">روش اول سرم زیادی مصرف می‌کند: مجموع حجم‌های پنج خانه حدود ۱۵۵ میکرولیتر است. ازآنجاکه نمونهٔ سرولوژی ممکن است برای CRP، RF و تست‌های دیگر هم لازم باشد، مصرف سرم باید تا حد امکان محدود شود. بنابراین، این روش را در اولویت آخر قرار دهید.</div></div>
+<p><img src="../data/assets/assets/image3.jpg" alt="خلاصه‌ای از روش اول"></p>
+<h4>اهمیت گزارش تیترهای پایین</h4>
+<p>نباید صرفاً به این دلیل که در بعضی منابع تیتر ۱:۸۰ به بالا برای تب مالت اهمیت تشخیصی دارد، تیترهای پایین‌تر را نادیده بگیریم. ممکن است پزشک پروسه‌ی بیماری را تحت نظر داشته باشد و در بازه‌های زمانی مشخصی درخواست تیتر مجدد بدهد. در این تست‌ها بر اثر درمان تجویز شده، ممکن است نتیجه متفاوت باشد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent">تیتراسیون Fourfold
+یعنی تیتراسیون با رقت چهاربرابری؛ روشی که غلظت نمونه در هر مرحله به یک چهارم مرحله قبل می‌رسد.</div></div>
+<h3 id="heading-6">روش دوم: حجم کمتر سرم، نیازمند نرمال سالین</h3>
+<p>در روش اسلایدی دوم، به‌جای مصرف ۸۰، ۴۰، ۲۰، ۱۰ و ۵ میکرولیتر سرم، برای کاهش مصرف سرم رقت‌سازی انجام می‌دهیم:</p>
+<p><strong>1-</strong> ابتدا یک خانهٔ <strong>کنترل مثبت</strong> آماده می‌کنیم: یک قطره سرم بیمار، که می‌توان آن را با سمپلر ۲۰ میکرولیتری برداشت، با یک قطره آنتی‌ژن Rapid Wright مخلوط می‌شود. خانه‌های پس از آن برای رقت‌سازی‌اند.</p>
+<p><strong>2-</strong> در خانه‌ی دوم به بعد، هر کدام، ۲۰ میکرولیتر نرمال سالین می‌ریزیم.
+<strong>3-</strong> خانهٔ اول رقت‌سازی همان خانهٔ دوم اسلاید است؛ در آن ۲۰ میکرولیتر سرم می‌ریزیم. محتویات را با سمپلر چند بار به‌آرامی بالا و پایین می‌کنیم تا مخلوط شود.
+<em>این کار رو به آرومی انجام بدید تا حباب تشکیل نشه.</em>
+<strong>4-</strong> سپس ۲۰ میکرولیتر را به خانهٔ بعد پاساژ و با سمپلر مخلوط می‌کنیم. همین کار را تا خانهٔ ششم ادامه می‌دهیم. 
+<strong>5-</strong> پس از رقت‌سازی، به همهٔ خانه‌ها ۲۰ میکرولیتر آنتی‌ژن Rapid Wright اضافه می‌شود.
+<strong>6-</strong> محتویات هر خانه را با اپلیکاتور مخلوط می‌کنیم. 
+<em>سرم حاوی آنتی‌بادی بر ضد باکتری Brucella است. اگر اپلیکاتور را عوض نمی‌کنیم، از خانهٔ آخر به‌سمت خانهٔ اول، یعنی از رقیق‌تر به غلیظ‌تر، پیش می‌رویم تا carry-over effect و انتقال آنتی‌بادی از خانهٔ اول به خانه‌های بعد رخ ندهد.</em>
+<strong>7-</strong> سپس با توجه به بروشور کیت، 3 تا 4 دقیقه اسلاید را دورانی تکان می‌دهیم.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">خانهٔ آخر را می‌توان کنترل منفی در نظر گرفت؛ در این صورت چیزی از محلول در حال رقیق‌شدن به آن منتقل نمی‌کنیم. اینکه خانهٔ آخر کنترل منفی باشد یا نه، به روش مورد درخواست آزمایشگاه بستگی دارد، هرچند داشتن کنترل منفی بهتر است.</div></div>
+<h4>در این روش، رقت‌ها و تیترهای تقریبی متناظر در هر خانه چطور محاسبه می‌شوند؟</h4>
+<p>در این روش، رقتی که در هر خانه ساخته می‌شود با تیتر نهایی گزارش‌شده یکی نیست. همانطور که در جدول‌ بخش‌های قبل(به ویژه پیش‌نیاز) دیدید، ۲۰ میکرولیتر سرمِ بدون رقت روی اسلاید را به‌طور تجربی معادل تیتر پایهٔ ۱:۸۰ می‌گیریم. در این روش این تیترِ خانه‌ی اول اسلاید است.
+میدانید که رقت‌ خانه‌های دوم اسلاید به بعد دو برابر می‌شوند(Twofold Dilution).
+رقت هر خانه را در تیتر پایه ضرب می‌کنیم. برای مثال:</p>
+<ul>
+<li>خانه‌ی دوم: رقت ۱:۲ * تیتر پایهٔ ۱:۸۰ = تیتر تقریبی ۱:۱۶۰</li>
+<li>خانه‌ی سوم: رقت ۱:۴ * تیتر پایهٔ ۱:۸۰ = تیتر تقریبی ۱:۳۲۰</li>
+<li>خانه‌ی چهارم: رقت ۱:۸ * تیتر پایهٔ ۱:۸۰ = تیتر تقریبی ۱:۶۴۰</li>
+<li>خانه‌ی پنجم: رقت ۱:۱۶ * تیتر پایهٔ ۱:۸۰ = تیتر تقریبی ۱:۱۲۸۰</li>
+<li>خانه‌ی ششم: رقت ۱:۳۲ * تیتر پایهٔ ۱:۸۰ = تیتر تقریبی ۱:۲۵۶۰</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>شماره خانه اسلاید</th>
+<th>رقت داخل خانه</th>
+<th>محاسبه بر پایهٔ تیتر ۱:۸۰</th>
+<th align="right">تیتر تقریبی متناظر</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>۱:۱</td>
+<td>تیتر پایهٔ ۱:۸۰</td>
+<td align="right">۱:۸۰</td>
+</tr>
+<tr>
+<td>2</td>
+<td>۱:۲</td>
+<td>۲ × ۱:۸۰</td>
+<td align="right">۱:۱۶۰</td>
+</tr>
+<tr>
+<td>3</td>
+<td>۱:۴</td>
+<td>۴ × ۱:۸۰</td>
+<td align="right">۱:۳۲۰</td>
+</tr>
+<tr>
+<td>4</td>
+<td>۱:۸</td>
+<td>۸ × ۱:۸۰</td>
+<td align="right">۱:۶۴۰</td>
+</tr>
+<tr>
+<td>5</td>
+<td>۱:۱۶</td>
+<td>۱۶ × ۱:۸۰</td>
+<td align="right">۱:۱۲۸۰</td>
+</tr>
+<tr>
+<td>6</td>
+<td>۱:۳۲</td>
+<td>۳۲ × ۱:۸۰</td>
+<td align="right">۱:۲۵۶۰</td>
+</tr>
+</tbody></table>
+<h4>نحوهٔ گزارش نتیجه‌ی تست در روش دوم</h4>
+<p>مبنای گزارش دقیقا مثل روش اول می‌باشد.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">تیتر نهایی را از روی تیتر تقریبی متناظر با آخرین خانهٔ دارای آگلوتیناسیون ۲+ گزارش کنید، نه از روی رقت داخل خانه. گزارش ۱:۲ به‌عنوان تیتر نهایی اشتباه است و در امتحان برای آن نمره نمی‌گیرید.</div></div>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">اگر آخرین خانهٔ مثبت تیتر محاسبه‌شدهٔ ۱:۶۴۰ داشته باشد، تیتر بیمار را ۱:۶۴۰ گزارش می‌کنیم، نه ۱:۸؛ ۱:۸ فقط رقت داخل خانه است.</div></div>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">اگر فقط خانه‌ی screening(کنترل مثبت) مثبت باشد و در خانه‌های رقت‌سازی‌شده واکنشی دیده نشود، نتیجهٔ مثبت اولیه همچنان با تیتر پایهٔ ۱:۸۰ مرتبط است. به عبارتی، آگلوتیناسیون مثبت در خانه‌ی اول نشانه‌ی تب مالت است و اگر با رقیق‌سازی آگلوتیناسیون منفی بود، همچنان ۱:۸۰ را گزارش می‌کنیم.</div></div>
+<p><img src="../data/assets/assets/image4.jpg" alt="خلاصه‌ای از روش دوم تیتراسیون اسلایدی"></p>
+<h4>خلاصه‌ی روش دوم تیتراسیون اسلایدی</h4>
+<table>
+<thead>
+<tr>
+<th>مرحله یا ویژگی در روش دوم</th>
+<th>شرح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>خانهٔ screening</td>
+<td>یک قطره سرم بیمار، قابل‌برداشت با سمپلر ۲۰ میکرولیتری، با یک قطره آنتی‌ژن Rapid Wright مخلوط می‌شود</td>
+</tr>
+<tr>
+<td>خانه‌های رقت‌سازی</td>
+<td>در خانه‌های مورد استفاده ۲۰ میکرولیتر نرمال سالین می‌ریزیم</td>
+</tr>
+<tr>
+<td>آغاز رقت‌سازی</td>
+<td>۲۰ میکرولیتر سرم و ۲۰ میکرولیتر سالین در خانهٔ اول رقت‌سازی، یعنی خانهٔ دوم اسلاید</td>
+</tr>
+<tr>
+<td>مخلوط‌کردن و پاساژ</td>
+<td>با سمپلر ۲۰ میکرولیتری به‌آرامی بالا و پایین می‌کنیم و سپس ۲۰ میکرولیتر را به خانهٔ بعد منتقل می‌کنیم؛ کار تا خانهٔ آخر ادامه می‌یابد</td>
+</tr>
+<tr>
+<td>کنترل منفی</td>
+<td>خانهٔ آخر را می‌توان کنترل منفی در نظر گرفت؛ در این صورت چیزی از محلول در حال رقیق‌شدن به آن منتقل نمی‌شود. انتخاب آن به روش مورد درخواست آزمایشگاه بستگی دارد؛ داشتن کنترل منفی بهتر است</td>
+</tr>
+<tr>
+<td>جهت استفاده از اپلیکاتور مشترک</td>
+<td>از خانهٔ آخر به خانهٔ اول، یعنی از رقیق‌تر به غلیظ‌تر، برای جلوگیری از carry-over effect و انتقال آنتی‌بادی از خانهٔ اول به خانه‌های بعد</td>
+</tr>
+<tr>
+<td>قرائت</td>
+<td>پس از ۴ دقیقه تکان‌دادن، خواندن را از خانهٔ اول شروع می‌کنیم؛ تشکیل دانه‌های آگلوتیناسیون نشانهٔ مثبت‌بودن است</td>
+</tr>
+</tbody></table>
+<h3 id="heading-7">مقایسهٔ دو روش اسلایدی</h3>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>روش اول: حجم‌های متفاوت سرم</th>
+<th>روش دوم: رقت‌سازی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>مبنای کار</td>
+<td>افزودن حجم‌های متفاوت سرم به خانه‌ها</td>
+<td>رقیق‌کردن سرم با نرمال سالین و انتقال متوالی</td>
+</tr>
+<tr>
+<td>حجم‌های سرم یا مواد اولیهٔ ذکرشده</td>
+<td>۸۰، ۴۰، ۲۰، ۱۰ و ۵ میکرولیتر سرم</td>
+<td>۲۰ میکرولیتر سرم برای آغاز رقت‌سازی؛ screening نیز با یک قطره سرم انجام می‌شود</td>
+</tr>
+<tr>
+<td>سالین</td>
+<td>-</td>
+<td>در خانه‌های رقت‌سازی ۲۰ میکرولیتر نرمال سالین ریخته می‌شود</td>
+</tr>
+<tr>
+<td>تیتر متناظر</td>
+<td>از ۱:۲۰ تا ۱:۳۲۰ برای حجم‌های ۸۰ تا ۵ میکرولیتر</td>
+<td>تیتر پایهٔ ۱:۸۰ برای ۱:۱؛ رقت‌های بعدی با تیتر پایه متناظر می‌شوند</td>
+</tr>
+<tr>
+<td>مصرف سرم</td>
+<td>مجموع حجم پنج خانه حدود ۱۵۵ میکرولیتر</td>
+<td>۲۰ میکرولیتر سرم</td>
+</tr>
+<tr>
+<td>نام یا منبع اشاره‌شده</td>
+<td>روش اولِ شرح‌داده‌شده در کتاب دکتر پاکزاد</td>
+<td>روش دومِ شرح‌داده‌شده در کتاب دکتر قلعه‌نویی و همکاران</td>
+</tr>
+<tr>
+<td>مبنای گزارش</td>
+<td>آخرین خانه‌ای که آگلوتیناسیون ۲+ دارد.</td>
+<td>آخرین خانه‌ای که آگلوتیناسیون ۲+ دارد؛ تیتر متناظر گزارش می‌شود، نه رقت داخل خانه</td>
+</tr>
+</tbody></table>
+<h3 id="heading-8">پرسش دربارهٔ Rose Bengal</h3>
+<p>فعالیت کلاسی این است که جست‌وجو کنید آیا تیتراسیون اسلایدی با Rose Bengal امکان‌پذیر است و پاسخی منطقی ارائه دهید؛ قرار است هفتهٔ بعد توضیح بیشتری داده شود.</p>
+<p>با توجه به کیت Institut Pasteur که در کلاس استفاده می‌شود، مدرس می‌گوید نمی‌توان Rose Bengal را برای تیتراسیون به کار برد، چون pH آن حدود ۳٫۶ و اسیدی است و ممکن است pH به‌هم بخورد و آنتی‌ژن نقش خود را به‌درستی ایفا نکند.</p>
+<p>برای جست‌وجوی Rose Bengal، اگر از هوش مصنوعی کمک می‌گیرید، از آن بخواهید منبع و reference دقیق ارائه کند و منابع را بررسی کنید؛ گاهی منبع ساختگی ارائه می‌شود. عنوان مقاله یا منبع را در Google جست‌وجو کنید و اگر پیدا نشد، به آن اعتماد نکنید.</p>
+<h3 id="heading-9">پرسش دربارهٔ کیت A/M</h3>
+<p>پرسش دیگری برای جست‌وجو این است که کیت Brucella IgM برای چیست. </p>
+</section>
+
+<section class="noteSection quickTablesSection">
+    <h2 id="heading-10">۳. جداول مرور سریع</h2>
+<h4>مقایسه دو روش اسلایدی</h4>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>روش اول: حجم‌های متفاوت سرم</th>
+<th>روش دوم: رقت‌سازی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>مبنای کار</td>
+<td>افزودن حجم‌های متفاوت سرم به خانه‌ها</td>
+<td>رقیق‌کردن سرم با نرمال سالین و انتقال متوالی</td>
+</tr>
+<tr>
+<td>حجم‌های سرم یا مواد اولیهٔ ذکرشده</td>
+<td>۸۰، ۴۰، ۲۰، ۱۰ و ۵ میکرولیتر سرم</td>
+<td>۲۰ میکرولیتر سرم برای آغاز رقت‌سازی؛ screening نیز با یک قطره سرم انجام می‌شود</td>
+</tr>
+<tr>
+<td>سالین</td>
+<td>-</td>
+<td>در خانه‌های رقت‌سازی ۲۰ میکرولیتر نرمال سالین ریخته می‌شود</td>
+</tr>
+<tr>
+<td>تیتر متناظر</td>
+<td>از ۱:۲۰ تا ۱:۳۲۰ برای حجم‌های ۸۰ تا ۵ میکرولیتر</td>
+<td>تیتر پایهٔ ۱:۸۰ برای ۱:۱؛ رقت‌های بعدی با تیتر پایه متناظر می‌شوند</td>
+</tr>
+<tr>
+<td>مصرف سرم</td>
+<td>مجموع حجم پنج خانه حدود ۱۵۵ میکرولیتر</td>
+<td>۲۰ میکرولیتر سرم</td>
+</tr>
+<tr>
+<td>نام یا منبع اشاره‌شده</td>
+<td>روش اولِ شرح‌داده‌شده در کتاب دکتر پاکزاد</td>
+<td>روش دومِ شرح‌داده‌شده در کتاب دکتر قلعه‌نویی و همکاران</td>
+</tr>
+<tr>
+<td>مبنای گزارش</td>
+<td>آخرین خانه‌ای که آگلوتیناسیون ۲+ دارد.</td>
+<td>آخرین خانه‌ای که آگلوتیناسیون ۲+ دارد؛ تیتر متناظر گزارش می‌شود، نه رقت داخل خانه</td>
+</tr>
+</tbody></table>
+<h3 id="heading-11">مقایسهٔ روش‌ها و کاربردها</h3>
+<table>
+<thead>
+<tr>
+<th>روش یا جنبه</th>
+<th>شیوهٔ انجام/نوع نتیجه</th>
+<th>نقش یا نکتهٔ گزارش</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>بررسی کیفی یا screening</td>
+<td>positive یا negative همراه درجهٔ واکنش، مانند ۴+، ۳+ یا ۲+ به بالا</td>
+<td>در جلسهٔ قبل برای بررسی وجود یا عدم وجود تب مالت به کار رفت</td>
+</tr>
+<tr>
+<td>روش نیمه‌کمی اسلایدی</td>
+<td>گزارش تیتر آنتی‌بادی، برای مثال ۱:۱۶۰</td>
+<td>تیتر تقریبی می‌دهد؛ دقت آن به تست لوله‌ای نمی‌رسد</td>
+</tr>
+<tr>
+<td>تست لوله‌ایِ serial dilution</td>
+<td>رقت از ۱:۱۰ شروع می‌شود؛ سپس ۱:۲۰، ۱:۴۰ و به همین ترتیب</td>
+<td>برای تأیید انجام می‌شود؛ نتیجه حدود ۲۴ ساعت زمان می‌برد</td>
+</tr>
+<tr>
+<td>تست لوله‌ای و تیتراسیون اسلایدی</td>
+<td>مبنای گزارش در توصیف درس، آخرین خانهٔ دارای آگلوتیناسیون ۲+ است</td>
+<td>تست لوله‌ای تیتر دقیق‌تری می‌دهد که برای پیگیری و درمان اهمیت دارد</td>
+</tr>
+</tbody></table>
+<h3 id="heading-12">روش اول: حجم‌های متفاوت سرم</h3>
+<table>
+<thead>
+<tr>
+<th>شماره خانه</th>
+<th>حجم سرم</th>
+<th align="right">معادل mL</th>
+<th align="right">تیتر تقریبی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>۸۰ میکرولیتر</td>
+<td align="right">۰٫۰۸</td>
+<td align="right">۱:۲۰</td>
+</tr>
+<tr>
+<td>2</td>
+<td>۴۰ میکرولیتر</td>
+<td align="right">۰٫۰۴</td>
+<td align="right">۱:۴۰</td>
+</tr>
+<tr>
+<td>3</td>
+<td>۲۰ میکرولیتر</td>
+<td align="right">۰٫۰۲</td>
+<td align="right">۱:۸۰</td>
+</tr>
+<tr>
+<td>4</td>
+<td>۱۰ میکرولیتر</td>
+<td align="right">۰٫۰۱</td>
+<td align="right">۱:۱۶۰</td>
+</tr>
+<tr>
+<td>5</td>
+<td>۵ میکرولیتر</td>
+<td align="right">۰٫۰۰۵</td>
+<td align="right">۱:۳۲۰</td>
+</tr>
+<tr>
+<td>6(کنترل منفی)</td>
+<td>آنتی ژن</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>ویژگی اجرایی روش اول</th>
+<th>اطلاعات</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>آنتی‌ژن</td>
+<td>به هر خانه یک قطره Rapid Wright</td>
+</tr>
+<tr>
+<td>سالین</td>
+<td>لازم نیست</td>
+</tr>
+<tr>
+<td>مصرف سرم</td>
+<td>مجموع پنج حجم حدود ۱۵۵ میکرولیتر</td>
+</tr>
+<tr>
+<td>گزارش تیتر</td>
+<td>آخرین خانه‌ای که واکنش ۲+ دارد</td>
+</tr>
+<tr>
+<td>زمان تکان‌دادن</td>
+<td>۳ تا ۴ دقیقه؛ اگر بروشور ۴ دقیقه قید کرده باشد، دقیقاً ۴ دقیقهٔ کامل</td>
+</tr>
+<tr>
+<td>اپلیکاتور مشترک</td>
+<td>از خانهٔ رقیق‌تر به خانه‌های غلیظ‌تر، برای کاهش اثر carry-over</td>
+</tr>
+</tbody></table>
+<h3 id="heading-13">روش دوم: رقت و تیتر متناظر</h3>
+<table>
+<thead>
+<tr>
+<th>مرحله یا ویژگی</th>
+<th>شرح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>خانهٔ screening</td>
+<td>یک قطره سرم بیمار با یک قطره آنتی‌ژن Rapid Wright مخلوط می‌شود؛ سرم را می‌توان با سمپلر ۲۰ میکرولیتری برداشت</td>
+</tr>
+<tr>
+<td>آماده‌سازی خانه‌های رقت‌سازی</td>
+<td>۲۰ میکرولیتر نرمال سالین در خانه‌های مورد استفاده</td>
+</tr>
+<tr>
+<td>آغاز رقت‌سازی</td>
+<td>در خانهٔ دوم اسلاید، ۲۰ میکرولیتر سرم با ۲۰ میکرولیتر سالین مخلوط می‌شود</td>
+</tr>
+<tr>
+<td>پاساژ</td>
+<td>با سمپلر ۲۰ میکرولیتری، مخلوط‌کردن آرام و انتقال ۲۰ میکرولیتر به خانهٔ بعد تا خانهٔ آخر</td>
+</tr>
+<tr>
+<td>کنترل منفی</td>
+<td>خانهٔ آخر را می‌توان بدون انتقال محلول در حال رقیق‌شدن به‌عنوان کنترل منفی در نظر گرفت؛ این کار به روش مورد درخواست آزمایشگاه بستگی دارد و داشتن کنترل منفی بهتر است</td>
+</tr>
+<tr>
+<td>تیتر پایه</td>
+<td>۲۰ میکرولیتر سرمِ بدون رقت روی اسلاید، طبق توضیح مدرس، به‌طور تجربی معادل ۱:۸۰ است</td>
+</tr>
+<tr>
+<td>گزارش تیتر</td>
+<td>تیتر تقریبی متناظر با آخرین خانهٔ دارای آگلوتیناسیون ۲+ گزارش می‌شود، نه رقت داخل خانه</td>
+</tr>
+<tr>
+<td>اپلیکاتور مشترک</td>
+<td>از خانهٔ آخر به خانهٔ اول، یعنی از رقیق‌تر به غلیظ‌تر، برای جلوگیری از carry-over effect و انتقال آنتی‌بادی از خانهٔ اول به خانه‌های بعد</td>
+</tr>
+<tr>
+<td>قرائت</td>
+<td>پس از ۴ دقیقه تکان‌دادن، خواندن از خانهٔ اول آغاز می‌شود؛ دانه‌های آگلوتیناسیون نشانهٔ مثبت‌بودن است</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>شماره خانه اسلاید</th>
+<th>رقت داخل خانه</th>
+<th>محاسبه بر پایهٔ تیتر ۱:۸۰</th>
+<th align="right">تیتر تقریبی متناظر</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>۱:۱</td>
+<td>تیتر پایهٔ ۱:۸۰</td>
+<td align="right">۱:۸۰</td>
+</tr>
+<tr>
+<td>2</td>
+<td>۱:۲</td>
+<td>۲ × ۱:۸۰</td>
+<td align="right">۱:۱۶۰</td>
+</tr>
+<tr>
+<td>3</td>
+<td>۱:۴</td>
+<td>۴ × ۱:۸۰</td>
+<td align="right">۱:۳۲۰</td>
+</tr>
+<tr>
+<td>4</td>
+<td>۱:۸</td>
+<td>۸ × ۱:۸۰</td>
+<td align="right">۱:۶۴۰</td>
+</tr>
+<tr>
+<td>5</td>
+<td>۱:۱۶</td>
+<td>۱۶ × ۱:۸۰</td>
+<td align="right">۱:۱۲۸۰</td>
+</tr>
+<tr>
+<td>6</td>
+<td>۱:۳۲</td>
+<td>۳۲ × ۱:۸۰</td>
+<td align="right">۱:۲۵۶۰</td>
+</tr>
+</tbody></table>
+<h3 id="heading-14">جهت استفاده از اپلیکاتور مشترک</h3>
+<table>
+<thead>
+<tr>
+<th>جهت پیشنهادی</th>
+<th>دلیل ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>از رقیق‌ترین خانه به‌سمت خانه‌های غلیظ‌تر</td>
+<td>جلوگیری از اثر carry-over بر خانه‌های رقیق‌تر</td>
+</tr>
+</tbody></table>
+</section>
+
+<section class="noteSection keyTermsSection">
+    
+</section>
+
+<section class="noteSection selfAssessmentSection">
+    <h2 id="heading-15">۵. خود‌ارزیابی</h2>
+<h3 id="heading-16">سوالات تشریحی</h3>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>تفاوت نتیجهٔ screening با نتیجهٔ روش نیمه‌کمی این جلسه چیست؟</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در screening نتیجه به‌صورت positive یا negative و با درجهٔ واکنش، مانند ۴+، ۳+ یا ۲+ به بالا، گزارش می‌شد. در روش نیمه‌کمی، نتیجه به‌صورت تیتر آنتی‌بادی، برای مثال ۱:۱۶۰، گزارش می‌شود.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>در روش اول، چگونه از روی حجم سرم و واکنش، تیتر تقریبی را گزارش می‌کنیم؟</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>آخرین خانه‌ای را که واکنش ۲+ دارد مبنا قرار می‌دهیم: حجم‌های ۸۰، ۴۰، ۲۰، ۱۰ و ۵ میکرولیتر به‌ترتیب با تیترهای تقریبی ۱:۲۰، ۱:۴۰، ۱:۸۰، ۱:۱۶۰ و ۱:۳۲۰ متناظرند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>چرا در روش دوم تیتر نهایی با رقت داخل خانه یکی نیست؟ یک نمونه از نحوهٔ تبدیل را بیان کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>چون تیتر پایهٔ ۲۰ میکرولیتر سرمِ بدون رقت به‌طور تجربی ۱:۸۰ در نظر گرفته می‌شود و رقت هر خانه باید در این تیتر پایه لحاظ شود. برای نمونه، رقت ۱:۸ متناظر با تیتر تقریبی ۱:۶۴۰ است؛ بنابراین، تیتر نهایی از روی تیتر متناظر گزارش می‌شود، نه صرفاً از روی رقت ۱:۸.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>چرا گزارش تیترهای پایین، مانند ۱:۲۰ یا ۱:۴۰، نباید حذف شود؟</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>نباید این تیترها را منفی گزارش کرد؛ باید همان تیتر به‌دست‌آمده را گزارش کرد. بیمار ممکن است ۱۰ یا ۱۵ روز، یا دو هفته بعد دوباره مراجعه کند و تیتر چند برابر شود. چهار برابر شدن تیتر (fourfold)، یعنی بالا رفتن دو رقت، ارزش دارد.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>تفاوت نقش تیتراسیون اسلایدی و تست لوله‌ای در گزارش و پیگیری بیمار چیست؟</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>تیتراسیون اسلایدی تیتر تقریبی می‌دهد و برای تأیید باید تست لوله‌ای انجام شود. تست لوله‌ای تیتر دقیق‌تری می‌دهد که گزارش آن برای پیگیری و درمان بیمار اهمیت دارد.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<h3 id="heading-17">سوالات تستی</h3>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>نتیجهٔ روش نیمه‌کمی تیتراسیون اسلایدی چگونه گزارش می‌شود؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">فقط به‌صورت positive یا negative</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">به‌صورت تیتر آنتی‌بادی، مانند ۱:۱۶۰</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">فقط با ذکر زمان تکان‌دادن پلیت</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">به‌صورت نام آنتی‌ژن بدون درجهٔ واکنش</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در روش نیمه‌کمی، نتیجه به‌صورت تیتر آنتی‌بادی گزارش می‌شود.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>در روش اول، آخرین خانهٔ ۲+ دارای ۱۰ میکرولیتر سرم است. تیتر تقریبی متناظر چیست؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">۱:۲۰</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">۱:۸۰</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">۱:۱۶۰</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">۱:۳۲۰</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>حجم ۱۰ میکرولیتر با تیتر تقریبی ۱:۱۶۰ متناظر است.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>در روش اول، مجموع حجم سرم مصرف‌شده در پنج خانه تقریباً چقدر است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">۲۰ میکرولیتر</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">۸۰ میکرولیتر</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">۱۵۵ میکرولیتر</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">۵۰۰ میکرولیتر</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>مجموع حجم‌های ۸۰، ۴۰، ۲۰، ۱۰ و ۵ میکرولیتر حدود ۱۵۵ میکرولیتر است.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>اگر در روش اول اپلیکاتور مشترک به کار رود، ترتیب مناسب حرکت میان خانه‌ها کدام است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">از خانهٔ غلیظ‌تر به رقیق‌تر</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">از خانهٔ رقیق‌تر به غلیظ‌تر</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">فقط از خانهٔ میانی به دو طرف</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">ترتیب خانه‌ها اهمیتی ندارد</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>حرکت از خانهٔ دارای کمترین مقدار سرم، یعنی رقیق‌ترین خانه، به‌سمت خانه‌های غلیظ‌تر، از اثر carry-over بر خانه‌های رقیق‌تر جلوگیری می‌کند.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>در روش دوم، تیتر پایهٔ تجربیِ متناظر با ۲۰ میکرولیتر سرمِ بدون رقت چیست؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">۱:۲۰</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">۱:۴۰</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">۱:۸۰</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">۱:۱۶۰</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>طبق توضیح مدرس، ۲۰ میکرولیتر سرمِ بدون رقت روی اسلاید به‌طور تجربی معادل تیتر پایهٔ ۱:۸۰ در نظر گرفته می‌شود.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="6"><div class="questionBoxHeader">سؤال 6</div><div class="questionBoxPrompt"><p>در روش دوم، رقت داخل خانهٔ ۱:۸ با کدام تیتر تقریبی متناظر است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">۱:۱۶۰</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">۱:۳۲۰</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">۱:۶۴۰</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">۱:۱۲۸۰</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>رقت ۱:۸ در جدول روش دوم با تیتر تقریبی ۱:۶۴۰ متناظر است.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="7"><div class="questionBoxHeader">سؤال 7</div><div class="questionBoxPrompt"><p>در روش دوم، اگر آخرین خانهٔ مثبت رقت ۱:۴ داشته باشد، تیتر تقریبی نهایی چیست؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">۱:۸۰</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">۱:۱۶۰</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">۱:۳۲۰</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">۱:۶۴۰</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>رقت ۱:۴ با تیتر تقریبی ۱:۳۲۰ متناظر است.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="8"><div class="questionBoxHeader">سؤال 8</div><div class="questionBoxPrompt"><p>در روش دوم، اگر فقط screening مثبت باشد و در خانه‌های رقت‌سازی‌شده واکنشی دیده نشود، نتیجهٔ مثبت اولیه با کدام تیتر پایه مرتبط است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">۱:۲۰</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">۱:۴۰</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">۱:۸۰</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">۱:۳۲۰</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>نتیجهٔ مثبت اولیه با تیتر پایهٔ ۱:۸۰ مرتبط است.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="9"><div class="questionBoxHeader">سؤال 9</div><div class="questionBoxPrompt"><p>کدام عبارت دربارهٔ تیتراسیون اسلایدی و تست لوله‌ای با محتوای درس سازگار است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">تیتراسیون اسلایدی تیتر دقیق بیمار را نشان می‌دهد و تست لوله‌ای فقط screening است.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">تیتراسیون اسلایدی تیتر تقریبی می‌دهد و تست لوله‌ای برای تأیید انجام می‌شود.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">تست لوله‌ای حدود ۳ تا ۴ دقیقه زمان می‌برد و تیتراسیون اسلایدی حدود ۲۴ ساعت.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">هر دو روش همیشه تیتر یکسانی گزارش می‌کنند.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>تیتراسیون اسلایدی تقریبی است و برای تأیید باید تست لوله‌ای انجام شود.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="10"><div class="questionBoxHeader">سؤال 10</div><div class="questionBoxPrompt"><p>چه موضوعی دربارهٔ Rose Bengal در کلاس هنوز پاسخ نهایی قطعی ندارد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">امکان استفاده از آن برای تیتراسیون اسلایدی</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">حجم سرم مصرفی در روش اول</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">تیتر متناظر با ۱۰ میکرولیتر سرم در روش اول</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">زمان تکان‌دادن پلیت در روش اول</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>استفاده از Rose Bengal برای تیتراسیون اسلایدی قرار است بررسی شود و پاسخ نهایی در کلاس تثبیت نشده است.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+</section>
+
+<section class="noteSection reviewSection">
+    
+</section>
+
+<section class="noteSection editorAndSourcesSection">
+    <h2 id="heading-18">۷. ادیتور و منابع استفاده‌شده</h2>
+<p><strong>ادیتور:</strong> شبنم رضاپور</p>
+<p><strong>منابع استفاده‌شده:</strong></p>
+<ul>
+<li>صوت درس</li>
+</ul>
+</section>
+
+<section class="noteSection completionSection">
+    <h2 id="heading-19">۸. گزارش تکمیل بودن محتوا</h2>
+<p><strong>برآورد تقریبی تکمیل محتوا:</strong> !حدود ۹۵٪؛ برآوردی بر اساس محتوای ارائه‌شده، نه اثبات ریاضیِ کامل‌بودن.</p>
+<ul>
+<li>✓ محتوای آموزشی متنیِ ارائه‌شده از اسلایدها پوشش داده شده است.</li>
+<li>✓ نکات، روش‌ها، مثال‌ها، مقادیر و توضیحات صوت درس پوشش داده شده‌اند.</li>
+</ul>
+</section>
+
+    </main>
+
+
+    <button
+        class="backToTop"
+        type="button"
+        aria-label="بازگشت به ابتدای صفحه"
+    >
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+
+    <script src="../src/themeSwitcher.js"></script>
+    <script src="../src/fontSizeSwitcher.js"></script>
+    <script src="../src/aboutModal.js"></script>
+    <script src="../src/quickNavigation.js"></script>
+    <script src="../src/print.js"></script>
+    <script src="../src/search.js"></script>
+    <script src="../src/highlight.js"></script>
+    <script src="../src/stickyNotes.js"></script>
+    <script src="../src/viewPersistence.js"></script>
+    <script src="../src/questionInteractions.js"></script>
+    <script src="../src/fontSwitcher.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarToggle = document.querySelector(".sidebarToggle");
+    const sidebarBackdrop = document.querySelector(".sidebarBackdrop");
+
+    function openSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.add("isOpen");
+        sidebarBackdrop.classList.add("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "true");
+        sidebar.setAttribute("aria-hidden", "false");
+    }
+
+    function closeSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.remove("isOpen");
+        sidebarBackdrop.classList.remove("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "false");
+        sidebar.setAttribute("aria-hidden", "true");
+    }
+
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener("click", () => {
+            if (sidebar.classList.contains("isOpen")) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+    }
+
+    if (sidebarBackdrop) {
+        sidebarBackdrop.addEventListener("click", closeSidebar);
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeSidebar();
+        }
+    });
+
+    document.querySelectorAll(".tocItem").forEach((item) => {
+        item.addEventListener("click", closeSidebar);
+    });
+</script>
+
+</body>
+
+</html>

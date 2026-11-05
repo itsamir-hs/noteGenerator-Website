@@ -1,0 +1,936 @@
+/* =========================================================
+   Note Renderer — Forest Theme
+   Deep woodland / warm paper / restrained amber
+   ========================================================= */
+
+
+/* =========================================================
+   Theme Tokens
+   ========================================================= */
+
+[data-theme="forest"] {
+
+    /* Page */
+    --pageBackground: #10221b;
+    --surfaceBackground: #19352b;
+    --surfaceMuted: #203e32;
+    --surfaceSoft: #29483a;
+
+    /* Text */
+    --textPrimary: #eee7d5;
+    --textSecondary: #c3c6b8;
+    --textMuted: #89988d;
+
+    /* Borders */
+    --borderColor: #405e4e;
+    --borderStrong: #587564;
+
+    /* Accent */
+    --accentColor: #d08a45;
+    --accentSoft: #3a3025;
+
+    /* Semantic */
+    --definitionColor: #d08a45;
+    --definitionBackground: #e8dfc8;
+
+    --importantColor: #d08a45;
+    --importantBackground: #e8dfc8;
+
+    --exampleColor: #78b9a5;
+    --exampleBackground: #193a31;
+
+    --warningColor: #e88982;
+    --warningBackground: #3a2525;
+
+    --successColor: #83bb91;
+    --successBackground: #22372b;
+
+    /* Content */
+    --codeBackground: #14251f;
+    --noteBackground: #294338;
+
+    /* Lists */
+    --listBackground: transparent;
+    --listBorder: #405e4e;
+
+    /* Tables */
+    --tableBackground: #e8dfc8;
+    --tableHeaderBackground: #d7ccb0;
+    --tableBorder: #b8aa88;
+
+    /* Shadows */
+    --shadowSmall:
+        0 5px 20px rgba(3, 15, 10, 0.28);
+
+    --shadowMedium:
+        0 14px 40px rgba(3, 15, 10, 0.38);
+}
+
+
+/* =========================================================
+   Global
+   ========================================================= */
+
+[data-theme="forest"] body {
+    background: var(--pageBackground);
+    color: var(--textPrimary);
+}
+
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+[data-theme="forest"] .appHeader {
+    background: rgba(25, 53, 43, 0.93);
+    border-bottom-color: var(--borderColor);
+}
+
+[data-theme="forest"] .appTitle {
+    color: var(--textPrimary);
+}
+
+[data-theme="forest"] .sidebarToggle,
+[data-theme="forest"] .aboutButton,
+[data-theme="forest"] .themeToggle,
+[data-theme="forest"] .fontSizeControl {
+    color: var(--textSecondary);
+}
+
+[data-theme="forest"] .sidebarToggle:hover,
+[data-theme="forest"] .aboutButton:hover,
+[data-theme="forest"] .themeToggle:hover,
+[data-theme="forest"] .fontSizeControl:hover {
+    background: var(--surfaceSoft);
+    color: var(--accentColor);
+}
+
+
+/* =========================================================
+   Font Size Switcher
+   ========================================================= */
+
+[data-theme="forest"] .fontSizeSwitcher {
+    background: var(--surfaceSoft);
+    border-color: var(--borderColor);
+}
+
+[data-theme="forest"] .fontSizeValue {
+    color: var(--textSecondary);
+}
+
+
+/* =========================================================
+   Theme Switcher
+   ========================================================= */
+
+[data-theme="forest"] .themeOptions {
+    background: var(--surfaceBackground);
+    border-color: var(--borderColor);
+    box-shadow: var(--shadowMedium);
+}
+
+[data-theme="forest"] .themeButton {
+    color: var(--textSecondary);
+}
+
+[data-theme="forest"] .themeButton:hover {
+    background: var(--surfaceSoft);
+    color: var(--accentColor);
+}
+
+
+/* =========================================================
+   Sidebar
+   ========================================================= */
+
+[data-theme="forest"] .sidebar {
+    background: var(--surfaceBackground);
+    border-left-color: var(--borderColor);
+    box-shadow: -10px 0 32px rgba(3, 15, 10, 0.32);
+}
+
+[data-theme="forest"] .sidebarHeader {
+    background: var(--surfaceBackground);
+    border-bottom-color: var(--borderColor);
+}
+
+[data-theme="forest"] .sidebarHeader h2 {
+    color: var(--textPrimary);
+}
+
+[data-theme="forest"] .tocItem {
+    color: var(--textSecondary);
+}
+
+[data-theme="forest"] .tocItem:hover,
+[data-theme="forest"] .tocItem.isActive {
+    background: var(--accentSoft);
+    color: var(--accentColor);
+}
+
+[data-theme="forest"] .tocSubItem {
+    color: var(--textMuted);
+}
+
+[data-theme="forest"] .tocSubItem.isActive {
+    color: var(--accentColor);
+}
+
+[data-theme="forest"] .sidebarBackdrop {
+    background: rgba(3, 12, 8, 0.58);
+}
+
+
+/* =========================================================
+   Note Header
+   ========================================================= */
+
+[data-theme="forest"] .metadataLabel {
+    color: var(--textMuted);
+}
+
+[data-theme="forest"] .metadataValue {
+    color: var(--textPrimary);
+}
+
+[data-theme="forest"] .aiWarning {
+    background: var(--warningBackground);
+    border-color: rgba(232, 137, 130, 0.25);
+    color: var(--warningColor);
+}
+
+
+/* =========================================================
+   Headings
+   ========================================================= */
+
+[data-theme="forest"] .noteSection > h2,
+[data-theme="forest"] .noteSection > h3,
+[data-theme="forest"] .noteSection > h4 {
+    color: var(--textPrimary);
+}
+
+[data-theme="forest"] .noteSection > h2 {
+    border-bottom-color: var(--accentColor);
+}
+
+
+/* =========================================================
+   Introduction
+   ========================================================= */
+
+[data-theme="forest"] .introductionSection {
+    background: var(--surfaceMuted);
+    border-color: var(--borderColor);
+    box-shadow: var(--shadowSmall);
+}
+
+
+/* =========================================================
+   Main Note
+   ========================================================= */
+
+[data-theme="forest"] .noteContainer,
+[data-theme="forest"] .noteContainer p,
+[data-theme="forest"] .noteContainer li {
+    color: var(--textPrimary);
+}
+
+[data-theme="forest"] .mainSection em {
+    color: var(--textMuted);
+}
+
+[data-theme="forest"] .mainSection img {
+    border-color: var(--borderColor);
+    box-shadow: var(--shadowSmall);
+}
+
+[data-theme="forest"] .mainSection img:hover {
+    box-shadow: var(--shadowMedium);
+}
+
+
+/* =========================================================
+   Definition
+   Cream paper surface
+   ========================================================= */
+
+[data-theme="forest"] .definitionsSection blockquote {
+    background: var(--definitionBackground);
+    border-color: var(--tableBorder);
+    border-right-color: var(--definitionColor);
+    color: #29372e;
+    box-shadow: var(--shadowSmall);
+}
+
+[data-theme="forest"] .definitionsSection blockquote strong:first-child {
+    color: #b56228;
+}
+
+
+/* =========================================================
+   Important
+   Cream paper surface
+   ========================================================= */
+
+[data-theme="forest"] .importantPointsSection blockquote {
+    background: var(--importantBackground);
+    border-color: var(--tableBorder);
+    border-right-color: var(--importantColor);
+    color: #29372e;
+    box-shadow: var(--shadowSmall);
+}
+
+[data-theme="forest"] .importantPointsSection blockquote strong:first-child {
+    color: #b56228;
+}
+
+
+/* =========================================================
+   Example
+   Dark forest surface + teal accent
+   ========================================================= */
+
+[data-theme="forest"] .examplesSection blockquote {
+    background: var(--exampleBackground);
+    border-color: #315c50;
+    border-right-color: var(--exampleColor);
+    color: #e2ebe5;
+    box-shadow: var(--shadowSmall);
+}
+
+[data-theme="forest"] .examplesSection blockquote strong:first-child {
+    color: var(--exampleColor);
+}
+
+
+/* =========================================================
+   Lists
+   No colored surface
+   ========================================================= */
+
+[data-theme="forest"] .noteSection ul,
+[data-theme="forest"] .noteSection ol {
+    background: transparent;
+    color: var(--textPrimary);
+    border-color: var(--listBorder);
+}
+
+[data-theme="forest"] .noteSection li {
+    color: var(--textPrimary);
+}
+
+[data-theme="forest"] .noteSection li::marker {
+    color: var(--accentColor);
+}
+
+
+/* =========================================================
+   Links
+   ========================================================= */
+
+[data-theme="forest"] .noteSection a {
+    color: var(--accentColor);
+}
+
+[data-theme="forest"] .noteSection a:hover {
+    color: #e2a15e;
+}
+
+
+/* =========================================================
+   Tables
+   ========================================================= */
+
+[data-theme="forest"] .noteSection table {
+    background: var(--tableBackground);
+    border-color: var(--tableBorder);
+    box-shadow: var(--shadowSmall);
+}
+
+[data-theme="forest"] .noteSection th {
+    background: var(--tableHeaderBackground);
+    color: #29372e;
+    border-color: var(--tableBorder);
+}
+
+[data-theme="forest"] .noteSection td {
+    color: #29372e;
+    border-color: var(--tableBorder);
+}
+
+[data-theme="forest"] .noteSection tr:hover td {
+    background: #ded4ba;
+}
+
+
+/* =========================================================
+   Code
+   ========================================================= */
+
+[data-theme="forest"] .noteSection code {
+    background: var(--surfaceSoft);
+    border-color: var(--borderColor);
+    color: #e8e1d1;
+}
+
+[data-theme="forest"] .noteSection pre {
+    background: var(--codeBackground);
+    border-color: var(--borderColor);
+    color: #e5dfd0;
+}
+
+[data-theme="forest"] .noteSection pre code {
+    background: transparent;
+    border: 0;
+    color: inherit;
+}
+
+
+/* =========================================================
+   Key Terms
+   ========================================================= */
+
+[data-theme="forest"] .keyTermsSection {
+    color: var(--textPrimary);
+}
+
+
+/* =========================================================
+   References
+   ========================================================= */
+
+[data-theme="forest"] .referencesSection {
+    color: var(--textSecondary);
+}
+
+
+/* =========================================================
+   Review
+   ========================================================= */
+
+[data-theme="forest"] .reviewSection blockquote {
+    background: var(--warningBackground);
+    border-color: #573532;
+    border-right-color: var(--warningColor);
+    color: #f0dfdc;
+}
+
+[data-theme="forest"] .reviewSection blockquote strong {
+    color: var(--warningColor);
+}
+
+
+/* =========================================================
+   Interactive Questions
+   Mostly forest, minimal cream
+   ========================================================= */
+
+[data-theme="forest"] .questionBox {
+    background: var(--surfaceBackground);
+    border-color: var(--borderColor);
+    box-shadow: var(--shadowSmall);
+}
+
+[data-theme="forest"] .questionBoxHeader {
+    color: var(--accentColor);
+}
+
+[data-theme="forest"] .questionBoxPrompt {
+    color: var(--textPrimary);
+}
+
+[data-theme="forest"] .questionOption {
+    background: transparent;
+    border-color: var(--borderColor);
+    color: var(--textPrimary);
+}
+
+[data-theme="forest"] .questionOption:hover:not(:disabled) {
+    background: var(--surfaceSoft);
+    border-color: var(--accentColor);
+}
+
+[data-theme="forest"] .questionOptionLetter {
+    border-color: var(--accentColor);
+    color: var(--accentColor);
+}
+
+
+/* Correct answer */
+
+[data-theme="forest"] .questionOption.isCorrect {
+    background: var(--successBackground);
+    border-color: var(--successColor);
+}
+
+[data-theme="forest"] .questionOption.isCorrect .questionOptionLetter {
+    border-color: var(--successColor);
+    color: var(--successColor);
+}
+
+
+/* Wrong answer */
+
+[data-theme="forest"] .questionOption.isWrong {
+    background: var(--warningBackground);
+    border-color: var(--warningColor);
+}
+
+[data-theme="forest"] .questionOption.isWrong .questionOptionLetter {
+    border-color: var(--warningColor);
+    color: var(--warningColor);
+}
+
+
+/* Answer */
+
+[data-theme="forest"] .questionBoxAnswer {
+    background: #e8dfc8;
+    color: #29372e;
+    border-right: 3px solid var(--accentColor);
+    box-shadow: none;
+}
+
+
+/* Answer button */
+
+[data-theme="forest"] .questionAnswerToggle {
+    border-color: var(--accentColor);
+    color: var(--accentColor);
+}
+
+[data-theme="forest"] .questionAnswerToggle:hover {
+    background: var(--accentColor);
+    color: #10221b;
+}
+
+
+/* =========================================================
+   Completion
+   ========================================================= */
+
+[data-theme="forest"] .completionSection strong {
+    color: var(--successColor);
+}
+
+
+/* =========================================================
+   Horizontal Rules
+   ========================================================= */
+
+[data-theme="forest"] .noteSection hr {
+    border-top-color: var(--accentColor);
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   About Modal
+   ========================================================= */
+
+[data-theme="forest"] .aboutModalBackdrop {
+    background: rgba(3, 12, 8, 0.7);
+}
+
+[data-theme="forest"] .aboutModalContent {
+    background: var(--surfaceBackground);
+    border-color: var(--borderColor);
+    box-shadow: var(--shadowMedium);
+    color: var(--textPrimary);
+}
+
+[data-theme="forest"] .aboutModalContent h2 {
+    color: var(--textPrimary);
+}
+
+[data-theme="forest"] .aboutIntroduction {
+    color: var(--textSecondary);
+}
+
+[data-theme="forest"] .aboutCloseButton {
+    color: var(--textSecondary);
+}
+
+[data-theme="forest"] .aboutCloseButton:hover {
+    background: var(--surfaceSoft);
+    color: var(--accentColor);
+}
+
+[data-theme="forest"] .developerCard {
+    background: var(--surfaceMuted);
+    border-color: var(--borderColor);
+    color: var(--textPrimary);
+}
+
+[data-theme="forest"] .developerCard:hover {
+    border-color: var(--accentColor);
+    box-shadow: var(--shadowSmall);
+}
+
+[data-theme="forest"] .developerCard h3 {
+    color: var(--textPrimary);
+}
+
+[data-theme="forest"] .developerCard p {
+    color: var(--textSecondary);
+}
+
+[data-theme="forest"] .aboutFooter {
+    color: var(--textMuted);
+}
+
+
+/* =========================================================
+   Quick Navigation
+   ========================================================= */
+
+[data-theme="forest"] .quickNavigationItem::before {
+    background: var(--borderStrong);
+}
+
+[data-theme="forest"] .quickNavigationItem:hover::before,
+[data-theme="forest"] .quickNavigationItem.isActive::before {
+    background: var(--accentColor);
+}
+
+
+/* =========================================================
+   Back To Top
+   ========================================================= */
+
+[data-theme="forest"] .backToTop {
+    background: var(--surfaceBackground);
+    border-color: var(--borderColor);
+    color: var(--textSecondary);
+    box-shadow: var(--shadowMedium);
+}
+
+[data-theme="forest"] .backToTop:hover {
+    background: var(--accentColor);
+    border-color: var(--accentColor);
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   Scrollbars
+   ========================================================= */
+
+[data-theme="forest"] .sidebarContent::-webkit-scrollbar-thumb,
+[data-theme="forest"] .aboutModalContent::-webkit-scrollbar-thumb {
+    background: var(--borderStrong);
+}
+
+[data-theme="forest"] .sidebarContent::-webkit-scrollbar-track,
+[data-theme="forest"] .aboutModalContent::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* =========================================================
+   Selection
+   ========================================================= */
+
+[data-theme="forest"] ::selection {
+    background: var(--accentColor);
+    color: #10221b;
+}
+
+/* =========================================================
+   Forest Content Surface
+   Shared cream surface for all semantic boxes
+   ========================================================= */
+
+[data-theme="forest"] {
+    --creamBackground: #e8dfc8;
+    --creamBackgroundSoft: #eee6d3;
+    --creamText: #29372e;
+    --creamBorder: #b8aa88;
+
+    --boxOrange: #b56228;
+    --boxPurple: #76589a;
+    --boxRed: #b85c55;
+    --boxGreen: #4f8662;
+}
+
+
+/* =========================================================
+   Callout Boxes
+   ========================================================= */
+
+[data-theme="forest"] .calloutBox {
+    background: var(--creamBackground);
+    border-color: var(--creamBorder);
+    color: var(--creamText);
+    box-shadow: var(--shadowSmall);
+}
+
+[data-theme="forest"] .calloutBox .calloutBoxTitle {
+    color: var(--boxOrange);
+}
+
+
+/* Note */
+
+[data-theme="forest"] .calloutBox--note {
+    border-right-color: var(--accentColor);
+}
+
+
+/* Tip */
+
+[data-theme="forest"] .calloutBox--tip {
+    border-right-color: var(--boxGreen);
+}
+
+
+/* Important / Exam Tip */
+
+[data-theme="forest"] .calloutBox--important,
+[data-theme="forest"] .calloutBox--exam-tip {
+    border-right-color: var(--boxOrange);
+}
+
+
+/* Warning / Caution / Review */
+
+[data-theme="forest"] .calloutBox--warning,
+[data-theme="forest"] .calloutBox--caution,
+[data-theme="forest"] .calloutBox--review {
+    border-right-color: var(--boxRed);
+}
+
+
+/* Definition */
+
+[data-theme="forest"] .calloutBox--definition {
+    border-right-color: var(--boxOrange);
+}
+
+
+/* Example */
+
+[data-theme="forest"] .calloutBox--example {
+    border-right-color: var(--boxPurple);
+}
+
+
+/* Key Point */
+
+[data-theme="forest"] .calloutBox--key-point {
+    border-right-color: var(--boxOrange);
+}
+
+
+/* Custom */
+
+[data-theme="forest"] .calloutBox--custom {
+    border-right-color: var(--borderStrong);
+}
+
+
+/* =========================================================
+   Definitions
+   ========================================================= */
+
+[data-theme="forest"] .definitionsSection blockquote {
+    background: var(--creamBackground);
+    border-color: var(--creamBorder);
+    border-right-color: var(--boxOrange);
+    color: var(--creamText);
+    box-shadow: var(--shadowSmall);
+}
+
+[data-theme="forest"] .definitionsSection blockquote strong:first-child {
+    color: var(--boxOrange);
+}
+
+
+/* =========================================================
+   Important Points
+   ========================================================= */
+
+[data-theme="forest"] .importantPointsSection blockquote {
+    background: var(--creamBackground);
+    border-color: var(--creamBorder);
+    border-right-color: var(--boxOrange);
+    color: var(--creamText);
+    box-shadow: var(--shadowSmall);
+}
+
+[data-theme="forest"] .importantPointsSection blockquote strong:first-child {
+    color: var(--boxOrange);
+}
+
+
+/* =========================================================
+   Examples
+   ========================================================= */
+
+[data-theme="forest"] .examplesSection blockquote {
+    background: var(--creamBackground);
+    border-color: var(--creamBorder);
+    border-right-color: var(--boxPurple);
+    color: var(--creamText);
+    box-shadow: var(--shadowSmall);
+}
+
+[data-theme="forest"] .examplesSection blockquote strong:first-child {
+    color: var(--boxPurple);
+}
+
+
+/* =========================================================
+   Review
+   ========================================================= */
+
+[data-theme="forest"] .reviewSection blockquote {
+    background: var(--creamBackground);
+    border-color: var(--creamBorder);
+    border-right-color: var(--boxRed);
+    color: var(--creamText);
+    box-shadow: var(--shadowSmall);
+}
+
+[data-theme="forest"] .reviewSection blockquote strong {
+    color: var(--boxRed);
+}
+
+
+/* =========================================================
+   Interactive Questions
+   ========================================================= */
+
+[data-theme="forest"] .questionBox {
+    background: var(--creamBackground);
+    border-color: var(--creamBorder);
+    color: var(--creamText);
+    box-shadow: var(--shadowSmall);
+}
+
+[data-theme="forest"] .questionBoxHeader,
+[data-theme="forest"] .questionBoxPrompt,
+[data-theme="forest"] .questionBox p,
+[data-theme="forest"] .questionBox label {
+    color: var(--creamText);
+}
+
+
+/* =========================================================
+   Question Options
+   ========================================================= */
+
+[data-theme="forest"] .questionOption {
+    background: var(--creamBackgroundSoft);
+    border-color: var(--creamBorder);
+    color: var(--creamText);
+}
+
+[data-theme="forest"] .questionOption:hover:not(:disabled) {
+    background: #e4dac1;
+    border-color: var(--boxOrange);
+    color: var(--creamText);
+}
+
+[data-theme="forest"] .questionOptionLetter {
+    border-color: var(--boxOrange);
+    color: var(--boxOrange);
+}
+
+
+/* Correct */
+
+[data-theme="forest"] .questionOption.isCorrect {
+    background: #dfe9df;
+    border-color: var(--boxGreen);
+    color: #29372e;
+}
+
+[data-theme="forest"] .questionOption.isCorrect .questionOptionLetter {
+    border-color: var(--boxGreen);
+    color: var(--boxGreen);
+}
+
+
+/* Wrong */
+
+[data-theme="forest"] .questionOption.isWrong {
+    background: #ead8d5;
+    border-color: var(--boxRed);
+    color: #29372e;
+}
+
+[data-theme="forest"] .questionOption.isWrong .questionOptionLetter {
+    border-color: var(--boxRed);
+    color: var(--boxRed);
+}
+
+
+/* =========================================================
+   Question Answer
+   ========================================================= */
+
+[data-theme="forest"] .questionBoxAnswer {
+    background: var(--creamBackground);
+    border-right-color: var(--boxOrange);
+    color: var(--creamText);
+}
+
+
+/* Answer Toggle */
+
+[data-theme="forest"] .questionAnswerToggle {
+    border-color: var(--boxOrange);
+    color: var(--boxOrange);
+}
+
+[data-theme="forest"] .questionAnswerToggle:hover {
+    background: var(--boxOrange);
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   Tables
+   ========================================================= */
+
+[data-theme="forest"] .noteSection table {
+    background: var(--creamBackground);
+    border-color: var(--creamBorder);
+}
+
+[data-theme="forest"] .noteSection th {
+    background: #d7ccb0;
+    color: var(--creamText);
+    border-color: var(--creamBorder);
+}
+
+[data-theme="forest"] .noteSection td {
+    color: var(--creamText);
+    border-color: var(--creamBorder);
+}
+
+[data-theme="forest"] .noteSection tr:hover td {
+    background: #ded4ba;
+}
+
+
+/* =========================================================
+   Lists
+   ========================================================= */
+
+[data-theme="forest"] .noteSection ul,
+[data-theme="forest"] .noteSection ol {
+    background: transparent;
+    color: var(--textPrimary);
+}
+
+[data-theme="forest"] .noteSection li {
+    color: var(--textPrimary);
+}
+
+[data-theme="forest"] .noteSection li::marker {
+    color: var(--accentColor);
+}

@@ -1,0 +1,25 @@
+{
+  "name": "note_editing_dashboard",
+  "version": "1.0.0",
+  "description": "Human-in-the-loop editing dashboard for generated lecture notes (Bashligh editing layer).",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/testDashboard.js && node --import ./tests/registerLoader.mjs tests/domSmokeTest.js"
+  },
+  "keywords": [
+    "markdown",
+    "editor",
+    "lecture-notes",
+    "bashligh"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dompurify": "^3.4.14",
+    "jsdom": "^30.0.1",
+    "katex": "^0.18.4",
+    "marked": "^18.0.11"
+  }
+}

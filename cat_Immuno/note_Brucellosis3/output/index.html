@@ -1,0 +1,2493 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>بروسلوز (Brucellosis)</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/rtl.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../node_modules/katex/dist/katex.min.css"
+    >
+
+    <link rel="stylesheet" href="../styles/dark.css">
+    <link rel="stylesheet" href="../styles/forest.css">
+    <link rel="stylesheet" href="../styles/paperLike.css">
+    <link rel="stylesheet" href="../styles/neon.css">
+    <link rel="stylesheet" href="../styles/print.css" media="print">
+
+    <script src="../node_modules/lucide/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+
+    <div class="printBrand" aria-hidden="true" style="display:none">پاپیروس</div>
+
+    <header class="appHeader">
+
+        <button
+            class="sidebarToggle"
+            type="button"
+            aria-label="باز کردن فهرست مطالب"
+            aria-expanded="false"
+        >
+            <i data-lucide="panel-left"></i>
+        </button>
+
+
+        <div class="appTitle">
+            پاپیروس
+        </div>
+
+
+        <div class="headerControls">
+
+<button
+    class="searchButton"
+    type="button"
+    aria-label="جستجو در جزوه"
+    aria-expanded="false"
+>
+    <i data-lucide="search"></i>
+</button>
+
+<div class="highlightSwitcher">
+
+    <button
+        class="highlightToggle"
+        type="button"
+        aria-label="هایلایت"
+        aria-expanded="false"
+    >
+        <i data-lucide="highlighter"></i>
+    </button>
+
+
+<div
+    class="highlightOptions"
+    aria-hidden="true"
+>
+
+    <button
+        class="highlightPowerToggle"
+        type="button"
+        aria-label="روشن یا خاموش کردن هایلایت"
+        aria-pressed="true"
+    >
+        <i data-lucide="highlighter"></i>
+        <span>هایلایت روشن</span>
+    </button>
+
+        <div class="highlightColors">
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#fff176"
+                aria-label="هایلایت زرد"
+                style="--highlightColor: #fff176;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#a5d6a7"
+                aria-label="هایلایت سبز"
+                style="--highlightColor: #a5d6a7;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#90caf9"
+                aria-label="هایلایت آبی"
+                style="--highlightColor: #90caf9;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ce93d8"
+                aria-label="هایلایت بنفش"
+                style="--highlightColor: #ce93d8;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ffab91"
+                aria-label="هایلایت نارنجی"
+                style="--highlightColor: #ffab91;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ef9a9a"
+                aria-label="هایلایت قرمز"
+                style="--highlightColor: #ef9a9a;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#f48fb1"
+                aria-label="هایلایت صورتی"
+                style="--highlightColor: #f48fb1;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#80cbc4"
+                aria-label="هایلایت فیروزه‌ای"
+                style="--highlightColor: #80cbc4;"
+            ></button>
+
+        </div>
+
+
+        <div class="highlightDivider"></div>
+
+
+        <label
+            class="highlightCustomColor"
+            aria-label="انتخاب رنگ دلخواه"
+        >
+            <input
+                class="highlightColorInput"
+                type="color"
+                value="#fff176"
+            >
+
+            <i data-lucide="palette"></i>
+        </label>
+
+
+        <button
+            class="highlightEraser"
+            type="button"
+            aria-label="پاک کردن هایلایت"
+        >
+            <i data-lucide="eraser"></i>
+            <span>پاک‌کن</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="stickyNotesSwitcher">
+
+    <button
+        class="stickyNotesToggle"
+        type="button"
+        aria-label="یادداشت‌های چسبان"
+        aria-expanded="false"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+</div>
+
+            <div class="fontSizeSwitcher">
+
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="decrease"
+                    aria-label="کاهش اندازه فونت"
+                >
+                    <i data-lucide="minus"></i>
+                </button>
+
+<button
+    type="button"
+    class="fontSizeControl fontSwitchControl"
+    aria-label="تغییر فونت"
+>
+    <i data-lucide="type"></i>
+</button>
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="increase"
+                    aria-label="افزایش اندازه فونت"
+                >
+                    <i data-lucide="plus"></i>
+                </button>
+
+            </div>
+
+
+            <div class="themeSwitcher">
+
+                <button
+                    class="themeToggle"
+                    type="button"
+                    aria-label="تغییر تم"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="sun"></i>
+                </button>
+
+<div class="themeOptions">
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="light"
+        aria-label="تم روشن"
+    >
+        <i data-lucide="sun"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="dark"
+        aria-label="تم تاریک"
+    >
+        <i data-lucide="moon"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="forest"
+        aria-label="تم جنگلی"
+    >
+        <i data-lucide="trees"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="paperLike"
+        aria-label="تم پیپر لایک"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+<button
+    class="themeButton"
+    type="button"
+    data-theme="neon"
+    aria-label="تم نئون"
+>
+<i data-lucide="zap"></i>
+</button>
+
+
+</div>
+
+            </div>
+
+<button
+    class="printButton"
+    type="button"
+    aria-label="چاپ جزوه"
+>
+    <i data-lucide="printer"></i>
+</button>
+
+
+            <button
+                class="aboutButton"
+                type="button"
+                aria-label="درباره ما"
+            >
+                <i data-lucide="users-round"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+<div
+    class="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="searchPanelContent">
+
+        <div class="searchInputWrapper">
+
+            <i data-lucide="search"></i>
+
+            <input
+                class="searchInput"
+                type="search"
+                placeholder="جستجو در جزوه..."
+                aria-label="جستجو در جزوه"
+                autocomplete="off"
+            >
+
+            <button
+                class="searchClearButton"
+                type="button"
+                aria-label="پاک کردن جستجو"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="searchResultsInfo">
+            <span class="searchResultsCount">۰ نتیجه</span>
+
+            <div class="searchNavigation">
+
+                <button
+                    class="searchPreviousButton"
+                    type="button"
+                    aria-label="نتیجه قبلی"
+                    disabled
+                >
+                    <i data-lucide="chevron-up"></i>
+                </button>
+
+                <button
+                    class="searchNextButton"
+                    type="button"
+                    aria-label="نتیجه بعدی"
+                    disabled
+                >
+                    <i data-lucide="chevron-down"></i>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    <aside
+        class="sidebar"
+        aria-label="فهرست مطالب"
+        aria-hidden="true"
+    >
+
+        <div class="sidebarHeader">
+            <h2>فهرست مطالب</h2>
+        </div>
+
+        <nav
+            class="sidebarContent"
+            aria-label="فهرست مطالب"
+        >
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-1"
+                >
+                    ۱. مقدمه و کلیات
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-2"
+                >
+                    ۲. متن اصلی جزوه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-3"
+                >
+                    نام‌ها و ویژگی‌های کلی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-4"
+                >
+                    گونه‌های بروسلا و میزبان مخزن
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-5"
+                >
+                    انتقال و افراد در معرض خطر
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-6"
+                >
+                    ویژگی‌های باکتری و بقای آن
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-7"
+                >
+                    تظاهرات بالینی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-8"
+                >
+                    روش‌های تشخیص
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-9"
+                >
+                    ۱. آزمایش رز بنگال (Rose Bengal plate test)
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-10"
+                >
+                    ۲. آزمایش رایت (Wright test یا SAT = Standard Agglutination Test)
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-11"
+                >
+                    ۳. آزمایش تشخیص کلاس آنتی‌بادی ضد بروسلا (2ME-Wright test)
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-12"
+                >
+                    ۴. آزمایش کومبز–رایت (Antiglobulin or Coombs-Wright test)
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-13"
+                >
+                    ۵. تست ELISA
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-14"
+                >
+                    تفسیر نتایج آزمایش‌های بروسلوز
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-15"
+                >
+                    ۳. جداول مرور سریع
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-16"
+                >
+                    گونه‌ها، میزبان‌ها و بیماری‌زایی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-17"
+                >
+                    انتقال، بقا و ویژگی‌های بروسلا
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-18"
+                >
+                    مراحل بالینی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-19"
+                >
+                    کشت و آزمایش‌های سرولوژیک
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-20"
+                >
+                    تغییرات آنتی‌بادی‌ها و درمان
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-21"
+                >
+                    آزمایش‌ها و تفسیرهای کلیدی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-22"
+                >
+                    موارد کاذب و موارد ویژه تفسیر
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-23"
+                >
+                    ۴. اصطلاحات و تعاریف
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-24"
+                >
+                    ۵. خود‌ارزیابی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-25"
+                >
+                    سوالات تشریحی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-26"
+                >
+                    سوالات تستی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-27"
+                >
+                    ۷. ادیتور و منابع استفاده‌شده
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-28"
+                >
+                    ۸. گزارش تکمیل بودن محتوا
+                </a>
+            
+        </nav>
+
+    </aside>
+
+
+    <div class="sidebarBackdrop"></div>
+
+<aside
+    class="stickyNotesPanel"
+    aria-label="یادداشت‌های چسبان"
+    aria-hidden="true"
+>
+
+    <div class="stickyNotesPanelHeader">
+
+        <h2>یادداشت‌های چسبان</h2>
+
+        <button
+            class="addStickyNoteButton"
+            type="button"
+        >
+            <i data-lucide="plus"></i>
+            <span>یادداشت جدید</span>
+        </button>
+
+    </div>
+
+    <div class="stickyNotesPanelContent">
+
+        <div class="stickyNotesEmptyState">
+<i data-lucide="notebook-pen"></i>
+
+            <p>
+                هنوز یادداشتی ایجاد نکرده‌اید.
+            </p>
+
+        </div>
+
+        <div class="stickyNotesList"></div>
+
+    </div>
+
+</aside>
+
+<div class="stickyNotesBackdrop"></div>
+
+
+    <div
+        class="aboutModal"
+        aria-hidden="true"
+    >
+
+        <div class="aboutModalBackdrop"></div>
+
+        <section
+            class="aboutModalContent"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="aboutTitle"
+        >
+
+            <button
+                class="aboutCloseButton"
+                type="button"
+                aria-label="بستن"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <h2 id="aboutTitle">
+                آدم‌هایی که اینجا رو ساختن
+            </h2>
+
+            <p class="aboutIntroduction">
+                ما یک تیم کوچک هستیم که باور داریم یادگیری باید
+                لذت‌بخش، عمیق، و در دسترس باشد. جزوه‌ساز تلاش ماست
+                برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً
+                بتوانی با آن‌ها چیزی یاد بگیری.
+            </p>
+
+
+<div class="developerList">
+
+    <article class="developerCard">
+        <h3>شبنم رضاپور</h3>
+        <p>کسی که PDFها را راضی کرد محتوایشان را بی‌کم‌وکاست لو بدهند.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیر‌حسین شکری‌زاده سعادت‌آباد</h3>
+        <p>صدای کلاس را به متن تبدیل کرد، حتی وقتی استاد وسط جمله با میکروفون قهر می‌کرد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>مهراد اسدی</h3>
+        <p>پرامپت‌ها را طوری چید که LLM فکر کرد دارد پایان‌نامه دکتری می‌نویسد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیرسالار سهام‌پور</h3>
+        <p>مارک‌داون را به HTML تبدیل کرد و به جزوه ظاهری داد که آدم دلش بخواهد بخواندش.</p>
+    </article>
+
+</div>
+
+            <p class="aboutFooter">
+                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد.
+                <br>
+                امیدواریم یادگیریت را لذت‌بخش‌تر کند.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <div class="quickNavigation">
+        <div class="quickNavigationList"></div>
+    </div>
+
+
+    <main class="noteContainer">
+
+<div class="stickyNotesLayer"></div>
+
+        <section class="noteHeader">
+
+            <div class="noteMetadata">
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">درس</span>
+                    <span class="metadataValue">آز ایمونولوژی</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">مبحث</span>
+                    <span class="metadataValue">آز ایمونولوژی - بروسلوز (Brucellosis) - جلسه سوم</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">استاد</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ جلسه</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ تولید جزوه</span>
+                    <span class="metadataValue generatedDate">2026-10-16T15:10:41</span>
+                </span>
+
+            </div>
+
+
+            <div class="aiWarning">
+                <i data-lucide="triangle-alert"></i>
+
+                <p>
+                    این جزوه با استفاده از جزوه‌ساز پاپیروس و به صورت خودکار تولید شده است.
+                    ممکن است شامل خطا یا برداشت نادرست باشد و
+                    نیازمند بررسی و بازبینی مجدد است.
+                </p>
+            </div>
+
+        </section>
+
+
+<section class="noteSection introductionSection">
+    <h2 id="heading-1">۱. مقدمه و کلیات</h2>
+<p>(ادیتور😉: بروسلوز؛روایتی از یک رقص پنهان و مرگبار باکتری در تاریکی تن نیمه جان ماکروفاژ، جایی که سیستم ایمنی در جستجوی مرز میان "خودی" و "بیگانه" گم گشته و خود را به اتش میکشد✨🤯)</p>
+<p>این مبحث در درس روش‌های آزمایشگاهی در سرولوژی و ایمنی‌شناسی، نام‌ها و ویژگی‌های کلی بروسلوز، گونه‌های بروسلا و میزبان‌های مخزن، انتقال و تظاهرات بالینی بیماری، و روش‌های تشخیص و تفسیر نتایج آزمایش‌ها را پوشش می‌دهد.</p>
+</section>
+
+<section class="noteSection mainSection">
+    <h2 id="heading-2">۲. متن اصلی جزوه</h2>
+<h3 id="heading-3">نام‌ها و ویژگی‌های کلی</h3>
+<p>بروسلوز با نام‌های زیر شناخته می‌شود:</p>
+<ul>
+<li>تب مالت (Malta fever)</li>
+<li>بروسلوز (Brucellosis)</li>
+<li>تب مواج (Undulating fever)</li>
+<li>تب مدیترانه‌ای (Mediterranean fever)</li>
+</ul>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>بروسلوز</strong>
+بیماری عفونی مزمنی که ممکن است با <strong>relapse</strong> (بازگشت بیماری) همراه باشد.</div></div>
+<p>جایگاه اصلی میکروب‌های بروسلا حیوانات، به‌ویژه دام‌ها، است؛ بنابراین بروسلوز یک <strong>zoonosis</strong> محسوب می‌شود. بروسلا می‌تواند در حیوان ماده موجب سقط جنین شود.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>zoonosis</strong>
+بیماری‌ای که جایگاه اصلی عامل آن حیوانات است. در این درس، بروسلوز به‌دلیل جایگاه اصلی بروسلا در حیوانات، یک zoonosis محسوب می‌شود.</div></div>
+<h3 id="heading-4">گونه‌های بروسلا و میزبان مخزن</h3>
+<p>تب مالت به‌وسیله گونه‌های مختلف جنس بروسلا ایجاد می‌شود. گونه‌های مهم بیماری‌زا در انسان عبارت‌اند از:</p>
+<ul>
+<li>بروسلا آبورتوس (B. abortus)</li>
+<li>بروسلا ملیتنسیس (B. melitensis)</li>
+<li>بروسلا سوئیس (B. suis)</li>
+<li>بروسلا کانیس (B. canis) نیز ممکن است بیماری‌زا باشد.</li>
+</ul>
+<p>به‌طور کلی، سویه‌های بروسلا که در غشای خارجی خود لیپوپلی‌ساکارید کمتری دارند، ویرولانس کمتری دارند. عامل شایع تب مالت در ایران بیشتر بروسلا ملیتنسیس است. در آمریکا، بیشترین عوامل بروسلا آبورتوس و بروسلا سوئیس هستند؛ اما در مجموع، عامل شایع بروسلوز در جهان بروسلا ملیتنسیس است.</p>
+<p>گونه‌های بروسلا بر اساس میزبان مخزن (Reservoir host) طبقه‌بندی و نام‌گذاری شده‌اند:</p>
+<table>
+<thead>
+<tr>
+<th>گونه</th>
+<th>میزبان مخزن</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>بروسلا آبورتوس</td>
+<td>گاو</td>
+</tr>
+<tr>
+<td>بروسلا ملیتنسیس</td>
+<td>بز</td>
+</tr>
+<tr>
+<td>بروسلا کانیس</td>
+<td>سگ</td>
+</tr>
+<tr>
+<td>بروسلا سوئیس (B. suis)</td>
+<td>خوک</td>
+</tr>
+<tr>
+<td>بروسلا رانگیفری تارنادی (B. rangiferi tarnadi)</td>
+<td>گوزن شمالی</td>
+</tr>
+<tr>
+<td>بروسلا اویس (B. ovis)</td>
+<td>گوسفند</td>
+</tr>
+<tr>
+<td>بروسلا نئوتوما (B. neotoma)</td>
+<td>موش صحرایی</td>
+</tr>
+</tbody></table>
+<p>تاکنون گزارشی از بیماری‌زایی بروسلا اویس و بروسلا نئوتوما در انسان دیده نشده است.</p>
+<table>
+<thead>
+<tr>
+<th>گونه</th>
+<th>نکته درباره بیماری‌زایی در انسان</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B. abortus، B. melitensis، B. suis</td>
+<td>گونه‌های مهم بیماری‌زا در انسان</td>
+</tr>
+<tr>
+<td>B. canis</td>
+<td>ممکن است بیماری‌زا باشد</td>
+</tr>
+<tr>
+<td>B. ovis، B. neotoma</td>
+<td>تاکنون گزارشی از بیماری‌زایی در انسان دیده نشده است</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>محل یا جمعیت مورد اشاره</th>
+<th>عامل شایع یا غالب ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ایران</td>
+<td>بیشتر B. melitensis</td>
+</tr>
+<tr>
+<td>آمریکا</td>
+<td>بیشترین عوامل B. abortus و B. suis</td>
+</tr>
+<tr>
+<td>جهان، در مجموع</td>
+<td>B. melitensis</td>
+</tr>
+</tbody></table>
+<h3 id="heading-5">انتقال و افراد در معرض خطر</h3>
+<p>انتقال بیماری از راه‌های زیر صورت می‌گیرد:</p>
+<ul>
+<li>تماس مستقیم با حیوان آلوده یا بافت‌های آن</li>
+<li>خوردن شیر و محصولات لبنی آلوده</li>
+</ul>
+<p>اپیدمی‌های بروسلوز همواره با مصرف شیر غیرپاستوریزه، خامه، پنیر و بستنی ارتباط داشته‌اند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">شیر غیرپاستوریزه، خامه، پنیر و بستنی به‌عنوان محصولاتی مرتبط با اپیدمی‌های بروسلوز ذکر شده‌اند.</div></div>
+<p>دامپزشکان و کارشناسانی که در برنامه‌های کنترل بروسلوز شرکت می‌کنند نیز در معرض خطر بیشتری هستند؛ ازجمله به‌علت تلقیح اتفاقی واکسن‌های زنده ضعیف‌شده یا آلودگی ملتحمه با این واکسن‌ها.</p>
+<table>
+<thead>
+<tr>
+<th>راه انتقال یا گروه در معرض خطر</th>
+<th>موارد ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>تماس مستقیم</td>
+<td>تماس با حیوان آلوده یا بافت‌های آن</td>
+</tr>
+<tr>
+<td>خوردن مواد آلوده</td>
+<td>شیر و محصولات لبنی آلوده؛ اپیدمی‌ها با شیر غیرپاستوریزه، خامه، پنیر و بستنی ارتباط داشته‌اند</td>
+</tr>
+<tr>
+<td>گروه‌های شغلی در معرض خطر</td>
+<td>دامپزشکان و کارشناسان برنامه‌های کنترل بروسلوز</td>
+</tr>
+<tr>
+<td>مواجهه شغلی با واکسن</td>
+<td>تلقیح اتفاقی واکسن‌های زنده ضعیف‌شده یا آلودگی ملتحمه با آن‌ها</td>
+</tr>
+</tbody></table>
+<h3 id="heading-6">ویژگی‌های باکتری و بقای آن</h3>
+<p>باکتری‌های بروسلا کوکوباسیل‌های گرم‌منفی، هوازی و غیرمتحرک‌اند و کپسول و اسپور ندارند. آن‌ها داخل‌سلولی اختیاری و اکسیداز مثبت (توی جزوه اکسیدار منفی ذکر شده که طبق منابع مختلف غلط هست)توصیف شده‌اند.</p>
+<p>دوره نهفتگی بیماری ۱۰ تا ۱۴ روز است و علائم آن به عواملی مانند گونه بیماری‌زا و مرحله بیماری بستگی دارد.</p>
+<p>گونه‌های بروسلا ممکن است در مواد و شرایط زیر زنده بمانند:</p>
+<table>
+<thead>
+<tr>
+<th>ماده یا شرایط</th>
+<th>مدت بقا یا اثر ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>گوشت یخ‌زده</td>
+<td>سه هفته</td>
+</tr>
+<tr>
+<td>شیر خام</td>
+<td>۱۰ روز</td>
+</tr>
+<tr>
+<td>پنیر تازه</td>
+<td>تا سه ماه</td>
+</tr>
+<tr>
+<td>بستنی و خامه</td>
+<td>مدتی نامشخص</td>
+</tr>
+<tr>
+<td>گوشت نمک‌زده</td>
+<td>ممکن است مدتی مقاومت کنند</td>
+</tr>
+<tr>
+<td>دمای ۶۰ درجه سانتی‌گراد</td>
+<td>باکتری‌ها طی ۱۵ دقیقه از بین می‌روند</td>
+</tr>
+<tr>
+<td>فنل ۱٪</td>
+<td>باکتری‌ها طی ۱۵ دقیقه از بین می‌روند</td>
+</tr>
+<tr>
+<td>نور آفتاب</td>
+<td>باکتری‌ها را به‌سرعت از بین می‌برد</td>
+</tr>
+<tr>
+<td>طبیعت</td>
+<td>ارگانیسم‌ها می‌توانند مدت زیادی زنده بمانند</td>
+</tr>
+</tbody></table>
+<p>بروسلا ممکن است در گوشت نمک‌زده نیز مدتی مقاومت کند؛ بااین‌حال، دوددادن، منجمدکردن و نمک‌زدن گوشت آلوده تعداد آن را طی چند روز به‌شدت کاهش می‌دهد. این ارگانیسم‌ها در دمای ۶۰ درجه سانتی‌گراد یا در مجاورت فنل ۱٪ طی ۱۵ دقیقه از بین می‌روند، اما در طبیعت می‌توانند مدت زیادی زنده بمانند. نور آفتاب نیز آن‌ها را به‌سرعت از بین می‌برد.</p>
+<p>شیره طبیعی معده در شرایط آزمایشگاهی بروسلاها را می‌کشد. ازاین‌رو، بسیاری از بیماران مبتلا به بروسلوز فعال دچار کاهش اسید معده‌اند و به‌علت زخم معده آنتی‌اسید مصرف می‌کنند. افرادی که آنتی‌اسید مصرف می‌کنند باید از خوردن شیر خام، پنیر تازه، بستنی و دیگر لبنیات پاستوریزه‌نشده خودداری کنند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">شیر خام، پنیر تازه، بستنی و دیگر لبنیات پاستوریزه‌نشده نمونه‌هایی از موادی هستند که افراد مصرف‌کننده آنتی‌اسید باید از خوردن آن‌ها خودداری کنند.</div></div>
+<h3 id="heading-7">تظاهرات بالینی</h3>
+<p>علائم کلینیکی بروسلوز به سه صورت بروز می‌کند:</p>
+<ol>
+<li>حاد (Acute)</li>
+<li>تحت‌حاد (Sub acute)</li>
+<li>مزمن (Chronic)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>مرحله</th>
+<th>مدت یا روند</th>
+<th>تظاهرات ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>حاد</td>
+<td>کمتر از سه ماه</td>
+<td>تب پیوسته یا نامنظم، ضعف، سردرد، تعریق شبانه، آدنوپاتی، اسپلنومگالی، درد ستون مهره‌ها به‌ویژه در ناحیه لومبار؛ گاهی هپاتیت، اپیدیدیمیت و ارکیت</td>
+</tr>
+<tr>
+<td>تحت‌حاد</td>
+<td>حدود ۳ تا ۱۲ ماه؛ پس از مرحله حاد</td>
+<td>ادامه بیماری در مرحله تحت‌حاد</td>
+</tr>
+<tr>
+<td>مزمن</td>
+<td>در صورت درمان‌نشدن؛ از یک تا چند سال</td>
+<td>خستگی و افسردگی، درد مفاصل و عضلانی، کاهش وزن، علائم روانی، گاهی تب‌های خفیف؛ <strong>relapses of varying intensity</strong> بسیار شایع است</td>
+</tr>
+</tbody></table>
+<h4>مرحله حاد</h4>
+<p>مرحله حاد کمتر از سه ماه طول می‌کشد. تب ممکن است پیوسته یا نامنظم (intermittent) باشد و علائم زیر نیز دیده شوند:</p>
+<ul>
+<li>ضعف</li>
+<li>سردرد</li>
+<li>تعریق شبانه</li>
+<li>آدنوپاتی</li>
+<li>اسپلنومگالی</li>
+<li>درد ستون مهره‌ها، به‌ویژه در ناحیه لومبار</li>
+</ul>
+<p>در بعضی موارد، هپاتیت، اپیدیدیمیت (epididymitis) و ارکیت (orchitis) نیز رخ می‌دهد.</p>
+<h4>مرحله تحت‌حاد</h4>
+<p>پس از مرحله حاد، بیماری وارد مرحله تحت‌حاد می‌شود که حدود ۳ تا ۱۲ ماه ادامه دارد.</p>
+<h4>مرحله مزمن</h4>
+<p>در صورت درمان‌نشدن، مرحله مزمن بیماری بروز می‌کند. علائم آن عبارت‌اند از:</p>
+<ul>
+<li>خستگی و افسردگی</li>
+<li>درد مفاصل و عضلانی</li>
+<li>کاهش وزن</li>
+<li>علائم روانی</li>
+<li>گاهی تب‌های خفیف</li>
+</ul>
+<p>مرحله مزمن از یک تا چند سال طول می‌کشد و <strong>relapses of varying intensity</strong> در آن بسیار شایع است.</p>
+<p>شدیدترین علائم در میان گونه‌های بیماری‌زا با بروسلا ملیتنسیس و بروسلا سوئیس ایجاد می‌شود و علائم بروسلا آبورتوس از همه ملایم‌تر است.</p>
+<table>
+<thead>
+<tr>
+<th>گونه</th>
+<th>شدت علائم ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>بروسلا ملیتنسیس و بروسلا سوئیس</td>
+<td>شدیدترین علائم</td>
+</tr>
+<tr>
+<td>بروسلا آبورتوس</td>
+<td>ملایم‌ترین علائم</td>
+</tr>
+</tbody></table>
+<h3 id="heading-8">روش‌های تشخیص</h3>
+<p>تشخیص بیماری به دو روش کلی انجام می‌شود:</p>
+<ol>
+<li>کشت</li>
+<li>روش‌های سرولوژیک</li>
+</ol>
+<h4>کشت</h4>
+<p>کشت خون، مغز استخوان و CSF (مایع مغزی‌نخاعی)، و نیز کشت مایع مفصلی و دیگر نمونه‌های بافتی، برای جداسازی عامل بیماری به‌کار می‌روند. قطعی‌ترین راه تشخیص تب مالت، جداسازی عامل بیماری است.</p>
+<ul>
+<li>در مبتلایان به بروسلوز حاد ناشی از بروسلا ملیتنسیس، کشت خون در ۷۰٪ و کشت مغز استخوان در ۹۰٪ موارد مثبت می‌شود.</li>
+<li>کشت خون در بروسلوز تحت‌حاد ناشی از ملیتنسیس کمتر مثبت می‌شود، اما انجام آن توصیه می‌شود.</li>
+<li>در عفونت ناشی از بروسلا آبورتوس، کشت خون حتی در بهترین شرایط اغلب منفی است.</li>
+<li>بهترین زمان کشت خون هنگام بالا بودن تب است.</li>
+<li>چون باکتری داخل‌سلولی است، در مجموع موارد مثبت کشت خون زیاد نیست؛ حدود ۱۰ تا ۳۰٪.</li>
+<li>اگر کشت منفی باشد، باید آن را ۴ تا ۵ هفته نگه داشت؛ این مورد از نکات منفی روش کشت محسوب می‌شود.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>نمونه یا وضعیت</th>
+<th>نتیجه یا نکته کشت</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>بروسلوز حاد ناشی از B. melitensis</td>
+<td>کشت خون در ۷۰٪ و کشت مغز استخوان در ۹۰٪ موارد مثبت می‌شود</td>
+</tr>
+<tr>
+<td>بروسلوز تحت‌حاد ناشی از B. melitensis</td>
+<td>کشت خون کمتر مثبت می‌شود، اما انجام آن توصیه می‌شود</td>
+</tr>
+<tr>
+<td>عفونت ناشی از B. abortus</td>
+<td>کشت خون حتی در بهترین شرایط اغلب منفی است</td>
+</tr>
+<tr>
+<td>نمونه‌گیری کشت خون</td>
+<td>بهترین زمان هنگام بالا بودن تب است</td>
+</tr>
+<tr>
+<td>کشت خون در مجموع موارد</td>
+<td>به‌علت داخل‌سلولی‌بودن باکتری، موارد مثبت حدود ۱۰ تا ۳۰٪ است</td>
+</tr>
+<tr>
+<td>کشت منفی</td>
+<td>باید ۴ تا ۵ هفته نگه داشته شود</td>
+</tr>
+</tbody></table>
+<h4>آزمایش‌های سرولوژیک توصیه‌شده</h4>
+<p>سازمان بهداشت جهانی (W.H.O) پنج آزمایش سرولوژیک استاندارد را به‌عنوان مناسب‌ترین آزمایش‌ها برای تشخیص بیماری توصیه کرده است:</p>
+<ol>
+<li>آزمایش رز بنگال (Rose Bengal test)</li>
+<li>آزمایش سروآگلوتیناسیون لوله‌ای یا آزمایش رایت (Seroagglutination or Wright test)</li>
+<li>آزمایش ۲-مرکاپتواتانول–رایت (2ME–Wright test)</li>
+<li>آزمایش ثبوت مکمل (Complement fixation Test یا CFT) (یکی از قدیمی ترین تست ها هست اما در جزوه تئضیحی درباره این تست داده نشده)</li>
+<li>آزمایش آنتی‌گلوبولین یا کومبز رایت (Antiglobulin or Coombs-Wright test)</li>
+<li>تست ELISA</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>آزمایش‌های سرولوژیک استاندارد توصیه‌شده توسط W.H.O</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>رز بنگال (Rose Bengal test)</td>
+</tr>
+<tr>
+<td>سروآگلوتیناسیون لوله‌ای یا رایت (Seroagglutination or Wright test)</td>
+</tr>
+<tr>
+<td>۲-مرکاپتواتانول–رایت (2ME–Wright test)</td>
+</tr>
+<tr>
+<td>ثبوت مکمل (Complement fixation)</td>
+</tr>
+<tr>
+<td>آنتی‌گلوبولین یا کومبز رایت (Antiglobulin or Coombs-Wright test)</td>
+</tr>
+</tbody></table>
+<h4>پاسخ ایمنی و آنتی‌بادی‌ها</h4>
+<p>در بروسلوز، هم ایمنی سلولی و هم ایمنی هومورال فعال می‌شوند، اما مصونیت دائمی نیست. آنتی‌بادی‌ها (Ab) علیه بروسلا از نوع IgM، IgG، IgA و مقدار جزئی IgE هستند.</p>
+<h5>تغییرات زمانی آنتی‌بادی‌ها</h5>
+<ul>
+<li>در بروسلوز حاد انسان، ابتدا IgM افزایش می‌یابد و گاهی در هفته‌های اول بیماری تنها ایمونوگلوبولین قابل‌شناسایی است.</li>
+<li>IgM حدود یک هفته پس از شروع بیماری در سرم ظاهر می‌شود و در هفته دوم تا سوم، یعنی ۱۳ تا ۲۱ روز پس از شروع بیماری، به حداکثر می‌رسد. میزان آن طی سه ماه پس از شروع عفونت افت می‌کند.</li>
+<li>IgG از هفته دوم به بعد شروع به افزایش می‌کند. سنتز IgG اختصاصی از روز چهاردهم تا بیست‌ویکم شروع می‌شود و پس از چند هفته تیتر آن از IgM بیشتر می‌شود.</li>
+<li>IgG شامل IgG1 و IgG2 نیز هست.</li>
+</ul>
+<p>افزایش IgA در تشخیص بروسلوز مزمن و <strong>relapse</strong> و نیز به‌عنوان Ab مسدودکننده (blocking) مطرح شده است.</p>
+<table>
+<thead>
+<tr>
+<th>آنتی‌بادی</th>
+<th>تغییر یا کاربرد ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IgM</td>
+<td>ابتدا در بروسلوز حاد افزایش می‌یابد؛ حدود یک هفته پس از شروع بیماری در سرم ظاهر می‌شود؛ در هفته دوم تا سوم (۱۳ تا ۲۱ روز) به حداکثر می‌رسد و طی سه ماه افت می‌کند؛ گاهی در هفته‌های اول تنها ایمونوگلوبولین قابل‌شناسایی است</td>
+</tr>
+<tr>
+<td>IgG</td>
+<td>از هفته دوم به بعد افزایش می‌یابد؛ سنتز اختصاصی از روز چهاردهم تا بیست‌ویکم شروع می‌شود؛ پس از چند هفته تیتر آن از IgM بیشتر می‌شود؛ شامل IgG1 و IgG2 است</td>
+</tr>
+<tr>
+<td>IgA</td>
+<td>افزایش آن در تشخیص بروسلوز مزمن و <strong>relapse</strong> و نیز به‌عنوان Ab مسدودکننده (blocking) مطرح شده است</td>
+</tr>
+<tr>
+<td>IgE</td>
+<td>به مقدار جزئی وجود دارد</td>
+</tr>
+</tbody></table>
+<h5>تداوم آنتی‌بادی‌ها و ارزیابی درمان</h5>
+<p>در موارد درمان‌نشده، IgG دست‌کم یک سال در سطح بالا باقی می‌ماند. در بیمارانی که به‌طور کامل درمان شده‌اند، میزان IgG طی ۶ ماه تا یک سال پس از شروع بیماری به حداقل می‌رسد یا کاملاً محو می‌شود.</p>
+<p>تداوم افزایش IgG ممکن است ناشی از باقی‌ماندن ارگانیسم‌های زنده داخل‌سلولی در نسوج رتیکولوآندوتلیال یا کانون‌های دیگر عفونت باشد. به‌علت داخل‌سلولی‌بودن باکتری، ایمنی هومورال چندان مؤثر نیست.</p>
+<p>با درمان مناسب آنتی‌بیوتیکی، تیتر IgG کاهش می‌یابد، اما IgM ممکن است ۶ ماه تا دو سال دوام داشته باشد و معمولاً هر سه ماه یک رقت کاهش می‌یابد. برای ارزیابی اثر درمان باید تیتر Ab در دوره نقاهت و پس از درمان با تیتر مرحله حاد مقایسه شود؛ کاهش تیتر نشانه تأثیر مثبت درمان و فروکش‌کردن بیماری است.</p>
+<table>
+<thead>
+<tr>
+<th>وضعیت بیماری یا درمان</th>
+<th>تغییر آنتی‌بادی و تفسیر ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>درمان‌نشده</td>
+<td>IgG دست‌کم یک سال در سطح بالا باقی می‌ماند</td>
+</tr>
+<tr>
+<td>درمان کامل‌شده</td>
+<td>IgG طی ۶ ماه تا یک سال پس از شروع بیماری به حداقل می‌رسد یا کاملاً محو می‌شود</td>
+</tr>
+<tr>
+<td>تداوم افزایش IgG</td>
+<td>ممکن است ناشی از باقی‌ماندن ارگانیسم‌های زنده داخل‌سلولی در نسوج رتیکولوآندوتلیال یا کانون‌های دیگر عفونت باشد</td>
+</tr>
+<tr>
+<td>درمان مناسب آنتی‌بیوتیکی</td>
+<td>تیتر IgG کاهش می‌یابد؛ IgM ممکن است ۶ ماه تا دو سال دوام داشته باشد و معمولاً هر سه ماه یک رقت کاهش می‌یابد</td>
+</tr>
+<tr>
+<td>ارزیابی اثر درمان</td>
+<td>تیتر Ab در دوره نقاهت و پس از درمان با تیتر مرحله حاد مقایسه می‌شود؛ کاهش تیتر نشانه تأثیر مثبت درمان و فروکش‌کردن بیماری است</td>
+</tr>
+</tbody></table>
+<p>تشخیص کلاس آنتی‌بادی در این بیماری اهمیت دارد.  پس از شروع درمان با انتی بیوتیک مناسب وجود تنها IgM در سرم فرد دلیل بر عدم بیماری و نشان‌دهنده بروسلوز غیرفعال است.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent"><strong>تفسیر وجود IgM تنها</strong>
+دقت کنید که پس از درمان تیتر IgG کاهش می یابد ولی تیتر IgM بمدت 6 ماه تا یک سال دوام دارد و هر سه ماه یک رقت کاهش می یابد. پس وجود تنها IgM در سرم دلیل بر عدم بیماری و نشان‌دهنده بروسلوز غیرفعال است (در زمان درمان)؛
+دقت کنید در هفته اول بیماری(حاد) : گاهی IgM به‌عنوان تنها ایمونوگلوبولین در هفته‌های اول بروسلوز قابل مشاهده است</div></div>
+<p>افرادی که پیوسته با میکروب بروسلا یا واکسن آن (S.19) در تماس‌اند، ممکن است بدون علائم بالینی، Ab ضد این میکروب، عمدتاً از نوع IgG، با تیتر مساوی یا بیشتر از ۱/۳۲۰ داشته باشند؛ بنابراین آزمایش‌های سرولوژیک در بروسلوز شغلی ارزش محدودی دارند.</p>
+<h3 id="heading-9">۱. آزمایش رز بنگال (Rose Bengal plate test)</h3>
+<h4>نام و کاربرد</h4>
+<p>آزمایش رز بنگال با نام‌های زیر نیز شناخته می‌شود:</p>
+<ul>
+<li>Rose Bengal plate test</li>
+<li>کارد تست (Card test)</li>
+<li>آزمون سریع (Rapid test)</li>
+<li>تست غربالی (Screen test)</li>
+</ul>
+<p>این آزمایش سریع‌ترین تست سرولوژیک اولیه یا غربالی برای تشخیص تب مالت است. تست غربالی باید حساسیت بالا، هزینه کم و سرعت زیاد داشته باشد تا بتوان با آن موارد مشکوک و مثبت را از موارد منفی جدا کرد.</p>
+<table>
+<thead>
+<tr>
+<th>نام یا کاربرد رز بنگال</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>نام‌های دیگر</td>
+<td>Rose Bengal plate test، Card test، Rapid test، Screen test</td>
+</tr>
+<tr>
+<td>نقش</td>
+<td>سریع‌ترین تست سرولوژیک اولیه یا غربالی برای تشخیص تب مالت</td>
+</tr>
+<tr>
+<td>ویژگی‌های لازم برای تست غربالی</td>
+<td>حساسیت بالا، هزینه کم و سرعت زیاد</td>
+</tr>
+<tr>
+<td>هدف تست غربالی</td>
+<td>جداکردن موارد مشکوک و مثبت از موارد منفی</td>
+</tr>
+</tbody></table>
+<h4>آنتی‌ژن</h4>
+<p>آنتی‌ژن رز بنگال، به رنگ قرمز متمایل به صورتی، با pH اسیدی ۳٫۶±۰٫۰۵ و جرم نهایی ۸٪، از کلنی صاف (Smooth) بروسلا آبورتوس سویه ۹۹ یا ۱۹ تهیه می‌شود. این سویه‌ها آنتی‌ژن‌های مشترکی با سویه‌های دیگر بروسلا دارند.</p>
+<p>آنتی‌ژن باید دور از نور و در یخچال ۴°C نگهداری شود و تا زمانی که آگلوتینه نشده است، قابل نگهداری است. برای جلوگیری از تغییر pH نباید این Ag را رقیق کرد و نباید از آن در تست لوله‌ای استفاده کرد.</p>
+<table>
+<thead>
+<tr>
+<th>ویژگی آنتی‌ژن رز بنگال</th>
+<th>مقدار یا توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>رنگ</td>
+<td>قرمز متمایل به صورتی</td>
+</tr>
+<tr>
+<td>pH</td>
+<td>اسیدی، ۳٫۶±۰٫۰۵</td>
+</tr>
+<tr>
+<td>جرم نهایی</td>
+<td>۸٪</td>
+</tr>
+<tr>
+<td>منبع تهیه</td>
+<td>کلنی صاف (Smooth) بروسلا آبورتوس سویه ۹۹ یا ۱۹</td>
+</tr>
+<tr>
+<td>ارتباط آنتی‌ژنی</td>
+<td>سویه‌ها آنتی‌ژن‌های مشترکی با سویه‌های دیگر بروسلا دارند</td>
+</tr>
+<tr>
+<td>نگهداری</td>
+<td>دور از نور و در یخچال ۴°C؛ تا زمانی که آگلوتینه نشده است، قابل نگهداری است</td>
+</tr>
+<tr>
+<td>محدودیت استفاده</td>
+<td>برای جلوگیری از تغییر pH نباید رقیق شود و نباید در تست لوله‌ای استفاده شود</td>
+</tr>
+</tbody></table>
+<h4>روش انجام و تفسیر</h4>
+<ol>
+<li>مقدار ۰٫۰۳ cc سرم را روی اسلاید می‌ریزند.</li>
+<li>یک قطره Ag رز بنگال را در کنار آن قرار می‌دهند و مخلوط می‌کنند.</li>
+<li>اسلاید را با دست یا روی روتاتور به‌مدت ۴ دقیقه تکان می‌دهند.</li>
+<li>آگلوتیناسیون را زیر چراغ مطالعه بررسی می‌کنند.</li>
+</ol>
+<p>در صورت منفی‌شدن نتیجه، احتمال بیمارنبودن شخص زیاد است. در صورت مثبت‌شدن، برای تأیید و تعیین تیتر از تست دقیق‌تر لوله‌ای یا رایت استفاده می‌شود. بااین‌حال، بهتر است تست لوله‌ای هم در صورت مثبت‌شدن و هم در صورت منفی‌شدن تست انجام شود.</p>
+<table>
+<thead>
+<tr>
+<th>نتیجه رز بنگال</th>
+<th>تفسیر یا اقدام بعدی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>منفی</td>
+<td>احتمال بیمارنبودن شخص زیاد است</td>
+</tr>
+<tr>
+<td>مثبت</td>
+<td>برای تأیید و تعیین تیتر از تست دقیق‌تر لوله‌ای یا رایت استفاده می‌شود</td>
+</tr>
+<tr>
+<td>توصیه ذکرشده</td>
+<td>بهتر است تست لوله‌ای هم در صورت مثبت‌شدن و هم در صورت منفی‌شدن تست انجام شود</td>
+</tr>
+</tbody></table>
+<h3 id="heading-10">۲. آزمایش رایت (Wright test یا SAT = Standard Agglutination Test)</h3>
+<p>آزمایش رایت به دو روش سریع روی لام و روش لوله‌ای انجام می‌شود.</p>
+<h4>آنتی‌ژن</h4>
+<p>بروسلا آبورتوس (سویه ۹۹ یا ۱۹)، بروسلا سوئیس و بروسلا ملیتنسیس آنتی‌ژن‌های مشترک (Cross reaction) دارند؛ بنابراین برای آزمایش رایت معمولاً از کلنی‌های صاف بروسلا آبورتوس (سویه ۹۹ یا ۱۹) یا بروسلا ملیتنسیس به‌عنوان آنتی‌ژن استفاده می‌شود.</p>
+<p>اگر بیماری ناشی از بروسلا کانیس باشد، برای تشخیص باید از آنتی‌ژن همین گونه استفاده کرد. آنتی‌ژن بروسلا در روش اسلایدی معمولاً آبی‌رنگ و در روش لوله‌ای شیری‌رنگ است. در روش لوله‌ای، سازنده آنتی‌ژن رقت Ag بروسلا را که باید به سرم افزوده شود مشخص می‌کند.</p>
+<table>
+<thead>
+<tr>
+<th>مورد</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>گونه‌های دارای آنتی‌ژن مشترک (Cross reaction)</td>
+<td>B. abortus سویه ۹۹ یا ۱۹، B. suis و B. melitensis</td>
+</tr>
+<tr>
+<td>آنتی‌ژن معمول آزمایش رایت</td>
+<td>کلنی صاف B. abortus سویه ۹۹ یا ۱۹ یا B. melitensis</td>
+</tr>
+<tr>
+<td>عفونت ناشی از B. canis</td>
+<td>برای تشخیص باید از آنتی‌ژن همین گونه استفاده کرد</td>
+</tr>
+<tr>
+<td>رنگ آنتی‌ژن در روش اسلایدی</td>
+<td>معمولاً آبی‌رنگ</td>
+</tr>
+<tr>
+<td>رنگ آنتی‌ژن در روش لوله‌ای</td>
+<td>شیری‌رنگ</td>
+</tr>
+<tr>
+<td>رقت Ag در روش لوله‌ای</td>
+<td>سازنده آنتی‌ژن مشخص می‌کند</td>
+</tr>
+</tbody></table>
+<h4>روش اسلایدی</h4>
+<p>حجم‌های ۰٫۰۸، ۰٫۰۴، ۰٫۰۲، ۰٫۰۱ و ۰٫۰۰۵ سی‌سی سرم را روی اسلاید چندخانه می‌ریزند و به هرکدام یک قطره Ag بروسلا (آبی‌رنگ) اضافه می‌کنند. پس از مخلوط‌کردن و حرکت‌دادن اسلاید به‌مدت ۳ دقیقه، آگلوتیناسیون را زیر چراغ مطالعه بررسی می‌کنند. آخرین تیتر با حدود ۲+ مثبت، تیتر موردنظر است.</p>
+<table>
+<thead>
+<tr>
+<th align="right">حجم سرم (cc)</th>
+<th align="right">رقت سرم</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">۰٫۰۸</td>
+<td align="right">۱/۲۰</td>
+</tr>
+<tr>
+<td align="right">۰٫۰۴</td>
+<td align="right">۱/۴۰</td>
+</tr>
+<tr>
+<td align="right">۰٫۰۲</td>
+<td align="right">۱/۸۰</td>
+</tr>
+<tr>
+<td align="right">۰٫۰۱</td>
+<td align="right">۱/۱۶۰</td>
+</tr>
+<tr>
+<td align="right">۰٫۰۰۵</td>
+<td align="right">۱/۳۲۰</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image1.jpg" alt="تصویر 1">
+<em>تصویر 1</em></p>
+<p>در تصویر، مقادیر سرم ۸۰، ۴۰، ۲۰، ۱۰ و ۵ µl، رقت‌های ۱:۲۰، ۱:۴۰، ۱:۸۰، ۱:۱۶۰ و ۱:۳۲۰ و افزودن یک قطره Ag به هرکدام نشان داده شده است؛ عنوان تصویر QUANTITATIVE TEST است.</p>
+<h4>روش لوله‌ای</h4>
+<p>در روش لوله‌ای رایت، ۱۰ لوله آزمایش انتخاب می‌شود:</p>
+<ol>
+<li>به لوله اول ۰٫۹ cc و به لوله‌های بعدی هرکدام ۰٫۵ cc saline اضافه می‌کنند.</li>
+<li>به لوله اول ۰٫۱ cc سرم می‌افزایند و پس از مخلوط‌کردن، ۰٫۵ cc از آن را به لوله دوم منتقل می‌کنند.</li>
+<li>همین کار را تا لوله نهم ادامه می‌دهند.</li>
+<li>در پایان، ۰٫۵ cc از محلول مخلوط‌شده لوله نهم را به لوله دهم منتقل می‌کنند و سپس آن را از لوله دهم بیرون می‌ریزند.</li>
+<li>سپس به همه لوله‌ها ۰٫۵ cc آنتی‌ژن شیری‌رنگِ رقیق‌شده به نسبت ۱/۱۰ اضافه می‌کنند.</li>
+<li>لوله‌ها را ۲۴ تا ۴۸ ساعت در ۳۷°C قرار می‌دهند.</li>
+</ol>
+<p>ترکیب لوله‌ها به این صورت است:</p>
+<table>
+<thead>
+<tr>
+<th>لوله‌ها</th>
+<th align="right">مقدار saline</th>
+<th align="right">مقدار سرم</th>
+<th align="right">مقدار Ag رقیق‌شده ۱/۱۰</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>۱</td>
+<td align="right">۰٫۹ cc</td>
+<td align="right">۰٫۱ cc</td>
+<td align="right">۰٫۵ cc</td>
+</tr>
+<tr>
+<td>۲ تا ۹</td>
+<td align="right">هرکدام ۰٫۵ cc</td>
+<td align="right">هرکدام ۰٫۵ cc</td>
+<td align="right">هرکدام ۰٫۵ cc</td>
+</tr>
+<tr>
+<td>۱۰</td>
+<td align="right">۰٫۵ cc</td>
+<td align="right">سرم اضافه نمی‌شود؛ کنترل</td>
+<td align="right">۰٫۵ cc</td>
+</tr>
+</tbody></table>
+<p>رقت‌های لوله‌های ۱ تا ۹ به‌ترتیب عبارت‌اند از:</p>
+<p><strong>۱/۲۰، ۱/۴۰، ۱/۸۰، ۱/۱۶۰، ۱/۳۲۰، ۱/۶۴۰، ۱/۱۲۸۰، ۱/۲۵۶۰ و ۱/۵۱۲۰</strong>؛ لوله دهم کنترل است.</p>
+<table>
+<thead>
+<tr>
+<th align="right">لوله</th>
+<th align="right">رقت</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">۱</td>
+<td align="right">۱/۲۰</td>
+</tr>
+<tr>
+<td align="right">۲</td>
+<td align="right">۱/۴۰</td>
+</tr>
+<tr>
+<td align="right">۳</td>
+<td align="right">۱/۸۰</td>
+</tr>
+<tr>
+<td align="right">۴</td>
+<td align="right">۱/۱۶۰</td>
+</tr>
+<tr>
+<td align="right">۵</td>
+<td align="right">۱/۳۲۰</td>
+</tr>
+<tr>
+<td align="right">۶</td>
+<td align="right">۱/۶۴۰</td>
+</tr>
+<tr>
+<td align="right">۷</td>
+<td align="right">۱/۱۲۸۰</td>
+</tr>
+<tr>
+<td align="right">۸</td>
+<td align="right">۱/۲۵۶۰</td>
+</tr>
+<tr>
+<td align="right">۹</td>
+<td align="right">۱/۵۱۲۰</td>
+</tr>
+<tr>
+<td align="right">۱۰</td>
+<td align="right">کنترل</td>
+</tr>
+</tbody></table>
+<h4>بررسی آگلوتیناسیون و گزارش نتیجه</h4>
+<p>برای بررسی آگلوتیناسیون در لوله، هم supernatant (مایع رویی) و هم pellet (رسوب ته لوله) ارزیابی می‌شوند.</p>
+<ul>
+<li><strong>نتیجه مثبت:</strong> همه Agها به‌وسیله Ab آگلوتینه شده و به‌شکل رسوب مضرس در ته لوله جمع می‌شوند و مایع رویی کاملاً شفاف می‌ماند.</li>
+<li><strong>نتیجه منفی:</strong> مایع رویی کدر (turbid) است و رسوب به‌شکل یک نقطه کاملاً منظم دیده می‌شود.</li>
+</ul>
+<p>برای تأیید نتیجه مثبت، لوله را به‌آرامی مخلوط می‌کنند تا دو آگلوتیناسیون مشاهده شود.</p>
+<p>کدورت supernatant را می‌توان با پنج لوله استاندارد کدورت مقایسه کرد. حجم saline در این استانداردها به‌ترتیب ۱، ۰٫۷۵، ۰٫۵ و ۰٫۲۵ cc و حجم Ag رقیق‌شده ۱/۱۰ به‌ترتیب صفر، ۰٫۲۵، ۰٫۵، ۰٫۷۵ و ۱ cc است؛ نتیجه متناظر از ۴+، ۳+، ۲+، ۱+ تا Neg گزارش می‌شود. تحقیقات نشان داده است که استفاده از آب‌نمک ۵٪ به‌جای ۹ در هزار برای رقیق‌کردن سرم ممکن است از پدیده منطقه‌ای جلوگیری کند.</p>
+<table>
+<thead>
+<tr>
+<th>درجه کدورت استاندارد</th>
+<th align="right">حجم saline (cc)</th>
+<th align="right">حجم Ag رقیق‌شده ۱/۱۰ (cc)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>۴+</td>
+<td align="right">۱</td>
+<td align="right">صفر</td>
+</tr>
+<tr>
+<td>۳+</td>
+<td align="right">۰٫۷۵</td>
+<td align="right">۰٫۲۵</td>
+</tr>
+<tr>
+<td>۲+</td>
+<td align="right">۰٫۵</td>
+<td align="right">۰٫۵</td>
+</tr>
+<tr>
+<td>۱+</td>
+<td align="right">۰٫۲۵</td>
+<td align="right">۰٫۷۵</td>
+</tr>
+<tr>
+<td>Neg</td>
+<td align="right">—</td>
+<td align="right">۱</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>الگوی مشاهده‌شده</th>
+<th>تفسیر</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ag آگلوتینه‌شده، رسوب مضرس در ته لوله و مایع رویی کاملاً شفاف</td>
+<td>مثبت</td>
+</tr>
+<tr>
+<td>مایع رویی کدر (turbid) و رسوب به‌شکل نقطه کاملاً منظم</td>
+<td>منفی</td>
+</tr>
+</tbody></table>
+<h4>موارد مثبت کاذب</h4>
+<p>موارد مثبت کاذب در تست رایت عبارت‌اند از:</p>
+<ul>
+<li>ابتلا به وبا</li>
+<li>تولارمی</li>
+<li>عفونت ناشی از یرسینیا آنتروکولیتیکا</li>
+<li>تماس با واکسن‌های حاوی ویبریو کلرا، فرانسیسلا و یرسینیا</li>
+<li>عفونت‌های ناشی از گونه‌های سالمونلا</li>
+<li>پسودوموناس مالتوفیلیا</li>
+<li>اشریشیای O116</li>
+<li>تست بروسلین</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>موارد مثبت کاذب در تست رایت</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>وبا</td>
+</tr>
+<tr>
+<td>تولارمی</td>
+</tr>
+<tr>
+<td>عفونت ناشی از یرسینیا آنتروکولیتیکا</td>
+</tr>
+<tr>
+<td>تماس با واکسن‌های حاوی ویبریو کلرا، فرانسیسلا و یرسینیا</td>
+</tr>
+<tr>
+<td>عفونت‌های ناشی از گونه‌های سالمونلا</td>
+</tr>
+<tr>
+<td>پسودوموناس مالتوفیلیا</td>
+</tr>
+<tr>
+<td>اشریشیای O116</td>
+</tr>
+<tr>
+<td>تست بروسلین</td>
+</tr>
+</tbody></table>
+<h4>موارد منفی کاذب</h4>
+<p>۱. <strong>عفونت با بروسلا کانیس:</strong> سرم بیمار معمولاً آنتی‌ژن استاندارد بروسلا را آگلوتینه نمی‌کند، زیرا این آنتی‌ژن‌ها تشابه آنتی‌ژنی ندارند. بنابراین برای تشخیص این نوع بیماری باید از تست‌های اختصاصی استفاده کرد.</p>
+<p>۲. <strong>پدیده پروزون:</strong> اگر سرم بیمار تا رقتی بیش از ۱/۳۲۰ و، به‌قولی، تا ۱/۱۲۸۰ در آزمایشگاه رقیق نشود، احتمال پدیده پروزون وجود دارد و نتیجه ممکن است کاذباً منفی گزارش شود.</p>
+<p>۳. <strong>بیماری مزمن:</strong> به‌علت پایین‌بودن یا نبودن IgM و دخالت ایمونوگلوبولین‌های ناقص در واکنش و اشغال گیرنده‌های آنتی‌ژنی به‌وسیله آن‌ها، ممکن است آگلوتیناسیون رخ ندهد و نتیجه منفی کاذب شود. آزمایش کومبز رایت و آنتی‌هیومن گلوبولین می‌توانند از بروز چنین نتیجه‌ای جلوگیری کنند.</p>
+<p>۴. <strong>نقص سیستم آنتی‌سازی و کمبود گاماگلوبولین‌ها:</strong> این موارد نیز موجب منفی کاذب می‌شوند.</p>
+<p>۵. <strong>انجام زودهنگام آزمایش:</strong> اگر تست رایت پیش از تشکیل مقدار کافی آنتی‌بادی، مثلاً در اوایل بیماری حاد، انجام شود، به‌علت تولیدنشدن آنتی‌بادی اختصاصی نتیجه منفی کاذب خواهد بود.</p>
+<table>
+<thead>
+<tr>
+<th>علت منفی کاذب</th>
+<th>توضیح یا اقدام ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>عفونت با B. canis</td>
+<td>سرم معمولاً آنتی‌ژن استاندارد بروسلا را آگلوتینه نمی‌کند؛ باید از تست‌های اختصاصی استفاده کرد</td>
+</tr>
+<tr>
+<td>پدیده پروزون</td>
+<td>اگر سرم تا رقتی بیش از ۱/۳۲۰ و، به‌قولی، تا ۱/۱۲۸۰ رقیق نشود، نتیجه ممکن است کاذباً منفی گزارش شود</td>
+</tr>
+<tr>
+<td>بیماری مزمن</td>
+<td>پایین‌بودن یا نبودن IgM و دخالت ایمونوگلوبولین‌های ناقص و اشغال گیرنده‌های آنتی‌ژنی می‌تواند مانع آگلوتیناسیون شود؛ کومبز رایت و آنتی‌هیومن گلوبولین می‌توانند از این نتیجه جلوگیری کنند</td>
+</tr>
+<tr>
+<td>نقص سیستم آنتی‌سازی و کمبود گاماگلوبولین‌ها</td>
+<td>موجب منفی کاذب می‌شوند</td>
+</tr>
+<tr>
+<td>انجام زودهنگام آزمایش</td>
+<td>پیش از تولید مقدار کافی آنتی‌بادی اختصاصی، ازجمله در اوایل بیماری حاد، نتیجه ممکن است منفی کاذب شود</td>
+</tr>
+</tbody></table>
+<h3 id="heading-11">۳. آزمایش تشخیص کلاس آنتی‌بادی ضد بروسلا (2ME-Wright test)</h3>
+<h4>مبنا و کاربرد</h4>
+<p>در هفته‌های اول بیماری IgM افزایش می‌یابد و دو هفته پس از شروع بیماری IgG نیز افزایش پیدا می‌کند. با تشخیص به‌موقع و درمان سریع و کافی، آنتی‌بادی‌های IgG طی ۶ تا ۱۲ ماه از سرم محو می‌شوند. اگر بیماری تشخیص داده نشود و درمان نشود، در بیش از ۱۵٪ موارد سیر بیماری ادامه می‌یابد و آگلوتینین‌های IgG در سطح بالا باقی می‌مانند.</p>
+<p>در بسیاری از مبتلایان، حتی پس از درمان کامل، عیار آگلوتینین‌های IgM و درنتیجه عیار تست رایت ممکن است چندین سال مثبت باقی بماند؛ تست 2ME برای بررسی این موضوع به‌کار می‌رود.</p>
+<p>این آزمایش پس از مثبت‌شدن آزمایش رایت برای تعیین کلاس Ab انجام می‌شود. غلظتی حدود ۰٫۱ M از 2-ME مولکول‌های IgM سرم را از بین می‌برد، اما IgG باقی می‌ماند.</p>
+<p>مهم‌ترین کاربرد تست، افتراق بروسلوز فعال از غیرفعال در فردی است که ظاهراً تظاهرات بالینی بیماری را دارد، ولی کشت خون یا نمونه‌های دیگر او عاری از میکروب بروسلاست و تیتر آزمایش رایت نیز پایین است. همچنین با این آزمایش می‌توان اثر آنتی‌بیوتیک مناسب را در درمان بررسی کرد: با درمان، تیتر IgG پایین می‌آید، درحالی‌که IgM مدت‌ها باقی می‌ماند.</p>
+<table>
+<thead>
+<tr>
+<th>جنبه</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>تغییر آنتی‌بادی در هفته‌های اول</td>
+<td>ابتدا IgM و از حدود دو هفته پس از شروع بیماری IgG افزایش می‌یابد</td>
+</tr>
+<tr>
+<td>درمان سریع و کافی</td>
+<td>آنتی‌بادی‌های IgG طی ۶ تا ۱۲ ماه از سرم محو می‌شوند</td>
+</tr>
+<tr>
+<td>بیماری تشخیص‌نداده و درمان‌نشده</td>
+<td>در بیش از ۱۵٪ موارد سیر بیماری ادامه می‌یابد و آگلوتینین‌های IgG در سطح بالا باقی می‌مانند</td>
+</tr>
+<tr>
+<td>باقی‌ماندن عیار IgM</td>
+<td>در بسیاری از مبتلایان، حتی پس از درمان کامل، عیار آگلوتینین‌های IgM و درنتیجه عیار تست رایت ممکن است چندین سال مثبت بماند</td>
+</tr>
+<tr>
+<td>مبنای 2ME</td>
+<td>غلظتی حدود ۰٫۱ M از 2-ME مولکول‌های IgM را از بین می‌برد، اما IgG باقی می‌ماند</td>
+</tr>
+<tr>
+<td>کاربرد</td>
+<td>پس از مثبت‌شدن رایت برای تعیین کلاس Ab؛ افتراق بروسلوز فعال از غیرفعال در شرایط توصیف‌شده؛ بررسی اثر آنتی‌بیوتیک مناسب</td>
+</tr>
+</tbody></table>
+<h4>روش انجام</h4>
+<p>روش انجام 2ME-Wright شبیه تست لوله‌ای است، با این تفاوت که به‌جای saline از محلول 2ME استفاده می‌شود:</p>
+<ol>
+<li>به لوله اول که از قبل ۰٫۹ cc 2ME دارد، ۰٫۱ cc سرم اضافه می‌کنند.</li>
+<li>لوله را برای تخریب IgM به‌مدت یک ساعت در ۳۷°C نگه می‌دارند.</li>
+<li>سپس آنتی‌ژن رقیق‌شده ۱/۱۰ را به لوله‌ها اضافه می‌کنند.</li>
+<li>لوله‌ها را ۲۴ تا ۲۸ ساعت در ۳۷°C قرار می‌دهند.</li>
+<li>آخرین رقتی که ۲+ مثبت شود، به‌عنوان تیتر 2ME گزارش می‌شود.</li>
+</ol>
+<p>در جدول این آزمایش ۱۰ لوله به‌کار می‌رود:</p>
+<ul>
+<li>2ME در لوله اول ۰٫۹ و در لوله‌های دیگر هرکدام ۰٫۵ است.</li>
+<li>سرم در لوله اول ۰٫۱، در لوله‌های ۲ تا ۹ هرکدام ۰٫۵ و در لوله دهم صفر است.</li>
+<li>پس از مرحله یک‌ساعته لوله اول در ۳۷°C، Ag رقیق‌شده ۱/۱۰ به‌مقدار ۰٫۵ به همه لوله‌ها اضافه می‌شود.</li>
+<li>رقت‌ها از ۱/۲۰ تا ۱/۵۱۲۰، مطابق رقت‌های سری لوله‌ای رایت است و لوله دهم کنترل محسوب می‌شود.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>مرحله یا جزء</th>
+<th>مقدار یا شرایط</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>محلول جایگزین saline</td>
+<td>2ME</td>
+</tr>
+<tr>
+<td>لوله اول پیش از افزودن سرم</td>
+<td>۰٫۹ cc 2ME</td>
+</tr>
+<tr>
+<td>سرم در لوله اول</td>
+<td>۰٫۱ cc</td>
+</tr>
+<tr>
+<td>انکوباسیون برای تخریب IgM</td>
+<td>یک ساعت در ۳۷°C</td>
+</tr>
+<tr>
+<td>Ag</td>
+<td>رقیق‌شده ۱/۱۰؛ ۰٫۵ cc به همه لوله‌ها</td>
+</tr>
+<tr>
+<td>انکوباسیون پس از افزودن Ag</td>
+<td>۲۴ تا ۲۸ ساعت در ۳۷°C</td>
+</tr>
+<tr>
+<td>گزارش تیتر</td>
+<td>آخرین رقتی که ۲+ مثبت شود</td>
+</tr>
+<tr>
+<td>لوله‌های دیگر</td>
+<td>2ME در لوله‌های دیگر هرکدام ۰٫۵؛ سرم در لوله‌های ۲ تا ۹ هرکدام ۰٫۵ و در لوله دهم صفر</td>
+</tr>
+<tr>
+<td>رقت‌ها و کنترل</td>
+<td>از ۱/۲۰ تا ۱/۵۱۲۰، مطابق رقت‌های سری لوله‌ای رایت؛ لوله دهم کنترل</td>
+</tr>
+</tbody></table>
+<h3 id="heading-12">۴. آزمایش کومبز–رایت (Antiglobulin or Coombs-Wright test)</h3>
+<h4>مبنا</h4>
+<p>در فاز مزمن یا هنگام عود بروسلوز، در برخی افراد Abهایی ضد بروسلا ایجاد می‌شوند که توانایی آگلوتیناسیون ندارند و Abهای ناقص (incomplete) یا مسدودکننده (blocking) نامیده می‌شوند. این Abها به Ag می‌چسبند و مانع عملکرد Abهای کامل بروسلا می‌شوند؛ Abهای کامل قادر به آگلوتیناسیون کامل آنتی‌ژن بروسلا هستند.</p>
+<p>در این موارد، تست بیمار منفی است، اما علائم بالینی و یافته‌های اپیدمیولوژیک پزشک را به بیماری مشکوک می‌کنند.</p>
+<table>
+<thead>
+<tr>
+<th>نوع Ab</th>
+<th>ویژگی ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ab ناقص (incomplete) یا مسدودکننده (blocking)</td>
+<td>در فاز مزمن یا هنگام عود بروسلوز ممکن است ایجاد شود؛ توانایی آگلوتیناسیون ندارد، به Ag می‌چسبد و مانع عملکرد Abهای کامل بروسلا می‌شود</td>
+</tr>
+<tr>
+<td>Ab کامل</td>
+<td>قادر به آگلوتیناسیون کامل آنتی‌ژن بروسلا است</td>
+</tr>
+</tbody></table>
+<h4>روش انجام</h4>
+<ol>
+<li>ابتدا آزمایش رایت را انجام می‌دهند و نتیجه را ثبت می‌کنند.</li>
+<li>لوله‌های منفی از نظر تست رایت را ۱۵ دقیقه با سرعت ۲۰۰۰ دور در دقیقه سانتریفیوژ می‌کنند.</li>
+<li>مایع رویی را دور می‌ریزند و رسوب را سه بار با saline می‌شویند.</li>
+<li>در مرحله آخر saline را کاملاً خارج می‌کنند و آخرین قطره را با گاز خشک می‌کنند.</li>
+<li>یک قطره آنتی‌گلوبولین انسانی گسترده‌طیف (AHG) به رسوب هر لوله اضافه می‌کنند و لوله‌ها را تکان می‌دهند.</li>
+<li>لوله‌ها را نیم ساعت در بن‌ماری ۳۷°C می‌گذارند و سپس ۱۵ دقیقه با سرعت ۲۰۰۰ دور در دقیقه سانتریفیوژ می‌کنند.</li>
+<li>نتیجه را با واردکردن ضربه‌ای آرام به ته لوله‌ها بررسی می‌کنند و تیتر آخرین لوله‌ای را که در آن آگلوتیناسیون دیده می‌شود، گزارش می‌کنند.</li>
+</ol>
+<p>این تیتر باید دست‌کم دو تیتر بالاتر از SAT باشد. برای تشخیص این موارد می‌توان از آزمایش‌های حساسی مانند ثبوت مکمل و ELISA استفاده کرد.</p>
+<h4>آزمایش رایت سانتریفوژ (Wright Centrifuge test)</h4>
+<p>پس از ایجاد رقت در تست SAT، به‌جای قراردادن لوله‌ها به‌مدت ۲۴ ساعت در ۳۷°C، آن‌ها را بلافاصله ۱۰ دقیقه با سرعت ۲۵۰۰ دور در دقیقه سانتریفیوژ می‌کنند و نتیجه را گزارش می‌دهند. این روش پدیده منطقه‌ای را نیز از بین می‌برد.</p>
+<table>
+<thead>
+<tr>
+<th>روش</th>
+<th>اقدام و شرایط ذکرشده</th>
+<th>نکته گزارش‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>کومبز–رایت</td>
+<td>انجام رایت؛ سانتریفیوژ لوله‌های منفی، شست‌وشوی رسوب با saline، افزودن AHG و انکوباسیون در ۳۷°C؛ سپس سانتریفیوژ و بررسی آگلوتیناسیون</td>
+<td>تیتر باید دست‌کم دو تیتر بالاتر از SAT باشد</td>
+</tr>
+<tr>
+<td>رایت سانتریفوژ</td>
+<td>پس از ایجاد رقت در SAT، به‌جای انکوباسیون ۲۴ ساعته در ۳۷°C، لوله‌ها بلافاصله ۱۰ دقیقه با سرعت ۲۵۰۰ دور در دقیقه سانتریفیوژ می‌شوند</td>
+<td>پدیده منطقه‌ای را نیز از بین می‌برد</td>
+</tr>
+</tbody></table>
+<h3 id="heading-13">۵. تست ELISA</h3>
+<p>در اسلاید، تست ELISA از نظر حساسیت و ویژگی برتر از تست استاندارد رایت و فیکساسیون کمپلمان معرفی شده و ذکر شده است که می‌تواند هر دو ایمونوگلوبولین M و G را تشخیص دهد.</p>
+<p>وقتی تفسیر تست‌های آگلوتیناسیونی مبهم باشد، می‌توان با ELISA پاسخ را قطعی کرد. بررسی IgM یا IgG در این تست امکان افتراق حالت حاد و مزمن بروسلوز را فراهم می‌کند.</p>
+<ul>
+<li><strong>مزیت:</strong> نداشتن مشکلات مربوط به آنتی‌بادی‌های بلوکان و غیرآگلوتینه‌کننده (Nonagglutinating)</li>
+<li><strong>عیب:</strong> واکنش متقاطع با یرسینیوز</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>ویژگی تست ELISA</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>حساسیت و ویژگی</td>
+<td>در اسلاید برتر از تست استاندارد رایت و فیکساسیون کمپلمان معرفی شده است</td>
+</tr>
+<tr>
+<td>آنتی‌بادی‌های قابل‌شناسایی</td>
+<td>IgM و IgG</td>
+</tr>
+<tr>
+<td>کاربرد هنگام ابهام</td>
+<td>در صورت مبهم‌بودن تفسیر تست‌های آگلوتیناسیونی، می‌توان با ELISA پاسخ را قطعی کرد</td>
+</tr>
+<tr>
+<td>افتراق حالت بیماری</td>
+<td>بررسی IgM یا IgG امکان افتراق حالت حاد و مزمن بروسلوز را فراهم می‌کند</td>
+</tr>
+<tr>
+<td>مزیت</td>
+<td>نداشتن مشکلات مربوط به آنتی‌بادی‌های بلوکان و غیرآگلوتینه‌کننده (Nonagglutinating)</td>
+</tr>
+<tr>
+<td>عیب</td>
+<td>واکنش متقاطع با یرسینیوز</td>
+</tr>
+</tbody></table>
+<h3 id="heading-14">تفسیر نتایج آزمایش‌های بروسلوز</h3>
+<p>تشخیص بروسلوز یا تب مالت بر اساس مجموعه اطلاعات اپیدمیولوژیک، بالینی و آزمایشگاهی انجام می‌شود.</p>
+<table>
+<thead>
+<tr>
+<th>اطلاعات مورد استفاده در تشخیص</th>
+<th>محتوای ارزیابی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>اپیدمیولوژیک</td>
+<td>اطلاعات اپیدمیولوژیک</td>
+</tr>
+<tr>
+<td>بالینی</td>
+<td>اطلاعات و تظاهرات بالینی</td>
+</tr>
+<tr>
+<td>آزمایشگاهی</td>
+<td>نتایج آزمایشگاهی</td>
+</tr>
+</tbody></table>
+<h4>تفسیر رز بنگال</h4>
+<p>مرحله حاد بروسلوز با آزمایش سریع رز بنگال بررسی می‌شود. بررسی‌ها نشان داده‌اند که این تست بسیار حساس است و نتیجه آن با ELISA قابل مقایسه است.</p>
+<p>آنتی‌ژن رز بنگال در pH اسیدی با عوامل بیماری‌زای تولارمی و ویبریو کلرا واکنش متقاطع ندارد؛ بنابراین مثبت کاذب در این آزمایش بسیار نادر است.</p>
+<table>
+<thead>
+<tr>
+<th>نکته در تفسیر رز بنگال</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>کاربرد</td>
+<td>بررسی مرحله حاد بروسلوز</td>
+</tr>
+<tr>
+<td>حساسیت</td>
+<td>بسیار حساس توصیف شده و نتیجه آن با ELISA قابل مقایسه است</td>
+</tr>
+<tr>
+<td>واکنش متقاطع</td>
+<td>آنتی‌ژن در pH اسیدی با عوامل بیماری‌زای تولارمی و ویبریو کلرا واکنش متقاطع ندارد</td>
+</tr>
+<tr>
+<td>مثبت کاذب</td>
+<td>بسیار نادر است</td>
+</tr>
+</tbody></table>
+<h4>تفسیر SAT و تغییرات تیتر</h4>
+<p>در تست SAT، تیتر قابل‌ارزش در ایران دست‌کم ۱/۸۰ است. تیترهای پایین‌تر مانند ۱/۲۰ و ۱/۴۰ را نیز نباید بی‌اهمیت شمرد، مگر آنکه:</p>
+<ul>
+<li>از نظر کلینیکی تظاهراتی مانند درد استخوانی و مفصلی و تب وجود نداشته باشد؛ و</li>
+<li>در تکرار آزمایش پس از دو هفته افزایش تیتر مشاهده نشود، یا آزمایش 2ME منفی باشد.</li>
+</ul>
+<p>افرادی که با دام سروکار دارند و واکسن بروسلا دریافت کرده‌اند، ممکن است بدون ابتلا به بروسلوز تیتر پایه بالایی داشته باشند؛ تیتر Ab از نوع IgG در این افراد می‌تواند ۱/۳۲۰ یا بالاتر باشد.</p>
+<table>
+<thead>
+<tr>
+<th>نتیجه یا وضعیت SAT</th>
+<th>تفسیر ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>تیتر قابل‌ارزش در ایران</td>
+<td>دست‌کم ۱/۸۰</td>
+</tr>
+<tr>
+<td>تیتر ۱/۲۰ یا ۱/۴۰</td>
+<td>نباید بی‌اهمیت شمرده شود، مگر آنکه تظاهرات کلینیکی مانند درد استخوانی و مفصلی و تب وجود نداشته باشد و در تکرار پس از دو هفته افزایش تیتر دیده نشود، یا آزمایش 2ME منفی باشد</td>
+</tr>
+<tr>
+<td>تماس با دام و دریافت واکسن بروسلا</td>
+<td>ممکن است بدون ابتلا به بروسلوز، تیتر پایه بالایی داشته باشند</td>
+</tr>
+<tr>
+<td>تیتر IgG در افراد تماس‌یافته با دام و واکسینه‌شده</td>
+<td>ممکن است ۱/۳۲۰ یا بالاتر باشد</td>
+</tr>
+</tbody></table>
+<p>در اوایل بیماری تیتر Ab پایین است و معمولاً اواخر هفته اول یا اوایل هفته دوم مثبت می‌شود. آنتی‌بادی اولیه IgM است و پس از آن IgG (IgG1 و IgG2) افزایش می‌یابد؛ پس از چند هفته تیتر IgG از IgM بیشتر می‌شود.</p>
+<p>اگر تیتر Ab پایین باشد، اما شواهد بیماری را تأیید کنند، باید آزمایش را یک تا دو هفته بعد تکرار کرد. افزایش تیتر باید چهار برابر (4 Fold rising) باشد تا مثبت تلقی شود.</p>
+<p>حداکثر میزان مناسب آنتی‌بادی در هفته‌های چهارم تا هشتم بیماری دیده می‌شود و بیشتر به وجود IgG مربوط است. با درمان مناسب، تیتر IgG کاهش می‌یابد، اما IgM ممکن است ۶ ماه تا دو سال دوام داشته باشد؛ این موضوع با آزمایش 2ME مشخص می‌شود. در چنین شرایطی باید سرم را رقیق کرد و آزمایش رایت را انجام داد. تیتر بالای آنتی‌بادی گاهی موجب پدیده پروزون (Prozone) می‌شود.</p>
+<table>
+<thead>
+<tr>
+<th>زمان یا وضعیت</th>
+<th>تغییر یا اقدام ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>اوایل بیماری</td>
+<td>تیتر Ab پایین است</td>
+</tr>
+<tr>
+<td>اواخر هفته اول یا اوایل هفته دوم</td>
+<td>تیتر معمولاً مثبت می‌شود</td>
+</tr>
+<tr>
+<td>توالی افزایش آنتی‌بادی</td>
+<td>ابتدا IgM و سپس IgG (IgG1 و IgG2) افزایش می‌یابد؛ پس از چند هفته تیتر IgG از IgM بیشتر می‌شود</td>
+</tr>
+<tr>
+<td>تیتر پایین با شواهد تأییدکننده بیماری</td>
+<td>آزمایش را یک تا دو هفته بعد تکرار می‌کنند</td>
+</tr>
+<tr>
+<td>افزایش لازم برای مثبت تلقی‌شدن</td>
+<td>چهار برابر (4 Fold rising)</td>
+</tr>
+<tr>
+<td>هفته‌های چهارم تا هشتم</td>
+<td>حداکثر میزان مناسب آنتی‌بادی دیده می‌شود و بیشتر به وجود IgG مربوط است</td>
+</tr>
+<tr>
+<td>درمان مناسب</td>
+<td>تیتر IgG کاهش می‌یابد، اما IgM ممکن است ۶ ماه تا دو سال دوام داشته باشد؛ این موضوع با 2ME مشخص می‌شود</td>
+</tr>
+<tr>
+<td>تیتر بالای آنتی‌بادی</td>
+<td>گاهی موجب پدیده پروزون (Prozone) می‌شود؛ در شرایط ذکرشده باید سرم را رقیق کرد و آزمایش رایت را انجام داد</td>
+</tr>
+</tbody></table>
+<h4>عود بیماری و واکنش‌های متقاطع</h4>
+<p>عود بیماری پس از درمان یکی از مشکلات بروسلوز است. در این حالت، آزمایش‌های عادی یا 2ME ممکن است نتوانند آنتی‌بادی را تشخیص دهند، اما روش‌هایی مانند کومبز رایت یا ELISA قابلیت تشخیص آن را دارند.</p>
+<p>میکروب‌های بروسلا با <strong>Francisella tularensis</strong>، <strong>Vibrio cholerae</strong> و <strong>Yersinia enterolytica</strong> ساختمان آنتی‌ژنی مشترک دارند؛ بنابراین عفونت با این میکروب‌ها می‌تواند تیتر آگلوتیناسیون ضد بروسلا را افزایش دهد.</p>
+<table>
+<thead>
+<tr>
+<th>وضعیت یا عامل</th>
+<th>نتیجه یا روش ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>عود بیماری پس از درمان</td>
+<td>یکی از مشکلات بروسلوز است</td>
+</tr>
+<tr>
+<td>عود و آزمایش‌های عادی یا 2ME</td>
+<td>ممکن است نتوانند آنتی‌بادی را تشخیص دهند</td>
+</tr>
+<tr>
+<td>عود و کومبز رایت یا ELISA</td>
+<td>این روش‌ها قابلیت تشخیص آنتی‌بادی را دارند</td>
+</tr>
+<tr>
+<td>Francisella tularensis، Vibrio cholerae و Yersinia enterolytica</td>
+<td>ساختمان آنتی‌ژنی مشترک با بروسلا دارند؛ عفونت با آن‌ها می‌تواند تیتر آگلوتیناسیون ضد بروسلا را افزایش دهد</td>
+</tr>
+</tbody></table>
+<h4>تفسیر آزمایش در نوزاد</h4>
+<p>اگر مادر مبتلا به بروسلوز باشد، آزمایش نوزاد کمتر از ۶ ماه ممکن است به‌علت عبور Ab از نوع IgG از جفت مثبت شود. در این حالت SAT و 2ME هر دو انجام می‌شوند و نتایج با هم مقایسه می‌شوند:</p>
+<ul>
+<li>اگر تیتر دو آزمایش یکسان باشد و تفاوتی نداشته باشند، مثبت‌شدن آن‌ها به Ab مادری نسبت داده می‌شود.</li>
+<li>اگر تیتر SAT بالاتر باشد، نشان‌دهنده وجود Ab از نوع IgM ضد بروسلاست و بیانگر ابتلای خود نوزاد به تب مالت است.</li>
+</ul>
+<p>راه دیگر، تکرار آزمایش پس از ۳ تا ۴ هفته است؛ اگر تیتر کاهش یابد، بیماری از مادر بوده است.</p>
+<table>
+<thead>
+<tr>
+<th>یافته در نوزاد کمتر از ۶ ماه، با مادر مبتلا</th>
+<th>تفسیر ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>مثبت‌شدن آزمایش</td>
+<td>ممکن است به‌علت عبور Ab از نوع IgG از جفت باشد</td>
+</tr>
+<tr>
+<td>تیتر SAT و 2ME یکسان</td>
+<td>مثبت‌شدن به Ab مادری نسبت داده می‌شود</td>
+</tr>
+<tr>
+<td>تیتر SAT بالاتر</td>
+<td>نشان‌دهنده وجود Ab از نوع IgM ضد بروسلا و بیانگر ابتلای خود نوزاد به تب مالت است</td>
+</tr>
+<tr>
+<td>تکرار آزمایش پس از ۳ تا ۴ هفته و کاهش تیتر</td>
+<td>بیماری از مادر بوده است</td>
+</tr>
+</tbody></table>
+<h4>تشخیص بروسلوز عصبی</h4>
+<p>در تشخیص بروسلوز عصبی (نوروبروسلوز)، یعنی هنگامی که باکتری در پرده مننژ جایگزین می‌شود، بررسی سرولوژی CSF ارزش فراوان دارد و باید تیتر Ab ضد بروسلا در مایع نخاع و سرم با هم مقایسه شود.</p>
+<p>اگر نسبت تیتر مایع نخاع به سرم بیش از ۱/۱۰۰ باشد، نشان‌دهنده درگیری CNS است. منفی‌بودن آزمایش‌های سرولوژی مایع نخاع، نوروبروسلوز را رد نمی‌کند. همچنین ممکن است هنگام بروز نشانه‌های عصبی تب مالت، آزمایش رایت سرم نیز منفی شود؛ هنگامی که میکروب بروسلا در یک ارگان رشد می‌کند، آزمایش سرم ممکن است منفی شود.</p>
+<table>
+<thead>
+<tr>
+<th>مورد ارزیابی در نوروبروسلوز</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>تعریف ذکرشده</td>
+<td>بروسلوز عصبی (نوروبروسلوز)، یعنی هنگامی که باکتری در پرده مننژ جایگزین می‌شود</td>
+</tr>
+<tr>
+<td>نمونه و بررسی</td>
+<td>بررسی سرولوژی CSF ارزش فراوان دارد؛ تیتر Ab ضد بروسلا در مایع نخاع و سرم باید مقایسه شود</td>
+</tr>
+<tr>
+<td>نسبت تیتر مایع نخاع به سرم بیش از ۱/۱۰۰</td>
+<td>نشان‌دهنده درگیری CNS است</td>
+</tr>
+<tr>
+<td>سرولوژی منفی مایع نخاع</td>
+<td>نوروبروسلوز را رد نمی‌کند</td>
+</tr>
+<tr>
+<td>رایت سرم هنگام نشانه‌های عصبی</td>
+<td>ممکن است منفی شود؛ هنگامی که میکروب بروسلا در یک ارگان رشد می‌کند، آزمایش سرم ممکن است منفی شود</td>
+</tr>
+</tbody></table>
+<h4>نکات مربوط به نمونه سرم</h4>
+<p>برای انجام آزمایش‌های فبرایل نباید سرم بیمار را حرارت داد، زیرا ممکن است تیتر Abهای سرم کاهش یابد. اگر سرم دارای خون همولیز باشد، نتیجه آزمایش مثبت کاذب می‌شود.</p>
+<table>
+<thead>
+<tr>
+<th>وضعیت نمونه سرم</th>
+<th>پیامد یا نکته</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>حرارت‌دادن سرم پیش از آزمایش‌های فبرایل</td>
+<td>نباید انجام شود، زیرا ممکن است تیتر Abهای سرم کاهش یابد</td>
+</tr>
+<tr>
+<td>وجود خون همولیز در سرم</td>
+<td>نتیجه آزمایش مثبت کاذب می‌شود</td>
+</tr>
+</tbody></table>
+<p><strong>تهیه‌کننده:</strong> دکتر طاهره کلانتری<br><strong>عضو هیئت علمی دانشکده پیراپزشکی</strong></p>
+</section>
+
+<section class="noteSection quickTablesSection">
+    <h2 id="heading-15">۳. جداول مرور سریع</h2>
+<h3 id="heading-16">گونه‌ها، میزبان‌ها و بیماری‌زایی</h3>
+<table>
+<thead>
+<tr>
+<th>گونه</th>
+<th>میزبان مخزن</th>
+<th>نکته درباره بیماری‌زایی در انسان</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B. abortus</td>
+<td>گاو</td>
+<td>از گونه‌های مهم بیماری‌زا؛ علائم ملایم‌تر از گونه‌های دیگرِ ذکرشده</td>
+</tr>
+<tr>
+<td>B. melitensis</td>
+<td>بز</td>
+<td>از گونه‌های مهم بیماری‌زا؛ عامل شایع در ایران و در جهان</td>
+</tr>
+<tr>
+<td>B. suis</td>
+<td>خوک</td>
+<td>از گونه‌های مهم بیماری‌زا؛ همراه B. melitensis موجب شدیدترین علائم می‌شود</td>
+</tr>
+<tr>
+<td>B. canis</td>
+<td>سگ</td>
+<td>ممکن است بیماری‌زا باشد؛ برای تشخیص باید از آنتی‌ژن همین گونه استفاده کرد</td>
+</tr>
+<tr>
+<td>B. rangiferi tarnadi</td>
+<td>گوزن شمالی</td>
+<td>—</td>
+</tr>
+<tr>
+<td>B. ovis</td>
+<td>گوسفند</td>
+<td>تاکنون گزارشی از بیماری‌زایی در انسان دیده نشده است</td>
+</tr>
+<tr>
+<td>B. neotoma</td>
+<td>موش صحرایی</td>
+<td>تاکنون گزارشی از بیماری‌زایی در انسان دیده نشده است</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>محل مورد اشاره</th>
+<th>عامل شایع یا غالب</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ایران</td>
+<td>بیشتر B. melitensis</td>
+</tr>
+<tr>
+<td>آمریکا</td>
+<td>بیشترین عوامل B. abortus و B. suis</td>
+</tr>
+<tr>
+<td>جهان، در مجموع</td>
+<td>B. melitensis</td>
+</tr>
+</tbody></table>
+<h3 id="heading-17">انتقال، بقا و ویژگی‌های بروسلا</h3>
+<table>
+<thead>
+<tr>
+<th>موضوع</th>
+<th>اطلاعات ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>راه‌های انتقال</td>
+<td>تماس با حیوان آلوده یا بافت‌های آن؛ خوردن شیر و محصولات لبنی آلوده</td>
+</tr>
+<tr>
+<td>محصولات مرتبط با اپیدمی‌ها</td>
+<td>شیر غیرپاستوریزه، خامه، پنیر و بستنی</td>
+</tr>
+<tr>
+<td>گروه‌های شغلی در معرض خطر</td>
+<td>دامپزشکان و کارشناسان برنامه‌های کنترل بروسلوز</td>
+</tr>
+<tr>
+<td>مواجهه شغلی با واکسن</td>
+<td>تلقیح اتفاقی واکسن‌های زنده ضعیف‌شده یا آلودگی ملتحمه با آن‌ها</td>
+</tr>
+<tr>
+<td>ویژگی باکتری</td>
+<td>کوکوباسیل گرم‌منفی، هوازی، غیرمتحرک، فاقد کپسول و اسپور، داخل‌سلولی اختیاری؛ اکسیداز منفی در اسلاید</td>
+</tr>
+<tr>
+<td>دوره نهفتگی</td>
+<td>۱۰ تا ۱۴ روز</td>
+</tr>
+<tr>
+<td>گوشت یخ‌زده</td>
+<td>سه هفته</td>
+</tr>
+<tr>
+<td>شیر خام</td>
+<td>۱۰ روز</td>
+</tr>
+<tr>
+<td>پنیر تازه</td>
+<td>تا سه ماه</td>
+</tr>
+<tr>
+<td>بستنی و خامه</td>
+<td>مدتی نامشخص</td>
+</tr>
+<tr>
+<td>گوشت نمک‌زده</td>
+<td>ممکن است مدتی مقاومت کند؛ دوددادن، منجمدکردن و نمک‌زدن گوشت آلوده تعداد باکتری را طی چند روز به‌شدت کاهش می‌دهد</td>
+</tr>
+<tr>
+<td>دمای ۶۰°C یا فنل ۱٪</td>
+<td>باکتری‌ها طی ۱۵ دقیقه از بین می‌روند</td>
+</tr>
+<tr>
+<td>نور آفتاب</td>
+<td>باکتری‌ها را به‌سرعت از بین می‌برد</td>
+</tr>
+<tr>
+<td>طبیعت</td>
+<td>ارگانیسم‌ها می‌توانند مدت زیادی زنده بمانند</td>
+</tr>
+</tbody></table>
+<h3 id="heading-18">مراحل بالینی</h3>
+<table>
+<thead>
+<tr>
+<th>مرحله</th>
+<th>مدت یا روند</th>
+<th>تظاهرات</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>حاد</td>
+<td>کمتر از سه ماه</td>
+<td>تب پیوسته یا نامنظم، ضعف، سردرد، تعریق شبانه، آدنوپاتی، اسپلنومگالی، درد ستون مهره‌ها به‌ویژه ناحیه لومبار؛ گاهی هپاتیت، اپیدیدیمیت و ارکیت</td>
+</tr>
+<tr>
+<td>تحت‌حاد</td>
+<td>حدود ۳ تا ۱۲ ماه؛ پس از مرحله حاد</td>
+<td>ادامه بیماری در مرحله تحت‌حاد</td>
+</tr>
+<tr>
+<td>مزمن</td>
+<td>در صورت درمان‌نشدن؛ یک تا چند سال</td>
+<td>خستگی و افسردگی، درد مفاصل و عضلانی، کاهش وزن، علائم روانی، گاهی تب خفیف؛ relapses of varying intensity بسیار شایع</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>گونه</th>
+<th>شدت علائم ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B. melitensis و B. suis</td>
+<td>شدیدترین علائم</td>
+</tr>
+<tr>
+<td>B. abortus</td>
+<td>ملایم‌ترین علائم</td>
+</tr>
+</tbody></table>
+<h3 id="heading-19">کشت و آزمایش‌های سرولوژیک</h3>
+<table>
+<thead>
+<tr>
+<th>نمونه یا وضعیت</th>
+<th>نتیجه یا نکته</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>بروسلوز حاد ناشی از B. melitensis</td>
+<td>کشت خون در ۷۰٪ و کشت مغز استخوان در ۹۰٪ موارد مثبت می‌شود</td>
+</tr>
+<tr>
+<td>بروسلوز تحت‌حاد ناشی از B. melitensis</td>
+<td>کشت خون کمتر مثبت می‌شود، اما انجام آن توصیه می‌شود</td>
+</tr>
+<tr>
+<td>عفونت ناشی از B. abortus</td>
+<td>کشت خون حتی در بهترین شرایط اغلب منفی است</td>
+</tr>
+<tr>
+<td>زمان کشت خون</td>
+<td>هنگام بالا بودن تب</td>
+</tr>
+<tr>
+<td>کشت خون در مجموع موارد</td>
+<td>حدود ۱۰ تا ۳۰٪ موارد مثبت است</td>
+</tr>
+<tr>
+<td>کشت منفی</td>
+<td>باید ۴ تا ۵ هفته نگه داشته شود</td>
+</tr>
+<tr>
+<td>قطعی‌ترین راه تشخیص</td>
+<td>جداسازی عامل بیماری</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>پنج آزمایش استاندارد توصیه‌شده توسط W.H.O</th>
+<th>نام انگلیسی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>رز بنگال</td>
+<td>Rose Bengal test</td>
+</tr>
+<tr>
+<td>سروآگلوتیناسیون لوله‌ای یا رایت</td>
+<td>Seroagglutination or Wright test</td>
+</tr>
+<tr>
+<td>۲-مرکاپتواتانول–رایت</td>
+<td>2ME–Wright test</td>
+</tr>
+<tr>
+<td>ثبوت مکمل</td>
+<td>Complement fixation</td>
+</tr>
+<tr>
+<td>آنتی‌گلوبولین یا کومبز رایت</td>
+<td>Antiglobulin or Coombs-Wright test</td>
+</tr>
+</tbody></table>
+<h3 id="heading-20">تغییرات آنتی‌بادی‌ها و درمان</h3>
+<table>
+<thead>
+<tr>
+<th>آنتی‌بادی یا وضعیت</th>
+<th>تغییر و تفسیر ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IgM در بروسلوز حاد</td>
+<td>ابتدا افزایش می‌یابد؛ حدود یک هفته پس از شروع بیماری ظاهر می‌شود؛ در هفته دوم تا سوم (۱۳ تا ۲۱ روز) به حداکثر می‌رسد و طی سه ماه افت می‌کند؛ گاهی در هفته‌های اول تنها ایمونوگلوبولین قابل‌شناسایی است</td>
+</tr>
+<tr>
+<td>IgG</td>
+<td>از هفته دوم افزایش می‌یابد؛ سنتز اختصاصی از روز چهاردهم تا بیست‌ویکم شروع می‌شود؛ پس از چند هفته تیتر آن از IgM بیشتر می‌شود؛ شامل IgG1 و IgG2 است</td>
+</tr>
+<tr>
+<td>IgA</td>
+<td>افزایش آن در تشخیص بروسلوز مزمن و relapse و نیز به‌عنوان Ab مسدودکننده مطرح شده است</td>
+</tr>
+<tr>
+<td>IgE</td>
+<td>به مقدار جزئی وجود دارد</td>
+</tr>
+<tr>
+<td>درمان‌نشده</td>
+<td>IgG دست‌کم یک سال در سطح بالا باقی می‌ماند</td>
+</tr>
+<tr>
+<td>درمان کامل‌شده</td>
+<td>IgG طی ۶ ماه تا یک سال پس از شروع بیماری به حداقل می‌رسد یا کاملاً محو می‌شود</td>
+</tr>
+<tr>
+<td>درمان مناسب آنتی‌بیوتیکی</td>
+<td>تیتر IgG کاهش می‌یابد؛ IgM ممکن است ۶ ماه تا دو سال دوام داشته باشد و معمولاً هر سه ماه یک رقت کاهش می‌یابد</td>
+</tr>
+<tr>
+<td>ارزیابی درمان</td>
+<td>تیتر Ab دوره نقاهت و پس از درمان با تیتر مرحله حاد مقایسه می‌شود؛ کاهش تیتر نشانه تأثیر مثبت درمان و فروکش‌کردن بیماری است</td>
+</tr>
+</tbody></table>
+<h3 id="heading-21">آزمایش‌ها و تفسیرهای کلیدی</h3>
+<table>
+<thead>
+<tr>
+<th>آزمایش یا وضعیت</th>
+<th>نکته یا تفسیر</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>رز بنگال</td>
+<td>سریع‌ترین تست سرولوژیک اولیه یا غربالی؛ آنتی‌ژن قرمز متمایل به صورتی، pH اسیدی ۳٫۶±۰٫۰۵ و جرم نهایی ۸٪؛ مثبت‌شدن با تست لوله‌ای یا رایت پیگیری می‌شود</td>
+</tr>
+<tr>
+<td>SAT</td>
+<td>تیتر قابل‌ارزش در ایران دست‌کم ۱/۸۰؛ تیتر ۱/۲۰ و ۱/۴۰ را در شرایط ذکرشده نباید بی‌اهمیت شمرد</td>
+</tr>
+<tr>
+<td>افزایش تیتر</td>
+<td>در صورت تیتر پایین و شواهد بیماری، آزمایش پس از یک تا دو هفته تکرار می‌شود؛ افزایش چهاربرابری برای مثبت تلقی‌شدن لازم است</td>
+</tr>
+<tr>
+<td>پدیده پروزون</td>
+<td>تیتر بالای آنتی‌بادی گاهی موجب آن می‌شود؛ در تست رایت ممکن است رقیق‌نکردن کافی سرم به منفی کاذب بینجامد</td>
+</tr>
+<tr>
+<td>2ME-Wright</td>
+<td>حدود ۰٫۱ M از 2-ME مولکول‌های IgM را از بین می‌برد، اما IgG باقی می‌ماند</td>
+</tr>
+<tr>
+<td>کومبز–رایت</td>
+<td>برای بررسی آنتی‌بادی‌های ناقص یا مسدودکننده؛ تیتر گزارش‌شده باید دست‌کم دو تیتر بالاتر از SAT باشد</td>
+</tr>
+<tr>
+<td>Wright Centrifuge test</td>
+<td>سانتریفیوژ فوری ۱۰ دقیقه‌ای با سرعت ۲۵۰۰ دور در دقیقه؛ پدیده منطقه‌ای را نیز از بین می‌برد</td>
+</tr>
+<tr>
+<td>ELISA</td>
+<td>در اسلاید از نظر حساسیت و ویژگی برتر از رایت و فیکساسیون کمپلمان معرفی شده؛ IgM و IgG را تشخیص می‌دهد؛ عیب ذکرشده واکنش متقاطع با یرسینیوز است</td>
+</tr>
+</tbody></table>
+<h3 id="heading-22">موارد کاذب و موارد ویژه تفسیر</h3>
+<table>
+<thead>
+<tr>
+<th>موضوع</th>
+<th>نکته</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>موارد مثبت کاذب رایت</td>
+<td>وبا، تولارمی، Yersinia enterocolitica، تماس با واکسن‌های حاوی Vibrio cholerae، Francisella و Yersinia، گونه‌های Salmonella، پسودوموناس مالتوفیلیا، اشریشیای O116 و تست بروسلین</td>
+</tr>
+<tr>
+<td>منفی کاذب: B. canis</td>
+<td>سرم معمولاً آنتی‌ژن استاندارد را آگلوتینه نمی‌کند؛ تست اختصاصی لازم است</td>
+</tr>
+<tr>
+<td>منفی کاذب: پروزون</td>
+<td>اگر سرم تا رقتی بیش از ۱/۳۲۰ و، به‌قولی، تا ۱/۱۲۸۰ رقیق نشود، نتیجه ممکن است کاذباً منفی شود</td>
+</tr>
+<tr>
+<td>منفی کاذب: بیماری مزمن</td>
+<td>پایین‌بودن یا نبودن IgM و دخالت ایمونوگلوبولین‌های ناقص می‌تواند مانع آگلوتیناسیون شود؛ کومبز رایت و آنتی‌هیومن گلوبولین می‌توانند از آن جلوگیری کنند</td>
+</tr>
+<tr>
+<td>منفی کاذب: نقص یا آزمایش زودهنگام</td>
+<td>نقص سیستم آنتی‌سازی و کمبود گاماگلوبولین‌ها؛ یا انجام آزمایش پیش از تولید مقدار کافی آنتی‌بادی</td>
+</tr>
+<tr>
+<td>نوزاد کمتر از ۶ ماه با مادر مبتلا</td>
+<td>IgG مادری می‌تواند از جفت عبور کند؛ تیتر SAT و 2ME یکسان به Ab مادری نسبت داده می‌شود؛ بالاتربودن SAT نشانه IgM ضد بروسلا و ابتلای نوزاد است</td>
+</tr>
+<tr>
+<td>پیگیری نوزاد</td>
+<td>اگر تیتر پس از ۳ تا ۴ هفته کاهش یابد، بیماری از مادر بوده است</td>
+</tr>
+<tr>
+<td>نوروبروسلوز</td>
+<td>تیتر Ab در CSF و سرم مقایسه می‌شود؛ نسبت بیش از ۱/۱۰۰ نشان‌دهنده درگیری CNS است؛ سرولوژی منفی CSF نوروبروسلوز را رد نمی‌کند</td>
+</tr>
+<tr>
+<td>نمونه سرم</td>
+<td>برای آزمایش‌های فبرایل نباید سرم را حرارت داد؛ خون همولیز می‌تواند نتیجه مثبت کاذب بدهد</td>
+</tr>
+</tbody></table>
+</section>
+
+<section class="noteSection keyTermsSection">
+    <h2 id="heading-23">۴. اصطلاحات و تعاریف</h2>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>بروسلوز</strong>
+بیماری عفونی مزمنی که ممکن است با <strong>relapse</strong> (بازگشت بیماری) همراه باشد.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>zoonosis</strong>
+بیماری‌ای که جایگاه اصلی عامل آن حیوانات است. در این درس، بروسلوز به‌دلیل جایگاه اصلی بروسلا در حیوانات، یک zoonosis محسوب می‌شود.</div></div>
+</section>
+
+<section class="noteSection selfAssessmentSection">
+    <h2 id="heading-24">۵. خود‌ارزیابی</h2>
+<h3 id="heading-25">سوالات تشریحی</h3>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>گونه‌های مهم بیماری‌زای بروسلا در انسان را نام ببرید و رابطه گونه‌های بروسلا با میزبان مخزن را توضیح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>گونه‌های مهم عبارت‌اند از B. abortus، B. melitensis و B. suis؛ B. canis نیز ممکن است بیماری‌زا باشد. گونه‌ها بر اساس میزبان مخزن نام‌گذاری شده‌اند: B. abortus با گاو، B. melitensis با بز، B. canis با سگ، B. suis با خوک، B. rangiferi tarnadi با گوزن شمالی، B. ovis با گوسفند و B. neotoma با موش صحرایی مرتبط است. تاکنون گزارشی از بیماری‌زایی B. ovis و B. neotoma در انسان دیده نشده است.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>تغییرات زمانی IgM و IgG در بروسلوز حاد و کاربرد مقایسه تیتر آنتی‌بادی‌ها برای ارزیابی درمان را شرح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در بروسلوز حاد ابتدا IgM افزایش می‌یابد؛ حدود یک هفته پس از شروع بیماری در سرم ظاهر می‌شود و در هفته دوم تا سوم به حداکثر می‌رسد، سپس طی سه ماه افت می‌کند. IgG از هفته دوم افزایش می‌یابد و سنتز اختصاصی آن از روز چهاردهم تا بیست‌ویکم شروع می‌شود؛ پس از چند هفته تیتر آن از IgM بیشتر می‌شود. برای ارزیابی درمان، تیتر Ab در دوره نقاهت و پس از درمان با تیتر مرحله حاد مقایسه می‌شود؛ کاهش تیتر نشانه تأثیر مثبت درمان و فروکش‌کردن بیماری است.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>روش انجام آزمایش رز بنگال و تفسیر نتیجه مثبت آن را بیان کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>۰٫۰۳ cc سرم را روی اسلاید می‌ریزند، یک قطره Ag رز بنگال را کنار آن قرار می‌دهند و مخلوط می‌کنند؛ سپس اسلاید را با دست یا روی روتاتور ۴ دقیقه تکان می‌دهند و آگلوتیناسیون را زیر چراغ مطالعه بررسی می‌کنند. در صورت مثبت‌شدن، برای تأیید و تعیین تیتر از تست دقیق‌تر لوله‌ای یا رایت استفاده می‌شود؛ بااین‌حال، بهتر است تست لوله‌ای در صورت مثبت یا منفی‌شدن رز بنگال انجام شود.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>مبنای 2ME-Wright چیست و چرا در تفسیر آنتی‌بادی‌های بروسلوز به‌کار می‌رود؟</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>غلظتی حدود ۰٫۱ M از 2-ME مولکول‌های IgM سرم را از بین می‌برد، اما IgG باقی می‌ماند. این آزمایش پس از مثبت‌شدن رایت برای تعیین کلاس Ab به‌کار می‌رود و می‌تواند در افتراق بروسلوز فعال از غیرفعال در شرایط توصیف‌شده و نیز بررسی اثر آنتی‌بیوتیک مناسب کمک کند. با درمان، تیتر IgG پایین می‌آید، درحالی‌که IgM ممکن است مدت‌ها باقی بماند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>چگونه نتیجه کومبز–رایت به بررسی مواردی کمک می‌کند که تست رایت منفی است، اما شواهد بالینی یا اپیدمیولوژیک ظن به بروسلوز ایجاد می‌کنند؟</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در فاز مزمن یا هنگام عود ممکن است Abهای ناقص یا مسدودکننده ایجاد شوند که به Ag می‌چسبند، توانایی آگلوتیناسیون ندارند و مانع عملکرد Abهای کامل می‌شوند؛ درنتیجه تست رایت ممکن است منفی باشد. در کومبز–رایت، لوله‌های منفی رایت سانتریفیوژ و رسوب آن‌ها شسته می‌شود؛ سپس AHG اضافه می‌کنند و پس از انکوباسیون و سانتریفیوژ، آگلوتیناسیون را بررسی می‌کنند. تیتر آخرین لوله دارای آگلوتیناسیون گزارش می‌شود و باید دست‌کم دو تیتر بالاتر از SAT باشد.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<h3 id="heading-26">سوالات تستی</h3>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>کدام گونه در منبع به‌عنوان عامل شایع بروسلوز در جهان، در مجموع، ذکر شده است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">B. abortus</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">B. melitensis</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">B. canis</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">B. ovis</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>عامل شایع بروسلوز در جهان، در مجموع، B. melitensis ذکر شده است.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>بهترین زمان انجام کشت خون برای بروسلوز چه زمانی است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">هنگام بالا بودن تب</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">فقط پس از پایان تب</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">بلافاصله پس از درمان</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">فقط در مرحله مزمن</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>بهترین زمان کشت خون هنگام بالا بودن تب است.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>کدام توصیف درباره افزایش IgM در بروسلوز حاد درست است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">معمولاً پیش از شروع بیماری در سرم دیده می‌شود.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">حدود یک هفته پس از شروع بیماری ظاهر می‌شود و در هفته دوم تا سوم به حداکثر می‌رسد.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">فقط پس از یک سال افزایش می‌یابد.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">از ابتدا تا پایان بیماری بدون تغییر می‌ماند.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>IgM حدود یک هفته پس از شروع بیماری در سرم ظاهر می‌شود و در هفته دوم تا سوم به حداکثر می‌رسد.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>در آزمایش رز بنگال، پس از نتیجه مثبت چه اقدامی برای تأیید و تعیین تیتر ذکر شده است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">انجام تست دقیق‌تر لوله‌ای یا رایت</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">تکرار آزمایش با آنتی‌ژن بروسلا کانیس در همه موارد</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">انجام کشت CSF به‌جای آزمایش‌های دیگر</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">حرارت‌دادن سرم و تکرار همان آزمایش</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>پس از مثبت‌شدن رز بنگال، برای تأیید و تعیین تیتر از تست دقیق‌تر لوله‌ای یا رایت استفاده می‌شود.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>کدام گزینه تفاوت اصلی ذکرشده در مبنای 2ME-Wright را درست بیان می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">2-ME حدود ۰٫۱ M مولکول‌های IgM را از بین می‌برد، اما IgG باقی می‌ماند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">2-ME مولکول‌های IgG را از بین می‌برد، اما IgM باقی می‌ماند.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">2-ME همه ایمونوگلوبولین‌ها را به یک اندازه از بین می‌برد.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">2-ME به‌جای آنتی‌ژن در رز بنگال استفاده می‌شود.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>غلظتی حدود ۰٫۱ M از 2-ME مولکول‌های IgM را از بین می‌برد، اما IgG باقی می‌ماند.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="6"><div class="questionBoxHeader">سؤال 6</div><div class="questionBoxPrompt"><p>در کومبز–رایت، پس از افزودن AHG چه زمانی و در چه شرایطی لوله‌ها انکوبه می‌شوند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">نیم ساعت در بن‌ماری ۳۷°C</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">۲۴ تا ۴۸ ساعت در دمای اتاق</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">یک ساعت در یخچال ۴°C</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">۱۰ دقیقه در ۶۰°C</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>پس از افزودن AHG، لوله‌ها نیم ساعت در بن‌ماری ۳۷°C قرار می‌گیرند.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="7"><div class="questionBoxHeader">سؤال 7</div><div class="questionBoxPrompt"><p>کدام گزینه درباره تست ELISA مطابق محتوای درس است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">فقط IgM را تشخیص می‌دهد.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">می‌تواند IgM و IgG را تشخیص دهد و با آن‌ها افتراق حالت حاد و مزمن ممکن است.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">هیچ واکنش متقاطعی با یرسینیوز ندارد.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">در تفسیر مبهم تست‌های آگلوتیناسیونی کاربرد ندارد.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>ELISA می‌تواند IgM و IgG را تشخیص دهد و بررسی آن‌ها امکان افتراق حالت حاد و مزمن بروسلوز را فراهم می‌کند.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="8"><div class="questionBoxHeader">سؤال 8</div><div class="questionBoxPrompt"><p>در فردی با تیتر پایین SAT و شواهد تأییدکننده بیماری، اقدام ذکرشده چیست؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">تکرار آزمایش یک تا دو هفته بعد</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">بی‌نیازشدن از تکرار آزمایش</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">حرارت‌دادن سرم و گزارش همان تیتر</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">جایگزین‌کردن SAT با آزمایش رز بنگال در همه موارد</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>اگر تیتر Ab پایین باشد، اما شواهد بیماری را تأیید کنند، آزمایش را یک تا دو هفته بعد تکرار می‌کنند.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="9"><div class="questionBoxHeader">سؤال 9</div><div class="questionBoxPrompt"><p>در نوزاد کمتر از ۶ ماه، تیتر بالاتر SAT نسبت به 2ME چه برداشتی دارد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">نشان‌دهنده وجود IgM ضد بروسلا و بیانگر ابتلای خود نوزاد است.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">مثبت‌شدن را قطعاً به Ab مادری نسبت می‌دهد.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">بروسلوز را رد می‌کند.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">به‌تنهایی کاهش تیتر در ۳ تا ۴ هفته را نشان می‌دهد.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>اگر تیتر SAT بالاتر باشد، نشان‌دهنده وجود Ab از نوع IgM ضد بروسلا و بیانگر ابتلای خود نوزاد به تب مالت است.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="10"><div class="questionBoxHeader">سؤال 10</div><div class="questionBoxPrompt"><p>نسبت تیتر مایع نخاع به سرم بیش از چه مقداری به‌عنوان نشان‌دهنده درگیری CNS ذکر شده است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">بیش از ۱/۲۰</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">بیش از ۱/۸۰</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">بیش از ۱/۱۰۰</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">بیش از ۱/۵۱۲۰</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>نسبت تیتر مایع نخاع به سرم بیش از ۱/۱۰۰ نشان‌دهنده درگیری CNS است.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+</section>
+
+<section class="noteSection reviewSection">
+    
+</section>
+
+<section class="noteSection editorAndSourcesSection">
+    <h2 id="heading-27">۷. ادیتور و منابع استفاده‌شده</h2>
+<p><strong>ادیتور:</strong> علیرضا اسفندیاری</p>
+<p><strong>منابع استفاده‌شده:</strong></p>
+<ul>
+<li>اسلایدهای درس</li>
+<li>صوت درس</li>
+<li>کتاب ایمونولوژی ابولعباس</li>
+</ul>
+</section>
+
+<section class="noteSection completionSection">
+    <h2 id="heading-28">۸. گزارش تکمیل بودن محتوا</h2>
+<p><strong>برآورد تقریبی تکمیل محتوا:</strong> حدود 99%</p>
+<ul>
+<li>✓ پوشش محتوای اسلایدها: مطالب آموزشی و تصویرِ ارجاع‌شده در محتوای فراهم‌شده بازتاب داده شده‌اند.</li>
+<li>✓ پوشش محتوای صوت درس: نکات آموزشی موجود در محتوای فراهم‌شده حفظ شده‌اند.</li>
+<li>⚠ هشدار: سعی شده این جزوه در بینظیرترین حالت ممکن باشد اما درصورت مشاهده هرگونه مشکل سریعا به ادیتور ها و صاحبین سایت گزارش کنید🙏 باتشکر 😊</li>
+</ul>
+</section>
+
+    </main>
+
+
+    <button
+        class="backToTop"
+        type="button"
+        aria-label="بازگشت به ابتدای صفحه"
+    >
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+
+    <script src="../src/themeSwitcher.js"></script>
+    <script src="../src/fontSizeSwitcher.js"></script>
+    <script src="../src/aboutModal.js"></script>
+    <script src="../src/quickNavigation.js"></script>
+    <script src="../src/print.js"></script>
+    <script src="../src/search.js"></script>
+    <script src="../src/highlight.js"></script>
+    <script src="../src/stickyNotes.js"></script>
+    <script src="../src/viewPersistence.js"></script>
+    <script src="../src/questionInteractions.js"></script>
+    <script src="../src/fontSwitcher.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarToggle = document.querySelector(".sidebarToggle");
+    const sidebarBackdrop = document.querySelector(".sidebarBackdrop");
+
+    function openSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.add("isOpen");
+        sidebarBackdrop.classList.add("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "true");
+        sidebar.setAttribute("aria-hidden", "false");
+    }
+
+    function closeSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.remove("isOpen");
+        sidebarBackdrop.classList.remove("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "false");
+        sidebar.setAttribute("aria-hidden", "true");
+    }
+
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener("click", () => {
+            if (sidebar.classList.contains("isOpen")) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+    }
+
+    if (sidebarBackdrop) {
+        sidebarBackdrop.addEventListener("click", closeSidebar);
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeSidebar();
+        }
+    });
+
+    document.querySelectorAll(".tocItem").forEach((item) => {
+        item.addEventListener("click", closeSidebar);
+    });
+</script>
+
+</body>
+
+</html>

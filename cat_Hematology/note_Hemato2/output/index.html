@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Hemoglobin Kinetics</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/rtl.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../node_modules/katex/dist/katex.min.css"
+    >
+
+    <link rel="stylesheet" href="../styles/dark.css">
+    <link rel="stylesheet" href="../styles/forest.css">
+    <link rel="stylesheet" href="../styles/paperLike.css">
+    <link rel="stylesheet" href="../styles/neon.css">
+    <link rel="stylesheet" href="../styles/print.css" media="print">
+
+    <script src="../node_modules/lucide/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+
+    <div class="printBrand" aria-hidden="true" style="display:none">پاپیروس</div>
+
+    <header class="appHeader">
+
+        <button
+            class="sidebarToggle"
+            type="button"
+            aria-label="باز کردن فهرست مطالب"
+            aria-expanded="false"
+        >
+            <i data-lucide="panel-left"></i>
+        </button>
+
+
+        <div class="appTitle">
+            پاپیروس
+        </div>
+
+
+        <div class="headerControls">
+
+<button
+    class="searchButton"
+    type="button"
+    aria-label="جستجو در جزوه"
+    aria-expanded="false"
+>
+    <i data-lucide="search"></i>
+</button>
+
+<div class="highlightSwitcher">
+
+    <button
+        class="highlightToggle"
+        type="button"
+        aria-label="هایلایت"
+        aria-expanded="false"
+    >
+        <i data-lucide="highlighter"></i>
+    </button>
+
+
+<div
+    class="highlightOptions"
+    aria-hidden="true"
+>
+
+    <button
+        class="highlightPowerToggle"
+        type="button"
+        aria-label="روشن یا خاموش کردن هایلایت"
+        aria-pressed="true"
+    >
+        <i data-lucide="highlighter"></i>
+        <span>هایلایت روشن</span>
+    </button>
+
+        <div class="highlightColors">
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#fff176"
+                aria-label="هایلایت زرد"
+                style="--highlightColor: #fff176;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#a5d6a7"
+                aria-label="هایلایت سبز"
+                style="--highlightColor: #a5d6a7;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#90caf9"
+                aria-label="هایلایت آبی"
+                style="--highlightColor: #90caf9;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ce93d8"
+                aria-label="هایلایت بنفش"
+                style="--highlightColor: #ce93d8;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ffab91"
+                aria-label="هایلایت نارنجی"
+                style="--highlightColor: #ffab91;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ef9a9a"
+                aria-label="هایلایت قرمز"
+                style="--highlightColor: #ef9a9a;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#f48fb1"
+                aria-label="هایلایت صورتی"
+                style="--highlightColor: #f48fb1;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#80cbc4"
+                aria-label="هایلایت فیروزه‌ای"
+                style="--highlightColor: #80cbc4;"
+            ></button>
+
+        </div>
+
+
+        <div class="highlightDivider"></div>
+
+
+        <label
+            class="highlightCustomColor"
+            aria-label="انتخاب رنگ دلخواه"
+        >
+            <input
+                class="highlightColorInput"
+                type="color"
+                value="#fff176"
+            >
+
+            <i data-lucide="palette"></i>
+        </label>
+
+
+        <button
+            class="highlightEraser"
+            type="button"
+            aria-label="پاک کردن هایلایت"
+        >
+            <i data-lucide="eraser"></i>
+            <span>پاک‌کن</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="stickyNotesSwitcher">
+
+    <button
+        class="stickyNotesToggle"
+        type="button"
+        aria-label="یادداشت‌های چسبان"
+        aria-expanded="false"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+</div>
+
+            <div class="fontSizeSwitcher">
+
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="decrease"
+                    aria-label="کاهش اندازه فونت"
+                >
+                    <i data-lucide="minus"></i>
+                </button>
+
+<button
+    type="button"
+    class="fontSizeControl fontSwitchControl"
+    aria-label="تغییر فونت"
+>
+    <i data-lucide="type"></i>
+</button>
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="increase"
+                    aria-label="افزایش اندازه فونت"
+                >
+                    <i data-lucide="plus"></i>
+                </button>
+
+            </div>
+
+
+            <div class="themeSwitcher">
+
+                <button
+                    class="themeToggle"
+                    type="button"
+                    aria-label="تغییر تم"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="sun"></i>
+                </button>
+
+<div class="themeOptions">
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="light"
+        aria-label="تم روشن"
+    >
+        <i data-lucide="sun"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="dark"
+        aria-label="تم تاریک"
+    >
+        <i data-lucide="moon"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="forest"
+        aria-label="تم جنگلی"
+    >
+        <i data-lucide="trees"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="paperLike"
+        aria-label="تم پیپر لایک"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+<button
+    class="themeButton"
+    type="button"
+    data-theme="neon"
+    aria-label="تم نئون"
+>
+<i data-lucide="zap"></i>
+</button>
+
+
+</div>
+
+            </div>
+
+<button
+    class="printButton"
+    type="button"
+    aria-label="چاپ جزوه"
+>
+    <i data-lucide="printer"></i>
+</button>
+
+
+            <button
+                class="aboutButton"
+                type="button"
+                aria-label="درباره ما"
+            >
+                <i data-lucide="users-round"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+<div
+    class="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="searchPanelContent">
+
+        <div class="searchInputWrapper">
+
+            <i data-lucide="search"></i>
+
+            <input
+                class="searchInput"
+                type="search"
+                placeholder="جستجو در جزوه..."
+                aria-label="جستجو در جزوه"
+                autocomplete="off"
+            >
+
+            <button
+                class="searchClearButton"
+                type="button"
+                aria-label="پاک کردن جستجو"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="searchResultsInfo">
+            <span class="searchResultsCount">۰ نتیجه</span>
+
+            <div class="searchNavigation">
+
+                <button
+                    class="searchPreviousButton"
+                    type="button"
+                    aria-label="نتیجه قبلی"
+                    disabled
+                >
+                    <i data-lucide="chevron-up"></i>
+                </button>
+
+                <button
+                    class="searchNextButton"
+                    type="button"
+                    aria-label="نتیجه بعدی"
+                    disabled
+                >
+                    <i data-lucide="chevron-down"></i>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    <aside
+        class="sidebar"
+        aria-label="فهرست مطالب"
+        aria-hidden="true"
+    >
+
+        <div class="sidebarHeader">
+            <h2>فهرست مطالب</h2>
+        </div>
+
+        <nav
+            class="sidebarContent"
+            aria-label="فهرست مطالب"
+        >
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-1"
+                >
+                    ۱. مقدمه و کلیات
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-2"
+                >
+                    ۲. متن اصلی جزوه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-3"
+                >
+                    ساختار هموگلوبین و Heme
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-4"
+                >
+                    ساختارهای پروتئینی globin
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-5"
+                >
+                    اتصال اکسیژن و منحنی dissociation
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-6"
+                >
+                    ژن‌های globin و انواع هموگلوبین
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-7"
+                >
+                    Hematopoiesis
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-8"
+                >
+                    تنظیم اریتروپوئز
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-9"
+                >
+                    همولیز
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-10"
+                >
+                    ۳. جداول مرور سریع
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-11"
+                >
+                    سطوح سازمان‌یافتگی هموگلوبین
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-12"
+                >
+                    Heme و آهن
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-13"
+                >
+                    مراحل و تنظیم سنتز heme
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-14"
+                >
+                    پیامدهای پورفیریا و تخریب heme
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-15"
+                >
+                    ساختارهای پروتئینی globin
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-16"
+                >
+                    حالت هموگلوبین و فشار اکسیژن
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-17"
+                >
+                    P50 و جابه‌جایی منحنی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-18"
+                >
+                    خانواده‌های ژنی و انواع هموگلوبین
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-19"
+                >
+                    تغییر هموگلوبین در رشد
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-20"
+                >
+                    محل‌های خون‌سازی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-21"
+                >
+                    HIF و تنظیم اریتروپویتین
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-22"
+                >
+                    اثر اریتروپویتین و همولیز
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-23"
+                >
+                    ۴. اصطلاحات و تعاریف
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-24"
+                >
+                    ۵. خود‌ارزیابی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-25"
+                >
+                    سوالات تشریحی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-26"
+                >
+                    سوالات تستی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-27"
+                >
+                    ۶. ادیتور و منابع استفاده‌شده
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-28"
+                >
+                    ۷. گزارش تکمیل بودن محتوا
+                </a>
+            
+        </nav>
+
+    </aside>
+
+
+    <div class="sidebarBackdrop"></div>
+
+<aside
+    class="stickyNotesPanel"
+    aria-label="یادداشت‌های چسبان"
+    aria-hidden="true"
+>
+
+    <div class="stickyNotesPanelHeader">
+
+        <h2>یادداشت‌های چسبان</h2>
+
+        <button
+            class="addStickyNoteButton"
+            type="button"
+        >
+            <i data-lucide="plus"></i>
+            <span>یادداشت جدید</span>
+        </button>
+
+    </div>
+
+    <div class="stickyNotesPanelContent">
+
+        <div class="stickyNotesEmptyState">
+<i data-lucide="notebook-pen"></i>
+
+            <p>
+                هنوز یادداشتی ایجاد نکرده‌اید.
+            </p>
+
+        </div>
+
+        <div class="stickyNotesList"></div>
+
+    </div>
+
+</aside>
+
+<div class="stickyNotesBackdrop"></div>
+
+
+    <div
+        class="aboutModal"
+        aria-hidden="true"
+    >
+
+        <div class="aboutModalBackdrop"></div>
+
+        <section
+            class="aboutModalContent"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="aboutTitle"
+        >
+
+            <button
+                class="aboutCloseButton"
+                type="button"
+                aria-label="بستن"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <h2 id="aboutTitle">
+                آدم‌هایی که اینجا رو ساختن
+            </h2>
+
+            <p class="aboutIntroduction">
+                ما یک تیم کوچک هستیم که باور داریم یادگیری باید
+                لذت‌بخش، عمیق، و در دسترس باشد. جزوه‌ساز تلاش ماست
+                برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً
+                بتوانی با آن‌ها چیزی یاد بگیری.
+            </p>
+
+
+<div class="developerList">
+
+    <article class="developerCard">
+        <h3>شبنم رضاپور</h3>
+        <p>کسی که PDFها را راضی کرد محتوایشان را بی‌کم‌وکاست لو بدهند.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیر‌حسین شکری‌زاده سعادت‌آباد</h3>
+        <p>صدای کلاس را به متن تبدیل کرد، حتی وقتی استاد وسط جمله با میکروفون قهر می‌کرد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>مهراد اسدی</h3>
+        <p>پرامپت‌ها را طوری چید که LLM فکر کرد دارد پایان‌نامه دکتری می‌نویسد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیرسالار سهام‌پور</h3>
+        <p>مارک‌داون را به HTML تبدیل کرد و به جزوه ظاهری داد که آدم دلش بخواهد بخواندش.</p>
+    </article>
+
+</div>
+
+            <p class="aboutFooter">
+                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد.
+                <br>
+                امیدواریم یادگیریت را لذت‌بخش‌تر کند.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <div class="quickNavigation">
+        <div class="quickNavigationList"></div>
+    </div>
+
+
+    <main class="noteContainer">
+
+<div class="stickyNotesLayer"></div>
+
+        <section class="noteHeader">
+
+            <div class="noteMetadata">
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">درس</span>
+                    <span class="metadataValue">هماتولوژی 1</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">مبحث</span>
+                    <span class="metadataValue">هماتولوژی - هموگلوبین و سینتیک هموگلوبین - جلسه دوم</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">استاد</span>
+                    <span class="metadataValue">Mj.Sharifi Ph.D</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ جلسه</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ تولید جزوه</span>
+                    <span class="metadataValue generatedDate">2026-10-12T19:48:42</span>
+                </span>
+
+            </div>
+
+
+            <div class="aiWarning">
+                <i data-lucide="triangle-alert"></i>
+
+                <p>
+                    این جزوه با استفاده از جزوه‌ساز پاپیروس و به صورت خودکار تولید شده است.
+                    ممکن است شامل خطا یا برداشت نادرست باشد و
+                    نیازمند بررسی و بازبینی مجدد است.
+                </p>
+            </div>
+
+        </section>
+
+
+<section class="noteSection introductionSection">
+    <h2 id="heading-1">۱. مقدمه و کلیات</h2>
+<p>مهم‌ترین وظیفهٔ هموگلوبین، انتقال اکسیژن از ریه به بافت‌ها و انتقال CO₂ از بافت‌ها به ریه است؛ هموگلوبین مهم‌ترین عملکرد گلبول قرمز را انجام می‌دهد. در این درس، ساختار هموگلوبین و heme، سنتز heme، ساختارهای پروتئینی globin، اتصال اکسیژن و منحنی dissociation، ژن‌ها و انواع هموگلوبین، hematopoiesis، تنظیم اریتروپوئز و همولیز بررسی می‌شوند.</p>
+</section>
+
+<section class="noteSection mainSection">
+    <h2 id="heading-2">۲. متن اصلی جزوه</h2>
+<h3 id="heading-3">ساختار هموگلوبین و Heme</h3>
+<h4>ساختار زنجیره‌ها و تترامر</h4>
+<p>هموگلوبین از Heme و Globin ساخته شده است. هر مولکول هموگلوبین به‌طور کلی یک تترامر (Tetramer)، یعنی مجموعه‌ای از چهار زنجیره، است و از دو دایمر (Dimer) تشکیل می‌شود.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent">تترامر (Tetramer):
+مجموعه‌ای از چهار زنجیره؛ هموگلوبین به‌طور کلی از چهار زنجیره تشکیل می‌شود.</div></div>
+<p>هموگلوبین A (HbA)، که در این درس هنگام گفتن «هموگلوبین» معمولاً منظور است، هموگلوبین غالب بزرگسالان است و حدود ۹۷ تا ۹۸ درصد هموگلوبین بزرگسالان را تشکیل می‌دهد.</p>
+<p>HbA از دو دایمر آلفا-بتا تشکیل شده است؛ هر مونومر آلفا با یک مونومر بتا جفت می‌شود، نه اینکه دو زنجیرهٔ آلفا با دو زنجیرهٔ بتا جفت شوند. این دایمرها با برهم‌کنش‌های غیرکووالانسی به هم متصل‌اند.</p>
+<p><img src="../data/assets/image1.jpg" alt="تصویر ۱">
+<em>تصویر ۱</em></p>
+<p>هر زنجیرهٔ آلفا حدود ۱۴۱ آمینواسید و هر زنجیرهٔ بتا حدود ۱۴۶ آمینواسید دارد. هموگلوبین درون گلبول قرمز به‌صورت مونومر یا تک‌رشته‌ای آزاد نیست و برای عملکرد طبیعی باید به‌صورت تترامر باشد. مونومر پایدار و کارآمد نیست و خیلی سریع پس از ساخته‌شدن، دایمر تشکیل می‌دهد. دایمر آلفا-بتا قوی‌ترین ساختار هموگلوبین است و تشکیل آن برای پایداری گلوبین تازه‌سنتزشده ضروری است. تترامرشدن نیز برای عملکرد مناسب هموگلوبین ضرورت دارد. دایمر تا حدی توانایی انتقال اکسیژن و CO₂ دارد، اما عملکرد کامل به تترامر وابسته است.</p>
+<table>
+<thead>
+<tr>
+<th>سطح سازمان‌یافتگی هموگلوبین</th>
+<th>ویژگی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>مونومر</td>
+<td>به‌صورت آزاد پایدار و کارآمد نیست؛ پس از ساخته‌شدن خیلی سریع دایمر تشکیل می‌دهد.</td>
+</tr>
+<tr>
+<td>دایمر آلفا-بتا</td>
+<td>قوی‌ترین ساختار هموگلوبین است؛ برای پایداری گلوبین تازه‌سنتزشده ضرورت دارد و تا حدی توانایی انتقال اکسیژن و CO₂ دارد.</td>
+</tr>
+<tr>
+<td>تترامر</td>
+<td>از دو دایمر تشکیل می‌شود؛ برای عملکرد طبیعی و کامل هموگلوبین ضرورت دارد.</td>
+</tr>
+</tbody></table>
+<h4>جایگاه Heme در Globin</h4>
+<p>اتم آهن در مرکز heme قرار دارد و heme در جایگاه مشخصی از globin، یعنی بین هلیکس‌های E و F، جای می‌گیرد. این بخش از globin «پاکت heme» نامیده می‌شود. هر زنجیرهٔ globin هفت هلیکس دارد که از انتهای N-terminal با حرف A تا انتهای C-terminal با حرف H نام‌گذاری می‌شوند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent">پاکت Heme:
+جایگاه مشخصی از globin بین هلیکس‌های E و F که heme در آن قرار می‌گیرد.</div></div>
+<p>پاکت heme آب‌گریز است؛ ورود آب یا مولکول‌های قطبی دیگر به آن می‌تواند موجب اکسیدشدن heme و به‌هم‌خوردن ساختار شود. در برخی اختلالات ارثی هموگلوبین، جهش باعث می‌شود به‌جای آمینواسید آب‌گریز، آمینواسید آب‌دوست در پاکت قرار گیرد؛ در نتیجه، آب وارد می‌شود و heme ممکن است از پاکت بیرون بریزد. این اختلالات در جلسات بعد با جزئیات بررسی می‌شوند.</p>
+<p><img src="../data/assets/assets/image2.jpg" alt="تصویر 2">
+<em>تصویر 2</em></p>
+<h4>ساختار و اتصال آهن در heme</h4>
+<p>هِم (heme) ساختاری تتراپیرولی دارد؛ یعنی از چهار حلقهٔ پیرول تشکیل شده است. این ساختار اتم آهن را در مرکز خود نگه می‌دارد و چهار جایگاه کئوردیناسیون آهن را اشغال می‌کند. اتم آهن در هِمِ دوظرفیتی، ⁺Fe²، است. عدد کئوردیناسیون آهن ۶ است: چهار جایگاه را حلقهٔ هِم اشغال می‌کند (از طریق چهار اتم نیتروژن pyrrole). یکی از دو جایگاه باقی‌مانده را هیستیدین پروکسیمال (proximal His) به‌طور مستقیم و از طریق اتم نیتروژن ایمیدازول اشغال می‌کند و جایگاه ششم - در فرم اکسی‌هِم - توسط مولکول O₂ گرفته می‌شود. اکسیژن در سمت هیستیدین دیستال (distal His) قرار می‌گیرد، اما هیستیدین دیستال به آهن متصل نمی‌شود؛ بلکه از طریق پیوند هیدروژنی و اثرات فضایی/الکترواستاتیکی، اتصال O₂ به آهن را پایدار و تنظیم می‌کند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent">ساختار تتراپیرولی (tetrapyrrole):
+ساختاری متشکل از چهار حلقهٔ پیرول.</div></div>
+<p><img src="../data/assets/assets/image3.png" alt="تصویر 3">
+<em>تصویر 3</em></p>
+<p>آهن نباید در بدن آزاد باشد، چون در صورت اکسیدشدن می‌تواند به بافت‌ها آسیب برساند. اتم آهن در مرکز heme قرار می‌گیرد و heme نیز به‌وسیلهٔ globin بسته‌بندی می‌شود؛ بنابراین، هم globin و هم heme برای نگهداری ایمن آهن ضروری‌اند. heme آزاد نیز خطرناک است و باید در globin محصور باشد. heme آزاد درون سلول به‌سرعت تخریب و به بیلی‌روبین تبدیل می‌شود؛ بیلی‌روبین عامل زردی نوزادان است. نوزادان مبتلا به زردی را گاهی زیر نور قرار می‌دهند. این موضوع در درس‌های هماتولوژی و بیوشیمی با جزئیات بیشتری بررسی می‌شود.</p>
+<p>وقتی می‌گوییم هموگلوبین اکسیژنه است، منظور اتصال چهار مولکول O₂ به یک تترامر هموگلوبین است؛ هر مونومر به یک مولکول O₂ متصل می‌شود.</p>
+<h4>سنتز هموگلوبین و heme</h4>
+<h5>سنتز globin و محل تولید هموگلوبین</h5>
+<p>گلوبین مانند پروتئین‌های دیگر از روی mRNA و به‌وسیلهٔ ریبوزوم‌ها ساخته می‌شود. پس از ساخته‌شدن گلوبین، heme با آن ترکیب می‌شود و هموگلوبین به وجود می‌آید. وقتی مقدار یا غلظت heme از حدی بیشتر شود، heme اضافی سنتز گلوبین را سرکوب می‌کند.</p>
+<p>همهٔ سلول‌های هسته‌دار بدن می‌توانند هموگلوبین بسازند، اما گلبول قرمز بالغ، با وجود اینکه بخش عمدهٔ محتوایش هموگلوبین است، به‌دلیل نداشتن هسته این توانایی را ندارد. بیشترین تولید هموگلوبین در پیش‌سازهای اریتروئیدی مغز استخوان صورت می‌گیرد؛ از جمله:</p>
+<ul>
+<li>پرونورموبلاست</li>
+<li>نورموبلاست بازوفیلیک</li>
+<li>نورموبلاست پلی‌کروماتوفیلیک</li>
+<li>نورموبلاست ارتوکروماتیک</li>
+</ul>
+<h5>انتقال آهن به پیش‌سازهای گلبول قرمز</h5>
+<p>برای ساخت heme، پیش‌سازهای گلبول قرمز به آهن نیاز دارند. ترانسفرین (transferrin) آهن را در خون منتقل می‌کند، زیرا آهن آزاد نمی‌ماند و باید به‌سرعت به مولکولی متصل شود. پیش‌سازهای گلبول قرمز تعداد زیادی گیرندهٔ ترانسفرین (transferrin receptor) بیان می‌کنند.</p>
+<p>ترانسفرینِ حامل آهن دو اتم ⁺Fe³ دارد و به‌وسیلهٔ گیرنده‌اش اندوسیتوز می‌شود. سپس در محیط اسیدی اندوزوم، آهن آزاد می‌شود و در دسترس مولکول heme قرار می‌گیرد.</p>
+<p><img src="../data/assets/assets/image4.jpg" alt="تصویر 4">
+<em>تصویر 4</em></p>
+<h5>مراحل سنتز heme</h5>
+<p>وقتی آهن هنوز در پروتوپورفیرین جای نگرفته، ساختار پیش از آن پروتوپورفیرینوژن نامیده می‌شود. پروتوپورفیرین آخرین مرحله‌ای است که آهن هنوز در ساختارش قرار نگرفته است. با ورود آهن به پروتوپورفیرین، heme ساخته می‌شود. بنابراین، در این بحث دو جزء اصلی هموگلوبین عبارت‌اند از globin، که پروتئین است، و heme، که ساختاری تتراپیرولی دارد.</p>
+<p>مراحل مسیر سنتز heme عبارت‌اند از:</p>
+<ol>
+<li>سوکسینیل‌کوآنزیم A با گلایسین به‌وسیلهٔ آنزیم ALA synthase ترکیب می‌شود و ALA (aminolevulinic acid) تولید می‌کند. این واکنش در حضور پیریدوکسال، یعنی ویتامین B6، انجام می‌شود.</li>
+<li>سپس ALA dehydratase پورفوبیلینوژن (porphobilinogen) را می‌سازد.</li>
+<li>چهار پورفوبیلینوژن در ادامهٔ مسیر به تشکیل ساختار تتراپیرولی کمک می‌کنند. پورفوبیلینوژن یک مونوپیرول است و هر حلقه یک پیرول به شمار می‌رود.</li>
+<li>مسیر از پورفوبیلینوژن و واسطه‌های بعدی ادامه می‌یابد تا پروتوپورفیرینوژن و سپس پروتوپورفیرین ساخته شوند.</li>
+<li>در مرحلهٔ نهایی، آهن وارد پروتوپورفیرین می‌شود و heme را تشکیل می‌دهد.</li>
+</ol>
+<p>مراحل ابتدایی و انتهایی ساخت heme، از جمله جای‌گیری آهن در پروتوپورفیرین، در میتوکندری انجام می‌شوند. بخشی از مسیر در سیتوپلاسم است و مولکول پس از مرحلهٔ کوپروپورفیرینوژن دوباره وارد میتوکندری می‌شود.</p>
+<p>مهم‌ترین آنزیم تنظیم‌کنندهٔ سرعت این مسیر ALA synthase است. ferrochelatase یا heme synthase نیز آنزیمی مهم است، اما آنزیم اصلی تنظیم‌کنندهٔ سرعت مسیر ALA synthase است.</p>
+<p><img src="../data/assets/assets/image5.png" alt="تصویر 5">
+<em>تصویر 5</em></p>
+<p>در انتهای مسیر، Protoporphyrinogen IX به Protoporphyrin IX و سپس به Heme می‌رسد.</p>
+<p><img src="../data/assets/assets/image6.png" alt="تصویر 6">
+<em>تصویر 6</em></p>
+<p>عبارت «Urine and feces» نیز کنار برخی شاخه‌های مسیر آمده است. واسطه‌های Uroporphyrinogen I و Coproporphyrinogen I در ساختار heme شرکت نمی‌کنند و بیشتر از راه ادرار و مدفوع دفع می‌شوند؛ در مقابل، Uroporphyrinogen III و Coproporphyrinogen III در نهایت در ساخت heme شرکت می‌کنند.</p>
+<h5>پورفیریا و تخریب heme</h5>
+<p>اختلالات سنتز heme را پورفیریا (porphyria) می‌نامند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پورفیریا (porphyria):</strong>
+اختلالات سنتز heme.</div></div>
+<p>در بعضی فرم‌های پورفیریا، پیش‌سازهای heme در بدن، مثلاً در پوست یا دندان‌ها، رسوب می‌کنند و ممکن است دندان‌ها قرمز شوند. فرد فوتوفوبیا دارد و ممکن است از نور پرهیز کند و فقط شب بیرون برود. همچنین ممکن است دچار اختلالات عصبی و حمله‌های ناگهانی شود.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">به‌عنوان نمونهٔ مشهور فرهنگی، شخصیت دراکولا یا خون‌آشام ویژگی‌هایی مانند دندان‌های قرمز، رفتار تهاجمی و فوتوفوبیا دارد و گفته می‌شود این شخصیت از ویژگی‌های برخی زیرگروه‌های پورفیریا الهام گرفته است.</div></div>
+<p>تخریب heme در نهایت به تولید بیلی‌روبین می‌انجامد. بیلی‌روبین پس از طی مراحلی در روده شکسته می‌شود و استرکوبیلین تولید می‌کند؛ استرکوبیلین عامل رنگ مدفوع است.</p>
+<h3 id="heading-4">ساختارهای پروتئینی globin</h3>
+<p>بسیاری از مطالعات زیستی و بیوشیمیایی دربارهٔ ساختار اول، دوم و سوم پروتئین با استفاده از هموگلوبین و globin انجام شده‌اند.</p>
+<h4>ساختار اول و دوم</h4>
+<p><strong>ساختار اول (primary structure):</strong> ترتیب آمینواسیدها در زنجیرهٔ پروتئینی است.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>ساختار اول (primary structure):</strong>
+ترتیب آمینواسیدها در زنجیرهٔ پروتئینی.</div></div>
+<p><strong>ساختار دوم (secondary structure):</strong> در globin عمدتاً آلفا هلیکس (alpha helix) است. زنجیرهٔ تازه‌سنتزشده فقط رشته‌ای کشیده نیست و حالت فنری دارد. حدود ۷۰ تا ۸۰ درصد ساختار ثانویهٔ globin آلفا هلیکس است.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>ساختار دوم (secondary structure):</strong>
+ساختاری که در globin عمدتاً به‌شکل آلفا هلیکس (alpha helix) است؛ حدود ۷۰ تا ۸۰ درصد ساختار ثانویهٔ globin آلفا هلیکس است.</div></div>
+<p>ساختار ثانویه می‌تواند به‌شکل ورقهٔ بتا (beta sheet) نیز باشد. آلفا هلیکس از نظر ترمودینامیک، عملکرد و تکامل بیشتر به‌کار گرفته شده است.</p>
+<p>تبدیل پروتئین آلفا هلیکس به بتا شیت در آمیلوئیدوز یا بیماری جنون گاویِ مرتبط با پریون‌ها با مشکل همراه است. پریون‌ها می‌توانند باعث تبدیل ساختار پروتئین‌ها به بتا شیت شوند و بدن نمی‌تواند این بتا شیت‌ها را تخریب کند؛ در نتیجه، بافت آسیب می‌بیند.</p>
+<h4>ساختار سوم و چهارم</h4>
+<p><strong>ساختار سوم (tertiary structure):</strong> آرایش و تاخوردگی فضایی زنجیرهٔ پروتئینی است. پروتئین تا می‌خورد، گروه‌های آلوستریک و گروه‌های غیرپروتئینی مانند heme در جای خود قرار می‌گیرند و پروتئین ساختار سه‌بعدی پیدا می‌کند؛ heme نیز در پاکت مخصوص خود جای می‌گیرد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>ساختار سوم (tertiary structure):</strong>
+آرایش و تاخوردگی فضایی زنجیرهٔ پروتئینی که در آن پروتئین ساختار سه‌بعدی پیدا می‌کند و گروه‌های آلوستریک و گروه‌های غیرپروتئینی مانند heme در جای خود قرار می‌گیرند.</div></div>
+<p><strong>ساختار چهارم (quaternary structure):</strong> در هموگلوبین، آرایش چند زنجیره در تترامر است.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>ساختار چهارم (quaternary structure):</strong>
+آرایش چند زنجیره در تترامر هموگلوبین.</div></div>
+<p><img src="../data/assets/assets/image7.jpg" alt="تصویر 7">
+<em>تصویر 7</em></p>
+<h3 id="heading-5">اتصال اکسیژن و منحنی dissociation</h3>
+<h4>حالت‌های relaxed و tense</h4>
+<p>ترمودینامیک مورد بحث در این بخش مربوط به هموگلوبین A بزرگسالان است که از دو دایمر آلفا-بتا تشکیل می‌شود. وقتی هموگلوبین اکسیژنه است، تترامر در وضعیت relaxed قرار دارد. وقتی deoxygenated می‌شود، مولکولی به نام 2,3-DPG یا DPG بین زنجیره‌های بتا قرار می‌گیرد و تترامر را تحت فشار قرار می‌دهد؛ در این وضعیت، هموگلوبین در حالت tense است. حضور DPG باعث می‌شود هموگلوبین تمایل داشته باشد اکسیژن خود را از دست بدهد؛ بنابراین، DPG برای تحویل اکسیژن اهمیت دارد.</p>
+<h4>فشار اکسیژن و درصد اشباع هموگلوبین</h4>
+<p>اگر درصد اشباع هموگلوبین از اکسیژن (saturation) را در برابر فشار اکسیژن، PO₂، رسم کنیم، محور افقی فشار اکسیژن را برحسب میلی‌متر جیوه و محور عمودی درصد saturation را نشان می‌دهد. هرچه فشار اکسیژن بیشتر باشد، saturation بیشتر است.</p>
+<ul>
+<li>در ریه، فشار اکسیژن حدود ۹۵ تا ۱۰۰ میلی‌متر جیوه است و saturation بسیار بالاست.</li>
+<li>در بافت‌ها، فشار اکسیژن حدود ۴۰ میلی‌متر جیوه است و saturation حدود ۷۵ درصد می‌ماند؛ یعنی تقریباً ۲۵ درصد ظرفیت اکسیژن هموگلوبین به بافت‌ها تحویل داده می‌شود.</li>
+<li>در نمودار، نقطهٔ A در ریه و نقطهٔ B در بافت‌ها قرار دارد.</li>
+</ul>
+<p><img src="../data/assets/assets/image8.jpg" alt="تصویر 8">
+<em>تصویر 8</em></p>
+<h4>همکاری و شکل سیگموئیدی منحنی</h4>
+<p>منحنی اشباع هموگلوبین سیگموئیدی است، نه خطی. این شکل به همکاری یا همیاری (cooperativity) مربوط است: جداشدن یا اتصال نخستین O₂ دشوارتر است، اما پس از آن جداشدن یا اتصال اکسیژن‌های بعدی آسان‌تر می‌شود. برای تصور این موضوع، یک تترامر دارای چهار O₂ را در نظر بگیرید؛ برای جداشدن O₂ نخست انرژی بیشتری لازم است و جداشدن O₂ بعدی آسان‌تر می‌شود.</p>
+<p>ورود نخستین اکسیژن، شکل فضایی مونومر اکسیژنه را کمی تغییر می‌دهد. هلیکس‌ها و زاویه‌ها در مقیاس آنگستروم جابه‌جا می‌شوند و این تغییر به تترامر منتقل می‌شود؛ در نتیجه، بر مونومر مجاور اثر می‌گذارد و آن مونومر آسان‌تر اکسیژن می‌پذیرد. برعکس، جداشدن اکسیژن نیز جداشدن اکسیژن از مونومر مجاور را آسان‌تر می‌کند. این همکاری باعث شکل سیگموئیدی منحنی می‌شود.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>همکاری یا همیاری (cooperativity):</strong>
+پدیده‌ای که در آن اتصال یا جداشدن نخستین O₂ دشوارتر است، اما پس از آن اتصال یا جداشدن اکسیژن‌های بعدی آسان‌تر می‌شود؛ این همکاری باعث شکل سیگموئیدی منحنی اشباع هموگلوبین است.</div></div>
+<h4>P50 و جابه‌جایی منحنی</h4>
+<p>فشاری که در آن ۵۰ درصد هموگلوبین‌ها اکسیژنه‌اند، P50 نام دارد. این مقدار برای هموگلوبین معمولاً حدود ۲۶ تا ۳۰ میلی‌متر جیوه است و در اسلاید مقدار Normal P50 = 28 mm Hg نیز آمده است. در توضیح مدرس، در فشار حدود ۲۶ تا ۲۷ میلی‌متر جیوه حدود ۵۰ درصد محتوای هموگلوبین گلبول‌های قرمز اکسیژنه است.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>P50:</strong>
+فشاری که در آن ۵۰ درصد هموگلوبین‌ها اکسیژنه‌اند.</div></div>
+<p>افزایش P50 یعنی برای اکسیژنه‌شدن ۵۰ درصد هموگلوبین‌ها فشار اکسیژن بیشتری لازم است و منحنی به سمت راست می‌رود (right shift). کاهش P50 یعنی هموگلوبین در فشار پایین‌تری اکسیژنه می‌شود و منحنی به سمت چپ می‌رود (left shift).</p>
+<p>عوامل ایجادکنندهٔ right shift عبارت‌اند از:</p>
+<ul>
+<li>افت pH</li>
+<li>افزایش 2,3-DPG</li>
+<li>افزایش دما</li>
+<li>فعالیت بدنی شدید</li>
+</ul>
+<p>این عوامل P50 را افزایش می‌دهند، تمایل هموگلوبین به اکسیژن را کاهش می‌دهند و تحویل اکسیژن به بافت را آسان‌تر می‌کنند. افزایش DPG، افزایش دما و افت pH می‌توانند در پی فعالیت بدنی شدید رخ دهند. حالت‌های برعکس، مانند افزایش pH، کاهش DPG و افت دما، موجب left shift می‌شوند.</p>
+<p><img src="../data/assets/assets/image9.jpg" alt="تصویر 9">
+<em>تصویر 9</em></p>
+<h4>تحویل اکسیژن در شرایط فعالیت یا هیپوکسی</h4>
+<p>در ورزش شدید یا اسیدوز بافتی، افزایش 2,3-DPG تحویل اکسیژن را آسان‌تر می‌کند. ظرفیت اکسیژن‌رسانیِ استفاده‌نشده در حالت عادی اهمیت دارد، چون در ورزش شدید یا خون‌ریزی شدید بدن ممکن است به اکسیژن‌رسانی بیشتری نیاز داشته باشد. در خون‌ریزی شدید نمی‌توان منتظر تولید گلبول‌های قرمز تازه ماند؛ طبق توضیح مدرس، حدود یک هفته طول می‌کشد تا گلبول‌های قرمز جدید وارد جریان خون شوند. اگر هیپوکسی به‌خصوص مغز را تحت‌تأثیر قرار دهد، آسیب ممکن است رخ دهد؛ ازاین‌رو، ظرفیت اضافهٔ هموگلوبین در چنین شرایطی قابل استفاده است.</p>
+<p>برخی هموگلوبین‌های ارثی تمایل زیادی به اکسیژن دارند و high-affinity hemoglobin نامیده می‌شوند؛ P50 آن‌ها کاهش می‌یابد و منحنی left shift می‌شود. در low-affinity hemoglobin، P50 افزایش می‌یابد و تحویل اکسیژن آسان‌تر است. این موارد در مبحث اختلالات هموگلوبین با جزئیات بیشتری بررسی می‌شوند.</p>
+<h3 id="heading-6">ژن‌های globin و انواع هموگلوبین</h3>
+<h4>خانواده‌های ژنی و دوره‌های رشد</h4>
+<p>ژن‌های زنجیره‌های globin در دو خانواده قرار دارند: خانوادهٔ آلفا روی کروموزوم ۱۶ و خانوادهٔ بتا روی کروموزوم ۱۱. ترکیب زنجیره‌ها هموگلوبین‌های مختلفی می‌سازد. رویان به دورهٔ یک تا دو ماه اول بارداری گفته می‌شود و پس از آن دورهٔ جنینی آغاز می‌شود.</p>
+<p><img src="../data/assets/assets/image10.jpg" alt="تصویر 10">
+<em>تصویر 10</em></p>
+<p>زنجیره‌های خانوادهٔ آلفا و زتا روی کروموزوم ۱۶ و زنجیره‌های خانوادهٔ بتا، دلتا، گاما و اپسیلون روی کروموزوم ۱۱ قرار دارند.</p>
+<h4>انواع هموگلوبین</h4>
+<ul>
+<li>هموگلوبین‌های رویانی:<ul>
+<li>Hb Gower 1: ζ₂α₂</li>
+</ul>
+</li>
+<li><ul>
+<li>Hb Gower 2: α₂ε₂</li>
+</ul>
+</li>
+<li><ul>
+<li>Hb Portland: ζ₂γ₂</li>
+</ul>
+</li>
+<li>HbF از α₂γ₂ تشکیل شده و هموگلوبین غالب دورهٔ بارداری است.</li>
+<li>هموگلوبین A از α₂β₂ تشکیل می‌شود.</li>
+<li>هموگلوبین A₂ از α₂δ₂ تشکیل می‌شود. زنجیرهٔ دلتا از زمان تولد یا کمی پیش از آن ساخته می‌شود و HbA₂ از نظر فیزیولوژیک عملکرد زیادی ندارد، هرچند مقداری از آن وجود دارد.</li>
+</ul>
+<h4>تغییر هموگلوبین از دورهٔ جنینی به بزرگسالی</h4>
+<p>در بدو تولد، حدود ۶۰ تا ۷۰ درصد هموگلوبین HbF و حدود ۲۰ تا ۳۰ درصد HbA است. پس از تولد، switching از HbF به هموگلوبین غالب بزرگسالان رخ می‌دهد و معمولاً بین ۶ماهگی تا ۲سالگی کامل می‌شود.</p>
+<p>زنجیره‌های رویانی زتا و اپسیلون در دو تا سه ماه نخست تولید می‌شوند؛ پس از آن، تولید گاما به‌شدت افزایش می‌یابد. بعد از تولد، تولید گاما افت می‌کند و زنجیرهٔ بتا افزایش می‌یابد؛ با کامل‌شدن switching، ترکیب آلفا و بتا HbA را می‌سازد. پس از ۲سالگی، HbF بسیار کم است، ممکن است دیده نشود یا کمتر از ۱ درصد باشد. HbA حدود ۹۷ تا ۹۸ درصد و HbA₂ حدود ۱٫۵ تا ۳ درصد است؛ در توضیح مدرس مقدار HbA₂ حدود ۱٫۵ تا ۳٫۵ درصد نیز ذکر شده است.</p>
+<p><img src="../data/assets/assets/image11.jpg" alt="تصویر 11">
+<em>تصویر 11</em></p>
+<p>در تصویر، F = γ₂، A = α₂β₂ و A₂ = α₂δ₂ درج شده‌اند؛ «Fetal to adult Hb switch» و سهم Polypeptide chains (%) در طول Time (months) تا زمان Birth و Infant نمایش داده می‌شود. نمودار نشان می‌دهد زنجیره‌های رویانی در ابتدای رشد تولید می‌شوند، گاما در دورهٔ جنینی افزایش می‌یابد و پس از تولد به‌تدریج جای خود را به بتا می‌دهد.</p>
+<h4>تنظیم بیان ژن‌های globin و افزایش HbF</h4>
+<p>خاموش‌شدن ژن‌ها با توقف رونویسی همراه است و فشرده‌شدن کروماتین از عوامل این خاموشی است. برای بیان ژن، هیستون‌ها باید آزاد شوند و کروماتینِ فشرده و بسته‌بندی‌شده باز شود؛ هنگام خاموش‌شدن ژن، ساختار دوباره فشرده و بسته‌بندی می‌شود.</p>
+<p>مطالعات مربوط به ژن‌های globin از مدل‌های مهم بررسی روشن و خاموش‌شدن ژن‌ها هستند؛ از جمله بررسی اینکه چرا در ماه‌های آغازین زنجیره‌های رویانی مانند اپسیلون و زتا ساخته می‌شوند و در دورهٔ جنینی زنجیرهٔ گاما تولید می‌شود. زنجیره‌های رویانی اپسیلون و زتا پس از خاموش‌شدن، به‌طور معمول دوباره فعال نمی‌شوند، اما HbF ممکن است دوباره فعال شود؛ برای نمونه، در بارداری سنتز HbF کمی افزایش می‌یابد.</p>
+<p>داروهایی مانند هیدروکسی‌اوره و آزاسیتیدین تولید HbF را افزایش می‌دهند و این افزایش به‌عنوان راهکاری درمانی برای بیماری داسی‌شکل و بتا تالاسمی به‌کار می‌رود. همچنین با استفاده از CRISPR یا «قیچی ژنتیک» تلاش شده است تولید HbF دوباره افزایش یابد. بیماری‌های خونی، از جمله بیماری داسی‌شکل و تالاسمی، از نخستین بیماری‌هایی بوده‌اند که در آن‌ها مطالعات in vivo با قیچی ژنتیکی انجام شده‌اند. زنجیره‌های globin و اختلالاتی مانند تالاسمی از مدل‌های مطالعهٔ روشن و خاموش‌شدن ژن‌ها نیز به شمار می‌روند.</p>
+<h3 id="heading-7">Hematopoiesis</h3>
+<p>در دورهٔ رویانی، خون‌سازی ابتدا در AGM و کیسهٔ زرده انجام می‌شود. در منابع قدیمی‌تر تأکید بیشتری بر کیسهٔ زرده بوده است، اما در سال‌های اخیر AGM به‌عنوان نخستین جایگاه آغاز خون‌سازی مورد تأکید قرار می‌گیرد. پس از آن، کبد و طحال در دورهٔ جنینی جایگاه‌های مهم خون‌سازی هستند. از میانه‌های بارداری، استخوان‌ها نیز محل خون‌سازی می‌شوند.</p>
+<p>در بزرگسالان، خون‌سازی عمدتاً در این نواحی انجام می‌شود:</p>
+<ul>
+<li>استخوان‌های پهن مانند لگن و جمجمه</li>
+<li>مهره‌ها و دنده‌ها</li>
+<li>انتهای proximal استخوان‌های دراز مانند استخوان ران و بازو</li>
+</ul>
+<p><img src="../data/assets/assets/image12.jpg" alt="تصویر 12">
+<em>تصویر 12</em></p>
+<p>یکی از مزیت‌های خون‌سازی در استخوان، محافظت است. سلول‌های مادر خون‌ساز به اشعه، به‌ویژه اشعهٔ UV خورشید، حساس‌اند. بافت هماتوپوئتیک بازسازی زیادی دارد؛ روزانه میلیاردها RBC، پلاکت و گلبول سفید تخریب و جایگزین می‌شوند. برخی سلول‌های مادر سال‌ها به‌صورت dormant باقی می‌مانند. قرارگرفتن در مغز استخوان یا فضای مغز استخوان از آن‌ها، به‌ویژه در برابر اشعهٔ UV، محافظت می‌کند.</p>
+<h3 id="heading-8">تنظیم اریتروپوئز</h3>
+<h4>اریتروپویتین و پاسخ به هیپوکسی</h4>
+<p>مهم‌ترین هورمون تنظیم‌کنندهٔ اریتروپوئز (erythropoiesis)، یعنی ساخته‌شدن گلبول‌های قرمز، اریتروپویتین است.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>اریتروپوئز (erythropoiesis):</strong>
+ساخته‌شدن گلبول‌های قرمز.</div></div>
+<p>اریتروپویتین عمدتاً در کلیه تولید می‌شود و مقدار بسیار کمتری نیز در کبد ساخته می‌شود؛ اثر تولید کبدی بر این سیستم ناچیز است. کلیه هیپوکسی را حس می‌کند.</p>
+<p>کم‌خونی شدید، بیماری قلبی، سیگارکشیدن زیاد یا high-affinity hemoglobin می‌توانند به هیپوکسی بافتی منجر شوند و تولید اریتروپویتین را افزایش دهند. high-affinity hemoglobin اکسیژن را به‌راحتی می‌گیرد، اما آن را به‌خوبی به بافت‌ها تحویل نمی‌دهد. سیگارکشیدن زیاد نیز می‌تواند با ایجاد هیپوکسی به افزایش غلظت گلبول‌های قرمز منجر شود.</p>
+<h4>نقش HIF در تولید اریتروپویتین</h4>
+<p>مهم‌ترین مولکول تنظیم‌کنندهٔ بیان ژن اریتروپویتین HIF (hypoxia-inducible factor) است که زیرواحدهای آلفا و بتا دارد. HIF به‌طور مداوم تولید می‌شود، اما زیرواحد آلفا در شرایط معمول ناپایدار است و تخریب می‌شود؛ زیرواحد بتا به‌تنهایی کافی نیست.</p>
+<p>در شرایط هیپوکسیک، HIF-α پایدار می‌شود و با HIF-β جفت می‌شود. این مجموعه به ناحیهٔ enhancer ژن اریتروپویتین متصل می‌شود و بیان آن را بالا می‌برد؛ در نتیجه، mRNA و سپس مقدار پروتئین اریتروپویتین افزایش می‌یابد.</p>
+<h4>محل تولید و کاربرد درمانی اریتروپویتین</h4>
+<p>اریتروپویتین (EPO) توسط سلول‌های بینابینی پری‌توبولار (peritubular interstitial cells) کلیه تولید می‌شود. این سلول‌ها خودشان سلول کلیوی نیستند؛ بلکه سلول‌های فیبروبلاست‌مانندی هستند که در فضای بینابینی و بین توبول‌های کلیوی (ناحیهٔ پری‌توبولار) قرار گرفته‌اند. این سلول‌ها در پاسخ به هیپوکسی، از طریق HIF-2α بیان EPO را افزایش می‌دهند. پس از افزایش تولید، اریتروپویتین وارد جریان خون می‌شود و به مغز استخوان می‌رود و در آنجا تولید گلبول‌های قرمز را تحریک می‌کند.</p>
+<p>بیماران مبتلا به بیماری مزمن کلیوی ممکن است به‌دلیل کاهش توانایی بافت کلیه در تولید اریتروپویتین دچار کم‌خونی شوند؛ برای درمان کم‌خونی این بیماران اریتروپویتین تجویز می‌شود.</p>
+<p><img src="../data/assets/assets/image13.png" alt="تصویر 13">
+<em>تصویر 13</em></p>
+<h4>اثر اریتروپویتین بر پیش‌سازهای گلبول قرمز</h4>
+<p>اریتروپویتین روی پیش‌سازهای گلبول قرمز، به‌ویژه CFU-E، اثر می‌گذارد و از آپوپتوز آن‌ها جلوگیری می‌کند. در نتیجه، تکثیر CFU-E و پیش‌سازهای گلبول قرمز در مغز استخوان افزایش می‌یابد و آزادسازی گلبول‌های قرمز جوان از مغز استخوان نیز بیشتر می‌شود.</p>
+<p>آخرین پیش‌ساز گلبول قرمز سلول ارتوکروماتیک است. پس از ازدست‌دادن هسته، این سلول به رتیکولوسیت تبدیل می‌شود.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>رتیکولوسیت:</strong>
+سلولی که پس از ازدست‌دادن هسته از سلول ارتوکروماتیک به وجود می‌آید؛ جوان‌ترین گلبول قرمز است.</div></div>
+<p>رتیکولوسیت جوان‌ترین گلبول قرمز است و گلبول قرمز کارآمدتری از آن نداریم. نام reticulocyte از reticulum به‌معنی رشته یا شبکه گرفته شده است. در رنگ‌آمیزی حیاتی با نیومتیلن بلو (new methylene blue)، رشته‌های ریبوزومی رتیکولوسیت دیده می‌شوند؛ این سلول‌ها پروتئین‌سازی زیادی دارند و پروتئینی که می‌سازند globin است.</p>
+<p>رتیکولوسیت‌ها نیز تحت‌تأثیر اریتروپویتین‌اند: هم تکثیر پیش‌سازهای اولیه افزایش می‌یابد و هم رتیکولوسیت‌ها زودتر وارد خون محیطی می‌شوند. در شرایط معمول، رتیکولوسیت‌ها حدود دو روز در مغز استخوان می‌مانند؛ با افزایش اریتروپویتین، ممکن است یک روز در مغز استخوان بمانند و زودتر وارد خون محیطی شوند. به گفتهٔ مدرس، این ورود زودتر به‌خودی‌خود مشکل عملکردی ایجاد نمی‌کند و عملکرد رتیکولوسیت‌ها خوب است.</p>
+<p><img src="../data/assets/assets/image14.png" alt="تصویر 14">
+<em>تصویر 14</em></p>
+<h3 id="heading-9">همولیز</h3>
+<p>همولیز در بدن می‌تواند داخل‌عروقی (intravascular) یا خارج‌عروقی (extravascular) باشد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>همولیز داخل‌عروقی (intravascular):</strong>
+تخریب گلبول قرمز درون رگ‌ها.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>همولیز خارج‌عروقی (extravascular):</strong>
+تخریب گلبول قرمز عمدتاً در کبد و طحال.</div></div>
+<p>همولیز داخل‌عروقی درون رگ‌ها رخ می‌دهد. همولیز خارج‌عروقی عمدتاً در کبد و طحال، به‌خصوص در طحال و کبد، اتفاق می‌افتد. در فرد سالم، بیش از ۹۰ درصد گلبول‌های قرمزی که عمر ۱۲۰روزهٔ خود را گذرانده‌اند به‌صورت خارج‌عروقی تخریب می‌شوند و کمتر از ۱۰ درصد تخریب داخل‌عروقی است.</p>
+<p>اگر تخریب گلبول‌های قرمز افزایش یابد و در پی آن کم‌خونی ایجاد شود، به آن کم‌خونی همولیتیک می‌گویند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>کم‌خونی همولیتیک:</strong>
+کم‌خونی‌ای که در پی افزایش تخریب گلبول‌های قرمز ایجاد می‌شود.</div></div>
+<p>این کم‌خونی می‌تواند داخل‌عروقی یا خارج‌عروقی باشد. برای نمونه، در فاویسم یا باقلازدگی تخریب گلبول قرمز رخ می‌دهد و کم‌خونی می‌تواند از نوع non-immune باشد، چون فاویسم در اثر نقص آنزیمی ایجاد می‌شود.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">فاویسم یا باقلازدگی نمونه‌ای از تخریب گلبول قرمز و کم‌خونی همولیتیک non-immune است؛ فاویسم در اثر نقص آنزیمی ایجاد می‌شود.</div></div>
+<p>کم‌خونی همولیتیک همچنین می‌تواند immune یا non-immune باشد. این اصطلاحات در جلسات بعد و هنگام بررسی کم‌خونی‌های همولیتیک با جزئیات بیشتری مطرح می‌شوند.</p>
+</section>
+
+<section class="noteSection quickTablesSection">
+    <h2 id="heading-10">۳. جداول مرور سریع</h2>
+<h3 id="heading-11">سطوح سازمان‌یافتگی هموگلوبین</h3>
+<table>
+<thead>
+<tr>
+<th>سطح</th>
+<th>ویژگی‌ها</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>مونومر</td>
+<td>آزاد، پایدار و کارآمد نیست؛ پس از ساخته‌شدن سریع دایمر تشکیل می‌دهد.</td>
+</tr>
+<tr>
+<td>دایمر آلفا-بتا</td>
+<td>قوی‌ترین ساختار هموگلوبین؛ برای پایداری گلوبین تازه‌سنتزشده ضروری؛ تا حدی قادر به انتقال اکسیژن و CO₂ است.</td>
+</tr>
+<tr>
+<td>تترامر</td>
+<td>از دو دایمر تشکیل می‌شود و برای عملکرد طبیعی و کامل هموگلوبین ضرورت دارد.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-12">Heme و آهن</h3>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>شرح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ساختار heme</td>
+<td>تتراپیرولی؛ دارای چهار حلقهٔ پیرول است.</td>
+</tr>
+<tr>
+<td>آهن در heme</td>
+<td>Fe²⁺ و واقع در مرکز heme.</td>
+</tr>
+<tr>
+<td>عدد کئوردیناسیون آهن</td>
+<td>۶؛ چهار جایگاه را حلقهٔ heme اشغال می‌کند و دو جایگاه باقی‌مانده در توضیح درس به هیستیدین proximal و O₂ مربوط‌اند.</td>
+</tr>
+<tr>
+<td>جایگاه heme در globin</td>
+<td>بین هلیکس‌های E و F، در پاکت heme.</td>
+</tr>
+<tr>
+<td>اتصال O₂ به هموگلوبین</td>
+<td>چهار مولکول O₂ به یک تترامر متصل می‌شوند؛ هر مونومر یک O₂ می‌گیرد.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-13">مراحل و تنظیم سنتز heme</h3>
+<table>
+<thead>
+<tr>
+<th>بخش مسیر</th>
+<th>نکته‌های بیان‌شده در درس</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>آغاز مسیر</td>
+<td>Succinyl CoA و Glycine با ALA synthase ترکیب می‌شوند و ALA تولید می‌شود؛ واکنش در حضور پیریدوکسال (ویتامین B6) انجام می‌شود.</td>
+</tr>
+<tr>
+<td>گام بعدی</td>
+<td>ALA dehydratase پورفوبیلینوژن را می‌سازد.</td>
+</tr>
+<tr>
+<td>ادامهٔ مسیر</td>
+<td>چهار پورفوبیلینوژن به تشکیل ساختار تتراپیرولی کمک می‌کنند؛ مسیر از واسطه‌های بعدی به پروتوپورفیرینوژن و پروتوپورفیرین می‌رسد.</td>
+</tr>
+<tr>
+<td>گام پایانی</td>
+<td>آهن وارد پروتوپورفیرین می‌شود و heme ساخته می‌شود.</td>
+</tr>
+<tr>
+<td>محل مسیر</td>
+<td>مراحل ابتدایی و انتهایی، از جمله جای‌گیری آهن، در میتوکندری‌اند؛ بخشی از مسیر در سیتوپلاسم انجام می‌شود و مولکول پس از مرحلهٔ کوپروپورفیرینوژن دوباره وارد میتوکندری می‌شود.</td>
+</tr>
+<tr>
+<td>تنظیم سرعت</td>
+<td>ALA synthase آنزیم اصلی تنظیم‌کنندهٔ سرعت مسیر است؛ ferrochelatase یا heme synthase نیز آنزیمی مهم است.</td>
+</tr>
+<tr>
+<td>شاخه‌های I و III</td>
+<td>طبق توضیح مدرس، Uroporphyrinogen I و Coproporphyrinogen I در ساخت heme شرکت نمی‌کنند و بیشتر از راه ادرار و مدفوع دفع می‌شوند؛ Uroporphyrinogen III و Coproporphyrinogen III در نهایت در ساخت heme شرکت می‌کنند.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-14">پیامدهای پورفیریا و تخریب heme</h3>
+<table>
+<thead>
+<tr>
+<th>موضوع</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>پورفیریا</td>
+<td>اختلالات سنتز heme؛ در بعضی فرم‌ها پیش‌سازهای heme در پوست یا دندان‌ها رسوب می‌کنند و ممکن است دندان‌ها قرمز شوند.</td>
+</tr>
+<tr>
+<td>پیامدهای ذکرشده</td>
+<td>فوتوفوبیا، پرهیز از نور، اختلالات عصبی و حمله‌های ناگهانی.</td>
+</tr>
+<tr>
+<td>تخریب heme</td>
+<td>در نهایت به تولید بیلی‌روبین می‌انجامد؛ بیلی‌روبین پس از طی مراحلی در روده به استرکوبیلین می‌رسد و استرکوبیلین عامل رنگ مدفوع است.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-15">ساختارهای پروتئینی globin</h3>
+<table>
+<thead>
+<tr>
+<th>ساختار پروتئین</th>
+<th>شرح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ساختار اول (primary)</td>
+<td>ترتیب آمینواسیدها در زنجیرهٔ پروتئینی.</td>
+</tr>
+<tr>
+<td>ساختار دوم (secondary)</td>
+<td>عمدتاً آلفا هلیکس؛ حدود ۷۰ تا ۸۰ درصد ساختار ثانویهٔ globin آلفا هلیکس است. ورقهٔ بتا نیز شکل دیگری از ساختار ثانویه است.</td>
+</tr>
+<tr>
+<td>ساختار سوم (tertiary)</td>
+<td>آرایش و تاخوردگی فضایی زنجیره؛ ساختار سه‌بعدی شکل می‌گیرد و heme در پاکت خود قرار می‌گیرد.</td>
+</tr>
+<tr>
+<td>ساختار چهارم (quaternary)</td>
+<td>آرایش چند زنجیره در تترامر هموگلوبین.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-16">حالت هموگلوبین و فشار اکسیژن</h3>
+<table>
+<thead>
+<tr>
+<th>وضعیت یا محل</th>
+<th>ویژگی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>هموگلوبین اکسیژنه</td>
+<td>تترامر در وضعیت relaxed قرار دارد.</td>
+</tr>
+<tr>
+<td>هموگلوبین deoxygenated</td>
+<td>2,3-DPG یا DPG بین زنجیره‌های بتا قرار می‌گیرد و تترامر در حالت tense است؛ حضور DPG تمایل هموگلوبین به ازدست‌دادن اکسیژن را افزایش می‌دهد.</td>
+</tr>
+<tr>
+<td>ریه، نقطهٔ A</td>
+<td>فشار اکسیژن حدود ۹۵ تا ۱۰۰ mmHg؛ saturation بسیار بالا.</td>
+</tr>
+<tr>
+<td>بافت‌ها، نقطهٔ B</td>
+<td>فشار اکسیژن حدود ۴۰ mmHg؛ saturation حدود ۷۵٪ و تقریباً ۲۵٪ ظرفیت اکسیژن هموگلوبین به بافت‌ها تحویل داده می‌شود.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-17">P50 و جابه‌جایی منحنی</h3>
+<table>
+<thead>
+<tr>
+<th>تغییر</th>
+<th>تغییر P50 و منحنی</th>
+<th>اثر</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>افت pH، افزایش 2,3-DPG، افزایش دما یا فعالیت بدنی شدید</td>
+<td>افزایش P50؛ right shift</td>
+<td>تمایل هموگلوبین به اکسیژن کاهش می‌یابد و تحویل اکسیژن به بافت آسان‌تر می‌شود.</td>
+</tr>
+<tr>
+<td>افزایش pH، کاهش DPG یا افت دما</td>
+<td>left shift</td>
+<td>هموگلوبین در فشار پایین‌تری اکسیژنه می‌شود.</td>
+</tr>
+<tr>
+<td>high-affinity hemoglobin</td>
+<td>کاهش P50؛ left shift</td>
+<td>تمایل به اکسیژن زیاد است.</td>
+</tr>
+<tr>
+<td>low-affinity hemoglobin</td>
+<td>افزایش P50</td>
+<td>تحویل اکسیژن آسان‌تر است.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-18">خانواده‌های ژنی و انواع هموگلوبین</h3>
+<table>
+<thead>
+<tr>
+<th>خانوادهٔ ژنی</th>
+<th align="right">کروموزوم</th>
+<th>زنجیره‌ها</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>آلفا</td>
+<td align="right">۱۶</td>
+<td>آلفا و زتا</td>
+</tr>
+<tr>
+<td>بتا</td>
+<td align="right">۱۱</td>
+<td>بتا، دلتا، گاما و اپسیلون</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>نوع هموگلوبین</th>
+<th>ترکیب زنجیره‌ها</th>
+<th>دوره یا نکته</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hb Gower 1</td>
+<td>زتا₂اپسیلون₂</td>
+<td>رویانی</td>
+</tr>
+<tr>
+<td>Hb Gower 2</td>
+<td>آلفا₂اپسیلون₂</td>
+<td>رویانی</td>
+</tr>
+<tr>
+<td>Hb Portland</td>
+<td>زتا₂گاما₂</td>
+<td>رویانی</td>
+</tr>
+<tr>
+<td>HbF</td>
+<td>آلفا₂گاما₂</td>
+<td>هموگلوبین غالب دورهٔ بارداری</td>
+</tr>
+<tr>
+<td>HbA</td>
+<td>آلفا₂بتا₂</td>
+<td>هموگلوبین غالب بزرگسالان</td>
+</tr>
+<tr>
+<td>HbA₂</td>
+<td>آلفا₂دلتا₂</td>
+<td>از نظر فیزیولوژیک عملکرد زیادی ندارد، هرچند مقداری از آن وجود دارد؛ زنجیرهٔ دلتا از زمان تولد یا کمی پیش از آن ساخته می‌شود.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-19">تغییر هموگلوبین در رشد</h3>
+<table>
+<thead>
+<tr>
+<th>زمان یا مرحله</th>
+<th>زنجیره‌ها و ترکیب هموگلوبین</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>دو تا سه ماه نخست</td>
+<td>زنجیره‌های رویانی زتا و اپسیلون تولید می‌شوند.</td>
+</tr>
+<tr>
+<td>دورهٔ جنینی</td>
+<td>تولید گاما به‌شدت افزایش می‌یابد؛ HbF غالب است.</td>
+</tr>
+<tr>
+<td>بدو تولد</td>
+<td>حدود ۶۰ تا ۷۰٪ HbF و حدود ۲۰ تا ۳۰٪ HbA است.</td>
+</tr>
+<tr>
+<td>پس از تولد</td>
+<td>تولید گاما کاهش و زنجیرهٔ بتا افزایش می‌یابد؛ switching از HbF به هموگلوبین غالب بزرگسالان رخ می‌دهد.</td>
+</tr>
+<tr>
+<td>حدود ۶ماهگی تا ۲سالگی</td>
+<td>switching معمولاً کامل می‌شود.</td>
+</tr>
+<tr>
+<td>پس از ۲سالگی</td>
+<td>HbF بسیار کم است، ممکن است دیده نشود یا کمتر از ۱٪ باشد؛ HbA حدود ۹۷ تا ۹۸٪ است. HbA₂ در متن حدود ۱٫۵ تا ۳٪ و در توضیح مدرس حدود ۱٫۵ تا ۳٫۵٪ ذکر شده است.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-20">محل‌های خون‌سازی</h3>
+<table>
+<thead>
+<tr>
+<th>دوره</th>
+<th>محل‌های خون‌سازی بیان‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>دورهٔ رویانی</td>
+<td>ابتدا AGM و کیسهٔ زرده؛ در سال‌های اخیر AGM به‌عنوان نخستین جایگاه آغاز خون‌سازی مورد تأکید قرار می‌گیرد.</td>
+</tr>
+<tr>
+<td>دورهٔ جنینی</td>
+<td>کبد و طحال؛ از میانه‌های بارداری استخوان‌ها نیز محل خون‌سازی می‌شوند.</td>
+</tr>
+<tr>
+<td>بزرگسالی</td>
+<td>استخوان‌های پهن مانند لگن و جمجمه، مهره‌ها و دنده‌ها، و انتهای proximal استخوان‌های دراز مانند استخوان ران و بازو.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-21">HIF و تنظیم اریتروپویتین</h3>
+<table>
+<thead>
+<tr>
+<th>شرایط</th>
+<th>وضعیت HIF و پیامد</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>شرایط معمول</td>
+<td>HIF به‌طور مداوم تولید می‌شود، اما زیرواحد آلفا ناپایدار است و تخریب می‌شود؛ زیرواحد بتا به‌تنهایی کافی نیست.</td>
+</tr>
+<tr>
+<td>شرایط هیپوکسیک</td>
+<td>HIF-α پایدار می‌شود، با HIF-β جفت می‌شود و مجموعه به enhancer ژن اریتروپویتین متصل می‌شود؛ بیان ژن، mRNA و مقدار پروتئین اریتروپویتین افزایش می‌یابد.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-22">اثر اریتروپویتین و همولیز</h3>
+<table>
+<thead>
+<tr>
+<th>موضوع</th>
+<th>شرح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>اثر بر پیش‌سازها، به‌ویژه CFU-E</td>
+<td>جلوگیری از آپوپتوز و افزایش تکثیر CFU-E و پیش‌سازها در مغز استخوان.</td>
+</tr>
+<tr>
+<td>آزادسازی از مغز استخوان</td>
+<td>آزادسازی گلبول‌های قرمز جوان افزایش می‌یابد.</td>
+</tr>
+<tr>
+<td>رتیکولوسیت‌ها</td>
+<td>زودتر وارد خون محیطی می‌شوند؛ زمان ماندن معمول در مغز استخوان حدود دو روز است و با افزایش اریتروپویتین ممکن است به یک روز برسد.</td>
+</tr>
+<tr>
+<td>همولیز داخل‌عروقی</td>
+<td>تخریب درون رگ‌ها؛ در فرد سالم کمتر از ۱۰٪ تخریب گلبول‌های قرمز از این نوع است.</td>
+</tr>
+<tr>
+<td>همولیز خارج‌عروقی</td>
+<td>تخریب عمدتاً در کبد و طحال؛ در فرد سالم بیش از ۹۰٪ گلبول‌های قرمزِ پایان‌یافتهٔ عمر ۱۲۰روزه به این روش تخریب می‌شوند.</td>
+</tr>
+<tr>
+<td>کم‌خونی همولیتیک</td>
+<td>می‌تواند بر اساس محل همولیز داخل‌عروقی یا خارج‌عروقی و بر اساس immune بودن، immune یا non-immune باشد. فاویسم یا باقلازدگی نمونهٔ non-immune و ناشی از نقص آنزیمی است.</td>
+</tr>
+</tbody></table>
+</section>
+
+<section class="noteSection keyTermsSection">
+    <h2 id="heading-23">۴. اصطلاحات و تعاریف</h2>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>تترامر (tetramer):</strong>
+مجموعه‌ای از چهار زنجیره؛ هموگلوبین به‌طور کلی از چهار زنجیره تشکیل می‌شود.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پاکت heme:</strong>
+جایگاه مشخصی از globin بین هلیکس‌های E و F که heme در آن قرار می‌گیرد.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>ساختار تتراپیرولی (tetrapyrrole):</strong>
+ساختاری متشکل از چهار حلقهٔ پیرول.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پورفیریا (porphyria):</strong>
+اختلالات سنتز heme.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>ساختار اول (primary structure)****:</strong>
+ترتیب آمینواسیدها در زنجیرهٔ پروتئینی.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>ساختار دوم (secondary structure)****:</strong>
+ساختاری که در globin عمدتاً به‌شکل آلفا هلیکس (alpha helix) است؛ حدود ۷۰ تا ۸۰ درصد ساختار ثانویهٔ globin آلفا هلیکس است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>ساختار سوم (tertiary structure)****:</strong>
+آرایش و تاخوردگی فضایی زنجیرهٔ پروتئینی که در آن پروتئین ساختار سه‌بعدی پیدا می‌کند و گروه‌های آلوستریک و گروه‌های غیرپروتئینی مانند heme در جای خود قرار می‌گیرند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>ساختار چهارم (quaternary structure)****:</strong>
+آرایش چند زنجیره در تترامر هموگلوبین.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>همکاری یا همیاری (cooperativity)****:</strong>
+پدیده‌ای که در آن اتصال یا جداشدن نخستین O₂ دشوارتر است، اما پس از آن اتصال یا جداشدن اکسیژن‌های بعدی آسان‌تر می‌شود؛ این همکاری باعث شکل سیگموئیدی منحنی اشباع هموگلوبین است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>P50</strong><strong>:</strong>
+فشاری که در آن ۵۰ درصد هموگلوبین‌ها اکسیژنه‌اند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>اریتروپوئز (erythropoiesis)****:</strong>
+ساخته‌شدن گلبول‌های قرمز.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>رتیکولوسیت</strong><strong>:</strong>
+سلولی که پس از ازدست‌دادن هسته از سلول ارتوکروماتیک به وجود می‌آید؛ جوان‌ترین گلبول قرمز است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>همولیز داخل‌عروقی (intravascular)****:</strong>
+تخریب گلبول قرمز درون رگ‌ها.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>همولیز خارج‌عروقی (extravascular)****:</strong>
+تخریب گلبول قرمز عمدتاً در کبد و طحال.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>کم‌خونی همولیتیک</strong><strong>:</strong>
+کم‌خونی‌ای که در پی افزایش تخریب گلبول‌های قرمز ایجاد می‌شود.</div></div>
+</section>
+
+<section class="noteSection selfAssessmentSection">
+    <h2 id="heading-24">۵. خود‌ارزیابی</h2>
+<h3 id="heading-25">سوالات تشریحی</h3>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>توضیح دهید هموگلوبین چگونه سازمان می‌یابد و چرا تشکیل تترامر برای عملکرد طبیعی اهمیت دارد.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>هموگلوبین از heme و globin ساخته می‌شود و در حالت کلی تترامری متشکل از چهار زنجیره و دو دایمر است. در HbA، هر دایمر از یک زنجیرهٔ آلفا و یک زنجیرهٔ بتا تشکیل می‌شود. مونومر پایدار و کارآمد نیست و سریعاً دایمر تشکیل می‌دهد؛ دایمر برای پایداری گلوبین تازه‌سنتزشده ضروری است و تا حدی اکسیژن و CO₂ انتقال می‌دهد، اما عملکرد کامل هموگلوبین به تترامر وابسته است.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>مراحل اصلی سنتز heme، آنزیم تنظیم‌کنندهٔ سرعت و محل‌های اصلی انجام مسیر را شرح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>سوکسینیل‌کوآنزیم A و گلایسین به‌وسیلهٔ ALA synthase و در حضور پیریدوکسال (ویتامین B6) ترکیب می‌شوند و ALA می‌سازند. سپس ALA dehydratase پورفوبیلینوژن را تولید می‌کند و مسیر از طریق واسطه‌ها به پروتوپورفیرینوژن و پروتوپورفیرین می‌رسد. در مرحلهٔ نهایی، آهن وارد پروتوپورفیرین می‌شود و heme ساخته می‌شود. ALA synthase تنظیم‌کنندهٔ اصلی سرعت مسیر است. مراحل ابتدایی و انتهایی در میتوکندری انجام می‌شوند؛ بخشی از مسیر در سیتوپلاسم است و پس از مرحلهٔ کوپروپورفیرینوژن، مولکول دوباره وارد میتوکندری می‌شود.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>همکاری در اتصال اکسیژن به هموگلوبین چگونه به شکل سیگموئیدی منحنی اشباع منجر می‌شود؟ P50 چه معنایی دارد؟</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>اتصال یا جداشدن نخستین O₂ دشوارتر است، اما پس از آن اتصال یا جداشدن اکسیژن‌های بعدی آسان‌تر می‌شود. اتصال نخستین اکسیژن شکل فضایی مونومر را کمی تغییر می‌دهد و این تغییر به تترامر و مونومر مجاور منتقل می‌شود؛ در نتیجه، اتصال یا جداشدن اکسیژن‌های بعدی آسان‌تر می‌شود و منحنی اشباع شکل سیگموئیدی پیدا می‌کند. P50 فشاری است که در آن ۵۰ درصد هموگلوبین‌ها اکسیژنه‌اند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>تغییر ترکیب هموگلوبین از دورهٔ رویانی و جنینی به بزرگسالی را همراه با زمان تقریبی switching توضیح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>زنجیره‌های رویانی زتا و اپسیلون در دو تا سه ماه نخست تولید می‌شوند و سپس تولید گاما در دورهٔ جنینی افزایش می‌یابد و HbF غالب می‌شود. پس از تولد، تولید گاما کاهش و بتا افزایش می‌یابد و HbA ساخته می‌شود. Switching معمولاً بین ۶ماهگی تا ۲سالگی کامل می‌شود. پس از ۲سالگی، HbF بسیار کم یا کمتر از ۱٪ است و HbA حدود ۹۷ تا ۹۸٪ هموگلوبین را تشکیل می‌دهد.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>نقش اریتروپویتین و HIF را در پاسخ به هیپوکسی و تولید گلبول قرمز شرح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در شرایط هیپوکسیک، HIF-α پایدار می‌شود و با HIF-β جفت می‌شود. این مجموعه به enhancer ژن اریتروپویتین متصل می‌شود و بیان ژن را افزایش می‌دهد؛ در نتیجه، mRNA و پروتئین اریتروپویتین بیشتر می‌شود. اریتروپویتین عمدتاً در کلیه تولید و به مغز استخوان منتقل می‌شود؛ روی پیش‌سازهای گلبول قرمز، به‌ویژه CFU-E، اثر می‌گذارد، از آپوپتوز آن‌ها جلوگیری می‌کند و تکثیر پیش‌سازها و آزادسازی گلبول‌های قرمز جوان را افزایش می‌دهد.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<h3 id="heading-26">سوالات تستی</h3>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>کدام گزینه دربارهٔ سازمان‌یافتگی HbA درست است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">از دو دایمر آلفا-بتا تشکیل می‌شود و هر مونومر آلفا با یک مونومر بتا جفت می‌شود.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">از چهار زنجیرهٔ آلفا تشکیل می‌شود.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">از یک دایمر آلفا-آلفا و یک دایمر بتا-بتا تشکیل می‌شود.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">مونومر آزاد، شکل پایدار و کارآمد هموگلوبین است.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>HbA از دو دایمر آلفا-بتا تشکیل می‌شود؛ در هر دایمر، یک زنجیرهٔ آلفا با یک زنجیرهٔ بتا جفت است.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>در حضور اکسیژن، طبق توضیح درس کدام مولکول جایگاه کئوردیناسیون باقی‌ماندهٔ آهن را می‌گیرد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">Fe³⁺</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">O₂</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">DPG</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">ترانسفرین</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>طبق توضیح درس، در حضور اکسیژن یکی از جایگاه‌های باقی‌ماندهٔ آهن را O₂ می‌گیرد.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>کدام آنزیم تنظیم‌کنندهٔ اصلی سرعت مسیر سنتز heme معرفی شده است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">ALA synthase</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">ALA dehydratase</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">Ferrochelatase</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">PBG Deaminase</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>ALA synthase تنظیم‌کنندهٔ اصلی سرعت مسیر است؛ ferrochelatase نیز آنزیمی مهم است.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>طبق توضیح مدرس، کدام جفت از واسطه‌ها در ساخت heme شرکت نمی‌کنند و بیشتر از راه ادرار و مدفوع دفع می‌شوند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">Uroporphyrinogen I و Coproporphyrinogen I</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">Uroporphyrinogen III و Coproporphyrinogen III</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">Protoporphyrinogen IX و Protoporphyrin IX</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">ALA و Porphobilinogen</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>طبق توضیح مدرس، Uroporphyrinogen I و Coproporphyrinogen I در ساخت heme شرکت نمی‌کنند و بیشتر از راه ادرار و مدفوع دفع می‌شوند.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>حدوداً چه درصدی از ساختار ثانویهٔ globin آلفا هلیکس است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">۲۰ تا ۳۰ درصد</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">۴۰ تا ۵۰ درصد</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">۷۰ تا ۸۰ درصد</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">۹۷ تا ۹۸ درصد</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>حدود ۷۰ تا ۸۰ درصد ساختار ثانویهٔ globin آلفا هلیکس است.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="6"><div class="questionBoxHeader">سؤال 6</div><div class="questionBoxPrompt"><p>کدام ترکیب با right shift منحنی و افزایش P50 همراه است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">افزایش pH، کاهش DPG و افت دما</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">افت pH، افزایش 2,3-DPG و افزایش دما</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">کاهش P50 و افزایش تمایل هموگلوبین به اکسیژن</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">کاهش دما به‌تنهایی</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>افت pH، افزایش 2,3-DPG و افزایش دما از عوامل right shift هستند؛ این عوامل P50 را افزایش و تمایل هموگلوبین به اکسیژن را کاهش می‌دهند.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="7"><div class="questionBoxHeader">سؤال 7</div><div class="questionBoxPrompt"><p>HbF از ترکیب کدام زنجیره‌ها تشکیل شده است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">آلفا₂بتا₂</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">آلفا₂دلتا₂</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">زتا₂اپسیلون₂</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">آلفا₂گاما₂</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>HbF از آلفا₂گاما₂ تشکیل شده و هموگلوبین غالب دورهٔ بارداری است.</p><div class="questionCorrect" data-correct="D"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>D</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="8"><div class="questionBoxHeader">سؤال 8</div><div class="questionBoxPrompt"><p>کدام عبارت دربارهٔ اثر هیپوکسی بر HIF درست است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">HIF-α پایدار می‌شود، با HIF-β جفت می‌شود و مجموعه بیان ژن اریتروپویتین را افزایش می‌دهد.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">HIF-β به‌تنهایی بیان ژن اریتروپویتین را افزایش می‌دهد.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">هیپوکسی باعث تخریب HIF-α می‌شود.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">HIF به ژن اریتروپویتین متصل نمی‌شود.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در شرایط هیپوکسیک، HIF-α پایدار می‌شود و با HIF-β جفت می‌شود؛ این مجموعه به enhancer ژن اریتروپویتین متصل می‌شود و بیان آن را بالا می‌برد.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="9"><div class="questionBoxHeader">سؤال 9</div><div class="questionBoxPrompt"><p>آخرین پیش‌ساز گلبول قرمز که پس از ازدست‌دادن هسته به رتیکولوسیت تبدیل می‌شود کدام است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">پرونورموبلاست</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">نورموبلاست بازوفیلیک</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">سلول ارتوکروماتیک</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">CFU-E</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>آخرین پیش‌ساز گلبول قرمز سلول ارتوکروماتیک است؛ پس از ازدست‌دادن هسته به رتیکولوسیت تبدیل می‌شود.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="10"><div class="questionBoxHeader">سؤال 10</div><div class="questionBoxPrompt"><p>در فرد سالم، بیش از ۹۰ درصد گلبول‌های قرمزی که عمر ۱۲۰روزهٔ خود را گذرانده‌اند چگونه تخریب می‌شوند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">به‌صورت داخل‌عروقی</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">به‌صورت خارج‌عروقی</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">به‌صورت immune</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">از راه افزایش اریتروپویتین</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>بیش از ۹۰ درصد این گلبول‌های قرمز به‌صورت خارج‌عروقی تخریب می‌شوند و کمتر از ۱۰ درصد تخریب داخل‌عروقی است.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+</section>
+
+<section class="noteSection reviewSection">
+    <h2 id="heading-27">۶. ادیتور و منابع استفاده‌شده</h2>
+<p><strong>ادیتور:</strong> حسین حسینی</p>
+<p><strong>منابع استفاده‌شده:</strong></p>
+<ul>
+<li>صوت درس</li>
+<li>اسلایدهای استاد</li>
+<li>رفرنس هماتولوژی</li>
+</ul>
+</section>
+
+<section class="noteSection editorAndSourcesSection">
+    <h2 id="heading-28">۷. گزارش تکمیل بودن محتوا</h2>
+<p><strong>برآورد تقریبی تکمیل محتوا:</strong> حدود ۱۰۰٪ بر اساس محتوای اسلاید و صوتِ ارائه‌شده.</p>
+<ul>
+<li>✓ پوشش محتوای اسلایدها و تصاویرِ ارجاع‌شده در محتوای ارائه‌شده.</li>
+<li>✓ پوشش توضیحات آموزشی و نکته‌های صوت درس.</li>
+</ul>
+</section>
+
+<section class="noteSection completionSection">
+    
+</section>
+
+    </main>
+
+
+    <button
+        class="backToTop"
+        type="button"
+        aria-label="بازگشت به ابتدای صفحه"
+    >
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+
+    <script src="../src/themeSwitcher.js"></script>
+    <script src="../src/fontSizeSwitcher.js"></script>
+    <script src="../src/aboutModal.js"></script>
+    <script src="../src/quickNavigation.js"></script>
+    <script src="../src/print.js"></script>
+    <script src="../src/search.js"></script>
+    <script src="../src/highlight.js"></script>
+    <script src="../src/stickyNotes.js"></script>
+    <script src="../src/viewPersistence.js"></script>
+    <script src="../src/questionInteractions.js"></script>
+    <script src="../src/fontSwitcher.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarToggle = document.querySelector(".sidebarToggle");
+    const sidebarBackdrop = document.querySelector(".sidebarBackdrop");
+
+    function openSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.add("isOpen");
+        sidebarBackdrop.classList.add("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "true");
+        sidebar.setAttribute("aria-hidden", "false");
+    }
+
+    function closeSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.remove("isOpen");
+        sidebarBackdrop.classList.remove("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "false");
+        sidebar.setAttribute("aria-hidden", "true");
+    }
+
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener("click", () => {
+            if (sidebar.classList.contains("isOpen")) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+    }
+
+    if (sidebarBackdrop) {
+        sidebarBackdrop.addEventListener("click", closeSidebar);
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeSidebar();
+        }
+    });
+
+    document.querySelectorAll(".tocItem").forEach((item) => {
+        item.addEventListener("click", closeSidebar);
+    });
+</script>
+
+</body>
+
+</html>

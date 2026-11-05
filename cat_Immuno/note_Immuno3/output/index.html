@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>اندام‌های لنفاوی اولیه یا زایا</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/rtl.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../node_modules/katex/dist/katex.min.css"
+    >
+
+    <link rel="stylesheet" href="../styles/dark.css">
+    <link rel="stylesheet" href="../styles/forest.css">
+    <link rel="stylesheet" href="../styles/paperLike.css">
+    <link rel="stylesheet" href="../styles/neon.css">
+    <link rel="stylesheet" href="../styles/print.css" media="print">
+
+    <script src="../node_modules/lucide/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+
+    <div class="printBrand" aria-hidden="true" style="display:none">پاپیروس</div>
+
+    <header class="appHeader">
+
+        <button
+            class="sidebarToggle"
+            type="button"
+            aria-label="باز کردن فهرست مطالب"
+            aria-expanded="false"
+        >
+            <i data-lucide="panel-left"></i>
+        </button>
+
+
+        <div class="appTitle">
+            پاپیروس
+        </div>
+
+
+        <div class="headerControls">
+
+<button
+    class="searchButton"
+    type="button"
+    aria-label="جستجو در جزوه"
+    aria-expanded="false"
+>
+    <i data-lucide="search"></i>
+</button>
+
+<div class="highlightSwitcher">
+
+    <button
+        class="highlightToggle"
+        type="button"
+        aria-label="هایلایت"
+        aria-expanded="false"
+    >
+        <i data-lucide="highlighter"></i>
+    </button>
+
+
+<div
+    class="highlightOptions"
+    aria-hidden="true"
+>
+
+    <button
+        class="highlightPowerToggle"
+        type="button"
+        aria-label="روشن یا خاموش کردن هایلایت"
+        aria-pressed="true"
+    >
+        <i data-lucide="highlighter"></i>
+        <span>هایلایت روشن</span>
+    </button>
+
+        <div class="highlightColors">
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#fff176"
+                aria-label="هایلایت زرد"
+                style="--highlightColor: #fff176;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#a5d6a7"
+                aria-label="هایلایت سبز"
+                style="--highlightColor: #a5d6a7;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#90caf9"
+                aria-label="هایلایت آبی"
+                style="--highlightColor: #90caf9;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ce93d8"
+                aria-label="هایلایت بنفش"
+                style="--highlightColor: #ce93d8;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ffab91"
+                aria-label="هایلایت نارنجی"
+                style="--highlightColor: #ffab91;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ef9a9a"
+                aria-label="هایلایت قرمز"
+                style="--highlightColor: #ef9a9a;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#f48fb1"
+                aria-label="هایلایت صورتی"
+                style="--highlightColor: #f48fb1;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#80cbc4"
+                aria-label="هایلایت فیروزه‌ای"
+                style="--highlightColor: #80cbc4;"
+            ></button>
+
+        </div>
+
+
+        <div class="highlightDivider"></div>
+
+
+        <label
+            class="highlightCustomColor"
+            aria-label="انتخاب رنگ دلخواه"
+        >
+            <input
+                class="highlightColorInput"
+                type="color"
+                value="#fff176"
+            >
+
+            <i data-lucide="palette"></i>
+        </label>
+
+
+        <button
+            class="highlightEraser"
+            type="button"
+            aria-label="پاک کردن هایلایت"
+        >
+            <i data-lucide="eraser"></i>
+            <span>پاک‌کن</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="stickyNotesSwitcher">
+
+    <button
+        class="stickyNotesToggle"
+        type="button"
+        aria-label="یادداشت‌های چسبان"
+        aria-expanded="false"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+</div>
+
+            <div class="fontSizeSwitcher">
+
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="decrease"
+                    aria-label="کاهش اندازه فونت"
+                >
+                    <i data-lucide="minus"></i>
+                </button>
+
+<button
+    type="button"
+    class="fontSizeControl fontSwitchControl"
+    aria-label="تغییر فونت"
+>
+    <i data-lucide="type"></i>
+</button>
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="increase"
+                    aria-label="افزایش اندازه فونت"
+                >
+                    <i data-lucide="plus"></i>
+                </button>
+
+            </div>
+
+
+            <div class="themeSwitcher">
+
+                <button
+                    class="themeToggle"
+                    type="button"
+                    aria-label="تغییر تم"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="sun"></i>
+                </button>
+
+<div class="themeOptions">
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="light"
+        aria-label="تم روشن"
+    >
+        <i data-lucide="sun"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="dark"
+        aria-label="تم تاریک"
+    >
+        <i data-lucide="moon"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="forest"
+        aria-label="تم جنگلی"
+    >
+        <i data-lucide="trees"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="paperLike"
+        aria-label="تم پیپر لایک"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+<button
+    class="themeButton"
+    type="button"
+    data-theme="neon"
+    aria-label="تم نئون"
+>
+<i data-lucide="zap"></i>
+</button>
+
+
+</div>
+
+            </div>
+
+<button
+    class="printButton"
+    type="button"
+    aria-label="چاپ جزوه"
+>
+    <i data-lucide="printer"></i>
+</button>
+
+
+            <button
+                class="aboutButton"
+                type="button"
+                aria-label="درباره ما"
+            >
+                <i data-lucide="users-round"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+<div
+    class="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="searchPanelContent">
+
+        <div class="searchInputWrapper">
+
+            <i data-lucide="search"></i>
+
+            <input
+                class="searchInput"
+                type="search"
+                placeholder="جستجو در جزوه..."
+                aria-label="جستجو در جزوه"
+                autocomplete="off"
+            >
+
+            <button
+                class="searchClearButton"
+                type="button"
+                aria-label="پاک کردن جستجو"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="searchResultsInfo">
+            <span class="searchResultsCount">۰ نتیجه</span>
+
+            <div class="searchNavigation">
+
+                <button
+                    class="searchPreviousButton"
+                    type="button"
+                    aria-label="نتیجه قبلی"
+                    disabled
+                >
+                    <i data-lucide="chevron-up"></i>
+                </button>
+
+                <button
+                    class="searchNextButton"
+                    type="button"
+                    aria-label="نتیجه بعدی"
+                    disabled
+                >
+                    <i data-lucide="chevron-down"></i>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    <aside
+        class="sidebar"
+        aria-label="فهرست مطالب"
+        aria-hidden="true"
+    >
+
+        <div class="sidebarHeader">
+            <h2>فهرست مطالب</h2>
+        </div>
+
+        <nav
+            class="sidebarContent"
+            aria-label="فهرست مطالب"
+        >
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-1"
+                >
+                    ۱. مقدمه و کلیات
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-2"
+                >
+                    ۲. متن اصلی جزوه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-3"
+                >
+                    اندام‌های لنفاوی اولیه و ثانویه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-4"
+                >
+                    مسیر کلی بلوغ و گردش لنفوسیت‌ها
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-5"
+                >
+                    مغز استخوان
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-6"
+                >
+                    تیموس: محل بلوغ و انتخاب T cell
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-7"
+                >
+                    کشف عملکرد تیموس
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-8"
+                >
+                    وقتی ارگان اولیه کار نکند: سندرم دی‌جورج
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-9"
+                >
+                    موش nude
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-10"
+                >
+                    بلوغ B cell
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-11"
+                >
+                    ۳. جداول مرور سریع
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-12"
+                >
+                    تقسیم‌بندی اندام‌های لنفاوی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-13"
+                >
+                    رده‌های پیش‌ساز و مسیرهای سلولی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-14"
+                >
+                    مسیرهای بلوغ و جابه‌جایی B و T
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-15"
+                >
+                    مسیر ورود آنتی‌ژن، گردش و سرنوشت لنفوسیت
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-16"
+                >
+                    خون‌سازی جنینی و مغز استخوان
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-17"
+                >
+                    ساختار و مراحل تیموس
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-18"
+                >
+                    سندرم دی‌جورج و موش nude
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-19"
+                >
+                    مراحل بلوغ B cell و تحمل مرکزی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-20"
+                >
+                    ۴. اصطلاحات و تعاریف
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-21"
+                >
+                    ۵. خود‌ارزیابی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-22"
+                >
+                    سوالات تشریحی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-23"
+                >
+                    سوالات تستی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-24"
+                >
+                    ۶. موارد نیازمند بررسی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-25"
+                >
+                    ۷. ادیتور و منابع استفاده‌شده
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-26"
+                >
+                    ۸. گزارش تکمیل بودن محتوا
+                </a>
+            
+        </nav>
+
+    </aside>
+
+
+    <div class="sidebarBackdrop"></div>
+
+<aside
+    class="stickyNotesPanel"
+    aria-label="یادداشت‌های چسبان"
+    aria-hidden="true"
+>
+
+    <div class="stickyNotesPanelHeader">
+
+        <h2>یادداشت‌های چسبان</h2>
+
+        <button
+            class="addStickyNoteButton"
+            type="button"
+        >
+            <i data-lucide="plus"></i>
+            <span>یادداشت جدید</span>
+        </button>
+
+    </div>
+
+    <div class="stickyNotesPanelContent">
+
+        <div class="stickyNotesEmptyState">
+<i data-lucide="notebook-pen"></i>
+
+            <p>
+                هنوز یادداشتی ایجاد نکرده‌اید.
+            </p>
+
+        </div>
+
+        <div class="stickyNotesList"></div>
+
+    </div>
+
+</aside>
+
+<div class="stickyNotesBackdrop"></div>
+
+
+    <div
+        class="aboutModal"
+        aria-hidden="true"
+    >
+
+        <div class="aboutModalBackdrop"></div>
+
+        <section
+            class="aboutModalContent"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="aboutTitle"
+        >
+
+            <button
+                class="aboutCloseButton"
+                type="button"
+                aria-label="بستن"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <h2 id="aboutTitle">
+                آدم‌هایی که اینجا رو ساختن
+            </h2>
+
+            <p class="aboutIntroduction">
+                ما یک تیم کوچک هستیم که باور داریم یادگیری باید
+                لذت‌بخش، عمیق، و در دسترس باشد. جزوه‌ساز تلاش ماست
+                برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً
+                بتوانی با آن‌ها چیزی یاد بگیری.
+            </p>
+
+
+<div class="developerList">
+
+    <article class="developerCard">
+        <h3>شبنم رضاپور</h3>
+        <p>کسی که PDFها را راضی کرد محتوایشان را بی‌کم‌وکاست لو بدهند.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیر‌حسین شکری‌زاده سعادت‌آباد</h3>
+        <p>صدای کلاس را به متن تبدیل کرد، حتی وقتی استاد وسط جمله با میکروفون قهر می‌کرد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>مهراد اسدی</h3>
+        <p>پرامپت‌ها را طوری چید که LLM فکر کرد دارد پایان‌نامه دکتری می‌نویسد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیرسالار سهام‌پور</h3>
+        <p>مارک‌داون را به HTML تبدیل کرد و به جزوه ظاهری داد که آدم دلش بخواهد بخواندش.</p>
+    </article>
+
+</div>
+
+            <p class="aboutFooter">
+                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد.
+                <br>
+                امیدواریم یادگیریت را لذت‌بخش‌تر کند.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <div class="quickNavigation">
+        <div class="quickNavigationList"></div>
+    </div>
+
+
+    <main class="noteContainer">
+
+<div class="stickyNotesLayer"></div>
+
+        <section class="noteHeader">
+
+            <div class="noteMetadata">
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">درس</span>
+                    <span class="metadataValue">ایمونولوژی</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">مبحث</span>
+                    <span class="metadataValue">ایمونولوژی - اندام‌های لنفاوی اولیه، بلوغ لنفوسیت‌ها و تیموس - جلسه سوم</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">استاد</span>
+                    <span class="metadataValue">Tahereh Kalantari، PhD in Medical Immunology</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ جلسه</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ تولید جزوه</span>
+                    <span class="metadataValue generatedDate">2026-10-18T21:20:45</span>
+                </span>
+
+            </div>
+
+
+            <div class="aiWarning">
+                <i data-lucide="triangle-alert"></i>
+
+                <p>
+                    این جزوه با استفاده از جزوه‌ساز پاپیروس و به صورت خودکار تولید شده است.
+                    ممکن است شامل خطا یا برداشت نادرست باشد و
+                    نیازمند بررسی و بازبینی مجدد است.
+                </p>
+            </div>
+
+        </section>
+
+
+<section class="noteSection introductionSection">
+    <h2 id="heading-1">۱. مقدمه و کلیات</h2>
+<p>اندام‌های لنفاوی به دو گروه اولیه و ثانویه تقسیم می‌شوند. این جلسه بر مغز استخوان و تیموس، به‌عنوان اندام‌های لنفاوی اولیه، و مسیر بلوغ و گردش لنفوسیت‌ها تمرکز دارد. برای دنبال‌کردن مسیر سلول‌ها، به‌اختصار به اندام‌های ثانویه نیز پرداخته می‌شود. جزئیات بیشتر دربارهٔ MALT و اندام‌های ثانویه در جلسهٔ بعد و جزئیات تکامل B و T در جلسه‌های مربوط به آن‌ها بررسی خواهد شد.</p>
+</section>
+
+<section class="noteSection mainSection">
+    <h2 id="heading-2">۲. متن اصلی جزوه</h2>
+<h3 id="heading-3">اندام‌های لنفاوی اولیه و ثانویه</h3>
+<p>اندام‌های لنفاوی به دو گروه تقسیم می‌شوند:</p>
+<ul>
+<li><strong>اندام‌های لنفاوی اولیه، زایا یا مرکزی (primary/generative/central lymphoid organs):</strong> مغز استخوان (bone marrow) و تیموس (thymus).</li>
+<li><strong>اندام‌های لنفاوی ثانویه یا محیطی (secondary/peripheral lymphoid organs):</strong> گره لنفاوی (lymph node)، طحال (spleen) و بافت‌های لنفاوی مرتبط با سطوح مخاطی و پوست. (بافت‌های لنفاوی مرتبط با مخاط را <strong>MALT</strong> می‌نامند.)</li>
+</ul>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>اندام‌های لنفاوی اولیه (primary/generative/central lymphoid organs)</strong>
+مغز استخوان و تیموس؛ محل تولید و بلوغ لنفوسیت‌ها، که فعالیت آن‌ها در تولید و آماده‌سازی لنفوسیت‌ها به آنتی‌ژن وابسته نیست.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>اندام‌های لنفاوی ثانویه یا محیطی (secondary/peripheral lymphoid organs)</strong>
+گره لنفاوی، طحال و بافت‌های لنفاوی مرتبط با سطوح مخاطی و پوست؛ محل برخورد لنفوسیت بالغ با آنتی‌ژن و آغاز پاسخ ایمنی.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>MALT</strong>
+نام بافت‌های لنفاوی مرتبط با مخاط است.</div></div>
+<p>اندام‌های اولیه محل تولید و بلوغ لنفوسیت‌ها هستند و فعالیت آن‌ها در تولید و آماده‌سازی لنفوسیت‌ها به آنتی‌ژن وابسته نیست. در مقابل، لنفوسیت بالغ در اندام‌های محیطی با آنتی‌ژن برخورد می‌کند و پاسخ ایمنی آغاز می‌شود. بنابراین، اندام اولیه لنفوسیت را تولید و آماده می‌کند و اندام ثانویه محل برخورد آن با آنتی‌ژن و آغاز پاسخ ایمنی است.</p>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>اندام‌های لنفاوی اولیه</th>
+<th>اندام‌های لنفاوی ثانویه یا محیطی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>نمونه‌ها</td>
+<td>مغز استخوان و تیموس</td>
+<td>گره لنفاوی، طحال و بافت‌های لنفاوی مرتبط با مخاط و پوست</td>
+</tr>
+<tr>
+<td>نقش مطرح‌شده در درس</td>
+<td>تولید، آماده‌سازی و بلوغ لنفوسیت‌ها</td>
+<td>برخورد لنفوسیت بالغ با آنتی‌ژن و آغاز پاسخ ایمنی</td>
+</tr>
+<tr>
+<td>وابستگی فعالیت به آنتی‌ژن</td>
+<td>تولید و آماده‌سازی لنفوسیت‌ها به آنتی‌ژن وابسته نیست</td>
+<td>محل برخورد با آنتی‌ژن و آغاز پاسخ ایمنی</td>
+</tr>
+</tbody></table>
+<p>آشنایی با اندام‌های لنفاوی اولیه کمک می‌کند بدانیم لنفوسیت‌های B و T کجا تولید می‌شوند، پس از بلوغ به کجا می‌روند و کجا با آنتی‌ژن برخورد می‌کنند. برای دنبال‌کردن مسیر سلول‌ها، در این جلسه به‌اختصار به اندام‌های ثانویه نیز اشاره می‌شود</p>
+<h3 id="heading-4">مسیر کلی بلوغ و گردش لنفوسیت‌ها</h3>
+<p>بدن برای دفاع اختصاصی به میلیاردها لنفوسیت با گیرنده‌های متنوع نیاز دارد. همهٔ رده‌های سلول‌های خونی از <strong>سلول بنیادی خون‌ساز (hematopoietic stem cell; HSC)</strong> منشأ می‌گیرند. در مغز استخوان، HSC به رده‌های پیش‌ساز تقسیم می‌شود؛ از جمله پیش‌ساز لنفوئیدی مشترک <strong>(common lymphoid progenitor; CLP)</strong> و پیش‌ساز میلوئیدی مشترک <strong>(common myeloid progenitor; CMP)</strong>.</p>
+<p><img src="../data/assets/assets/image2.jpg" alt="تصویر 2">
+<em>تصویر 2</em></p>
+<h4>رده‌های پیش‌ساز خون‌ساز</h4>
+<ul>
+<li><strong>ردهٔ میلوئیدی</strong> به‌سوی <strong>گرانولوسیت‌ها، اریتروسیت‌ها و مونوسیت‌ها</strong> پیش می‌رود. مونوسیت‌ها می‌توانند به ماکروفاژها مرتبط شوند. گلبول قرمز و پلاکت نیز در رده‌های خونی وجود دارند.</li>
+<li><strong>ردهٔ لنفوئیدی</strong> به‌سوی <strong>سلول‌های B، سلول‌های T و سلول‌های NK</strong> پیش می‌رود.</li>
+<li>در نمودارهای خونسازی، پیش‌سازهای دیگری نیز نشان داده شده‌اند؛ از جمله پیش‌سازهای ILC، mast cell، megakaryocyte، erythroid، granulocyte و monocyte. نام‌هایی مانند Pro-B cell، Pre-B cell، Pro-T cell، Pre-T cell، Pro-NK cell، Pro-ILC و monoblast نیز در مسیرهای پیش‌ساز دیده می‌شوند.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>ردهٔ پیش‌ساز</th>
+<th>مسیرها و سلول‌های ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>میلوئیدی</td>
+<td>گرانولوسیت‌ها، اریتروسیت‌ها و مونوسیت‌ها؛ مونوسیت‌ها می‌توانند به ماکروفاژها مرتبط شوند. گلبول قرمز و پلاکت نیز در رده‌های خونی وجود دارند.</td>
+</tr>
+<tr>
+<td>لنفوئیدی</td>
+<td>سلول‌های B، سلول‌های T و سلول‌های NK</td>
+</tr>
+<tr>
+<td>پیش‌سازهای دیگرِ نشان‌داده‌شده در نمودارها</td>
+<td>پیش‌سازهای ILC، mast cell، megakaryocyte، erythroid، granulocyte و monocyte؛ همچنین Pro-B cell، Pre-B cell، Pro-T cell، Pre-T cell، Pro-NK cell، Pro-ILC و monoblast</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image15.jpg" alt="تصویر 15">
+<em>تصویر 15</em></p>
+<p>در مسیر لنفوسیت‌ها، HSC در مغز استخوان به پیش‌ساز لنفوئیدی مشترک می‌رسد و سپس مسیرهای Pro-B و Pro-T شکل می‌گیرند. به‌کاربردن Pro-B cell یا Pro-B lymphocyte و نیز Pro-T cell یا Pro-T lymphocyte به یک مسیر پیش‌ساز B یا T اشاره دارد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پیش‌ساز لنفوئیدی مشترک (common lymphoid progenitor; CLP)</strong>
+یکی از رده‌های پیش‌سازی است که HSC در مغز استخوان به آن می‌رسد و مسیرهای پیش‌ساز لنفوسیتی، از جمله مسیرهای Pro-B و Pro-T، از آن شکل می‌گیرند.</div></div>
+<h4>تکامل و جابه‌جایی لنفوسیت‌های B و T</h4>
+<ul>
+<li><strong>مسیر T :</strong> <strong>Pro-T cell</strong> بلافاصله پس از تولید در مغز استخوان در آنجا باقی نمی‌ماند، بلکه به‌صورت سلولی بسیار نابالغ از مغز استخوان خارج می‌شود و وارد تیموس می‌گردد. مراحل بعدی تکامل آن در تیموس رخ می‌دهد و بلوغ نهایی T cell نیز در همین اندام انجام می‌شود.</li>
+<li><strong>مسیر pro-B cell:</strong> سلول‌ها در مغز استخوان تا مرحلهٔ immature B cell تکامل می‌یابند و سپس از راه خون خارج می‌شوند و به ا<strong>ندام‌های لنفاوی ثانویه</strong> می‌روند. مرحلهٔ نهایی تبدیل immature B cell به mature B cell در طحال انجام می‌شود. ممکن است مخزن اصلی B cellها در طحال قرار داشته باشد. بنابراین، در پاسخ به این پرسش که بلوغ B cell کجا رخ می‌دهد، باید گفت مغز استخوان محل بلوغ اولیه است و مرحلهٔ نهایی بلوغ، یعنی تبدیل immature B cell به mature B cell، در طحال رخ می‌دهد.</li>
+<li>لنفوسیت‌های بالغ پس از بلوغ به اندام‌های محیطی می‌روند.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>ویژگی مسیر</th>
+<th>مسیر T</th>
+<th>مسیر B</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>محل آغاز مسیر</td>
+<td>Pro-T cell در مغز استخوان تولید می‌شود</td>
+<td>بلوغ در مغز استخوان آغاز می‌شود</td>
+</tr>
+<tr>
+<td>جابه‌جایی پس از مراحل اولیه</td>
+<td>Pro-T cell بسیار نابالغ از مغز استخوان خارج می‌شود و وارد تیموس می‌گردد</td>
+<td>سلول تا مرحلهٔ immature B cell در مغز استخوان تکامل می‌یابد و سپس از راه خون خارج می‌شود</td>
+</tr>
+<tr>
+<td>محل ادامه یا مرحلهٔ نهایی بلوغ</td>
+<td>مراحل بعدی تکامل و بلوغ نهایی T cell در تیموس رخ می‌دهد</td>
+<td>مرحلهٔ نهایی تبدیل immature B cell به mature B cell در طحال انجام می‌شود</td>
+</tr>
+<tr>
+<td>پس از بلوغ</td>
+<td>لنفوسیت بالغ به اندام‌های محیطی می‌رود</td>
+<td>لنفوسیت بالغ به اندام‌های محیطی می‌رود</td>
+</tr>
+</tbody></table>
+<h4>عرضهٔ آنتی‌ژن در اندام‌های محیطی</h4>
+<p>هر یک از اندام‌های محیطی آنتی‌ژن‌هایی را دریافت می‌کنند که از مسیر ویژه‌ای وارد بدن شده‌اند:</p>
+<ul>
+<li><strong>طحال</strong> آنتی‌ژن‌هایی را عرضه می‌کند که از راه <strong>خون</strong> وارد شده‌اند.</li>
+<li><strong>گره لنفاوی</strong> آنتی‌ژن‌هایی را دریافت می‌کند که از راه <strong>لنف</strong> وارد شده‌اند.</li>
+<li><strong>بافت‌های لنفاوی مخاطی</strong>، آنتی‌ژن‌هایی را که از <strong>سطوح مخاطی</strong> وارد شده‌اند به لنفوسیت‌های حاضر در آنجا عرضه می‌کنند.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>محل ورود یا مسیر آنتی‌ژن</th>
+<th>محل دریافت یا عرضه</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>خون</td>
+<td>طحال</td>
+</tr>
+<tr>
+<td>لنف</td>
+<td>گره لنفاوی</td>
+</tr>
+<tr>
+<td>سطوح مخاطی</td>
+<td>بافت‌های لنفاوی مخاطی</td>
+</tr>
+</tbody></table>
+<p>شکل، گردش لنفوسیت‌ها (recirculation) را میان خون، گره‌های لنفاوی، طحال و بافت‌های لنفاوی مخاطی نشان می‌دهد. لنفوسیت‌ها پیوسته وارد اندام‌های لنفاوی ثانویه می‌شوند و دوباره به خون برمی‌گردند؛ این گردش امکان جست‌وجوی آنتی‌ژن را فراهم می‌کند.</p>
+<p><img src="../data/assets/assets/image3.jpg" alt="تصویر 3">
+<em>تصویر 3</em></p>
+<h4>شناسایی آنتی‌ژن و سرنوشت لنفوسیت</h4>
+<p>لنفوسیت‌ها فقط آنتی‌ژن اختصاصی گیرندهٔ خود را شناسایی می‌کنند؛ هر چیزی که در مسیرشان قرار بگیرد به آن‌ها متصل نمی‌شود. اختصاصیت گیرنده، اپی‌توپ و پاراتوپ پیش‌تر مطرح شده‌اند.</p>
+<p>ممکن است لنفوسیتی وارد گره لنفاوی، طحال یا بافت لنفاوی مخاطی شود، اما در آن نوبت با آنتی‌ژن اختصاصی خود روبه‌رو نشود. در این صورت از آن اندام خارج می‌شود و به recirculation ادامه می‌دهد تا دوباره به جست‌وجو بپردازد. اگر آنتی‌ژن اختصاصی شناسایی شود، سلول فعال و تکثیر می‌شود و به سلول‌های اجرایی (effector) و سلول‌های حافظه (memory) تمایز می‌یابد. برای نمونه، سلول‌های T اجرایی را T effector و سلول‌های B <strong>اجرایی</strong> را B effector می‌نامند. (در بعضی کتاب‌ها effector را <strong>«مؤثر»</strong> ترجمه می‌کنند) سلول‌های memory باقی می‌مانند و در مواجههٔ بعدی با همان عامل میکروبی می‌توانند سریع پاسخ دهند. سلول‌هایی که هنوز آنتی‌ژن اختصاصی خود را شناسایی نکرده‌اند، به recirculation ادامه می‌دهند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">سلول‌های T اجرایی را T effector و سلول‌های B اجرایی را B effector می‌نامند.</div></div>
+<table>
+<thead>
+<tr>
+<th>وضعیت شناسایی آنتی‌ژن</th>
+<th>سرنوشت لنفوسیت</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>آنتی‌ژن اختصاصی شناسایی نمی‌شود</td>
+<td>سلول از اندام لنفاوی ثانویه خارج می‌شود و به recirculation ادامه می‌دهد.</td>
+</tr>
+<tr>
+<td>آنتی‌ژن اختصاصی شناسایی می‌شود</td>
+<td>سلول فعال و تکثیر می‌شود و به سلول‌های effector و memory تمایز می‌یابد.</td>
+</tr>
+<tr>
+<td>پس از تمایز به memory</td>
+<td>سلول‌های memory باقی می‌مانند و در مواجههٔ بعدی با همان عامل میکروبی می‌توانند سریع پاسخ دهند.</td>
+</tr>
+</tbody></table>
+<p>به لنفوسیت بالغی که هنوز با آنتی‌ژن اختصاصی خودش مواجه نشده و فعال نشده است، لنفوسیت نایو (naive lymphocyte) می‌گویند. بنابراین، یک B cell یا T cell می‌تواند بالغ باشد، اما همچنان naive بماند؛ یعنی هنوز آنتی‌ژن اختصاصی خود را نشناخته باشد. واژهٔ naive اصطلاح این مرحله است و در توضیح کلاس، معادل آن «بِکر» دانسته شد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>لنفوسیت نایو (naive lymphocyte)</strong>
+لنفوسیت بالغی که هنوز با آنتی‌ژن اختصاصی خودش مواجه نشده و فعال نشده است.</div></div>
+<p>نمودار کلی، خون، اندام‌های لنفاوی اولیه و ثانویه، لنفوسیت‌های بالغ نایو و ورود آنتی‌ژن‌ها را به تفکیک مسیر نشان می‌دهد:</p>
+<ul>
+<li>آنتی‌ژن‌های واردشده از سطوح مخاطی به بافت‌هایی مانند Peyer’s patches می‌رسند.</li>
+<li>آنتی‌ژن‌های موجود در خون در طحال عرضه می‌شوند.</li>
+<li>آنتی‌ژن‌های واردشده از بافت‌ها از طریق لنف به گره لنفاوی می‌رسند.</li>
+<li>در صورت شناسایی‌نشدن آنتی‌ژن (no antigen recognition)، سلول از اندام لنفاوی ثانویه خارج می‌شود و به گردش ادامه می‌دهد.</li>
+<li>در صورت شناسایی آنتی‌ژن (antigen recognition)، سلول فعال و تکثیر می‌شود و به سلول‌های effector و memory تمایز می‌یابد.</li>
+</ul>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در نمودار، Peyer’s patches نمونه‌ای از بافت‌هایی است که آنتی‌ژن‌های واردشده از سطوح مخاطی به آن‌ها می‌رسند.</div></div>
+<h3 id="heading-5">مغز استخوان</h3>
+<h4>خون‌سازی در دورهٔ جنینی</h4>
+<p>خون‌سازی در دورهٔ جنینی ابتدا در کیسهٔ زرده آغاز می‌شود، سپس کبد و تا حدی طحال مطرح می‌شوند و پس از آن مغز استخوان محل خون‌سازی می‌شود.</p>
+<ul>
+<li>شروع خون‌سازی در کیسهٔ زرده: حدود هفتهٔ سوم.</li>
+<li>شروع خون‌سازی در کبد و طحال: حدود هفتهٔ ششم یا نزدیک دو ماه.</li>
+<li>شروع خون‌سازی در مغز استخوان: حدود ماه چهارم تا پنجم</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>محل خون‌سازی در دورهٔ جنینی</th>
+<th>زمان مطرح‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>کیسهٔ زرده</td>
+<td>حدود هفتهٔ سوم</td>
+</tr>
+<tr>
+<td>کبد و تا حدی طحال</td>
+<td>حدود هفتهٔ ششم یا نزدیک دو ماه</td>
+</tr>
+<tr>
+<td>مغز استخوان</td>
+<td>حدود ماه چهارم تا پنجم</td>
+</tr>
+</tbody></table>
+<h4>مغز استخوان قرمز و زرد</h4>
+<p>پس از تولد، همهٔ استخوان‌های بدن نوزاد می‌توانند خون‌سازی کنند و مغز استخوان قرمز دارند. با افزایش سن، بخشی از مغز قرمز به مغز زرد (yellow marrow) تبدیل می‌شود؛ این تغییر به‌ویژه در تنهٔ استخوان‌های بلند، مانند استخوان ران و بازو، رخ می‌دهد.</p>
+<p>در بزرگسالان:</p>
+<p><img src="../data/assets/image1.jpg" alt="image1"></p>
+<ul>
+<li><strong>مغز زرد (yellow marrow):</strong> عمدتاً در تنهٔ استخوان‌های بلند قرار دارد و ترکیب غالب آن سلول‌های چربی است. کارکرد آن بیشتر ذخیرهٔ چربی و پشتیبانی محدود است و فعالیت خون‌سازی در آن کم است؛ بااین‌حال، در شرایط خاص قابلیت تبدیل دارد.</li>
+<li><strong>مغز قرمز (red marrow):</strong> بیشتر از سلول‌های خون‌ساز تشکیل شده و وظیفهٔ تولید خون را بر عهده دارد. در استخوان‌های پهن و انتهای استخوان‌های بلند دیده می‌شود و فعالیت خون‌سازی در آن زیاد است. استخوان‌های پهن شامل جمجمه، لگن، جناغ سینه و مهره‌های کمرند. انتهای استخوان‌های بلند، از جمله نواحی پروگزیمال و اپی‌فیز، نیز می‌توانند محل خون‌سازی باشند.</li>
+</ul>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">نمونه‌های استخوان پهنِ ذکرشده عبارت‌اند از جمجمه، لگن، جناغ سینه و مهره‌های کمر. نمونه‌های استخوان بلندِ ذکرشده، استخوان ران و بازو هستند.</div></div>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>مغز قرمز (red marrow)</th>
+<th>مغز زرد (yellow marrow)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ترکیب غالب</td>
+<td>بیشتر سلول‌های خون‌ساز</td>
+<td>سلول‌های چربی</td>
+</tr>
+<tr>
+<td>فعالیت خون‌سازی</td>
+<td>زیاد</td>
+<td>کم</td>
+</tr>
+<tr>
+<td>محل‌های ذکرشده در بزرگسالان</td>
+<td>استخوان‌های پهن و انتهای استخوان‌های بلند، از جمله نواحی پروگزیمال و اپی‌فیز</td>
+<td>عمدتاً تنهٔ استخوان‌های بلند</td>
+</tr>
+<tr>
+<td>کارکرد ذکرشده</td>
+<td>تولید خون</td>
+<td>بیشتر ذخیرهٔ چربی و پشتیبانی محدود؛ در شرایط خاص قابلیت تبدیل دارد</td>
+</tr>
+</tbody></table>
+<p>در افراد بالغ و مسن، خون‌سازی بیشتر در <strong>استخوان‌های پهن و بخش‌های پروگزیمال استخوان‌های بلند</strong> انجام می‌شود.</p>
+<p>در شکل مغز استخوان، مغز قرمز (red marrow) و مغز زرد (yellow marrow) نشان داده شده‌اند.</p>
+<h3 id="heading-6">تیموس: محل بلوغ و انتخاب T cell</h3>
+<h4>محل و ساختار کلی</h4>
+<p>تیموس پشت جناغ (sternum)، بالای قلب و بین دو ریه قرار دارد و جناغ در جلوی آن است.</p>
+<p><img src="../data/assets/assets/image5.jpg" alt="تصویر 5">
+<em>تصویر 5</em></p>
+<p>تیموس دو لوب بزرگ دارد و سطح آن را کپسولی از بافت هم‌بند متراکم می‌پوشاند. این کپسول نسبتاً نازک و در مقایسه با کپسول گره لنفاوی و طحال نازک‌تر است. تیغه‌هایی از کپسول وارد لوب‌ها می‌شوند و آن‌ها را به لوبول‌های متعدد تقسیم می‌کنند. این تیغه‌ها septa نام دارند و بعضی کتاب‌ها آن‌ها را trabeculae می‌نامند؛ در اینجا هر دو اصطلاح به همان تیغه‌های منشأگرفته از کپسول اشاره دارند. در بعضی کتاب‌های ایمونولوژی بیشتر از septa و در بعضی کتاب‌ها، بیشتر از trabeculae استفاده می‌شود. عروق خونی و اعصاب نیز از مسیر این تیغه‌ها وارد تیموس می‌شوند و به خون‌رسانی و تغذیهٔ بافت کمک می‌کنند.</p>
+<table>
+<thead>
+<tr>
+<th>ساختار یا ویژگی تیموس</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>لوب‌ها</td>
+<td>دو لوب بزرگ</td>
+</tr>
+<tr>
+<td>کپسول</td>
+<td>کپسولی از بافت هم‌بند متراکم؛ نسبتاً نازک و نازک‌تر از کپسول گره لنفاوی و طحال</td>
+</tr>
+<tr>
+<td>تیغه‌ها</td>
+<td>از کپسول وارد لوب‌ها می‌شوند و لوب‌ها را به لوبول‌های متعدد تقسیم می‌کنند</td>
+</tr>
+<tr>
+<td>اصطلاح تیغه‌ها</td>
+<td>septa؛ بعضی کتاب‌ها trabeculae می‌گویند. در اینجا هر دو اصطلاح به همان تیغه‌های منشأگرفته از کپسول اشاره دارند</td>
+</tr>
+<tr>
+<td>مسیر عروق و اعصاب</td>
+<td>عروق خونی و اعصاب از مسیر تیغه‌ها وارد تیموس می‌شوند و به خون‌رسانی و تغذیهٔ بافت کمک می‌کنند</td>
+</tr>
+</tbody></table>
+<h4>لوبول‌ها، قشر و مدولا</h4>
+<p>هر لوبول تیموس دو ناحیه دارد: قشر (cortex) و مدولا (medulla). قشر در تصویر تیره‌تر است، زیرا تراکم لنفوسیت‌ها در آن بیشتر است.</p>
+<p><img src="../data/assets/assets/image8.jpg" alt="تصویر 8">
+<em>تصویر 8</em></p>
+<p>در قشر، مراحل اولیهٔ تکامل Pro-T cellها یا thymocyteها رخ می‌دهد:</p>
+<ol>
+<li>thymocyteها ابتدا double negative هستند؛ یعنی CD4 و CD8 ندارند.</li>
+<li>سپس double positive می‌شوند؛ یعنی هم CD4 و هم CD8 را دارند. CD4 با T helper و CD8 با T cytotoxic مرتبط است.</li>
+<li>سلول‌هایی که مراحل انتخاب و تکامل را می‌گذرانند، در مدولا به مرحلهٔ single positive می‌رسند؛ یعنی یا CD4-positive T cell هستند یا CD8-positive T cell. سپس می‌توانند وارد خون شوند و در اندام‌های ثانویه با آنتی‌ژن برخورد کنند.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>مرحله یا ناحیه</th>
+<th>ویژگی سلول‌ها</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>مراحل اولیه در قشر</td>
+<td>thymocyteها ابتدا double negative هستند؛ CD4 و CD8 ندارند.</td>
+</tr>
+<tr>
+<td>مرحلهٔ بعدی</td>
+<td>double positive می‌شوند و هم CD4 و هم CD8 را دارند؛ CD4 با T helper و CD8 با T cytotoxic مرتبط است.</td>
+</tr>
+<tr>
+<td>پس از مراحل انتخاب و تکامل، در مدولا</td>
+<td>single positive می‌شوند؛ یا CD4-positive T cell هستند یا CD8-positive T cell. سپس می‌توانند وارد خون شوند و در اندام‌های ثانویه با آنتی‌ژن برخورد کنند.</td>
+</tr>
+</tbody></table>
+<p>همهٔ thymocyteهای نابالغ از تیموس خارج نمی‌شوند. حدود ۱ تا ۲ درصد از سلول‌های نابالغی که وارد تیموس می‌شوند، از آن خارج شده و وارد خون محیطی می‌شوند. تکامل، آموزش و انتخاب در تیموس باعث می‌شود تعداد زیادی از سلول‌ها باقی نمانند؛ از جمله سلول‌هایی که به آنتی‌ژن‌های خودی واکنش نشان می‌دهند (autoreactive) ممکن است از بین بروند.</p>
+<h4>سلول‌های قشر</h4>
+<p>در قشر، علاوه بر thymocyteها، سلول‌های اپیتلیال کورتیکال نیز وجود دارند. این سلول‌ها cytokine مهم Interleukin-7 را ترشح می‌کنند که در بلوغ و تکامل T cell نقش مهمی دارد. تعامل میان سلول‌های اپیتلیال کورتیکال و thymocyteها، و نیز cytokineهایی از جمله Interleukin-7، در تکامل thymocyteها اهمیت دارد.</p>
+<h4>سلول‌ها و اجسام هاسال در مدولا</h4>
+<p><img src="../data/assets/image10.jpg" alt="image10"></p>
+<p>در مدولا، thymocyteها، سلول‌های دندریتیک، ماکروفاژها، سلول‌های اپیتلیال مدولاری و اجسام هاسال (Hassall corpuscles یا Hassall’s corpuscles) وجود دارند. اجسام هاسال به‌شکل لایه‌ها و حلقه‌های فشرده و متحدالمرکز، شبیه لایه‌های پوست پیاز، دیده می‌شوند. در برچسب تصویر از eosinophilic epithelial cells و ساختارهای concentric نیز نام برده شده است.</p>
+<p>دربارهٔ منشأ اجسام هاسال گفته شد که احتمالاً بقایای سلول‌های اپیتلیال مدولاریِ در حال تخریب‌اند. بعضی کتاب‌ها احتمال داده‌اند thymocyteهای در حال تخریب نیز در تشکیل آن‌ها نقش داشته باشند، اما نظر مدرس بیشتر به منشأ اپیتلیالی متمایل بود.</p>
+<p><img src="../data/assets/assets/image9.jpg" alt="تصویر 9">
+<em>تصویر 9</em></p>
+<h4>تغییر فعالیت تیموس با سن</h4>
+<p><img src="../data/assets/photo_2026-10-22_14-43-57.jpg" alt="photo_2026-10-22_14-43-57"></p>
+<p>فعالیت تیموس با سن تغییر می‌کند. نمودار اسلاید اوج فعالیت را از کودکی تا بلوغ نشان می‌دهد و سپس آتروفی و جایگزینی با چربی را نمایش می‌دهد؛ سلول‌های T ساخته‌شده باقی می‌مانند و تکثیر می‌شوند. در توضیح شفاهی گفته شد تیموس از نظر اندازه و توانایی تولید thymocyte حوالی ۱۹ تا ۲۰ سالگی به اوج می‌رسد و پس از بلوغ به‌تدریج کوچک می‌شود. همچنین گفته شد از حدود هفتادسالگی به بعد، بیشتر سلول‌هایی که قبلاً تکثیر شده‌اند کار خود را انجام می‌دهند و تکثیر می‌شوند و تولید سلول توسط خود تیموس نزدیک به صفر می‌شود.</p>
+<table>
+<thead>
+<tr>
+<th>منبع توضیح</th>
+<th>گفتهٔ مربوط به اوج فعالیت تیموس</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>نمودار اسلاید</td>
+<td>اوج فعالیت را از کودکی تا بلوغ نشان می‌دهد؛ سپس آتروفی و جایگزینی با چربی را نمایش می‌دهد.</td>
+</tr>
+<tr>
+<td>توضیح شفاهی</td>
+<td>اوج اندازه و توانایی تولید thymocyte حدود ۱۹ تا ۲۰ سالگی ذکر شده است.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-7">کشف عملکرد تیموس</h3>
+<p><img src="../data/assets/image7.jpg" alt="image7"></p>
+<p>در سال ۱۹۶۱، Jacques Miller نقش حیاتی تیموس را در سیستم ایمنی نشان داد. پیش از آن، تیموس گاهی اندامی کم‌اهمیت و حتی مضر تصور می‌شد و آن را با آپاندیس مقایسه می‌کردند. در توضیح کلاس گفته شد معلوم نیست واقعاً برداشتن تیموس به این دلیل انجام می‌شده یا نه؛ نظر مدرس این بود که بعید است اندامی در بدن کاملاً بی‌فایده باشد. آپاندیس نیز تا حدی مانند یک اندام لنفاوی ثانویه به بدن کمک می‌کند. لوزه‌ها هم از نمونه‌های اندام‌های لنفاوی ثانویه‌اند، هرچند بعضی کتاب‌ها کمتر به آن‌ها اشاره می‌کنند. گاهی به‌دلیل عفونت‌های مکرر یا بزرگ‌شدن لوزه‌ها و احساس خفگی، پزشک برداشتن آن‌ها را پیشنهاد می‌کند؛ در چنین شرایطی ممکن است لازم باشد میان دو وضعیت نامطلوب وضعیت نامطلوب‌تر انتخاب شود.</p>
+<p>Miller با برداشتن تیموس موش‌های نوزاد (neonatal thymectomy) دریافت که موش‌ها به عفونت‌ها حساس‌تر می‌شوند، توانایی رد پیوند پوست را از دست می‌دهند و بسیاری از آن‌ها می‌میرند. بررسی‌ها نشان داد نوعی از لنفوسیت‌ها کاهش پیدا می‌کند و این یافته‌ها اهمیت ایمنی سلولی را نشان دادند؛ سلول‌های T از رده‌های اصلی این ایمنی‌اند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">پس از برداشتن تیموس موش‌های نوزاد (neonatal thymectomy)، موش‌ها به عفونت‌ها حساس‌تر شدند، توانایی رد پیوند پوست را از دست دادند و بسیاری از آن‌ها مردند.</div></div>
+<p>در توضیح شفاهی همچنین گفته شد Miller متوجه شده بود موش‌ها یک thymus گردنی اضافه نیز دارند که کمی متفاوت است و دربارهٔ دلیل وجود آن هنوز پژوهش می‌شود.</p>
+<h3 id="heading-8">وقتی ارگان اولیه کار نکند: سندرم دی‌جورج</h3>
+<p>در سندرم دی‌جورج (DiGeorge syndrome)، در بازوی بلند کروموزوم ۲۲ (22q11.2) حذف رخ می‌دهد. بازوی بلند را q و بازوی کوتاه را p می‌نامند. در این ناحیه حدود سه میلیون جفت‌باز DNA و تقریباً ۳۰ تا ۴۰ ژن حذف می‌شود. ژن‌های این ناحیه در رشد جنینی نقش دارند؛ یکی از ژن‌های مهم TBX1 است، یک transcription factor که در تکامل تیموس، پاراتیروئید، قلب و ساختارهای صورت نقش دارد. بنابراین، مشکل اصلی صرفاً نداشتن یا درست کارنکردن تیموس نیست و حذف کروموزومی می‌تواند چندین دستگاه و ساختار را درگیر کند.</p>
+<table>
+<thead>
+<tr>
+<th>بخش یا ژن</th>
+<th>اطلاعات ذکرشده دربارهٔ سندرم دی‌جورج</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>محل حذف</td>
+<td>بازوی بلند کروموزوم ۲۲؛ 22q11.2</td>
+</tr>
+<tr>
+<td>مقدار حذف</td>
+<td>حدود سه میلیون جفت‌باز DNA و تقریباً ۳۰ تا ۴۰ ژن</td>
+</tr>
+<tr>
+<td>ژن مهم ذکرشده</td>
+<td>TBX1، یک transcription factor</td>
+</tr>
+<tr>
+<td>ساختارهای مرتبط با نقش ژن‌های این ناحیه</td>
+<td>تیموس، پاراتیروئید، قلب و ساختارهای صورت</td>
+</tr>
+<tr>
+<td>نکتهٔ کلی</td>
+<td>حذف کروموزومی می‌تواند چندین دستگاه و ساختار را درگیر کند و مشکل صرفاً به تیموس محدود نیست.</td>
+</tr>
+</tbody></table>
+<p>پیامدهای ممکن عبارت‌اند از:</p>
+<ul>
+<li>نقص تکامل یا عملکرد تیموس و استعداد به عفونت‌ها؛</li>
+<li>اختلال پاراتیروئید و hypocalcemia؛</li>
+<li>نقص قلبی؛</li>
+<li>ناهنجاری‌های صورت، از جمله شکاف کام (cleft palate) و شکاف لب (cleft lip).</li>
+</ul>
+<p>cleft palate به معنی شکاف در سقف دهان و cleft lip به معنی شکاف در لب فوقانی است. این دو را نباید با هم اشتباه گرفت. در cleft lip ممکن است شکاف کام نیز وجود داشته باشد؛ در برخی افراد هر دو دیده می‌شوند و در برخی موارد فقط شکاف کام وجود دارد. در توضیح کلاس گفته شد شکاف لب در سندرم دی‌جورج کمتر شایع است و شکاف کام ممکن است به‌تنهایی دیده شود. شدت و نوع تظاهرات به میزان حذف و نقص ایجادشده بستگی دارد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در تظاهرات صورت، cleft palate به معنی شکاف در سقف دهان و cleft lip به معنی شکاف در لب فوقانی است؛ ممکن است cleft lip همراه با شکاف کام باشد، هر دو با هم دیده شوند یا فقط شکاف کام وجود داشته باشد.</div></div>
+<table>
+<thead>
+<tr>
+<th>پیامد یا ساختار درگیر</th>
+<th>تظاهر ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>تیموس</td>
+<td>نقص تکامل یا عملکرد تیموس و استعداد به عفونت‌ها</td>
+</tr>
+<tr>
+<td>پاراتیروئید</td>
+<td>اختلال پاراتیروئید و hypocalcemia</td>
+</tr>
+<tr>
+<td>قلب</td>
+<td>نقص قلبی</td>
+</tr>
+<tr>
+<td>صورت</td>
+<td>ناهنجاری‌هایی مانند cleft palate و cleft lip؛ شکاف لب در سندرم دی‌جورج کمتر شایع دانسته شد و شکاف کام ممکن است به‌تنهایی دیده شود</td>
+</tr>
+</tbody></table>
+<p>این بیماران ممکن است به عفونت‌های مختلف مبتلا شوند و برای درمان آن‌ها اقدام لازم باشد؛ از جمله، ممکن است پیوند مطرح شود. درمان در بحث نقص‌های ایمنی بیشتر بررسی خواهد شد و این بیماری در درس ایمنی ۲ نیز به‌تفصیل مطرح می‌شود.</p>
+<p><img src="../data/assets/assets/image11.jpg" alt="تصویر 11">
+<em>تصویر 11</em></p>
+<h3 id="heading-9">موش nude</h3>
+<p>موش nude یا موش برهنه، موش بدون مو نیز نامیده می‌شود.  در این موش‌ها جهشی در transcription factor به نام FOXN1 وجود دارد. افزون بر نبود فولیکول‌های مو و بی‌موشدن، تیموس نیز تکامل پیدا نمی‌کند. بنابراین، موش nude هم بدون مو است و هم تیموس تکامل یافته ندارد و به‌عنوان مدل آزمایشگاهی کمبود T به‌کار می‌رود.</p>
+<table>
+<thead>
+<tr>
+<th>ویژگی موش nude</th>
+<th>توضیح مطرح‌شده در درس</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ژن یا عامل ذکرشده</td>
+<td>جهش در transcription factor به نام FOXN1</td>
+</tr>
+<tr>
+<td>مو</td>
+<td>فولیکول‌های مو وجود ندارند و موش بی‌مو است</td>
+</tr>
+<tr>
+<td>تیموس</td>
+<td>تیموس تکامل پیدا نمی‌کند</td>
+</tr>
+<tr>
+<td>کاربرد ذکرشده</td>
+<td>مدل آزمایشگاهی کمبود T</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image12.jpg" alt="تصویر 12">
+<em>تصویر 12</em></p>
+<h3 id="heading-10">بلوغ B cell</h3>
+<h4>مراحل بلوغ در مغز استخوان</h4>
+<p>مسیر بلوغ B cell در اسلاید با مراحل Pro-B cell، Pre-B cell، Immature B cell و Mature naive B cell نشان داده شده است:</p>
+<ol>
+<li><strong>Pro-B cell:</strong> بازآرایی ژن‌های گیرنده آغاز می‌شود و سلول برای ساخت BCR آماده می‌شود.</li>
+<li><strong>Pre-B cell:</strong> زنجیرهٔ سنگین μ ساخته می‌شود.</li>
+<li><strong>Immature B cell:</strong> IgM سطحی بیان می‌شود و خودواکنشگری بررسی می‌شود؛ این مرحله کنترل کیفیت اولیه است.</li>
+<li><strong>Mature naive B cell:</strong> IgM و IgD بیان می‌شوند و سلول به اندام‌های محیطی خارج می‌شود.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>مرحلهٔ B cell</th>
+<th>رویداد یا ویژگی ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Pro-B cell</td>
+<td>بازآرایی ژن‌های گیرنده آغاز می‌شود و سلول برای ساخت BCR آماده می‌شود.</td>
+</tr>
+<tr>
+<td>Pre-B cell</td>
+<td>زنجیرهٔ سنگین μ ساخته می‌شود.</td>
+</tr>
+<tr>
+<td>Immature B cell</td>
+<td>IgM سطحی بیان می‌شود و خودواکنشگری بررسی می‌شود؛ کنترل کیفیت اولیه است.</td>
+</tr>
+<tr>
+<td>Mature naive B cell</td>
+<td>IgM و IgD بیان می‌شوند و سلول به اندام‌های محیطی خارج می‌شود.</td>
+</tr>
+</tbody></table>
+<p><img src="../data/assets/assets/image14.jpg" alt="تصویر 14">
+<em>تصویر 14</em></p>
+<h4>تحمل مرکزی و تفاوت immature و mature B cell</h4>
+<p>تحمل مرکزی (central tolerance) در این فرایند اهمیت دارد. اگر B cell آنتی‌ژن‌های خودی را به‌شدت شناسایی کند، ممکن است حذف شود، گیرنده‌اش ویرایش شود یا غیرفعال شود. این فرایند خطر خودایمنی را کاهش می‌دهد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>تحمل مرکزی (central tolerance)</strong>
+فرایندی که در آن B cellهایی که آنتی‌ژن‌های خودی را به‌شدت شناسایی می‌کنند ممکن است حذف شوند، گیرنده‌شان ویرایش شود یا غیرفعال شوند؛ این فرایند خطر خودایمنی را کاهش می‌دهد.</div></div>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>Immature B cell</th>
+<th>Mature B cell</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>آنتی‌بادی سطحیِ ذکرشده</td>
+<td>ممکن است بیشتر IgM سطحی داشته باشد</td>
+<td>IgM و IgD دیده می‌شوند</td>
+</tr>
+<tr>
+<td>بررسی مرتبط</td>
+<td>خودواکنشگری بررسی می‌شود؛ کنترل کیفیت اولیه</td>
+<td>در اسلاید به‌عنوان مرحله‌ای با بیان IgM و IgD نشان داده شده است</td>
+</tr>
+</tbody></table>
+<p>در توضیح شفاهی گفته شد روی immature B cell ممکن است بیشتر IgM سطحی وجود داشته باشد، درحالی‌که روی mature B cell دو کلاس آنتی‌بادی IgM و IgD دیده می‌شود. توضیحات کامل‌تر دربارهٔ تکامل B cell، از جمله گیرنده‌های سلول‌ها و تفاوت immature B cell و mature B cell، در جلسهٔ مربوط به تکامل سلول‌های B ارائه خواهد شد. جزئیات تکامل B و T نیز به جلسه‌های اختصاصی موکول شد تا پس از آشنایی بیشتر با آنتی‌ژن و آنتی‌بادی، بحث قابل‌درک‌تر باشد.</p>
+</section>
+
+<section class="noteSection quickTablesSection">
+    <h2 id="heading-11">۳. جداول مرور سریع</h2>
+<h3 id="heading-12">تقسیم‌بندی اندام‌های لنفاوی</h3>
+<table>
+<thead>
+<tr>
+<th>گروه</th>
+<th>نمونه‌ها</th>
+<th>نقش در درس</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>اندام‌های لنفاوی اولیه، زایا یا مرکزی</td>
+<td>مغز استخوان و تیموس</td>
+<td>تولید، آماده‌سازی و بلوغ لنفوسیت‌ها؛ این فعالیت به آنتی‌ژن وابسته نیست.</td>
+</tr>
+<tr>
+<td>اندام‌های لنفاوی ثانویه یا محیطی</td>
+<td>گره لنفاوی، طحال و بافت‌های لنفاوی مرتبط با مخاط و پوست؛ بافت‌های لنفاوی مرتبط با مخاط MALT نام دارند.</td>
+<td>برخورد لنفوسیت بالغ با آنتی‌ژن و آغاز پاسخ ایمنی</td>
+</tr>
+</tbody></table>
+<h3 id="heading-13">رده‌های پیش‌ساز و مسیرهای سلولی</h3>
+<table>
+<thead>
+<tr>
+<th>رده یا پیش‌ساز</th>
+<th>مسیرها و نام‌های مطرح‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HSC</td>
+<td>منشأ رده‌های سلول‌های خونی؛ در مغز استخوان به رده‌های پیش‌ساز می‌رسد.</td>
+</tr>
+<tr>
+<td>CMP و ردهٔ میلوئیدی</td>
+<td>گرانولوسیت‌ها، اریتروسیت‌ها و مونوسیت‌ها؛ مونوسیت‌ها می‌توانند به ماکروفاژها مرتبط شوند. گلبول قرمز و پلاکت نیز در رده‌های خونی مطرح‌اند.</td>
+</tr>
+<tr>
+<td>CLP و ردهٔ لنفوئیدی</td>
+<td>سلول‌های B، سلول‌های T و سلول‌های NK؛ مسیرهای پیش‌ساز Pro-B و Pro-T نیز از این رده شکل می‌گیرند.</td>
+</tr>
+<tr>
+<td>پیش‌سازهای دیگرِ نمودارها</td>
+<td>ILC، mast cell، megakaryocyte، erythroid، granulocyte، monocyte، Pro-B cell، Pre-B cell، Pro-T cell، Pre-T cell، Pro-NK cell، Pro-ILC و monoblast</td>
+</tr>
+</tbody></table>
+<h3 id="heading-14">مسیرهای بلوغ و جابه‌جایی B و T</h3>
+<table>
+<thead>
+<tr>
+<th>ویژگی مسیر</th>
+<th>مسیر T</th>
+<th>مسیر B</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>محل آغاز</td>
+<td>Pro-T cell در مغز استخوان تولید می‌شود.</td>
+<td>بلوغ در مغز استخوان آغاز می‌شود.</td>
+</tr>
+<tr>
+<td>پس از مراحل اولیه</td>
+<td>Pro-T cell بسیار نابالغ از مغز استخوان خارج می‌شود و وارد تیموس می‌گردد.</td>
+<td>سلول تا مرحلهٔ immature B cell در مغز استخوان تکامل می‌یابد و سپس از راه خون خارج می‌شود.</td>
+</tr>
+<tr>
+<td>محل ادامه یا بلوغ نهایی</td>
+<td>مراحل بعدی تکامل و بلوغ نهایی T cell در تیموس رخ می‌دهد.</td>
+<td>مرحلهٔ نهایی تبدیل immature B cell به mature B cell در طحال انجام می‌شود.</td>
+</tr>
+<tr>
+<td>پس از بلوغ</td>
+<td>لنفوسیت بالغ به اندام‌های محیطی می‌رود.</td>
+<td>لنفوسیت بالغ به اندام‌های محیطی می‌رود.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-15">مسیر ورود آنتی‌ژن، گردش و سرنوشت لنفوسیت</h3>
+<table>
+<thead>
+<tr>
+<th>مسیر ورود آنتی‌ژن</th>
+<th>محل دریافت یا عرضه</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>خون</td>
+<td>طحال</td>
+</tr>
+<tr>
+<td>لنف</td>
+<td>گره لنفاوی</td>
+</tr>
+<tr>
+<td>سطوح مخاطی</td>
+<td>بافت‌های لنفاوی مخاطی؛ از جمله Peyer’s patches در نمودار</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>وضعیت لنفوسیت</th>
+<th>سرنوشت</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>آنتی‌ژن اختصاصی شناسایی نمی‌شود</td>
+<td>از اندام لنفاوی ثانویه خارج می‌شود و به recirculation ادامه می‌دهد.</td>
+</tr>
+<tr>
+<td>آنتی‌ژن اختصاصی شناسایی می‌شود</td>
+<td>فعال و تکثیر می‌شود و به سلول‌های effector و memory تمایز می‌یابد.</td>
+</tr>
+<tr>
+<td>پس از تمایز به memory</td>
+<td>سلول‌های memory باقی می‌مانند و در مواجههٔ بعدی با همان عامل میکروبی می‌توانند سریع پاسخ دهند.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-16">خون‌سازی جنینی و مغز استخوان</h3>
+<table>
+<thead>
+<tr>
+<th>محل یا نوع مغز استخوان</th>
+<th>زمان، محل، ترکیب یا کارکرد مطرح‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>کیسهٔ زرده</td>
+<td>شروع خون‌سازی حدود هفتهٔ سوم</td>
+</tr>
+<tr>
+<td>کبد و تا حدی طحال</td>
+<td>شروع خون‌سازی حدود هفتهٔ ششم یا نزدیک دو ماه</td>
+</tr>
+<tr>
+<td>مغز استخوان در دورهٔ جنینی</td>
+<td>حدود ماه چهارم تا پنجم؛ همچنین «روز هفتادم» نیز ذکر شده است.</td>
+</tr>
+<tr>
+<td>مغز زرد (yellow marrow)</td>
+<td>در بزرگسالان عمدتاً در تنهٔ استخوان‌های بلند؛ ترکیب غالب سلول‌های چربی؛ فعالیت خون‌سازی کم؛ بیشتر ذخیرهٔ چربی و پشتیبانی محدود و در شرایط خاص دارای قابلیت تبدیل</td>
+</tr>
+<tr>
+<td>مغز قرمز (red marrow)</td>
+<td>بیشتر از سلول‌های خون‌ساز؛ فعالیت خون‌سازی زیاد؛ در استخوان‌های پهن و انتهای استخوان‌های بلند، از جمله نواحی پروگزیمال و اپی‌فیز</td>
+</tr>
+<tr>
+<td>نمونه‌های استخوان پهن</td>
+<td>جمجمه، لگن، جناغ سینه و مهره‌های کمر</td>
+</tr>
+<tr>
+<td>نمونه‌های استخوان بلند</td>
+<td>استخوان ران و بازو</td>
+</tr>
+</tbody></table>
+<h3 id="heading-17">ساختار و مراحل تیموس</h3>
+<table>
+<thead>
+<tr>
+<th>ساختار یا ویژگی</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>محل</td>
+<td>پشت جناغ (sternum)، بالای قلب و بین دو ریه؛ جناغ در جلوی آن است.</td>
+</tr>
+<tr>
+<td>لوب‌ها و کپسول</td>
+<td>دو لوب بزرگ؛ کپسولی از بافت هم‌بند متراکم که نسبتاً نازک و نازک‌تر از کپسول گره لنفاوی و طحال است.</td>
+</tr>
+<tr>
+<td>تیغه‌ها</td>
+<td>از کپسول وارد لوب‌ها می‌شوند و آن‌ها را به لوبول‌ها تقسیم می‌کنند؛ septa و در برخی کتاب‌ها trabeculae نامیده می‌شوند.</td>
+</tr>
+<tr>
+<td>عروق و اعصاب</td>
+<td>از مسیر تیغه‌ها وارد تیموس می‌شوند و به خون‌رسانی و تغذیهٔ بافت کمک می‌کنند.</td>
+</tr>
+<tr>
+<td>قشر (cortex)</td>
+<td>تراکم لنفوسیت‌ها بیشتر است و در تصویر تیره‌تر دیده می‌شود؛ مراحل اولیهٔ تکامل thymocyteها در آن رخ می‌دهد.</td>
+</tr>
+<tr>
+<td>مدولا (medulla)</td>
+<td>thymocyteهای پس از مراحل انتخاب و تکامل، سلول‌های دندریتیک، ماکروفاژها، سلول‌های اپیتلیال مدولاری و اجسام هاسال در آن وجود دارند.</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>مرحلهٔ thymocyte</th>
+<th>ویژگی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Double negative</td>
+<td>CD4 و CD8 ندارد.</td>
+</tr>
+<tr>
+<td>Double positive</td>
+<td>هم CD4 و هم CD8 را دارد؛ CD4 با T helper و CD8 با T cytotoxic مرتبط است.</td>
+</tr>
+<tr>
+<td>Single positive</td>
+<td>پس از مراحل انتخاب و تکامل، در مدولا یا CD4-positive T cell است یا CD8-positive T cell؛ سپس می‌تواند وارد خون شود.</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>ویژگی دیگر تیموس</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>خروج thymocyteهای نابالغ</td>
+<td>حدود ۱ تا ۲ درصد از سلول‌های نابالغی که وارد تیموس می‌شوند، از آن خارج شده و وارد خون محیطی می‌شوند.</td>
+</tr>
+<tr>
+<td>حذف سلول‌ها</td>
+<td>سلول‌های بسیاری باقی نمی‌مانند؛ از جمله سلول‌های autoreactive ممکن است از بین بروند.</td>
+</tr>
+<tr>
+<td>سلول‌های قشر</td>
+<td>سلول‌های اپیتلیال کورتیکال Interleukin-7 ترشح می‌کنند که در بلوغ و تکامل T cell نقش مهمی دارد.</td>
+</tr>
+<tr>
+<td>اجسام هاسال</td>
+<td>در مدولا؛ به‌شکل لایه‌ها و حلقه‌های فشرده و متحدالمرکز شبیه لایه‌های پوست پیاز توصیف شده‌اند. منشأ آن‌ها احتمالاً اپیتلیالی دانسته شد؛ در بعضی کتاب‌ها نقش thymocyteهای در حال تخریب نیز مطرح است.</td>
+</tr>
+<tr>
+<td>تغییر فعالیت با سن</td>
+<td>نمودار اسلاید اوج را از کودکی تا بلوغ نشان می‌دهد و سپس آتروفی و جایگزینی با چربی را نمایش می‌دهد؛ توضیح شفاهی اوج اندازه و تولید thymocyte را حدود ۱۹ تا ۲۰ سالگی بیان می‌کند.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-18">سندرم دی‌جورج و موش nude</h3>
+<table>
+<thead>
+<tr>
+<th>موضوع</th>
+<th>اطلاعات مطرح‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>سندرم دی‌جورج: محل حذف</td>
+<td>بازوی بلند کروموزوم ۲۲؛ 22q11.2. بازوی بلند q و بازوی کوتاه p نامیده می‌شوند.</td>
+</tr>
+<tr>
+<td>مقدار حذف</td>
+<td>حدود سه میلیون جفت‌باز DNA و تقریباً ۳۰ تا ۴۰ ژن</td>
+</tr>
+<tr>
+<td>ژن مهم</td>
+<td>TBX1، یک transcription factor با نقش در تکامل تیموس، پاراتیروئید، قلب و ساختارهای صورت</td>
+</tr>
+<tr>
+<td>پیامدهای ممکن</td>
+<td>نقص تکامل یا عملکرد تیموس و استعداد به عفونت‌ها؛ اختلال پاراتیروئید و hypocalcemia؛ نقص قلبی؛ ناهنجاری‌های صورت مانند cleft palate و cleft lip</td>
+</tr>
+<tr>
+<td>cleft palate و cleft lip</td>
+<td>cleft palate شکاف در سقف دهان و cleft lip شکاف در لب فوقانی است. شکاف لب در سندرم دی‌جورج کمتر شایع دانسته شد؛ ممکن است شکاف کام به‌تنهایی یا همراه cleft lip دیده شود.</td>
+</tr>
+<tr>
+<td>موش nude</td>
+<td>جهش در transcription factor به نام FOXN1؛ نبود فولیکول‌های مو و تکامل‌نیافتن تیموس؛ مدل آزمایشگاهی کمبود T</td>
+</tr>
+</tbody></table>
+<h3 id="heading-19">مراحل بلوغ B cell و تحمل مرکزی</h3>
+<table>
+<thead>
+<tr>
+<th>مرحلهٔ B cell</th>
+<th>رویداد یا ویژگی</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Pro-B cell</td>
+<td>بازآرایی ژن‌های گیرنده آغاز می‌شود و سلول برای ساخت BCR آماده می‌شود.</td>
+</tr>
+<tr>
+<td>Pre-B cell</td>
+<td>زنجیرهٔ سنگین μ ساخته می‌شود.</td>
+</tr>
+<tr>
+<td>Immature B cell</td>
+<td>IgM سطحی بیان می‌شود و خودواکنشگری بررسی می‌شود؛ کنترل کیفیت اولیه است.</td>
+</tr>
+<tr>
+<td>Mature naive B cell</td>
+<td>IgM و IgD بیان می‌شوند و سلول به اندام‌های محیطی خارج می‌شود.</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>Immature B cell</th>
+<th>Mature B cell</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>آنتی‌بادی سطحیِ ذکرشده</td>
+<td>ممکن است بیشتر IgM سطحی داشته باشد.</td>
+<td>IgM و IgD دیده می‌شوند.</td>
+</tr>
+<tr>
+<td>بررسی مرتبط</td>
+<td>خودواکنشگری بررسی می‌شود؛ کنترل کیفیت اولیه</td>
+<td>در اسلاید به‌عنوان مرحله‌ای با بیان IgM و IgD نشان داده شده است.</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>فرایند</th>
+<th>پیامد مطرح‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>تحمل مرکزی (central tolerance)</td>
+<td>اگر B cell آنتی‌ژن‌های خودی را به‌شدت شناسایی کند، ممکن است حذف شود، گیرنده‌اش ویرایش شود یا غیرفعال شود؛ این فرایند خطر خودایمنی را کاهش می‌دهد.</td>
+</tr>
+</tbody></table>
+</section>
+
+<section class="noteSection keyTermsSection">
+    <h2 id="heading-20">۴. اصطلاحات و تعاریف</h2>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>اندام‌های لنفاوی اولیه (primary/generative/central lymphoid organs)</strong>
+مغز استخوان و تیموس؛ محل تولید و بلوغ لنفوسیت‌ها، که فعالیت آن‌ها در تولید و آماده‌سازی لنفوسیت‌ها به آنتی‌ژن وابسته نیست.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>اندام‌های لنفاوی ثانویه یا محیطی (secondary/peripheral lymphoid organs)</strong>
+گره لنفاوی، طحال و بافت‌های لنفاوی مرتبط با سطوح مخاطی و پوست؛ محل برخورد لنفوسیت بالغ با آنتی‌ژن و آغاز پاسخ ایمنی.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>MALT</strong>
+نام بافت‌های لنفاوی مرتبط با مخاط است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پیش‌ساز لنفوئیدی مشترک (common lymphoid progenitor; CLP)</strong>
+یکی از رده‌های پیش‌سازی است که HSC در مغز استخوان به آن می‌رسد و مسیرهای پیش‌ساز لنفوسیتی، از جمله مسیرهای Pro-B و Pro-T، از آن شکل می‌گیرند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>لنفوسیت نایو (naive lymphocyte)</strong>
+لنفوسیت بالغی که هنوز با آنتی‌ژن اختصاصی خودش مواجه نشده و فعال نشده است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>تحمل مرکزی (central tolerance)</strong>
+فرایندی که در آن B cellهایی که آنتی‌ژن‌های خودی را به‌شدت شناسایی می‌کنند ممکن است حذف شوند، گیرنده‌شان ویرایش شود یا غیرفعال شوند؛ این فرایند خطر خودایمنی را کاهش می‌دهد.</div></div>
+</section>
+
+<section class="noteSection selfAssessmentSection">
+    <h2 id="heading-21">۵. خود‌ارزیابی</h2>
+<h3 id="heading-22">سوالات تشریحی</h3>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>اندام‌های لنفاوی اولیه و ثانویه را از نظر نمونه‌ها و نقش در پاسخ ایمنی مقایسه کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>اندام‌های اولیه شامل مغز استخوان و تیموس‌اند و محل تولید، آماده‌سازی و بلوغ لنفوسیت‌ها هستند؛ این فعالیت به آنتی‌ژن وابسته نیست. اندام‌های ثانویه شامل گره لنفاوی، طحال و بافت‌های لنفاوی مرتبط با مخاط و پوست‌اند و محل برخورد لنفوسیت بالغ با آنتی‌ژن و آغاز پاسخ ایمنی هستند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>مسیر تکامل و جابه‌جایی لنفوسیت‌های B و T را تا مرحلهٔ بلوغ نهایی توضیح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>Pro-T cell در مغز استخوان تولید می‌شود، به‌صورت سلولی بسیار نابالغ از آن خارج می‌شود و وارد تیموس می‌گردد؛ مراحل بعدی تکامل و بلوغ نهایی T cell در تیموس رخ می‌دهد. مسیر B در مغز استخوان تا مرحلهٔ immature B cell پیش می‌رود؛ سلول سپس از راه خون به اندام‌های لنفاوی ثانویه می‌رود و مرحلهٔ نهایی تبدیل آن به mature B cell در طحال انجام می‌شود.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>محل دریافت آنتی‌ژن‌های واردشده از خون، لنف و سطوح مخاطی را مشخص کنید و سرنوشت لنفوسیت را در صورت شناسایی‌نشدن یا شناسایی آنتی‌ژن توضیح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>آنتی‌ژن‌های واردشده از خون در طحال، آنتی‌ژن‌های واردشده از راه لنف در گره لنفاوی و آنتی‌ژن‌های واردشده از سطوح مخاطی در بافت‌های لنفاوی مخاطی عرضه می‌شوند. اگر لنفوسیت آنتی‌ژن اختصاصی خود را شناسایی نکند، از اندام خارج می‌شود و به recirculation ادامه می‌دهد. اگر آن را شناسایی کند، فعال و تکثیر می‌شود و به سلول‌های effector و memory تمایز می‌یابد.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>ویژگی‌های اصلی مغز استخوان قرمز و زرد در فرد بالغ را از نظر ترکیب، محل و فعالیت خون‌سازی بیان کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>مغز قرمز بیشتر از سلول‌های خون‌ساز تشکیل شده، فعالیت خون‌سازی زیادی دارد و در استخوان‌های پهن و انتهای استخوان‌های بلند دیده می‌شود. مغز زرد عمدتاً در تنهٔ استخوان‌های بلند قرار دارد، ترکیب غالب آن سلول‌های چربی است و فعالیت خون‌سازی در آن کم است؛ کارکردش بیشتر ذخیرهٔ چربی و پشتیبانی محدود است و در شرایط خاص قابلیت تبدیل دارد.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>مراحل بلوغ B cell در اسلاید را به‌ترتیب بنویسید و رویداد اصلی هر مرحله را ذکر کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در Pro-B cell بازآرایی ژن‌های گیرنده آغاز می‌شود و سلول برای ساخت BCR آماده می‌شود. در Pre-B cell زنجیرهٔ سنگین μ ساخته می‌شود. در Immature B cell، IgM سطحی بیان می‌شود و خودواکنشگری بررسی می‌شود. در Mature naive B cell، IgM و IgD بیان می‌شوند و سلول به اندام‌های محیطی خارج می‌شود.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<h3 id="heading-23">سوالات تستی</h3>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>کدام گزینه اندام‌های لنفاوی اولیه را همراه با نقش کلی آن‌ها درست بیان می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">گره لنفاوی و طحال؛ محل آغاز تولید لنفوسیت‌ها وابسته به آنتی‌ژن</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">مغز استخوان و تیموس؛ محل تولید و آماده‌سازی لنفوسیت‌ها مستقل از برخورد با آنتی‌ژن</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">طحال و MALT؛ محل بلوغ نهایی همهٔ لنفوسیت‌های T و B</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">مغز استخوان و گره لنفاوی؛ محل عرضهٔ همهٔ آنتی‌ژن‌های خونی</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>مغز استخوان و تیموس اندام‌های لنفاوی اولیه‌اند و تولید و آماده‌سازی لنفوسیت‌ها در آن‌ها به آنتی‌ژن وابسته نیست.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>مسیر Pro-T cell پس از تولید در مغز استخوان چگونه ادامه می‌یابد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">در مغز استخوان می‌ماند و بلوغ نهایی را در طحال می‌گذراند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">به‌صورت سلولی بسیار نابالغ وارد تیموس می‌شود و مراحل بعدی تکامل را در آنجا می‌گذراند.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">به گره لنفاوی می‌رود و در آنجا به immature B cell تبدیل می‌شود.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">از راه لنف مستقیماً وارد MALT می‌شود و بلوغ نهایی آن در پوست رخ می‌دهد.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>Pro-T cell بسیار نابالغ از مغز استخوان خارج می‌شود و وارد تیموس می‌گردد؛ مراحل بعدی تکامل و بلوغ نهایی T cell در تیموس انجام می‌شود.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>آنتی‌ژن‌های واردشده از راه لنف معمولاً در کدام اندام دریافت می‌شوند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">طحال</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">مغز استخوان</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">گره لنفاوی</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">تیموس</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>گره لنفاوی آنتی‌ژن‌هایی را که از راه لنف وارد شده‌اند دریافت می‌کند.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>اگر لنفوسیت در یک نوبت آنتی‌ژن اختصاصی خود را شناسایی نکند، چه می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">به recirculation ادامه می‌دهد و دوباره آنتی‌ژن را جست‌وجو می‌کند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">بلافاصله به سلول memory تبدیل می‌شود.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">در اندام ثانویه باقی می‌ماند و تکثیر می‌شود.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">به سلول‌های T و B هم‌زمان تمایز می‌یابد.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در صورت شناسایی‌نشدن آنتی‌ژن اختصاصی، لنفوسیت از اندام خارج می‌شود و به recirculation ادامه می‌دهد.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>کدام گزینه دربارهٔ مغز استخوان قرمز و زرد درست است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">مغز زرد فعالیت خون‌سازی زیاد دارد و بیشتر در استخوان‌های پهن قرار دارد.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">مغز قرمز بیشتر از سلول‌های چربی تشکیل شده و عمدتاً در تنهٔ استخوان‌های بلند است.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">مغز قرمز بیشتر از سلول‌های خون‌ساز تشکیل شده و فعالیت خون‌سازی آن زیاد است.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">مغز قرمز فقط در دورهٔ جنینی وجود دارد و پس از تولد به‌طور کامل حذف می‌شود.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>مغز قرمز بیشتر از سلول‌های خون‌ساز تشکیل شده و وظیفهٔ تولید خون را بر عهده دارد؛ فعالیت خون‌سازی در آن زیاد است.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="6"><div class="questionBoxHeader">سؤال 6</div><div class="questionBoxPrompt"><p>thymocyte در مرحلهٔ double positive چه ویژگی‌ای دارد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">نه CD4 دارد و نه CD8.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">فقط CD4 دارد.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">فقط CD8 دارد.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">هم CD4 و هم CD8 دارد.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>سلول double positive هر دو CD4 و CD8 را دارد؛ thymocyteها پیش از آن double negative هستند و پس از مراحل انتخاب و تکامل به single positive می‌رسند.</p><div class="questionCorrect" data-correct="D"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>D</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="7"><div class="questionBoxHeader">سؤال 7</div><div class="questionBoxPrompt"><p>کدام توصیف دربارهٔ اجسام هاسال با توضیحات درس سازگار است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">در قشر دیده می‌شوند و از حلقه‌های متحدالمرکز شبیه پوست پیاز تشکیل شده‌اند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">در مدولا دیده می‌شوند و به‌شکل لایه‌ها و حلقه‌های فشرده و متحدالمرکز توصیف شده‌اند.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">در مغز استخوان زرد دیده می‌شوند و از سلول‌های چربی تشکیل شده‌اند.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">در طحال قرار دارند و آنتی‌ژن‌های خونی را دریافت می‌کنند.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>اجسام هاسال در مدولا وجود دارند و به‌شکل لایه‌ها و حلقه‌های فشرده و متحدالمرکز، شبیه لایه‌های پوست پیاز، توصیف شده‌اند.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="8"><div class="questionBoxHeader">سؤال 8</div><div class="questionBoxPrompt"><p>کدام گزینه یکی از پیامدهای ممکن سندرم دی‌جورج است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">اختلال پاراتیروئید و hypocalcemia</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">افزایش تولید thymocyte در تیموس</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">تبدیل مغز قرمز به مغز زرد در همهٔ استخوان‌ها</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">افزایش بیان IgM و IgD در همهٔ سلول‌های T</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>از پیامدهای ممکن سندرم دی‌جورج، اختلال پاراتیروئید و hypocalcemia است؛ نقص تیموس، استعداد به عفونت‌ها، نقص قلبی و ناهنجاری‌های صورت نیز ذکر شده‌اند.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="9"><div class="questionBoxHeader">سؤال 9</div><div class="questionBoxPrompt"><p>مطابق توضیح درس، کدام ویژگی دربارهٔ موش nude درست است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">جهش FOXN1 با نبود فولیکول‌های مو و تکامل‌نیافتن تیموس همراه است.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">تیموس دارد، اما مغز استخوان آن تکامل پیدا نمی‌کند.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">به‌عنوان مدل آزمایشگاهی کمبود B به‌کار می‌رود و بدون مو نیست.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">جهش FOXN1 باعث می‌شود تیموس فقط در بزرگسالی تکامل پیدا کند.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در توضیح درس، موش nude دارای جهش در transcription factor به نام FOXN1 است؛ فولیکول‌های مو ندارد، بی‌مو است و تیموس آن تکامل پیدا نمی‌کند.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="10"><div class="questionBoxHeader">سؤال 10</div><div class="questionBoxPrompt"><p>در کدام مرحلهٔ بلوغ B cell، طبق اسلاید، IgM سطحی بیان می‌شود و خودواکنشگری بررسی می‌شود؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">Pro-B cell</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">Pre-B cell</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">Immature B cell</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">Mature naive B cell</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در مرحلهٔ Immature B cell، IgM سطحی بیان می‌شود و خودواکنشگری بررسی می‌شود؛ این مرحله کنترل کیفیت اولیه است.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+</section>
+
+<section class="noteSection reviewSection">
+    <h2 id="heading-24">۶. موارد نیازمند بررسی</h2>
+</section>
+
+<section class="noteSection editorAndSourcesSection">
+    <h2 id="heading-25">۷. ادیتور و منابع استفاده‌شده</h2>
+<p><strong>ادیتور:</strong> آوین باقرزاده</p>
+<p><strong>منابع استفاده‌شده:</strong></p>
+<ul>
+<li>صوت درس</li>
+<li>مقالهٔ J. F. A. P. Miller، “Immunological function of the thymus”، The Lancet، منتشرشده در ۲ سپتامبر ۱۹۶۱، 2(7205):748–749.</li>
+<li>منبع تصویر مقاله: © The Walter and Eliza Hall Institute of Medical Research؛ بازنشر مقاله با اجازهٔ Elsevier از طریق Copyright Clearance Center, Inc.</li>
+</ul>
+</section>
+
+<section class="noteSection completionSection">
+    <h2 id="heading-26">۸. گزارش تکمیل بودن محتوا</h2>
+<p><strong>برآورد تقریبی تکمیل محتوا:</strong> حدود ۱۰۰٪ محتوای ارائه‌شده در مواد ورودی بازتاب یافته است؛ این برآورد تضمین ریاضی کامل‌بودن نیست.</p>
+<ul>
+<li>✓ پوشش محتوای اسلایدها و تصاویر ارجاع‌شده در محتوای ورودی</li>
+<li>✓ پوشش نکات آموزشی و توضیحات صوت درس</li>
+</ul>
+</section>
+
+    </main>
+
+
+    <button
+        class="backToTop"
+        type="button"
+        aria-label="بازگشت به ابتدای صفحه"
+    >
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+
+    <script src="../src/themeSwitcher.js"></script>
+    <script src="../src/fontSizeSwitcher.js"></script>
+    <script src="../src/aboutModal.js"></script>
+    <script src="../src/quickNavigation.js"></script>
+    <script src="../src/print.js"></script>
+    <script src="../src/search.js"></script>
+    <script src="../src/highlight.js"></script>
+    <script src="../src/stickyNotes.js"></script>
+    <script src="../src/viewPersistence.js"></script>
+    <script src="../src/questionInteractions.js"></script>
+    <script src="../src/fontSwitcher.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarToggle = document.querySelector(".sidebarToggle");
+    const sidebarBackdrop = document.querySelector(".sidebarBackdrop");
+
+    function openSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.add("isOpen");
+        sidebarBackdrop.classList.add("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "true");
+        sidebar.setAttribute("aria-hidden", "false");
+    }
+
+    function closeSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.remove("isOpen");
+        sidebarBackdrop.classList.remove("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "false");
+        sidebar.setAttribute("aria-hidden", "true");
+    }
+
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener("click", () => {
+            if (sidebar.classList.contains("isOpen")) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+    }
+
+    if (sidebarBackdrop) {
+        sidebarBackdrop.addEventListener("click", closeSidebar);
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeSidebar();
+        }
+    });
+
+    document.querySelectorAll(".tocItem").forEach((item) => {
+        item.addEventListener("click", closeSidebar);
+    });
+</script>
+
+</body>
+
+</html>

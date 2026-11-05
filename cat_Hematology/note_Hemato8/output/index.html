@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>اریتروپوئزیس و تمایز گلبول قرمز</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/rtl.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../node_modules/katex/dist/katex.min.css"
+    >
+
+    <link rel="stylesheet" href="../styles/dark.css">
+    <link rel="stylesheet" href="../styles/forest.css">
+    <link rel="stylesheet" href="../styles/paperLike.css">
+    <link rel="stylesheet" href="../styles/neon.css">
+    <link rel="stylesheet" href="../styles/print.css" media="print">
+
+    <script src="../node_modules/lucide/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+
+    <div class="printBrand" aria-hidden="true" style="display:none">پاپیروس</div>
+
+    <header class="appHeader">
+
+        <button
+            class="sidebarToggle"
+            type="button"
+            aria-label="باز کردن فهرست مطالب"
+            aria-expanded="false"
+        >
+            <i data-lucide="panel-left"></i>
+        </button>
+
+
+        <div class="appTitle">
+            پاپیروس
+        </div>
+
+
+        <div class="headerControls">
+
+<button
+    class="searchButton"
+    type="button"
+    aria-label="جستجو در جزوه"
+    aria-expanded="false"
+>
+    <i data-lucide="search"></i>
+</button>
+
+<div class="highlightSwitcher">
+
+    <button
+        class="highlightToggle"
+        type="button"
+        aria-label="هایلایت"
+        aria-expanded="false"
+    >
+        <i data-lucide="highlighter"></i>
+    </button>
+
+
+<div
+    class="highlightOptions"
+    aria-hidden="true"
+>
+
+    <button
+        class="highlightPowerToggle"
+        type="button"
+        aria-label="روشن یا خاموش کردن هایلایت"
+        aria-pressed="true"
+    >
+        <i data-lucide="highlighter"></i>
+        <span>هایلایت روشن</span>
+    </button>
+
+        <div class="highlightColors">
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#fff176"
+                aria-label="هایلایت زرد"
+                style="--highlightColor: #fff176;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#a5d6a7"
+                aria-label="هایلایت سبز"
+                style="--highlightColor: #a5d6a7;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#90caf9"
+                aria-label="هایلایت آبی"
+                style="--highlightColor: #90caf9;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ce93d8"
+                aria-label="هایلایت بنفش"
+                style="--highlightColor: #ce93d8;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ffab91"
+                aria-label="هایلایت نارنجی"
+                style="--highlightColor: #ffab91;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ef9a9a"
+                aria-label="هایلایت قرمز"
+                style="--highlightColor: #ef9a9a;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#f48fb1"
+                aria-label="هایلایت صورتی"
+                style="--highlightColor: #f48fb1;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#80cbc4"
+                aria-label="هایلایت فیروزه‌ای"
+                style="--highlightColor: #80cbc4;"
+            ></button>
+
+        </div>
+
+
+        <div class="highlightDivider"></div>
+
+
+        <label
+            class="highlightCustomColor"
+            aria-label="انتخاب رنگ دلخواه"
+        >
+            <input
+                class="highlightColorInput"
+                type="color"
+                value="#fff176"
+            >
+
+            <i data-lucide="palette"></i>
+        </label>
+
+
+        <button
+            class="highlightEraser"
+            type="button"
+            aria-label="پاک کردن هایلایت"
+        >
+            <i data-lucide="eraser"></i>
+            <span>پاک‌کن</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="stickyNotesSwitcher">
+
+    <button
+        class="stickyNotesToggle"
+        type="button"
+        aria-label="یادداشت‌های چسبان"
+        aria-expanded="false"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+</div>
+
+            <div class="fontSizeSwitcher">
+
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="decrease"
+                    aria-label="کاهش اندازه فونت"
+                >
+                    <i data-lucide="minus"></i>
+                </button>
+
+<button
+    type="button"
+    class="fontSizeControl fontSwitchControl"
+    aria-label="تغییر فونت"
+>
+    <i data-lucide="type"></i>
+</button>
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="increase"
+                    aria-label="افزایش اندازه فونت"
+                >
+                    <i data-lucide="plus"></i>
+                </button>
+
+            </div>
+
+
+            <div class="themeSwitcher">
+
+                <button
+                    class="themeToggle"
+                    type="button"
+                    aria-label="تغییر تم"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="sun"></i>
+                </button>
+
+<div class="themeOptions">
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="light"
+        aria-label="تم روشن"
+    >
+        <i data-lucide="sun"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="dark"
+        aria-label="تم تاریک"
+    >
+        <i data-lucide="moon"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="forest"
+        aria-label="تم جنگلی"
+    >
+        <i data-lucide="trees"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="paperLike"
+        aria-label="تم پیپر لایک"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+<button
+    class="themeButton"
+    type="button"
+    data-theme="neon"
+    aria-label="تم نئون"
+>
+<i data-lucide="zap"></i>
+</button>
+
+
+</div>
+
+            </div>
+
+<button
+    class="printButton"
+    type="button"
+    aria-label="چاپ جزوه"
+>
+    <i data-lucide="printer"></i>
+</button>
+
+
+            <button
+                class="aboutButton"
+                type="button"
+                aria-label="درباره ما"
+            >
+                <i data-lucide="users-round"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+<div
+    class="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="searchPanelContent">
+
+        <div class="searchInputWrapper">
+
+            <i data-lucide="search"></i>
+
+            <input
+                class="searchInput"
+                type="search"
+                placeholder="جستجو در جزوه..."
+                aria-label="جستجو در جزوه"
+                autocomplete="off"
+            >
+
+            <button
+                class="searchClearButton"
+                type="button"
+                aria-label="پاک کردن جستجو"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="searchResultsInfo">
+            <span class="searchResultsCount">۰ نتیجه</span>
+
+            <div class="searchNavigation">
+
+                <button
+                    class="searchPreviousButton"
+                    type="button"
+                    aria-label="نتیجه قبلی"
+                    disabled
+                >
+                    <i data-lucide="chevron-up"></i>
+                </button>
+
+                <button
+                    class="searchNextButton"
+                    type="button"
+                    aria-label="نتیجه بعدی"
+                    disabled
+                >
+                    <i data-lucide="chevron-down"></i>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    <aside
+        class="sidebar"
+        aria-label="فهرست مطالب"
+        aria-hidden="true"
+    >
+
+        <div class="sidebarHeader">
+            <h2>فهرست مطالب</h2>
+        </div>
+
+        <nav
+            class="sidebarContent"
+            aria-label="فهرست مطالب"
+        >
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-1"
+                >
+                    ۱. مقدمه و کلیات
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-2"
+                >
+                    ۲. متن اصلی جزوه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-3"
+                >
+                    اریتروپوئزیس و مراحل تمایز
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-4"
+                >
+                    تغییرات هسته و بیان ژن
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-5"
+                >
+                    تغییرات سیتوپلاسم و رنگ‌آمیزی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-6"
+                >
+                    جزیره اریتروبلاستیک و دریافت ترکیبات موردنیاز
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-7"
+                >
+                    ورود گلبول‌های قرمز به خون
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-8"
+                >
+                    ترکیب و مقدار هموگلوبین
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-9"
+                >
+                    <strong>بخش هم (Heme)</strong>
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-10"
+                >
+                    بخش Globin و زنجیره‌های هموگلوبین
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-11"
+                >
+                    ساختار Heme
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-12"
+                >
+                    کلاسترهای ژنی Globin
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-13"
+                >
+                    جفت‌شدن زنجیره‌ها و انواع هموگلوبین
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-14"
+                >
+                    بیان ژن Globin و انواع هموگلوبین
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-15"
+                >
+                    سنتز Heme
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-16"
+                >
+                    کم‌خونی سیدروبلاستیک و مسمومیت با سرب
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-17"
+                >
+                    پورفیریا
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-18"
+                >
+                    انواع هموگلوبین پاتولوژیک
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-19"
+                >
+                    ۳. جداول مرور سریع
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-20"
+                >
+                    مراحل اریتروپوئزیس و تغییرات سلولی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-21"
+                >
+                    هموگلوبین، زنجیره‌ها و Heme
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-22"
+                >
+                    کلاسترهای ژنی و انواع هموگلوبین
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-23"
+                >
+                    مسیر و تنظیم سنتز Heme
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-24"
+                >
+                    اختلالات مرتبط با آهن و سرب
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-25"
+                >
+                    پورفیریا و انواع هموگلوبین تغییریافته
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-26"
+                >
+                    ۴. اصطلاحات و تعاریف
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-27"
+                >
+                    ۵. خود‌ارزیابی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-28"
+                >
+                    سوالات تشریحی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-29"
+                >
+                    سوالات تستی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-30"
+                >
+                    ۷. ادیتور و منابع استفاده‌شده
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-31"
+                >
+                    ۸. گزارش تکمیل بودن محتوا
+                </a>
+            
+        </nav>
+
+    </aside>
+
+
+    <div class="sidebarBackdrop"></div>
+
+<aside
+    class="stickyNotesPanel"
+    aria-label="یادداشت‌های چسبان"
+    aria-hidden="true"
+>
+
+    <div class="stickyNotesPanelHeader">
+
+        <h2>یادداشت‌های چسبان</h2>
+
+        <button
+            class="addStickyNoteButton"
+            type="button"
+        >
+            <i data-lucide="plus"></i>
+            <span>یادداشت جدید</span>
+        </button>
+
+    </div>
+
+    <div class="stickyNotesPanelContent">
+
+        <div class="stickyNotesEmptyState">
+<i data-lucide="notebook-pen"></i>
+
+            <p>
+                هنوز یادداشتی ایجاد نکرده‌اید.
+            </p>
+
+        </div>
+
+        <div class="stickyNotesList"></div>
+
+    </div>
+
+</aside>
+
+<div class="stickyNotesBackdrop"></div>
+
+
+    <div
+        class="aboutModal"
+        aria-hidden="true"
+    >
+
+        <div class="aboutModalBackdrop"></div>
+
+        <section
+            class="aboutModalContent"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="aboutTitle"
+        >
+
+            <button
+                class="aboutCloseButton"
+                type="button"
+                aria-label="بستن"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <h2 id="aboutTitle">
+                آدم‌هایی که اینجا رو ساختن
+            </h2>
+
+            <p class="aboutIntroduction">
+                ما یک تیم کوچک هستیم که باور داریم یادگیری باید
+                لذت‌بخش، عمیق، و در دسترس باشد. جزوه‌ساز تلاش ماست
+                برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً
+                بتوانی با آن‌ها چیزی یاد بگیری.
+            </p>
+
+
+<div class="developerList">
+
+    <article class="developerCard">
+        <h3>شبنم رضاپور</h3>
+        <p>کسی که PDFها را راضی کرد محتوایشان را بی‌کم‌وکاست لو بدهند.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیر‌حسین شکری‌زاده سعادت‌آباد</h3>
+        <p>صدای کلاس را به متن تبدیل کرد، حتی وقتی استاد وسط جمله با میکروفون قهر می‌کرد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>مهراد اسدی</h3>
+        <p>پرامپت‌ها را طوری چید که LLM فکر کرد دارد پایان‌نامه دکتری می‌نویسد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیرسالار سهام‌پور</h3>
+        <p>مارک‌داون را به HTML تبدیل کرد و به جزوه ظاهری داد که آدم دلش بخواهد بخواندش.</p>
+    </article>
+
+</div>
+
+            <p class="aboutFooter">
+                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد.
+                <br>
+                امیدواریم یادگیریت را لذت‌بخش‌تر کند.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <div class="quickNavigation">
+        <div class="quickNavigationList"></div>
+    </div>
+
+
+    <main class="noteContainer">
+
+<div class="stickyNotesLayer"></div>
+
+        <section class="noteHeader">
+
+            <div class="noteMetadata">
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">درس</span>
+                    <span class="metadataValue">هماتولوژی</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">مبحث</span>
+                    <span class="metadataValue">هماتولوژی - هموگلوبین و سنتز Heme - جلسه ۸</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">استاد</span>
+                    <span class="metadataValue">دکتر تمدن</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ جلسه</span>
+                    <span class="metadataValue">2026/10/19</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ تولید جزوه</span>
+                    <span class="metadataValue generatedDate">2026-10-19T21:11:57</span>
+                </span>
+
+            </div>
+
+
+            <div class="aiWarning">
+                <i data-lucide="triangle-alert"></i>
+
+                <p>
+                    این جزوه با استفاده از جزوه‌ساز پاپیروس و به صورت خودکار تولید شده است.
+                    ممکن است شامل خطا یا برداشت نادرست باشد و
+                    نیازمند بررسی و بازبینی مجدد است.
+                </p>
+            </div>
+
+        </section>
+
+
+<section class="noteSection introductionSection">
+    <h2 id="heading-1">۱. مقدمه و کلیات</h2>
+<p>این جلسه به مروری بر تولید و تمایز گلبول قرمز، تغییرات سلولی در جریان اریتروپوئزیس و ساختار و انواع هموگلوبین، کلاسترهای ژنی Globin و سنتز Heme می‌پردازد. همچنین کم‌خونی سیدروبلاستیک، مسمومیت با سرب، پورفیریا و انواع هموگلوبین پاتولوژیک بررسی می‌شوند. فانکشن هموگلوبین (Function of Hemoglobin) برای جلسه بعد عنوان شد.</p>
+</section>
+
+<section class="noteSection mainSection">
+    <h2 id="heading-2">۲. متن اصلی جزوه</h2>
+<h3 id="heading-3">اریتروپوئزیس و مراحل تمایز</h3>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>اریتروپوئزیس (Erythropoiesis)</strong>
+فرایند تولید و تکامل گلبول قرمز است.</div></div>
+<p>مراحل تکامل گلبول قرمز به‌ترتیب عبارت‌اند از:</p>
+<ol>
+<li>پرونورموبلاست (Pronormoblast؛ در بعضی کتاب‌های قدیمی‌تر پرواریتروبلاست یا روبری‌بلاست)</li>
+<li>بازوفیلیک نورموبلاست (Basophilic normoblast)</li>
+<li>پلی‌کروماتوفیلیک نورموبلاست (Polychromatophilic normoblast)</li>
+<li>ارتوکروماتوفیلیک نورموبلاست (Orthochromatophilic normoblast)</li>
+<li>رتیکولوسیت (Reticulocyte؛ رتیک یا Retic)</li>
+<li>گلبول قرمز بالغ</li>
+</ol>
+<p><img src="../data/assets/stages_of_erythropoiesis.jpg" alt="stages_of_erythropoiesis">
+<em>مراحل تکامل گلبول قرمز</em></p>
+<h3 id="heading-4">تغییرات هسته و بیان ژن</h3>
+<p>در طول تمایز، هسته از نظر مورفولوژی کوچک‌تر و فشرده‌تر می‌شود و فعالیت آن کاهش می‌یابد. در مراحل اولیه، هسته بزرگ است و ژن‌ها در دسترس‌اند؛ بنابراین رونویسی از ژن‌ها انجام می‌شود. سلول تحت‌تأثیر عوامل سلولی و محیطی موجود در ریزمحیط (Microenvironment) به‌سمت رده اریتروئیدی هدایت شده است. در نتیجه، ژن‌های مرتبط با سلول نهایی بیان می‌شوند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای مثال، در سلولی که قرار است نوتروفیل شود، ژن‌های مرتبط با نوتروفیل و در سلولی که قرار است ائوزینوفیل شود، ژن‌های مرتبط با ائوزینوفیل بیان می‌شوند.</div></div>
+<p>ازآنجاکه گلبول قرمز سرشار از هموگلوبین است، ژن‌های مرتبط با تولید هموگلوبین بیان می‌شوند. همچنین ژن‌های پروتئین‌های غشایی گلبول قرمز باید بیان شوند تا این پروتئین‌ها در غشا جای بگیرند و ساختار غشا کامل شود. بنابراین، بیان ژن‌ها در راستای تکامل سلول است. با انجام کار هسته، هسته به‌تدریج فشرده‌تر می‌شود و کارایی خود را از دست می‌دهد.</p>
+<p>در مرحله ارتوکروماتوفیلیک نورموبلاست، هسته از سلول بیرون انداخته می‌شود. در این فرایند، میتوکندری‌ها هسته را احاطه می‌کنند و با وارد کردن فشار، آن را به خارج از سلول می‌رانند؛ پس از خروج هسته، میتوکندری‌ها نیز به تدریج از سلول حذف می‌شوند.</p>
+<p>گلبول قرمز باید اکسیژن را جابه‌جا کند و در طول عمر خود، حدود ۸۰ تا ۱۲۰ روز، نزدیک به ۲۰۰ کیلومتر از عروق را طی می‌کند؛ بنابراین نباید بار اضافی داشته باشد. همچنین برای رساندن اکسیژن به سلول‌های دیگر، خودش اکسیژن مصرف نمی‌کند و متابولیسم آن از مسیرهای بی‌هوازی (Anaerobic) انجام می‌شود.</p>
+<h3 id="heading-5">تغییرات سیتوپلاسم و رنگ‌آمیزی</h3>
+<p>با بیان ژن‌ها و ترجمهٔ آن‌ها، سیتوپلاسم سلول نیز دچار تغییر می‌شود. سیتوپلاسم سلول‌های نارَس آبی‌رنگ است. در ردهٔ اریتروئیدی، با ساخته‌شدن هموگلوبین، این پروتئین با بخش ائوزین در رنگ‌آمیزی رایت (Wright stain) رنگ می‌گیرد؛ بنابراین رنگ سیتوپلاسم به‌تدریج از آبی به‌سمت نارنجی تغییر می‌کند. در مرحله‌ای، سلول به‌صورت پلی‌کروم (Polychromatic)، یعنی چندرنگ، دیده می‌شود. با افزایش میزان هموگلوبین، رنگ سلول در نهایت به نارنجی تا قرمز تغییر می‌کند و سلول به گلبول قرمز تبدیل می‌شود.</p>
+<h3 id="heading-6">جزیره اریتروبلاستیک و دریافت ترکیبات موردنیاز</h3>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>جزیره اریتروبلاستیک (Erythroblastic island)</strong>
+اریتروبلاست‌ها در مغز استخوان به‌دور یک ماکروفاژ مرکزی تجمع می‌کنند. این ساختار که از یک ماکروفاژ مرکزی و اریتروبلاست‌های اطراف آن تشکیل شده است، جزیرهٔ اریتروبلاستیک (Erythroblastic island) نام دارد.</div></div>
+<p><img src="../data/assets/image065_erythroblastic_island.jpg" alt="image065_erythroblastic_island">
+<em>جزیره اریتروبلاستیک (Erythroblastic island)</em></p>
+<p>در مراحل اریتروپوئزیس، هموگلوبین، پروتئین‌های غشایی و آنزیم‌های موردنیاز گلبول قرمز ساخته می‌شوند. ماکروفاژ به اریتروبلاست آهن و ترکیبات دیگر، ازجمله ویتامین‌ها، می‌رساند. ویتامین E در صورت نیاز از مواد موجود در گردش خون جذب می‌شود. مکمل‌های دیگری مانند روی (Zinc) نیز در صورت نیاز جذب می‌شوند. به این ترتیب، سلول در جریان تمایز، ترکیبات موردنیاز خود را دریافت می‌کند. گلبول قرمز بالغ مجموعه‌ای محدود از آنزیم‌ها، پروتئین‌های غشایی و هموگلوبین را در خود دارد که برای حفظ عملکرد و بقای آن ضروری هستند و در نهایت، وظیفهٔ انتقال اکسیژن به بافت‌های بدن را بر عهده دارد.</p>
+<p>تصویر زیر با استفاده از یک میکروسکوپ الکترونی گرفته شده است. در این تصویر، ارتونورموبلاست در حال خارج کردن هستهٔ خود است. پس از خروج هسته، سلول در محل خروج آن ظاهری نامنظم دارد که به‌تدریج منظم می‌شود. سلول در ابتدا رتیکولوسیت (Reticulocyte) است و سپس به گلبول قرمز بالغ (Erythrocyte) تبدیل می‌شود. هستهٔ خارج‌شده، لایهٔ نازکی از سیتوپلاسم را نیز در اطراف خود دارد. ماکروفاژها این بخش جداشده را جذب و پاک‌سازی می‌کنند و در این فرایند، از جمله در بازیافت آهن و انتقال آن به سلول‌های در حال تمایز، نقش دارند.</p>
+<p><img src="../data/assets/orthonormoblast.jpg" alt="orthonormoblast"></p>
+<h3 id="heading-7">ورود گلبول‌های قرمز به خون</h3>
+<p>گلبول قرمز بالغ، مانند دیگر سلول‌های خونی، باید از مغز استخوان (Bone marrow) وارد جریان خون شود. یکی از سلول‌های استرومایی مغز استخوان، سلول اندوتلیالی (Endothelial cell) است. محل تکمیل خون‌سازی در مغز استخوان، دارای حوضچه‌ها یا سینوزوئیدها (Sinusoid) است. در تصویر الکترون‌میکروسکوپی از داخل رگ، اتصالات اندوتلیالی نشان داده شده‌اند که ضخامتشان کمتر از ۰٫۲ میکرومتر (0.2µm) است. سلول‌های بالغ از ناحیه اندوتلیال سینوزوئیدی عبور می‌کنند و وارد جریان خون می‌شوند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>سینوزوئیدها (Sinusoid)</strong>
+عروق خونی تخصص‌یافته‌ای هستند که دیوارهٔ اندوتلیالی نسبتاً نازکی دارند و امکان عبور سلول‌های خونی از مغز استخوان به جریان خون را فراهم می‌کنند.</div></div>
+<p><img src="../data/assets/sinusoid.jpg" alt="sinusoid">
+<em>دیواره سینوزوئید و عبور سلول</em></p>
+<p>در هر فرد سالم، روزانه به‌ازای هر کیلوگرم وزن بدن حدود دو میلیارد گلبول قرمز تولید می‌شود. این سلول‌ها بدون ایجاد احساس درد از ناحیه اندوتلیالی عبور می‌کنند و وارد خون می‌شوند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای مثال در فردی با وزن ۵۰ کیلوگرم، روزانه حدود ۱۰۰ میلیارد گلبول قرمز تولید می‌شود.</div></div>
+<h3 id="heading-8">ترکیب و مقدار هموگلوبین</h3>
+<p>هموگلوبین از دو بخش تشکیل شده است: Heme و Globin.</p>
+<p>در یک فرد ۷۰ کیلوگرمی که به‌عنوان فرد نرمال یا Healthy Control در نظر گرفته می‌شود، حدود <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>25</mn><mo>×</mo><msup><mn>10</mn><mn>12</mn></msup></mrow>25 \times 10^{12}</math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">25</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">12</span></span></span></span></span></span></span></span></span></span></span></span> گلبول قرمز وجود دارد. هر گرم هموگلوبین ۳ تا ۴ میلی‌گرم آهن دارد؛ تزریق هر کیسه خون نیز حدود ۲۰۰ میلی‌گرم آهن وارد بدن می‌کند. هر گرم هموگلوبین می‌تواند ۱٫۳۴ میلی‌لیتر (1.34mL) اکسیژن جابه‌جا کند.</p>
+<h3 id="heading-9"><strong>بخش هم (Heme)</strong></h3>
+<p>گروه هِم در انواع اصلی هموگلوبین از نظر ساختار یکسان است و حاوی یک اتم آهن دوظرفیتی (⁺Fe²) است که امکان اتصال برگشت‌پذیر اکسیژن را فراهم می‌کند.</p>
+<h3 id="heading-10">بخش Globin و زنجیره‌های هموگلوبین</h3>
+<p>Globin بخش پروتئینی هموگلوبین است که ساختاری تترا‌مری (Tetramer) دارد؛ یعنی از دو جفت زنجیرهٔ پلی‌پپتیدی گلوبین تشکیل شده است. این چهار زنجیره به‌صورت دو دایمر (Dimer) در کنار یکدیگر قرار می‌گیرند و هر دایمر شامل یک زنجیره از خانواده آلفا (α-like globin) و یک زنجیره از خانواده بتا (β-like globin) است. هر زنجیرهٔ گلوبین به یک گروه هِم متصل است؛ بنابراین، هر مولکول هموگلوبین دارای چهار گروه هِم و چهار اتم آهن دوظرفیتی است. در نتیجه، هر مولکول هموگلوبین می‌تواند حداکثر چهار مولکول اکسیژن را به خود متصل کند.</p>
+<p><img src="../data/assets/hemoglobin_pic_1.png" alt="hemoglobin_pic_1">
+<em>Hemoglobin Molecule</em></p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">آهنی که اکسیژن را جابه‌جا می‌کند باید به صورت ⁺Fe² باشد اگر به ⁺Fe³ تبدیل شود قادر به اتصال و انتقال مستقیم اکسیژن نیست.</div></div>
+<p>زنجیره بتا (β) دارای ۱۴۶ اسیدآمینه و زنجیره آلفا (α) دارای ۱۴۱ اسیدآمینه است. به‌عبارت دیگر، زنجیره بتا ۵ اسیدآمینه بیشتر از زنجیره آلفا دارد.</p>
+<p><img src="../data/assets/Hemoglobin_pic_2.jpg" alt="Hemoglobin_pic_2"></p>
+<h3 id="heading-11">ساختار Heme</h3>
+<p>Heme از یک ساختار حلقوی به نام پورفیرین (Porphyrin) تشکیل شده است که از چهار حلقهٔ پیرول (Pyrrole) تشکیل شده و به همین دلیل در گروه تتراپیرول‌ها (Tetrapyrroles) قرار می‌گیرد. یک یون آهن در مرکز این ساختار قرار دارد.
+آهن موجود در Heme عملکردی باید به حالت فرو یا دوظرفیتی (⁺Ferrous, Fe²) باشد. این یون آهن دارای شش جایگاه کئوردیناسیون است: چهار جایگاه به اتم‌های نیتروژن حلقهٔ پورفیرین متصل هستند. جایگاه پنجم به باقی‌ماندهٔ هیستیدین زنجیرهٔ گلوبین متصل می‌شود. جایگاه ششم برای اتصال برگشت‌پذیر مولکول اکسیژن (O₂) در دسترس است.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">آهن به مولکول کامل O₂ متصل می‌شود، نه به یک اتم اکسیژن منفرد.</div></div>
+<p><img src="../data/assets/1904_Hemoglobin.jpg" alt="1904_Hemoglobin"></p>
+<p>اتم آهن در هر زنجیرهٔ گلوبین، چه آلفا و چه بتا، به اسیدآمینهٔ هیستیدین (Histidine) متصل می‌شود. جایگاه این اسیدآمینه در زنجیرهٔ آلفا، پوزیشن ۸۷ (His87) و در زنجیرهٔ بتا، پوزیشن ۹۲ (His92) است. اگر آهن به اسیدآمینه‌ای در موقعیتی نامناسب حتی اسیدآمینه مجاور متصل شود، ممکن است از حالت فرو (⁺Fe²) به حالت فریک (⁺Fe³) تبدیل شده و عملکرد طبیعی خود را از دست بدهد؛ زیرا برای اتصال مولکول اکسیژن (O₂)، باید یک جایگاه آزاد باقی بماند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>مت‌هموگلوبین (Methemoglobin)</strong>
+نوعی از هموگلوبین است که در آن آهن موجود در گروه Heme از حالت فرو (⁺Fe²) به حالت فریک (⁺Fe³) اکسید شده است.</div></div>
+<p><strong>جایگاه هِم در گلوبین (Heme Pocket)</strong></p>
+<p>گروه Heme درون یک حفرهٔ آب‌گریز (Hydrophobic Pocket) در ساختار تاخوردهٔ هر زنجیرهٔ پلی‌پپتیدی گلوبین قرار می‌گیرد. این محیط پروتئینی به حفظ ساختار مناسب Heme کمک می‌کند و از آهن موجود در آن در برابر اکسیداسیون محافظت می‌کند.</p>
+<p><img src="../data/assets/the_heme_pocket.jpg" alt="the_heme_pocket">
+<em>Heme Pocket</em></p>
+<p><strong>تغییر زنجیره‌های گلوبین در دوران جنینی و پس از تولد</strong></p>
+<p>در دوران رشد جنینی و پس از تولد، میزان بیان ژن‌های زنجیره‌های مختلف گلوبین تغییر می‌کند. این تغییرات باعث می‌شوند انواع هموگلوبین در مراحل مختلف زندگی تولید شوند.</p>
+<p><img src="../data/assets/Hemoglobin_table.png" alt="Hemoglobin_table"></p>
+<h3 id="heading-12">کلاسترهای ژنی Globin</h3>
+<p>بیان ژن‌های زنجیره‌های هموگلوبین به ژن‌های واقع در کروموزوم‌های ۱۶ و ۱۱ وابسته است. ژن‌های زنجیرهٔ آلفا روی کروموزوم ۱۶ و ژن‌های زنجیرهٔ بتا روی کروموزوم ۱۱ قرار دارند؛ بنابراین، دو خانوادهٔ ژنی آلفا و بتا وجود دارد. جهش در این ژن‌ها می‌تواند منجر به بروز هموگلوبینوپاتی (Hemoglobinopathy) و تالاسمی (Thalassemia) شود.</p>
+<p><strong>نحوهٔ نمایش ژن‌ها:</strong> ژن‌ها و کروموزوم‌ها به‌طور قراردادی از '5 به '3 نشان داده می‌شوند. در نمایش کلاسترهای ژنی معمولاً یک رشته یا یک هاپلوتایپ (Haplotype) نشان داده می‌شود، نه دو رشته. این شیوه نمایش در کتاب‌ها، مقاله‌ها و نرم‌افزارهای پژوهشی نیز به‌کار می‌رود. هنگام اشاره به کروموزوم همولوگ، از دو کروموزوم صحبت می‌شود، درحالی‌که کروماتید (Chromatid) یکی از نسخه‌های طولی کروموزوم پس از همانندسازی DNA است.</p>
+<h4>خوشهٔ ژنی آلفا (α-globin gene cluster)</h4>
+<p>این کلاستر روی کروموزوم ۱۶ قرار دارد و شامل ژن‌های مرتبط با تولید زنجیره‌های آلفا (α) و زتا (ζ) است. اگر از '5 به '3 پیش برویم، ترتیب ژن‌ها چنین است:</p>
+<ul>
+<li>ژن زتا ۲ (ζ2)</li>
+<li>ژن آلفا ۲ (α2)</li>
+<li>ژن آلفا ۱ (α1)</li>
+<li>ژن تتا (θ)</li>
+</ul>
+<p><img src="../data/assets/cluster_16.jpg" alt="cluster_16"></p>
+<p>در هر کروموزوم دو ژن آلفا وجود دارد؛ بنابراین هر فرد در حالت طبیعی مجموعاً چهار ژن آلفا دارد. ژن α2 نسبت به α1 برون‌ده بیشتری دارد، هرچند هر دو ژن زنجیره‌های آلفاگلوبین مشابهی تولید می‌کنند.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">برخی جایگاه‌ها به‌صورت سودوژن (Pseudogene) یا کاذب و با علامت ψ (Psi) نشان داده شده‌اند. این ژن‌ها ممکن است در طول تکامل ژنوم انسانی زمانی فعال بوده، اما در اثر تغییرات ژنتیکی، عملکرد طبیعی خود را از دست داده باشند. همچنین احتمال فعال‌شدن برخی از آن‌ها وجود دارد.</div></div>
+<h4>خوشهٔ ژنی بتا (β-globin gene cluster)</h4>
+<p>این کلاستر روی کروموزوم ۱۱ قرار دارد و شامل ژن‌های مرتبط با تولید زنجیره‌های اپسیلون (ε)، گاما (γ)، دلتا (δ) و بتا (β) است. ترتیب ژن‌ها از '5 به '3 چنین است:</p>
+<ul>
+<li>ژن اپسیلون (ε)</li>
+<li>ژن‌های گاما (Gγ و Aγ)</li>
+<li>ژن دلتا (δ)</li>
+<li>ژن بتا (β)</li>
+</ul>
+<p><img src="../data/assets/cluster_11.jpg" alt="cluster_11"></p>
+<p>دو نوع ژن گاما وجود دارد: Gγ و Aγ. اگر اسیدآمینه ۱۳۶ گلیسین باشد، آن را Gγ می‌نامند (Glycine at position 136) و اگر آلانین باشد، Aγ (Alanine) نامیده می‌شود. از نظر عملکردی، تفاوت عمده‌ای در هموگلوبین ایجاد نمی‌شود اما در دوران جنینی Gγ بیشتر است و در مراحل بعد Aγ بیشتر دیده می‌شود.</p>
+<h4>عوامل تنظیمی کلاسترهای ژنی گلوبین</h4>
+<p>علاوه بر پروموتر (Promoter) که در ناحیهٔ بالادست ژن و پیش از اگزون‌ها قرار دارد، کلاسترهای ژنی گلوبین دارای عوامل تنظیمی گسترده‌تری هستند که در کنترل بیان ژن‌ها نقش دارند:</p>
+<ul>
+<li>عامل کنترل‌کننده بیان ژن‌های بتا: LCR (Locus Control Region)</li>
+<li>عامل کنترل‌کننده بیان ژن‌های آلفا: MCS (Multispecies Conserved Sequence)</li>
+</ul>
+<p><img src="../data/assets/LCR_and_MCS.png" alt="LCR_and_MCS"></p>
+<p>اختلال در LCR می‌تواند برون‌ده کل ژن‌های تحت کنترل آن را کاهش دهد و وضعیتی شبیه تالاسمی ایجاد کند.</p>
+<p>آسیب به ژن بتا می‌تواند تالاسمی بتا و آسیب به ژن‌های آلفا می‌تواند تالاسمی آلفا ایجاد کند.</p>
+<h3 id="heading-13">جفت‌شدن زنجیره‌ها و انواع هموگلوبین</h3>
+<p>برون‌ده زنجیره‌های پروتئینی آلفا و بتا از نظر بار الکتریکی (Charge) و موقعیت فضایی با یکدیگر سازگار است و زنجیره‌ها در کنار هم قرار می‌گیرند. پس از نزدیک‌شدن، پیوندهای هیدروژنی بین آن‌ها شکل می‌گیرد.</p>
+<p><img src="../data/assets/Hemoglobin_syn_17.jpg" alt="Hemoglobin_syn_17"></p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">بار الکتریکی، در کنار سازگاری فضایی زنجیره‌ها، در برهم‌کنش و جفت‌شدن زنجیره‌های گلوبین و در نتیجه، تشکیل انواع مختلف هموگلوبین نقش دارد.</div></div>
+<p>هموگلوبین بر اساس نوع زنجیره‌های گلوبین تشکیل‌دهندهٔ خود، به انواع مختلفی تقسیم می‌شود:</p>
+<ul>
+<li><strong>هموگلوبین بالغ اصلی (HbA):</strong> از دو زنجیره آلفا و دو زنجیره بتا تشکیل شده است (α₂β₂).</li>
+<li><strong>هموگلوبین بالغ فرعی (HbA₂):</strong> از دو زنجیره آلفا و دو زنجیره دلتا تشکیل شده است (α₂δ₂).</li>
+<li><strong>هموگلوبین جنینی (HbF):</strong> از دو زنجیره آلفا و دو زنجیره گاما تشکیل شده است (α₂γ₂).</li>
+</ul>
+<p>در دوره رویانی (Embryonic period)، ریزمحیط کیسه زرده (Yolk sac) زمینه تولید هموگلوبین‌های رویانی، از جمله Gower 2،Gower 1  و Portland را فراهم می‌کند. در دوره جنینی (Fetal period)، هموگلوبین جنینی HbFیا  (α₂γ₂) تولید می‌شود.</p>
+<h3 id="heading-14">بیان ژن Globin و انواع هموگلوبین</h3>
+<h4>انتقال اطلاعات ژنتیکی (Central Dogma)</h4>
+<p>بر اساس اصل مرکزی زیست‌شناسی مولکولی (Central Dogma)، اطلاعات ژنتیکی از DNA به RNA و سپس به پروتئین منتقل می‌شود. در این فرایند، DNA الگوی تولید RNA، از جمله RNA پیام‌رسان (mRNA)، است. mRNA ابتدا به‌صورت نابالغ یا رونوشت اولیه (Primary mRNA) ساخته می‌شود و سپس طی فرایند پیرایش (Splicing)، اینترون‌ها (Introns) حذف و اگزون‌ها (Exons) به یکدیگر متصل می‌شوند تا mRNA بالغ تشکیل شود. ژن‌های زنجیره‌های گلوبین دارای سه اگزون و دو اینترون هستند. در مرحله بعد، mRNA طی فرایند ترجمه (Translation) به پروتئین تبدیل می‌شود. بنابراین، اطلاعات ژنتیکی در مسیری یک‌طرفه از DNA به RNA و سپس به پروتئین منتقل می‌شود.</p>
+<p><img src="../data/assets/central_dogma.jpg" alt="central_dogma"></p>
+<h4>تغییر هموگلوبین در دوره نوزادی (Hemoglobin Switching)</h4>
+<p>در دوران جنینی و هنگام تولد که ارگان اصلی خون‌سازی کبد بوده است، بیان ژن‌های زنجیره گاما (γ-globin) بالاست و بخش عمده هموگلوبین نوزاد را HbF (α₂γ₂) تشکیل می‌دهد. هنگام تولد، ممکن است HbF حدود ۶۵ تا ۹۰ درصد هموگلوبین کل را شامل شود. همچنین در این دوره، میزان هموگلوبین و شمارش گلبول‌های قرمز (RBC) معمولاً بالاتر است و اندازه متوسط آن‌ها (MCV) نیز نسبت به بزرگسالان بیشتر است؛ بنابراین در هماتولوژی محدوده طبیعی (normal range) Hb، RBC و MCV در نوزادان با بزرگسالان متفاوت است.</p>
+<h4>HbA₂ و ارتباط آن با تالاسمی</h4>
+<p>هموگلوبین A₂ یا HbA₂ از دو زنجیره آلفا و دو زنجیره دلتا تشکیل شده است (α₂δ₂) و مقدار طبیعی آن در بزرگسالان معمولاً حدود ۱٫۵ تا ۳٫۵ درصد هموگلوبین کل است. در ترتیب ژن‌های کلاستر کروموزوم ۱۱، ژن دلتا پیش از بتا قرار دارد. زنجیره‌های دلتا و بتا از نظر عملکردی تفاوت زیادی ندارند، اما پروموتر دلتا کم‌فعال‌تر و پروموتر بتا فعال‌تر است؛ بنابراین برون‌ده ژن دلتا کمتر و برون‌ده بتا بیشتر است.</p>
+<p>مقدار HbA₂ می‌تواند در بررسی بتا تالاسمی به‌کار رود. در بتا تالاسمی، با کاهش تولید زنجیره‌های بتا و کاهش HbA، سهم HbA₂ ممکن است افزایش یابد. در بررسی بالینی، مقدار HbA₂ برابر یا بالاتر از ۳٫۵ درصد می‌تواند احتمال Beta-thalassemia minor را افزایش دهد. برای بررسی بیشتر، انواع هموگلوبین موجود در خون از طریق روش‌هایی مانند الکتروفورز هموگلوبین یا HPLC تفکیک و اندازه‌گیری می‌شوند. مقدار طبیعی HbA₂ معمولاً ۱٫۵ تا ۳٫۵ درصد است. مقدار کمتر از ۱ درصد نیز می‌تواند در برخی موارد با آلفا تالاسمی همراه باشد. همچنین، شیوع آلفا تالاسمی در بسیاری از جمعیت‌ها بیشتر از بتا تالاسمی است؛ البته این موضوع به جمعیت و منطقه جغرافیایی بستگی دارد.</p>
+<p><img src="../data/assets/types_of_Hb.png" alt="types_of_Hb"></p>
+<h3 id="heading-15">سنتز Heme</h3>
+<h4>محل و منشأ مواد اولیه</h4>
+<p>پس از آنکه DNA تولید mRNA را هدایت کرد و mRNA به گلوبین ترجمه شد، زنجیره‌های گلوبین برای کامل‌شدن به Heme نیاز دارند. سنتز Heme در میتوکندری شروع می‌شود، در سیتوپلاسم ادامه می‌یابد و مجدداً به میتوکندری برمی‌گردد و در آنجا خاتمه پیدا می‌کند.</p>
+<p>بر اساس نظریه همزیستی درون‌سلولی، میتوکندری از یک باکتری هوازی باستانی منشأ گرفته است که در طی تکامل با سلول میزبان همزیستی برقرار کرده و به اندامک تبدیل شده است. شباهت‌های ژنتیکی و ساختاری میتوکندری با باکتری‌ها از شواهد این نظریه هستند.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">DNA میتوکندریایی (mtDNA) در انسان به‌طور معمول به‌صورت مادری (Maternal) به ارث می‌رسد. اگرچه اسپرم دارای میتوکندری است، میتوکندری‌های پدری (Paternal) معمولاً پس از لقاح حذف می‌شوند یا به نسل بعد منتقل نمی‌شوند؛ بنابراین، DNA میتوکندریایی فرزندان از مادر منشأ می‌گیرد.</div></div>
+<h4>مراحل مسیر سنتز Heme</h4>
+<p>سنتز Heme در میتوکندری از گلیسین (Glycine) و سوکسینیل کوآ (Succinyl-CoA) آغاز می‌شود و به‌صورت آبشار آنزیمی (Cascade) پیش می‌رود؛ محصول هر مرحله زمینه اثر آنزیم مرحله بعد را فراهم می‌کند.</p>
+<p><strong>1. تشکیل دلتا آمینولوولینیک اسید (ALA):</strong> گلیسین و سوکسینیل کوآ، تحت‌تأثیر دلتا آمینولوولینیک اسید سنتاز (ALA synthase / ALAS)، به دلتا آمینولوولینیک اسید (Delta-aminolevulinic acid / ALA) تبدیل می‌شوند. این مرحله در میتوکندری انجام می‌شود و به ویتامین B6 به‌عنوان کوفاکتور نیاز دارد.</p>
+<p><img src="../data/assets/Hemoglobin_syn_38.jpg" alt="Hemoglobin_syn_38"></p>
+<p><strong>2. تشکیل پورفوبیلینوژن (PBG):</strong> ALA از میتوکندری به سیتوپلاسم منتقل می‌شود. در سیتوپلاسم دو مولکول ALA تحت تأثیر آنزیم ALA دهیدراتاز (ALA dehydratase) با خروج مولکول آب، یک مولکول پورفوبیلینوژن (Porphobilinogen؛ PBG) می‌سازند.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">در سلول‌های اریتروئیدی، گلیسین به کمک ناقل میتوکندریایی اختصاصی خود وارد میتوکندری می‌شود و واکنش آغاز می‌شود. مرحله بعدی سنتز هِم در سیتوپلاسم انجام می‌شود و از دلایل آن می‌توان به اندازه بزرگ آنزیم‌های مربوطه و نبود ناقل اختصاصی برای ALA بر روی غشای میتوکندری اشاره کرد، با این حال این توضیحات به عنوان علت اصلی مطرح نمی‌شوند و به عنوان فرضیه‌هایی در نظر گرفته می‌شوند.</div></div>
+<p><strong>3. تشکیل هیدروکسی‌متیل‌بیلان (HMB):</strong> چهار مولکول پورفوبیلینوژن، تحت‌تأثیر آنزیم پورفوبیلینوژن دآمیناز (Porphobilinogen deaminase) یا هیدروکسی‌متیل‌بیلان سنتاز (Hydroxymethylbilane synthase)، به یک مولکول هیدروکسی‌متیل‌بیلان (Hydroxymethylbilane) تبدیل می‌شوند. در این مرحله، گروه‌های آمینی جانبی به‌صورت آمونیاک جدا می‌شوند.</p>
+<p><img src="../data/assets/Hemoglobin_syn_39.jpg" alt="Hemoglobin_syn_39"></p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">در نام‌گذاری آنزیم‌ها، سنتاز (Synthase) از سنتتاز (Synthetase) متمایز است. سنتتاز معمولاً به آنزیمی گفته می‌شود که واکنش آن به مصرف مستقیم یک نوکلئوتید تری‌فسفات مانند ATP نیاز دارد.</div></div>
+<p><strong>4. تشکیل یوروپورفیرینوژن III:</strong> هیدروکسی‌متیل‌بیلان تحت‌تأثیر آنزیم یوروپورفیرینوژن III سنتاز (Uroporphyrinogen III synthase) به یوروپورفیرینوژن-III تبدیل می‌شود. (Uroporphyrinogen III)</p>
+<p><img src="../data/assets/Hemoglobin_syn_40.jpg" alt="Hemoglobin_syn_40"></p>
+<p><strong>5. تشکیل کوپروپورفیرینوژن III:</strong> یوروپورفیرینوژن III تحت‌تأثیر آنزیم یوروپورفیرینوژن دکربوکسیلاز (Uroporphyrinogen decarboxylase) قرار می‌گیرد و مولکول CO₂ آزاد می‌شود. محصول این مرحله کوپروپورفیرینوژن III است. (Coproporphyrinogen III)</p>
+<p><img src="../data/assets/Hemoglobin_syn_41.jpg" alt="Hemoglobin_syn_41"></p>
+<p><strong>6. تشکیل پروتوپورفیرینوژن IX:</strong> کوپروپورفیرینوژن III از سیتوپلاسم به میتوکندری منتقل می‌شود. در آنجا، تحت‌تأثیر آنزیم کوپروپورفیرینوژن اکسیداز (Coproporphyrinogen oxidase)، اکسید می‌شود و به پروتوپورفیرینوژن ۹ (Protoporphyrinogen IX) تبدیل می‌شود.</p>
+<p><img src="../data/assets/Hemoglobin_syn_42.jpg" alt="Hemoglobin_syn_42"></p>
+<p><strong>7. تشکیل پروتوپورفیرین IX:</strong> پروتوپورفیرینوژن IX تحت‌تأثیر آنزیم پروتوپورفیرینوژن اکسیداز (Protoporphyrinogen oxidase) اکسید می‌شود و پروتوپورفیرین IX (Protoporphyrin IX) را می‌سازد. این ترکیب دارای ساختار حلقوی تتراپیرولی است و هنوز آهن در حلقه آن وارد نشده است.</p>
+<p><img src="../data/assets/Hemoglobin_syn_43.jpg" alt="Hemoglobin_syn_43"></p>
+<p><strong>8. اتصال آهن و تشکیل هِم:</strong> آهن موردنیاز برای سنتز هِم از طریق جذب روده‌ای وارد خون می‌شود و عمدتاً به‌وسیله ترانسفرین (Transferrin) به مغز استخوان منتقل می‌شود. در مغز استخوان، سلول‌های اریتروئیدی آهن را دریافت می‌کنند و آن را برای سنتز هِم به میتوکندری می‌رسانند. ماکروفاژها نیز با بازیافت آهن گلبول‌های قرمز پیر، منبع مهم دیگری برای تأمین آهن بدن هستند.
+در آخرین مرحله، آهن دوظرفیتی (Fe²⁺) به پروتوپورفیرین IX اضافه می‌شود و هِم (Heme) تشکیل می‌گردد. این واکنش به‌وسیله آنزیم فروچلتاز (Ferrochelatase) کاتالیز می‌شود که به آن هِم سنتاز نیز گفته شده است.</p>
+<p><img src="../data/assets/Hemoglobin_syn_44.jpg" alt="Hemoglobin_syn_44"></p>
+<p><img src="../data/assets/Heme_pathway.jpg" alt="Heme_pathway">
+<em>مسیر بیوسنتز هِم</em></p>
+<h4>تنظیم و مواد لازم برای سنتز Heme</h4>
+<p>پس از سنتز Heme، این ترکیب با مهار بازخوردی آنزیم ALA سنتاز، تولید بیشتر هِم را مهار می‌کند. این تنظیم عمدتاً از طریق کاهش فعالیت و بیان آنزیم انجام می‌شود. همچنین، هِم از میتوکندری به محل سنتز پروتئین منتقل می‌شود و در تشکیل هموگلوبین، با زنجیره‌های گلوبین ترکیب می‌شود.</p>
+<p><strong>مروری کوتاه:</strong> سنتز Heme فرایندی آنزیمی است که در میتوکندری شروع می‌شود، در سیتوپلاسم گسترش می‌یابد و برای کامل‌شدن به میتوکندری بازمی‌گردد.</p>
+<p><img src="../data/assets/Hemoglobin_syn_page_35-1.jpg" alt="Hemoglobin_syn_page_35-1"></p>
+<p>برای ساختار موردنظر Heme، ایزومر ۳ کوپروپورفیرینوژن و ایزومر ۹ پروتوپورفیرین لازم‌اند و ایزومرهای دیگر برای این ساختار مناسب نیستند. برای ساخت یک مولکول هِم ۸ مولکول گلیسین و ۸ مولکول سوکسینیل کوآ نیاز است. سوکسینیل کوآ از محصولات چرخه کربس یا متابولیسم اسیدهای چرب (Fatty acids) است و در سلول برای ساخت Heme به‌کار می‌رود.</p>
+<h3 id="heading-16">کم‌خونی سیدروبلاستیک و مسمومیت با سرب</h3>
+<h4>کم‌خونی سیدروبلاستیک</h4>
+<p>اختلال در جابه‌جایی گلیسین برای ورود به میتوکندری یا در جابه‌جایی آهن به میتوکندری می‌تواند کم‌خونی سیدروبلاستیک (Sideroblastic anemia) ایجاد کند. در این وضعیت، آهن در دسترس است، اما نمی‌تواند به میتوکندری برسد و در ساخت Heme استفاده شود. این وضعیت با آنمی فقر آهن (Iron deficiency anemia) تفاوت دارد؛ در فقر آهن، آهن در دسترس نیست.</p>
+<h4>موقعیت‌های پرخطر برای تماس با سرب</h4>
+<p>از مشاغل یا موقعیت‌های پرخطر از نظر تماس با سرب می‌توان به موارد زیر اشاره کرد:</p>
+<ul>
+<li>صنعت چاپ و حروف‌چینی با سرب</li>
+<li>نقاشی و رنگ‌آمیزی ساختمان، به‌علت وجود سرب در رنگ</li>
+<li>باتری‌سازی</li>
+<li>افسران راهنمایی و رانندگی در معرض بنزین سرب‌دار</li>
+<li>استفاده از برخی لوازم آرایشی</li>
+<li>مصرف تریاکی که با سرب مخلوط شده باشد</li>
+</ul>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">سرب برای سنگین‌کردن تریاک به آن افزوده می‌شود و مصرف آن می‌تواند سرب خون را بالا ببرد. در مراجعه افراد به مراکز اورژانس و مسمومیت، اندازه‌گیری سرب خون در پروتکل‌های کاری آزمایشگاه و پزشکان قرار گرفته است.</div></div>
+<h4>اثر سرب بر مسیر Heme و بازوفیلیک استیپلینگ</h4>
+<p>سرب مسیر تولید پورفوبیلینوژن و تولید Heme را مختل می‌کند. سرب بر فروچلتاز و پورفوبیلینوژن سنتاز (Ferrochelatase /ALA dehydratase) اثر مهاری دارد.</p>
+<p><img src="../data/assets/Lead_poisoning.jpg" alt="Lead_poisoning"></p>
+<p>همچنین آنزیم ۵ پرایم پیریمیدیناز (Pyrimidine 5'-nucleotidase) را مهار می‌کند. این آنزیم در ارتباط با غشای گلبول قرمز، رشته‌های RNA را از داخل سلول خارج می‌کند. با مهار آن به‌وسیله سرب، RNA در گلبول قرمز باقی می‌ماند و رسوب می‌کند؛ این حالت بازوفیلیک استیپلینگ (Basophilic stippling) نام دارد و در مسمومیت با سرب دیده می‌شود.</p>
+<p><img src="../data/assets/basophilic_stippling.jpg" alt="basophilic_stippling">
+<em>Basophilic stippling</em></p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>بازوفیلیک استیپلینگ (Basophilic stippling)</strong>
+باقی‌ماندن و رسوب RNA در گلبول قرمز در پی مهار Pyrimidine 5'-nucleotidase به‌وسیله سرب.</div></div>
+<p>در مجموع، سه آنزیم مهار می‌شوند: دو آنزیم در مسیر سنتز Heme و یک آنزیم دخیل در خروج رشته‌های RNA.</p>
+<h3 id="heading-17">پورفیریا</h3>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پورفیریا (Porphyria)</strong>
+به گروهی از اختلالات متابولیکی گفته می‌شود که در اثر کاهش یا تغییر فعالیت آنزیم‌های مسیر بیوسنتز هِم (Heme biosynthesis) ایجاد می‌شوند. در نتیجه، پیش‌سازهای هِم یا پورفیرین‌ها در بافت‌ها، خون، ادرار یا مدفوع تجمع پیدا می‌کنند.</div></div>
+<p>در پورفیریا ممکن است پوست به نور حساس (Photosensitive) شود. پوست باید پوشیده بماند و قرارگرفتن در معرض نور خورشید می‌تواند تاول (Bullae) و زخم (Scar) ایجاد کند. دفع مواد حدواسط از راه خون و ادرار می‌تواند رنگ ادرار را قرمز کند.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در برخی روایت‌های تاریخی، علائم پورفیریا، به‌ویژه حساسیت پوستی به نور و تغییر رنگ ادرار، با افسانه‌های مربوط به دراکولا ارتباط داده شده‌اند. همچنین ازدواج‌های خویشاوندی در برخی خاندان‌های سلطنتی به‌عنوان زمینه‌ای برای افزایش احتمال بیماری‌های ژنتیکی مطرح می‌شوند.</div></div>
+<p><img src="../data/assets/Hemoglobin_syn_47.jpg" alt="Hemoglobin_syn_47"></p>
+<p>اختلال در مراحل اولیهٔ مسیر سنتز هِم بیشتر با حمله‌های (Attack) بیماری همراه است؛ درحالی‌که اختلال در مراحل انتهایی می‌تواند باعث حساسیت به نور (Photosensitivity) و در برخی موارد حمله‌های بیماری شود.</p>
+<p><strong>تشخیص:</strong> معمولاً برای تشخیص پورفیریا، مواد حدواسط و رنگدانه‌های دفع‌شده در ادرار (Urine) بررسی می‌شوند. در اریتروپوئتیک پروتوپورفیریا (EPP؛ Erythropoietic protoporphyria)، بررسی پروتوپورفیرین گلبول‌های قرمز اهمیت دارد و از پلاسما نیز می‌توان استفاده کرد.</p>
+<p><strong>وراثت:</strong> پروتوپورفیریای وابسته به X با ژن ALAS2 مرتبط است. بسیاری از انواع دیگر پورفیریا اتوزومال غالب هستند، اما بعضی انواع اتوزومال مغلوب‌اند.</p>
+<h3 id="heading-18">انواع هموگلوبین پاتولوژیک</h3>
+<h4>مت‌هموگلوبین (Methemoglobin)</h4>
+<p>مت‌هموگلوبین زمانی تشکیل می‌شود که آهن موجود در هموگلوبین از حالت فرو (⁺Fe²) به حالت فریک (⁺Fe³) اکسید شود. در بدن به‌طور طبیعی مقدار کمی مت‌هموگلوبین تولید می‌شود، اما آنزیم مت‌هموگلوبین ردوکتاز (Methemoglobin reductase) آهن ⁺Fe³ را دوباره به ⁺Fe² احیا می‌کند. اگر فعالیت این سیستم کافی نباشد، مت‌هموگلوبین تجمع می‌یابد و مت‌هموگلوبینمی (Methemoglobinemia) ایجاد می‌شود.</p>
+<p><img src="../data/assets/Hemoglobin_syn_54.jpg" alt="Hemoglobin_syn_54"></p>
+<p><strong>علائم:</strong> در مت‌هموگلوبینمی ممکن است پوست و لب‌ها به رنگ بنفش و سیاه متمایل شوند و خون ظاهری قهوه‌ای رنگ پیدا کند. زبان و مخاط‌ها نیز ممکن است سیانوتیک شوند.</p>
+<p><img src="../data/assets/Hemoglobin_syn_53.jpg" alt="Hemoglobin_syn_53"></p>
+<p><img src="../data/assets/Hemoglobin_syn_56.jpg" alt="Hemoglobin_syn_56"></p>
+<p>مقدار طبیعی مت‌هموگلوبین معمولاً کمتر از ۱٫۵ درصد هموگلوبین کل است. در مقادیر بالای ۱۰ درصد ممکن است سیانوز (Cyanosis) ظاهر شود؛ شدت علائم به مقدار مت‌هموگلوبین و شرایط فرد بستگی دارد. مت‌هموگلوبین نمی‌تواند اکسیژن را به‌طور طبیعی متصل کند و همچنین اتصال اکسیژن به بخش‌های سالم هموگلوبین را محکم‌تر می‌کند؛ در نتیجه، اکسیژن‌رسانی به بافت‌ها کاهش می‌یابد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>سیانوز (Cyanosis)</strong> یعنی آبی یا کبود شدن پوست و مخاط‌ها به‌دلیل افزایش هموگلوبینِ بدون اکسیژن در خون یا اختلال در اکسیژن‌رسانی.</div></div>
+<p><strong>درمان:</strong> در موارد علامت‌دار، بسته به علت و شرایط بیمار، ممکن است از متیلن بلو (Methylene blue) استفاده شود. در مت‌هموگلوبینمی ناشی از اختلال آنزیمی، این دارو می‌تواند مؤثر باشد؛ اما در برخی انواع مادرزادی ناشی از جهش زنجیرهٔ گلوبین (مانند هموگلوبین M)، معمولاً پاسخ مناسبی به متیلن بلو داده نمی‌شود و رویکرد درمانی متفاوت است.</p>
+<p><img src="../data/assets/Hemoglobin_syn_55.jpg" alt="Hemoglobin_syn_55"></p>
+<h4>سولف‌هموگلوبین (Sulfhemoglobin)</h4>
+<p>سولف‌هموگلوبین در اثر ورود گوگرد به ساختار هموگلوبین تشکیل می‌شود. این تغییر باعث می‌شود رنگ خون متمایل به سبز (Greenish) یا سبز تیره دیده شود.</p>
+<p><img src="../data/assets/Hemoglobin_syn_58.jpg" alt="Hemoglobin_syn_58"></p>
+<p>در این حالت، گوگرد با ساختار هِم واکنش می‌دهد و ترکیبی پایدار ایجاد می‌کند. سولف‌هموگلوبین توانایی طبیعی حمل اکسیژن را ندارد و تشکیل آن می‌تواند باعث سیانوز شود.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در یک گزارش، کارگری که در معدن گوگرد کار می‌کرد و دچار حادثه شده بود، خون با رنگ غیرطبیعی سبز مشاهده شد و بررسی‌ها وجود سولف‌هموگلوبین را نشان داد.</div></div>
+<h4>کربوکسی‌هموگلوبین (Carboxyhemoglobin)</h4>
+<p>کربوکسی‌هموگلوبین زمانی تشکیل می‌شود که گاز منوکسید کربن (CO) به هموگلوبین متصل شود. میل اتصال منوکسید کربن به هموگلوبین بسیار بیشتر از اکسیژن است؛ بنابراین، هم اتصال اکسیژن به هموگلوبین کاهش می‌یابد و هم اکسیژن‌رسانی به بافت‌ها مختل می‌شود.</p>
+<p><img src="../data/assets/Hemoglobin_syn_61.jpg" alt="Hemoglobin_syn_61"></p>
+<p><strong>علائم مسمومیت:</strong> سردرد، سرگیجه، گیجی، تهوع و در موارد شدید کاهش سطح هوشیاری و مرگ. گاهی رنگ خون در مسمومیت با CO قرمز آلبالویی (Cherry red) توصیف می‌شود.</p>
+<p><img src="../data/assets/Hemoglobin_syn_64.jpg" alt="Hemoglobin_syn_64"></p>
+<p><img src="../data/assets/Hemoglobin_syn_65.jpg" alt="Hemoglobin_syn_65"></p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">منوکسید کربن می‌تواند در پی سوخت ناقص بخاری یا خودرو ایجاد شود و عامل «مرگ خاموش» باشد.</div></div>
+<p><img src="../data/assets/Hemoglobin_syn_63.jpg" alt="Hemoglobin_syn_63"></p>
+<p>امروزه برای تشخیص مسمومیت با منوکسید کربن، میزان کربوکسی‌هموگلوبین خون با دستگاه کو-اکسی‌متر (Co-oximeter) در نمونه خون شریانی ABG (Arterial Blood Gas) یا نمونه خون وریدی VBG (Venous Blood Gas) اندازه‌گیری می‌شود.</p>
+<p><img src="../data/assets/Hemoglobin_syn_66.jpg" alt="Hemoglobin_syn_66"></p>
+<h4>هموگلوبین گلیکوزیله (Glycosylated Hemoglobin)</h4>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>هموگلوبین گلیکوزیله (HbA1c)</strong>
+نوعی هموگلوبین است که در اثر اتصال غیرآنزیمی گلوکز به آن تشکیل می‌شود.</div></div>
+<p>در تشکیل هموگلوبین گلیکوزیله، اتصال قند به برخی اسیدهای آمینه مانند سرین (Serine)، آسپاراژین (Asparagine) و هیدروکسی‌لیزین (Hydroxylysine) نیز مطرح می‌شود.</p>
+<p><img src="../data/assets/Hemoglobin_syn_67.jpg" alt="Hemoglobin_syn_67"></p>
+<p><strong>تفکیک انواع هموگلوبین گلیکوزیله</strong></p>
+<ul>
+<li>در HbA1a گلوکز ۶-فسفات متصل می‌شود.</li>
+<li>در HbA1b گالاکتوز و فروکتوز متصل می‌شوند.</li>
+<li>در HbA1c گلوکز متصل می‌شود.</li>
+</ul>
+<p>مقدار طبیعی HbA1c تا ٪۵٫۵، محدودهٔ ۵٫۵ تا ۶٫۵ درصد نشان‌دهندهٔ پیش‌دیابت (Prediabetic) و مقدار بالاتر از ٪۶٫۵ در محدودهٔ تشخیصی دیابت (Diabetic) قرار می‌گیرد و نیاز به بررسی و تصمیم‌گیری درمانی دارد.</p>
+</section>
+
+<section class="noteSection quickTablesSection">
+    <h2 id="heading-19">۳. جداول مرور سریع</h2>
+<h3 id="heading-20">مراحل اریتروپوئزیس و تغییرات سلولی</h3>
+<table>
+<thead>
+<tr>
+<th align="right">ترتیب</th>
+<th>مرحله تمایز</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">۱</td>
+<td>پرونورموبلاست (Pronormoblast)</td>
+</tr>
+<tr>
+<td align="right">۲</td>
+<td>بازوفیلیک نورموبلاست (Basophilic normoblast)</td>
+</tr>
+<tr>
+<td align="right">۳</td>
+<td>پلی‌کروماتوفیلیک نورموبلاست (Polychromatophilic normoblast)</td>
+</tr>
+<tr>
+<td align="right">۴</td>
+<td>ارتوکروماتوفیلیک نورموبلاست (Orthochromatophilic normoblast)</td>
+</tr>
+<tr>
+<td align="right">۵</td>
+<td>رتیکولوسیت (Reticulocyte)</td>
+</tr>
+<tr>
+<td align="right">۶</td>
+<td>گلبول قرمز بالغ (Erythrocyte)</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>ویژگی در طول تمایز</th>
+<th>تغییر توصیف‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>هسته</td>
+<td>کوچک‌تر و فشرده‌تر می‌شود؛ فعالیتش کاهش می‌یابد و در مرحله ارتوکروماتوفیلیک نورموبلاست از سلول بیرون انداخته می‌شود.</td>
+</tr>
+<tr>
+<td>سیتوپلاسم</td>
+<td>رنگ آن با ساخته‌شدن هموگلوبین از آبی به‌سمت نارنجی و در نهایت نارنجی تا قرمز تغییر می‌کند.</td>
+</tr>
+<tr>
+<td>رتیکولوسیت</td>
+<td>پس از بیرون‌انداختن هسته، سلول ابتدا رتیکولوسیت است و سپس به گلبول قرمز بالغ تبدیل می‌شود.</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>کمیت</th>
+<th>مقدار یا توصیف</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>طول عمر گلبول قرمز</td>
+<td>حدود ۸۰ تا ۱۲۰ روز</td>
+</tr>
+<tr>
+<td>مسافت طی‌شده در طول عمر</td>
+<td>نزدیک به ۲۰۰ کیلومتر از عروق</td>
+</tr>
+<tr>
+<td>تولید روزانه به‌ازای هر کیلوگرم وزن بدن در فرد سالم</td>
+<td>حدود دو میلیارد گلبول قرمز</td>
+</tr>
+<tr>
+<td>تولید روزانه برای فرد ۵۰ کیلوگرمی</td>
+<td>حدود ۱۰۰ میلیارد گلبول قرمز</td>
+</tr>
+<tr>
+<td>میانگین ضخامت اتصالات اندوتلیالی</td>
+<td>کمتر از ۰٫۲ میکرومتر (0.2 µm)</td>
+</tr>
+</tbody></table>
+<h3 id="heading-21">هموگلوبین، زنجیره‌ها و Heme</h3>
+<table>
+<thead>
+<tr>
+<th>ویژگی یا کمیت</th>
+<th>مقدار یا توصیف</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>بخش‌های هموگلوبین</td>
+<td>Heme و Globin</td>
+</tr>
+<tr>
+<td>شمار گلبول قرمز در فرد ۷۰ کیلوگرمی Healthy Control</td>
+<td>حدود <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>25</mn><mo>×</mo><msup><mn>10</mn><mn>12</mn></msup></mrow>25 \times 10^{12}</math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">25</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">12</span></span></span></span></span></span></span></span></span></span></span></span></td>
+</tr>
+<tr>
+<td>آهن در هر گرم هموگلوبین</td>
+<td>۳ تا ۴ میلی‌گرم</td>
+</tr>
+<tr>
+<td>آهن واردشده با تزریق هر کیسه خون</td>
+<td>حدود ۲۰۰ میلی‌گرم</td>
+</tr>
+<tr>
+<td>اکسیژن قابل‌جابه‌جایی به‌ازای هر گرم هموگلوبین</td>
+<td>۱٫۳۴ میلی‌لیتر (1.34 mL)</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>زنجیره</th>
+<th align="right">کروموزوم</th>
+<th align="right">تعداد اسیدآمینه</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>آلفا</td>
+<td align="right">۱۶</td>
+<td align="right">۱۴۱</td>
+</tr>
+<tr>
+<td>بتا</td>
+<td align="right">۱۱</td>
+<td align="right">۱۴۶</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>بخش یا جایگاه</th>
+<th>توصیف</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Heme</td>
+<td>چهار حلقه پیرول دارد؛ به همین دلیل تتراپیرول (Tetrapyrrole) نامیده می‌شود و آهن در مرکز آن است.</td>
+</tr>
+<tr>
+<td>آهن در Heme</td>
+<td>⁺Fe² دارای شش جایگاه کئوردیناسیون است.&nbsp;چهار جایگاه به اتم‌های نیتروژن حلقهٔ پورفیرین متصل هستند.</td>
+</tr>
+<tr>
+<td>اتصال به زنجیره</td>
+<td>یک ظرفیت به زنجیره آلفا یا بتا متصل می‌شود.</td>
+</tr>
+<tr>
+<td>اتصال به اکسیژن</td>
+<td>ظرفیت دیگر برای اتصال به مولکول O2 آزاد است؛ آهن به O2 متصل می‌شود، نه به یک اتم منفرد O.</td>
+</tr>
+<tr>
+<td>جایگاه هیستیدین</td>
+<td>در آلفا: پوزیشن ۸۷ (His87)؛ در بتا: پوزیشن ۹۲ (His92).</td>
+</tr>
+</tbody></table>
+<h3 id="heading-22">کلاسترهای ژنی و انواع هموگلوبین</h3>
+<table>
+<thead>
+<tr>
+<th>کلاستر ژنی</th>
+<th>نکات ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>کروموزوم ۱۶</td>
+<td>در هر رشته دو ژن آلفا وجود دارد؛ هر فرد چهار ژن آلفا دارد. α2 نسبت به α1 برون‌ده بیشتری دارد، هرچند هر دو آلفاگلوبین مشابهی تولید می‌کنند. برخی جایگاه‌ها به‌صورت Pseudogene نشان داده شده‌اند.</td>
+</tr>
+<tr>
+<td>کروموزوم ۱۱</td>
+<td>دو نوع ژن گاما، Gγ و Aγ، وجود دارد. Gγ دارای گلیسین در پوزیشن ۱۳۶ و Aγ دارای آلانین است. در دوران جنینی Gγ بیشتر است و در مراحل بعد Aγ بیشتر دیده می‌شود.</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>عامل یا اختلال</th>
+<th>ارتباط ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LCR (Locus Control Region)</td>
+<td>عامل کنترل‌کننده کلاستر ژن‌های بتا؛ اختلال در آن می‌تواند برون‌ده کل ژن‌های تحت کنترلش را کاهش دهد و وضعیتی شبیه تالاسمی ایجاد کند.</td>
+</tr>
+<tr>
+<td>MCS (Multispecies Conserved Sequence)</td>
+<td>عامل کنترل‌کننده ژن‌های آلفا.</td>
+</tr>
+<tr>
+<td>آسیب به ژن بتا</td>
+<td>می‌تواند تالاسمی بتا ایجاد کند.</td>
+</tr>
+<tr>
+<td>آسیب به ژن‌های آلفا</td>
+<td>می‌تواند تالاسمی آلفا ایجاد کند.</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>نوع هموگلوبین</th>
+<th>ترکیب زنجیره‌ها</th>
+<th>دوره یا توصیف ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HbA</td>
+<td>α2β2</td>
+<td>هموگلوبین بالغ</td>
+</tr>
+<tr>
+<td>HbA2</td>
+<td>α2δ2</td>
+<td>—</td>
+</tr>
+<tr>
+<td>HbF</td>
+<td>α2γ2</td>
+<td>در دوره جنینی ساخته می‌شود.</td>
+</tr>
+<tr>
+<td>Gower 1، Gower 2 و Portland</td>
+<td>—</td>
+<td>هموگلوبین‌های رویانی؛ ساخته‌شدن آن‌ها به‌وسیله ریزمحیط کیسه زرده</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>مرحله</th>
+<th>توصیف</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DNA به RNA</td>
+<td>DNA تولید RNA، ازجمله mRNA، را کنترل می‌کند.</td>
+</tr>
+<tr>
+<td>Primary mRNA به mRNA بالغ</td>
+<td>اینترون‌ها حذف و اگزون‌ها به هم متصل می‌شوند.</td>
+</tr>
+<tr>
+<td>ژن‌های زنجیره‌های گلوبین</td>
+<td>سه اگزون و دو اینترون دارند.</td>
+</tr>
+<tr>
+<td>RNA به پروتئین</td>
+<td>mRNA ترجمه (Translation) می‌شود و پروتئین می‌سازد.</td>
+</tr>
+<tr>
+<td>جهت انتقال اطلاعات</td>
+<td>DNA به RNA و سپس پروتئین؛ مسیر یک‌طرفه است.</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>نوزاد</th>
+<th>بزرگسال</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>بیان ژن‌های گاما</td>
+<td>ابتدا زیاد است.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>سهم HbF هنگام تولد</td>
+<td>ممکن است ۶۵ تا ۹۰ درصد هموگلوبین باشد.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>شمارش RBC و اندازه گلبول قرمز</td>
+<td>در این دوره بالاست؛ گلبول‌ها از گلبول‌های قرمز بزرگسالان بزرگ‌ترند.</td>
+<td>کمتر/کوچک‌تر نسبت به نوزاد</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>مورد</th>
+<th>مقدار یا ارتباط ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HbA2 طبیعی</td>
+<td>۱٫۵ تا ۳٫۵ درصد</td>
+</tr>
+<tr>
+<td>HbA2 برابر یا بالاتر از ۳٫۵ درصد</td>
+<td>احتمال Beta thalassemia minor را بالا می‌برد.</td>
+</tr>
+<tr>
+<td>HbA2 کمتر از ۱ درصد</td>
+<td>نشانه‌ای که می‌تواند با آلفا تالاسمی همراه باشد.</td>
+</tr>
+<tr>
+<td>تالاسمی بتا</td>
+<td>با کاهش HbA نسبت به مقدار HbA2، سهم HbA2 افزایش می‌یابد.</td>
+</tr>
+<tr>
+<td>پروموتر دلتا و بتا</td>
+<td>پروموتر دلتا کم‌فعال‌تر و پروموتر بتا فعال‌تر است؛ برون‌ده ژن دلتا کمتر و برون‌ده بتا بیشتر است.</td>
+</tr>
+<tr>
+<td>شیوع آلفا و بتا تالاسمی</td>
+<td>شیوع آلفا تالاسمی در جامعه بیشتر از بتا تالاسمی عنوان شد.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-23">مسیر و تنظیم سنتز Heme</h3>
+<table>
+<thead>
+<tr>
+<th align="right">مرحله</th>
+<th>محل</th>
+<th>ماده ورودی و محصول یا تغییر</th>
+<th>آنزیم یا نکته ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">۱</td>
+<td>میتوکندری</td>
+<td>گلیسین + سوکسینیل کوآ به&nbsp;ALA</td>
+<td>ALA synthase / ALAS</td>
+</tr>
+<tr>
+<td align="right">۲</td>
+<td>سیتوپلاسم</td>
+<td>دو مولکول ALA با خروج یک مولکول آب به PBG</td>
+<td>علت حضور در سیتوپلاسم اندازه آنزیم‌ها و نبود ناقل لازم برای بازگشت ALA</td>
+</tr>
+<tr>
+<td align="right">۳</td>
+<td>سیتوپلاسم</td>
+<td>چهار مولکول PBG به&nbsp;Uroporphyrinogen</td>
+<td>Uroporphyrinogen synthase؛ Synthase از Synthetase متمایز است.</td>
+</tr>
+<tr>
+<td align="right">۴</td>
+<td>سیتوپلاسم</td>
+<td>Uroporphyrinogen با از دست‌دادن یک CO2 به Coproporphyrinogen</td>
+<td>Uroporphyrinogen decarboxylase</td>
+</tr>
+<tr>
+<td align="right">۵</td>
+<td>میتوکندری</td>
+<td>Coproporphyrinogen اکسید می‌شود به Protoporphyrinogen IX</td>
+<td>کوپروپورفیرینوژن ناقل ورود به میتوکندری دارد.</td>
+</tr>
+<tr>
+<td align="right">۶</td>
+<td>میتوکندری</td>
+<td>Protoporphyrinogen IX اکسید می‌شود به Protoporphyrin IX</td>
+<td>ترکیب چهارحلقه‌ای است، اما هنوز آهن ندارد.</td>
+</tr>
+<tr>
+<td align="right">۷</td>
+<td>میتوکندری</td>
+<td>آهن با Protoporphyrin IX پیوند می‌یابد به Heme</td>
+<td>Ferrochelatase یا Heme synthetase</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>ویژگی مسیر سنتز Heme</th>
+<th>توصیف</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>محل آغاز</td>
+<td>میتوکندری</td>
+</tr>
+<tr>
+<td>ادامه مسیر</td>
+<td>سیتوپلاسم</td>
+</tr>
+<tr>
+<td>محل پایان</td>
+<td>میتوکندری</td>
+</tr>
+<tr>
+<td>مواد لازم برای یک مولکول Heme</td>
+<td>۸ مولکول گلیسین و ۸ مولکول سوکسینیل کوآ</td>
+</tr>
+<tr>
+<td>ایزومرهای لازم برای ساختار موردنظر</td>
+<td>ایزومر ۳ کوپروپورفیرینوژن و ایزومر ۹ پروتوپورفیرین</td>
+</tr>
+<tr>
+<td>تنظیم بازخوردی منفی</td>
+<td>از تولید بیشتر Heme جلوگیری می‌کند.</td>
+</tr>
+<tr>
+<td>سرنوشت Heme پس از ساخت</td>
+<td>از میتوکندری خارج می‌شود و به زنجیره‌های گلوبین متصل می‌شود.</td>
+</tr>
+<tr>
+<td>منشأ سوکسینیل کوآ</td>
+<td>از محصولات چرخه کربس یا متابولیسم اسیدهای چرب (Fatty acids) است.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-24">اختلالات مرتبط با آهن و سرب</h3>
+<table>
+<thead>
+<tr>
+<th>شاخص</th>
+<th>Iron deficiency anemia</th>
+<th>Sideroblastic anemia</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SI (Serum Iron)</td>
+<td>پایین</td>
+<td>بالا</td>
+</tr>
+<tr>
+<td>TIBC</td>
+<td>بالا</td>
+<td>پایین</td>
+</tr>
+<tr>
+<td>وضعیت ذخیره آهن</td>
+<td>فریتین پایین</td>
+<td>ذخیره آهن وجود دارد، اما آهن قابل‌استفاده نیست</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>مشاغل یا موقعیت‌های پرخطر برای تماس با سرب</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>صنعت چاپ و حروف‌چینی با سرب</td>
+</tr>
+<tr>
+<td>نقاشی و رنگ‌آمیزی ساختمان، به‌علت وجود سرب در رنگ</td>
+</tr>
+<tr>
+<td>باتری‌سازی</td>
+</tr>
+<tr>
+<td>افسران راهنمایی و رانندگی در معرض بنزین سرب‌دار</td>
+</tr>
+<tr>
+<td>استفاده از برخی لوازم آرایشی</td>
+</tr>
+<tr>
+<td>مصرف تریاکی که با سرب مخلوط شده باشد</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>آنزیم مهارشده به‌وسیله سرب</th>
+<th>ارتباط یا پیامد ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>فروچلتاز (Ferrochelatase)</td>
+<td>در مسیر سنتز Heme؛ سرب تولید Heme را مختل می‌کند.</td>
+</tr>
+<tr>
+<td>پورفوبیلینوژن سنتاز (ALA dehydratase / PBG synthase)</td>
+<td>در مسیر سنتز Heme؛ سرب تولید پورفوبیلینوژن را مختل می‌کند.</td>
+</tr>
+<tr>
+<td>۵ پرایم پیریمیدیناز (Pyrimidine 5'-nucleotidase)</td>
+<td>در ارتباط با خروج رشته‌های RNA از گلبول قرمز؛ مهار آن باعث باقی‌ماندن و رسوب RNA می‌شود و Basophilic stippling دیده می‌شود.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-25">پورفیریا و انواع هموگلوبین تغییریافته</h3>
+<table>
+<thead>
+<tr>
+<th>ویژگی یا مورد</th>
+<th>توصیف مطرح‌شده در کلاس</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>اختلال در مراحل اولیه مسیر</td>
+<td>بیشتر با حمله‌های (Attack) بیماری همراه است.</td>
+</tr>
+<tr>
+<td>اختلال در مراحل انتهایی مسیر</td>
+<td>می‌تواند با حساسیت نوری و حمله همراه باشد.</td>
+</tr>
+<tr>
+<td>روش معمول بررسی تشخیصی</td>
+<td>رنگدانه‌های دفع‌شده در ادرار (Urine) بررسی می‌شوند.</td>
+</tr>
+<tr>
+<td>استثنا در نمونه مورد استفاده</td>
+<td>در EPP از گلبول قرمز یا پلاسما استفاده می‌شود.</td>
+</tr>
+<tr>
+<td>وراثت مطرح‌شده</td>
+<td>ALAS2 به‌عنوان X-linked و سایر موارد به‌عنوان اتوزومال غالب مطرح شدند.</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>مورد</th>
+<th>توصیف</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>تشکیل مت‌هموگلوبین</td>
+<td>تبدیل آهن هموگلوبین به +Fe3</td>
+</tr>
+<tr>
+<td>سیستم احیاکننده</td>
+<td>Methemoglobin reductase آهن +Fe3&nbsp;را احیا می‌کند.</td>
+</tr>
+<tr>
+<td>پیامد کمبود ظرفیت سیستم</td>
+<td>تجمع مت‌هموگلوبین</td>
+</tr>
+<tr>
+<td>یافته‌های ظاهری ذکرشده</td>
+<td>زبان ممکن است بنفش، لب‌ها سیاه و خون قهوه‌ای‌رنگ شود.</td>
+</tr>
+<tr>
+<td>مقدار طبیعی</td>
+<td>کمتر از ۱٫۵ درصد هموگلوبین کل</td>
+</tr>
+<tr>
+<td>بالاتر از ۱۰ درصد</td>
+<td>فرد ممکن است سیانوتیک شود؛ مت‌هموگلوبین عملکرد حمل اکسیژن ندارد.</td>
+</tr>
+<tr>
+<td>درمان مطرح‌شده</td>
+<td>در اختلال آنزیمی می‌توان از Methylene blue استفاده کرد؛ اگر علت جهش ژنتیکی زنجیره گلوبین باشد، متیلن بلو کاربردی ندارد.</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>نوع هموگلوبین پاتولوژیک یا تغییریافته</th>
+<th>ارتباط یا توصیف ذکرشده</th>
+<th>رنگ یا پیامد ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Methemoglobin</td>
+<td>آهن به Fe3+ تبدیل شده است؛ Methemoglobin reductase آن را احیا می‌کند.</td>
+<td>عملکرد حمل اکسیژن ندارد؛ در مت‌هموگلوبینمی زبان ممکن است بنفش، لب‌ها سیاه و خون قهوه‌ای‌رنگ شود.</td>
+</tr>
+<tr>
+<td>Sulfhemoglobin</td>
+<td>مسمومیت با گوگرد</td>
+<td>رنگ هموگلوبین مایل به سبز (Greenish) می‌شود و عملکرد حمل اکسیژن ندارد.</td>
+</tr>
+<tr>
+<td>Carboxyhemoglobin</td>
+<td>در مسمومیت با منوکسید کربن (CO) تشکیل می‌شود.</td>
+<td>رنگ آلبالویی (Cherry red)؛ گیجی، تهوع و خفگی بافتی از علائم عمومی ذکرشده‌اند.</td>
+</tr>
+<tr>
+<td>HbA1c</td>
+<td>قند به هموگلوبین متصل شده است.</td>
+<td>مقدار آن برای دسته‌بندی نرمال، پیش‌دیابت و دیابت ذکر شد.</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>نوع هموگلوبین</th>
+<th>ماده متصل‌شونده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HbA1a</td>
+<td>گلوکز ۶-فسفات</td>
+</tr>
+<tr>
+<td>HbA1b</td>
+<td>گالاکتوز و فروکتوز</td>
+</tr>
+<tr>
+<td>HbA1c</td>
+<td>گلوکز</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>مقدار HbA1c</th>
+<th>عنوان ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>تا ۵٫۵ درصد</td>
+<td>نرمال</td>
+</tr>
+<tr>
+<td>۵٫۵ تا ۶٫۵ درصد</td>
+<td>پیش‌دیابت (Pre-diabetic)</td>
+</tr>
+<tr>
+<td>بالاتر از ۶٫۵ درصد</td>
+<td>دیابت (Diabetic)؛ نیاز به درمان</td>
+</tr>
+</tbody></table>
+</section>
+
+<section class="noteSection keyTermsSection">
+    <h2 id="heading-26">۴. اصطلاحات و تعاریف</h2>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>اریتروپوئزیس (Erythropoiesis)</strong>
+فرایند تولید و تکامل گلبول قرمز است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>جزیره اریتروبلاستیک (Erythroblastic island)</strong>
+اریتروبلاست‌ها در مغز استخوان به‌دور یک ماکروفاژ مرکزی تجمع می‌کنند. این ساختار که از یک ماکروفاژ مرکزی و اریتروبلاست‌های اطراف آن تشکیل شده است، جزیرهٔ اریتروبلاستیک (Erythroblastic island) نام دارد.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>سینوزوئیدها (Sinusoid)</strong>
+عروق خونی تخصص‌یافته‌ای هستند که دیوارهٔ اندوتلیالی نسبتاً نازکی دارند و امکان عبور سلول‌های خونی از مغز استخوان به جریان خون را فراهم می‌کنند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>مت‌هموگلوبین (Methemoglobin)</strong>
+نوعی از هموگلوبین است که در آن آهن موجود در گروه Heme از حالت فرو (⁺Fe²) به حالت فریک (⁺Fe³) اکسید شده است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>بازوفیلیک استیپلینگ (Basophilic stippling)</strong>
+باقی‌ماندن و رسوب RNA در گلبول قرمز در پی مهار Pyrimidine 5'-nucleotidase به‌وسیله سرب.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پورفیریا (Porphyria)</strong>
+به گروهی از اختلالات متابولیکی گفته می‌شود که در اثر کاهش یا تغییر فعالیت آنزیم‌های مسیر بیوسنتز هِم (Heme biosynthesis) ایجاد می‌شوند. در نتیجه، پیش‌سازهای هِم یا پورفیرین‌ها در بافت‌ها، خون، ادرار یا مدفوع تجمع پیدا می‌کنند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>سیانوز (Cyanosis)</strong> یعنی آبی یا کبود شدن پوست و مخاط‌ها به‌دلیل افزایش هموگلوبینِ بدون اکسیژن در خون یا اختلال در اکسیژن‌رسانی.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>هموگلوبین گلیکوزیله (HbA1c)</strong>
+نوعی هموگلوبین است که در اثر اتصال غیرآنزیمی گلوکز به آن تشکیل می‌شود.</div></div>
+</section>
+
+<section class="noteSection selfAssessmentSection">
+    <h2 id="heading-27">۵. خود‌ارزیابی</h2>
+<h3 id="heading-28">سوالات تشریحی</h3>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>مراحل تمایز اریتروئیدی را به‌ترتیب نام ببرید و تغییر رنگ سیتوپلاسم را در این مسیر توضیح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>مراحل عبارت‌اند از: پرونورموبلاست، بازوفیلیک نورموبلاست، پلی‌کروماتوفیلیک نورموبلاست، ارتوکروماتوفیلیک نورموبلاست، رتیکولوسیت و گلبول قرمز بالغ. سیتوپلاسم سلول‌های نارس آبی‌رنگ است و با ساخته‌شدن هموگلوبین، در رنگ‌آمیزی رایت به‌تدریج از آبی به‌سمت نارنجی و در نهایت به نارنجی تا قرمز تغییر می‌کند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>ترکیب زنجیره‌ای HbA، HbA2 و HbF را بنویسید و دوره‌ای را که برای HbF ذکر شده است مشخص کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>HbA از α2β2 و HbA2 از α2δ2 و HbF از α2γ2 تشکیل می‌شود. HbF در دوره جنینی ساخته می‌شود.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>مسیر سنتز Heme از گلیسین و سوکسینیل کوآ تا تشکیل Heme را به‌صورت مرحله‌ای شرح دهید و تغییر محل مسیر را بیان کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>مسیر در میتوکندری با تبدیل گلیسین و سوکسینیل کوآ به ALA به‌وسیله ALA synthase / ALAS آغاز می‌شود. ALA به سیتوپلاسم می‌رود و دو مولکول آن با خروج آب، PBG می‌سازند. چهار PBG به Uroporphyrinogen تبدیل می‌شوند؛ سپس با از دست‌دادن CO2، Coproporphyrinogen تشکیل می‌شود. Coproporphyrinogen به میتوکندری بازمی‌گردد و به‌ترتیب به Protoporphyrinogen IX و Protoporphyrin IX تبدیل می‌شود. در مرحله نهایی، آهن با Protoporphyrin IX پیوند می‌یابد و Heme ساخته می‌شود. بنابراین، مسیر در میتوکندری شروع می‌شود، در سیتوپلاسم ادامه می‌یابد و در میتوکندری پایان می‌گیرد.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>آنمی فقر آهن و آنمی سیدروبلاستیک را بر اساس SI، TIBC و وضعیت ذخیره آهن مقایسه کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در آنمی فقر آهن، SI پایین، TIBC بالا و فریتین پایین است. در آنمی سیدروبلاستیک، SI بالا و TIBC پایین است و ذخیره آهن وجود دارد، اما آهن قابل‌استفاده نیست.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>سرب چگونه می‌تواند به Basophilic stippling منجر شود؟ سه آنزیمی که با مسمومیت سرب مهار می‌شوند را نام ببرید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>سرب Pyrimidine 5'-nucleotidase را مهار می‌کند؛ درنتیجه، RNA از داخل گلبول قرمز خارج نمی‌شود، در سلول باقی می‌ماند و رسوب می‌کند که Basophilic stippling نام دارد. سه آنزیم مهارشده عبارت‌اند از فروچلتاز، پورفوبیلینوژن سنتاز (ALA dehydratase / PBG synthase) و Pyrimidine 5'-nucleotidase.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<h3 id="heading-29">سوالات تستی</h3>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>کدام مرحله بلافاصله پس از ارتوکروماتوفیلیک نورموبلاست قرار می‌گیرد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">بازوفیلیک نورموبلاست</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">رتیکولوسیت</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">پرونورموبلاست</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">پلی‌کروماتوفیلیک نورموبلاست</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>پس از ارتوکروماتوفیلیک نورموبلاست، رتیکولوسیت قرار می‌گیرد.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>کدام جفت، جایگاه ژنی و تعداد اسیدآمینه زنجیره آلفا را درست نشان می‌دهد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">کروموزوم ۱۶؛ ۱۴۱ اسیدآمینه</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">کروموزوم ۱۱؛ ۱۴۱ اسیدآمینه</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">کروموزوم ۱۶؛ ۱۴۶ اسیدآمینه</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">کروموزوم ۱۱؛ ۱۴۶ اسیدآمینه</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>ژن‌های آلفا روی کروموزوم ۱۶ قرار دارند و زنجیره آلفا ۱۴۱ اسیدآمینه دارد.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>ترکیب زنجیره‌ای HbA2 کدام است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">α2β2</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">α2γ2</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">α2δ2</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">چهار زنجیره آلفا</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>HbA2 از دو زنجیره آلفا و دو زنجیره دلتا (α2δ2) تشکیل می‌شود.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>کدام عامل به‌عنوان کنترل‌کننده کلاستر ژن‌های بتا معرفی شده است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">MCS</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">LCR</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">ALAS</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">Methemoglobin reductase</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>LCR (Locus Control Region) عامل کنترل‌کننده کلاستر ژن‌های بتا معرفی شده است.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>کدام گزینه ترتیب محل‌های سنتز Heme را درست بیان می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">آغاز در سیتوپلاسم، ادامه در خون، پایان در مغز استخوان</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">آغاز در میتوکندری، ادامه در سیتوپلاسم، پایان در میتوکندری</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">آغاز در مغز استخوان، ادامه در میتوکندری، پایان در سیتوپلاسم</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">تمام مراحل در سیتوپلاسم انجام می‌شوند.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>سنتز Heme در میتوکندری آغاز می‌شود، در سیتوپلاسم ادامه می‌یابد و برای پایان به میتوکندری بازمی‌گردد.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="6"><div class="questionBoxHeader">سؤال 6</div><div class="questionBoxPrompt"><p>در Sideroblastic anemia، کدام وضعیت برای آهن ذکر شده است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">آهن در دسترس نیست و فریتین پایین است.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">SI پایین و TIBC بالا است.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">ذخیره آهن وجود دارد، اما آهن قابل‌استفاده نیست.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">آهن به‌طور کامل برای ساخت Heme استفاده می‌شود.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در Sideroblastic anemia ذخیره آهن وجود دارد، اما آهن قابل‌استفاده نیست؛ SI بالا و TIBC پایین ذکر شده است.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="7"><div class="questionBoxHeader">سؤال 7</div><div class="questionBoxPrompt"><p>Basophilic stippling در اثر کدام تغییر ایجاد می‌شود؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">باقی‌ماندن و رسوب RNA در گلبول قرمز پس از مهار Pyrimidine 5'-nucleotidase</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">اتصال گلوکز به هموگلوبین</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">تبدیل Fe3+ به Fe2+ به‌وسیله Methemoglobin reductase</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">افزایش برون‌ده ژن α2 نسبت به α1</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>مهار Pyrimidine 5'-nucleotidase به‌وسیله سرب باعث باقی‌ماندن و رسوب RNA در گلبول قرمز می‌شود.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="8"><div class="questionBoxHeader">سؤال 8</div><div class="questionBoxPrompt"><p>کدام مقدار به‌عنوان محدوده طبیعی HbA2 ذکر شده است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">کمتر از ۱ درصد</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">۱٫۵ تا ۳٫۵ درصد</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">۵٫۵ تا ۶٫۵ درصد</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">۶۵ تا ۹۰ درصد</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>مقدار طبیعی HbA2 برابر ۱٫۵ تا ۳٫۵ درصد ذکر شده است.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="9"><div class="questionBoxHeader">سؤال 9</div><div class="questionBoxPrompt"><p>کدام مورد درباره مت‌هموگلوبین درست است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">آهن آن Fe2+ است و حمل اکسیژن آن برقرار است.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">آهن آن Fe3+ شده است و عملکرد حمل اکسیژن ندارد.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">در مسمومیت با CO تشکیل می‌شود و رنگ Cherry red دارد.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">به‌علت اتصال گلوکز به هموگلوبین تشکیل می‌شود.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>مت‌هموگلوبین هنگامی تشکیل می‌شود که آهن هموگلوبین به Fe3+ تبدیل شود و عملکرد حمل اکسیژن ندارد.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="10"><div class="questionBoxHeader">سؤال 10</div><div class="questionBoxPrompt"><p>در HbA1b، کدام مواد متصل می‌شوند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">گلوکز</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">گلوکز ۶-فسفات</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">گالاکتوز و فروکتوز</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">آهن و O2</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در تفکیک انواع ذکرشده، گالاکتوز و فروکتوز به HbA1b متصل می‌شوند.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+</section>
+
+<section class="noteSection reviewSection">
+    
+</section>
+
+<section class="noteSection editorAndSourcesSection">
+    <h2 id="heading-30">۷. ادیتور و منابع استفاده‌شده</h2>
+<p><strong>ادیتور:</strong> الهه کشاورزنژاد</p>
+<p><strong>منابع استفاده‌شده:</strong></p>
+<ul>
+<li>صوت درس</li>
+<li>اسلاید‌های فایل Hemoglobin syn</li>
+</ul>
+</section>
+
+<section class="noteSection completionSection">
+    <h2 id="heading-31">۸. گزارش تکمیل بودن محتوا</h2>
+<p><strong>برآورد تقریبی تکمیل محتوا:</strong> حدود ۱۰۰٪ از محتوای ارائه‌شده در متن پالایش‌شده بازتاب یافته است؛ این برآورد تضمین ریاضیِ کامل‌بودن نیست.</p>
+<ul>
+<li>✓ پوشش محتوای اسلایدها و نکات ساختاری ارائه‌شده در متن پالایش‌شده</li>
+<li>✓ پوشش محتوای صوت درسِ بازتاب‌یافته در متن پالایش‌شده</li>
+</ul>
+</section>
+
+    </main>
+
+
+    <button
+        class="backToTop"
+        type="button"
+        aria-label="بازگشت به ابتدای صفحه"
+    >
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+
+    <script src="../src/themeSwitcher.js"></script>
+    <script src="../src/fontSizeSwitcher.js"></script>
+    <script src="../src/aboutModal.js"></script>
+    <script src="../src/quickNavigation.js"></script>
+    <script src="../src/print.js"></script>
+    <script src="../src/search.js"></script>
+    <script src="../src/highlight.js"></script>
+    <script src="../src/stickyNotes.js"></script>
+    <script src="../src/viewPersistence.js"></script>
+    <script src="../src/questionInteractions.js"></script>
+    <script src="../src/fontSwitcher.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarToggle = document.querySelector(".sidebarToggle");
+    const sidebarBackdrop = document.querySelector(".sidebarBackdrop");
+
+    function openSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.add("isOpen");
+        sidebarBackdrop.classList.add("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "true");
+        sidebar.setAttribute("aria-hidden", "false");
+    }
+
+    function closeSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.remove("isOpen");
+        sidebarBackdrop.classList.remove("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "false");
+        sidebar.setAttribute("aria-hidden", "true");
+    }
+
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener("click", () => {
+            if (sidebar.classList.contains("isOpen")) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+    }
+
+    if (sidebarBackdrop) {
+        sidebarBackdrop.addEventListener("click", closeSidebar);
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeSidebar();
+        }
+    });
+
+    document.querySelectorAll(".tocItem").forEach((item) => {
+        item.addEventListener("click", closeSidebar);
+    });
+</script>
+
+</body>
+
+</html>

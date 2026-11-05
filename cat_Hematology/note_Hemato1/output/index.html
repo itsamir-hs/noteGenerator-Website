@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>سرعت رسوب گلبول‌های قرمز، شمارش رتیکولوسیت، هموگلوبین تام و هماتوکریت</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/rtl.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../node_modules/katex/dist/katex.min.css"
+    >
+
+    <link rel="stylesheet" href="../styles/dark.css">
+    <link rel="stylesheet" href="../styles/forest.css">
+    <link rel="stylesheet" href="../styles/paperLike.css">
+    <link rel="stylesheet" href="../styles/neon.css">
+    <link rel="stylesheet" href="../styles/print.css" media="print">
+
+    <script src="../node_modules/lucide/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+
+    <div class="printBrand" aria-hidden="true" style="display:none">پاپیروس</div>
+
+    <header class="appHeader">
+
+        <button
+            class="sidebarToggle"
+            type="button"
+            aria-label="باز کردن فهرست مطالب"
+            aria-expanded="false"
+        >
+            <i data-lucide="panel-left"></i>
+        </button>
+
+
+        <div class="appTitle">
+            پاپیروس
+        </div>
+
+
+        <div class="headerControls">
+
+<button
+    class="searchButton"
+    type="button"
+    aria-label="جستجو در جزوه"
+    aria-expanded="false"
+>
+    <i data-lucide="search"></i>
+</button>
+
+<div class="highlightSwitcher">
+
+    <button
+        class="highlightToggle"
+        type="button"
+        aria-label="هایلایت"
+        aria-expanded="false"
+    >
+        <i data-lucide="highlighter"></i>
+    </button>
+
+
+<div
+    class="highlightOptions"
+    aria-hidden="true"
+>
+
+    <button
+        class="highlightPowerToggle"
+        type="button"
+        aria-label="روشن یا خاموش کردن هایلایت"
+        aria-pressed="true"
+    >
+        <i data-lucide="highlighter"></i>
+        <span>هایلایت روشن</span>
+    </button>
+
+        <div class="highlightColors">
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#fff176"
+                aria-label="هایلایت زرد"
+                style="--highlightColor: #fff176;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#a5d6a7"
+                aria-label="هایلایت سبز"
+                style="--highlightColor: #a5d6a7;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#90caf9"
+                aria-label="هایلایت آبی"
+                style="--highlightColor: #90caf9;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ce93d8"
+                aria-label="هایلایت بنفش"
+                style="--highlightColor: #ce93d8;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ffab91"
+                aria-label="هایلایت نارنجی"
+                style="--highlightColor: #ffab91;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ef9a9a"
+                aria-label="هایلایت قرمز"
+                style="--highlightColor: #ef9a9a;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#f48fb1"
+                aria-label="هایلایت صورتی"
+                style="--highlightColor: #f48fb1;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#80cbc4"
+                aria-label="هایلایت فیروزه‌ای"
+                style="--highlightColor: #80cbc4;"
+            ></button>
+
+        </div>
+
+
+        <div class="highlightDivider"></div>
+
+
+        <label
+            class="highlightCustomColor"
+            aria-label="انتخاب رنگ دلخواه"
+        >
+            <input
+                class="highlightColorInput"
+                type="color"
+                value="#fff176"
+            >
+
+            <i data-lucide="palette"></i>
+        </label>
+
+
+        <button
+            class="highlightEraser"
+            type="button"
+            aria-label="پاک کردن هایلایت"
+        >
+            <i data-lucide="eraser"></i>
+            <span>پاک‌کن</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="stickyNotesSwitcher">
+
+    <button
+        class="stickyNotesToggle"
+        type="button"
+        aria-label="یادداشت‌های چسبان"
+        aria-expanded="false"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+</div>
+
+            <div class="fontSizeSwitcher">
+
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="decrease"
+                    aria-label="کاهش اندازه فونت"
+                >
+                    <i data-lucide="minus"></i>
+                </button>
+
+<button
+    type="button"
+    class="fontSizeControl fontSwitchControl"
+    aria-label="تغییر فونت"
+>
+    <i data-lucide="type"></i>
+</button>
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="increase"
+                    aria-label="افزایش اندازه فونت"
+                >
+                    <i data-lucide="plus"></i>
+                </button>
+
+            </div>
+
+
+            <div class="themeSwitcher">
+
+                <button
+                    class="themeToggle"
+                    type="button"
+                    aria-label="تغییر تم"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="sun"></i>
+                </button>
+
+<div class="themeOptions">
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="light"
+        aria-label="تم روشن"
+    >
+        <i data-lucide="sun"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="dark"
+        aria-label="تم تاریک"
+    >
+        <i data-lucide="moon"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="forest"
+        aria-label="تم جنگلی"
+    >
+        <i data-lucide="trees"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="paperLike"
+        aria-label="تم پیپر لایک"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+<button
+    class="themeButton"
+    type="button"
+    data-theme="neon"
+    aria-label="تم نئون"
+>
+<i data-lucide="zap"></i>
+</button>
+
+
+</div>
+
+            </div>
+
+<button
+    class="printButton"
+    type="button"
+    aria-label="چاپ جزوه"
+>
+    <i data-lucide="printer"></i>
+</button>
+
+
+            <button
+                class="aboutButton"
+                type="button"
+                aria-label="درباره ما"
+            >
+                <i data-lucide="users-round"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+<div
+    class="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="searchPanelContent">
+
+        <div class="searchInputWrapper">
+
+            <i data-lucide="search"></i>
+
+            <input
+                class="searchInput"
+                type="search"
+                placeholder="جستجو در جزوه..."
+                aria-label="جستجو در جزوه"
+                autocomplete="off"
+            >
+
+            <button
+                class="searchClearButton"
+                type="button"
+                aria-label="پاک کردن جستجو"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="searchResultsInfo">
+            <span class="searchResultsCount">۰ نتیجه</span>
+
+            <div class="searchNavigation">
+
+                <button
+                    class="searchPreviousButton"
+                    type="button"
+                    aria-label="نتیجه قبلی"
+                    disabled
+                >
+                    <i data-lucide="chevron-up"></i>
+                </button>
+
+                <button
+                    class="searchNextButton"
+                    type="button"
+                    aria-label="نتیجه بعدی"
+                    disabled
+                >
+                    <i data-lucide="chevron-down"></i>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    <aside
+        class="sidebar"
+        aria-label="فهرست مطالب"
+        aria-hidden="true"
+    >
+
+        <div class="sidebarHeader">
+            <h2>فهرست مطالب</h2>
+        </div>
+
+        <nav
+            class="sidebarContent"
+            aria-label="فهرست مطالب"
+        >
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-1"
+                >
+                    ۱. مقدمه و کلیات
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-2"
+                >
+                    ۲. متن اصلی جزوه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-3"
+                >
+                    سرعت رسوب گلبول‌های قرمز (ESR; Erythrocyte Sedimentation Rate): روش وسترگرن
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-4"
+                >
+                    محدودهٔ طبیعی سرعت رسوب (ESR Normal Range)
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-5"
+                >
+                    افزایش سرعت رسوب و کاربرد آن
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-6"
+                >
+                    علت افزایش سرعت رسوب: واسطه‌های التهابی و پاسخ کبد
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-7"
+                >
+                    تشکیل رولو و افزایش رسوب
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-8"
+                >
+                    فازهای سرعت رسوب
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-9"
+                >
+                    شرایط انجام و محدودیت‌های سرعت رسوب
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-10"
+                >
+                    موارد اورژانسی مرتبط با سرعت رسوب
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-11"
+                >
+                    CRP و مقایسه با ESR
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-12"
+                >
+                    شمارش رتیکولوسیت: رنگ‌آمیزی رتیکولوسیت
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-13"
+                >
+                    درصد رتیکولوسیت و شمارش مطلق
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-14"
+                >
+                    شاخص تولید رتیکولوسیت (RPI)
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-15"
+                >
+                    اندازه‌گیری هموگلوبین تام: روش سیانومت‌هموگلوبین
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-16"
+                >
+                    مراحل اندازه‌گیری و محاسبهٔ هموگلوبین
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-17"
+                >
+                    عوامل مداخله‌گر در اندازه‌گیری هموگلوبین
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-18"
+                >
+                    هماتوکریت HCT or PCV (packed cell volume)
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-19"
+                >
+                    ۳. جداول مرور سریع
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-20"
+                >
+                    سرعت رسوب: محدودهٔ طبیعی و کاربرد
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-21"
+                >
+                    واسطه‌های التهابی و پاسخ کبد
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-22"
+                >
+                    تشکیل رولو و فازهای رسوب
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-23"
+                >
+                    شرایط فنی و روش‌های سرعت رسوب
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-24"
+                >
+                    محدودیت‌های ESR در وضعیت‌های مختلف
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-25"
+                >
+                    بیماری‌های اورژانسی و مقایسهٔ CRP با ESR
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-26"
+                >
+                    رنگ‌آمیزی و شمارش رتیکولوسیت
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-27"
+                >
+                    RPI، هموگلوبین تام و هماتوکریت
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-28"
+                >
+                    ۴. اصطلاحات و تعاریف
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-29"
+                >
+                    ۵. خود‌ارزیابی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-30"
+                >
+                    سوالات تشریحی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-31"
+                >
+                    سوالات تستی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-32"
+                >
+                    ۷. ادیتور و منابع استفاده‌شده
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-33"
+                >
+                    ۸. گزارش تکمیل بودن محتوا
+                </a>
+            
+        </nav>
+
+    </aside>
+
+
+    <div class="sidebarBackdrop"></div>
+
+<aside
+    class="stickyNotesPanel"
+    aria-label="یادداشت‌های چسبان"
+    aria-hidden="true"
+>
+
+    <div class="stickyNotesPanelHeader">
+
+        <h2>یادداشت‌های چسبان</h2>
+
+        <button
+            class="addStickyNoteButton"
+            type="button"
+        >
+            <i data-lucide="plus"></i>
+            <span>یادداشت جدید</span>
+        </button>
+
+    </div>
+
+    <div class="stickyNotesPanelContent">
+
+        <div class="stickyNotesEmptyState">
+<i data-lucide="notebook-pen"></i>
+
+            <p>
+                هنوز یادداشتی ایجاد نکرده‌اید.
+            </p>
+
+        </div>
+
+        <div class="stickyNotesList"></div>
+
+    </div>
+
+</aside>
+
+<div class="stickyNotesBackdrop"></div>
+
+
+    <div
+        class="aboutModal"
+        aria-hidden="true"
+    >
+
+        <div class="aboutModalBackdrop"></div>
+
+        <section
+            class="aboutModalContent"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="aboutTitle"
+        >
+
+            <button
+                class="aboutCloseButton"
+                type="button"
+                aria-label="بستن"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <h2 id="aboutTitle">
+                آدم‌هایی که اینجا رو ساختن
+            </h2>
+
+            <p class="aboutIntroduction">
+                ما یک تیم کوچک هستیم که باور داریم یادگیری باید
+                لذت‌بخش، عمیق، و در دسترس باشد. جزوه‌ساز تلاش ماست
+                برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً
+                بتوانی با آن‌ها چیزی یاد بگیری.
+            </p>
+
+
+<div class="developerList">
+
+    <article class="developerCard">
+        <h3>شبنم رضاپور</h3>
+        <p>کسی که PDFها را راضی کرد محتوایشان را بی‌کم‌وکاست لو بدهند.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیر‌حسین شکری‌زاده سعادت‌آباد</h3>
+        <p>صدای کلاس را به متن تبدیل کرد، حتی وقتی استاد وسط جمله با میکروفون قهر می‌کرد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>مهراد اسدی</h3>
+        <p>پرامپت‌ها را طوری چید که LLM فکر کرد دارد پایان‌نامه دکتری می‌نویسد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیرسالار سهام‌پور</h3>
+        <p>مارک‌داون را به HTML تبدیل کرد و به جزوه ظاهری داد که آدم دلش بخواهد بخواندش.</p>
+    </article>
+
+</div>
+
+            <p class="aboutFooter">
+                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد.
+                <br>
+                امیدواریم یادگیریت را لذت‌بخش‌تر کند.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <div class="quickNavigation">
+        <div class="quickNavigationList"></div>
+    </div>
+
+
+    <main class="noteContainer">
+
+<div class="stickyNotesLayer"></div>
+
+        <section class="noteHeader">
+
+            <div class="noteMetadata">
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">درس</span>
+                    <span class="metadataValue">هماتولوژی</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">مبحث</span>
+                    <span class="metadataValue">آزمایشگاه هماتولوژی-سرعت رسوب گلبول‌های قرمز (ESR)، شمارش رتیکولوسیت، اندازه‌گیری هموگلوبین تام و هماتوکریت-جلسه3 کلاس</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">استاد</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ جلسه</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ تولید جزوه</span>
+                    <span class="metadataValue generatedDate">2026-10-21T03:23:06</span>
+                </span>
+
+            </div>
+
+
+            <div class="aiWarning">
+                <i data-lucide="triangle-alert"></i>
+
+                <p>
+                    این جزوه با استفاده از جزوه‌ساز پاپیروس و به صورت خودکار تولید شده است.
+                    ممکن است شامل خطا یا برداشت نادرست باشد و
+                    نیازمند بررسی و بازبینی مجدد است.
+                </p>
+            </div>
+
+        </section>
+
+
+<section class="noteSection introductionSection">
+    <h2 id="heading-1">۱. مقدمه و کلیات</h2>
+<p>در این درس، روش وسترگرن (Westergren)  برای اندازه‌گیری سرعت رسوب گلبول‌های قرمز (ESR)، محدودهٔ طبیعی و کاربردهای آن، علت افزایش سرعت رسوب و محدودیت‌های آزمایش بررسی می‌شود. سپس رنگ‌آمیزی و شمارش رتیکولوسیت، شاخص تولید رتیکولوسیت (RPI)، روش سیانومت‌هموگلوبین برای اندازه‌گیری هموگلوبین تام و اندازه‌گیری هماتوکریت مطرح می‌شوند.</p>
+</section>
+
+<section class="noteSection mainSection">
+    <h2 id="heading-2">۲. متن اصلی جزوه</h2>
+<h3 id="heading-3">سرعت رسوب گلبول‌های قرمز (ESR; Erythrocyte Sedimentation Rate): روش وسترگرن</h3>
+<p><img src="../data/assets/assets/screenshot_20261023_140039.png" alt="screenshot_20261023_140039"></p>
+<p><img src="../data/assets/assets/screenshot_20261023_140119.png" alt="screenshot_20261023_140119"></p>
+<p><img src="../data/assets/assets/screenshot_20261023_130022.png" alt="screenshot_20261023_130022"></p>
+<p>لوله استاندارد این آزمایش <strong>لوله های سر مشکی</strong> هستند که از ضد انعقاد سیترات سدیم در آن ها استفاده می‌کنیم؛ اما برای اندازه گیری از لوله هایی شبیه پیپت استفاده می‌کنیم که به آن پیپت وسترگرن می‌گویند.</p>
+<p><img src="../data/assets/assets/screenshot_20261023_135453.png" alt="screenshot_20261023_135453"></p>
+<p><strong>پیپت وسترگرن (Westergren)</strong> لوله‌ای شبیه پیپت است که از صفر تا ۲۰۰ میلی‌متر درجه‌بندی شده و قطر داخلی آن ۲٫۵ میلی‌متر است. در این روش، خون بیمار با <strong>محلول سیترات سدیم 3.2 تا 3.8 درصد</strong> ضدانعقاد می‌شود و تا درجه 0 که بالای پیپت قرار دارد، خون بیمار ریخته می‌شود و به مدت <strong>60 دقیقه</strong> (یک ساعت) به حالت عمودی قرار می‌دهیم. نسبت خون به سیترات <strong>چهار به یک</strong> است؛ یعنی چهار قسمت خون و یک قسمت سیترات.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای نمونه، ۱٫۶ میلی‌لیتر خون را با ۰٫۴ میلی‌لیتر محلول سیترات سدیم مخلوط می‌کنند.</div></div>
+<p>ضدانعقاد این روش EDTA نیست؛ سیترات سدیم ضدانعقاد استاندارد بین‌المللی ESR است.</p>
+<p><img src="../data/assets/assets/photo_2026-10-23_13-11-10.jpg" alt="photo_2026-10-23_13-11-10"></p>
+<p>مراحل انجام آزمایش:</p>
+<ol>
+<li>خون را با سیترات سدیم(ضدانعقاد) مخلوط کنید.</li>
+<li>مخلوط خون را تا درجهٔ صفر لوله بکشید.</li>
+<li>لوله را کاملاً عمودی، به‌مدت یک ساعت و در دمای اتاق قرار دهید.</li>
+<li>پس از یک ساعت، فاصله‌ای را که گلبول‌های قرمز از بالا به پایین آمده‌اند اندازه بگیرید(سرعت رسوب)</li>
+</ol>
+<p><img src="../data/assets/assets/screenshot_20261023_140149.png" alt="screenshot_20261023_140149"></p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>سرعت رسوب گلبول های قرمز (Erythrocyte Sedimentation Rate; ESR)</strong>
+فاصله‌ای که گلبول‌های قرمز طی یک ساعت به سمت پایین طی می‌کنند، سرعت رسوب است.</div></div>
+<p><img src="../data/assets/assets/screenshot_20261023_140058.png" alt="screenshot_20261023_140058"></p>
+<p>روش وسترگرن روش بین‌المللی است و لولهٔ آن استاندارد آزمایش سرعت رسوب محسوب می‌شود. نتیجه پس از یک ساعت خوانده می‌شود و آزمایش به اقدام خاص دیگری نیاز ندارد.</p>
+<p><img src="../data/assets/assets/screenshot_20261023_130050.png" alt="screenshot_20261023_130050"></p>
+<p>در تصویر هشت بیمار دیده می‌شوند. در بیمار شمارهٔ ۸، فاصله از صفر تا ۱۰۵ میلی‌متر است؛ بنابراین، سرعت رسوب او ۱۰۵ میلی‌متر در ساعت و بیشترین مقدار در میان بیماران است. عددهای ثبت‌شده برای بقیهٔ بیماران به‌ترتیب حدود ۸۲، ۷۳، ۲۵، ۱۰، ۹ و ۵ هستند.</p>
+<p>در توضیح تصویر، بیمار شمارهٔ ۱ طبیعی و بیمارهای شمارهٔ ۵ و ۶ دارای سرعت رسوب بالا معرفی می‌شوند.</p>
+<h3 id="heading-4">محدودهٔ طبیعی سرعت رسوب (ESR Normal Range)</h3>
+<p>حداکثر مقدار طبیعی سرعت رسوب به <strong>سن و جنس</strong> بستگی دارد:</p>
+<ul>
+<li><p><strong>آقایان (Male):</strong> <strong>حداکثر</strong> مقدار طبیعی برابر است با <strong>سن تقسیم بر دو.                  2/Male: Y</strong></p>
+<p> برای مثال، در آقای ۴۰ساله حداکثر مقدار طبیعی ۲۰ <strong>میلی‌متر در ساعت</strong> است.</p>
+</li>
+<li><p><strong>خانم‌ها (Female):</strong> حداکثر مقدار طبیعی برابر است با <strong>سن به‌اضافهٔ ۱۰، تقسیم بر دو.                     Female: Y+10/2</strong></p>
+<p> برای مثال، در خانم ۲۰ساله: ((۲۰ + ۱۰) ÷ ۲ = ۱۵).</p>
+</li>
+<li><p><strong>کودکان (Children):</strong> مقدار طبیعی <strong>صفر تا ۱۰</strong> است.</p>
+</li>
+<li><p><strong>Children: 0-10</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>گروه</th>
+<th>حداکثر یا محدودهٔ طبیعی ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>آقایان</td>
+<td>سن تقسیم بر دو</td>
+</tr>
+<tr>
+<td>خانم‌ها</td>
+<td>(سن به‌اضافهٔ ۱۰) تقسیم بر دو</td>
+</tr>
+<tr>
+<td>کودکان</td>
+<td>صفر تا ۱۰</td>
+</tr>
+</tbody></table>
+<h3 id="heading-5">افزایش سرعت رسوب و کاربرد آن</h3>
+<p><img src="../data/assets/assets/photo_2026-10-23_13-11-41.jpg" alt="photo_2026-10-23_13-11-41"></p>
+<p><img src="../data/assets/assets/screenshot_20261023_140137.png" alt="screenshot_20261023_140137"></p>
+<p><strong>اگر سرعت رسوب دو یا سه برابر شود، معمولاً وجود یک مشکل واقعی در بیمار مطرح است؛ ازجمله:</strong></p>
+<ul>
+<li><strong>بیماری التهابی یا روماتیسمی؛</strong></li>
+<li><strong>عفونت مزمن یا حاد؛</strong></li>
+<li><strong>احتمال بدخیمی.</strong></li>
+</ul>
+<p><strong>در این وضعیت، گلبول‌های قرمز سریع‌تر به پایین لوله می‌آیند(افزایش سرعت رسوب یا ESR)</strong></p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای مثال، اگر بیماری با سردرد یا درد استخوان مراجعه کند، ممکن است سرعت رسوب او اندازه‌گیری شود؛ بالا بودن نتیجه احتمال وجود یک مشکل واقعی را مطرح می‌کند.</div></div>
+<p>این آزمایش را سال‌ها «آزمایش دروغ‌سنج پزشکی» می‌نامیدند و حدود ۱۰۰ سال است که انجام می‌شود؛ زیرا در این آزمایش وجود واقعی مشکل یا عفونت در بدن اثبات می‌شود.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای مثال، اگر سرعت رسوب بیمار ۵۰ باشد، درحالی‌که حداکثر مقدار طبیعی او ۱۵ است، و بیمار از تعریق شبانه یا درد استخوان شکایت کند، پزشک نمی‌تواند این علائم را نادیده بگیرد و ممکن است آزمایش‌های عفونی یا روماتیسمی یا بررسی بدخیمی درخواست کند.</div></div>
+<p>مشکل بیمار دارای سرعت رسوب بالا ممکن است عفونت، بیماری روماتیسمی یا بدخیمی باشد.</p>
+<p><img src="../data/assets/assets/photo_2026-10-23_13-11-22.jpg" alt="photo_2026-10-23_13-11-22"></p>
+<p>اگر بررسی‌ها نشان دهند که بیمار سل یا آرتریت روماتوئید دارد، پزشک می‌داند که نباید بیمار را رها کند و باید آزمایش‌های تکمیلی انجام دهد. در بیماری‌ای مانند سل، می‌توان سرعت رسوب را هر ماه یا هر دو هفته پیگیری کرد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای مثال، اگر سرعت رسوب ۱۰۰ بوده و پس از درمان به ۷۰ و سپس ۴۰ برسد، وضعیت رو به بهبود است.</div></div>
+<p>در بیماری‌ای مانند لنفوم(سرطان غدد لنفاوی) نیز می‌توان سرعت رسوب را پیش و پس از درمان مقایسه کرد؛ اگر عدد از ۵۰ به ۷۰ برسد، ممکن است درمان پاسخ نداده باشد. بنابراین، این آزمایش به پیگیری بیمار و ارزیابی پاسخ به دارو کمک می‌کند.</p>
+<table>
+<thead>
+<tr>
+<th>کاربرد سرعت رسوب</th>
+<th>توضیح و نمونهٔ ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>مطرح‌کردن وجود یک مشکل</td>
+<td>افزایش دو یا سه‌برابری معمولاً وجود مشکلی مانند بیماری التهابی یا روماتیسمی، عفونت حاد یا مزمن، یا احتمال بدخیمی را مطرح می‌کند.</td>
+</tr>
+<tr>
+<td>علامت هشدار و جست‌وجوی علت</td>
+<td>عدد بالا همراه با علائمی مانند تعریق شبانه یا درد استخوان ممکن است به بررسی‌های عفونی، روماتیسمی یا بدخیمی منجر شود.</td>
+</tr>
+<tr>
+<td>پیگیری بیماری و ارزیابی پاسخ به درمان</td>
+<td>در سل می‌توان آن را هر ماه یا هر دو هفته پیگیری کرد؛ در لنفوم نیز می‌توان عدد را پیش و پس از درمان مقایسه کرد.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-6">علت افزایش سرعت رسوب: واسطه‌های التهابی و پاسخ کبد</h3>
+<p><strong>برای فهمیدن علت افزایش سرعت رسوب، باید به واسطه‌های التهابی توجه کرد.</strong> هنگام مواجههٔ بدن با بیماری‌های روماتیسمی، عفونت یا التهاب، <strong>واسطه‌های التهابی</strong> ترشح می‌شوند:</p>
+<ul>
+<li><strong>ماکروفاژها اینترلوکین ۱ (interleukin-1)</strong> <strong>یا IL-1</strong> <strong>ترشح می‌کنند.</strong></li>
+<li><strong>بسیاری از سلول‌ها اینترلوکین ۶ (interleukin-6)</strong> <strong>یا IL-6</strong> <strong>ترشح می‌کنند.</strong></li>
+</ul>
+<p><img src="../data/assets/assets/photo_2026-10-23_15-15-21.jpg" alt="photo_2026-10-23_15-15-21"></p>
+<p><strong>اینترلوکین ۱ و اینترلوکین ۶ پیام‌رسان‌های بدن در عفونت و التهاب‌اند</strong>. هنگام کرونا نیز افزایش اینترلوکین ۶ می‌توانست بدن را وارد التهاب کند و داروهای مورد استفاده این واسطه‌های التهابی را کاهش می‌دادند.</p>
+<p><img src="../data/assets/assets/photo_2026-10-23_15-15-28.jpg" alt="photo_2026-10-23_15-15-28"></p>
+<p><strong>در عفونت یا التهاب، مقدار اینترلوکین ۶ افزایش می‌یابد و به‌سرعت به کبد پیام می‌دهد که بدن در حالت التهاب است. کبد در حالت عادی آلبومین و ترانسفرین می‌سازد؛ اما هنگام التهاب، سنتز آلبومین و ترانسفرین را کاهش می‌دهد و پروتئین‌هایی می‌سازد که در پاسخ به التهاب به کار می‌آیند،</strong></p>
+<p><strong>ازجمله:</strong></p>
+<ul>
+<li><strong>فیبرینوژن</strong>(پروتئین ترمیم کننده التهاب)</li>
+<li><strong>آنتی‌تریپسین</strong>(خنثی کردن تریپسین در التهابات بافتی)</li>
+<li><strong>CRP ; پروتئین واکنشگر C (C-reactive protein).</strong></li>
+</ul>
+<p><img src="../data/assets/assets/photo_2026-10-23_15-15-24.jpg" alt="photo_2026-10-23_15-15-24"></p>
+<p>به این پروتئین ها، <strong>پروتئین های فاز حاد (Acute phase Proteins)</strong> گفته می‌شود.</p>
+<p><strong>پلاسماسل‌ها نیز ایمونوگلوبولین(Ig)  ترشح می‌کنند.</strong></p>
+<p><strong>اینترلوکین ۱ روی هیپوتالاموس اثر می‌گذارد و دمای بدن را بالا می‌برد(ایجاد تب). در دمای بالاتر، پاسخ ایمنی بدن فعال‌تر می‌شود.</strong></p>
+<table>
+<thead>
+<tr>
+<th>عامل یا سلول</th>
+<th>نقش یا ارتباط ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ماکروفاژها</td>
+<td>ترشح اینترلوکین ۱ (interleukin-1) یا IL-1</td>
+</tr>
+<tr>
+<td>بسیاری از سلول‌ها</td>
+<td>ترشح اینترلوکین ۶ (interleukin-6) یا IL-6</td>
+</tr>
+<tr>
+<td>اینترلوکین ۶</td>
+<td>در التهاب افزایش می‌یابد و به‌سرعت به کبد پیام می‌دهد که بدن در حالت التهاب است.</td>
+</tr>
+<tr>
+<td>کبد در حالت عادی</td>
+<td>ساخت آلبومین و ترانسفرین</td>
+</tr>
+<tr>
+<td>کبد هنگام التهاب</td>
+<td>کاهش سنتز آلبومین و ترانسفرین و ساخت پروتئین‌هایی مانند فیبرینوژن، آنتی‌تریپسین و CRP</td>
+</tr>
+<tr>
+<td>پلاسماسل‌ها</td>
+<td>ترشح ایمونوگلوبولین</td>
+</tr>
+<tr>
+<td>اینترلوکین ۱</td>
+<td>اثر بر هیپوتالاموس و بالا بردن دمای بدن</td>
+</tr>
+</tbody></table>
+<h3 id="heading-7">تشکیل رولو و افزایش رسوب</h3>
+<p>در فرد سالم CRP قابل اندازه‌گیری نیست؛ اگر CRP در آزمایشگاه مثبت باشد، حتماً التهابی وجود دارد. بنابراین، CRP، فیبرینوژن و آنتی‌تریپسین در پاسخ به التهاب و بیماری ترشح می‌شوند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پروتئین‌های فاز حاد</strong> <strong>(Acute phase Proteins)</strong>
+ CRP، فیبرینوژن و آنتی‌تریپسین به‌عنوان پروتئین‌هایی معرفی می‌شوند که در پاسخ به التهاب و بیماری ترشح می‌شوند.</div></div>
+<p>این پروتئین‌های فاز حاد بار منفی گلبول‌های قرمز را کاهش می‌دهند. گلبول‌های قرمز در حالت عادی به‌دلیل بار منفی از هم جدا می‌مانند؛ اما با کاهش این بار، به هم می‌چسبند و به شکل ستون سکه درمی‌آیند. این آرایش را <strong>رولو (rouleaux)</strong> می‌گویند.</p>
+<p><img src="../data/assets/assets/photo_2026-10-23_13-11-28.jpg" alt="photo_2026-10-23_13-11-28"></p>
+<p><img src="../data/assets/assets/photo_2026-10-23_13-11-51.jpg" alt="photo_2026-10-23_13-11-51"></p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>رولو (rouleaux)</strong>
+آرایش گلبول‌های قرمز به شکل ستون سکه، پس از چسبیدن آن‌ها به یکدیگر، رولو نام دارد.</div></div>
+<p>در فرد سالم گلبول‌ها جدا از هم‌اند، اما در خون بیماری که التهاب یا عفونت دارد ممکن است به شکل رولو کنار هم قرار گیرند.</p>
+<p>رولو از گلبول‌های جداگانه سنگین‌تر است و سریع‌تر پایین می‌آید.</p>
+<p>بنابراین، هرچه پروتئین‌های فاز حاد بیشتر باشند، رولو بیشتر تشکیل می‌شود و سرعت رسوب بالاتر می‌رود.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای توضیح این تفاوت، مثال دو سطل آب مطرح می‌شود: اگر در یکی خوشهٔ انگور و در دیگری دانه‌های جداگانه بیندازیم، خوشه زودتر پایین می‌رود.</div></div>
+<h3 id="heading-8">فازهای سرعت رسوب</h3>
+<p>سرعت رسوب سه فاز دارد:</p>
+<ol>
+<li><strong>تشکیل رولو (aggregation):</strong> در ۱۰ دقیقهٔ اول رولو تشکیل می‌شود.</li>
+<li><strong>رسوب‌کردن (sedimentation):</strong> در ۴۰ دقیقهٔ بعد، رولوها پایین می‌روند و سرعت رسوب افزایش پیدا می‌کند.</li>
+<li><strong>فشرده‌شدن (packing):</strong> در ۱۰ دقیقهٔ آخر، با فشرده‌شدن گلبول‌ها، سرعت دیگر چندان افزایش نمی‌یابد.</li>
+</ol>
+<p><img src="../data/assets/assets/photo_2026-10-23_13-11-33.jpg" alt="photo_2026-10-23_13-11-33"></p>
+<p>این مراحل در مجموع یک ساعت طول می‌کشند و به همین دلیل نتیجه پس از یک ساعت خوانده می‌شود. در مثالی که لوله را نیم ساعت گذاشته‌اند، عدد ۱۵ دیده می‌شود؛ اما نتیجهٔ استاندارد سرعت رسوب برحسب یک ساعت گزارش می‌شود.</p>
+<table>
+<thead>
+<tr>
+<th>فاز</th>
+<th align="right">زمان</th>
+<th>اتفاق</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>تشکیل رولو (aggregation)</td>
+<td align="right">۱۰ دقیقهٔ اول</td>
+<td>رولو تشکیل می‌شود.</td>
+</tr>
+<tr>
+<td>رسوب‌کردن (sedimentation)</td>
+<td align="right">۴۰ دقیقهٔ بعد</td>
+<td>رولوها پایین می‌روند و سرعت رسوب افزایش پیدا می‌کند.</td>
+</tr>
+<tr>
+<td>فشرده‌شدن (packing)</td>
+<td align="right">۱۰ دقیقهٔ آخر</td>
+<td>گلبول‌ها فشرده می‌شوند و سرعت دیگر چندان افزایش نمی‌یابد.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-9">شرایط انجام و محدودیت‌های سرعت رسوب</h3>
+<p>سرعت رسوب در بیماری‌های مختلف ممکن است افزایش پیدا کند؛ بااین‌حال، آزمایش محدودیت‌هایی دارد و باید شرایط انجام آن رعایت شود.</p>
+<p><img src="../data/assets/assets/photo_2026-10-23_13-11-37.jpg" alt="photo_2026-10-23_13-11-37"></p>
+<h4>شرایط فنی آزمایش</h4>
+<ul>
+<li>رک (rack) باید کاملاً عمودی باشد.</li>
+<li>خون نباید لخته یا همولیز داشته باشد.</li>
+<li>در ستون خون نباید حباب هوا وجود داشته باشد؛ خون را نباید طوری وارد لوله کرد که حباب ایجاد شود.</li>
+<li>میزی که رک روی آن قرار می‌گیرد نباید بلرزد. لرزش میز یا حتی موبایلی که روی آن می‌لرزد، گلبول‌های قرمز را تکان می‌دهد و مانع رسوب درست آن‌ها می‌شود.</li>
+<li>دمای آزمایش باید بین ۱۸ تا ۲۵ درجهٔ سانتی‌گراد باشد؛ دمای اتاق حدود ۲۴ درجه است. اگر لوله را در جای گرم بگذاریم، سرعت رسوب بالا می‌رود؛ بنابراین، آزمایش نباید در گرما انجام شود.</li>
+<li>لوله باید کاملاً عمودی باشد. انحراف ۳ درجه‌ای از حالت عمودی می‌تواند سرعت رسوب را ۳۰ درصد افزایش دهد و باعث بالا رفتن کاذب عدد شود.</li>
+<li>نسبت ضدانعقاد باید دقیقاً حفظ شود؛ یعنی نسبت یک به چهار، و مقدار ضدانعقاد نباید تغییر کند.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>شرط فنی</th>
+<th>مقدار یا وضعیت لازم</th>
+<th>پیامد یا توضیح ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>وضعیت رک و لوله</td>
+<td>کاملاً عمودی</td>
+<td>انحراف ۳ درجه‌ای می‌تواند سرعت رسوب را ۳۰ درصد افزایش دهد و عدد را کاذباً بالا ببرد.</td>
+</tr>
+<tr>
+<td>وضعیت نمونه</td>
+<td>بدون لخته یا همولیز</td>
+<td>وجود لخته یا همولیز از شرایط پذیرفته‌شدهٔ آزمایش خارج است.</td>
+</tr>
+<tr>
+<td>ستون خون</td>
+<td>بدون حباب هوا</td>
+<td>خون نباید طوری وارد لوله شود که حباب ایجاد شود.</td>
+</tr>
+<tr>
+<td>محل انجام</td>
+<td>میز بدون لرزش</td>
+<td>لرزش، گلبول‌های قرمز را تکان می‌دهد و مانع رسوب درست آن‌ها می‌شود.</td>
+</tr>
+<tr>
+<td>دما</td>
+<td>۱۸ تا ۲۵ درجهٔ سانتی‌گراد؛ دمای اتاق حدود ۲۴ درجه</td>
+<td>گرما سرعت رسوب را بالا می‌برد؛ آزمایش نباید در گرما انجام شود.</td>
+</tr>
+<tr>
+<td>نسبت ضدانعقاد</td>
+<td>یک به چهار؛ مقدار ضدانعقاد نباید تغییر کند</td>
+<td>نسبت باید دقیقاً حفظ شود.</td>
+</tr>
+</tbody></table>
+<p>آزمایش سرعت رسوب باید حداکثر ظرف دو ساعت پس از خون‌گیری انجام شود. اگر انجام آزمایش ممکن نباشد، خون را می‌توان برای مدت محدودی در یخچال نگه داشت؛ حدود دو تا سه ساعت. سپس باید نمونه را از یخچال بیرون آورد، به دمای اتاق رساند، مخلوط کرد و آزمایش را انجام داد.</p>
+<p>رعایت این موارد برای گزارش نتیجهٔ درست به بیمار ضروری است.</p>
+<h4>روش دستی و اتوماتیک</h4>
+<p>لولهٔ وسترگرن براساس استانداردهای کمیتهٔ روماتولوژی ساخته شده است، چون پزشکان روماتولوژی بیشتر برای بیماری‌های روماتیسمی سرعت رسوب را درخواست می‌کنند. بعضی آزمایشگاه‌ها از روش دستی و بعضی از روش اتوماتیک استفاده می‌کنند.</p>
+<p><img src="../data/assets/assets/screenshot_20261023_144304.png" alt="screenshot_20261023_144304"></p>
+<p><img src="../data/assets/assets/screenshot_20261023_140159.png" alt="screenshot_20261023_140159"></p>
+<p>در روش اتوماتیک، تغییراتی در لولهٔ وسترگرن داده‌اند؛ برای مثال، قطر آن را بیشتر کرده‌اند تا نتیجه به‌جای یک ساعت، در ۲۰ دقیقه خوانده شود. قطر لوله و حجم خون را تغییر داده‌اند تا نتیجهٔ ۲۰دقیقه‌ای معادل نتیجهٔ یک‌ساعته شود. بااین‌حال، باید روش اتوماتیک را با روش دستی مقایسه و کنترل کنند تا مشخص شود نتیجهٔ ۲۰دقیقه‌ای با روش یک‌ساعتهٔ وسترگرن معادل است یا نه. اگر فاصلهٔ موردنظر در لوله را اندازه بگیریم، حجم خون حدود یک سی‌سی است.</p>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>روش دستی</th>
+<th>روش اتوماتیک</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>زمان خواندن نتیجه</td>
+<td>یک ساعت در روش وسترگرن</td>
+<td>در نمونهٔ تغییر‌یافته، ۲۰ دقیقه</td>
+</tr>
+<tr>
+<td>تغییر لوله</td>
+<td>لولهٔ استاندارد وسترگرن</td>
+<td>قطر لوله و حجم خون تغییر داده شده است و قطر لوله را بیشتر کرده‌اند.</td>
+</tr>
+<tr>
+<td>مقایسهٔ نتیجه</td>
+<td>مبنای مقایسه</td>
+<td>باید با روش دستی مقایسه شود تا معادل‌بودن نتیجهٔ ۲۰دقیقه‌ای با نتیجهٔ یک‌ساعتهٔ وسترگرن مشخص شود.</td>
+</tr>
+</tbody></table>
+<h4>کم‌خونی و تغییر مورفولوژی گلبول‌ها و اثر آن بر ESR</h4>
+<p>کم‌خونی می‌تواند سرعت رسوب را افزایش دهد. در کم‌خونی تعداد گلبول‌های قرمز پایین می‌آید و سرعت رسوب بالا می‌رود.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای توضیح این موضوع، مثال زده می‌شود که اگر در یکی از دو سطح آب تعداد توپ‌های بیشتری بریزیم، توپ‌ها بیشتر به هم می‌خورند و یکدیگر را دفع می‌کنند؛ وقتی تعدادشان کمتر باشد، نیروی دافعه کمتر است و راحت‌تر پایین می‌آیند.</div></div>
+<p><strong>هنگام گزارش برای پزشک می‌نویسیم که چون بیمار کم‌خون است، افزایش سرعت رسوب ممکن است به‌علت کم‌خونی باشد و بهتر است از CRP استفاده شود.</strong></p>
+<p>برای افزایش سرعت رسوب، گلبول‌ها باید بتوانند به شکل ستون سکه روی هم قرار بگیرند. اگر مورفولوژی گلبول‌ها تغییر کرده باشد، این آرایش ممکن است مختل شود:</p>
+<ul>
+<li>در آنمی داسی‌شکل، گلبول‌های داسی نمی‌توانند به شکل رولو روی هم قرار بگیرند.</li>
+<li>گلبول کروی نیز به‌آسانی روی گلبول کروی دیگر نمی‌خوابد.</li>
+<li>بنابراین، در اسفروسیتوز و پویکیلوسیتوز(تغییرات اندازه مورفولوژیک) که شکل گلبول‌ها تغییر کرده است، سرعت رسوب ممکن است پاسخ مناسبی ندهد.</li>
+</ul>
+<p>در آنمی داسی‌شکل، اسفروسیتوز و مواردی که poikilocytosis دارند، ESR آزمایش خوبی نیست.</p>
+<p><img src="../data/assets/assets/photo_2026-10-23_15-15-41.jpg" alt="photo_2026-10-23_15-15-41"></p>
+<p><img src="../data/assets/assets/photo_2026-10-23_15-15-47.jpg" alt="photo_2026-10-23_15-15-47"></p>
+<p><img src="../data/assets/assets/photo_2026-10-23_15-18-38.jpg" alt="photo_2026-10-23_15-18-38"></p>
+<table>
+<thead>
+<tr>
+<th>وضعیت</th>
+<th>اثر بر رولو یا تفسیر ESR</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>کم‌خونی</td>
+<td>تعداد گلبول‌های قرمز پایین می‌آید و سرعت رسوب بالا می‌رود؛ هنگام گزارش باید احتمال اثر کم‌خونی را ذکر کرد و استفاده از CRP را پیشنهاد کرد.</td>
+</tr>
+<tr>
+<td>آنمی داسی‌شکل</td>
+<td>گلبول‌های داسی نمی‌توانند به شکل رولو روی هم قرار بگیرند.</td>
+</tr>
+<tr>
+<td>گلبول کروی</td>
+<td>به‌آسانی روی گلبول کروی دیگر نمی‌خوابد.</td>
+</tr>
+<tr>
+<td>اسفروسیتوز و پویکیلوسیتوز</td>
+<td>تغییر شکل گلبول‌ها ممکن است آرایش رولو را مختل کند و سرعت رسوب پاسخ مناسبی ندهد.</td>
+</tr>
+<tr>
+<td>آنمی داسی‌شکل، اسفروسیتوز و poikilocytosis</td>
+<td>ESR آزمایش خوبی نیست.</td>
+</tr>
+</tbody></table>
+<h4>بارداری و اثر ESR</h4>
+<p>سرعت رسوب در خانم باردار ارزش محدودی دارد، چون <strong>خون رقیق می‌شود تا خون‌رسانی به جنین انجام شود و درنتیجه سرعت رسوب بالا می‌رود،</strong> حتی اگر بیماری وجود نداشته باشد. همچنین ممکن است سرعت رسوب تا حدود یک ماه پس از زایمان بالا بماند؛ بنابراین، آن را در خانم باردار آزمایش معتبری نمی‌دانیم.</p>
+<h3 id="heading-10">موارد اورژانسی مرتبط با سرعت رسوب</h3>
+<p>گاهی سرعت رسوب جنبهٔ اورژانسی پیدا می‌کند و اگر آزمایش دیر انجام شود، بیمار ممکن است بینایی خود را از دست بدهد. دو بیماری روماتیسمی مهم در این زمینه التهاب عروق یا التهاب ناحیه گیجگاهی giant cell arteritis یا temporal arteritis و polymyalgia rheumatica هستند.</p>
+<p>در temporal arteritis، رگ ناحیهٔ شقیقه دچار التهاب می‌شود. بیمار ممکن است سردرد ناگهانی و شدید داشته باشد، در بلع دچار مشکل شود و بینایی‌اش کاهش پیدا کند.</p>
+<p><img src="../data/assets/assets/photo_2026-10-23_15-34-44.jpg" alt="photo_2026-10-23_15-34-44"></p>
+<p>در polymyalgia rheumatica، شانه‌ها بسیار درد می‌گیرند و ممکن است بینایی هم کاهش یابد. در این دو بیماری سرعت رسوب حتی ممکن است از ۱۰۰ بیشتر شود.</p>
+<p><img src="../data/assets/assets/photo_2026-10-23_15-34-48.jpg" alt="photo_2026-10-23_15-34-48"></p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">اگر بیماری با سردرد ناگهانی و شدید و اختلال بینایی مراجعه کند و سرعت رسوب او بیشتر از ۱۰۰ باشد، فوراً داروهای استروئیدی را شروع می‌کنند تا کور نشود.</div></div>
+<p>ممکن است از آزمایشگاه بخواهند سرعت رسوب را خیلی فوری انجام دهد، هرچند سرعت رسوب در همهٔ موارد اورژانسی نیست.</p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">دو بیماری پلی میالژیا روماتیکا polymyalgia rheumatica و تمپورال آرتریت temporal arteritis را باید به خاطر سپرد؛ در بعضی از این بیماری‌ها سرعت رسوب ممکن است بسیار بالاتر از ۱۰۰ شود و خطرناک باشد. انجام این آزمایش ساده می‌تواند به نجات بیمار و پیشگیری از نابینایی کمک کند.</div></div>
+<table>
+<thead>
+<tr>
+<th>بیماری</th>
+<th>ویژگی‌های ذکرشده</th>
+<th>ارتباط با سرعت رسوب</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>giant cell arteritis یا temporal arteritis</td>
+<td>التهاب رگ ناحیهٔ شقیقه؛ سردرد ناگهانی و شدید، مشکل در بلع و کاهش بینایی ممکن است دیده شود.</td>
+<td>سرعت رسوب ممکن است از ۱۰۰ بیشتر شود.</td>
+</tr>
+<tr>
+<td>polymyalgia rheumatica</td>
+<td>درد بسیار شدید شانه‌ها و احتمال کاهش بینایی</td>
+<td>سرعت رسوب ممکن است از ۱۰۰ بیشتر شود.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-11">CRP و مقایسه با ESR</h3>
+<p><strong>CRP ; پروتئین واکنشگر C (C-reactive protein).</strong></p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>CRP</strong>
+<strong>CRP ; پروتئین واکنشگر C (C-reactive protein). از پروتیین های فاز حاد که در التهاب ها افزایش می‌یابد.</strong></div></div>
+<p>فاکتور CRP در پاسخ بدن به التهاب بالا می‌رود و به <strong>پاک‌سازی باکتری‌ها</strong> نیز کمک می‌کند. <strong>وقتی پزشک می‌خواهد میزان التهاب بدن بیمار را بررسی کند، هم ESR و هم CRP را درخواست می‌کند.</strong></p>
+<ul>
+<li>CRP زود بالا می‌رود و با بهبود بیمار زود پایین می‌آید.</li>
+<li>ESR دیرتر بالا می‌رود و دیرتر نیز پایین می‌آید.</li>
+</ul>
+<p><img src="../data/assets/assets/photo_2026-10-23_15-15-33-1.jpg" alt="photo_2026-10-23_15-15-33-1"></p>
+<p>به همین دلیل، برای بیماری‌های روماتیسمی مزمن پزشکان بیشتر ESR درخواست می‌کنند. در بعضی موارد پزشکان به‌جای ESR، CRP درخواست می‌کنند. CRP نیز پروتئین فاز حاد است و افزایش آن وجود التهاب را مطرح می‌کند، اما ESR همچنان آزمایش رایجی است.</p>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>CRP</th>
+<th>ESR</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>تغییر در التهاب</td>
+<td>در پاسخ به التهاب بالا می‌رود و به پاک‌سازی باکتری‌ها نیز کمک می‌کند.</td>
+<td>در بیماری‌های مختلف ممکن است افزایش پیدا کند و علامت هشدار برای جست‌وجوی علت است.</td>
+</tr>
+<tr>
+<td>زمان تغییر</td>
+<td>زود بالا می‌رود و با بهبود بیمار زود پایین می‌آید.</td>
+<td>دیرتر بالا می‌رود و دیرتر نیز پایین می‌آید.</td>
+</tr>
+<tr>
+<td>کاربرد ذکرشده</td>
+<td>گاهی به‌جای ESR درخواست می‌شود؛ در گزارش افزایش ESR در بیمار کم‌خون نیز استفاده از CRP پیشنهاد شده است.</td>
+<td>برای بیماری‌های روماتیسمی مزمن بیشتر درخواست می‌شود و آزمایش رایجی است.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-12">شمارش رتیکولوسیت: رنگ‌آمیزی رتیکولوسیت</h3>
+<p><img src="../data/assets/assets/photo_2026-10-15_16-33-27_2_.jpg" alt="photo_2026-10-15_16-33-27_2_"></p>
+<p>جزوه تئوری و کامل این مباحث را می‌توانید در مباحث هماتولوژی مطالعه بفرمایید.</p>
+<p>رتیکولوسیت‌ها با رنگ حیاتی(supravital stain) مانند brilliant cresyl blue یا new methylene blue رنگ می‌شوند و زیر میکروسکوپ بررسی می‌گردند. برای بیمار کم‌خون، غلظت خون در تهیهٔ لام باید بیشتر باشد. لام نباید خیلی آبی یا خیلی کم‌رنگ باشد.</p>
+<p>مراحل تهیهٔ لام:</p>
+<ol>
+<li>یک قطره خون را با یک قطره رنگ مخلوط کنید.</li>
+<li>از رنگ سوپراوایتال (supravital stain)، مانند brilliant cresyl blue یا new methylene blue، استفاده کنید.</li>
+<li>به نمونه حدود ۲۰ دقیقه تا نیم ساعت زمان بدهید.</li>
+<li>مانند تهیهٔ لام خون محیطی، یک قطره روی لام بگذارید و پخش کنید.</li>
+<li>پس از ۲۰ دقیقه، لام آماده است و رتیکولوسیت‌ها را می‌شماریم.</li>
+</ol>
+<p>رنگ‌آمیزی حیاتی را supravital stain یا vital stain می‌گویند و برای شمارش رتیکولوسیت به کار می‌رود.</p>
+<p>برای دیدن سلول‌ها، ابتدا با عدسی ۴۰ میدان مناسب پیدا می‌کنیم و سپس با عدسی ۱۰۰ و روغن immersion بررسی می‌کنیم. در این رنگ‌آمیزی، علاوه بر رتیکولوسیت، <strong>دو نوع inclusion body</strong> دیگر هم ممکن است دیده شود که در درس‌های آینده درباره‌شان صحبت می‌شود. <strong>یکی شبیه توپ گلف و مربوط به بیماری HbH است</strong> و مورد دیگر <strong>هاینز بادی</strong> نیز در درس‌های آینده بررسی خواهد شد. در این رنگ‌آمیزی دنبال این سه مورد می‌گردیم، اما فعلاً فقط رتیکولوسیت را می‌شماریم.</p>
+<h3 id="heading-13">درصد رتیکولوسیت و شمارش مطلق</h3>
+<p>واحد رتیکولوسیت کانت (reticulocyte count) درصد است و مقدار طبیعی آن حدود ۰٫۵ تا ۱٫۵ درصد RBCهاست. شمارش رتیکولوسیت مطلق (absolute reticulocyte count) نیز وجود دارد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">اگر تعداد RBC بیمار ۵ میلیون و رتیکولوسیت ۱ درصد باشد، تعداد مطلق رتیکولوسیت‌ها ۵۰ هزار در میکرولیتر می‌شود.</div></div>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">اگر تعداد RBC بیمار ۴ میلیون و رتیکولوسیت ۲ درصد باشد، تعداد مطلق رتیکولوسیت‌ها ۸۰ هزار است.</div></div>
+<p>برای به‌دست‌آوردن درصد، تعداد رتیکولوسیت‌ها و تعداد کل RBCها را می‌شماریم. در یک میدان مناسب، RBCها باید از هم فاصله داشته باشند و به هم نچسبیده باشند. در هر میدان حدود ۲۵۰ RBC دیده می‌شود. رتیکولوسیت‌ها نیز شمرده می‌شوند؛ برای مثال، اگر در میدان‌های مختلف ۲، ۴، ۲ و ۳ رتیکولوسیت دیده باشیم، مجموعاً ۱۱ رتیکولوسیت داریم. اگر در مجموع ۱۰۰۰ RBC شمرده باشیم، درصد رتیکولوسیت ۱٫۱ درصد است:</p>
+<p><strong>درصد رتیکولوسیت = تعداد رتیکولوسیت‌ها ÷ تعداد کل RBCها × ۱۰۰</strong></p>
+<p>برای دقیق‌ترشدن شمارش، فقط یک میدان را بررسی نمی‌کنیم و چهار میدان مختلف را می‌شماریم. بعضی منابع توصیه می‌کنند برای هر بیمار سه لام تهیه شود تا پاسخ دقیق‌تر شود.</p>
+<p>اگر در چهار میدان مجموعاً حدود ۱۰۰۰ RBC شمرده باشیم:</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent"></div></div>
+<p>در صورت نیاز می‌توان از فرمول استفاده کرد.</p>
+<p><img src="../data/assets/assets/photo_2026-10-22_15-20-24.jpg" alt="photo_2026-10-22_15-20-24"></p>
+<p><img src="../data/assets/assets/photo_2026-10-22_15-20-26.jpg" alt="photo_2026-10-22_15-20-26"></p>
+<table>
+<thead>
+<tr>
+<th>روش یا مقدار</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>reticulocyte count</td>
+<td>درصد؛ مقدار طبیعی حدود ۰٫۵ تا ۱٫۵ درصد RBCهاست.</td>
+</tr>
+<tr>
+<td>absolute reticulocyte count</td>
+<td>شمارش مطلق رتیکولوسیت‌ها؛ مثال‌های عددی در متن آمده است.</td>
+</tr>
+<tr>
+<td>شمارش در میدان‌ها</td>
+<td>در هر میدان حدود ۲۵۰ RBC دیده می‌شود؛ برای دقیق‌ترشدن، چهار میدان بررسی می‌شود.</td>
+</tr>
+<tr>
+<td>شمارش لام‌ها</td>
+<td>بعضی منابع توصیه می‌کنند برای هر بیمار سه لام تهیه شود.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-14">شاخص تولید رتیکولوسیت (RPI)</h3>
+<p>شاخص تولید رتیکولوسیت (reticulocyte production index یا RPI) را نیز محاسبه می‌کنیم. اگر رتیکولوسیت بیمار، برای مثال، ۳ درصد باشد، نمی‌توان فقط از روی این عدد نتیجه گرفت که تولید رتیکولوسیت افزایش پیدا کرده است.</p>
+<p><img src="../data/assets/assets/screenshot_20261015_170411.png" alt="screenshot_20261015_170411"></p>
+<p>رتیکولوسیت هنگام ساخته‌شدن حدود دو تا سه روز، یعنی ۴۸ ساعت، در مغز استخوان می‌ماند و سپس وارد خون محیطی می‌شود؛ بنابراین، رتیکولوسیتی که امروز می‌بینیم، روز قبل در مغز استخوان بوده است.</p>
+<p>اگر فرد به‌علت هر نوع کم‌خونی، مانند فقر آهن، خون‌ریزی، کم‌خونی مگالوبلاستیک یا کم‌خونی همولیتیک خودایمنی یا غیرخودایمنی، کم‌خون شود، مغز استخوان ممکن است رتیکولوسیت را زودتر از دو روز به خون محیطی بفرستد. در این صورت شمار رتیکولوسیت‌ها در خون بالا می‌رود، اما لزوماً تولید آن‌ها بیشتر نشده است؛ فقط زودتر از مغز استخوان وارد خون شده‌اند. مدت بلوغ در محاسبهٔ RPI در نظر گرفته می‌شود.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>شاخص تولید رتیکولوسیت (reticulocyte production index یا RPI)</strong>
+شاخصی که مدت بلوغ رتیکولوسیت را در نظر می‌گیرد تا مشخص شود آیا تولید آن واقعاً افزایش یافته است یا افزایش شمار آن ناشی از ورود زودتر به خون محیطی است.</div></div>
+<p>در بیمارانی که هماتوکریت پایین دارند، مثلاً ۳۵، ۳۶، ۳۲، ۳۰ یا ۲۵، محاسبهٔ RPI اهمیت دارد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">رتیکولوسیت ۲ درصد در بیماری با هموگلوبین ۱۲ با رتیکولوسیت ۲ درصد در بیماری با هموگلوبین ۸ یک معنا ندارد.</div></div>
+<p>از RPI استفاده می‌کنیم تا ورود زودتر رتیکولوسیت‌ها از مغز استخوان به خون را در نظر بگیریم و مشخص کنیم آیا تولید واقعاً افزایش یافته است یا نه.</p>
+<p>RPI بالاتر از ۱، مثلاً ۲ یا بیشتر، می‌تواند نشان‌دهندهٔ افزایش تولید باشد؛ حدود ۲ به بالا یعنی تولید دو یا سه برابر شده است. بنابراین، برای بیماران کم‌خون RPI را محاسبه می‌کنیم.</p>
+<table>
+<thead>
+<tr>
+<th>وضعیت یا شاخص</th>
+<th>توضیح ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>رتیکولوسیت در مغز استخوان</td>
+<td>هنگام ساخته‌شدن حدود دو تا سه روز، یعنی ۴۸ ساعت، در مغز استخوان می‌ماند و سپس وارد خون محیطی می‌شود.</td>
+</tr>
+<tr>
+<td>کم‌خونی</td>
+<td>ممکن است مغز استخوان رتیکولوسیت را زودتر از دو روز به خون بفرستد؛ شمار خون بالا می‌رود، اما لزوماً تولید بیشتر نشده است.</td>
+</tr>
+<tr>
+<td>RPI</td>
+<td>مدت بلوغ را در نظر می‌گیرد تا افزایش واقعی تولید از ورود زودتر رتیکولوسیت به خون تفکیک شود.</td>
+</tr>
+<tr>
+<td>کاربرد در هماتوکریت پایین</td>
+<td>برای بیماران کم‌خون و دارای هماتوکریت پایین محاسبه می‌شود.</td>
+</tr>
+<tr>
+<td>RPI بالاتر از ۱</td>
+<td>می‌تواند نشان‌دهندهٔ افزایش تولید باشد؛ حدود ۲ به بالا یعنی تولید دو یا سه برابر شده است.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-15">اندازه‌گیری هموگلوبین تام: روش سیانومت‌هموگلوبین</h3>
+<p>روش اندازه‌گیری هموگلوبین تام، روش سیانومت‌هموگلوبین (cyanmethemoglobin) است. در آزمایشگاه‌ها معمولاً هموگلوبین را با دستگاه اندازه می‌گیرند، اما گاهی ممکن است لازم باشد از روش دستی استفاده شود.</p>
+<p>روش دستی با محلول درابکین (Drabkin) انجام می‌شود که دو جزء دارد:</p>
+<ul>
+<li><strong>پتاسیم فری‌سیانید (potassium ferricyanide)</strong>، آهن دوظرفیتی هموگلوبین را به آهن سه‌ظرفیتی تبدیل می‌کند و مت‌هموگلوبین می‌سازد.</li>
+<li><strong>پتاسیم سیانید</strong> با مت‌هموگلوبین ترکیب می‌شود و سیانومت‌هموگلوبین (HiCN) تشکیل می‌دهد.</li>
+</ul>
+<p>هموگلوبین معمولی آهن دوظرفیتی دارد و می‌تواند با اکسیژن ترکیب شود؛ اما پس از تبدیل‌شدن به مت‌هموگلوبین دیگر نمی‌تواند با اکسیژن ترکیب شود. در این روش، با سیانید واکنش می‌دهد و ماده‌ای رنگی و پایدار تشکیل می‌شود که با اسپکتروفتومتر (spectrophotometer) خوانده می‌شود.</p>
+<p><img src="../data/assets/assets/photo_2026-10-22_15-20-30.jpg" alt="photo_2026-10-22_15-20-30"></p>
+<table>
+<thead>
+<tr>
+<th>جزء محلول درابکین</th>
+<th>نقش ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>پتاسیم فری‌سیانید (potassium ferricyanide)</td>
+<td>آهن دوظرفیتی هموگلوبین را به آهن سه‌ظرفیتی تبدیل می‌کند و مت‌هموگلوبین می‌سازد.</td>
+</tr>
+<tr>
+<td>پتاسیم سیانید</td>
+<td>با مت‌هموگلوبین ترکیب می‌شود و سیانومت‌هموگلوبین (HiCN) تشکیل می‌دهد.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-16">مراحل اندازه‌گیری و محاسبهٔ هموگلوبین</h3>
+<p><img src="../data/assets/assets/screenshot_20261023_161329.png" alt="screenshot_20261023_161329"></p>
+<ol>
+<li>۵ میلی‌لیتر محلول درابکین را با ۲۰ میکرولیتر خون مخلوط کنید.</li>
+<li>رقت حدود ۱ به ۲۵۱ است.</li>
+<li>پنج دقیقه صبر کنید.</li>
+<li>نمونه را در طول موج ۵۴۰ نانومتر بخوانید.</li>
+</ol>
+<p>بلانک، خود محلول درابکین است و خون به آن اضافه نمی‌شود. از کیت استاندارد با عدد مشخص استفاده می‌کنیم.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای مثال، اگر هموگلوبین استاندارد ۱۲ باشد، جذب نوری نمونهٔ بیمار ۲ و جذب نوری استاندارد ۳ باشد، محاسبه چنین است:</div></div>
+<p>محلول سیانید در آزمایشگاه استفاده می‌شد و روش دستی اندازه‌گیری هموگلوبین با همین روش انجام می‌گرفت؛ اما چون سیانید خطرناک است، استفاده از آن محدود شده است.</p>
+<p>عوامل مداخله گر و ایجاد کننده نتایج کاذب در اندازه گیری هموگلوبین طبق کتاب هنری دیویدسون 2022 به شرح زیر است:</p>
+<p><img src="../data/assets/assets/screenshot_20261023_160326.png" alt="screenshot_20261023_160326"></p>
+<div class="calloutBox calloutBox--important" data-box="important"><div class="calloutBoxTitle">نکته مهم</div><div class="calloutBoxContent">محلول‌ها، روش انجام، فرمول و عوامل مداخله‌گر این روش را برای امتحان بلد باشید.</div></div>
+<p>بااینکه این روش امروزه کمتر انجام می‌شود، دستگاه‌های سل‌کانتر نیز ممکن است از عوامل مداخله‌گر تأثیر بگیرند.</p>
+<table>
+<thead>
+<tr>
+<th>مرحله یا جزء روش</th>
+<th>مقدار یا توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>محلول درابکین و خون</td>
+<td>۵ میلی‌لیتر محلول درابکین با ۲۰ میکرولیتر خون</td>
+</tr>
+<tr>
+<td>رقت</td>
+<td>حدود ۱ به ۲۵۱</td>
+</tr>
+<tr>
+<td>زمان انتظار</td>
+<td>پنج دقیقه</td>
+</tr>
+<tr>
+<td>طول موج</td>
+<td>۵۴۰ نانومتر</td>
+</tr>
+<tr>
+<td>بلانک</td>
+<td>خود محلول درابکین، بدون خون</td>
+</tr>
+<tr>
+<td>خواندن نتیجه</td>
+<td>با اسپکتروفتومتر</td>
+</tr>
+<tr>
+<td>استفاده از روش دستی</td>
+<td>استفاده از سیانید محدود شده است، چون سیانید خطرناک است.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-17">عوامل مداخله‌گر در اندازه‌گیری هموگلوبین</h3>
+<p><img src="../data/assets/assets/screenshot_20261023_160326.png" alt="screenshot_20261023_160326"></p>
+<p>مهم‌ترین عامل مداخله‌گر <strong>هایپرلیپمی</strong> است. اگر تری‌گلیسرید (TG) بالا باشد، پلاسما شیری و لیپمیک می‌شود. بعضی بیماران مشکل متابولیک دارند یا ناشتا نبوده‌اند و غذاهای چرب خورده‌اند؛ ممکن است مقدار TG بسیار بالا باشد، مثلاً ۳۰۰ یا حتی ۳۳ هزار.</p>
+<p><img src="../data/assets/assets/photo_2026-10-23_16-09-23.jpg" alt="photo_2026-10-23_16-09-23"></p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای نمونه، مقدار TG ممکن است ۳۰۰ یا حتی ۳۳ هزار باشد.</div></div>
+<p>اگر در بخش بیوشیمی متوجه بالا بودن TG بیمار شوید، ممکن است لازم باشد به بخش هماتولوژی اطلاع دهید تا در تفسیر هموگلوبین دقت کنند. هر چیزی که رنگ را تغییر دهد، جذب نوری را نیز تغییر می‌دهد و می‌تواند هموگلوبین را به‌طور کاذب بالا نشان دهد.</p>
+<p>برای آمادگی بیشتر جهت امتحان(طبق گفته استاد امتحان طبق رفرنس هنری طرح خواهد شد) و مطالعه کامل تر توصیه می‌شود مبحث هموگلوبینوسایتومتری در کتاب هنری دیویدسون که در بخش زیر آورده شده را مطالعه بفرمایید:</p>
+<p><img src="../data/assets/assets/1.png" alt="1"></p>
+<p><img src="../data/assets/assets/2.png" alt="2"></p>
+<p><img src="../data/assets/assets/3.png" alt="3"></p>
+<p><img src="../data/assets/assets/4.png" alt="4"></p>
+<p><img src="../data/assets/assets/screenshot_20261023_162132.png" alt="screenshot_20261023_162132"></p>
+<table>
+<thead>
+<tr>
+<th>عامل یا وضعیت</th>
+<th>اثر ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>هایپرلیپمی و TG بالا</td>
+<td>پلاسما شیری و لیپمیک می‌شود.</td>
+</tr>
+<tr>
+<td>تغییر رنگ نمونه</td>
+<td>جذب نوری را تغییر می‌دهد و می‌تواند هموگلوبین را به‌طور کاذب بالا نشان دهد.</td>
+</tr>
+<tr>
+<td>عوامل مداخله‌گر ذکرشده در Henry Davidson</td>
+<td>ممکن است هموگلوبین را به‌صورت کاذب بالا یا پایین ببرند.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-18">هماتوکریت HCT or PCV (packed cell volume)</h3>
+<p>آخرین تست، هماتوکریت است که packed cell volume نیز نامیده می‌شود.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>هماتوکریت (packed cell volume)</strong>
+نسبت حجم RBCها به کل حجم خون است.</div></div>
+<p>خون را در لولهٔ موئینه سانتریفیوژ می‌کنیم؛ بخشی از حجم را RBCها و بخشی را پلاسما تشکیل می‌دهد. نسبت حجم RBCها به کل خون را با خط‌کش اندازه می‌گیریم و در ۱۰۰ ضرب می‌کنیم. واحد هماتوکریت درصد است و مقدار طبیعی آن حدود ۴۵ درصد است. هماتوکریت ممکن است در کم‌خونی پایین بیاید، چون حجم RBCها کم شده است.</p>
+<p>نحوه خواندن و گزارش هماتوکریت در فیلم این جلسه در کانال آرشیو در دسترس می‌باشد.</p>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>شرح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>نام دیگر</td>
+<td>packed cell volume</td>
+</tr>
+<tr>
+<td>تعریف</td>
+<td>نسبت حجم RBCها به کل حجم خون</td>
+</tr>
+<tr>
+<td>روش اندازه‌گیری ذکرشده</td>
+<td>سانتریفیوژ خون در لولهٔ موئینه و اندازه‌گیری نسبت حجم RBCها به کل خون با خط‌کش</td>
+</tr>
+<tr>
+<td>محاسبه</td>
+<td>نسبت اندازه‌گیری‌شده در ۱۰۰ ضرب می‌شود.</td>
+</tr>
+<tr>
+<td>واحد</td>
+<td>درصد</td>
+</tr>
+<tr>
+<td>مقدار طبیعی ذکرشده</td>
+<td>حدود ۴۵ درصد</td>
+</tr>
+<tr>
+<td>ارتباط با کم‌خونی</td>
+<td>ممکن است پایین بیاید، چون حجم RBCها کم شده است.</td>
+</tr>
+</tbody></table>
+<h4>انجام آزمایش هماتوکریت</h4>
+<ol>
+<li>خون را مخلوط کنید.</li>
+<li>لولهٔ موئینه را حدود دو سوم از خون پر کنید. خون به‌علت کشش سطحی خودبه‌خود وارد لوله می‌شود؛ لوله را کمی کج می‌کنیم تا خون بالا بیاید.</li>
+<li>انتهای لوله را با خمیر ببندید و در سانتریفیوژ قرار دهید</li>
+</ol>
+<p><img src="../data/assets/assets/photo_2026-10-20_18-02-23.jpg" alt="photo_2026-10-20_18-02-23"></p>
+<p><img src="../data/assets/assets/photo_2026-10-20_18-02-27.jpg" alt="photo_2026-10-20_18-02-27"></p>
+</section>
+
+<section class="noteSection quickTablesSection">
+    <h2 id="heading-19">۳. جداول مرور سریع</h2>
+<h3 id="heading-20">سرعت رسوب: محدودهٔ طبیعی و کاربرد</h3>
+<table>
+<thead>
+<tr>
+<th>موضوع</th>
+<th>اطلاعات</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>آقایان</td>
+<td>حداکثر مقدار طبیعی برابر است با سن تقسیم بر دو؛ برای آقای ۴۰ساله، ۲۰ میلی‌متر در ساعت.</td>
+</tr>
+<tr>
+<td>خانم‌ها</td>
+<td>حداکثر مقدار طبیعی برابر است با (سن به‌اضافهٔ ۱۰) تقسیم بر دو؛ برای خانم ۲۰ساله، ۱۵.</td>
+</tr>
+<tr>
+<td>کودکان</td>
+<td>مقدار طبیعی صفر تا ۱۰.</td>
+</tr>
+<tr>
+<td>افزایش دو یا سه‌برابری</td>
+<td>معمولاً وجود مشکلی واقعی مانند بیماری التهابی یا روماتیسمی، عفونت حاد یا مزمن، یا احتمال بدخیمی را مطرح می‌کند.</td>
+</tr>
+<tr>
+<td>پیگیری درمان</td>
+<td>در سل، هر ماه یا هر دو هفته قابل پیگیری است؛ در لنفوم نیز می‌توان مقدار را پیش و پس از درمان مقایسه کرد.</td>
+</tr>
+<tr>
+<td>نمونهٔ پاسخ به درمان</td>
+<td>کاهش ۱۰۰ به ۷۰ و سپس ۴۰ با بهبود همراه است؛ افزایش ۵۰ به ۷۰ در لنفوم ممکن است نشان دهد درمان پاسخ نداده است.</td>
+</tr>
+<tr>
+<td>علامت هشدار</td>
+<td>افزایش سرعت رسوب همراه با تعریق شبانه یا درد استخوان می‌تواند به بررسی عفونی، روماتیسمی یا بدخیمی منجر شود.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-21">واسطه‌های التهابی و پاسخ کبد</h3>
+<table>
+<thead>
+<tr>
+<th>عامل یا سلول</th>
+<th>نقش یا ارتباط ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ماکروفاژها</td>
+<td>ترشح اینترلوکین ۱ (interleukin-1)</td>
+</tr>
+<tr>
+<td>بسیاری از سلول‌ها</td>
+<td>ترشح اینترلوکین ۶ (interleukin-6)</td>
+</tr>
+<tr>
+<td>اینترلوکین ۶</td>
+<td>در التهاب افزایش می‌یابد و به‌سرعت به کبد پیام می‌دهد که بدن در حالت التهاب است.</td>
+</tr>
+<tr>
+<td>کبد در حالت عادی</td>
+<td>ساخت آلبومین و ترانسفرین</td>
+</tr>
+<tr>
+<td>کبد هنگام التهاب</td>
+<td>کاهش سنتز آلبومین و ترانسفرین و ساخت فیبرینوژن، آنتی‌تریپسین و CRP</td>
+</tr>
+<tr>
+<td>پلاسماسل‌ها</td>
+<td>ترشح ایمونوگلوبولین</td>
+</tr>
+<tr>
+<td>اینترلوکین ۱</td>
+<td>اثر بر هیپوتالاموس و بالا بردن دمای بدن</td>
+</tr>
+</tbody></table>
+<h3 id="heading-22">تشکیل رولو و فازهای رسوب</h3>
+<table>
+<thead>
+<tr>
+<th>موضوع</th>
+<th>رابطه یا زمان</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>پروتئین‌های فاز حاد</td>
+<td>بار منفی گلبول‌های قرمز را کاهش می‌دهند و تشکیل رولو را افزایش می‌دهند.</td>
+</tr>
+<tr>
+<td>رولو (rouleaux)</td>
+<td>آرایش گلبول‌های قرمز به شکل ستون سکه؛ از گلبول‌های جداگانه سنگین‌تر است و سریع‌تر پایین می‌آید.</td>
+</tr>
+<tr>
+<td>افزایش پروتئین‌های فاز حاد</td>
+<td>تشکیل رولو بیشتر و سرعت رسوب بالاتر می‌شود.</td>
+</tr>
+<tr>
+<td>aggregation</td>
+<td>۱۰ دقیقهٔ اول؛ تشکیل رولو</td>
+</tr>
+<tr>
+<td>sedimentation</td>
+<td>۴۰ دقیقهٔ بعد؛ پایین‌رفتن رولوها و افزایش سرعت رسوب</td>
+</tr>
+<tr>
+<td>packing</td>
+<td>۱۰ دقیقهٔ آخر؛ فشرده‌شدن گلبول‌ها و کاهش افزایش سرعت</td>
+</tr>
+<tr>
+<td>زمان خواندن استاندارد</td>
+<td>مجموع فازها یک ساعت است؛ نتیجه برحسب یک ساعت گزارش می‌شود.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-23">شرایط فنی و روش‌های سرعت رسوب</h3>
+<table>
+<thead>
+<tr>
+<th>موضوع</th>
+<th>وضعیت یا مقدار</th>
+<th>پیامد یا توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>رک و لوله</td>
+<td>کاملاً عمودی</td>
+<td>انحراف ۳ درجه‌ای می‌تواند سرعت رسوب را ۳۰ درصد افزایش دهد و عدد را کاذباً بالا ببرد.</td>
+</tr>
+<tr>
+<td>نمونه</td>
+<td>بدون لخته یا همولیز</td>
+<td>نمونه باید فاقد لخته یا همولیز باشد.</td>
+</tr>
+<tr>
+<td>ستون خون</td>
+<td>بدون حباب هوا</td>
+<td>ورود خون نباید موجب تشکیل حباب شود.</td>
+</tr>
+<tr>
+<td>محل انجام</td>
+<td>میز بدون لرزش</td>
+<td>لرزش گلبول‌های قرمز را تکان می‌دهد و مانع رسوب درست می‌شود.</td>
+</tr>
+<tr>
+<td>دما</td>
+<td>۱۸ تا ۲۵ درجهٔ سانتی‌گراد؛ دمای اتاق حدود ۲۴ درجه</td>
+<td>گرما سرعت رسوب را بالا می‌برد.</td>
+</tr>
+<tr>
+<td>نسبت ضدانعقاد</td>
+<td>چهار قسمت خون به یک قسمت سیترات</td>
+<td>نسبت و مقدار ضدانعقاد باید دقیقاً حفظ شود.</td>
+</tr>
+<tr>
+<td>زمان پس از خون‌گیری</td>
+<td>انجام آزمایش حداکثر ظرف دو ساعت</td>
+<td>نگهداری در یخچال برای دو تا سه ساعت نیز ذکر شده، اما نسبت دو بازه روشن نیست.</td>
+</tr>
+<tr>
+<td>روش دستی وسترگرن</td>
+<td>لولهٔ استاندارد؛ خواندن پس از یک ساعت</td>
+<td>مبنای مقایسه با روش اتوماتیک است.</td>
+</tr>
+<tr>
+<td>روش اتوماتیک</td>
+<td>تغییر قطر لوله و حجم خون؛ خواندن در نمونهٔ تغییر‌یافته پس از ۲۰ دقیقه</td>
+<td>باید با روش دستی مقایسه شود تا معادل‌بودن نتایج مشخص شود.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-24">محدودیت‌های ESR در وضعیت‌های مختلف</h3>
+<table>
+<thead>
+<tr>
+<th>وضعیت</th>
+<th>اثر بر رولو یا تفسیر ESR</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>کم‌خونی</td>
+<td>تعداد گلبول‌های قرمز پایین می‌آید و سرعت رسوب بالا می‌رود؛ در گزارش باید احتمال اثر کم‌خونی ذکر و استفاده از CRP پیشنهاد شود.</td>
+</tr>
+<tr>
+<td>آنمی داسی‌شکل</td>
+<td>گلبول‌های داسی نمی‌توانند به شکل رولو روی هم قرار بگیرند.</td>
+</tr>
+<tr>
+<td>گلبول کروی</td>
+<td>به‌آسانی روی گلبول کروی دیگر نمی‌خوابد.</td>
+</tr>
+<tr>
+<td>اسفروسیتوز و پویکیلوسیتوز</td>
+<td>تغییر شکل گلبول‌ها ممکن است آرایش رولو را مختل کند و سرعت رسوب پاسخ مناسبی ندهد.</td>
+</tr>
+<tr>
+<td>آنمی داسی‌شکل، اسفروسیتوز و poikilocytosis</td>
+<td>ESR آزمایش خوبی نیست.</td>
+</tr>
+<tr>
+<td>بارداری</td>
+<td>رقیق‌شدن خون می‌تواند سرعت رسوب را حتی بدون بیماری بالا ببرد؛ افزایش آن ممکن است تا حدود یک ماه پس از زایمان بماند.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-25">بیماری‌های اورژانسی و مقایسهٔ CRP با ESR</h3>
+<table>
+<thead>
+<tr>
+<th>موضوع</th>
+<th>ویژگی‌های ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>giant cell arteritis یا temporal arteritis</td>
+<td>التهاب رگ ناحیهٔ شقیقه؛ ممکن است سردرد ناگهانی و شدید، مشکل در بلع و کاهش بینایی وجود داشته باشد. سرعت رسوب ممکن است از ۱۰۰ بیشتر شود.</td>
+</tr>
+<tr>
+<td>polymyalgia rheumatica</td>
+<td>درد بسیار شدید شانه‌ها و احتمال کاهش بینایی؛ سرعت رسوب ممکن است از ۱۰۰ بیشتر شود.</td>
+</tr>
+<tr>
+<td>CRP</td>
+<td>در پاسخ به التهاب بالا می‌رود، به پاک‌سازی باکتری‌ها کمک می‌کند و زود بالا و با بهبود بیمار زود پایین می‌آید.</td>
+</tr>
+<tr>
+<td>ESR</td>
+<td>در بیماری‌های مختلف افزایش می‌یابد؛ دیرتر از CRP بالا می‌رود و دیرتر پایین می‌آید. برای بیماری‌های روماتیسمی مزمن بیشتر درخواست می‌شود.</td>
+</tr>
+<tr>
+<td>درخواست آزمایش</td>
+<td>برای بررسی التهاب ممکن است هم ESR و هم CRP درخواست شوند؛ گاهی CRP به‌جای ESR درخواست می‌شود.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-26">رنگ‌آمیزی و شمارش رتیکولوسیت</h3>
+<table>
+<thead>
+<tr>
+<th>روش یا مقدار</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>supravital stain یا vital stain</td>
+<td>رنگ‌آمیزی حیاتی برای شمارش رتیکولوسیت</td>
+</tr>
+<tr>
+<td>رنگ‌ها</td>
+<td>brilliant cresyl blue یا new methylene blue</td>
+</tr>
+<tr>
+<td>زمان رنگ‌آمیزی</td>
+<td>حدود ۲۰ دقیقه تا نیم ساعت؛ گفته شده است پس از ۲۰ دقیقه لام آماده است.</td>
+</tr>
+<tr>
+<td>بررسی میکروسکوپی</td>
+<td>ابتدا عدسی ۴۰ برای یافتن میدان مناسب؛ سپس عدسی ۱۰۰ و روغن immersion</td>
+</tr>
+<tr>
+<td>reticulocyte count</td>
+<td>درصد؛ مقدار طبیعی حدود ۰٫۵ تا ۱٫۵ درصد RBCهاست.</td>
+</tr>
+<tr>
+<td>شمارش در میدان‌ها</td>
+<td>در هر میدان حدود ۲۵۰ RBC؛ برای دقیق‌ترشدن چهار میدان شمارش می‌شود.</td>
+</tr>
+<tr>
+<td>شمارش لام‌ها</td>
+<td>بعضی منابع توصیه می‌کنند برای هر بیمار سه لام تهیه شود.</td>
+</tr>
+<tr>
+<td>absolute reticulocyte count</td>
+<td>شمارش مطلق رتیکولوسیت‌ها؛ برای ۵ میلیون RBC و رتیکولوسیت ۱ درصد، ۵۰ هزار در میکرولیتر؛ برای ۴ میلیون RBC و رتیکولوسیت ۲ درصد، ۸۰ هزار.</td>
+</tr>
+<tr>
+<td>مثال شمارش درصدی</td>
+<td>۱۱ رتیکولوسیت از ۱۰۰۰ RBC برابر ۱٫۱ درصد است؛ ۶ از ۱۰۰۰ برابر ۰٫۶ درصد و ۱۰ از ۱۰۰۰ برابر ۱ درصد است.</td>
+</tr>
+</tbody></table>
+<h3 id="heading-27">RPI، هموگلوبین تام و هماتوکریت</h3>
+<table>
+<thead>
+<tr>
+<th>موضوع</th>
+<th>اطلاعات</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>RPI و بلوغ رتیکولوسیت</td>
+<td>رتیکولوسیت حدود دو تا سه روز، یعنی ۴۸ ساعت، در مغز استخوان می‌ماند؛ در کم‌خونی ممکن است زودتر وارد خون شود و شمار آن بالا برود، بدون آنکه تولید لزوماً بیشتر شده باشد.</td>
+</tr>
+<tr>
+<td>کاربرد RPI</td>
+<td>مدت بلوغ را برای تمایز افزایش واقعی تولید از ورود زودتر رتیکولوسیت به خون در نظر می‌گیرد؛ در بیماران کم‌خون و دارای هماتوکریت پایین اهمیت دارد.</td>
+</tr>
+<tr>
+<td>RPI بالاتر از ۱</td>
+<td>می‌تواند نشان‌دهندهٔ افزایش تولید باشد؛ حدود ۲ به بالا یعنی تولید دو یا سه برابر شده است.</td>
+</tr>
+<tr>
+<td>محلول درابکین</td>
+<td>پتاسیم فری‌سیانید آهن دوظرفیتی هموگلوبین را به آهن سه‌ظرفیتی تبدیل و مت‌هموگلوبین ایجاد می‌کند؛ پتاسیم سیانید با مت‌هموگلوبین واکنش داده و HiCN می‌سازد.</td>
+</tr>
+<tr>
+<td>سیانومت‌هموگلوبین</td>
+<td>۵ میلی‌لیتر محلول درابکین با ۲۰ میکرولیتر خون؛ رقت حدود ۱ به ۲۵۱؛ پنج دقیقه انتظار؛ خواندن در ۵۴۰ نانومتر با اسپکتروفتومتر؛ بلانک محلول درابکین بدون خون.</td>
+</tr>
+<tr>
+<td>محاسبهٔ نمونهٔ هموگلوبین</td>
+<td>جذب نمونه ÷ جذب استاندارد × مقدار هموگلوبین استاندارد؛ در مثال: ۲ ÷ ۳ × ۱۲ = ۸.</td>
+</tr>
+<tr>
+<td>عوامل مداخله‌گر هموگلوبین</td>
+<td>هایپرلیپمی و TG بالا پلاسما را شیری و لیپمیک می‌کند؛ تغییر رنگ نمونه می‌تواند جذب نوری را تغییر دهد و هموگلوبین را کاذباً بالا ببرد. عوامل Henry Davidson ممکن است هموگلوبین را کاذباً بالا یا پایین ببرند.</td>
+</tr>
+<tr>
+<td>هماتوکریت</td>
+<td>packed cell volume؛ نسبت حجم RBCها به کل خون، با واحد درصد و مقدار طبیعی حدود ۴۵ درصد.</td>
+</tr>
+<tr>
+<td>روش هماتوکریت</td>
+<td>سانتریفیوژ خون در لولهٔ موئینه؛ اندازه‌گیری نسبت حجم RBCها به کل خون با خط‌کش و ضرب‌کردن نسبت در ۱۰۰. در کم‌خونی ممکن است پایین بیاید.</td>
+</tr>
+<tr>
+<td>آماده‌سازی لولهٔ موئینه</td>
+<td>مخلوط‌کردن خون، پرکردن حدود دو سوم لوله، بستن انتها با خمیر؛ دو نفر می‌توانند نمونه را آزمایش کنند و هرکدام یک لوله بردارند.</td>
+</tr>
+</tbody></table>
+</section>
+
+<section class="noteSection keyTermsSection">
+    <h2 id="heading-28">۴. اصطلاحات و تعاریف</h2>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>سرعت رسوب</strong>
+فاصله‌ای که گلبول‌های قرمز طی یک ساعت به سمت پایین طی می‌کنند، سرعت رسوب است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>علامت هشدار</strong>
+سرعت رسوب علامت هشدار است و به پزشک می‌گوید که باید علت را جست‌وجو کند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>رولو (rouleaux)</strong>
+آرایش گلبول‌های قرمز به شکل ستون سکه، پس از چسبیدن آن‌ها به یکدیگر، رولو نام دارد.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>پروتئین‌های فاز حاد</strong>
+در این درس، CRP، فیبرینوژن و آنتی‌تریپسین به‌عنوان پروتئین‌هایی معرفی می‌شوند که در پاسخ به التهاب و بیماری ترشح می‌شوند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>CRP</strong>
+CRP مخفف پروتئین واکنشگر C است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>شاخص تولید رتیکولوسیت (reticulocyte production index یا RPI)</strong>
+شاخصی که مدت بلوغ رتیکولوسیت را در نظر می‌گیرد تا مشخص شود آیا تولید آن واقعاً افزایش یافته است یا افزایش شمار آن ناشی از ورود زودتر به خون محیطی است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>هماتوکریت (packed cell volume)</strong>
+نسبت حجم RBCها به کل حجم خون است.</div></div>
+</section>
+
+<section class="noteSection selfAssessmentSection">
+    <h2 id="heading-29">۵. خود‌ارزیابی</h2>
+<h3 id="heading-30">سوالات تشریحی</h3>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>مراحل انجام آزمایش سرعت رسوب به روش وسترگرن را شرح دهید و نسبت خون به سیترات را بیان کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>خون با سیترات سدیم ۳٫۸ درصد و با نسبت چهار قسمت خون به یک قسمت سیترات مخلوط می‌شود؛ مخلوط تا درجهٔ صفر لوله کشیده می‌شود؛ لوله یک ساعت کاملاً عمودی و در دمای اتاق می‌ماند؛ سپس فاصلهٔ پایین‌آمدن گلبول‌های قرمز اندازه‌گیری می‌شود.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>پروتئین‌های فاز حاد چگونه با افزایش سرعت رسوب ارتباط پیدا می‌کنند؟</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>پروتئین‌های فاز حاد بار منفی گلبول‌های قرمز را کاهش می‌دهند. گلبول‌ها به هم می‌چسبند و به شکل ستون سکه یا رولو درمی‌آیند؛ رولو از گلبول‌های جداگانه سنگین‌تر است و سریع‌تر پایین می‌آید. بنابراین، افزایش پروتئین‌های فاز حاد با تشکیل رولو و افزایش سرعت رسوب همراه است.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>سه فاز سرعت رسوب را همراه با زمان و اتفاق هر فاز نام ببرید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در ۱۰ دقیقهٔ اول رولو تشکیل می‌شود (aggregation)؛ در ۴۰ دقیقهٔ بعد رولوها پایین می‌روند و سرعت رسوب افزایش می‌یابد (sedimentation)؛ در ۱۰ دقیقهٔ آخر گلبول‌ها فشرده می‌شوند و سرعت دیگر چندان افزایش نمی‌یابد (packing).</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>توضیح دهید چرا شمارش رتیکولوسیت به‌تنهایی برای ارزیابی تولید رتیکولوسیت در بیمار کم‌خون کافی نیست و RPI چه چیزی را در نظر می‌گیرد.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در کم‌خونی، مغز استخوان ممکن است رتیکولوسیت را زودتر از دو روز به خون بفرستد؛ درنتیجه شمار رتیکولوسیت در خون بالا می‌رود، بی‌آنکه تولید لزوماً بیشتر شده باشد. RPI مدت بلوغ را در نظر می‌گیرد تا مشخص شود آیا تولید واقعاً افزایش یافته است یا نه.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>در روش سیانومت‌هموگلوبین، نقش اجزای محلول درابکین و مراحل خواندن نمونه را شرح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>پتاسیم فری‌سیانید آهن دوظرفیتی هموگلوبین را به آهن سه‌ظرفیتی تبدیل می‌کند و مت‌هموگلوبین ایجاد می‌کند؛ پتاسیم سیانید با مت‌هموگلوبین ترکیب می‌شود و سیانومت‌هموگلوبین (HiCN) می‌سازد. ۵ میلی‌لیتر محلول درابکین با ۲۰ میکرولیتر خون مخلوط می‌شود، نمونه پنج دقیقه می‌ماند و سپس در طول موج ۵۴۰ نانومتر خوانده می‌شود؛ بلانک، محلول درابکین بدون خون است.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<h3 id="heading-31">سوالات تستی</h3>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>کدام ضدانعقاد در روش وسترگرن استفاده می‌شود؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">EDTA</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">سیترات سدیم ۳٫۸ درصد</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">پتاسیم فری‌سیانید</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">محلول درابکین</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در روش وسترگرن از سیترات سدیم ۳٫۸ درصد استفاده می‌شود و EDTA ضدانعقاد این روش نیست.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>کدام گزینه محدودهٔ طبیعی ذکرشده برای کودکان را بیان می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">سن تقسیم بر دو</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">سن به‌اضافهٔ ۱۰، تقسیم بر دو</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">صفر تا ۱۰</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">حدود ۴۵ درصد</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>مقدار طبیعی سرعت رسوب در کودکان صفر تا ۱۰ ذکر شده است.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>کدام توالی، فازهای سرعت رسوب و زمان آن‌ها را درست نشان می‌دهد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">aggregation: ۱۰ دقیقهٔ اول؛ sedimentation: ۴۰ دقیقهٔ بعد؛ packing: ۱۰ دقیقهٔ آخر</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">aggregation: ۴۰ دقیقهٔ اول؛ sedimentation: ۱۰ دقیقهٔ بعد؛ packing: ۱۰ دقیقهٔ آخر</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">aggregation: ۱۰ دقیقهٔ اول؛ sedimentation: ۱۰ دقیقهٔ بعد؛ packing: ۴۰ دقیقهٔ آخر</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">هر سه فاز در ۲۰ دقیقه انجام می‌شوند.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>سرعت رسوب سه فاز دارد: تشکیل رولو در ۱۰ دقیقهٔ اول، رسوب‌کردن در ۴۰ دقیقهٔ بعد و فشرده‌شدن در ۱۰ دقیقهٔ آخر.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>کدام تغییر در شرایط فنی می‌تواند سرعت رسوب را به‌طور کاذب بالا ببرد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">قرار دادن رک کاملاً عمودی</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">حفظ نسبت ضدانعقاد</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">انحراف ۳ درجه‌ای لوله از حالت عمودی</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">انجام آزمایش در دمای ۱۸ تا ۲۵ درجهٔ سانتی‌گراد</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>انحراف ۳ درجه‌ای از حالت عمودی می‌تواند سرعت رسوب را ۳۰ درصد افزایش دهد و عدد را کاذباً بالا ببرد.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>کدام گزینه تفاوت زمانی CRP و ESR را مطابق متن بیان می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">CRP دیرتر بالا می‌رود و ESR زودتر پایین می‌آید.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">CRP زودتر بالا می‌رود و زودتر پایین می‌آید؛ ESR دیرتر بالا می‌رود و دیرتر پایین می‌آید.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">CRP و ESR فقط پس از بهبود بیمار تغییر می‌کنند.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">ESR زودتر از CRP بالا می‌رود و زودتر پایین می‌آید.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>CRP زود بالا می‌رود و با بهبود بیمار زود پایین می‌آید؛ ESR دیرتر بالا می‌رود و دیرتر پایین می‌آید.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="6"><div class="questionBoxHeader">سؤال 6</div><div class="questionBoxPrompt"><p>چرا در آنمی داسی‌شکل، اسفروسیتوز و موارد دارای poikilocytosis، ESR آزمایش خوبی نیست؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">چون این وضعیت‌ها همواره باعث تشکیل بیشتر رولو می‌شوند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">چون تغییر شکل گلبول‌ها ممکن است آرایش رولو را مختل کند.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">چون در این وضعیت‌ها سیترات سدیم به کار نمی‌رود.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">چون نتیجهٔ ESR در این وضعیت‌ها در ۲۰ دقیقه خوانده می‌شود.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>برای افزایش سرعت رسوب، گلبول‌ها باید بتوانند به شکل ستون سکه روی هم قرار بگیرند؛ تغییر مورفولوژی ممکن است این آرایش را مختل کند.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="7"><div class="questionBoxHeader">سؤال 7</div><div class="questionBoxPrompt"><p>کدام جمله دربارهٔ RPI درست است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">فقط درصد رتیکولوسیت را بدون توجه به مدت بلوغ گزارش می‌کند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">مدت بلوغ رتیکولوسیت را در نظر می‌گیرد تا افزایش واقعی تولید بررسی شود.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">مقدار طبیعی ESR در کودکان را محاسبه می‌کند.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">جایگزین اندازه‌گیری هماتوکریت است.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در محاسبهٔ RPI مدت بلوغ در نظر گرفته می‌شود تا ورود زودتر رتیکولوسیت به خون با افزایش واقعی تولید اشتباه نشود.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="8"><div class="questionBoxHeader">سؤال 8</div><div class="questionBoxPrompt"><p>در روش سیانومت‌هموگلوبین، پتاسیم فری‌سیانید چه کاری انجام می‌دهد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">مت‌هموگلوبین را به سیانومت‌هموگلوبین تبدیل می‌کند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">آهن دوظرفیتی هموگلوبین را به آهن سه‌ظرفیتی تبدیل می‌کند و مت‌هموگلوبین می‌سازد.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">جذب نوری نمونه را در طول موج ۵۴۰ نانومتر ثبت می‌کند.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">به‌عنوان بلانک، به نمونهٔ خون اضافه می‌شود.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>پتاسیم فری‌سیانید آهن دوظرفیتی هموگلوبین را به آهن سه‌ظرفیتی تبدیل می‌کند و مت‌هموگلوبین می‌سازد.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="9"><div class="questionBoxHeader">سؤال 9</div><div class="questionBoxPrompt"><p>در روش سیانومت‌هموگلوبین، نمونه در چه طول موجی خوانده می‌شود؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">۱۰۰ نانومتر</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">۲۰۰ نانومتر</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">۵۴۰ نانومتر</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">۲۰ نانومتر</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>نمونه پس از مخلوط‌کردن با محلول درابکین و پنج دقیقه انتظار، در طول موج ۵۴۰ نانومتر خوانده می‌شود.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="10"><div class="questionBoxHeader">سؤال 10</div><div class="questionBoxPrompt"><p>هماتوکریت یا packed cell volume در این درس به چه معناست؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">نسبت حجم پلاسما به حجم RBCها</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">نسبت حجم RBCها به کل حجم خون</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">درصد رتیکولوسیت‌ها از RBCها</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">فاصلهٔ پایین‌آمدن گلبول‌های قرمز در یک ساعت</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>هماتوکریت نسبت حجم RBCها به کل حجم خون است.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+</section>
+
+<section class="noteSection reviewSection">
+    
+</section>
+
+<section class="noteSection editorAndSourcesSection">
+    <h2 id="heading-32">۷. ادیتور و منابع استفاده‌شده</h2>
+<p><strong>ادیتور:</strong> نیما قاسمی (ن.ق.شب‌زنده‌دار)</p>
+<p><strong>منابع استفاده‌شده:</strong></p>
+<ul>
+<li><p>صوت درس</p>
+</li>
+<li><p>اسلاید های دکتر گل افشان</p>
+</li>
+<li><p>الف) منابع اصلی هماتولوژی و تشخیص آزمایشگاهی</p>
+<ol>
+<li><p>Keohane EM, Otto CN, Walenga JM. Rodak's Hematology: Clinical Principles and Applications. 6th ed. Elsevier; 2020.</p>
+</li>
+<li><p>Bain BJ, Bates I, Laffan MA. Dacie and Lewis Practical Haematology. 12th ed. Elsevier; 2017.</p>
+</li>
+<li><p>McPherson RA, Pincus MR, editors. Henry's Clinical Diagnosis and Management by Laboratory Methods. 22nd ed. Elsevier Saunders; 2011.</p>
+</li>
+<li><p>McKenzie SB, Williams JL. Clinical Laboratory Hematology. 3rd ed. Pearson; 2015.</p>
+</li>
+<li><p>Hoffbrand AV, Moss PAH. Hoffbrand's Essential Haematology. 8th ed. Wiley-Blackwell; 2019.</p>
+</li>
+</ol>
+<p>ب) منابع تخصصی ESR، CRP و پاسخ التهابی</p>
+<ol start="6">
+<li><p>Brigden ML. Clinical utility of the erythrocyte sedimentation rate. American Family Physician. 1999;60(5):1443–1450.</p>
+</li>
+<li><p>Harrison M. Erythrocyte sedimentation rate and C-reactive protein. Australian Prescriber. 2015;38(3):93–94.</p>
+</li>
+<li><p>Gabay C, Kushner I. Acute-phase proteins and other systemic responses to inflammation. New England Journal of Medicine. 1999;340(6):448–454.</p>
+</li>
+<li><p>Weyand CM, Goronzy JJ. Giant-cell arteritis and polymyalgia rheumatica. New England Journal of Medicine. 2014;371:50–57.</p>
+</li>
+</ol>
+<p>ج) منابع تصاویر، اسلایدها و اطلس‌های آموزشی</p>
+<ol start="10">
+<li><p>The Blood Project. Erythrocyte Sedimentation Rate (ESR). Educational illustrations and hematology resources. <a href="https://www.thebloodproject.com">https://www.thebloodproject.com</a></p>
+</li>
+<li><p>The Blood Project. Acute Phase Proteins. Educational diagrams and illustrations. <a href="https://www.thebloodproject.com">https://www.thebloodproject.com</a></p>
+</li>
+<li><p>American Society of Hematology. ASH Image Bank. Hematology image atlas. <a href="https://imagebank.hematology.org">https://imagebank.hematology.org</a></p>
+</li>
+<li><p>National Library of Medicine. PubMed Central (PMC). Biomedical articles and scientific figures. <a href="https://pmc.ncbi.nlm.nih.gov">https://pmc.ncbi.nlm.nih.gov</a></p>
+</li>
+</ol>
+<p>د) منابع فارسی و تألیفات دکتر گل‌افشان</p>
+<ol start="14">
+<li><p>گل‌افشان و همکاران. روش‌های آزمایشگاهی در هماتولوژی. منبع فارسی تخصصی هماتولوژی و روش‌های آزمایشگاهی.</p>
+</li>
+<li><p>جزوات و اسلایدهای آموزشی درس هماتولوژی ۱، دکتر گل‌افشان، دانشکده پیراپزشکی، دانشگاه علوم پزشکی شیراز، ۱۴۰۵.</p>
+</li>
+</ol>
+</li>
+</ul>
+</section>
+
+<section class="noteSection completionSection">
+    <h2 id="heading-33">۸. گزارش تکمیل بودن محتوا</h2>
+<p><strong>برآورد تقریبی تکمیل محتوا:</strong> حدود ۹۵٪</p>
+<ul>
+<li>✓ پوشش محتوای صوت: نکته‌های آموزشی، مثال‌ها و توضیحات مندرج در متن مبنا حفظ شده‌اند.</li>
+</ul>
+</section>
+
+    </main>
+
+
+    <button
+        class="backToTop"
+        type="button"
+        aria-label="بازگشت به ابتدای صفحه"
+    >
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+
+    <script src="../src/themeSwitcher.js"></script>
+    <script src="../src/fontSizeSwitcher.js"></script>
+    <script src="../src/aboutModal.js"></script>
+    <script src="../src/quickNavigation.js"></script>
+    <script src="../src/print.js"></script>
+    <script src="../src/search.js"></script>
+    <script src="../src/highlight.js"></script>
+    <script src="../src/stickyNotes.js"></script>
+    <script src="../src/viewPersistence.js"></script>
+    <script src="../src/questionInteractions.js"></script>
+    <script src="../src/fontSwitcher.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarToggle = document.querySelector(".sidebarToggle");
+    const sidebarBackdrop = document.querySelector(".sidebarBackdrop");
+
+    function openSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.add("isOpen");
+        sidebarBackdrop.classList.add("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "true");
+        sidebar.setAttribute("aria-hidden", "false");
+    }
+
+    function closeSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.remove("isOpen");
+        sidebarBackdrop.classList.remove("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "false");
+        sidebar.setAttribute("aria-hidden", "true");
+    }
+
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener("click", () => {
+            if (sidebar.classList.contains("isOpen")) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+    }
+
+    if (sidebarBackdrop) {
+        sidebarBackdrop.addEventListener("click", closeSidebar);
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeSidebar();
+        }
+    });
+
+    document.querySelectorAll(".tocItem").forEach((item) => {
+        item.addEventListener("click", closeSidebar);
+    });
+</script>
+
+</body>
+
+</html>

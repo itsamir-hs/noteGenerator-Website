@@ -1,0 +1,708 @@
+/* =========================================================
+   Print
+   ========================================================= */
+
+@media print {
+
+    /* =========================================================
+       Page
+       ========================================================= */
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    html {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: var(--pageBackground) !important;
+    }
+
+    body {
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 14mm 14mm 16mm !important;
+
+        background: var(--pageBackground) !important;
+        color: var(--textPrimary) !important;
+
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    body {
+        overflow: visible !important;
+    }
+
+    .printBrand {
+        display: block !important;
+        margin: 0 0 8mm !important;
+        padding: 0 0 4mm !important;
+        border-bottom: 1px solid var(--borderColor) !important;
+        color: var(--textPrimary) !important;
+        font-size: 18pt !important;
+        font-weight: 800 !important;
+        text-align: center !important;
+        break-after: avoid !important;
+        page-break-after: avoid !important;
+    }
+
+    /* =========================================================
+       Hide application UI
+       ========================================================= */
+
+    .appHeader,
+    .sidebar,
+    .sidebarBackdrop,
+    .aboutModal,
+    .quickNavigation,
+    .backToTop,
+    .stickyNotesLayer,
+    .stickyNotesPanel,
+    .stickyNotesBackdrop,
+    .searchPanel,
+    .searchOverlay {
+        display: none !important;
+    }
+
+    /* =========================================================
+       Main document
+       ========================================================= */
+
+    .noteContainer {
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: visible !important;
+
+        background: transparent !important;
+    }
+
+    /* =========================================================
+       Header
+       ========================================================= */
+
+    .noteHeader {
+        margin: 0 0 28px !important;
+
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    .noteMetadata {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    .aiWarning {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* =========================================================
+       Sections
+       ---------------------------------------------------------
+       IMPORTANT:
+       Do NOT prevent whole sections from breaking.
+       Large sections must be allowed to flow naturally.
+       ========================================================= */
+
+    .noteSection {
+        margin-bottom: 32px !important;
+
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+    }
+
+    /* =========================================================
+       Headings
+       ========================================================= */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        break-after: avoid !important;
+        page-break-after: avoid !important;
+
+        orphans: 3;
+        widows: 3;
+    }
+
+    h1 + *,
+    h2 + *,
+    h3 + *,
+    h4 + *,
+    h5 + *,
+    h6 + * {
+        break-before: avoid !important;
+        page-break-before: avoid !important;
+    }
+
+    p,
+    li {
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* =========================================================
+       Cards / standalone boxes
+       ========================================================= */
+
+    .introductionSection,
+    .developerCard,
+    .aiWarning {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    .introductionSection {
+        box-shadow: none !important;
+
+        background: var(--surfaceMuted) !important;
+        color: var(--textPrimary) !important;
+    }
+
+    /* =========================================================
+       TABLES
+       ========================================================= */
+
+    .noteSection table {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 20px 0 !important;
+
+        border-collapse: collapse !important;
+        border-spacing: 0 !important;
+
+        overflow: visible !important;
+
+        background: var(--surfaceBackground) !important;
+
+        box-shadow: none !important;
+
+        /*
+         * The table itself may span pages.
+         * Individual rows should not.
+         */
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+    }
+
+    .noteSection thead {
+        display: table-header-group !important;
+    }
+
+    .noteSection tbody {
+        display: table-row-group !important;
+    }
+
+    .noteSection tfoot {
+        display: table-footer-group !important;
+    }
+
+    .noteSection tr {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    .noteSection th,
+    .noteSection td {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+
+        background: var(--surfaceBackground) !important;
+        color: var(--textPrimary) !important;
+
+        border: 1px solid var(--borderColor) !important;
+
+        /*
+         * Prevent giant cells from creating weird overflow.
+         */
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+
+        vertical-align: middle !important;
+    }
+
+    .noteSection th {
+        background: var(--surfaceMuted) !important;
+        color: var(--textPrimary) !important;
+    }
+
+    /* =========================================================
+       IMAGES
+       ========================================================= */
+
+    .noteSection img,
+    .mainSection img,
+    figure,
+    picture {
+        display: block !important;
+
+        max-width: 100% !important;
+        height: auto !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        /*
+         * Keep an image together.
+         */
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+
+        break-before: auto !important;
+        break-after: auto !important;
+
+        box-shadow: none !important;
+    }
+
+    /*
+     * Never allow an image to become taller than one
+     * printable A4 page.
+     */
+    .noteSection img,
+    .mainSection img {
+        max-height: 250mm !important;
+        object-fit: contain !important;
+    }
+
+    figure {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* =========================================================
+       BLOCKQUOTES
+       ========================================================= */
+
+    blockquote {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+
+        overflow: visible !important;
+    }
+
+    /* =========================================================
+       CODE
+       ========================================================= */
+
+    .noteSection pre {
+        max-width: 100% !important;
+
+        overflow: visible !important;
+
+        white-space: pre-wrap !important;
+        overflow-wrap: anywhere !important;
+
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    .noteSection pre code {
+        white-space: pre-wrap !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    /* =========================================================
+       Math
+       ========================================================= */
+
+    .katex-display {
+        max-width: 100% !important;
+
+        overflow: visible !important;
+
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* =========================================================
+       Links
+       ========================================================= */
+
+    .noteSection a {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+
+    .noteSection a::after {
+        content: none !important;
+    }
+
+    /* =========================================================
+       Questions and answers
+       ========================================================= */
+
+    .questionBox,
+    .questionBoxPrompt,
+    .questionOption,
+    .questionBoxAnswer {
+        break-inside: avoid-page !important;
+        page-break-inside: avoid !important;
+    }
+
+    .questionBoxAnswer,
+    .questionBoxAnswer[hidden],
+    .questionBoxAnswer--hidden {
+        display: block !important;
+        visibility: visible !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .questionCorrect {
+        display: block !important;
+        margin-top: 0.6rem !important;
+        padding-top: 0.6rem !important;
+        border-top: 1px dashed var(--borderColor) !important;
+        color: var(--successColor) !important;
+        font-weight: 800 !important;
+    }
+
+    .questionAnswerToggle {
+        display: none !important;
+    }
+
+    .questionOption {
+        width: 100% !important;
+        color: var(--textPrimary) !important;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .questionOption.isCorrect {
+        border: 2px solid var(--successColor) !important;
+        background: var(--successBackground) !important;
+        font-weight: 800 !important;
+    }
+
+    .questionOption.isWrong {
+        border-color: var(--borderColor) !important;
+        background: var(--surfaceSoft) !important;
+    }
+
+    .questionBox {
+        box-shadow: none !important;
+        border: 1px solid var(--borderColor) !important;
+    }
+
+    /* =========================================================
+       Horizontal rules
+       ========================================================= */
+
+    .noteSection hr {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* =========================================================
+       Theme preservation
+       ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+}
+
+/* =========================================================
+   Print refinements
+   ========================================================= */
+
+@media print {
+    /* Borders belong to the note content, not the page background. */
+    .noteContainer {
+        box-sizing: border-box !important;
+        padding: 6mm 2mm !important;
+        border-top: 1px solid var(--borderColor) !important;
+        border-bottom: 1px solid var(--borderColor) !important;
+        background: transparent !important;
+    }
+
+    /* Ensure MCQ options and their text remain visible in print. */
+    .questionBox--mcq .questionOption,
+    .questionBox--mcq .questionOptionText,
+    .questionBox--mcq .questionOptionLetter {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        color: var(--textPrimary) !important;
+    }
+
+    .questionBox--mcq .questionOption {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        white-space: normal !important;
+        text-align: right !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .questionBox--mcq .questionOptionText {
+        flex: 1 1 auto !important;
+        overflow: visible !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .questionBox--mcq .questionOptionLetter {
+        flex: 0 0 2rem !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Keep answer areas visible, including HTML hidden states. */
+    .questionBoxAnswer,
+    .questionBoxAnswer[hidden],
+    .questionBoxAnswer--hidden {
+        display: block !important;
+        visibility: visible !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .questionCorrect {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    /* Keep common visual blocks together when possible. */
+    .questionBox,
+    .questionOption,
+    .questionBoxAnswer,
+    figure,
+    picture,
+    blockquote,
+    .noteSection pre,
+    .katex-display {
+        break-inside: avoid-page !important;
+        page-break-inside: avoid !important;
+    }
+
+    .noteSection img,
+    .mainSection img {
+        display: block !important;
+        max-width: 100% !important;
+        max-height: 250mm !important;
+        height: auto !important;
+        object-fit: contain !important;
+        break-inside: avoid-page !important;
+        page-break-inside: avoid !important;
+    }
+
+    .noteSection tr,
+    .noteSection th,
+    .noteSection td {
+        break-inside: avoid-page !important;
+        page-break-inside: avoid !important;
+    }
+
+    .questionAnswerToggle {
+        display: none !important;
+    }
+}
+
+/* Final print fixes */
+@media print {
+    /* Draw horizontal borders around the content fragments. */
+    .noteContainer {
+        box-sizing: border-box !important;
+        border-top: 1px solid var(--borderColor) !important;
+        border-bottom: 1px solid var(--borderColor) !important;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+    }
+
+    /* Avoid flex-button rendering issues in print preview. */
+    .questionBox--mcq .questionOption {
+        display: grid !important;
+        grid-template-columns: 2rem minmax(0, 1fr) !important;
+        align-items: start !important;
+        gap: 0.6rem !important;
+        width: 100% !important;
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 0.65rem !important;
+        margin: 0.4rem 0 !important;
+        border: 1px solid var(--borderColor) !important;
+        background: var(--surfaceSoft) !important;
+        color: var(--textPrimary) !important;
+        text-align: right !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        transform: none !important;
+        appearance: none !important;
+        -webkit-appearance: none !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    .questionBox--mcq .questionOptionLetter {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 2rem !important;
+        height: 2rem !important;
+        color: var(--textPrimary) !important;
+        visibility: visible !important;
+    }
+
+    .questionBox--mcq .questionOptionText {
+        display: block !important;
+        min-width: 0 !important;
+        width: auto !important;
+        height: auto !important;
+        color: var(--textPrimary) !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .questionBox--mcq .questionCorrect {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    .questionBox--mcq .questionBoxAnswer[hidden],
+    .questionBox--essay .questionBoxAnswer[hidden],
+    .questionBoxAnswer--hidden {
+        display: block !important;
+        visibility: visible !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .questionAnswerToggle {
+        display: none !important;
+    }
+}
+
+/* Print pagination: images, tables and content boxes */
+@media print {
+
+    /* Keep images and their wrappers together whenever possible */
+    .noteContainer img,
+    .noteContainer figure,
+    .noteContainer picture {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    .noteContainer img {
+        max-width: 100% !important;
+        max-height: 220mm !important;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Prevent tables from repeating their header on the next page */
+    .noteContainer table {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        border-collapse: collapse;
+    }
+
+    .noteContainer thead {
+        display: table-row-group !important;
+    }
+
+    .noteContainer tr {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* Keep common content boxes together */
+    .noteContainer blockquote,
+    .noteContainer pre,
+    .noteContainer .questionBox,
+    .noteContainer .questionBoxAnswer,
+    .noteContainer .callout,
+    .noteContainer .admonition {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+}
+
+/* =========================================================
+   Final image pagination fix
+   ========================================================= */
+
+@media print {
+
+    /*
+     * Markdown normally wraps standalone images in <p>.
+     * Keep that paragraph and its image on the same page.
+     */
+    .noteContainer p:has(img),
+    .noteContainer figure,
+    .noteContainer picture {
+        break-inside: avoid-page !important;
+        page-break-inside: avoid !important;
+    }
+
+    /*
+     * Constrain the image so it fits within a printable page.
+     */
+    .noteContainer img {
+        display: block !important;
+
+        max-width: 100% !important;
+        max-height: 220mm !important;
+
+        width: auto !important;
+        height: auto !important;
+
+        object-fit: contain !important;
+
+        break-inside: avoid-page !important;
+        page-break-inside: avoid !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/* =========================================================
+   Final callout box pagination fix
+   ========================================================= */
+
+@media print {
+
+    /* Keep each definition, note, example, and warning together. */
+    .noteContainer .calloutBox {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* Keep the box title attached to its content. */
+    .noteContainer .calloutBoxTitle {
+        break-after: avoid !important;
+        page-break-after: avoid !important;
+    }
+
+    .noteContainer .calloutBoxContent {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+}

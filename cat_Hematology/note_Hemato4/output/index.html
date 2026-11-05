@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>خون‌سازی و کانون‌های خون‌ساز</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/rtl.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../node_modules/katex/dist/katex.min.css"
+    >
+
+    <link rel="stylesheet" href="../styles/dark.css">
+    <link rel="stylesheet" href="../styles/forest.css">
+    <link rel="stylesheet" href="../styles/paperLike.css">
+    <link rel="stylesheet" href="../styles/neon.css">
+    <link rel="stylesheet" href="../styles/print.css" media="print">
+
+    <script src="../node_modules/lucide/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+
+    <div class="printBrand" aria-hidden="true" style="display:none">پاپیروس</div>
+
+    <header class="appHeader">
+
+        <button
+            class="sidebarToggle"
+            type="button"
+            aria-label="باز کردن فهرست مطالب"
+            aria-expanded="false"
+        >
+            <i data-lucide="panel-left"></i>
+        </button>
+
+
+        <div class="appTitle">
+            پاپیروس
+        </div>
+
+
+        <div class="headerControls">
+
+<button
+    class="searchButton"
+    type="button"
+    aria-label="جستجو در جزوه"
+    aria-expanded="false"
+>
+    <i data-lucide="search"></i>
+</button>
+
+<div class="highlightSwitcher">
+
+    <button
+        class="highlightToggle"
+        type="button"
+        aria-label="هایلایت"
+        aria-expanded="false"
+    >
+        <i data-lucide="highlighter"></i>
+    </button>
+
+
+<div
+    class="highlightOptions"
+    aria-hidden="true"
+>
+
+    <button
+        class="highlightPowerToggle"
+        type="button"
+        aria-label="روشن یا خاموش کردن هایلایت"
+        aria-pressed="true"
+    >
+        <i data-lucide="highlighter"></i>
+        <span>هایلایت روشن</span>
+    </button>
+
+        <div class="highlightColors">
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#fff176"
+                aria-label="هایلایت زرد"
+                style="--highlightColor: #fff176;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#a5d6a7"
+                aria-label="هایلایت سبز"
+                style="--highlightColor: #a5d6a7;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#90caf9"
+                aria-label="هایلایت آبی"
+                style="--highlightColor: #90caf9;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ce93d8"
+                aria-label="هایلایت بنفش"
+                style="--highlightColor: #ce93d8;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ffab91"
+                aria-label="هایلایت نارنجی"
+                style="--highlightColor: #ffab91;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#ef9a9a"
+                aria-label="هایلایت قرمز"
+                style="--highlightColor: #ef9a9a;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#f48fb1"
+                aria-label="هایلایت صورتی"
+                style="--highlightColor: #f48fb1;"
+            ></button>
+
+            <button
+                class="highlightColor"
+                type="button"
+                data-highlight-color="#80cbc4"
+                aria-label="هایلایت فیروزه‌ای"
+                style="--highlightColor: #80cbc4;"
+            ></button>
+
+        </div>
+
+
+        <div class="highlightDivider"></div>
+
+
+        <label
+            class="highlightCustomColor"
+            aria-label="انتخاب رنگ دلخواه"
+        >
+            <input
+                class="highlightColorInput"
+                type="color"
+                value="#fff176"
+            >
+
+            <i data-lucide="palette"></i>
+        </label>
+
+
+        <button
+            class="highlightEraser"
+            type="button"
+            aria-label="پاک کردن هایلایت"
+        >
+            <i data-lucide="eraser"></i>
+            <span>پاک‌کن</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="stickyNotesSwitcher">
+
+    <button
+        class="stickyNotesToggle"
+        type="button"
+        aria-label="یادداشت‌های چسبان"
+        aria-expanded="false"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+</div>
+
+            <div class="fontSizeSwitcher">
+
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="decrease"
+                    aria-label="کاهش اندازه فونت"
+                >
+                    <i data-lucide="minus"></i>
+                </button>
+
+<button
+    type="button"
+    class="fontSizeControl fontSwitchControl"
+    aria-label="تغییر فونت"
+>
+    <i data-lucide="type"></i>
+</button>
+                <button
+                    class="fontSizeControl"
+                    type="button"
+                    data-action="increase"
+                    aria-label="افزایش اندازه فونت"
+                >
+                    <i data-lucide="plus"></i>
+                </button>
+
+            </div>
+
+
+            <div class="themeSwitcher">
+
+                <button
+                    class="themeToggle"
+                    type="button"
+                    aria-label="تغییر تم"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="sun"></i>
+                </button>
+
+<div class="themeOptions">
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="light"
+        aria-label="تم روشن"
+    >
+        <i data-lucide="sun"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="dark"
+        aria-label="تم تاریک"
+    >
+        <i data-lucide="moon"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="forest"
+        aria-label="تم جنگلی"
+    >
+        <i data-lucide="trees"></i>
+    </button>
+
+    <button
+        class="themeButton"
+        type="button"
+        data-theme="paperLike"
+        aria-label="تم پیپر لایک"
+    >
+        <i data-lucide="notebook-pen"></i>
+    </button>
+
+<button
+    class="themeButton"
+    type="button"
+    data-theme="neon"
+    aria-label="تم نئون"
+>
+<i data-lucide="zap"></i>
+</button>
+
+
+</div>
+
+            </div>
+
+<button
+    class="printButton"
+    type="button"
+    aria-label="چاپ جزوه"
+>
+    <i data-lucide="printer"></i>
+</button>
+
+
+            <button
+                class="aboutButton"
+                type="button"
+                aria-label="درباره ما"
+            >
+                <i data-lucide="users-round"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+<div
+    class="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="searchPanelContent">
+
+        <div class="searchInputWrapper">
+
+            <i data-lucide="search"></i>
+
+            <input
+                class="searchInput"
+                type="search"
+                placeholder="جستجو در جزوه..."
+                aria-label="جستجو در جزوه"
+                autocomplete="off"
+            >
+
+            <button
+                class="searchClearButton"
+                type="button"
+                aria-label="پاک کردن جستجو"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="searchResultsInfo">
+            <span class="searchResultsCount">۰ نتیجه</span>
+
+            <div class="searchNavigation">
+
+                <button
+                    class="searchPreviousButton"
+                    type="button"
+                    aria-label="نتیجه قبلی"
+                    disabled
+                >
+                    <i data-lucide="chevron-up"></i>
+                </button>
+
+                <button
+                    class="searchNextButton"
+                    type="button"
+                    aria-label="نتیجه بعدی"
+                    disabled
+                >
+                    <i data-lucide="chevron-down"></i>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    <aside
+        class="sidebar"
+        aria-label="فهرست مطالب"
+        aria-hidden="true"
+    >
+
+        <div class="sidebarHeader">
+            <h2>فهرست مطالب</h2>
+        </div>
+
+        <nav
+            class="sidebarContent"
+            aria-label="فهرست مطالب"
+        >
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-1"
+                >
+                    ۱. مقدمه و کلیات
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-2"
+                >
+                    ۲. متن اصلی جزوه
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-3"
+                >
+                    تعریف و سیر تکاملی خون‌سازی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-4"
+                >
+                    ریزمحیط مغز استخوان و رگ‌های خون‌ساز
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-5"
+                >
+                    پیوند مغز استخوان، homing و niche
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-6"
+                >
+                    Integrin، selectin و نگه‌داری HSC
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-7"
+                >
+                    تکثیر، چرخهٔ سلولی و خودنوسازی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-8"
+                >
+                    CFUها و رده‌های سلولی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-9"
+                >
+                    مسیرهای کلی hematopoiesis
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-10"
+                >
+                    محل خون‌سازی و نمونه‌گیری از مغز استخوان
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-11"
+                >
+                    توصیه‌هایی دربارهٔ مطالعه و ارتباط با دیگران
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-12"
+                >
+                    ۳. جداول مرور سریع
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-13"
+                >
+                    سیر و ویژگی‌های خون‌سازی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-14"
+                >
+                    ریزمحیط، عوامل و اتصالات
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-15"
+                >
+                    چرخهٔ سلولی و تقسیم HSC
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-16"
+                >
+                    طیف HSC و markerها
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-17"
+                >
+                    CFUها و مسیرهای تمایز
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-18"
+                >
+                    محل‌های خون‌سازی و نمونه‌گیری
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-19"
+                >
+                    ۴. اصطلاحات و تعاریف
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-20"
+                >
+                    ۵. خود‌ارزیابی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-21"
+                >
+                    سوالات تشریحی
+                </a>
+            
+                <a
+                    class="tocItem tocItemSecondary"
+                    href="#heading-22"
+                >
+                    سوالات تستی
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-23"
+                >
+                    ۷. ادیتور و منابع استفاده‌شده
+                </a>
+            
+                <a
+                    class="tocItem tocItemPrimary"
+                    href="#heading-24"
+                >
+                    ۸. گزارش تکمیل بودن محتوا
+                </a>
+            
+        </nav>
+
+    </aside>
+
+
+    <div class="sidebarBackdrop"></div>
+
+<aside
+    class="stickyNotesPanel"
+    aria-label="یادداشت‌های چسبان"
+    aria-hidden="true"
+>
+
+    <div class="stickyNotesPanelHeader">
+
+        <h2>یادداشت‌های چسبان</h2>
+
+        <button
+            class="addStickyNoteButton"
+            type="button"
+        >
+            <i data-lucide="plus"></i>
+            <span>یادداشت جدید</span>
+        </button>
+
+    </div>
+
+    <div class="stickyNotesPanelContent">
+
+        <div class="stickyNotesEmptyState">
+<i data-lucide="notebook-pen"></i>
+
+            <p>
+                هنوز یادداشتی ایجاد نکرده‌اید.
+            </p>
+
+        </div>
+
+        <div class="stickyNotesList"></div>
+
+    </div>
+
+</aside>
+
+<div class="stickyNotesBackdrop"></div>
+
+
+    <div
+        class="aboutModal"
+        aria-hidden="true"
+    >
+
+        <div class="aboutModalBackdrop"></div>
+
+        <section
+            class="aboutModalContent"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="aboutTitle"
+        >
+
+            <button
+                class="aboutCloseButton"
+                type="button"
+                aria-label="بستن"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <h2 id="aboutTitle">
+                آدم‌هایی که اینجا رو ساختن
+            </h2>
+
+            <p class="aboutIntroduction">
+                ما یک تیم کوچک هستیم که باور داریم یادگیری باید
+                لذت‌بخش، عمیق، و در دسترس باشد. جزوه‌ساز تلاش ماست
+                برای تبدیل ساعت‌های طولانی کلاس به متن‌هایی که واقعاً
+                بتوانی با آن‌ها چیزی یاد بگیری.
+            </p>
+
+
+<div class="developerList">
+
+    <article class="developerCard">
+        <h3>شبنم رضاپور</h3>
+        <p>کسی که PDFها را راضی کرد محتوایشان را بی‌کم‌وکاست لو بدهند.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیر‌حسین شکری‌زاده سعادت‌آباد</h3>
+        <p>صدای کلاس را به متن تبدیل کرد، حتی وقتی استاد وسط جمله با میکروفون قهر می‌کرد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>مهراد اسدی</h3>
+        <p>پرامپت‌ها را طوری چید که LLM فکر کرد دارد پایان‌نامه دکتری می‌نویسد.</p>
+    </article>
+
+    <article class="developerCard">
+        <h3>امیرسالار سهام‌پور</h3>
+        <p>مارک‌داون را به HTML تبدیل کرد و به جزوه ظاهری داد که آدم دلش بخواهد بخواندش.</p>
+    </article>
+
+</div>
+
+            <p class="aboutFooter">
+                این پروژه با صبر، چای، و چند شب بی‌خوابی ساخته شد.
+                <br>
+                امیدواریم یادگیریت را لذت‌بخش‌تر کند.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <div class="quickNavigation">
+        <div class="quickNavigationList"></div>
+    </div>
+
+
+    <main class="noteContainer">
+
+<div class="stickyNotesLayer"></div>
+
+        <section class="noteHeader">
+
+            <div class="noteMetadata">
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">درس</span>
+                    <span class="metadataValue">هماتولوژی</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">مبحث</span>
+                    <span class="metadataValue">hematopoiesis 3-جلسه چهارم</span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">استاد</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ جلسه</span>
+                    <span class="metadataValue"></span>
+                </span>
+
+                <span class="metadataItem">
+                    <span class="metadataLabel">تاریخ تولید جزوه</span>
+                    <span class="metadataValue generatedDate">2026-10-14T22:07:56</span>
+                </span>
+
+            </div>
+
+
+            <div class="aiWarning">
+                <i data-lucide="triangle-alert"></i>
+
+                <p>
+                    این جزوه با استفاده از جزوه‌ساز پاپیروس و به صورت خودکار تولید شده است.
+                    ممکن است شامل خطا یا برداشت نادرست باشد و
+                    نیازمند بررسی و بازبینی مجدد است.
+                </p>
+            </div>
+
+        </section>
+
+
+<section class="noteSection introductionSection">
+    <h2 id="heading-1">۱. مقدمه و کلیات</h2>
+<p>خون‌سازی فرایند تولید، تکثیر و تمایز سلول‌های پیش‌ساز خونی است. کانون‌های خون‌سازی در طول رشد از کیسهٔ زرده به کبد و سپس به مغز استخوان منتقل می‌شوند. در این درس، ریزمحیط مغز استخوان، homing و niche، چرخهٔ سلولی و self-renewal، شناسایی و زیرگروه‌های hematopoietic stem cell، مسیرهای تمایز رده‌های خونی، محل‌های نمونه‌گیری مغز استخوان و iPSCها بررسی می‌شوند.</p>
+</section>
+
+<section class="noteSection mainSection">
+    <h2 id="heading-2">۲. متن اصلی جزوه</h2>
+<h3 id="heading-3">تعریف و سیر تکاملی خون‌سازی</h3>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>خون‌سازی (hematopoiesis)</strong>
+فرایند تولید، تکثیر و تمایز سلول‌های پیش‌ساز خونی در کانون‌های خون‌ساز است.</div></div>
+<p>کانون‌های خون‌سازی در طول رشد به‌ترتیب عبارت‌اند از:</p>
+<ol>
+<li>کیسهٔ زرده(Yolk Sac)</li>
+<li>کبد</li>
+<li>مغز استخوان</li>
+</ol>
+<p>در حال حاضر، مغز استخوان تنها کانون خون‌سازی است، مگر آنکه وضعیت پاتولوژیک یا بیماری رخ دهد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">برای مثال، در بیماران مبتلا به تالاسمی ماژور، با پیشرفت بیماری، کبد و طحال دوباره خون‌سازی می‌کنند، زیرا مغز استخوان به‌اندازهٔ کافی پاسخ‌گو نیست.</div></div>
+<p>خون‌سازی در کیسهٔ زرده داخل‌عروقی است؛ اما پس از انتقال خون‌سازی به کبد، این فرایند به‌صورت خارج‌عروقی انجام می‌شود. خون‌سازی در کیسهٔ زرده را <strong>primitive</strong> یا اولیه می‌نامند، زیرا در آن فقط سلول‌های اریتروئیدی تولید می‌شوند. خون‌سازی در سایر ارگان‌ها <strong>definitive</strong> است، زیرا همهٔ رده‌های سلولی را تولید می‌کند.</p>
+<p>برای تولید همهٔ رده‌ها، stem cellهای جدیدی در ناحیهٔ <strong>aorta-gonad-mesonephros</strong>  یا به اختصار AGM تولید می‌شوند. این ناحیه در تشکیل آئورت، بخشی از کلیه و غدد جنسی جنین نقش دارد. این سلول‌ها در همان ناحیه نیز خون‌سازی می‌کنند، اما در حداقل میزان. سپس stem cellها مهاجرت می‌کنند و به کبد می‌روند، زیرا شرایط خون‌سازی در کبد بهتر و قوی‌تر است. اوج خون‌سازی کبد در ماه‌های 4 تا 6 دوران جنینی بوده و از آن پس تا بدو تولد رو به کاهش می‌رود.</p>
+<h3 id="heading-4">ریزمحیط مغز استخوان و رگ‌های خون‌ساز</h3>
+<p>کانون‌های خون‌سازی شرایط و ریزمحیطی(microenvironment) دارند که به سلول‌ها کمک می‌کند در مسیر درنظرگرفته‌شده برای آن‌ها مستقر شوند. از دید هماتولوژی، سلول مرکزی stem cell است و سلول‌های نوپایی را می‌سازد که نسل‌های بعدی آن هستند.</p>
+<p>با ظاهر شدن حفره‌های استخوانی جایگاه دائمی خون‌سازی در حدود 4ماهگی شکل گرفته و سلول مادر در کنار سلول‌های استرومال مغز استخوان ساکن شده و شروع به خون‌سازی می‌کنند.</p>
+<p>سلول‌های استرومال با ترشح فاکتورهای رشد در کنترل خون‌سازی نقش دارند.</p>
+<p><img src="../data/assets/photo_2026-10-18_21-16-38.jpg" alt="photo_2026-10-18_21-16-38"></p>
+<p><img src="../data/assets/assets/image1.jpg" alt="تصویر 1">
+<em>تصویر 1</em></p>
+<p><strong>Osteoblast</strong> استخوان‌سازی می‌کند؛ یعنی ناحیهٔ سخت استخوان را می‌سازد. در تصویر، osteoblast یکی از اجزای ریزمحیط مغز استخوان است.</p>
+<p><img src="../data/assets/assets/image2.jpg" alt="تصویر 2">
+<em>تصویر 2</em></p>
+<p><strong>Osteoclast</strong> نیز در تصویر به‌عنوان یکی از اجزای ریزمحیط مغز استخوان آمده است.</p>
+<p><img src="../data/assets/assets/image3.jpg" alt="تصویر 3">
+<em>تصویر 3</em></p>
+<h4>رگ‌های مغز استخوان</h4>
+<p>در مغز استخوان رگ‌ها نیز دیده می‌شوند. در آناتومی گفته می‌شود عروق خارج‌شده از قلب artery هستند و با نزدیک‌شدن به بافت‌ها به arteriole، سپس venule و vein تبدیل می‌شوند. در مغز استخوان، arteryها وارد مغز استخوان می‌شوند و به arteriole تبدیل می‌شوند؛ اما به‌جای تبدیل‌شدن به venule و vein، حالتی حوضچه‌مانند پیدا می‌کنند و به فضای گسترده‌ای می‌رسند. به این فضاها <strong>sinusoid</strong> می‌گویند؛ یعنی حوضچه.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Sinusoid</strong>
+فضای گسترده و حوضچه‌مانند در مغز استخوان که arteryها پس از تبدیل‌شدن به arteriole به آن می‌رسند؛ در این مسیر، به‌جای تبدیل‌شدن به venule و vein، حالت sinusoid پیدا می‌کنند.</div></div>
+<p>با تبدیل رگ به سلول های اندوتلیال، sinusoid که پیش‌تر رگ را می‌پوشاند، بسیار نازک و کشیده می‌شود. بنابراین، در مقطعی که در تصویر با عنوان <strong>blood vessels</strong> مشخص شده است، endothelial cell کشیده و بسیار نازک است. فاصلهٔ بین osteoblastها و این فضاها بسیار کم است و در نمای میکروسکوپی حتی از فاصله‌ای که در تصویر دیده می‌شود نیز کوچک‌تر است.</p>
+<p>کل این فضا محل خون‌سازی است. در این فضا روزانه «۲ میلیارد گلبول قرمز، ۱ میلیارد گلبول سفید و ۱٫۵ میلیارد پلاکت» تولید می‌شود.</p>
+<h4>برش استخوان و محل‌های خون‌سازی</h4>
+<p>محل‌های خون‌سازی در استخوان‌های بزرگ عبارت‌اند از proximal end استخوان‌های بزرگ، sternum، vertebrae و iliac crest. این استخوان‌ها در نمای <strong>axial skeleton</strong> نیز نشان داده شده‌اند.</p>
+<p><img src="../data/assets/assets/image5.png" alt="تصویر 5">
+<em>تصویر 5</em></p>
+<h3 id="heading-5">پیوند مغز استخوان، homing و niche</h3>
+<p>در پیوند مغز استخوان، کل مغز استخوان را برنمی‌دارند و به بیمار پیوند نمی‌زنند؛ بلکه سلول‌های <strong>hematopoietic stem cell</strong> را جدا می‌کنند و داخل رگ بیمار تزریق می‌کنند. این سلول‌ها در نهایت مسیر بازگشت به کانون خون‌ساز مغز استخوان را پیدا می‌کنند؛ این پدیده <strong>homing</strong> نام دارد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Homing</strong>
+پدیده‌ای که در آن hematopoietic stem cellهای تزریق‌شده مسیر بازگشت به محل خود را پیدا می‌کنند.</div></div>
+<p>Hematopoietic stem cell به محل خود می‌رود و پس از استقرار در مغز استخوان، بین osteoblast و عروق خون‌سازی انجام می‌دهد. سلول‌های این محیط با ترشح و راهنمایی، آن را به مسیرهای مختلف، از جمله erythroid، هدایت می‌کنند.</p>
+<p>این ناحیه را <strong>microenvironment</strong> یا <strong>niche</strong> مغز استخوان می‌نامند. Hematopoietic stem cellها در خون نیز گردش می‌کنند، اما در خون خون‌سازی نمی‌کنند و برای خون‌سازی به مغز استخوان می‌روند. بنابراین، می‌توان hematopoietic stem cell را از نمونهٔ خون جدا کرد، ولی حضور آن در خون به این معنا نیست که همان‌جا خون‌سازی انجام می‌دهد. وقتی hematopoietic stem cell به مغز استخوان می‌رسد، نخستین جایی که آن را می‌گیرد و به آن می‌چسباند osteoblast است؛ ازاین‌رو این ناحیه را niche مغز استخوان می‌نامند.</p>
+<p><img src="../data/assets/assets/image4.jpg" alt="تصویر 4">
+<em>تصویر 4</em></p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Microenvironment یا niche مغز استخوان</strong>
+ناحیه‌ای از مغز استخوان که hematopoietic stem cell پس از رسیدن به آن مستقر می‌شود و سلول‌های محیط با ترشح و راهنمایی، آن را به مسیرهای مختلف هدایت می‌کنند.</div></div>
+<p><img src="../data/assets/assets/image6.jpg" alt="تصویر 6">
+<em>تصویر 6</em></p>
+<h4>اجزای سلولی و غیرسلولی ریزمحیط مغز استخوان</h4>
+<p>بخش محیطی ریزمحیط مغز استخوان از دو قسمت سلولی و غیرسلولی تشکیل شده است.</p>
+<p><img src="../data/assets/photo_2026-10-18_23-21-54.jpg" alt="photo_2026-10-18_23-21-54"></p>
+<p><img src="../data/assets/photo_2026-10-18_16-21-39.jpg" alt="photo_2026-10-18_16-21-39"></p>
+<h5>بخش سلولی</h5>
+<p>بخش سلولی را <strong>stromal cells</strong> یا سلول‌های استرومال می‌نامند که شامل سلول های زیر می‌باشد:</p>
+<ul>
+<li>سلول‌های مزانشیمی؛</li>
+<li>سلول‌های اندوتلیال</li>
+<li>استئوبلاست</li>
+<li>استئوکلاست</li>
+<li>فیبروبلاست</li>
+<li>ماکروفاژ</li>
+<li>سلول‌های چربی یا adipocyte</li>
+<li>سلول‌های reticular adventitial که نوع خاصی از فیبروبلاست‌ها هستند</li>
+</ul>
+<p>این سلول‌ها مستقیماً در خون‌سازی نقش ندارند، اما از آن حمایت می‌کنند. برای مثال، fibroblastها با ترشح پروتئین‌هایی مانند collagen، fibronectin و hemonectin و... داربستی برای قرارگیری HSC فراهم می‌کنند. HSC در فضای خالی قرار نمی‌گیرد؛ بنابراین بستری به نام <strong>scaffold</strong> یا داربست وجود دارد. این داربست پروتئینی است و سلول مادر خون‌ساز روی آن قرار می‌گیرد تا به‌صورت سه‌بعدی تحت‌تأثیر عوامل غیرسلولی باشد.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Scaffold یا داربست</strong>
+بستری پروتئینی که hematopoietic stem cell روی آن قرار می‌گیرد تا به‌صورت سه‌بعدی تحت‌تأثیر عوامل غیرسلولی باشد.</div></div>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">fibroblastها با ترشح پروتئین‌هایی مانند collagen، fibronectin و hemonectin داربستی برای قرارگیری HSC فراهم می‌کنند.</div></div>
+<h5>بخش غیرسلولی</h5>
+<p>عوامل غیرسلولی مغز استخوان بخشی از فعالیت سلول‌های استرومایی هستند. این سلول‌ها با ایجاد ماتریکس و تولید فاکتور‌های رشد در خون‌سازی نقش دارند؛ البته بعضی از فاکتورهای رشد از منابع <strong>سلولی</strong> دیگر تأمین می‌شوند.</p>
+<p>برای نمونه، <strong>erythropoietin</strong> یا اریتروپویتین که به اختصار EPO نامیده می‌شود از سلول‌های بافت بینابینی کنار لوله‌های کلیوی **(**<strong>peritubular interstitial)</strong> ترشح می‌شود. سازوکار بیان‌شده برای این پاسخ چنین است:</p>
+<ol>
+<li>با پایین‌آمدن فشار اکسیژن، بدن باید افت اکسیژن خون را تشخیص دهد.</li>
+<li>در قوس آئورت سنسورهایی وجود دارند که افت اکسیژن را حس می‌کنند و عاملی آزاد می‌شود.</li>
+<li>این عامل به کلیه می‌رسد. خون زیادی به کلیه‌ها می‌رود و سلول‌های کلیه افت اکسیژن را حس می‌کنند.</li>
+<li>سلول‌های کلیه بلافاصله EPO ترشح می‌کنند.</li>
+<li>اریتروپویتین وارد خون می‌شود و به مغز استخوان می‌رسد تا تولید گلبول قرمز افزایش یابد؛ زیرا که گلبول قرمز وظیفهٔ اکسیژن‌رسانی دارد.</li>
+</ol>
+<p>از ترکیبات و عوامل غیرسلولی مغز استخوان می‌توان به موارد زیر اشاره کرد:</p>
+<ul>
+<li>کلاژن( هر چهار نوع در مغز استخوان وجود دارند) و فیبرونکتین(<strong>fibronectin</strong>)</li>
+<li>فاکتورهای رشد از جمله SCF ligand، CXCL12 و ترومبوپویتین(<strong>thrombopoietin</strong>) یا <strong>TPO</strong></li>
+<li>آنژیوپویتین(<strong>angiopoietin</strong>)</li>
+</ul>
+<p>ترومبوپویتین، مانند erythropoietin، در تولید یک ردهٔ خونی نقش دارد: اریتروپویتین به تولید گلبول قرمز کمک می‌کند و thrombopoietin برای تولید پلاکت لازم است. Angiogenesis به معنی رگ‌زایی است و نقش angiopoietin امروزه بسیار مورد توجه قرار گرفته.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Angiogenesis</strong>
+رگ‌زایی.</div></div>
+<h3 id="heading-6">Integrin، selectin و نگه‌داری HSC</h3>
+<p>در مغز استخوان integrinها و selectinها نیز وجود دارند. برای ارتباط سلول‌ها گاهی اتصال محکم و گاهی اتصال سست برقرار می‌شود:</p>
+<ul>
+<li>برای ایجاد اتصال محکم به <strong>integrin</strong> نیاز است.</li>
+<li>اتصال <strong>selectin</strong> سست است. برای یادآوری، می‌توان آن را به زنگ در تشبیه کرد: زنگ را می‌زنید و دستتان را برمی‌دارید، پس اتصال قطع می‌شود.</li>
+</ul>
+<p>از این اتصالات در درمان نیز استفاده می‌شود. برای مثال، osteoblastها <strong>CXCL12</strong> ترشح می‌کنند. برای نگه‌داشتن hematopoietic stem cell در محل، اتصال محکم لازم است. روی  <strong>CXCR4</strong>،  HSC  وجود دارد که به CXCL12 متصل می‌شود. این ترکیبات پیام‌رسان <strong>chemokine</strong> نامیده می‌شوند. اتصال CXCR4 روی hematopoietic stem cell به CXCL12 محکم است؛ اگر این اتصال شکسته شود، hematopoietic stem cell از مغز استخوان جدا می‌شود و وارد خون می‌شود.</p>
+<p>در بخش اهداکنندگان بیمارستان روز قبل از گرفتن سلول‌های خونی از اهداکننده، دارو می‌زنند تا این اتصال‌ها شکسته شود و hematopoietic stem cellها وارد خون شوند. سپس خون را می‌گیرند و stem cellها را جدا می‌کنند تا برای پیوند به کار بروند. فرد اهداکننده سلول‌هایش را دوباره می‌سازد. Hematopoietic stem cell و hematopoiesis مانند چشمهٔ جوشانی هستند که خشک نمی‌شود؛ و آن را میتوان به بیمار دیگری هدیه داد.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">در بخش اهداکنندگان بیمارستان، روز قبل از گرفتن سلول‌های خونی از اهداکننده، دارو می‌زنند تا اتصال‌ها شکسته شود و hematopoietic stem cellها وارد خون شوند؛ سپس سلول‌ها را از خون جدا می‌کنند تا برای پیوند به کار بروند.</div></div>
+<p><img src="../data/assets/assets/image7.jpg" alt="تصویر 7">
+<em>تصویر 7</em></p>
+<p>در تصاویر مغز استخوان، <strong>erythroid precursors</strong> نیز نشان داده شده‌اند.</p>
+<p><img src="../data/assets/assets/image8.png" alt="تصویر 8">
+<em>تصویر 8</em></p>
+<p><img src="../data/assets/assets/image9.png" alt="تصویر 9">
+<em>تصویر 9</em></p>
+<h3 id="heading-7">تکثیر، چرخهٔ سلولی و خودنوسازی</h3>
+<p>در hematopoiesis، سلول از Stem cells به Progenitor cells، سپس Precursor cells و در نهایت Mature cells می‌رسد. این فرایند در ارتباط با <strong>Microenvironment</strong> انجام می‌شود.</p>
+<p><img src="../data/assets/assets/image10.jpg" alt="تصویر 10">
+<em>تصویر 10</em></p>
+<p>در تصویر مراحل آماده‌سازی DNA، ابتدا <strong>Preparation for DNA Synthesis</strong> و سپس <strong>DNA Replication</strong> نشان داده شده‌اند.</p>
+<p><img src="../data/assets/assets/image11.jpg" alt="تصویر 11">
+<em>تصویر 11</em></p>
+<h4>چرخهٔ سلولی</h4>
+<p>چرخهٔ سلولی شامل مراحل زیر است:</p>
+<ul>
+<li><strong>Interphase</strong> شامل G1، S و G2 است. در این مرحله کروموزوم‌ها باز و در حال استفاده‌اند.</li>
+<li>در <strong>Prophase</strong> کروموزوم‌ها متراکم می‌شوند، nuclear envelope از بین می‌رود و spindle تشکیل می‌شود.</li>
+<li>در <strong>Metaphase</strong> کروموزوم‌ها در صفحهٔ مرکزی سلول ردیف می‌شوند.</li>
+<li>در <strong>Anaphase</strong> سانترومرها تقسیم می‌شوند و chromatids به‌سمت قطب‌های مقابل حرکت می‌کنند.</li>
+<li>در <strong>Telophase</strong> کروموزوم‌ها باز می‌شوند، nuclear envelope جدید شکل می‌گیرد و spindle fibers ناپدید می‌شوند.</li>
+<li>در اسلاید، مرحلهٔ تقسیم سیتوپلاسم با عنوان «Cytokine» آمده است و توضیح داده شده که cytoplasm سلول به دو نیم تقسیم می‌شود.</li>
+</ul>
+<h4>Mitosis و self-renewal</h4>
+<p>هر وقت hematopoietic stem cell بخواهد یکی از سلول‌های خونی را تولید کند، ابتدا میتوز انجام می‌دهد: یک سلول مانند خودش می‌سازد و سلول دیگر به‌سمت تمایز می‌رود. به این فرایند <strong>self-renewal</strong> یا خودنوسازی می‌گویند. یک سلول مانند خودش می‌سازد و در جای خود نگه می‌دارد و سلول دیگر تمایز پیدا می‌کند. به این ترتیب، چشمهٔ مغز استخوان خشک نمی‌شود و می‌تواند روزانه سلول تولید کند. Hematopoietic stem cell و بسیاری از progenitorها قابلیت self-renewal دارند.</p>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Self-renewal</strong>
+فرایندی که در آن hematopoietic stem cell هنگام تولید سلول خونی، یک سلول مانند خودش می‌سازد و در جای خود نگه می‌دارد و سلول دیگر به‌سمت تمایز می‌رود.</div></div>
+<p>خودنوسازی سلول مادر به دو شیوه متقارن(symmetric) و غیر متقارن (asymmetric) صورت می‌گیرد. در حالت متقارن سلول مادر به دو سلول شبیه بهم تبدیل می‌شود که هردو در مخزن ذخیره مغز استخوان قرار می‌گیرند ولی در حالت نامتقارن سلول مادر به دو سلول مادر دیگر تبدیل گردیده که یکی در ذخیره قرار گرفته و دیگری وارد چرخه تمایز و یا آپوپتوز می‌گردد. به عبارتی تقسیم نامتقارن با self-renewal همراه است و جمعیت سلول‌ها را حفظ می‌کند.</p>
+<p><img src="../data/assets/assets/image17.png" alt="تصویر 17">
+<em>تصویر 17</em></p>
+<p><img src="../data/assets/assets/image18.jpg" alt="تصویر 18">
+<em>تصویر 18</em></p>
+<p><img src="../data/assets/assets/image19.jpg" alt="تصویر 19">
+<em>تصویر 19</em></p>
+<p><img src="../data/assets/assets/image20.jpg" alt="تصویر 20">
+<em>تصویر 20</em></p>
+<h4>CD34  رنگ‌پذیری</h4>
+<p>در درس گفته می‌شود هر سلولی که <strong>CD34 مثبت</strong> باشد، hematopoietic stem cell است. CD به مجموعهٔ پروتئینی اشاره دارد. این پروتئین ممکن است روی غشا، در سیتوپلاسم یا در هسته باشد، اما در هماتولوژی بیشتر با markerهای روی غشا سروکار داریم. روی غشای سلول markerی به نام CD34 وجود دارد. برای جداسازی سلول‌ها از خون نیز سلول‌های CD34 مثبت را جدا می‌کنند و برای پیوند به کار می‌برند.</p>
+<p>برای شناسایی سلول‌های مادر خفته(quiescent) از رنگ‌های حیاتی <strong>Hoechst 33342</strong> که DNA هسته را رنگ‌آمیزی می‌کند و رنگ رودامین 123**(Rhodamine-123)** که میتوکندری را رنگ می‌زند استفاده می‌شود. مارکر‌های CD34 اما این رنگ‌ها را پس می‌زند. در نتیجه سلول مادر اولیه به طور ضعیف رنگ می‌گیرد.</p>
+<h4>طیف HSC و markerهای آن</h4>
+<p>در hematopoietic stem cellها طیفی از سلول‌ها وجود دارد. همه CD34 مثبت‌اند، اما برخی بسیار جوان‌اند و برخی در مسیر تمایز قرار گرفته‌اند:</p>
+<ul>
+<li>سلول جوان <strong>LT-HSC</strong> است؛ LT به معنی long-term است. در محیط آزمایشگاه، طول عمر آن زیاد است و در درازمدت کار می‌کند.</li>
+<li>پس از آن <strong>ST-HSC</strong> قرار دارد؛ ST به معنی short-term است و دورهٔ آن کوتاه‌تر است.</li>
+<li>سپس سلول، بسته به نیاز بدن، می‌تواند وارد یک رده شود و به گلبول قرمز یا پلاکت تبدیل شود.</li>
+</ul>
+<p>برای پیوند مغز استخوان هم long-term و هم short-term را برمی‌دارند، اما برای شناسایی به‌دنبال CD34 می‌گردند.</p>
+<p>سلول جوان علاوه بر CD34، marker دیگری ندارد. با کمی تمایز، <strong>c-kit</strong> نیز مثبت می‌شود؛ نام دیگر c-kit، <strong>CD117</strong> است. پس از آن، علاوه بر CD34 و c-kit، مارکر <strong>FLT3</strong> هم مثبت می‌شود. با تمایز بیشتر، <strong>CD38</strong> روی سلول ظاهر می‌شود. بنابراین، سلول‌های CD34 مثبت یا HSC در مغز استخوان یک طیف را تشکیل می‌دهند؛ LT-HSC و ST-HSC در این طیف قرار دارند و سپس سلول‌ها به‌سمت رده‌های مختلف خونی می‌روند.</p>
+<p>اسلاید markerهای سطحی پیشنهادی برای <strong>primitive hematopoietic stem cells</strong> را جداگانه برای Human و Mouse فهرست می‌کند. نام‌های خوانا عبارت‌اند از:</p>
+<ul>
+<li><strong>Human:</strong> CD34، CD59، Thy1، CD338، c-kit و lin؛</li>
+<li><strong>Mouse:</strong> CD34، Sca-1، Thy1، CD38، c-kit، lin، CD150 و CD48.</li>
+</ul>
+<p><img src="../data/assets/assets/image12.png" alt="تصویر 12">
+<em>تصویر 12</em></p>
+<p>در نمودار دیگری برای Human و Murine، markerهایی مانند L-selectin، PECAM، Kit، α4 و c-mpl و نیز Lineage negative دیده می‌شوند.</p>
+<p><img src="../data/assets/assets/image13.jpg" alt="تصویر 13">
+<em>تصویر 13</em></p>
+<h4>فنوتیپ‌ها و ویژگی‌های زیرگروه‌ها</h4>
+<p>در اسلاید، فنوتیپ‌های زیر برای زیرگروه‌های سلولی آمده‌اند:</p>
+<table>
+<thead>
+<tr>
+<th>زیرگروه</th>
+<th>فنوتیپ ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LT-HSC</td>
+<td>c-Kit+ Thy-1lo Sca-1+ Lin− Flt-3−</td>
+</tr>
+<tr>
+<td>ST-HSC</td>
+<td>c-Kit+ Thy-1lo Sca-1+ Lin− Flt-3+</td>
+</tr>
+<tr>
+<td>multipotent progenitor</td>
+<td>c-Kit+ Thy-1− Sca-1+ Lin− Flt-3+</td>
+</tr>
+</tbody></table>
+<p>همچنین از «مارکرهای سطحی طیف مختلف سلول مادر» یاد شده است. بخشی از نمادها و عبارت‌های همراه این ردیف‌ها در متن OCRشده مخدوش‌اند. اسلاید می‌گوید این سلول‌ها <strong>quiescent</strong> هستند، در <strong>G0</strong> می‌مانند و <strong>MDR</strong> دارند؛ برای جداکردن LT-HSC نیز از <strong>5-fluorouracil</strong> نام می‌برد.</p>
+<p>برای LT-HSC، اسلاید موارد زیر را ذکر می‌کند:</p>
+<ul>
+<li><strong>Positive:</strong> CD34، CD133 و CD59؛</li>
+<li><strong>Negative:</strong> Flt3 و HLA-DR؛</li>
+<li>c-kit در این سلول‌ها low است.</li>
+</ul>
+<p>دربارهٔ markerها نیز آمده است:</p>
+<ul>
+<li>مارکر CD34 مولکول‌های سیالوموسین بوده که در چسبندگی سلول مادر و انتقال علائم محیطی به درون سلول نقش دارد. همچنین از ورود سلول مادر به چرخه سلولی جلوگیری می‌کند.</li>
+<li>مارکر C-kit گیرنده‌ای با خاصیت تیروزین کیناز است که هنگام اتصال به C-kit ligand از آپوپتوز جلوگیری می‌کند و موجب محافظت از سلول‌های اولیه خون‌ساز می‌شود.</li>
+<li>مارکر CD133 گلیکوپروتئینی مارپیج بوده (<strong>Pentaspan</strong>) و در ایجاد زائده‌های غشایی سلول ایفای نقش می‌کند.</li>
+<li>مارکر CD164 سیالوموسین است که در خانه گزینی سلول مادر در مغز استخوان و جلوگیری از تکثیر سلول‌های CD38منفی و CD34مثبت نقش دارد.</li>
+</ul>
+<p>وقتی CD-38 بیان شود، سلول تمایزیافته است. Co-expression با markerهای زیر با پیدایش رده‌های مربوط همراه شده است:</p>
+<ul>
+<li>CD-71 با ردهٔ Erythroid؛</li>
+<li>CD-41 با ردهٔ Megakaryocytic؛</li>
+<li>CD-33 با ردهٔ Granulocytic؛</li>
+<li>CD-10 با ردهٔ B-cell؛</li>
+<li>CD-7 با ردهٔ T-cell.</li>
+</ul>
+<p><img src="../data/assets/assets/image14.jpg" alt="تصویر 14">
+<em>تصویر 14</em></p>
+<p>در اسلاید، lineage-specific markers به این صورت آمده‌اند:</p>
+<ul>
+<li>Erythroid—CD71؛</li>
+<li>Myeloid—CD33</li>
+<li>B-lymphoid—CD10</li>
+<li>T-lymphoid—CD7</li>
+</ul>
+<h3 id="heading-8">CFUها و رده‌های سلولی</h3>
+<p>رده‌های سلولی و نام‌گذاری CFUها در اسلاید شامل موارد زیر است:</p>
+<table>
+<thead>
+<tr>
+<th>رده یا مسیر</th>
+<th>نام‌گذاری CFU</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Granulocyte, erythrocyte, megakaryocyte, monocyte</td>
+<td><strong>CFU-GEMM</strong></td>
+</tr>
+<tr>
+<td>Erythrocyte</td>
+<td><strong>CFU-E</strong></td>
+</tr>
+<tr>
+<td>Megakaryocyte</td>
+<td><strong>CFU-Meg</strong></td>
+</tr>
+<tr>
+<td>Monocyte</td>
+<td><strong>CFU-M</strong></td>
+</tr>
+<tr>
+<td>Granulocyte, monocyte</td>
+<td><strong>CFU-GM</strong></td>
+</tr>
+<tr>
+<td>Myeloid to basophil</td>
+<td><strong>CFU-BASO</strong></td>
+</tr>
+<tr>
+<td>Myeloid to eosinophil</td>
+<td><strong>CFU-EO</strong></td>
+</tr>
+<tr>
+<td>Myeloid to neutrophil</td>
+<td><strong>CFU-G</strong></td>
+</tr>
+<tr>
+<td>T lymphocyte</td>
+<td><strong>CFU-pre-T</strong></td>
+</tr>
+<tr>
+<td>B lymphocyte</td>
+<td><strong>CFU-pre-B</strong></td>
+</tr>
+</tbody></table>
+<h3 id="heading-9">مسیرهای کلی hematopoiesis</h3>
+<p>نمودار کلی hematopoiesis از <strong>Pluripotential hematopoietic stem cell</strong> به <strong>Multipotential stem cells</strong> می‌رسد و سپس به یکی از دو شاخه می‌رود:</p>
+<ul>
+<li><strong>Common myeloid progenitor (CFU-GEMM)</strong>؛</li>
+<li><strong>Common lymphoid progenitor</strong>.</li>
+</ul>
+<p>شاخه‌های myeloid شامل CFU-GM، CFU-Eo، CFU-Baso و CFU-MegE هستند. شاخهٔ lymphoid شامل Precursor T/NK cell و Precursor B cell است.</p>
+<p>در ردهٔ CFU-GM، مراحل CFU-G و CFU-M و سپس Myeloblast و Monoblast نشان داده شده‌اند. این مسیرها به‌ترتیب به شکل زیر ادامه می‌یابند:</p>
+<ul>
+<li>Myeloblast به N. myelocyte، سپس N. metamyelocyte، N. band و Neutrophil می‌رسد.</li>
+<li>Monoblast به Monocyte و Macrophage می‌رسد.</li>
+</ul>
+<p>در ردهٔ eosinophil، CFU-Eo به E. myelocyte، E. metamyelocyte، E. band و Eosinophil می‌رسد. در ردهٔ basophil، CFU-Baso به B. myelocyte و Basophil می‌رسد.</p>
+<p>شاخهٔ اریتروئیدی از <strong>BFU-E</strong> به Polychromatophilic normoblast، Orthochromatophilic normoblast، Reticulocyte و Erythrocyte می‌رسد.</p>
+<p>شاخهٔ megakaryocytic از CFU-Meg و Megakaryoblast به megakaryocyteهای بالغ و سپس پلاکت‌ها مربوط است. متن نمودار در این بخش عبارت‌های «Mature megakaryocyte» و «Megakaryocyte precursors» را به‌کار می‌برد.</p>
+<p>در ردهٔ lymphoid:</p>
+<ul>
+<li>Pro-T cell به T cell می‌رسد؛</li>
+<li>Pro-NK cell به NK cell می‌رسد؛</li>
+<li>Pro-B cell به B cell و سپس Plasma cell می‌رسد.</li>
+</ul>
+<p>نمودار، progenitor cells را در کنار سلول‌های Morphologically recognizable و Mature cells نشان می‌دهد.</p>
+<p><img src="../data/assets/assets/image15.png" alt="تصویر 15">
+<em>تصویر 15</em></p>
+<p><img src="../data/assets/assets/image23.png" alt="تصویر 23">
+<em>تصویر 23</em></p>
+<p>در تصویر «Stem cells—Progenitor cells—Precursor cells—Mature cells» مسیرهای مختلف تمایز خونی نشان داده شده‌اند. از یک سلول خونی انواع سلول‌ها ساخته می‌شوند. برای مثال، گلبول قرمز هسته و mitochondria ندارد، اما neutrophil هستهٔ چندلوبه و گرانول‌های مختلف دارد و با باکتری‌ها مبارزه می‌کند؛ درحالی‌که گلبول قرمز اکسیژن می‌رساند. ساخته‌شدن این انواع سلول از یک سلول، موضوع hematopoiesis است.</p>
+<div class="calloutBox calloutBox--example" data-box="example"><div class="calloutBoxTitle">مثال</div><div class="calloutBoxContent">گلبول قرمز هسته و mitochondria ندارد و اکسیژن می‌رساند؛ در مقابل، neutrophil هستهٔ چندلوبه و گرانول‌های مختلف دارد و با باکتری‌ها مبارزه می‌کند.</div></div>
+<p>مغز استخوان کارخانهٔ تولید سلول‌های خونی است و با این سرعت خون تولید می‌کند. این کارخانه خط‌های تولید مختلفی دارد: خط تولید گلبول قرمز، خط تولید پلاکت و خط‌های تولید eosinophil، basophil و monocyte. اگر این سلول‌ها درست ساخته نشوند، بیماری ایجاد می‌شود. در این مسیر می‌توان سرچشمهٔ کم‌خونی‌ها و بدخیمی‌های خون را دید. یادگیری درست hematopoiesis به توجیه و علت‌یابی کم‌خونی‌ها و فهم بدخیمی‌های خونی کمک می‌کند.</p>
+<h3 id="heading-10">محل خون‌سازی و نمونه‌گیری از مغز استخوان</h3>
+<p>محل خون‌سازی در نوزادان و افراد بالغ متفاوت است. از هنگام تولد تا حدود دو سالگی، همهٔ استخوان‌ها خون‌سازی می‌کنند؛ چون کانون‌های خون‌سازی نامنظم‌اند، نه اینکه خون‌سازی شدیدتر باشد. با منظم‌شدن کانون‌ها، فضا برای خون‌سازی ایجاد می‌شود. در کتاب‌ها نوشته‌اند کانون‌های خون‌ساز محدود و کم می‌شوند، اما نظر مدرس این است که کم نمی‌شوند، بلکه منظم می‌شوند. پس از منظم‌شدن، استخوان‌های پهن و کوتاه و اپی‌فیز استخوان‌های بلند خون‌سازی می‌کنند؛ از جمله sternum، vertebrae، استخوان‌های لگن و proximal end استخوان‌های بزرگ. این موارد با فهرست اسلاید از proximal end of large bones، sternum، vertebrae، axial skeleton و iliac crest همراه‌اند.</p>
+<p>برای مطالعهٔ مغز استخوان باید به این استخوان‌ها مراجعه کرد. مغز استخوان یک بافت است؛ همان‌طور که نمونهٔ خونِ گرفته‌شده از رگ نمایندهٔ خون بدن در نظر گرفته می‌شود، نمونه‌ای که از مغز استخوان برمی‌دارند نیز نمایندهٔ کل بافت در نظر گرفته می‌شود.</p>
+<p>قبلاً برای کودکان زیر دو سال از استخوان درشت‌نی نمونهٔ مغز استخوان می‌گرفتند. در افراد بزرگسال، نمونهٔ استاندارد مغز استخوان از <strong>posterior iliac crest</strong> گرفته می‌شود. در لگن برجستگی‌ها و فرورفتگی‌هایی وجود دارد و محل استاندارد نمونه‌گیری در پشت لگن است. نمونه را با <strong>needle</strong> می‌گیرند.</p>
+<p>در تصاویر مربوط به حرکت سلول‌ها، <strong>Homing to the bone marrow</strong> و <strong>Mobilization from the bone marrow</strong>، به‌همراه Endothelial cells و Bone marrow cortex نشان داده شده‌اند.</p>
+<p><img src="../data/assets/assets/image24.jpg" alt="تصویر 24">
+<em>تصویر 24</em></p>
+<p><img src="../data/assets/assets/image25.jpg" alt="تصویر 25">
+<em>تصویر 25</em></p>
+<p>برای جداسازی LT-HSC، اسلاید به quiescent بودن، ماندن در G0، داشتن MDR و استفاده از 5-fluorouracil اشاره می‌کند. سلول‌های HSC و زیرگروه‌هایشان بر اساس markerهای سطحی از هم متمایز می‌شوند؛ فهرست markerهای پیشنهادی و فنوتیپ‌های LT-HSC، ST-HSC و multipotent progenitor در بخش شناسایی و زیرگروه‌های HSC آمده است.</p>
+<p><img src="../data/assets/assets/image22.jpg" alt="تصویر 22">
+<em>تصویر 22</em></p>
+<h3 id="heading-11">توصیه‌هایی دربارهٔ مطالعه و ارتباط با دیگران</h3>
+<p>دانشجویان در مرحلهٔ آشنایی با هماتولوژی هستند و ممکن است هنوز به این درس علاقه‌مند نشده باشند. هماتولوژی بسیار بالینی است و به‌نظر مدرس، شخصیت کاری دانشجو را به چالش می‌کشد؛ زیرا فرد نسبت به بیمار مسئولیت دارد و پیوسته با بیمار و کیس درگیر است. پس باید آن را جدی گرفت. همچنین توصیه می‌شود مطالعه به درس‌های درسی محدود نماند و کتاب غیردرسی نیز خوانده شود.</p>
+<p>یکی از دانشجویان کتاب «تصویر دوریان گری» را معرفی کرد.</p>
+<p>و توسط خود استاد کتاب «هنر عشق ورزیدن» اثر دکتر اریک فروم نیز برای جوان‌ها پیشنهاد شده است. فروم روان‌پزشک بود و تجربه‌های سال‌ها کار و ملاقات با بیمارانی را که به مشاوره نیاز داشتند، در این کتاب آورده است. کتاب را باید دقیق و با تأمل خواند؛ جمله‌ها را خط کشید و تکرار کرد تا در ذهن و زبان جا بیفتد و سپس وارد رفتار شود.</p>
+<p>این کتاب اصولی را یاد می‌دهد که گاهی در فرهنگمان دربارهٔ آن‌ها اشتباه می‌کنیم. برای مثال، می‌گوییم افراد باید غرور داشته باشند و این ارزشمند است، اما نباید مغرور باشند؛ بااین‌حال، گاهی به‌محض اینکه کسی غرور داشته باشد، می‌گوییم مغرور است. این قضاوت خودش کار درستی نیست. دربارهٔ دوست‌داشتن نیز می‌گوید کسی می‌تواند دیگری را دوست داشته باشد که ابتدا خودش را دوست داشته باشد. منظور خودخواهیِ مذموم نیست؛ منظور این است که فرد برای خود حریم و چارچوب داشته باشد و اجازه ندهد هرکسی به روح، روان، جان و جسم او آسیب بزند.</p>
+<p>در فرهنگ ما چنین قالب‌هایی زیاد است. منظور این نیست که چون چیزی در فرهنگمان کم داریم سراغ این کتاب برویم؛ کتاب مجموعهٔ خوبی است تا سریع به این مطالب دسترسی پیدا کنید. دانشجویان اکنون از فضای مدرسه و نظم‌های نادرست آن وارد دانشگاه شده‌اند و سه سال دیگر، به امید خدا، وارد کار می‌شوند. در کنار توانمندی تخصصی، باید توانمندی روانی و اجتماعی هم پیدا کنند. گاهی لازم است علاوه بر گزارشی که برای بیمار می‌نویسیم، برای بیمار و همراهش توضیح بدهیم و گفت‌وگو کنیم. اگر بنیاد فکری فرد ضعیف باشد، این کار دشوار می‌شود؛ این موضوع‌ها در جزوه‌ها آموزش داده نشده‌اند.</p>
+<p>برای اینکه واقعاً تحصیل‌کرده باشیم و به جایگاه و ارزش موردنظر برسیم، نباید وقت را برای چیزهای بیهوده هدر بدهیم. موفقیت به مدیریت زمان به‌دست خود فرد وابسته است. در مدرسه برای دانش‌آموز برنامه می‌گذاشتند، اما اکنون دانشجو باید خودش برنامه‌ریزی کند؛ برای مثال:</p>
+<ul>
+<li>هر روز دو ساعت مطالعهٔ غیردرسی؛</li>
+<li>چهار ساعت مطالعهٔ درسی؛</li>
+<li>بیست دقیقه خودارزیابی.</li>
+</ul>
+<p>این موارد را باید در برنامهٔ زندگی قرار داد. با چنین شناختی می‌توان بعداً به دیگران عشق ورزید و محبت را منتشر کرد. حتی می‌توان گل‌های شاه‌پسند چندرنگی را که در محوطهٔ دانشکده دیده‌اید نگاه کرد و رنگ‌هایشان را نوشت. همدیگر را دوست داشته باشید و دوستی را منتشر کنید. ممکن است کسی بگوید فلانی اعصاب ندارد یا فلان است و بهمان؛ اما می‌توان توانمندتر بود و از کانون دوستی و محبت، آرامش را منتشر کرد. خداوند به بشر محبت‌کردن را توصیه کرده است: تا می‌توانید به همدیگر محبت کنید. این مطالب برای گفت‌وگو با دانشجویان مطرح شده‌اند، نه از باب نصیحت.</p>
+</section>
+
+<section class="noteSection quickTablesSection">
+    <h2 id="heading-12">۳. جداول مرور سریع</h2>
+<h3 id="heading-13">سیر و ویژگی‌های خون‌سازی</h3>
+<table>
+<thead>
+<tr>
+<th>مرحله/ویژگی</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ترتیب کانون‌های خون‌سازی</td>
+<td>کیسهٔ زرده → کبد → مغز استخوان</td>
+</tr>
+<tr>
+<td>خون‌سازی primitive</td>
+<td>در کیسهٔ زرده؛ داخل‌عروقی؛ تولید فقط سلول‌های اریتروئیدی</td>
+</tr>
+<tr>
+<td>خون‌سازی definitive</td>
+<td>در سایر ارگان‌ها؛ تولید همهٔ رده‌های سلولی</td>
+</tr>
+<tr>
+<td>خون‌سازی پس از انتقال به کبد</td>
+<td>خارج‌عروقی</td>
+</tr>
+<tr>
+<td>وضعیت معمول کنونی</td>
+<td>مغز استخوان تنها کانون خون‌سازی است، مگر در وضعیت پاتولوژیک یا بیماری</td>
+</tr>
+<tr>
+<td>aorta-gonad-mesonephros</td>
+<td>محل تولید stem cellهای جدید؛ در همان ناحیه خون‌سازی نیز انجام می‌شود، اما در حداقل میزان؛ stem cellها سپس به کبد مهاجرت می‌کنند</td>
+</tr>
+</tbody></table>
+<h3 id="heading-14">ریزمحیط، عوامل و اتصالات</h3>
+<table>
+<thead>
+<tr>
+<th>بخش/عامل</th>
+<th>اجزا، منبع یا نقش ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>بخش سلولی ریزمحیط</td>
+<td>stromal cells شامل سلول‌های مزانشیمی، endothelial cell، osteoblast، osteoclast، macrophage، adipocyte، fibroblast و reticular adventitial cell</td>
+</tr>
+<tr>
+<td>نقش stromal cells</td>
+<td>مستقیماً در خون‌سازی نقش ندارند، اما از آن حمایت می‌کنند</td>
+</tr>
+<tr>
+<td>بخش غیرسلولی</td>
+<td>matrix، growth factorها، fibronectin و collagen؛ بخشی از فعالیت سلول‌های استرومایی</td>
+</tr>
+<tr>
+<td>fibroblast</td>
+<td>ترشح collagen، fibronectin و hemonectin و فراهم‌کردن داربست برای HSC</td>
+</tr>
+<tr>
+<td>scaffold</td>
+<td>بستری پروتئینی که HSC روی آن قرار می‌گیرد تا به‌صورت سه‌بعدی تحت‌تأثیر عوامل غیرسلولی باشد</td>
+</tr>
+<tr>
+<td>erythropoietin (EPO)</td>
+<td>از سلول‌های peritubular کلیه؛ کمک به تولید گلبول قرمز</td>
+</tr>
+<tr>
+<td>thrombopoietin (TPO)</td>
+<td>از growth factorهای نام‌برده‌شده؛ لازم برای تولید پلاکت</td>
+</tr>
+<tr>
+<td>CXCL12</td>
+<td>osteoblastها آن را ترشح می‌کنند؛ به CXCR4 روی HSC متصل می‌شود و در نگه‌داشتن آن در محل نقش دارد</td>
+</tr>
+<tr>
+<td>SCF ligand</td>
+<td>از growth factorهای نام‌برده‌شده؛ نقش دیگری در این بخش توضیح داده نشده است</td>
+</tr>
+<tr>
+<td>angiopoietin</td>
+<td>از عوامل غیرسلولی نام‌برده‌شده؛ در کنار اشاره به angiogenesis، نقش آن امروزه مهم شده است</td>
+</tr>
+<tr>
+<td>integrin</td>
+<td>اتصال محکم</td>
+</tr>
+<tr>
+<td>selectin</td>
+<td>اتصال سست</td>
+</tr>
+<tr>
+<td>CXCR4 و CXCL12</td>
+<td>اتصال CXCR4 روی HSC به CXCL12 محکم است؛ شکستن آن موجب جداشدن HSC از مغز استخوان و ورود به خون می‌شود</td>
+</tr>
+</tbody></table>
+<h3 id="heading-15">چرخهٔ سلولی و تقسیم HSC</h3>
+<table>
+<thead>
+<tr>
+<th>مرحله/نوع تقسیم</th>
+<th>رویداد یا حاصل ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Interphase (G1، S، G2)</td>
+<td>کروموزوم‌ها باز و در حال استفاده‌اند</td>
+</tr>
+<tr>
+<td>Prophase</td>
+<td>تراکم کروموزوم‌ها؛ ازبین‌رفتن nuclear envelope؛ تشکیل spindle</td>
+</tr>
+<tr>
+<td>Metaphase</td>
+<td>ردیف‌شدن کروموزوم‌ها در صفحهٔ مرکزی سلول</td>
+</tr>
+<tr>
+<td>Anaphase</td>
+<td>تقسیم سانترومرها و حرکت chromatids به‌سمت قطب‌های مقابل</td>
+</tr>
+<tr>
+<td>Telophase</td>
+<td>بازشدن کروموزوم‌ها؛ شکل‌گیری nuclear envelope جدید؛ ناپدیدشدن spindle fibers</td>
+</tr>
+<tr>
+<td>مرحلهٔ تقسیم cytoplasm در اسلاید</td>
+<td>با عنوان «Cytokine» آمده است؛ cytoplasm به دو نیم تقسیم می‌شود</td>
+</tr>
+<tr>
+<td>تقسیم متقارن</td>
+<td>دو سلول شبیه یکدیگر؛ در مدل، یک SC می‌تواند دو سلول تمایزیافته یا دو SC تولید کند</td>
+</tr>
+<tr>
+<td>تقسیم نامتقارن</td>
+<td>یک سلول مانند سلول مادر و دیگری اندکی متمایزتر؛ در مدل، یک سلول تمایزیافته و یک SC</td>
+</tr>
+<tr>
+<td>self-renewal</td>
+<td>حفظ یک سلول مانند سلول مادر در کنار حرکت سلول دیگر به‌سمت تمایز؛ با حفظ جمعیت سلول‌ها همراه است</td>
+</tr>
+</tbody></table>
+<h3 id="heading-16">طیف HSC و markerها</h3>
+<table>
+<thead>
+<tr>
+<th>زیرگروه/مرحله</th>
+<th>ویژگی‌های ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LT-HSC</td>
+<td>سلول جوان؛ LT به معنی long-term؛ طول عمر زیاد در محیط آزمایشگاه و فعالیت درازمدت</td>
+</tr>
+<tr>
+<td>ST-HSC</td>
+<td>پس از LT-HSC؛ ST به معنی short-term و دورهٔ کوتاه‌تر</td>
+</tr>
+<tr>
+<td>با کمی تمایز</td>
+<td>c-kit یا CD117 نیز مثبت می‌شود</td>
+</tr>
+<tr>
+<td>مرحلهٔ بعدی در توضیح طیف</td>
+<td>علاوه بر CD34 و c-kit، FLT3 نیز مثبت می‌شود</td>
+</tr>
+<tr>
+<td>با تمایز بیشتر</td>
+<td>CD38 روی سلول ظاهر می‌شود</td>
+</tr>
+<tr>
+<td>پس از طیف HSC</td>
+<td>حرکت به‌سمت رده‌های مختلف خونی</td>
+</tr>
+<tr>
+<td>Hoechst؛ در اسلاید Hoechest 33342</td>
+<td>هدف ذکرشده: هسته یا DNA؛ HSC رنگ را جذب نمی‌کند</td>
+</tr>
+<tr>
+<td>Rhodamine-123؛ در اسلاید Rodamin-123</td>
+<td>هدف ذکرشده: میتوکندری؛ HSC رنگ را جذب نمی‌کند</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>زیرگروه</th>
+<th>فنوتیپ ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LT-HSC</td>
+<td>c-Kit+ Thy-1lo Sca-1+ Lin− Flt-3−</td>
+</tr>
+<tr>
+<td>ST-HSC</td>
+<td>c-Kit+ Thy-1lo Sca-1+ Lin− Flt-3+</td>
+</tr>
+<tr>
+<td>multipotent progenitor</td>
+<td>c-Kit+ Thy-1− Sca-1+ Lin− Flt-3+</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>سلول/marker</th>
+<th>ویژگی ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LT-HSC</td>
+<td>Positive: CD34، CD133 و CD59؛ Negative: Flt3 و HLA-DR؛ c-kit low</td>
+</tr>
+<tr>
+<td>LT-HSC</td>
+<td>quiescent، در G0 می‌ماند و MDR دارد</td>
+</tr>
+<tr>
+<td>CD34</td>
+<td>نقش در attachment و signaling؛ جلوگیری از ورود به cell cycle</td>
+</tr>
+<tr>
+<td>C-kit</td>
+<td>هنگام اتصال به C-kit ligand از apoptosis جلوگیری می‌کند</td>
+</tr>
+<tr>
+<td>CD133</td>
+<td>با عنوان Pentaspan و نقش در membrane projection</td>
+</tr>
+<tr>
+<td>CD164</td>
+<td>عبارت OCRشدهٔ «Logmentation»؛ نسبت‌دادن نقش جلوگیری از proliferation در اسلاید</td>
+</tr>
+<tr>
+<td>ST-HSC</td>
+<td>دارای FLT3 و C-kit</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>رده</th>
+<th>marker ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Erythroid</td>
+<td>CD-71 / CD71</td>
+</tr>
+<tr>
+<td>Megakaryocytic</td>
+<td>CD-41</td>
+</tr>
+<tr>
+<td>Granulocytic / Myeloid</td>
+<td>CD-33 / CD33</td>
+</tr>
+<tr>
+<td>B-cell / B-lymphoid</td>
+<td>CD-10 / CD10</td>
+</tr>
+<tr>
+<td>T-cell / T-lymphoid</td>
+<td>CD-7؛ در فهرست lineage-specific markers به‌صورت CD7/CDS</td>
+</tr>
+</tbody></table>
+<h3 id="heading-17">CFUها و مسیرهای تمایز</h3>
+<table>
+<thead>
+<tr>
+<th>رده یا مسیر</th>
+<th>نام‌گذاری CFU</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Granulocyte, erythrocyte, megakaryocyte, monocyte</td>
+<td>CFU-GEMM</td>
+</tr>
+<tr>
+<td>Erythrocyte</td>
+<td>CFU-E</td>
+</tr>
+<tr>
+<td>Megakaryocyte</td>
+<td>CFU-Meg</td>
+</tr>
+<tr>
+<td>Monocyte</td>
+<td>CFU-M</td>
+</tr>
+<tr>
+<td>Granulocyte, monocyte</td>
+<td>CFU-GM</td>
+</tr>
+<tr>
+<td>Myeloid to basophil</td>
+<td>CFU-BASO</td>
+</tr>
+<tr>
+<td>Myeloid to eosinophil</td>
+<td>CFU-EO</td>
+</tr>
+<tr>
+<td>Myeloid to neutrophil</td>
+<td>CFU-G</td>
+</tr>
+<tr>
+<td>T lymphocyte</td>
+<td>CFU-pre-T</td>
+</tr>
+<tr>
+<td>B lymphocyte</td>
+<td>CFU-pre-B</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>رده</th>
+<th>مسیرهای نشان‌داده‌شده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Neutrophil</td>
+<td>CFU-GM → CFU-G → Myeloblast → N. myelocyte → N. metamyelocyte → N. band → Neutrophil</td>
+</tr>
+<tr>
+<td>Monocyte/Macrophage</td>
+<td>CFU-GM → CFU-M → Monoblast → Monocyte → Macrophage</td>
+</tr>
+<tr>
+<td>Eosinophil</td>
+<td>CFU-Eo → E. myelocyte → E. metamyelocyte → E. band → Eosinophil</td>
+</tr>
+<tr>
+<td>Basophil</td>
+<td>CFU-Baso → B. myelocyte → Basophil</td>
+</tr>
+<tr>
+<td>Erythroid</td>
+<td>BFU-E → Polychromatophilic normoblast → Orthochromatophilic normoblast → Reticulocyte → Erythrocyte</td>
+</tr>
+<tr>
+<td>Megakaryocytic</td>
+<td>CFU-Meg → Megakaryoblast → megakaryocyteهای بالغ → پلاکت‌ها؛ نمودار همچنین «Mature megakaryocyte» و «Megakaryocyte precursors» را ذکر می‌کند</td>
+</tr>
+<tr>
+<td>T-cell</td>
+<td>Pro-T cell → T cell</td>
+</tr>
+<tr>
+<td>NK-cell</td>
+<td>Pro-NK cell → NK cell</td>
+</tr>
+<tr>
+<td>B-cell</td>
+<td>Pro-B cell → B cell → Plasma cell</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>مرحله یا شاخه</th>
+<th>مسیرها و نام‌های ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>آغاز نمودار</td>
+<td>Pluripotential hematopoietic stem cell → Multipotential stem cells</td>
+</tr>
+<tr>
+<td>شاخهٔ myeloid</td>
+<td>Common myeloid progenitor (CFU-GEMM)؛ CFU-GM، CFU-Eo، CFU-Baso و CFU-MegE</td>
+</tr>
+<tr>
+<td>شاخهٔ lymphoid</td>
+<td>Common lymphoid progenitor؛ Precursor T/NK cell و Precursor B cell</td>
+</tr>
+</tbody></table>
+<h3 id="heading-18">محل‌های خون‌سازی و نمونه‌گیری</h3>
+<table>
+<thead>
+<tr>
+<th>سن/مرحله</th>
+<th>محل یا الگوی خون‌سازی طبق توضیح درس</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>از تولد تا حدود دو سالگی</td>
+<td>همهٔ استخوان‌ها خون‌سازی می‌کنند؛ کانون‌ها نامنظم‌اند، نه اینکه خون‌سازی شدیدتر باشد</td>
+</tr>
+<tr>
+<td>پس از منظم‌شدن کانون‌ها</td>
+<td>استخوان‌های پهن و کوتاه و اپی‌فیز استخوان‌های بلند خون‌سازی می‌کنند</td>
+</tr>
+<tr>
+<td>محل‌های نام‌برده‌شده</td>
+<td>sternum، vertebrae، استخوان‌های لگن و proximal end استخوان‌های بزرگ؛ همچنین iliac crest و axial skeleton در فهرست اسلاید</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>گروه/موضوع</th>
+<th>محل یا روش نمونه‌گیری ذکرشده</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>کودکان زیر دو سال، در گذشته</td>
+<td>استخوان درشت‌نی</td>
+</tr>
+<tr>
+<td>افراد بزرگسال</td>
+<td>posterior iliac crest، در پشت لگن</td>
+</tr>
+<tr>
+<td>ابزار</td>
+<td>needle</td>
+</tr>
+<tr>
+<td>نوع نمونه</td>
+<td>مغز استخوان به‌عنوان نمونه‌ای نمایندهٔ کل بافت در نظر گرفته می‌شود</td>
+</tr>
+</tbody></table>
+</section>
+
+<section class="noteSection keyTermsSection">
+    <h2 id="heading-19">۴. اصطلاحات و تعاریف</h2>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>خون‌سازی (hematopoiesis)</strong>
+فرایند تولید، تکثیر و تمایز سلول‌های پیش‌ساز خونی در کانون‌های خون‌ساز است.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Sinusoid</strong>
+فضای گسترده و حوضچه‌مانند در مغز استخوان که arteryها پس از تبدیل‌شدن به arteriole به آن می‌رسند؛ در این مسیر، به‌جای تبدیل‌شدن به venule و vein، حالت sinusoid پیدا می‌کنند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Homing</strong>
+پدیده‌ای که در آن hematopoietic stem cellهای تزریق‌شده مسیر بازگشت به محل خود را پیدا می‌کنند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Microenvironment یا niche مغز استخوان</strong>
+ناحیه‌ای از مغز استخوان که hematopoietic stem cell پس از رسیدن به آن مستقر می‌شود و سلول‌های محیط با ترشح و راهنمایی، آن را به مسیرهای مختلف هدایت می‌کنند.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Scaffold یا داربست</strong>
+بستری پروتئینی که hematopoietic stem cell روی آن قرار می‌گیرد تا به‌صورت سه‌بعدی تحت‌تأثیر عوامل غیرسلولی باشد.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Angiogenesis</strong>
+رگ‌زایی.</div></div>
+<div class="calloutBox calloutBox--definition" data-box="definition"><div class="calloutBoxTitle">تعریف</div><div class="calloutBoxContent"><strong>Self-renewal</strong>
+فرایندی که در آن hematopoietic stem cell هنگام تولید سلول خونی، یک سلول مانند خودش می‌سازد و در جای خود نگه می‌دارد و سلول دیگر به‌سمت تمایز می‌رود.</div></div>
+</section>
+
+<section class="noteSection selfAssessmentSection">
+    <h2 id="heading-20">۵. خود‌ارزیابی</h2>
+<h3 id="heading-21">سوالات تشریحی</h3>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>مسیر کانون‌های خون‌سازی را در طول رشد بیان کنید و تفاوت خون‌سازی primitive و definitive را از نظر محل و رده‌های سلولی تولیدشده توضیح دهید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>کانون‌ها به‌ترتیب کیسهٔ زرده، کبد و مغز استخوان‌اند. خون‌سازی کیسهٔ زرده primitive و داخل‌عروقی است و فقط سلول‌های اریتروئیدی تولید می‌کند؛ خون‌سازی در سایر ارگان‌ها definitive است و همهٔ رده‌های سلولی را تولید می‌کند. پس از انتقال به کبد، خون‌سازی خارج‌عروقی است.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>Homing و niche مغز استخوان را توضیح دهید و بیان کنید hematopoietic stem cell در خون چه می‌کند و در کجا خون‌سازی انجام می‌دهد.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>Homing پدیده‌ای است که در آن hematopoietic stem cell مسیر بازگشت به محل خود را پیدا می‌کند. Niche یا microenvironment ناحیه‌ای از مغز استخوان است که سلول پس از رسیدن به آن مستقر می‌شود و سلول‌های محیط با ترشح و راهنمایی، آن را به مسیرهای مختلف هدایت می‌کنند. HSC می‌تواند در خون گردش کند و از نمونهٔ خون جدا شود، اما در خون خون‌سازی نمی‌کند؛ برای خون‌سازی به مغز استخوان می‌رود.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>اجزای سلولی و غیرسلولی ریزمحیط مغز استخوان را شرح دهید و نقش fibroblastها و scaffold را بیان کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>بخش سلولی شامل stromal cells از جمله سلول‌های مزانشیمی، endothelial cell، osteoblast، osteoclast، macrophage، adipocyte، fibroblast و reticular adventitial cell است. این سلول‌ها مستقیماً خون‌سازی نمی‌کنند، اما از آن حمایت می‌کنند. fibroblastها collagen، fibronectin و hemonectin ترشح می‌کنند و scaffold پروتئینی می‌سازند که HSC روی آن قرار می‌گیرد. بخش غیرسلولی شامل matrix و growth factorها و ترکیباتی مانند fibronectin و collagen است؛ برخی growth factorها از منابع سلولی دیگر تأمین می‌شوند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>تفاوت تقسیم متقارن و نامتقارن hematopoietic stem cell را توضیح دهید و ارتباط آن را با self-renewal بیان کنید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در تقسیم متقارن، دو سلول شبیه یکدیگرند؛ در مدل تقسیم متقارن، یک SC می‌تواند دو سلول تمایزیافته یا دو SC تولید کند. در تقسیم نامتقارن، یک SC و یک سلول تمایزیافته تولید می‌شود؛ یکی مانند سلول مادر می‌ماند و دیگری اندکی متمایزتر می‌شود. این سازوکار با self-renewal همراه است و جمعیت سلول‌ها را حفظ می‌کند.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<div class="questionBox questionBox--essay" data-question="essay" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>مسیر کلی تمایز از hematopoietic stem cell تا سلول بالغ را شرح دهید و دست‌کم سه مسیر یا ردهٔ خونیِ نشان‌داده‌شده را نام ببرید.</p></div><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>مسیر کلی از Pluripotential hematopoietic stem cell به Multipotential stem cells و سپس به progenitorها، precursorها و Mature cells می‌رسد. برای نمونه، مسیر اریتروئیدی از BFU-E به normoblastها، Reticulocyte و Erythrocyte می‌رسد؛ مسیر neutrophil از Myeloblast و مراحل N. myelocyte، N. metamyelocyte و N. band به Neutrophil می‌رسد؛ و مسیر lymphoid شامل Pro-T cell به T cell، Pro-NK cell به NK cell و Pro-B cell به B cell و سپس Plasma cell است.</p></div><button type="button" class="questionAnswerToggle" aria-expanded="false">نمایش پاسخ</button></div>
+<h3 id="heading-22">سوالات تستی</h3>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="1"><div class="questionBoxHeader">سؤال 1</div><div class="questionBoxPrompt"><p>کدام گزینه ترتیب کانون‌های خون‌سازی در طول رشد را درست بیان می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">مغز استخوان، کبد، کیسهٔ زرده</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">کیسهٔ زرده، کبد، مغز استخوان</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">کبد، کیسهٔ زرده، مغز استخوان</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">کیسهٔ زرده، مغز استخوان، کبد</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>ترتیب بیان‌شده در درس کیسهٔ زرده، کبد و سپس مغز استخوان است.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="2"><div class="questionBoxHeader">سؤال 2</div><div class="questionBoxPrompt"><p>کدام ویژگی برای خون‌سازی primitive در کیسهٔ زرده ذکر شده است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">خارج‌عروقی است و همهٔ رده‌ها را تولید می‌کند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">داخل‌عروقی است و فقط سلول‌های اریتروئیدی تولید می‌کند.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">فقط در مغز استخوان رخ می‌دهد.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">به تولید پلاکت محدود است.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>خون‌سازی کیسهٔ زرده داخل‌عروقی و محدود به تولید سلول‌های اریتروئیدی توصیف شده است.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="3"><div class="questionBoxHeader">سؤال 3</div><div class="questionBoxPrompt"><p>Hematopoietic stem cell در فرآیند homing چه می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">در خون به‌طور دائمی خون‌سازی می‌کند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">از مغز استخوان به sinusoid تبدیل می‌شود.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">مسیر بازگشت به محل خود در مغز استخوان را پیدا می‌کند.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">به‌طور مستقیم به erythrocyte تبدیل می‌شود.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>Homing به یافتن مسیر بازگشت hematopoietic stem cell به محل خود اشاره دارد.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="4"><div class="questionBoxHeader">سؤال 4</div><div class="questionBoxPrompt"><p>کدام گزینه دربارهٔ بخش سلولی ریزمحیط مغز استخوان درست است؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">stromal cells مستقیماً همهٔ رده‌های خونی را تولید می‌کنند.</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">stromal cells از خون‌سازی حمایت می‌کنند، اما مستقیماً در آن نقش ندارند.</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">بخش سلولی فقط از adipocyte تشکیل شده است.</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">بخش سلولی شامل matrix و growth factorهاست، نه سلول‌ها.</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>توضیح درس این است که stromal cells مستقیماً در خون‌سازی نقش ندارند، اما از آن حمایت می‌کنند.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="5"><div class="questionBoxHeader">سؤال 5</div><div class="questionBoxPrompt"><p>کدام جفت، مولکول و نوع اتصال را مطابق توضیح درس درست به هم مرتبط می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">integrin—اتصال سست</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">selectin—اتصال محکم</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">integrin—اتصال محکم</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">CXCL12—اتصال selectin به رگ</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>برای ایجاد اتصال محکم به integrin نیاز است؛ selectin در توضیح درس اتصال سست دارد.</p><div class="questionCorrect" data-correct="C"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>C</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="6"><div class="questionBoxHeader">سؤال 6</div><div class="questionBoxPrompt"><p>با تمایز بیشتر در طیف HSC، کدام marker در توضیح درس روی سلول ظاهر می‌شود؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">CD38</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">HLA-DR</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">CD-41</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">CD-10</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>در توضیح طیف HSC، CD38 با تمایز بیشتر روی سلول ظاهر می‌شود.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="7"><div class="questionBoxHeader">سؤال 7</div><div class="questionBoxPrompt"><p>کدام گزینه مسیر اریتروئیدیِ نشان‌داده‌شده را درست ادامه می‌دهد؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">BFU-E → Reticulocyte → normoblastها → Erythrocyte</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">BFU-E → Polychromatophilic normoblast → Orthochromatophilic normoblast → Reticulocyte → Erythrocyte</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">CFU-GM → Myeloblast → Reticulocyte → Erythrocyte</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">CFU-Meg → Megakaryoblast → Eosinophil</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>مسیر اریتروئیدی از BFU-E آغاز می‌شود و از دو مرحلهٔ normoblast به Reticulocyte و سپس Erythrocyte می‌رسد.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="8"><div class="questionBoxHeader">سؤال 8</div><div class="questionBoxPrompt"><p>نمونهٔ استاندارد مغز استخوان در افراد بزرگسال از کجا گرفته می‌شود؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">استخوان درشت‌نی</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">posterior iliac crest</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">sternum فقط در کودکان زیر دو سال</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">Central sinus</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>محل استاندارد نمونه‌گیری بزرگسالان posterior iliac crest است.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="9"><div class="questionBoxHeader">سؤال 9</div><div class="questionBoxPrompt"><p>کدام گزینه Yamanaka factors ذکرشده در اسلاید را کامل‌تر و درست‌تر فهرست می‌کند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">Oct4 (Pou5f1)، Sox2، cMyc و Klf4</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">CD34، CD59، Thy1 و c-kit</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">CXCL12، CXCR4، EPO و TPO</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">Oct4، CD38، FLT3 و HLA-DR</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>اسلاید Yamanaka factors را شامل Oct4 (Pou5f1)، Sox2، cMyc و Klf4 می‌داند.</p><div class="questionCorrect" data-correct="A"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>A</strong></div></div></div>
+<div class="questionBox questionBox--mcq" data-question="mcq" data-question-number="10"><div class="questionBoxHeader">سؤال 10</div><div class="questionBoxPrompt"><p>در توضیح درس، erythropoietin و thrombopoietin به‌ترتیب با کدام تولید مرتبط‌اند؟</p></div><button type="button" class="questionOption" data-option="A"><span class="questionOptionLetter">A</span><span class="questionOptionText">پلاکت و گلبول سفید</span></button><button type="button" class="questionOption" data-option="B"><span class="questionOptionLetter">B</span><span class="questionOptionText">گلبول قرمز و پلاکت</span></button><button type="button" class="questionOption" data-option="C"><span class="questionOptionLetter">C</span><span class="questionOptionText">monocyte و neutrophil</span></button><button type="button" class="questionOption" data-option="D"><span class="questionOptionLetter">D</span><span class="questionOptionText">گلبول قرمز و گلبول سفید</span></button><div class="questionBoxAnswer questionBoxAnswer--hidden" hidden=""><p>erythropoietin به تولید گلبول قرمز کمک می‌کند و thrombopoietin برای تولید پلاکت لازم است.</p><div class="questionCorrect" data-correct="B"><span class="questionCorrectLabel">پاسخ صحیح:</span><strong>B</strong></div></div></div>
+</section>
+
+<section class="noteSection reviewSection">
+    
+</section>
+
+<section class="noteSection editorAndSourcesSection">
+    <h2 id="heading-23">۷. ادیتور و منابع استفاده‌شده</h2>
+<p><strong>ادیتور:</strong> ویرایش آکادمیک خودکار (Layer 5)</p>
+<p><strong>منابع استفاده‌شده:</strong></p>
+<ul>
+<li>صوت درس</li>
+</ul>
+</section>
+
+<section class="noteSection completionSection">
+    <h2 id="heading-24">۸. گزارش تکمیل بودن محتوا</h2>
+<p><strong>برآورد تقریبی تکمیل محتوا:</strong> حدود ۹۵٪</p>
+<ul>
+<li>✓ پوشش محتوای اسلایدها: مطالب خوانا و محتوای شکل‌های قابل تشخیص حفظ شده است.</li>
+<li>✓ پوشش محتوای صوت درس: توضیحات آموزشی، نمونه‌ها و توصیه‌های مطرح‌شده در صوت بازتاب یافته‌اند.</li>
+<li>⚠ شکاف‌ها و موارد حل‌نشده: موارد OCR ناخوانا، چند عبارت مبهم در STT و جملهٔ ناتمام با نشانگرهای بررسی ثبت شده‌اند.</li>
+</ul>
+</section>
+
+    </main>
+
+
+    <button
+        class="backToTop"
+        type="button"
+        aria-label="بازگشت به ابتدای صفحه"
+    >
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+
+    <script src="../src/themeSwitcher.js"></script>
+    <script src="../src/fontSizeSwitcher.js"></script>
+    <script src="../src/aboutModal.js"></script>
+    <script src="../src/quickNavigation.js"></script>
+    <script src="../src/print.js"></script>
+    <script src="../src/search.js"></script>
+    <script src="../src/highlight.js"></script>
+    <script src="../src/stickyNotes.js"></script>
+    <script src="../src/viewPersistence.js"></script>
+    <script src="../src/questionInteractions.js"></script>
+    <script src="../src/fontSwitcher.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarToggle = document.querySelector(".sidebarToggle");
+    const sidebarBackdrop = document.querySelector(".sidebarBackdrop");
+
+    function openSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.add("isOpen");
+        sidebarBackdrop.classList.add("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "true");
+        sidebar.setAttribute("aria-hidden", "false");
+    }
+
+    function closeSidebar() {
+        if (!sidebar || !sidebarToggle || !sidebarBackdrop) {
+            return;
+        }
+
+        sidebar.classList.remove("isOpen");
+        sidebarBackdrop.classList.remove("isVisible");
+
+        sidebarToggle.setAttribute("aria-expanded", "false");
+        sidebar.setAttribute("aria-hidden", "true");
+    }
+
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener("click", () => {
+            if (sidebar.classList.contains("isOpen")) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+    }
+
+    if (sidebarBackdrop) {
+        sidebarBackdrop.addEventListener("click", closeSidebar);
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeSidebar();
+        }
+    });
+
+    document.querySelectorAll(".tocItem").forEach((item) => {
+        item.addEventListener("click", closeSidebar);
+    });
+</script>
+
+</body>
+
+</html>

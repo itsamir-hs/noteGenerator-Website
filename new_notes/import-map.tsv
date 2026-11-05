@@ -1,0 +1,14 @@
+# Papyrus import map
+#
+# One row per archive that add-notes.sh cannot name automatically. Columns are
+# separated by a TAB:
+#
+#   <archive>	<cat folder>	<note folder>
+#
+# <archive> is the file name in new_notes/ (with or without ".zip") or the name
+# of an already extracted folder. Rows are only used while that archive is
+# imported, so keeping them after the zip is deleted is harmless and documents
+# the naming decision.
+#
+brucelosisT3.zip	cat_Immuno	note_Brucellosis3
+Immuno3 (3).zip	cat_Immuno	note_Immuno3
