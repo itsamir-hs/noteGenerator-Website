@@ -2,7 +2,7 @@ name: Deploy Papyrus
 
 on:
   push:
-    branches: [main]
+    branches: [papyrus]
   workflow_dispatch:
 
 permissions:
