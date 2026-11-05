@@ -2,8 +2,10 @@
 """
 Moves lab notes into the cat_Labs category folder.
 
-A note is a lab note when the word «آزمایشگاه» or «آز» appears in its title,
-the text after the **مبحث:** tag. The title is looked up the same way
+A note is a lab note when the word «آزمایشگاه» or «آز» appears in the COURSE part
+of its title. The title is the text after the **مبحث:** tag and follows
+"<course> - <subject> - <session>"; only the first part is checked, so a subject
+that merely mentions the lab never counts (use --whole-title to check everything). The title is looked up the same way
 update-manifest.js does it, so every note format is covered:
 
   1. **مبحث:** line in note.md next to note.html           (flat layout)
@@ -32,7 +34,7 @@ Options:
   --root-only     skip the cat_* folders and only check note_* folders directly in
                   the repo root (by default both are checked: first the notes inside
                   the cat_* folders, then the ones in the root)
-  --course-only   only check the first part of "<course> - <subject> - <session>"
+  --whole-title   check the whole title instead of only the course part
   --verbose       also list every note that is NOT a lab note, with the title it was read from
 """
 import argparse
@@ -125,14 +127,20 @@ def normalize(text):
     return text
 
 
-def is_lab_title(title, course_only=False):
-    if course_only:
-        parts = re.split(r"\s+[-–—]\s+", title)
-        if len(parts) >= 2:
-            title = parts[0]
+def course_of(title):
+    """'<course> - <subject> - <session>' -> '<course>'.
+    A title without the " - " separators has no separate course, so it is used whole."""
+    parts = re.split(r"\s+[-–—]\s+", title.strip())
+    return parts[0].strip() if len(parts) >= 2 and parts[0].strip() else title
+
+
+def is_lab_title(title, whole_title=False):
+    # By default only the course part is checked, so a lab mentioned in the
+    # subject of a theory note ("... ارتباط آن با آزمایشگاه ...") does not count
+    text = title if whole_title else course_of(title)
 
     # letters only, so digits never glue to a word ("آز۲" -> "آز")
-    for word in re.findall(r"[^\W\d_]+", normalize(title)):
+    for word in re.findall(r"[^\W\d_]+", normalize(text)):
         # "ازمایشگاه" (without the madda) is a common typo, "از" alone never matches
         if word == "آز" or word.startswith(("آزمایشگاه", "ازمایشگاه")):
             return True
@@ -195,8 +203,8 @@ def main():
                         help="actually move the folders (default is a dry run)")
     parser.add_argument("--root-only", action="store_true",
                         help="only check note_* folders in the repo root, skip the cat_* folders")
-    parser.add_argument("--course-only", action="store_true",
-                        help="only look at the course part of the title")
+    parser.add_argument("--whole-title", action="store_true",
+                        help="check the whole title instead of only the course part")
     parser.add_argument("--verbose", action="store_true",
                         help="also list the notes that are not lab notes, with their title")
     parser.add_argument("--update-manifest", action="store_true",
@@ -225,9 +233,9 @@ def main():
         if not title:
             print(f"?  {shown}: no مبحث title found (no .md with the tag, no usable html), left alone")
             continue
-        if not is_lab_title(title, args.course_only):
+        if not is_lab_title(title, args.whole_title):
             if args.verbose:
-                print(f"   {shown}: not a lab note   [{source}]  {title}")
+                print(f"   {shown}: not a lab note   [{source}]  course: {course_of(title)}   (title: {title})")
             continue
 
         dest = target / folder.name
@@ -238,7 +246,7 @@ def main():
             continue
 
         verb = "moved" if args.apply else "would move"
-        print(f"{verb}  {shown}  ->  {TARGET}/{folder.name}    [{source}]  {title}")
+        print(f"{verb}  {shown}  ->  {TARGET}/{folder.name}    [{source}]  course: {course_of(title)}   (title: {title})")
         if args.apply:
             parent = folder.parent
             move_folder(folder, dest, root)
