@@ -77,8 +77,9 @@ const collator = new Intl.Collator("fa", { numeric: true });
 const sortButtons = document.querySelectorAll(".sortButton[data-sort]");
 const toggleButtons = document.querySelectorAll(".sortButton[data-toggle]");
 
-let sortKey = "newest";
-let groupByCategory = false;
+// Defaults: sorted by session number, grouped by category
+let sortKey = "session";
+let groupByCategory = true;
 let reverseSort = false;
 
 try {
@@ -225,6 +226,66 @@ toggleButtons.forEach((button) => {
 
 updateSortButtons();
 
+/* ---------- tabs: edited notes / unedited notes (folders ending in _NE) ---------- */
+
+const tabStorageKey = "papyrusTab";
+const tabs = ["edited", "unedited"];
+const tabButtons = document.querySelectorAll(".tabButton");
+
+let activeTab = "edited";
+try {
+    const savedTab = localStorage.getItem(tabStorageKey);
+    if (tabs.includes(savedTab)) activeTab = savedTab;
+} catch (_) {
+    /* storage unavailable */
+}
+
+function noteTab(note) {
+    return note.unedited ? "unedited" : "edited";
+}
+
+// counts: how many notes each tab holds for the current search
+function updateTabButtons(counts) {
+    tabButtons.forEach((button) => {
+        const selected = button.dataset.tab === activeTab;
+        button.setAttribute("aria-selected", String(selected));
+        button.tabIndex = selected ? 0 : -1;
+
+        const count = button.querySelector(".tabCount");
+        if (count && counts) count.textContent = counts[button.dataset.tab].toLocaleString("fa-IR");
+    });
+
+    notesContainer.setAttribute(
+        "aria-labelledby",
+        activeTab === "edited" ? "tabEdited" : "tabUnedited"
+    );
+}
+
+function setActiveTab(tab) {
+    if (!tabs.includes(tab)) return;
+    activeTab = tab;
+    try {
+        localStorage.setItem(tabStorageKey, tab);
+    } catch (_) {
+        /* storage unavailable */
+    }
+    renderNotes(searchInput.value);
+}
+
+tabButtons.forEach((button) => {
+    button.addEventListener("click", () => setActiveTab(button.dataset.tab));
+    button.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+            event.preventDefault();
+            const other = activeTab === "edited" ? "unedited" : "edited";
+            setActiveTab(other);
+            tabButtons.forEach((b) => b.dataset.tab === other && b.focus());
+        }
+    });
+});
+
+updateTabButtons();
+
 /* ---------- rendering ---------- */
 
 function createNoteCard(note, q) {
@@ -254,13 +315,20 @@ function createGrid(list, q) {
 
 function renderNotes(query = "") {
     const q = query.trim().toLowerCase();
-    const filtered = q
+    const matches = q
         ? notes.filter(
               (n) =>
                   n.title.toLowerCase().includes(q) ||
                   (n.category || "").toLowerCase().includes(q)
           )
         : notes;
+
+    // Each tab shows only its own notes; the tab counts follow the search
+    const counts = { edited: 0, unedited: 0 };
+    matches.forEach((n) => counts[noteTab(n)]++);
+    updateTabButtons(counts);
+
+    const filtered = matches.filter((n) => noteTab(n) === activeTab);
 
     notesContainer.innerHTML = "";
 

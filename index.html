@@ -126,15 +126,26 @@
 
     </header>
 
+    <nav class="tabs" role="tablist" aria-label="نوع جزوه‌ها">
+        <div class="segmented tabsSegmented">
+            <button class="tabButton" type="button" role="tab" id="tabEdited" data-tab="edited" aria-selected="true" aria-controls="notesContainer">
+                جزوه های ادیت شده <span class="tabCount"></span>
+            </button>
+            <button class="tabButton" type="button" role="tab" id="tabUnedited" data-tab="unedited" aria-selected="false" aria-controls="notesContainer" tabindex="-1">
+                خروجی پاپیروس <span class="tabCount"></span>
+            </button>
+        </div>
+    </nav>
+
     <div class="toolbar" role="group" aria-label="مرتب‌سازی">
         <span class="toolbarLabel">مرتب‌سازی:</span>
         <div class="segmented">
-            <button class="sortButton" type="button" data-sort="newest" data-label="جدیدترین" data-reverse-label="قدیمی‌ترین" aria-pressed="true">جدیدترین</button>
-            <button class="sortButton" type="button" data-sort="session" aria-pressed="false">شماره جلسه</button>
+            <button class="sortButton" type="button" data-sort="newest" data-label="جدیدترین" data-reverse-label="قدیمی‌ترین" aria-pressed="false">جدیدترین</button>
+            <button class="sortButton" type="button" data-sort="session" aria-pressed="true">شماره جلسه</button>
             <button class="sortButton" type="button" data-sort="title" aria-pressed="false">حروف الفبا</button>
         </div>
         <div class="segmented">
-            <button class="sortButton" type="button" data-toggle="group" aria-pressed="false">دسته‌بندی</button>
+            <button class="sortButton" type="button" data-toggle="group" aria-pressed="true">دسته‌بندی</button>
             <button class="sortButton" type="button" data-toggle="reverse" aria-pressed="false">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 16-4 4-4-4"/><path d="M17 20V4"/><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/></svg>
                 معکوس
@@ -142,7 +153,7 @@
         </div>
     </div>
 
-    <main class="notesContainer" id="notesContainer"></main>
+    <main class="notesContainer" id="notesContainer" role="tabpanel" aria-labelledby="tabEdited"></main>
 
     <div class="emptyState" id="emptyState" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17h.01"/><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9a2 2 0 1 1 4 .3c-.6 1-2 1.2-2 2.7"/></svg>

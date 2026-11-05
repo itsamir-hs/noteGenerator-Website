@@ -9,6 +9,9 @@
  * Old layout (still supported): the note file is <note folder>/output/index.html
  * instead of <note folder>/note.html. If a folder has both, note.html wins.
  *
+ * Folders whose name ends in "_NE" (note_<name>_NE) are unedited notes
+ * ("unedited": true in notes.json); all other notes are edited notes.
+ *
  * Title lookup (first hit wins):
  *   1. "**مبحث:** <title>" in <note folder>/note.md, or the old
  *      <note folder>/data/input/note.md (or any single .md in the folder)
@@ -238,6 +241,79 @@ function firstAddedDate(relativeFile) {
     return new Date(time).toISOString();
 }
 
+/* ---------- sanity check: files a note refers to must exist (exact case) ---------- */
+
+// GitHub Pages runs on Linux: "Styles/Base.css" and "styles/base.css" are different
+// files there, even if Windows/macOS treat them as the same locally.
+const dirCache = new Map();
+function listDir(dir) {
+    if (!dirCache.has(dir)) {
+        try {
+            dirCache.set(dir, new Set(fs.readdirSync(dir)));
+        } catch (_) {
+            dirCache.set(dir, null);
+        }
+    }
+    return dirCache.get(dir);
+}
+
+function existsExactCase(target) {
+    const relative = path.relative(root, target);
+    if (relative.startsWith("..")) return fs.existsSync(target);
+
+    let current = root;
+    for (const segment of relative.split(path.sep)) {
+        const entries = listDir(current);
+        if (!entries || !entries.has(segment)) return false;
+        current = path.join(current, segment);
+    }
+    return true;
+}
+
+function warn(message) {
+    console.warn(`! ${message}`);
+    if (process.env.GITHUB_ACTIONS) console.warn(`::warning::${message}`);
+}
+
+let notesWithBrokenReferences = 0;
+
+function checkReferences(noteAbsolutePath, relativeFile, html) {
+    const missing = new Set();
+    const rootAbsolute = new Set();
+
+    for (const match of html.matchAll(/\b(?:src|href)\s*=\s*["']([^"']+)["']/gi)) {
+        let ref = match[1].trim();
+        if (ref.startsWith("#") || ref.startsWith("//") || /^[a-z][a-z0-9+.-]*:/i.test(ref)) continue;
+
+        ref = ref.split(/[?#]/)[0];
+        if (!ref) continue;
+
+        if (ref.startsWith("/")) {
+            rootAbsolute.add(ref);
+            continue;
+        }
+
+        let decoded = ref;
+        try {
+            decoded = decodeURIComponent(ref);
+        } catch (_) {
+            /* keep as written */
+        }
+
+        const target = path.resolve(path.dirname(noteAbsolutePath), decoded);
+        if (!existsExactCase(target)) missing.add(ref);
+    }
+
+    if (missing.size) {
+        notesWithBrokenReferences++;
+        const sample = [...missing].slice(0, 4).join(", ");
+        warn(`${relativeFile}: ${missing.size} referenced file(s) not found in the repo (check spelling/case, .gitignore): ${sample}${missing.size > 4 ? ", ..." : ""}`);
+    }
+    if (rootAbsolute.size) {
+        warn(`${relativeFile}: paths starting with "/" point to the domain root, not to /papyrus/: ${[...rootAbsolute].slice(0, 3).join(", ")}`);
+    }
+}
+
 /* ---------- scan ---------- */
 
 function findNoteFile(folderPath) {
@@ -252,6 +328,7 @@ function readNote(folderPath, relativeFolder, folderCategory) {
     }
 
     const html = fs.readFileSync(path.join(folderPath, noteFile), "utf8");
+    checkReferences(path.join(folderPath, noteFile), `${relativeFolder}/${noteFile}`, html);
     const title =
         readTitleFromMarkdown(folderPath) ||
         readTitleFromHtml(html) ||
@@ -262,6 +339,7 @@ function readNote(folderPath, relativeFolder, folderCategory) {
         path: relativeFile,
         title,
         folderCategory,
+        unedited: /_NE$/.test(path.basename(folderPath)),
     });
 }
 
@@ -270,8 +348,12 @@ function categoryDisplayName(folderName) {
     return folderName.slice("cat_".length).replace(/_/g, " ").trim();
 }
 
+// Folders that look like a note (note_*) but are working copies, not notes.
+const ignoredNoteFolders = new Set(["note_rendererRef"]);
+
 for (const entry of fs.readdirSync(root, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
+    if (ignoredNoteFolders.has(entry.name)) continue;
 
     if (entry.name.startsWith("note_")) {
         readNote(path.join(root, entry.name), entry.name, null);
@@ -356,6 +438,7 @@ const notes = rawNotes.map((raw) => {
     const parsed = parseTitle(raw.title);
     const id = noteId(raw.path);
     const note = { id, path: raw.path, title: raw.title };
+    if (raw.unedited) note.unedited = true;
 
     let added = previous.trusted ? previous.added.get(id) : null;
     if (!added) {
@@ -405,8 +488,11 @@ if (!previous.trusted) {
 }
 for (const p of newlyAdded) console.log(`+ new note: ${p}`);
 console.log(
-    `notes.json updated: ${notes.length} note(s), ${categoryCount} categor${categoryCount === 1 ? "y" : "ies"}`
+    `notes.json updated: ${notes.length} note(s) (${notes.filter((n) => !n.unedited).length} edited, ${notes.filter((n) => n.unedited).length} unedited), ${categoryCount} categor${categoryCount === 1 ? "y" : "ies"}`
 );
+if (notesWithBrokenReferences) {
+    console.warn(`! ${notesWithBrokenReferences} note(s) refer to files that are missing from the repo (see warnings above)`);
+}
 for (const n of uncategorized) {
     console.warn(`! no category (title not in "course - subject - session" form): ${n.path}`);
 }

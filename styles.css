@@ -559,6 +559,68 @@ body {
 }
 
 /* =========================================================
+   Tabs (edited / unedited notes)
+   ========================================================= */
+
+.tabs {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(16px, 3vw, 24px) clamp(16px, 3vw, 24px) 0;
+}
+
+.tabsSegmented {
+    display: flex;
+}
+
+.tabButton {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: var(--radiusSmall);
+    background: transparent;
+    color: var(--textSecondary);
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tabButton:hover {
+    background: var(--surfaceSoft);
+    color: var(--textPrimary);
+}
+
+.tabButton[aria-selected="true"] {
+    background: var(--accentSoft);
+    color: var(--accentColor);
+    font-weight: 600;
+}
+
+.tabButton:focus-visible {
+    outline: 2px solid var(--accentColor);
+    outline-offset: 1px;
+}
+
+.tabCount {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--textMuted);
+}
+
+.tabButton[aria-selected="true"] .tabCount {
+    color: inherit;
+    opacity: 0.8;
+}
+
+.tabs + .toolbar {
+    padding-top: 12px;
+}
+
+/* =========================================================
    Sort Toolbar
    ========================================================= */
 
