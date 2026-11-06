@@ -559,59 +559,36 @@ body {
 }
 
 /* =========================================================
-   Tabs (edited / unedited notes) - live in the top bar
+   View toggle (edited / unedited notes): one button, shows the current view
    ========================================================= */
 
-.headerTabs {
-    min-width: 0;
-}
-
-.tabsSegmented {
-    display: flex;
-}
-
-.tabButton {
-    flex: 1;
-    display: inline-flex;
-    align-items: center;
+.sortButton.viewToggleButton {
+    min-width: 11.5rem; /* both names fit, so the row does not jump when it flips */
     justify-content: center;
-    gap: 8px;
-    padding: 6px 16px;
-    border: none;
-    border-radius: var(--radiusSmall);
-    background: transparent;
-    color: var(--textSecondary);
-    font-family: inherit;
-    font-size: 14px;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: background 0.15s ease, color 0.15s ease;
-}
-
-.tabButton:hover {
-    background: var(--surfaceSoft);
-    color: var(--textPrimary);
-}
-
-.tabButton[aria-selected="true"] {
     background: var(--accentSoft);
     color: var(--accentColor);
     font-weight: 600;
 }
 
-.tabButton:focus-visible {
-    outline: 2px solid var(--accentColor);
-    outline-offset: 1px;
+.sortButton.viewToggleButton:hover {
+    background: var(--accentSoft);
+    color: var(--accentColor);
+}
+
+@media (max-width: 640px) {
+    /* phone: the view button gets its own full-width row above the sort buttons */
+    .viewGroup {
+        flex: 1 0 100%;
+    }
+
+    .sortButton.viewToggleButton {
+        flex: 1;
+    }
 }
 
 .tabCount {
     font-size: 12px;
     font-weight: 400;
-    color: var(--textMuted);
-}
-
-.tabButton[aria-selected="true"] .tabCount {
-    color: inherit;
     opacity: 0.8;
 }
 
@@ -733,27 +710,11 @@ body {
    Responsive
    ========================================================= */
 
-@media (max-width: 900px) {
-    /* title + tabs on the first row, search and buttons on the next one */
-    .headerControls {
-        width: 100%;
-    }
-}
-
 @media (max-width: 640px) {
     .appHeader {
         padding: 10px 16px;
     }
 
-    /* tabs get their own full-width row under the title */
-    .headerTabs {
-        width: 100%;
-    }
-
-    .tabButton {
-        padding: 6px 8px;
-        font-size: 13px;
-    }
 
     .headerControls {
         width: 100%;

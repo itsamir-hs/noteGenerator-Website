@@ -39,16 +39,6 @@
             پاپیروس
         </div>
 
-        <nav class="headerTabs" role="tablist" aria-label="نوع جزوه‌ها">
-            <div class="segmented tabsSegmented">
-                <button class="tabButton" type="button" role="tab" id="tabEdited" data-tab="edited" aria-selected="true" aria-controls="notesContainer">
-                    جزوه های ادیت شده <span class="tabCount"></span>
-                </button>
-                <button class="tabButton" type="button" role="tab" id="tabUnedited" data-tab="unedited" aria-selected="false" aria-controls="notesContainer" tabindex="-1">
-                    خروجی پاپیروس <span class="tabCount"></span>
-                </button>
-            </div>
-        </nav>
 
         <div class="headerControls">
 
@@ -137,7 +127,14 @@
 
     </header>
 
-    <div class="toolbar" role="group" aria-label="مرتب‌سازی">
+    <div class="toolbar" role="group" aria-label="نمایش و مرتب‌سازی">
+        <div class="segmented viewGroup">
+            <button class="sortButton viewToggleButton" id="viewToggle" type="button" aria-label="جزوه های ادیت شده">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+                <span class="viewName">جزوه های ادیت شده</span>
+                <span class="tabCount"></span>
+            </button>
+        </div>
         <span class="toolbarLabel">مرتب‌سازی:</span>
         <div class="segmented">
             <button class="sortButton" type="button" data-sort="newest" data-label="جدیدترین" data-reverse-label="قدیمی‌ترین" aria-pressed="false">جدیدترین</button>
@@ -153,7 +150,7 @@
         </div>
     </div>
 
-    <main class="notesContainer" id="notesContainer" role="tabpanel" aria-labelledby="tabEdited"></main>
+    <main class="notesContainer" id="notesContainer"></main>
 
     <div class="emptyState" id="emptyState" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17h.01"/><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9a2 2 0 1 1 4 .3c-.6 1-2 1.2-2 2.7"/></svg>

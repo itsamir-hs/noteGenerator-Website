@@ -226,11 +226,12 @@ toggleButtons.forEach((button) => {
 
 updateSortButtons();
 
-/* ---------- tabs: edited notes / unedited notes (folders ending in _NE) ---------- */
+/* ---------- view toggle: edited notes / unedited notes (folders ending in _NE) ---------- */
 
 const tabStorageKey = "papyrusTab";
 const tabs = ["edited", "unedited"];
-const tabButtons = document.querySelectorAll(".tabButton");
+const viewToggle = document.getElementById("viewToggle");
+const viewNames = { edited: "جزوه های ادیت شده", unedited: "خروجی پاپیروس" };
 
 let activeTab = "edited";
 try {
@@ -244,21 +245,18 @@ function noteTab(note) {
     return note.unedited ? "unedited" : "edited";
 }
 
-// counts: how many notes each tab holds for the current search
+// The button always shows the view that is open right now; clicking it opens the other one.
+// counts: how many notes each view holds for the current search
 function updateTabButtons(counts) {
-    tabButtons.forEach((button) => {
-        const selected = button.dataset.tab === activeTab;
-        button.setAttribute("aria-selected", String(selected));
-        button.tabIndex = selected ? 0 : -1;
+    if (!viewToggle) return;
 
-        const count = button.querySelector(".tabCount");
-        if (count && counts) count.textContent = counts[button.dataset.tab].toLocaleString("fa-IR");
-    });
+    const other = activeTab === "edited" ? "unedited" : "edited";
+    viewToggle.querySelector(".viewName").textContent = viewNames[activeTab];
+    viewToggle.setAttribute("aria-label", `${viewNames[activeTab]} - برای نمایش ${viewNames[other]} کلیک کنید`);
+    viewToggle.title = `نمایش ${viewNames[other]}`;
 
-    notesContainer.setAttribute(
-        "aria-labelledby",
-        activeTab === "edited" ? "tabEdited" : "tabUnedited"
-    );
+    const count = viewToggle.querySelector(".tabCount");
+    if (count && counts) count.textContent = counts[activeTab].toLocaleString("fa-IR");
 }
 
 function setActiveTab(tab) {
@@ -272,17 +270,11 @@ function setActiveTab(tab) {
     renderNotes(searchInput.value);
 }
 
-tabButtons.forEach((button) => {
-    button.addEventListener("click", () => setActiveTab(button.dataset.tab));
-    button.addEventListener("keydown", (event) => {
-        if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
-            event.preventDefault();
-            const other = activeTab === "edited" ? "unedited" : "edited";
-            setActiveTab(other);
-            tabButtons.forEach((b) => b.dataset.tab === other && b.focus());
-        }
-    });
-});
+if (viewToggle) {
+    viewToggle.addEventListener("click", () =>
+        setActiveTab(activeTab === "edited" ? "unedited" : "edited")
+    );
+}
 
 updateTabButtons();
 
